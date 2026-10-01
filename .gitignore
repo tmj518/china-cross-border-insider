@@ -28,8 +28,13 @@ Thumbs.db
 .dev.vars
 
 # Agent scratch space. Research agents download HTML, PDF and text extracts
-# here. It is working material, not source: keeping it out of the repo stops
-# multi-megabyte PDFs landing in git history on every `git add -A`.
+# here. It is working material, not site content: keeping it out of the repo
+# stops multi-megabyte PDFs landing in git history on every `git add -A`.
+# The sources are cited by name in each article's frontmatter instead.
 _research/
 _research_tmp/
 _research_*/
+*-evidence/
+landed-math-dossier-*.txt
+*_dossier*.txt
+*dossier*.md
