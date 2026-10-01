@@ -11,7 +11,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "og": "node scripts/make-og-image.mjs"
+    "og": "node scripts/make-og-image.mjs",
+    "qa": "node tools/qa-check.mjs --all",
+    "qa:serp": "node tools/serp-check.mjs --all --serp=file:data/serp",
+    "landed": "node tools/landed-cost.mjs",
+    "guarantee": "node tools/guarantee-cost.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

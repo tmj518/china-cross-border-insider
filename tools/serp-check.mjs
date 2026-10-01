@@ -1,0 +1,398 @@
+/**
+ * Information-gain gate — spec v1.3 §9.2 (R3), automated.
+ *
+ * The rule: before publishing, pull the top results for the piece's target
+ * keyword and prove the piece contains something they do not. If the claim in
+ * `information_gain` cannot be demonstrated, the piece is not published.
+ *
+ * Architecture note — why the SERP source is pluggable:
+ *   Scraping a search engine from this machine is unreliable. Bing truncates
+ *   the query and serves dictionary pages, and Google, DuckDuckGo and
+ *   Startpage are unreachable. The valuable part of this gate is the
+ *   comparison logic, not the scraping, so the SERP comes from a provider:
+ *
+ *     --serp=bing            best-effort Bing HTML scrape (default)
+ *     --serp=file:<path>     a JSON snapshot [{url,title,snippet}] supplied
+ *                            by an agent search tool or a SERP API
+ *
+ *   In the production pipeline the writing/QA agent has a search tool, so it
+ *   supplies the snapshot. A paid SERP API drops in the same way.
+ *
+ * Honesty rules baked in — the gate never invents a pass:
+ *   - No SERP, or a SERP that is not topically relevant → INCONCLUSIVE.
+ *   - Fewer than two competitor pages load → INCONCLUSIVE.
+ *   - `own-data` cannot be verified against a SERP → INCONCLUSIVE by design.
+ *
+ * Run:  node tools/serp-check.mjs <file.md>... [--serp=file:serp.json]
+ *       node tools/serp-check.mjs --all --serp=bing
+ *
+ * Exit code is non-zero on UNSUPPORTED.
+ */
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+
+const UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+
+const TOP_N = 3;
+
+/** Hosts that are never a competitor for a trade-policy query. */
+const JUNK_HOSTS = [
+  "iciba.com", "cambridge.org", "dictionary.com", "merriam-webster.com",
+  "baike.baidu.com", "3dmgame.com", "soft.china.com", "zhihu.com/search",
+  "translate.google", "youdao.com", "bing.com", "microsoft.com",
+];
+
+/**
+ * Official publishers. For a policy query the top result is frequently the
+ * primary document itself — a Federal Register notice, a customs
+ * announcement, a ministry page. That is the input this site works from, not
+ * competition, so it is reported separately and kept out of the denominator
+ * when asking "do competitors already deliver this?".
+ */
+const OFFICIAL_SUFFIXES = [
+  ".gov", ".gov.cn", ".gov.uk", ".gov.my", ".gov.sg", ".gov.au",
+  "federalregister.gov", "govinfo.gov", "europa.eu", "wto.org", "asean.org",
+  "customs.gov.cn", "mofcom.gov.cn", "ustr.gov", "cbp.gov", "stats.gov.cn",
+  "rcepsec.org",
+];
+
+const isOfficial = (url) => {
+  const h = hostOf(url);
+  return OFFICIAL_SUFFIXES.some((s) => h.endsWith(s));
+};
+
+const STOPWORDS = new Set([
+  "the", "a", "an", "of", "for", "to", "in", "on", "and", "or", "is", "are",
+  "what", "how", "why", "when", "do", "does", "with", "from", "by", "at",
+]);
+
+// ---------------------------------------------------------------- utilities
+
+const stripTags = (s) =>
+  s
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const words = (s) => (s.trim() ? s.trim().split(/\s+/).length : 0);
+
+function unwrapBingUrl(href) {
+  if (!href.includes("bing.com/ck/a")) return href;
+  const m = /[?&]u=a1([^&]+)/.exec(href);
+  if (!m) return href;
+  let b64 = decodeURIComponent(m[1]).replace(/-/g, "+").replace(/_/g, "/");
+  while (b64.length % 4) b64 += "=";
+  try {
+    const url = Buffer.from(b64, "base64").toString("utf8");
+    return /^https?:\/\//.test(url) ? url : href;
+  } catch {
+    return href;
+  }
+}
+
+async function get(url, attempts = 3) {
+  let last;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": UA, "Accept-Language": "en-US,en;q=0.9" },
+        redirect: "follow",
+        signal: AbortSignal.timeout(25000),
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return await res.text();
+    } catch (e) {
+      last = e;
+      if (i < attempts) await new Promise((r) => setTimeout(r, 1200 * i));
+    }
+  }
+  throw last;
+}
+
+export function parseBingSerp(html) {
+  const chunks = html.split(/class="b_algo"/).slice(1);
+  const out = [];
+  for (const chunk of chunks) {
+    const block = chunk.slice(0, 4000);
+    const a = /<h2[^>]*>\s*<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/.exec(block);
+    if (!a) continue;
+    const url = unwrapBingUrl(a[1]);
+    if (!/^https?:\/\//.test(url) || url.includes("bing.com")) continue;
+    const p = /<p[^>]*>([\s\S]*?)<\/p>/.exec(block);
+    out.push({ url, title: stripTags(a[2]), snippet: p ? stripTags(p[1]) : "" });
+    if (out.length >= 20) break;
+  }
+  return out;
+}
+
+const hostOf = (url) => {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+};
+
+/**
+ * A SERP is only usable if its results are about the query. Token overlap
+ * between the keyword and each result is the cheapest reliable test, and it
+ * catches the failure mode that produced a false pass in testing: a
+ * dictionary SERP for the first word of the keyword.
+ */
+export function serpRelevance(keyword, results) {
+  const tokens = keyword
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length > 2 && !STOPWORDS.has(t));
+  if (!tokens.length) return { ok: false, score: 0, detail: "keyword has no usable tokens" };
+
+  const scores = results.map((r) => {
+    const hay = (r.title + " " + (r.snippet ?? "")).toLowerCase();
+    const hits = tokens.filter((t) => hay.includes(t)).length;
+    return hits / tokens.length;
+  });
+  const relevant = scores.filter((s) => s >= 0.4).length;
+  return {
+    ok: relevant >= 2,
+    score: scores.length ? Math.max(...scores) : 0,
+    detail: `${relevant}/${results.length} results share >=40% of the keyword tokens`,
+  };
+}
+
+export function pageSignals(html) {
+  const text = stripTags(html);
+  const lower = text.toLowerCase();
+  const tableBlocks = [...html.matchAll(/<table[\s\S]{0,6000}?<\/table>/gi)].map((m) =>
+    stripTags(m[0]),
+  );
+  const tableText = tableBlocks.join(" ");
+  const costWords = /(landed cost|duty rate|per unit|per container|per-container|tariff rate)/.test(lower);
+
+  return {
+    words: words(text),
+    tables: tableBlocks.length,
+    costTable: tableBlocks.length > 0 && /\$\s?\d/.test(tableText) && costWords,
+    perUnitMath: /(per unit|per container|per-container|per 40|per teu)/.test(lower),
+    primaryDocId: /(\b\d{1,3}\s?FR\s?\d{3,6}\b|\bHTSUS\s?9903|\bannouncement no\.?\s?\d+|\b90 FR\b|\b91 FR\b|公告\s?\d+号)/i.test(text),
+    figureDensity: (text.match(/\b\d[\d,.]*\s?(%|percent|billion|million|USD|dollars)/gi) || []).length,
+  };
+}
+
+// ---------------------------------------------------------------- providers
+
+async function serpFromBing(keyword) {
+  const html = await get(
+    "https://www.bing.com/search?q=" + encodeURIComponent(keyword) + "&count=20",
+  );
+  return parseBingSerp(html);
+}
+
+function serpFromFile(path) {
+  const data = JSON.parse(readFileSync(path, "utf8"));
+  const list = Array.isArray(data) ? data : data.results;
+  if (!Array.isArray(list)) throw new Error("snapshot must be an array or {results: []}");
+  return list.map((r) => ({ url: r.url, title: r.title ?? "", snippet: r.snippet ?? "" }));
+}
+
+/**
+ * Resolve the snapshot for one article. If the provider points at a directory,
+ * the snapshot is `<dir>/<article-basename>.json` — so a run over --all picks
+ * up the right file per piece without extra flags.
+ */
+function resolveSnapshot(basePath, articleFile) {
+  const looksLikeDir = !basePath.toLowerCase().endsWith(".json");
+  if (!looksLikeDir) return basePath;
+  const base = articleFile.split(/[\\/]/).pop().replace(/\.md$/, "");
+  return join(basePath, base + ".json");
+}
+
+// ---------------------------------------------------------------- the gate
+
+function parseFrontmatter(raw) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(raw);
+  return { fm: m ? m[1] : "", body: m ? raw.slice(m[0].length) : raw };
+}
+
+function articleSignals(body) {
+  const tables = (body.match(/^\|.*\|\s*$/gm) || []).join("\n");
+  return {
+    tableRows: (body.match(/^\|.*\|\s*$/gm) || []).length,
+    costTableMoney: /\$\s?\d/.test(tables),
+    perUnitMath: /(per unit|per container|per 40|per-container)/i.test(body),
+    primaryDocId: /(\d{1,3} FR \d{3,6}|HTSUS 9903|Announcement No\.|公告|Regional Comprehensive|China–ASEAN)/i.test(body),
+    namedSources: (body.match(/^>\s+\*\*/gm) || []).length,
+  };
+}
+
+const CLAIM_RULES = {
+  "custom-calculation": {
+    verify: (art, comps) => {
+      if (!art.costTableMoney && !art.perUnitMath)
+        return { ok: false, why: "article carries no numeric per-unit/per-container cost table" };
+      const withMath = comps.filter((c) => c.signals.costTable || c.signals.perUnitMath).length;
+      return withMath <= 1
+        ? { ok: true, why: `only ${withMath}/${comps.length} competitors carry comparable per-unit cost math` }
+        : { ok: false, why: `${withMath}/${comps.length} competitors already carry comparable per-unit cost math` };
+    },
+  },
+  "primary-source": {
+    verify: (art, comps) => {
+      if (!art.primaryDocId)
+        return { ok: false, why: "article does not cite a primary document identifier" };
+      const withDoc = comps.filter((c) => c.signals.primaryDocId).length;
+      return withDoc <= 1
+        ? { ok: true, why: `only ${withDoc}/${comps.length} competitors cite the primary document` }
+        : { ok: false, why: `${withDoc}/${comps.length} competitors already cite the primary document` };
+    },
+  },
+  "cross-source": {
+    verify: (art, comps) => {
+      if (art.namedSources < 2)
+        return { ok: false, why: "article does not show at least two named sources" };
+      const dense = comps.filter((c) => c.signals.figureDensity >= 5).length;
+      return dense <= 1
+        ? { ok: true, why: `only ${dense}/${comps.length} competitors carry a comparable figure load` }
+        : { ok: false, why: `${dense}/${comps.length} competitors carry a comparable figure load` };
+    },
+  },
+  "own-data": {
+    verify: () => ({
+      ok: null,
+      why: "proprietary data cannot be verified against a SERP — route to a reviewer",
+    }),
+  },
+};
+
+async function check(file, provider) {
+  const raw = readFileSync(file, "utf8");
+  const { fm, body } = parseFrontmatter(raw);
+  const keyword = /^target_keyword:\s*"?([^"\n]+)"?/m.exec(fm)?.[1]?.trim();
+  const claim = /^information_gain:\s*"?([a-z-]+)"?/m.exec(fm)?.[1]?.trim();
+
+  const report = { file, keyword, claim, verdict: "INCONCLUSIVE", reason: "", competitors: [] };
+
+  if (!keyword) return { ...report, reason: "no target_keyword in frontmatter" };
+  const rule = CLAIM_RULES[claim];
+  if (!rule) return { ...report, reason: `unknown information_gain value: ${claim ?? "(missing)"}` };
+  if (claim === "own-data") return { ...report, reason: rule.verify().why };
+
+  // ---- SERP ----------------------------------------------------------
+  let organic;
+  try {
+    organic =
+      provider.kind === "file"
+        ? serpFromFile(resolveSnapshot(provider.path, file))
+        : await serpFromBing(keyword);
+  } catch (e) {
+    return { ...report, reason: `SERP fetch failed (${e.message}) — cannot verify, refusing to pass` };
+  }
+
+  // Drop hosts that can never be a competitor, then split official sources
+  // (the input) from actual competition.
+  const filtered = organic.filter((r) => !JUNK_HOSTS.some((h) => hostOf(r.url).endsWith(h)));
+  const official = filtered.filter((r) => isOfficial(r.url));
+  const competitors = filtered.filter((r) => !isOfficial(r.url));
+  report.official = official.map((r) => ({ url: r.url, title: r.title }));
+
+  // Two competitors is the floor: with one, "no competitor does this" is a
+  // statement about a sample of one. Below the floor the gate refuses.
+  const MIN_COMPETITORS = 2;
+  if (competitors.length < MIN_COMPETITORS) {
+    return {
+      ...report,
+      reason: `only ${competitors.length} non-official organic result(s) (${official.length} official sources removed, ${organic.length} raw) — too little competition to certify a claim, and too little to conclude the keyword has demand`,
+    };
+  }
+
+  const rel = serpRelevance(keyword, competitors.slice(0, 10));
+  if (!rel.ok) {
+    return {
+      ...report,
+      reason: `SERP is not topically relevant (${rel.detail}) — likely a locale or query-truncation problem. Verify demand for this keyword before publishing; the gate cannot certify it.`,
+    };
+  }
+
+  // ---- competitor pages ----------------------------------------------
+  for (const r of competitors.slice(0, TOP_N)) {
+    try {
+      report.competitors.push({ url: r.url, title: r.title, signals: pageSignals(await get(r.url)) });
+    } catch (e) {
+      report.competitors.push({ url: r.url, title: r.title, error: e.message });
+    }
+  }
+
+  const loaded = report.competitors.filter((c) => c.signals);
+  if (loaded.length < 2) {
+    return {
+      ...report,
+      reason: `only ${loaded.length}/${TOP_N} competitor pages loaded — cannot verify, refusing to pass`,
+    };
+  }
+
+  const verdict = rule.verify(articleSignals(body), loaded);
+  return {
+    ...report,
+    verdict: verdict.ok === true ? "SUPPORTED" : verdict.ok === false ? "UNSUPPORTED" : "INCONCLUSIVE",
+    reason: verdict.why,
+  };
+}
+
+// ---------------------------------------------------------------- CLI
+
+const args = process.argv.slice(2);
+const providerArg = args.find((a) => a.startsWith("--serp="));
+const provider = providerArg
+  ? providerArg.startsWith("--serp=file:")
+    ? { kind: "file", path: providerArg.slice("--serp=file:".length) }
+    : { kind: "bing" }
+  : { kind: "bing" };
+
+const fileArgs = args.filter((a) => !a.startsWith("--") || a === "--all");
+let files;
+if (fileArgs.includes("--all")) {
+  const dir = "src/content/blog";
+  files = readdirSync(dir).filter((f) => f.endsWith(".md")).map((f) => join(dir, f));
+} else if (fileArgs.length) {
+  files = fileArgs;
+} else {
+  console.error("usage: node tools/serp-check.mjs <file.md>... [--serp=bing|file:<path>]");
+  process.exit(2);
+}
+
+let unsupported = 0;
+let inconclusive = 0;
+
+for (const file of files) {
+  const r = await check(file, provider);
+  console.log(`\n${file}`);
+  console.log(`  keyword      : ${r.keyword ?? "—"}`);
+  console.log(`  claimed gain : ${r.claim ?? "—"}`);
+  if (r.official?.length) {
+    console.log(`  official sources in SERP (excluded from competition):`);
+    for (const o of r.official) console.log(`    ${o.url}`);
+  }
+  if (r.competitors.length) console.log(`  competitors checked:`);
+  for (const c of r.competitors) {
+    const s = c.signals;
+    console.log(
+      `    ${c.url}\n      ${s ? `${s.words} words · ${s.tables} tables · costTable=${s.costTable} · perUnit=${s.perUnitMath} · primaryDoc=${s.primaryDocId} · figures=${s.figureDensity}` : "FETCH FAILED: " + c.error}`,
+    );
+  }
+  console.log(`  verdict      : ${r.verdict} — ${r.reason}`);
+  if (r.verdict === "UNSUPPORTED") unsupported++;
+  if (r.verdict === "INCONCLUSIVE") inconclusive++;
+}
+
+console.log(
+  `\nRESULT: ${unsupported} unsupported · ${inconclusive} inconclusive · ${files.length - unsupported - inconclusive} supported\n`,
+);
+process.exit(unsupported ? 1 : 0);

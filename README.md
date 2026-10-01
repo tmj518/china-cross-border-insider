@@ -195,14 +195,60 @@ Hook 段（不写小标题，直接抛反常识问题）
 
 成本测算用标准 Markdown 表格即可（样式已内置）。
 
-### 发布前自检
+### 发布前自检（已自动化，取代人工审稿）
 
-规范 §4.3 的 15 项里，这几项现在有工程兜底，其余靠人工：
+人工审稿已取消。原来靠人看的东西，现在由**两道脚本闸门**把关，**失败即不得发布**：
 
-- 正文不出现 URL → `sources` 字段代替 ✅
-- 必须有免责声明 → 文章页底部自动输出 ✅
-- 必须有作者卡片 / About 链接 → 自动 ✅
-- ≥5 个精确数字、≥1 个成本测算、≥1 个反常识点、≥3 个分人群建议、无 may/might → **人工**（建议做成审稿清单勾选）
+```bash
+pnpm qa        # 质检闸门：17 条规则（结构 / 语言 / 数字五元组）
+pnpm qa:serp   # 信息增量闸门：抓目标词 SERP 前三名，比对"这篇比他们多什么"
+pnpm landed    # 成本模型：FOB → 关税 → 到岸成本（每件 / 每柜）
+pnpm guarantee # 成本模型：税款担保的资金占用成本
+```
+
+**闸门一：[qa-check.mjs](tools/qa-check.mjs)** — 阻断项包括
+
+| 规则 | 判定 |
+| --- | --- |
+| 数字五元组 | `figures[]` 每条必须有 value + unit + period + source + retrieved，缺项即阻断 |
+| 数字数量 | 少于 5 个即阻断 |
+| 信息增量声明 | 缺 `information_gain` 即阻断 |
+| 目标关键词 | 缺 `target_keyword` 即阻断 |
+| AI Summary | 必须恰好 40-60 词 |
+| 六段结构 | Hook / What happened / Why now / So what / For you / The data point 缺一即阻断 |
+| FAQ | 3-5 问，答案 80-150 词 |
+| 字数 | 正文 1500-2500 |
+| 对比表 / 定义块 | 各至少 1 个 |
+| 分人群建议 | ≥3 |
+| 模糊词 | may / might / possibly / perhaps / could / reportedly … |
+| AI 套话 | delve / landscape / in today's fast-paced world … |
+| 敏感词 | 政策红线黑名单 |
+| 正文 URL | 一个都不许有 |
+
+**闸门二：[serp-check.mjs](tools/serp-check.mjs)** — 按 `information_gain` 的类型逐条验证：
+
+| 声明类型 | 机器判定方式 |
+| --- | --- |
+| `custom-calculation` | 本文必须有带金额的每件/每柜成本表，且 SERP 前三名中 ≤1 个有同类计算 |
+| `primary-source` | 本文必须引用一次文献编号（FR / 公告号 / HTSUS），且竞品中 ≤1 个引用 |
+| `cross-source` | 本文 ≥2 个具名来源，且竞品中 ≤1 个有相当的数据密度 |
+| `own-data` | **机器无法验证 → 一律 INCONCLUSIVE**，转人工 |
+
+**SERP 来源可插拔**（因为本机抓不到 Google/DDG，Bing 也会截断查询）：
+
+```bash
+pnpm qa:serp                                  # 默认 best-effort 抓 Bing
+node tools/serp-check.mjs <file> --serp=file:data/serp   # 用快照
+```
+
+快照放 `data/serp/<文章名>.json`，格式 `[{url,title,snippet}]`。生产流水线里写稿 agent 自带搜索能力，由它产出快照；接付费 SERP API 也是同一个入口。
+
+**设计原则：抓不到就拒绝盖章。** 没有 SERP、SERP 与关键词不相关、竞品页面加载不足 2 个、或声明类型机器无法验证 —— 全部返回 `INCONCLUSIVE`，**绝不返回 PASS**。官方源（`.gov` / `customs.gov.cn` / FR 等）会被识别并**排除出竞品分母**，因为那是输入，不是竞争。
+
+> 实测记录（2026-10-01）：
+> - A 篇 `custom-calculation` → **SUPPORTED**：三个竞品全部 `costTable=false / perUnit=false`；同时其中两个 `primaryDoc=true`，**说明如果 A 篇声明的是 `primary-source`，它会被判不合格** —— 闸门确实在区分不同声明。
+> - B 篇 `primary-source` → **INCONCLUSIVE**：竞品页面在本机网络下抓取失败（2/3 失败），拒绝认证。需在正常网络上重跑。
+
 
 ## 五、部署到 Cloudflare Pages
 
