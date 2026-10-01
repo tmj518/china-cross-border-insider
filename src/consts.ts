@@ -16,8 +16,9 @@ export const SITE = {
   nameHead: "Landed",
   nameTail: "Math",
   title: "Landed Math — China trade policy, converted into landed cost",
+  /** Kept under ~140 chars: this doubles as the meta description. */
   description:
-    "Independent, numbers-first analysis of China trade policy, platform rules and supply chains — converted into per-unit landed cost for Amazon, Temu, TikTok Shop and D2C sellers.",
+    "Independent analysis of China trade policy and supply chains, converted into per-unit landed cost for sellers and importers worldwide.",
   tagline: "No tracking · No ads · Independent analysis · Not financial or legal advice",
   language: "en",
   /** Newsletter placeholder — swap for the real provider (Buttondown / ConvertKit) later. */
@@ -67,9 +68,9 @@ export const AUTHOR = {
   role: "China Supply Chain Analyst · Shenzhen",
   avatar: "", // e.g. "/images/author.jpg" once a real photo exists
   shortBio:
-    "China Supply Chain Analyst. Based in Shenzhen, tracking trade policy, platform rules and factory-level cost shifts for global sellers.",
+    "China Supply Chain Analyst, based in Shenzhen. Reads China's trade policy in the original and translates it into landed cost for sellers and importers worldwide.",
   longBio:
-    "China Supply Chain Analyst, based in Shenzhen. Tracking trade policy, platform rules and factory-level cost shifts for sellers in the US and EU. No agency, no sponsorship, no agenda.",
+    "China Supply Chain Analyst, based in Shenzhen. Trade policy, platform rules and factory-level cost shifts, converted into landed cost for sellers in the US and EU and for importers across emerging markets. No agency, no sponsorship, no agenda.",
   /** TODO(user): enable Cloudflare Email Routing so this address actually delivers. */
   email: "hello@landedmath.com",
 };

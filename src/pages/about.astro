@@ -14,7 +14,7 @@ const jsonLd = {
 
 <BaseLayout
   title={`About — ${SITE.name}`}
-  description={`Who writes ${SITE.name}, how the analysis is produced, and what we refuse to do.`}
+  description={`Who writes ${SITE.name}, who it is for, how the analysis is produced, and what we refuse to do.`}
   jsonLd={jsonLd}
 >
   <div class="container">
@@ -22,29 +22,63 @@ const jsonLd = {
       <div class="page-head">
         <h1>About {SITE.name}</h1>
         <p>
-          Independent, numbers-first analysis of China cross-border trade — for
-          the people actually moving goods and money.
+          We read China's trade policy in the original, then translate it into
+          the only language that matters to a buyer: landed cost per unit.
         </p>
       </div>
 
       <div class="prose" style="margin-top:32px;">
-        <h2>Who is behind this</h2>
+        <h2>What this site does</h2>
         <p>
-          {AUTHOR.name} — ten years selling on Amazon, Temu, TikTok Shop and D2C,
-          based in China and selling globally. No agency, no sponsorship, no
-          agenda. The persona is real; the case studies in the archive are the
-          writer's own.
+          China publishes an enormous amount about its own trade — tariff
+          schedules, customs bulletins, platform rule changes, industrial
+          statistics. Almost all of it is written for a domestic audience, in
+          language built for policy readers rather than buyers.
+        </p>
+        <p>
+          {SITE.name} is the translation layer. We take the primary documents,
+          find the numbers that matter, and work out what they cost on a
+          per-unit and per-container basis — for the person placing the order,
+          not the person writing the press release.
         </p>
 
-        <h2>What this site is</h2>
+        <h2>Who this is for</h2>
+        <ul>
+          <li>
+            <strong>Platform sellers.</strong> Amazon, Temu, TikTok Shop and D2C
+            operators in the US and EU who need to know what a rule change does
+            to their margin this quarter.
+          </li>
+          <li>
+            <strong>Importers and buyers in emerging markets.</strong> Businesses
+            across Southeast Asia, the Middle East, Africa and Latin America
+            sourcing from China — where the practical questions (documents,
+            duties, payment terms, supplier verification) rarely get answered in
+            English, and almost never with numbers attached.
+          </li>
+        </ul>
+        <p>
+          The two audiences want different things from the same policy. We write
+          for both, and we say which one a piece is for.
+        </p>
+
+        <h2>Who is behind this</h2>
+        <p>
+          {AUTHOR.name} — {AUTHOR.role}. Years on the sourcing and platform side
+          of cross-border commerce: Amazon FBA, TikTok Shop and Temu, in consumer
+          electronics and home goods. Close enough to the factory floor to know
+          when a number in a bulletin will not survive contact with a real quote.
+        </p>
+
+        <h2>How the analysis is produced</h2>
         <ul>
           <li>
             <strong>Numbers first.</strong> Every article carries at least five
             precise figures with a value, unit, date and named official source.
           </li>
           <li>
-            <strong>Landed-cost math.</strong> Policy news is only useful once
-            it is converted into FOB price × duty rate × container volume.
+            <strong>Landed-cost math.</strong> Policy news is only useful once it
+            is converted into FOB price × duty rate × container volume.
           </li>
           <li>
             <strong>A clear position.</strong> "Most sellers assume X. The math
@@ -53,12 +87,19 @@ const jsonLd = {
           <li>
             <strong>Named sources only.</strong> Ministry of Commerce, General
             Administration of Customs, National Bureau of Statistics, Xinhua,
-            CCTV. No links farmed from other blogs.
+            CCTV — plus the destination market's own customs authority. No links
+            farmed from other blogs.
           </li>
         </ul>
 
         <h2>What this site is not</h2>
         <ul>
+          <li>
+            <strong>Not a mouthpiece.</strong> We are not affiliated with, funded
+            by, or speaking for any government, chamber or trade body. We explain
+            Chinese policy because understanding it is the whole job — not
+            because we are promoting it.
+          </li>
           <li>Not a news aggregator — no rewriting somebody else's story.</li>
           <li>Not financial or legal advice.</li>
           <li>
