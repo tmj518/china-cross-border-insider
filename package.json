@@ -22,6 +22,7 @@
     "deposit": "node tools/deposit-risk.mjs",
     "mip": "node tools/mip-floor.mjs",
     "peritem": "node tools/per-item-charge.mjs",
+    "drift": "node tools/price-drift.mjs",
     "pdf": "node tools/pdf-text.mjs"
   },
   "dependencies": {
