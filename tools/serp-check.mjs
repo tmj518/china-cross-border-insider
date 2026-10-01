@@ -192,6 +192,16 @@ export function serpRelevance(keyword, results) {
   };
 }
 
+/**
+ * Money and per-unit detection. This site covers EU, UK and Chinese measures,
+ * so a cost table is not always denominated in dollars and a unit is not
+ * always a container — hence the multi-currency symbol class and the wider
+ * set of unit phrases.
+ */
+const MONEY = /[$€£¥]\s?\d/;
+const PER_UNIT =
+  /(per unit|per item|per container|per-container|per 40|per teu|per kg|per kilogram|per watt|per tonne|per declaration line)/i;
+
 export function pageSignals(html) {
   const text = stripTags(html);
   const lower = text.toLowerCase();
@@ -199,15 +209,20 @@ export function pageSignals(html) {
     stripTags(m[0]),
   );
   const tableText = tableBlocks.join(" ");
-  const costWords = /(landed cost|duty rate|per unit|per container|per-container|tariff rate)/.test(lower);
+  const costWords =
+    /(landed cost|duty rate|per unit|per item|per container|per-container|tariff rate|customs duty)/.test(
+      lower,
+    );
 
   return {
     words: words(text),
     tables: tableBlocks.length,
-    costTable: tableBlocks.length > 0 && /\$\s?\d/.test(tableText) && costWords,
-    perUnitMath: /(per unit|per container|per-container|per 40|per teu)/.test(lower),
+    costTable: tableBlocks.length > 0 && MONEY.test(tableText) && costWords,
+    perUnitMath: PER_UNIT.test(lower),
     primaryDocId: PRIMARY_DOC_PATTERN.test(text),
-    figureDensity: (text.match(/\b\d[\d,.]*\s?(%|percent|billion|million|USD|dollars)/gi) || []).length,
+    figureDensity: (
+      text.match(/\b\d[\d,.]*\s?(%|percent|billion|million|USD|EUR|dollars|euro)/gi) || []
+    ).length,
   };
 }
 
@@ -250,8 +265,8 @@ function articleSignals(body) {
   const tables = (body.match(/^\|.*\|\s*$/gm) || []).join("\n");
   return {
     tableRows: (body.match(/^\|.*\|\s*$/gm) || []).length,
-    costTableMoney: /\$\s?\d/.test(tables),
-    perUnitMath: /(per unit|per container|per 40|per-container)/i.test(body),
+    costTableMoney: MONEY.test(tables),
+    perUnitMath: PER_UNIT.test(body),
     primaryDocId: PRIMARY_DOC_PATTERN.test(body),
     namedSources: (body.match(/^>\s+\*\*/gm) || []).length,
   };
@@ -259,13 +274,21 @@ function articleSignals(body) {
 
 const CLAIM_RULES = {
   "custom-calculation": {
+    /**
+     * The asset is a numeric cost table, not the vocabulary of cost. Saying
+     * "per item" or "per unit" is topic language and every page on the topic
+     * does it, so the competitor count uses the strong signal only: a table
+     * containing money and cost words. An earlier version counted the weaker
+     * phrase signal on both sides and reported UNSUPPORTED for an article
+     * whose whole point was the table.
+     */
     verify: (art, comps) => {
-      if (!art.costTableMoney && !art.perUnitMath)
-        return { ok: false, why: "article carries no numeric per-unit/per-container cost table" };
-      const withMath = comps.filter((c) => c.signals.costTable || c.signals.perUnitMath).length;
+      if (!art.costTableMoney)
+        return { ok: false, why: "article carries no table containing money and cost terms" };
+      const withMath = comps.filter((c) => c.signals.costTable).length;
       return withMath <= 1
-        ? { ok: true, why: `only ${withMath}/${comps.length} competitors carry comparable per-unit cost math` }
-        : { ok: false, why: `${withMath}/${comps.length} competitors already carry comparable per-unit cost math` };
+        ? { ok: true, why: `only ${withMath}/${comps.length} competitors carry a comparable numeric cost table` }
+        : { ok: false, why: `${withMath}/${comps.length} competitors already carry a comparable numeric cost table` };
     },
   },
   "primary-source": {

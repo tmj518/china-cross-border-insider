@@ -21,6 +21,7 @@
     "freight": "node tools/freight-index.mjs",
     "deposit": "node tools/deposit-risk.mjs",
     "mip": "node tools/mip-floor.mjs",
+    "peritem": "node tools/per-item-charge.mjs",
     "pdf": "node tools/pdf-text.mjs"
   },
   "dependencies": {
