@@ -39,6 +39,37 @@ export const blog = defineCollection({
     draft: z.boolean().default(false),
     /** Official sources by name only — spec §4.3 forbids URLs in the body. */
     sources: z.array(z.string()).default([]),
+
+    // ---- v1.3 fields: the machine-checkable half of the QA gate ----------
+    /** The long-tail query this piece is written to win. */
+    target_keyword: z.string().optional(),
+    search_intent: z
+      .enum(["informational", "transactional", "comparison"])
+      .optional(),
+    /**
+     * What this piece has that the top 3 results do not. If none of these can
+     * be claimed honestly, the piece does not get published.
+     */
+    information_gain: z
+      .enum(["custom-calculation", "cross-source", "own-data", "primary-source"])
+      .optional(),
+    /**
+     * Every figure in the body, with the five parts the spec requires:
+     * value + unit + period + named source + retrieval date. A number that
+     * cannot fill all five does not go in the article.
+     */
+    figures: z
+      .array(
+        z.object({
+          value: z.string(),
+          unit: z.string().default(""),
+          period: z.string(),
+          source: z.string(),
+          retrieved: z.string(),
+        }),
+      )
+      .default([]),
+
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
   }),
