@@ -1,12 +1,19 @@
 ---
-import { SITE } from "../consts";
+import { AUTHOR, SITE } from "../consts";
 
 /**
  * Newsletter capture.
  *
- * Still a skeleton: `SITE.newsletterAction` is empty, so the form has no
- * endpoint yet. spec §8 lists a paid newsletter as a later monetisation
- * step — wire this to Buttondown / ConvertKit / MailerLite when ready.
+ * Two states, and the difference matters:
+ *
+ *   - No provider configured (`SITE.newsletterAction` empty) → render a
+ *     mailto call to action. Submissions land in the inbox, which works today
+ *     because Email Routing forwards hello@ to a real mailbox.
+ *   - Provider configured → render a real form posting to it.
+ *
+ * The form previously rendered unconditionally with no action, so a submit
+ * POSTed to the static page and Cloudflare answered HTTP 405. A capture box
+ * that throws an error page is worse than no capture box.
  */
 export interface Props {
   variant?: "box" | "inline";
@@ -14,44 +21,72 @@ export interface Props {
 
 const { variant = "box" } = Astro.props;
 const inputId = `newsletter-email-${variant}`;
+const hasProvider = Boolean(SITE.newsletterAction);
+const subscribeHref = `mailto:${AUTHOR.email}?subject=${encodeURIComponent("Subscribe to the Daily Brief")}`;
 ---
 
-{variant === "box" ? (
-  <div class="widget newsletter-box">
-    <h2>Daily Brief</h2>
-    <p>
-      One email every morning. 5 minutes. All the China cross-border news that
-      moves your P&amp;L.
-    </p>
-    <form method="post" action={SITE.newsletterAction || undefined}>
-      <label for={inputId} class="visually-hidden">Email address</label>
-      <input
-        id={inputId}
-        type="email"
-        name="email"
-        placeholder="your@email.com"
-        autocomplete="email"
-        required
-      />
-      <button type="submit">Subscribe Free</button>
-    </form>
-  </div>
-) : (
-  <div class="newsletter-box newsletter-inline">
-    <p>Enjoyed this analysis? Get the next one in your inbox.</p>
-    <form method="post" action={SITE.newsletterAction || undefined}>
-      <div class="field-row">
-        <label for={inputId} class="visually-hidden">Email address</label>
-        <input
-          id={inputId}
-          type="email"
-          name="email"
-          placeholder="your@email.com"
-          autocomplete="email"
-          required
-        />
-        <button type="submit">Subscribe</button>
-      </div>
-    </form>
-  </div>
-)}
+{
+  variant === "box" ? (
+    <div class="widget newsletter-box">
+      <h2>Daily Brief</h2>
+      <p>
+        One email every morning. 5 minutes. All the China cross-border news that
+        moves your P&amp;L.
+      </p>
+      {hasProvider ? (
+        <form method="post" action={SITE.newsletterAction}>
+          <label for={inputId} class="visually-hidden">
+            Email address
+          </label>
+          <input
+            id={inputId}
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+          />
+          <button type="submit">Subscribe Free</button>
+        </form>
+      ) : (
+        <>
+          <a class="newsletter-cta" href={subscribeHref}>
+            Subscribe by email
+          </a>
+          <p class="newsletter-note">
+            One-click signup is coming. For now this opens your mail client —
+            send the message and you are on the list.
+          </p>
+        </>
+      )}
+    </div>
+  ) : (
+    <div class="newsletter-box newsletter-inline">
+      <p>Enjoyed this analysis? Get the next one in your inbox.</p>
+      {hasProvider ? (
+        <form method="post" action={SITE.newsletterAction}>
+          <div class="field-row">
+            <label for={inputId} class="visually-hidden">
+              Email address
+            </label>
+            <input
+              id={inputId}
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+      ) : (
+        <p>
+          <a class="newsletter-cta" href={subscribeHref}>
+            Subscribe by email
+          </a>
+        </p>
+      )}
+    </div>
+  )
+}

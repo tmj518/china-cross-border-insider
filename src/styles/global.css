@@ -769,6 +769,32 @@ a {
   background: var(--c-red);
 }
 
+/* Interim call to action while no provider is configured. Styled like the
+   button it replaces, because it does the same job. */
+.newsletter-cta {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  background: var(--c-navy);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.newsletter-cta:hover {
+  background: var(--c-red);
+}
+
+.newsletter-box .newsletter-note {
+  font-size: 11px;
+  color: var(--c-ink-6);
+  margin: 8px 0 0;
+  line-height: 1.45;
+}
+
 /* Inline variant (article footer) */
 .newsletter-inline {
   margin-bottom: 24px;
