@@ -35,6 +35,26 @@ const SECTIONS = [
   "What happened", "Why now", "So what", "For you", "The data point",
 ];
 
+/**
+ * Document identifiers that count as citing a primary source. Kept as
+ * recognisable numbering schemes rather than the word "announcement", so a
+ * loose mention does not satisfy the rule.
+ */
+const PRIMARY_DOC_PATTERN = new RegExp(
+  [
+    "\\b\\d{1,3}\\s?FR\\s?\\d{3,6}\\b", // Federal Register citation
+    "\\bHTSUS\\s?9903\\b",
+    "\\bAnnouncement\\s+No\\.?\\s?\\d+",
+    "\\b公告\\s?\\d+\\s?号",
+    "〔\\d{4}〕\\s?\\d+\\s?号", // Chinese document numbering, e.g. 国市监注发〔2026〕5号
+    "\\b(?:Periodical|Circular|Order|Decision)\\s+No\\.?\\s?\\(?\\d+",
+    "\\bRegulation\\s+\\(EU\\)\\s+\\d{4}/\\d+",
+    "\\bCELEX\\b",
+    "\\bOJ\\s?L\\s?\\d",
+  ].join("|"),
+  "i",
+);
+
 const wordCount = (s) => (s.trim() ? s.trim().split(/\s+/).length : 0);
 
 function parseFrontmatter(raw) {
@@ -75,6 +95,14 @@ function check(file) {
   else add("warn", "named sources >= 3", `${sources} sources`);
 
   gain ? add("pass", "information_gain declared", gain) : add("block", "information_gain declared", "missing");
+
+  // A claim of primary-source is only credible if the body actually names the
+  // document. Check the number, not the word "announcement".
+  if (gain && /primary-source/.test(gain)) {
+    PRIMARY_DOC_PATTERN.test(body)
+      ? add("pass", "primary-source cited", "document identifier present")
+      : add("block", "primary-source cited", "declares primary-source but names no document identifier");
+  }
   keyword ? add("pass", "target_keyword declared", keyword) : add("block", "target_keyword declared", "missing");
   audience ? add("pass", "audience declared", audience) : add("warn", "audience declared", "not set (defaults to both)");
 
@@ -157,17 +185,26 @@ if (args[0] === "--all") {
 
 let anyBlocking = false;
 for (const file of files) {
+  const raw = readFileSync(file, "utf8");
+  const isDraft = /^draft:\s*true/m.test(raw);
   const results = check(file);
+
+  // A draft is not published, so a blocking rule cannot leak anything. Report
+  // drafts as warnings so `--all` stays a usable gate on what is live.
   const blocks = results.filter((r) => r.level === "block");
   const warns = results.filter((r) => r.level === "warn");
   const passes = results.filter((r) => r.level === "pass");
 
-  console.log(`\n${file}`);
-  console.log(`  ${passes.length} pass · ${warns.length} warn · ${blocks.length} BLOCK`);
-  for (const r of blocks) console.log(`  ✗ BLOCK  ${r.rule.padEnd(38)} ${r.detail}`);
+  console.log(`\n${file}${isDraft ? "  [draft]" : ""}`);
+  console.log(`  ${passes.length} pass · ${warns.length + (isDraft ? blocks.length : 0)} warn · ${isDraft ? 0 : blocks.length} BLOCK`);
+  if (isDraft) {
+    console.log(`  –        draft: ${blocks.length} blocking rule(s) not yet met, excluded from the gate`);
+  } else {
+    for (const r of blocks) console.log(`  ✗ BLOCK  ${r.rule.padEnd(38)} ${r.detail}`);
+  }
   for (const r of warns) console.log(`  ! warn   ${r.rule.padEnd(38)} ${r.detail}`);
 
-  if (blocks.length) anyBlocking = true;
+  if (!isDraft && blocks.length) anyBlocking = true;
 }
 
 console.log(anyBlocking ? "\nRESULT: BLOCKED — fix the blocking rules above.\n" : "\nRESULT: PASS — every blocking rule cleared.\n");

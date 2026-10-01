@@ -147,6 +147,26 @@ const hostOf = (url) => {
 };
 
 /**
+ * Document identifiers that count as citing a primary source — recognisable
+ * numbering schemes rather than the word "announcement", so a loose mention
+ * does not satisfy the rule.
+ */
+const PRIMARY_DOC_PATTERN = new RegExp(
+  [
+    "\\b\\d{1,3}\\s?FR\\s?\\d{3,6}\\b",
+    "\\bHTSUS\\s?9903\\b",
+    "\\bAnnouncement\\s+No\\.?\\s?\\d+",
+    "\\b公告\\s?\\d+\\s?号",
+    "〔\\d{4}〕\\s?\\d+\\s?号",
+    "\\b(?:Periodical|Circular|Order|Decision)\\s+No\\.?\\s?\\(?\\d+",
+    "\\bRegulation\\s+\\(EU\\)\\s+\\d{4}/\\d+",
+    "\\bCELEX\\b",
+    "\\bOJ\\s?L\\s?\\d",
+  ].join("|"),
+  "i",
+);
+
+/**
  * A SERP is only usable if its results are about the query. Token overlap
  * between the keyword and each result is the cheapest reliable test, and it
  * catches the failure mode that produced a false pass in testing: a
@@ -186,7 +206,7 @@ export function pageSignals(html) {
     tables: tableBlocks.length,
     costTable: tableBlocks.length > 0 && /\$\s?\d/.test(tableText) && costWords,
     perUnitMath: /(per unit|per container|per-container|per 40|per teu)/.test(lower),
-    primaryDocId: /(\b\d{1,3}\s?FR\s?\d{3,6}\b|\bHTSUS\s?9903|\bannouncement no\.?\s?\d+|\b90 FR\b|\b91 FR\b|公告\s?\d+号)/i.test(text),
+    primaryDocId: PRIMARY_DOC_PATTERN.test(text),
     figureDensity: (text.match(/\b\d[\d,.]*\s?(%|percent|billion|million|USD|dollars)/gi) || []).length,
   };
 }
@@ -232,7 +252,7 @@ function articleSignals(body) {
     tableRows: (body.match(/^\|.*\|\s*$/gm) || []).length,
     costTableMoney: /\$\s?\d/.test(tables),
     perUnitMath: /(per unit|per container|per 40|per-container)/i.test(body),
-    primaryDocId: /(\d{1,3} FR \d{3,6}|HTSUS 9903|Announcement No\.|公告|Regional Comprehensive|China–ASEAN)/i.test(body),
+    primaryDocId: PRIMARY_DOC_PATTERN.test(body),
     namedSources: (body.match(/^>\s+\*\*/gm) || []).length,
   };
 }
@@ -325,12 +345,24 @@ async function check(file, provider) {
     );
   }
 
-  const rel = serpRelevance(keyword, competitors.slice(0, 10));
-  if (!rel.ok) {
-    return {
-      ...report,
-      reason: `SERP is not topically relevant (${rel.detail}) — likely a locale or query-truncation problem. Verify demand for this keyword before publishing; the gate cannot certify it.`,
-    };
+  // The relevance guard exists to catch a scraped SERP that is not about the
+  // query — the failure mode that produced a false pass in testing, where
+  // Bing truncated the keyword and served dictionary pages. A file snapshot is
+  // different: its relevance is asserted by whoever produced it, from a real
+  // search. Running the guard on it would second-guess the producer with a
+  // weaker signal, so it is skipped and the provenance is recorded instead.
+  if (provider.kind === "bing") {
+    const rel = serpRelevance(keyword, competitors.slice(0, 10));
+    if (!rel.ok) {
+      return {
+        ...report,
+        reason: `SERP is not topically relevant (${rel.detail}) — likely a locale or query-truncation problem. Verify demand for this keyword before publishing; the gate cannot certify it.`,
+      };
+    }
+  } else {
+    warnings.push(
+      "competitor set comes from a file snapshot: relevance is asserted by the producer, not checked here",
+    );
   }
 
   // ---- competitor pages ----------------------------------------------

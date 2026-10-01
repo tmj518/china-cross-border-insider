@@ -1,7 +1,8 @@
 ---
 title: "China Is Removing the Export Rebate That Funded Cheap Quotes"
-description: "Photovoltaic rebates ended in April 2026. Battery rebates fall from 9% to 6%, then to zero on 1 January 2027. Here is how nine percentage points become money on your invoice."
+description: "The rebate was cancelled on 249 product lines from 1 April 2026, and the list is not solar-only. Battery rebates fall from 9% to 6%, then to zero on 1 January 2027. Nine points become money on your invoice."
 publishDate: 2026-10-02
+updatedDate: 2026-10-02
 category: "sourcing"
 audience: "importer"
 tags: ["export tax rebate", "fob pricing", "batteries", "solar", "supplier negotiation"]
@@ -47,16 +48,32 @@ figures:
     period: "worked example, this article"
     source: "Landed Math export-rebate passthrough model, rebatePassthrough()"
     retrieved: "2026-10-02"
+  - value: "249"
+    unit: "product lines in Annex 1 (photovoltaic and other products) that lose the export VAT rebate"
+    period: "published 8 January 2026, effective 1 April 2026"
+    source: "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Annex 1"
+    retrieved: "2026-10-02"
+  - value: "22"
+    unit: "product lines in Annex 2 (battery products) whose rebate is cut and then cancelled"
+    period: "published 8 January 2026"
+    source: "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Annex 2"
+    retrieved: "2026-10-02"
+  - value: "export date on the customs declaration"
+    unit: "the date that fixes which rebate rate applies"
+    period: "Article 4 of the announcement, effective 1 April 2026"
+    source: "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Article 4"
+    retrieved: "2026-10-02"
 sources:
-  - "Ministry of Finance of the PRC and State Taxation Administration, announcement on adjustment of export tax rebates for photovoltaic and battery products, early January 2026"
-  - "Xinhua News Agency, report on the export tax rebate adjustment, 20 January 2026, citing Li Xianzhong of the Ministry of Finance"
-  - "China.org.cn, State Council Information Office, report on the export tax rebate adjustment, 20 January 2026"
-  - "General Administration of Customs of the PRC, export declaration procedures"
+  - "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号 on adjusting export tax rebate policy for photovoltaic and other products, issued 8 January 2026"
+  - "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2024年第15号, issued 15 November 2024, effective 1 December 2024"
+  - "State Taxation Administration, 税总货劳函〔2026〕27号, publishing rebate rate library 2026A, 3 March 2026"
+  - "State Taxation Administration policy database, canonical record for 2026年第2号"
+  - "Guangdong Provincial Department of Finance, official mirror of 2026年第2号 with Annexes 1 and 2"
 ---
 
 ## AI Summary
 
-China's Ministry of Finance removed the export VAT rebate on photovoltaic products from 1 April 2026 and cut battery-related rebates from 9% to 6%, with abolition on 1 January 2027. The instrument is domestic tax policy. The transmission channel is your FOB price, and the second stage is three months away.
+China cancelled the export VAT rebate on 249 product lines from 1 April 2026 — chemicals, glassware and vaping hardware included, not just solar — and cut battery rebates from 9% to 6%, with abolition on 1 January 2027. The rate follows the customs declaration date.
 
 Here is what makes this one unusual. Chinese industrial policy usually arrives as support for exporters. This is the opposite: the state is withdrawing a subsidy that funded low export prices, and saying so publicly as a measure against what it calls involuntary competition.
 
@@ -64,15 +81,21 @@ For a buyer, the practical consequence is simple and slightly uncomfortable. The
 
 ## What happened
 
-The Ministry of Finance, working with the State Taxation Administration, published an announcement in early January 2026 adjusting export tax rebates on a range of products including photovoltaic goods and batteries. The two stages are specific:
+The Ministry of Finance and the State Taxation Administration issued 财政部 税务总局公告2026年第2号 on 8 January 2026, titled "on adjusting the export tax rebate policy for photovoltaic and other products". The title undersells the scope, and so does most of the coverage.
 
-| Product group | Change | Effective |
+| Instrument | Change | Effective |
 | --- | --- | --- |
-| Photovoltaic products | Export VAT rebate abolished | 1 April 2026 |
-| Battery-related products | Rebate cut from 9% to 6% | 1 April 2026 |
-| Battery-related products | Rebate abolished | 1 January 2027 |
+| Annex 1 — 249 product lines | Export VAT rebate cancelled | 1 April 2026 |
+| Annex 2 — 22 battery product lines | Rebate cut from 9% to 6% | 1 April 2026 |
+| Annex 2 — 22 battery product lines | Rebate cancelled | 1 January 2027 |
 
-Li Xianzhong of the Ministry of Finance described the adjustment at a press conference as a way to curb involuntary competition, promote more efficient use of resources, and reduce environmental pollution and carbon emissions. The stated aim is to push industry toward what the ministry calls green, high-quality growth.
+**Read Annex 1 before assuming it is a solar list.** The announcement is titled "photovoltaic and other products" and the cancelled schedule runs to 249 lines. Row 1 is 2404120000, a nicotine product. The list continues through lithium hexafluorophosphate, lithium manganese and lithium cobalt oxides, nickel-cobalt-manganese oxides, methanol, 1,4-butanediol, a large block of phosphite and phosphonate chemicals, glassware, and an electronic-cigarette device code. Solar cells appear at rows 247 and 248, and the module line at 249. An importer of industrial chemicals, glassware or vaping hardware is inside this measure and would not know it from the trade press, which reports the story as a solar one.
+
+**And the deadline is a shipping deadline, not a negotiation.** Article 4 of the announcement states that the applicable export rebate rate is determined by the export date recorded on the customs declaration for the goods. Not the order date, not the contract date, not the date the rebate was quoted into your price. Cargo whose declaration date falls on or after 1 April 2026 loses the rebate regardless of when it was ordered.
+
+The predecessor step is worth knowing because it sets the baseline. 财政部 税务总局公告2024年第15号, issued on 15 November 2024 and effective from 1 December 2024, had already cut the rebate on photovoltaic and battery products from 13% to 9%. The full withdrawal therefore happened inside a sixteen-month window rather than as a sudden move.
+
+Li Xianzhong of the Ministry of Finance described the adjustment at a press conference as a way to curb involuntary competition, promote more efficient use of resources, and reduce environmental pollution and carbon emissions — the same framing the ministry used when it published the announcement. The rebate was already coded out of the system before it disappeared: 税总货劳函〔2026〕27号, issued on 3 March 2026, published rebate rate library 2026A implementing this announcement, a month ahead of the effective date.
 
 > **Export VAT rebate** — a refund of value-added tax on exported goods, paid to the Chinese exporter. It is not a payment to the buyer, and it does not appear on your invoice. It reduces the exporter's net cost, which is why it shows up as a lower FOB price rather than as a line item. When the rebate falls by a percentage point, the exporter's net receipt on the same invoice falls by roughly a percentage point, and the negotiation over who absorbs that is entirely commercial.
 
@@ -106,9 +129,10 @@ Three observations, and the third is the important one.
 
 ## For you
 
-- **Buyers of photovoltaic products:** the rebate is already gone, so the price movement has already happened. If your 2026 quotes came in at roughly the same level as 2025, ask what your supplier changed elsewhere in the cost stack, because the rebate was not the only variable and something absorbed it.
+- **Buyers of anything on the 249-line schedule:** check your own product codes against Annex 1 rather than against the headline. The list reaches nicotine products, lithium compounds, methanol, 1,4-butanediol, phosphite and phosphonate chemicals, glassware and e-cigarette devices. The rebate is already gone, so the price movement has already happened — if your 2026 quotes came in level with 2025, ask what your supplier changed elsewhere in the cost stack.
 - **Buyers of battery-related products:** you have until the end of the year to negotiate around a known, dated six-point change. Lock volume against price now, and put the delivery date in writing. This is the rare negotiation where the other side already knows the number.
 - **Buyers using these products as components:** the increase does not stop at the cell or the module. A bill of materials that contains a battery or a photovoltaic component inherits part of the increase, and how much depends on how many supplier tiers pass it on. Ask your first-tier supplier directly, rather than waiting to see it in next year's quote.
+- **Anyone who ordered before April 2026 and is still shipping:** the declaration date decides the rate, so a shipment that was ordered at last year's price can still cross into the zero-rebate regime. Confirm the declaration date with the exporter before the goods move, not after.
 
 ## The data point
 
@@ -138,3 +162,5 @@ The Ministry of Finance's stated rationale is to curb involuntary competition �
 ## The point
 
 This is a domestic Chinese tax decision whose cost lands on an importer's invoice, which is precisely why it escapes notice. The first three points went by quietly in April. The remaining six arrive on 1 January 2027, and unlike most price movements this one is published, dated, and known to both sides of the table. That makes the next few weeks the cheapest window you will get to fix the number, because a supplier pricing a committed order today is making a different decision from one pricing a spot enquiry in January.
+
+*Correction, 2 October 2026: an earlier version of this article described the cancelled schedule as covering photovoltaic products. It covers 249 product lines spanning nicotine products, lithium compounds, methanol, 1,4-butanediol, phosphite and phosphonate chemicals, glassware and vaping hardware as well as solar cells and modules. The battery sequence was also stated without the preceding cut from 13% to 9% in December 2024, and Article 4's rule that the applicable rate follows the export date on the customs declaration was absent. All three are corrected above.*
