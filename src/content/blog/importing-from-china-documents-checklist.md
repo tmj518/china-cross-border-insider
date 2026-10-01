@@ -10,6 +10,7 @@ sources:
   - "General Administration of Customs of the PRC, export declaration guidance"
   - "World Customs Organization, harmonized system nomenclature"
   - "International Chamber of Commerce, Incoterms 2020"
+draft: true
 ---
 
 <!-- SAMPLE POST: shipped with the v0.2 skeleton to seed the new

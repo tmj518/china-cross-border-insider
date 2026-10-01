@@ -10,6 +10,7 @@ sources:
   - "Temu Seller Center, semi-managed program documentation, Q3 2026"
   - "ILLUSTRATIVE — placeholder figure, no real panel behind it; replace before launch"
   - "General Administration of Customs of the PRC, cross-border e-commerce exports, August 2026"
+draft: true
 ---
 
 <!-- SAMPLE POST: skeleton placeholder, replace before launch. -->

@@ -9,6 +9,7 @@ sources:
   - "National Bureau of Statistics, industrial enterprise profits, August 2026"
   - "General Administration of Customs of the PRC, export container throughput"
   - "China Federation of Logistics and Purchasing, PMI release, August 2026"
+draft: true
 ---
 
 <!-- SAMPLE POST: skeleton placeholder, replace before launch. -->

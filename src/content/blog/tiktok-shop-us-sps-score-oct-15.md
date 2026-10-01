@@ -10,6 +10,7 @@ sources:
   - "TikTok Shop US Seller Center policy notice, September 2026"
   - "TikTok Shop US Seller Performance Score documentation"
   - "ILLUSTRATIVE — placeholder figure, no real panel behind it; replace before launch"
+draft: true
 ---
 
 <!-- SAMPLE POST: skeleton placeholder, replace before launch. -->

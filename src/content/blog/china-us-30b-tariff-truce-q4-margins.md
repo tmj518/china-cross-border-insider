@@ -13,6 +13,7 @@ sources:
   - "US Harmonized Tariff Schedule, Chapter 95 and Chapter 85 headings"
   - "National Bureau of Statistics, industrial profits release, August 2026"
   - "Xinhua News Agency, tariff adjustment bulletin, September 28, 2026"
+draft: true
 ---
 
 <!-- SAMPLE POST: shipped with the v0.1 skeleton so the templates have

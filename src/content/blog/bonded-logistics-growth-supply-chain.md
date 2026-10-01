@@ -9,6 +9,7 @@ sources:
   - "General Administration of Customs of the PRC, bonded logistics centre statistics, August 2026"
   - "China Federation of Logistics and Purchasing, warehousing index, August 2026"
   - "Ministry of Commerce, cross-border e-commerce comprehensive pilot zone report"
+draft: true
 ---
 
 <!-- SAMPLE POST: skeleton placeholder, replace before launch. -->

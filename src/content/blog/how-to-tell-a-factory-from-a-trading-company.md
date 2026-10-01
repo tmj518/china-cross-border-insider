@@ -9,6 +9,7 @@ priority: "P2"
 sources:
   - "National Enterprise Credit Information Publicity System (business registration lookup)"
   - "General Administration of Customs of the PRC, exporter registration guidance"
+draft: true
 ---
 
 <!-- SAMPLE POST: shipped with the v0.2 skeleton to seed the new

@@ -9,6 +9,7 @@ sources:
   - "European Commission, notice of initiation, anti-dumping proceeding, September 2026"
   - "Eurostat, import statistics, cellulose ethers and derivatives"
   - "General Administration of Customs of the PRC, chemical export data, H1 2026"
+draft: true
 ---
 
 <!-- SAMPLE POST: skeleton placeholder, replace before launch. -->
