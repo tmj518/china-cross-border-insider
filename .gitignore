@@ -26,3 +26,10 @@ Thumbs.db
 # Cloudflare / Wrangler
 .wrangler/
 .dev.vars
+
+# Agent scratch space. Research agents download HTML, PDF and text extracts
+# here. It is working material, not source: keeping it out of the repo stops
+# multi-megabyte PDFs landing in git history on every `git add -A`.
+_research/
+_research_tmp/
+_research_*/
