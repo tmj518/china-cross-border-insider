@@ -120,6 +120,36 @@ git clone --depth 1 https://github.com/octocat/Hello-World.git  → exit 0，2.3
 
 > 备注：`git` 命令需要**新开一个终端**才会进入 PATH（用户级 PATH 的修改不影响已运行的进程）。
 
+### 3.2 GitHub 仓库（2026-10-01 建立）
+
+| 项 | 值 |
+| --- | --- |
+| 仓库 | `https://github.com/tmj518/china-cross-border-insider`（**私有**） |
+| 远端 | `git@github.com:tmj518/china-cross-border-insider.git`（SSH 协议） |
+| 分支 | `main`（跟踪 `origin/main`） |
+| 首次提交 | `951564b` — 47 个文件 |
+| 提交署名 | `V <209195161+tmj518@users.noreply.github.com>`（**仅本仓库**的 local 配置，未改全局） |
+| SSH 密钥 | `~/.ssh/id_ed25519`，已注册到 GitHub（标题「工作机-PortableGit」） |
+
+日常推送：
+
+```bash
+git add -A
+git commit -m "post: <slug>"
+git push
+```
+
+**本机网络的关键事实**（排查网络问题时先看这条）：
+
+| 端点 | 表现 | 影响 |
+| --- | --- | --- |
+| `github.com` HTTPS | 被间歇性干扰，成功率 0~12% | **浏览器访问 GitHub 会转圈，刷新重试即可** |
+| `api.github.com` HTTPS | 稳定（4/4） | API 调用没问题 |
+| `github.com:22` SSH | **稳定** | **push / pull 不受影响** |
+
+也就是说：**代码推拉没问题，只有"人在浏览器里操作 GitHub"和"gh CLI 设备码登录"会受影响**（gh 的设备码与令牌轮询都走 `github.com`，实测重试 15 次仍失败，最终改用 SSH 密钥 + 浏览器手工建仓）。
+
+
 ## 四、写一篇文章
 
 在 `src/content/blog/` 新建 `<slug>.md`，文件名即 URL（`/blog/<slug>/`）。frontmatter 字段：
