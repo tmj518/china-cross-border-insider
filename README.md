@@ -115,7 +115,29 @@ git config --global http.schannelCheckRevoke false
 git config --global http.sslBackend openssl
 ```
 
-> 安全权衡：两者都不做吊销检查。方案 A 使用 Windows 证书存储；方案 B 使用 Git 自带 CA bundle。本网络下没有区别，换到网络正常的机器上建议恢复默认（`--unset`）。
+> 安全权衡：两者都不做吊销检查。方案 A 使用 Windows 证书存储；方案 B 使用 Git 自带 CA bundle。本网络下无差别，换到网络正常的机器上建议恢复默认（`--unset`）。
+
+### 3.3 ⚠️ 抓取网页：不要用 `Invoke-WebRequest`
+
+在本机的 Windows PowerShell 5.1 上，`Invoke-WebRequest` 和 `Invoke-RestMethod` 会调用 IE 引擎解析页面，**弹出"安全提醒"模态对话框并让命令永久卡住**——如果是 Agent 在跑，整个任务就停在那里等一个没人看见的确认框。
+
+统一改用这两种方式（Agent 和人都适用）：
+
+```powershell
+curl.exe -sSL "https://example.com"          # Windows 自带
+node -e "fetch('https://example.com').then(r=>r.text()).then(t=>console.log(t))"
+```
+
+其他已验证的网络事实：
+
+| 目标 | 表现 |
+| --- | --- |
+| `google.com` / `duckduckgo.com` / `startpage.com` / `consilium.europa.eu` | 超时或被浏览器校验挡住 |
+| `bing.com` | 通，但**会截断查询**（只按第一个词返回），且返回中文市场结果 |
+| `customs.gov.cn` | HTTP 412（反爬），需用镜像 |
+| `taylorwessing.com` / `dlapiper.com` 等 | Azure WAF / 429 |
+| `web_fetch` 工具 | **不支持 PDF**（`unsupported content type`）——PDF 源要另想办法 |
+| 中国官方发布渠道（新华社、中国网） | 可达，是海关总署/财政部公告的可靠镜像 |
 
 **验证记录**（2026-10-01）：
 
