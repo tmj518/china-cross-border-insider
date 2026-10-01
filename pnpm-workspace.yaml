@@ -1,5 +1,12 @@
-# pnpm 11 moved build-script approval out of package.json into this file.
 # esbuild must run its postinstall so the platform binary that Astro/Vite
 # execute during `astro build` is actually linked.
+#
+# Two keys on purpose: pnpm renamed this setting, and Cloudflare Pages picks
+# its own pnpm version at build time.
+#   - pnpm 10 reads `onlyBuiltDependencies`
+#   - pnpm 11 reads `allowBuilds`
+# An unread key is ignored, so keeping both covers either version.
+onlyBuiltDependencies:
+  - esbuild
 allowBuilds:
   esbuild: true
