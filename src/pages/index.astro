@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+
+import ArticleRow from "../components/ArticleRow.astro";
+import FeaturedCard from "../components/FeaturedCard.astro";
+import Hero from "../components/Hero.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { AUTHOR, SITE, formatDate } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  leadStory,
+  numbersFor,
+  published,
+  readingTime,
+  toCard,
+} from "../lib/post";
+
+const posts = published(await getCollection("blog"));
+
+const heroPost = leadStory(posts);
+const featuredPost =
+  posts.find((post) => post.data.featured && post.id !== heroPost?.id) ??
+  posts.find((post) => post.id !== heroPost?.id);
+
+const latest = posts
+  .filter((post) => post.id !== heroPost?.id && post.id !== featuredPost?.id)
+  .slice(0, 6)
+  .map(toCard);
+
+const numbers = numbersFor(posts);
+
+const heroMeta = heroPost
+  ? `${formatDate(heroPost.data.publishDate)} · ${readingTime(heroPost.body)} min read · By ${AUTHOR.name}`
+  : undefined;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  publisher: { "@type": "Organization", name: SITE.name },
+};
+---
+
+<BaseLayout title={SITE.title} description={SITE.description} jsonLd={jsonLd}>
+  {
+    heroPost ? (
+      <Hero
+        title={heroPost.data.title}
+        href={`/blog/${heroPost.id}/`}
+        excerpt={heroPost.data.description}
+        meta={heroMeta}
+      />
+    ) : (
+      <Hero
+        kicker="Coming soon"
+        title="The first analysis is being written"
+        excerpt="Numbers-first reporting on China trade, platforms and supply chains. Subscribe to get it the morning it publishes."
+      />
+    )
+  }
+
+  <div class="container">
+    <main id="main">
+      {
+        featuredPost && (
+          <FeaturedCard
+            href={`/blog/${featuredPost.id}/`}
+            title={featuredPost.data.title}
+            excerpt={featuredPost.data.description}
+            category={featuredPost.data.category}
+            priority={featuredPost.data.priority}
+            image={featuredPost.data.heroImage}
+            imageAlt={featuredPost.data.heroImageAlt}
+          />
+        )
+      }
+
+      <h2 class="section-title">Latest Analysis</h2>
+
+      {
+        latest.length > 0 ? (
+          latest.map((item) => (
+            <ArticleRow
+              href={item.href}
+              date={item.date}
+              title={item.title}
+              excerpt={item.excerpt}
+            />
+          ))
+        ) : (
+          <p class="empty-note">
+            Nothing else published yet. The archive fills up weekly.
+          </p>
+        )
+      }
+    </main>
+
+    <Sidebar numbers={numbers} />
+  </div>
+</BaseLayout>

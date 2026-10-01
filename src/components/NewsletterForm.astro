@@ -1,0 +1,57 @@
+---
+import { SITE } from "../consts";
+
+/**
+ * Newsletter capture.
+ *
+ * Still a skeleton: `SITE.newsletterAction` is empty, so the form has no
+ * endpoint yet. spec §8 lists a paid newsletter as a later monetisation
+ * step — wire this to Buttondown / ConvertKit / MailerLite when ready.
+ */
+export interface Props {
+  variant?: "box" | "inline";
+}
+
+const { variant = "box" } = Astro.props;
+const inputId = `newsletter-email-${variant}`;
+---
+
+{variant === "box" ? (
+  <div class="widget newsletter-box">
+    <h2>Daily Brief</h2>
+    <p>
+      One email every morning. 5 minutes. All the China cross-border news that
+      moves your P&amp;L.
+    </p>
+    <form method="post" action={SITE.newsletterAction || undefined}>
+      <label for={inputId} class="visually-hidden">Email address</label>
+      <input
+        id={inputId}
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        autocomplete="email"
+        required
+      />
+      <button type="submit">Subscribe Free</button>
+    </form>
+  </div>
+) : (
+  <div class="newsletter-box newsletter-inline">
+    <p>Enjoyed this analysis? Get the next one in your inbox.</p>
+    <form method="post" action={SITE.newsletterAction || undefined}>
+      <div class="field-row">
+        <label for={inputId} class="visually-hidden">Email address</label>
+        <input
+          id={inputId}
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+        />
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+  </div>
+)}

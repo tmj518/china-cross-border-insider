@@ -1,0 +1,22 @@
+---
+import { FOOTER_LINKS, SITE } from "../consts";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      {
+        FOOTER_LINKS.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="tagline">
+      {SITE.tagline} · © {year} {SITE.name}
+    </div>
+  </div>
+</footer>

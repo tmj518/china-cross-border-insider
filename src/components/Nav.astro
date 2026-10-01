@@ -1,0 +1,51 @@
+---
+import { NAV_LINKS, SITE } from "../consts";
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? path === "/" : path.startsWith(href);
+---
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="logo" href="/">{SITE.nameHead}&nbsp;<em>{SITE.nameTail}</em></a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      Menu
+    </button>
+
+    <ul class="nav-links" id="nav-links" data-open="false">
+      {
+        NAV_LINKS.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  // The prototype hid navigation below 900px with no way back in.
+  // This keeps the same visual result but leaves the links reachable.
+  const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+  const links = document.getElementById("nav-links");
+
+  toggle?.addEventListener("click", () => {
+    if (!links) return;
+    const open = links.dataset.open === "true";
+    links.dataset.open = String(!open);
+    toggle.setAttribute("aria-expanded", String(!open));
+  });
+</script>

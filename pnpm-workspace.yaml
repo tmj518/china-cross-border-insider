@@ -1,0 +1,5 @@
+# pnpm 11 moved build-script approval out of package.json into this file.
+# esbuild must run its postinstall so the platform binary that Astro/Vite
+# execute during `astro build` is actually linked.
+allowBuilds:
+  esbuild: true

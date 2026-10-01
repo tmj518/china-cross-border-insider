@@ -1,0 +1,114 @@
+---
+import { getCollection, render } from "astro:content";
+
+import ArticleFooter from "../../components/ArticleFooter.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import {
+  AUTHOR,
+  SITE,
+  categoryHref,
+  categoryLabel,
+  formatDate,
+} from "../../consts";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  numbersFor,
+  published,
+  readingTime,
+  relatedPosts,
+} from "../../lib/post";
+
+export async function getStaticPaths() {
+  const posts = published(await getCollection("blog"));
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, related: relatedPosts(posts, post) },
+  }));
+}
+
+const { post, related } = Astro.props;
+const { data } = post;
+
+const { Content } = await render(post);
+
+const posts = published(await getCollection("blog"));
+const numbers = numbersFor(posts);
+
+const minutes = readingTime(post.body);
+const siloLabel = categoryLabel(data.category);
+const canonical = new URL(`/blog/${post.id}/`, Astro.site ?? SITE.url).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: data.title,
+  description: data.description,
+  datePublished: data.publishDate.toISOString(),
+  ...(data.updatedDate ? { dateModified: data.updatedDate.toISOString() } : {}),
+  author: { "@type": "Person", name: AUTHOR.name },
+  publisher: { "@type": "Organization", name: SITE.name },
+  articleSection: siloLabel,
+  keywords: data.tags.join(", "),
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+};
+---
+
+<BaseLayout
+  title={`${data.title} — ${SITE.name}`}
+  description={data.description}
+  ogType="article"
+  image={data.heroImage}
+  publishedTime={data.publishDate}
+  modifiedTime={data.updatedDate}
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <main id="main">
+      <article>
+        <header class="article-header">
+          <a class="tag" href={categoryHref(data.category)}>{siloLabel}</a>
+          <h1>{data.title}</h1>
+          <p class="standfirst">{data.description}</p>
+          <div class="meta">
+            {formatDate(data.publishDate)} · {minutes} min read · By {AUTHOR.name}
+          </div>
+        </header>
+
+        {
+          data.heroImage && (
+            <figure class="article-hero-img">
+              <img
+                src={data.heroImage}
+                alt={data.heroImageAlt ?? ""}
+                width="1200"
+                height="750"
+              />
+            </figure>
+          )
+        }
+
+        <div class="prose">
+          <Content />
+        </div>
+
+        {
+          data.sources.length > 0 && (
+            <section class="sources">
+              <h2>Sources</h2>
+              <ul>
+                {data.sources.map((source) => (
+                  <li>{source}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </article>
+
+      <ArticleFooter related={related} />
+    </main>
+
+    <Sidebar numbers={numbers} />
+  </div>
+</BaseLayout>

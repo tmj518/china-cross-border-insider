@@ -1,0 +1,58 @@
+---
+import { AUTHOR, DISCLAIMER } from "../consts";
+import NewsletterForm from "./NewsletterForm.astro";
+import RelatedCard from "./RelatedCard.astro";
+import type { CardData } from "../lib/post";
+
+/**
+ * The block that closes every article: author line, subscribe prompt and
+ * three related reads (spec §3). Shown full-width beneath the two-column
+ * article layout, exactly as the prototype previewed it.
+ */
+export interface Props {
+  related: CardData[];
+  authorName?: string;
+  authorInitials?: string;
+  authorBio?: string;
+  avatar?: string;
+}
+
+const {
+  related,
+  authorName = AUTHOR.name,
+  authorInitials = AUTHOR.initials,
+  authorBio = AUTHOR.longBio,
+  avatar = AUTHOR.avatar,
+} = Astro.props;
+---
+
+<div class="container container--flush container--full">
+  <div class="article-bottom">
+    <div class="author-row">
+      <div class="avatar-sm">
+        {avatar ? <img src={avatar} alt={authorName} width="56" height="56" /> : authorInitials}
+      </div>
+      <div>
+        <div class="author-name">{authorName}</div>
+        <p>{authorBio}</p>
+      </div>
+    </div>
+
+    <NewsletterForm variant="inline" />
+
+    {
+      related.length > 0 && (
+        <>
+          <h2 class="related-title">Related Reading</h2>
+          <div class="related-grid">
+            {related.map((item) => (
+              <RelatedCard href={item.href} date={item.date} title={item.title} />
+            ))}
+          </div>
+        </>
+      )
+    }
+
+    <p class="disclaimer">{DISCLAIMER}</p>
+  </div>
+</div>

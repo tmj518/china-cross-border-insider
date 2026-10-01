@@ -1,0 +1,16 @@
+# Cloudflare Pages headers — copied verbatim into dist/ by Astro.
+# spec §2 runs the site on CF Pages, so this is where security headers live.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  # No analytics, no ad networks — so nothing third-party needs allowing.
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/og-default.png
+  Cache-Control: public, max-age=604800

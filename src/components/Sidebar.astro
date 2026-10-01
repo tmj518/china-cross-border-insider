@@ -1,0 +1,19 @@
+---
+import AuthorCard from "./AuthorCard.astro";
+import NewsletterForm from "./NewsletterForm.astro";
+import NumbersWidget, { type NumberItem } from "./NumbersWidget.astro";
+
+/** Right rail — author card + today's numbers + newsletter (spec §3). */
+export interface Props {
+  numbers: NumberItem[];
+  showNumbers?: boolean;
+}
+
+const { numbers, showNumbers = true } = Astro.props;
+---
+
+<aside class="sidebar">
+  <AuthorCard />
+  {showNumbers && <NumbersWidget items={numbers} />}
+  <NewsletterForm variant="box" />
+</aside>

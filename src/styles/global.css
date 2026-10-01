@@ -1,0 +1,897 @@
+/* ============================================================
+   China Cross-border Insider — global stylesheet
+   Ported 1:1 from 英文站首页_完整版.html (prototype), then extended
+   for article / listing / legal pages.
+
+   Section map
+   1. Design tokens        6. Sidebar widgets
+   2. Reset & base         7. Article footer (author / subscribe / related)
+   3. Layout               8. Long-form prose (article body)
+   4. Navigation & footer  9. Forms
+   5. Editorial cards     10. Utilities & responsive
+   ============================================================ */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  /* Brand palette — spec §3 */
+  --c-navy: #0a2540;
+  --c-navy-light: #14345e;
+  --c-navy-mid: #1a3a5c;
+  --c-red: #c8102e;
+  --c-red-dark: #8b0000;
+  --c-red-tint: #fff3f3;
+  /* NOT in spec §3 — pending decision (see README "待确认") */
+  --c-gold: #ffd166;
+
+  /* Surfaces & ink */
+  --c-bg: #fafaf8;
+  --c-surface: #ffffff;
+  --c-surface-alt: #f8f8f5;
+  --c-ink: #1a1a1a;
+  --c-ink-2: #444444;
+  --c-ink-3: #555555;
+  --c-ink-4: #666666;
+  --c-ink-5: #888888;
+  --c-ink-6: #999999;
+  --c-line: #e8e6e1;
+  --c-line-soft: #eeeeee;
+  --c-line-faint: #f5f5f5;
+  --c-field-border: #dddddd;
+
+  /* Type */
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Metrics */
+  --w-max: 1200px;
+  --w-read: 720px;
+  --radius: 4px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --gutter: 24px;
+}
+
+/* ---------- 2. Reset & base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--c-bg);
+  color: var(--c-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- 3. Layout ---------- */
+.container {
+  max-width: var(--w-max);
+  margin: 40px auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+}
+
+.container--flush {
+  margin-top: 0;
+}
+
+.container--full {
+  grid-template-columns: 1fr;
+}
+
+/* ---------- 4. Navigation & footer ---------- */
+.nav {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-line);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: var(--w-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+  color: var(--c-ink);
+}
+
+.logo em {
+  color: var(--c-red);
+  font-style: normal;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--c-ink-2);
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--c-red);
+  border-bottom-color: var(--c-red);
+}
+
+/* Mobile: prototype hid the nav entirely. We keep it reachable. */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-navy);
+  cursor: pointer;
+}
+
+.footer {
+  background: var(--c-navy);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 36px var(--gutter);
+  margin-top: 50px;
+}
+
+.footer-inner {
+  max-width: var(--w-max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--c-gold);
+}
+
+.footer .tagline {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+/* ---------- 5. Editorial cards ---------- */
+/* 5a. Hero */
+.hero {
+  background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-light) 100%);
+  color: #fff;
+  padding: 70px var(--gutter);
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  color: var(--c-gold);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.hero h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.hero .meta {
+  margin-top: 22px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 5b. Featured card */
+.featured {
+  background: var(--c-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 36px;
+}
+
+.featured-img {
+  height: 280px;
+  background: linear-gradient(135deg, var(--c-red) 0%, var(--c-red-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 56px;
+}
+
+.featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-body {
+  padding: 32px;
+}
+
+.featured h2 {
+  font-size: 26px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.featured h2 a {
+  color: var(--c-ink);
+  text-decoration: none;
+}
+
+.featured h2 a:hover {
+  color: var(--c-red);
+}
+
+.featured .excerpt {
+  color: var(--c-ink-3);
+  font-size: 15px;
+}
+
+/* 5c. Tag / priority chip */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--c-red-tint);
+  color: var(--c-red);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+/* 5d. Latest list */
+.section-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--c-ink);
+}
+
+.article-row {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--c-line-soft);
+}
+
+.article-row:last-child {
+  border-bottom: none;
+}
+
+.article-row .row-date {
+  font-size: 12px;
+  color: var(--c-ink-6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.article-row h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.article-row h3 a {
+  color: var(--c-ink);
+  text-decoration: none;
+}
+
+.article-row h3 a:hover {
+  color: var(--c-red);
+}
+
+.article-row p {
+  font-size: 14px;
+  color: var(--c-ink-4);
+}
+
+/* ---------- 6. Sidebar widgets ---------- */
+.widget {
+  background: var(--c-surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 20px;
+}
+
+.widget h2,
+.widget h3,
+.widget h4 {
+  font-size: 15px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--c-red);
+}
+
+.author-card {
+  text-align: center;
+}
+
+.author-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-navy), var(--c-navy-mid));
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  overflow: hidden;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-card .author-name {
+  font-size: 15px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.author-card p {
+  font-size: 12px;
+  color: var(--c-ink-5);
+  line-height: 1.5;
+}
+
+.numbers-list {
+  list-style: none;
+}
+
+.numbers-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--c-line-faint);
+}
+
+.numbers-list li:last-child {
+  border-bottom: none;
+}
+
+.numbers-list .num {
+  font-weight: 700;
+  color: var(--c-red);
+}
+
+/* ---------- 7. Article footer (author / subscribe / related) ---------- */
+.article-bottom {
+  background: var(--c-surface);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+  margin-top: 36px;
+}
+
+.article-bottom .author-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--c-line-soft);
+  margin-bottom: 20px;
+}
+
+.avatar-sm {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-navy), var(--c-navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatar-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-bottom .author-row .author-name {
+  font-size: 15px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.article-bottom .author-row p {
+  font-size: 13px;
+  color: var(--c-ink-5);
+}
+
+.related-title {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.related-card {
+  padding: 14px;
+  background: var(--c-surface-alt);
+  border-radius: var(--radius);
+}
+
+.related-card .rel-date {
+  font-size: 11px;
+  color: var(--c-ink-6);
+  margin-bottom: 6px;
+}
+
+.related-card h4 {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.related-card h4 a {
+  color: var(--c-ink);
+  text-decoration: none;
+}
+
+.related-card h4 a:hover {
+  color: var(--c-red);
+}
+
+/* ---------- 8. Long-form prose ---------- */
+.prose {
+  max-width: var(--w-read);
+  font-size: 17px;
+  color: #222;
+}
+
+.prose > * + * {
+  margin-top: 1.15em;
+}
+
+.prose h2 {
+  font-size: 26px;
+  margin-top: 2em;
+  padding-top: 0.2em;
+}
+
+.prose h3 {
+  font-size: 20px;
+  margin-top: 1.6em;
+}
+
+.prose p,
+.prose li {
+  line-height: 1.75;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3em;
+}
+
+.prose li + li {
+  margin-top: 0.4em;
+}
+
+.prose a {
+  color: var(--c-red);
+  text-underline-offset: 2px;
+}
+
+.prose strong {
+  font-weight: 700;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--c-red);
+  padding: 4px 0 4px 20px;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-style: italic;
+  color: var(--c-ink-2);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-family: var(--font-sans);
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--c-line);
+  padding: 9px 12px;
+  text-align: left;
+}
+
+.prose th {
+  background: var(--c-surface-alt);
+  font-weight: 700;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--c-line);
+}
+
+.prose figcaption {
+  font-size: 13px;
+  color: var(--c-ink-5);
+  margin-top: 8px;
+}
+
+/* Article header block */
+.article-header {
+  margin-bottom: 28px;
+}
+
+.article-header h1 {
+  font-size: 36px;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.article-header .standfirst {
+  font-size: 18px;
+  color: var(--c-ink-3);
+  line-height: 1.6;
+}
+
+.article-header .meta {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--c-line);
+  font-size: 13px;
+  color: var(--c-ink-5);
+}
+
+.article-hero-img {
+  margin: 28px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-mid) 100%);
+}
+
+/* Data point / callout used by the V6.1 template */
+.callout {
+  background: var(--c-surface-alt);
+  border-left: 3px solid var(--c-navy);
+  padding: 18px 22px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 16px;
+}
+
+.callout .callout-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-red);
+  margin-bottom: 6px;
+}
+
+/* Sources footnote */
+.sources {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--c-line);
+  font-size: 13px;
+  color: var(--c-ink-5);
+}
+
+.sources h2 {
+  font-size: 13px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.sources ul {
+  list-style: none;
+}
+
+.disclaimer {
+  margin-top: 14px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--c-ink-6);
+}
+
+/* ---------- 9. Forms ---------- */
+.newsletter-box {
+  font-size: 13px;
+}
+
+.newsletter-box p {
+  color: var(--c-ink-4);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.newsletter-box label {
+  display: block;
+  font-size: 12px;
+  color: var(--c-ink-5);
+  margin-bottom: 4px;
+}
+
+.newsletter-box input[type="email"] {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--c-field-border);
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 8px;
+}
+
+.newsletter-box button {
+  width: 100%;
+  padding: 9px;
+  background: var(--c-navy);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.newsletter-box button:hover {
+  background: var(--c-red);
+}
+
+/* Inline variant (article footer) */
+.newsletter-inline {
+  margin-bottom: 24px;
+}
+
+.newsletter-inline p {
+  color: var(--c-ink-4);
+}
+
+.newsletter-inline .field-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.newsletter-inline input[type="email"] {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.newsletter-inline button {
+  width: auto;
+  padding: 9px 20px;
+}
+
+/* ---------- 10. Utilities & responsive ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Keyboard-only entry point; invisible until focused. */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 200;
+  background: var(--c-navy);
+  color: #fff;
+  padding: 9px 14px;
+  font-size: 13px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.page-head {
+  max-width: var(--w-read);
+}
+
+.page-head h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.page-head p {
+  color: var(--c-ink-3);
+}
+
+.empty-note {
+  font-size: 14px;
+  color: var(--c-ink-5);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero {
+    padding: 48px var(--gutter);
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0 4px;
+    border-top: 1px solid var(--c-line-soft);
+    margin-top: 8px;
+  }
+
+  .nav-links[data-open="true"] {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+
+  .article-header h1 {
+    font-size: 28px;
+  }
+
+  .prose {
+    font-size: 16px;
+  }
+}
+
+@media print {
+  .nav,
+  .sidebar,
+  .footer,
+  .article-bottom {
+    display: none;
+  }
+}
