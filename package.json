@@ -23,6 +23,7 @@
     "mip": "node tools/mip-floor.mjs",
     "peritem": "node tools/per-item-charge.mjs",
     "drift": "node tools/price-drift.mjs",
+    "xduty": "node tools/export-duty.mjs",
     "pdf": "node tools/pdf-text.mjs"
   },
   "dependencies": {
