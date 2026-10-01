@@ -288,6 +288,34 @@ node tools/serp-check.mjs <file> --serp=file:data/serp   # 用快照
 4. ~~域名~~ ✅ 已注册 `landedmath.com` 并绑定到 CF Pages 的 Custom domains；
    `src/consts.ts` 的 `SITE_URL` 已指向它 —— canonical / sitemap / RSS / og:image 全部从这一处取值，改一处即可。
 
+### 5.1 ⚠️ Cloudflare 控制台必须保持的设置（2026-10-02 定）
+
+这些**不是可选项，是正确性要求**。免费版的几个默认值会破坏站点功能，换域名或换人维护时务必核对。
+
+| 设置 | 位置 | 必须 | 为什么 |
+| --- | --- | --- | --- |
+| **Email Address Obfuscation** | 域 → 安全/设置 → Client side abuse | **关** | 免费版**默认开启**，它把 HTML 里的邮箱替换成 `/cdn-cgi/l/email-protection#...`（需 JS 解码）。实测结果：首页/contact/about/privacy 四页**明文邮箱为 0**，Contact 页用户看不到也复制不了邮箱。关闭后恢复为明文 `mailto:`。 |
+| **Bot fight mode** | 域 → 安全/设置 → DDoS attacks | **关** | 会拦截自动化流量，是"网站正常但 Google 抓不到"最常见的原因。 |
+| **AI bot policies → Search** | 域 → 安全/设置 → AI bots | **Allow** | 不被搜索引擎抓 = 不存在。 |
+| **AI bot policies → Agent** | 同上 | **Allow** | 最关键的一项。"Agent"是抓取内容回答用户问题的爬虫（PerplexityBot / ChatGPT 一类），**GEO 战略完全依赖它**。 |
+| **AI bot policies → Training** | 同上 | **Allow** | 是否允许用于训练。允许以换取被引用。 |
+| **Bot Preference Sync** | 同上 | **关** | 它会去改 `robots.txt`，而我们的 `robots.txt` 是 Astro 生成、已正确声明 sitemap，不要让它插手。 |
+
+**验证方法**（关掉邮箱混淆后跑，期望明文 ≥1、混淆 = 0）：
+
+```powershell
+curl.exe -4 -sS https://landedmath.com/contact/ |
+  Select-String -Pattern 'cdn-cgi/l/email-protection','hello@landedmath.com'
+```
+
+### 5.2 邮箱（Email Routing）
+
+MX（`route1/2/3.mx.cloudflare.net`）与 DKIM（`cf2024-1._domainkey`）已配好并锁定。
+**还需一步**：电子邮件路由 → 「路由规则」→ 创建地址 `hello` → 转发到 Gmail。只配 MX 收不到信。
+
+**当前能力边界**：`hello@landedmath.com` 只能**收信转发**，不能以它**发信**。
+要以它的名义回信，需另配 SMTP（Resend 免费额度足够），列在路线图待办中。
+
 ## 六、相对原型做的改动
 
 原型是视觉稿，转成站点时补了工程必需但原型没有的部分：
