@@ -20,6 +20,7 @@
     "rebate": "node tools/rebate-passthrough.mjs",
     "freight": "node tools/freight-index.mjs",
     "deposit": "node tools/deposit-risk.mjs",
+    "mip": "node tools/mip-floor.mjs",
     "pdf": "node tools/pdf-text.mjs"
   },
   "dependencies": {
