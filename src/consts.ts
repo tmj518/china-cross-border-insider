@@ -4,21 +4,20 @@
  * navigation or the author persona lives here — not scattered in components.
  */
 
-/** Cloudflare Pages production URL.
- *  TODO(user): switch to the custom domain once it is registered and bound
- *  in Cloudflare Pages. Everything SEO-related — canonical, sitemap, RSS,
- *  og:image — derives from this single value, so changing it here is enough. */
-export const SITE_URL = "https://china-cross-border-insider.pages.dev";
+/** Production domain (registered 2026-10-01).
+ *  Everything SEO-related — canonical, sitemap, RSS, og:image — derives from
+ *  this single value, so changing it here is enough. */
+export const SITE_URL = "https://landedmath.com";
 
 export const SITE = {
   url: SITE_URL,
-  name: "China Cross-border Insider",
-  /** Rendered as "China Cross-border <em>Insider</em>" in the logo. */
-  nameHead: "China Cross-border",
-  nameTail: "Insider",
-  title: "China Cross-border Insider — Deep analysis on China trade & e-commerce",
+  name: "Landed Math",
+  /** Rendered as "Landed <em>Math</em>" in the logo. */
+  nameHead: "Landed",
+  nameTail: "Math",
+  title: "Landed Math — China trade policy, converted into landed cost",
   description:
-    "Independent, numbers-first analysis of China cross-border trade, tariffs, platforms and supply chains — written for Amazon, Temu, TikTok Shop and D2C sellers.",
+    "Independent, numbers-first analysis of China trade policy, platform rules and supply chains — converted into per-unit landed cost for Amazon, Temu, TikTok Shop and D2C sellers.",
   tagline: "No tracking · No ads · Independent analysis · Not financial or legal advice",
   language: "en",
   /** Newsletter placeholder — swap for the real provider (Buttondown / ConvertKit) later. */
@@ -61,17 +60,18 @@ export const CATEGORIES = [
 
 export type CategorySlug = (typeof CATEGORIES)[number]["slug"];
 
-/** spec §1 + §6 — persona. Placeholder text until the user supplies real details. */
+/** spec v1.2 §11 — pen name, role and location. */
 export const AUTHOR = {
-  name: "Cross-border Veteran",
-  initials: "CV",
+  name: "V",
+  initials: "V",
+  role: "China Supply Chain Analyst · Shenzhen",
   avatar: "", // e.g. "/images/author.jpg" once a real photo exists
   shortBio:
-    "10 years selling on Amazon, Temu, TikTok Shop and D2C. Broke everything once. Here so you don't have to.",
+    "China Supply Chain Analyst. Based in Shenzhen, tracking trade policy, platform rules and factory-level cost shifts for global sellers.",
   longBio:
-    "10 years in cross-border e-commerce. Based in China, selling globally. No agency, no sponsorship, no agenda.",
-  /** TODO(user): replace with the real contact mailbox. */
-  email: "hello@crossborderinsider.pages.dev",
+    "China Supply Chain Analyst, based in Shenzhen. Tracking trade policy, platform rules and factory-level cost shifts for sellers in the US and EU. No agency, no sponsorship, no agenda.",
+  /** TODO(user): enable Cloudflare Email Routing so this address actually delivers. */
+  email: "hello@landedmath.com",
 };
 
 /** spec §3 — footer. */

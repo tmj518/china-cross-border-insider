@@ -55,13 +55,13 @@ ctx.fillText("INDEPENDENT ANALYSIS", 90, 152);
 
 ctx.fillStyle = WHITE;
 ctx.font = `700 74px ${serifStack}`;
-ctx.fillText("China Cross-border", 86, 268);
-ctx.fillText("Insider", 86, 352);
+ctx.fillText("Landed", 86, 268);
+ctx.fillText("Math", 86, 352);
 
 ctx.fillStyle = SOFT;
 ctx.font = `30px ${sansStack}`;
-ctx.fillText("Tariffs, platforms and supply chains —", 90, 430);
-ctx.fillText("with the landed-cost math.", 90, 472);
+ctx.fillText("China trade policy, converted", 90, 430);
+ctx.fillText("into per-unit landed cost.", 90, 472);
 
 ctx.strokeStyle = NAVY_RULE;
 ctx.lineWidth = 2;

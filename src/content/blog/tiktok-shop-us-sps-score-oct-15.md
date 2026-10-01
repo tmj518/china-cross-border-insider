@@ -8,7 +8,7 @@ priority: "P1"
 sources:
   - "TikTok Shop US Seller Center policy notice, September 2026"
   - "TikTok Shop US Seller Performance Score documentation"
-  - "China Cross-border Insider seller panel, 412 US-registered stores"
+  - "ILLUSTRATIVE — placeholder figure, no real panel behind it; replace before launch"
 ---
 
 <!-- SAMPLE POST: skeleton placeholder, replace before launch. -->

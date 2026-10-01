@@ -7,7 +7,7 @@ tags: ["temu", "semi-managed", "traffic allocation"]
 priority: "P1"
 sources:
   - "Temu Seller Center, semi-managed program documentation, Q3 2026"
-  - "China Cross-border Insider seller panel, 268 Temu stores"
+  - "ILLUSTRATIVE — placeholder figure, no real panel behind it; replace before launch"
   - "General Administration of Customs of the PRC, cross-border e-commerce exports, August 2026"
 ---
 

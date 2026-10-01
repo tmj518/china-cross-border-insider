@@ -1,6 +1,10 @@
-# China Cross-border Insider
+# Landed Math
 
-跨境英文内容站（暂定名）。技术栈：**Astro 7 + GitHub + Cloudflare Pages**，纯静态、无服务器、无数据库。
+> **2026-10-01 改名**：项目原名 "China Cross-border Insider"（暂定名），域名 `crossborderinsider.com` 已被占用，
+> 正式定名为 **Landed Math**（域名 `landedmath.com`）。改名同时避开了与 Business Insider 的商标临近风险。
+> 仓库名与 Cloudflare Pages 项目名仍是历史名 `china-cross-border-insider`，不影响使用。
+
+跨境英文内容站。技术栈：**Astro 7 + GitHub + Cloudflare Pages**，纯静态、无服务器、无数据库。
 
 本仓库有三层内容，对应三个文件/目录：
 
@@ -202,15 +206,17 @@ Hook 段（不写小标题，直接抛反常识问题）
 
 ## 五、部署到 Cloudflare Pages
 
-1. 把本目录推到 GitHub 仓库。
-2. Cloudflare Pages → Create project → Connect to Git，选该仓库。
-3. 构建设置：
+**状态：已上线** —— 仓库 `tmj518/china-cross-border-insider`，CF Pages 项目同名，正式域名 `landedmath.com`。
+
+1. ~~推到 GitHub 仓库~~ ✅
+2. ~~Cloudflare Pages → Create project → Connect to Git~~ ✅
+3. 构建设置（已配置）：
    - Framework preset：**Astro**
    - Build command：`pnpm build`
    - Build output directory：`dist`
-   - Node 版本：读取 `.nvmrc`（24），或设环境变量 `NODE_VERSION=24`
-4. 部署后把域名填回 `src/consts.ts` 的 `SITE_URL`（现在临时用 `crossborderinsider.pages.dev`），
-   canonical / sitemap / RSS / og:image 全部从这一处取值，改一处即可。
+   - 环境变量：`NODE_VERSION=24`
+4. ~~域名~~ ✅ 已注册 `landedmath.com` 并绑定到 CF Pages 的 Custom domains；
+   `src/consts.ts` 的 `SITE_URL` 已指向它 —— canonical / sitemap / RSS / og:image 全部从这一处取值，改一处即可。
 
 ## 六、相对原型做的改动
 
@@ -234,10 +240,10 @@ Hook 段（不写小标题，直接抛反常识问题）
 
 | # | 事项 | 现状 |
 | --- | --- | --- |
-| 1 | **正式域名** | 临时用 `crossborderinsider.pages.dev`，见 `src/consts.ts` |
+| 1 | ~~**正式域名**~~ | ✅ 已定 `landedmath.com`（2026-10-01 注册，Cloudflare Registrar，$10.46/年） |
 | 2 | **金色 `#ffd166`** | 规范 §3 只定义了三色，原型多用了这个金色（kicker / 页脚 hover）。要么写进规范，要么去掉 |
 | 3 | **P0/P1/P2 体系** | 规范里没有定义，原型已在用。需要补一段判定标准 |
-| 4 | **作者真实信息** | 笔名、年限、平台、真实头像、联系邮箱都在 `src/consts.ts` 里是占位值 |
+| 4 | **作者信息** | 已按 v1.2 §11 对齐：笔名 `V`、China Supply Chain Analyst · Shenzhen。**仍缺真实头像**（`AUTHOR.avatar`），以及 `hello@landedmath.com` 需要开 Cloudflare Email Routing 才能真正收信 |
 | 5 | **配图规范** | 现在只有渐变/emoji 占位。建议定：1200×750、(16:10)、alt 必须写、单张 <200KB |
 | 6 | **订阅后端** | `newsletterAction` 为空 |
 | 7 | **LinkedIn / X** | 可选，暂未加 |
