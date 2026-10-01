@@ -4,10 +4,11 @@
  * navigation or the author persona lives here — not scattered in components.
  */
 
-/** TODO(user): confirm the production domain before launch.
- *  Until then Cloudflare Pages preview URL is used, and canonical /
- *  sitemap / RSS all inherit it from here. */
-export const SITE_URL = "https://crossborderinsider.pages.dev";
+/** Cloudflare Pages production URL.
+ *  TODO(user): switch to the custom domain once it is registered and bound
+ *  in Cloudflare Pages. Everything SEO-related — canonical, sitemap, RSS,
+ *  og:image — derives from this single value, so changing it here is enough. */
+export const SITE_URL = "https://china-cross-border-insider.pages.dev";
 
 export const SITE = {
   url: SITE_URL,
