@@ -123,11 +123,13 @@ function check(file) {
   const urls = body.match(/https?:\/\/\S+/g) || [];
   urls.length === 0 ? add("pass", "no URLs in body", "clean") : add("block", "no URLs in body", urls.join(", "));
 
-  // "May" as a month is not a hedge — strip month usages before scanning.
-  const hedgeTarget = body
-    .replace(/\b\d{1,2}\s+May\b/g, " ")
-    .replace(/\bMay\s+\d{4}\b/g, " ");
-  const vague = BANNED_VAGUE.filter((w) => new RegExp(`\\b${w}\\b`, "i").test(hedgeTarget));
+  // "May" the month is a homograph of "may" the hedge. Months are always
+  // capitalised and the hedge is not, so this one word is matched
+  // case-sensitively; the rest are case-insensitive.
+  const CASE_SENSITIVE = new Set(["may"]);
+  const vague = BANNED_VAGUE.filter((w) =>
+    new RegExp(`\\b${w}\\b`, CASE_SENSITIVE.has(w) ? "" : "i").test(body),
+  );
   vague.length === 0 ? add("pass", "no hedging words", "clean") : add("block", "no hedging words", vague.join(", "));
 
   const cliche = BANNED_CLICHE.filter((w) => body.toLowerCase().includes(w));
