@@ -3,6 +3,7 @@ title: "The $30 Billion Truce: 90% of Targeted Goods Are Back at MFN Rates"
 description: "A $10 FOB toy just got $2.50 cheaper at US customs. Here is the per-container math, per seller type, and the window before it closes."
 publishDate: 2026-09-29
 category: "trade-policy"
+audience: "platform-seller"
 tags: ["tariffs", "landed cost", "q4 planning", "mfn rates"]
 priority: "P0"
 featured: true

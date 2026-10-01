@@ -25,41 +25,82 @@ export const SITE = {
   newsletterAction: "",
 };
 
-/** spec §3 — top navigation. */
+/** spec §3 — top navigation. Labels are the short form; the silo page uses
+ *  the longer `label` from CATEGORIES. */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Trade Policy", href: "/category/trade-policy/" },
   { label: "Platforms", href: "/category/platforms/" },
   { label: "Supply Chain", href: "/category/supply-chain/" },
+  { label: "Sourcing", href: "/category/sourcing/" },
+  { label: "Logistics", href: "/category/logistics/" },
   { label: "About", href: "/about/" },
 ];
 
 /**
  * spec §5 — one entry per content silo. `slug` is also the value used in
  * post frontmatter (`category:`), so the two can never drift apart.
+ *
+ * The first three serve platform sellers (US/EU). `sourcing` and `logistics`
+ * were added 2026-10-01 for the emerging-market importer audience — decision
+ * recorded in the v1.3 revision doc, §7.1.
  */
 export const CATEGORIES = [
   {
     slug: "trade-policy",
     label: "Trade Policy",
+    navLabel: "Trade Policy",
     description:
       "Tariffs, duties, anti-dumping cases and export controls — translated into landed-cost math.",
   },
   {
     slug: "platforms",
     label: "Platforms",
+    navLabel: "Platforms",
     description:
       "Amazon, Temu, TikTok Shop and D2C: rule changes, fee changes and what they cost sellers.",
   },
   {
     slug: "supply-chain",
     label: "Supply Chain",
+    navLabel: "Supply Chain",
     description:
       "Factories, freight, lead times and industrial data — the part of the story nobody prices in.",
+  },
+  {
+    slug: "sourcing",
+    label: "Sourcing & Suppliers",
+    navLabel: "Sourcing",
+    description:
+      "Finding, vetting and negotiating with Chinese suppliers — factories versus trading companies, samples, MOQ, inspection and the terms that protect your deposit.",
+  },
+  {
+    slug: "logistics",
+    label: "Logistics & Customs",
+    navLabel: "Logistics",
+    description:
+      "Freight, documentation and clearance in the destination market — what it takes to move goods from a Chinese factory to your door, and who pays for which leg.",
   },
 ] as const;
 
 export type CategorySlug = (typeof CATEGORIES)[number]["slug"];
+
+/**
+ * Who a piece is written for. Surfaced in the article header so a reader can
+ * tell in one second whether it applies to them, and so GSC data can later be
+ * read per audience.
+ */
+export const AUDIENCES = [
+  { value: "platform-seller", label: "Platform sellers" },
+  { value: "importer", label: "Importers & buyers" },
+  { value: "both", label: "Both audiences" },
+] as const;
+
+export type Audience = (typeof AUDIENCES)[number]["value"];
+
+export function audienceLabel(value: string): string {
+  return AUDIENCES.find((a) => a.value === value)?.label ?? value;
+}
 
 /** spec v1.2 §11 — pen name, role and location. */
 export const AUTHOR = {

@@ -3,6 +3,7 @@ title: "TikTok Shop US SPS Score: What Sellers Must Fix by October 15"
 description: "The new Seller Performance Score rolls out in two weeks. Roughly a third of tracked sellers sit below threshold — here is the remediation order."
 publishDate: 2026-09-27
 category: "platforms"
+audience: "platform-seller"
 tags: ["tiktok shop", "seller performance", "compliance"]
 priority: "P1"
 sources:

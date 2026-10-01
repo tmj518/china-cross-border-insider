@@ -3,6 +3,7 @@ title: "Temu Semi-Managed Push: Q3 Data Shows a 2.3x Impression Gap"
 description: "Semi-managed stores are pulling 2.3x the impressions of fully-managed peers in the same categories. Switching is not free — here is who should not."
 publishDate: 2026-09-26
 category: "platforms"
+audience: "platform-seller"
 tags: ["temu", "semi-managed", "traffic allocation"]
 priority: "P1"
 sources:

@@ -3,7 +3,7 @@ import { glob } from "astro/loaders";
 // `z` from "astro:content" is deprecated and goes away in Astro 8.
 import { z } from "astro/zod";
 
-import { CATEGORIES, type CategorySlug } from "./consts";
+import { AUDIENCES, CATEGORIES, type Audience, type CategorySlug } from "./consts";
 
 /**
  * The blog collection.
@@ -19,6 +19,8 @@ const categorySlugs = CATEGORIES.map((c) => c.slug) as [
   ...CategorySlug[],
 ];
 
+const audienceValues = AUDIENCES.map((a) => a.value) as [Audience, ...Audience[]];
+
 export const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
@@ -28,6 +30,8 @@ export const blog = defineCollection({
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     category: z.enum(categorySlugs),
+    /** Who the piece is for; surfaced in the article header. */
+    audience: z.enum(audienceValues).default("both"),
     tags: z.array(z.string()).default([]),
     /** P0 = industry-level, P1 = sector-level, P2 = watchlist. */
     priority: z.enum(["P0", "P1", "P2"]).optional(),
