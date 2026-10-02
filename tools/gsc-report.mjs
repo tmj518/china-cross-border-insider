@@ -1,0 +1,342 @@
+#!/usr/bin/env node
+/**
+ * Search Console feedback report — the loop that turns published data into the
+ * next week's decisions.
+ *
+ * Spec §8 defines four actions, and this script assigns one to every published
+ * article by measuring it rather than by opinion:
+ *
+ *   impressions, no clicks            -> rewrite title and description
+ *   impressions and a poor CTR        -> rewrite the title (the promise is wrong)
+ *   impressions but ranking 11-20     -> optimise, page one is reachable
+ *   ranking in the top 10             -> hold, and consider doubling the topic
+ *   no impressions in the window      -> re-run the QA gates: if the piece still
+ *                                        passes, the topic was wrong and it goes
+ *                                        back to the pool; if it fails, the gate
+ *                                        missed something and the rule changes
+ *   queries the site is not targeting -> next week's topic pool
+ *
+ * The last one is the reason to read the report at all. GSC reports what people
+ * actually typed, which is the only keyword data that is not a guess.
+ *
+ * Output, in data/gsc/:
+ *   report_YYYYMMDD.md     the human read
+ *   articles_YYYYMMDD.csv  one row per published article, with its action
+ *   queries_YYYYMMDD.csv   real queries with impressions, for the topic pool
+ *   run_YYYYMMDD.log
+ *
+ * Usage
+ *   node tools/gsc-report.mjs                 # 28-day window
+ *   node tools/gsc-report.mjs --days=90
+ *   node tools/gsc-report.mjs --dry-run       # fetch and print, write nothing
+ */
+
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, appendFileSync } from "node:fs";
+import { join, resolve } from "node:path";
+import { gscSearchAnalytics, isoDaysAgo, loadEnv, today } from "./lib/gsc.mjs";
+
+const ROOT = resolve(import.meta.dirname, "..");
+const OUT_DIR = join(ROOT, "data", "gsc");
+const BLOG_DIR = join(ROOT, "src", "content", "blog");
+const ENV_FILE = join(ROOT, ".env.keywords"); // shared with the keyword miner
+
+const args = { days: 28, dryRun: false, force: false };
+for (const a of process.argv.slice(2)) {
+  if (a === "--dry-run") args.dryRun = true;
+  else if (a === "--force") args.force = true;
+  else if (a.startsWith("--days=")) args.days = parseInt(a.slice(7), 10);
+  else { console.error(`unknown argument: ${a}`); process.exit(2); }
+}
+
+const now = new Date();
+const pad = (n) => String(n).padStart(2, "0");
+const DATE = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}`;
+const ISO = today();
+
+mkdirSync(OUT_DIR, { recursive: true });
+const LOG = join(OUT_DIR, `run_${DATE}.log`);
+const stats = { retries: 0, gscCalls: 0, started: Date.now() };
+
+function log(msg) {
+  const line = `[${new Date().toISOString().slice(11, 19)}] ${msg}`;
+  console.log(line);
+  appendFileSync(LOG, line + "\n", "utf8");
+}
+
+function bail(reason) {
+  const marker = join(OUT_DIR, `report_${DATE}.failed`);
+  writeFileSync(marker, `run: ${DATE}\nreason: ${reason}\nstats: ${JSON.stringify(stats)}\n`, "utf8");
+  log(`FAILED: ${reason}`);
+  log(`marker: ${marker}`);
+  process.exit(1);
+}
+
+log(`gsc report start  window=${args.days}d  dryRun=${args.dryRun}`);
+
+if (existsSync(join(OUT_DIR, `report_${DATE}.md`)) && !args.force && !args.dryRun) {
+  log("today's report already exists — no-op. Use --force to override.");
+  process.exit(0);
+}
+
+// ------------------------------------------------------- what we published
+
+/** Every published article, with its target keyword and its live URL. */
+function published() {
+  const out = [];
+  for (const file of readdirSync(BLOG_DIR)) {
+    if (!file.endsWith(".md")) continue;
+    const raw = readFileSync(join(BLOG_DIR, file), "utf8");
+    if (/^draft:\s*true/m.test(raw)) continue;
+    const slug = file.replace(/\.md$/, "");
+    const title = /^title:\s*"(.+?)"/m.exec(raw)?.[1] ?? slug;
+    out.push({
+      slug,
+      title,
+      url: `https://landedmath.com/blog/${slug}/`,
+      path: `/blog/${slug}/`,
+      keyword: /^target_keyword:\s*"(.+?)"/m.exec(raw)?.[1] ?? "",
+      category: /^category:\s*"(.+?)"/m.exec(raw)?.[1] ?? "",
+      publishDate: /^publishDate:\s*(\S+)/m.exec(raw)?.[1] ?? "",
+    });
+  }
+  return out;
+}
+
+const articles = published();
+log(`  ${articles.length} published articles`);
+
+const env = loadEnv(ENV_FILE);
+if (!env.GSC_CREDENTIALS || !env.GSC_SITE_URL) {
+  bail(
+    "GSC not configured. Set GSC_CREDENTIALS and GSC_SITE_URL in .env.keywords. " +
+    "See the header of tools/keyword-miner.mjs for the one-time setup.",
+  );
+}
+
+// ------------------------------------------------------------------- fetch
+
+const window = { startDate: isoDaysAgo(args.days), endDate: ISO };
+log(`  window ${window.startDate} .. ${window.endDate}`);
+
+function fetchBy(dimension) {
+  try {
+    const r = gscSearchAnalytics(env, {
+      ...window,
+      dimensions: [dimension],
+      rowLimit: 25000,
+    }, stats);
+    return r?.rows ?? [];
+  } catch (e) {
+    bail(`GSC query by ${dimension} failed: ${e.message}`);
+  }
+}
+
+const pageRows = fetchBy("page");
+const queryRows = fetchBy("query");
+log(`  ${pageRows.length} pages, ${queryRows.length} queries with impressions`);
+
+if (pageRows.length === 0) {
+  log("");
+  log("  GSC returned no rows for this window.");
+  log("  On a site younger than a few months this is the expected state, not a");
+  log("  fault: nothing is indexed deeply enough to report yet. The report is");
+  log("  written anyway so the absence is on the record with a date.");
+}
+
+// ---------------------------------------------------------------- classify
+
+const CTR_FLOOR = 0.01; // 1% — below this, the title is not earning the click
+
+const byPath = new Map();
+for (const row of pageRows) {
+  const url = row.keys[0];
+  let path;
+  try {
+    path = new URL(url).pathname;
+  } catch {
+    continue;
+  }
+  byPath.set(path.replace(/\/$/, ""), row);
+}
+
+function classify(article) {
+  const row = byPath.get(article.path.replace(/\/$/, ""));
+  if (!row || row.impressions === 0) {
+    return {
+      action: "重跑闸门",
+      detail: `${args.days} 天零曝光。先重跑 pnpm qa 与 qa:serp：仍通过则选题有问题，退回选题池；不通过则闸门漏检，改规则。`,
+      impressions: 0, clicks: 0, ctr: 0, position: 0,
+    };
+  }
+  const ctr = row.ctr ?? (row.impressions ? row.clicks / row.impressions : 0);
+  const pos = row.position ?? 0;
+
+  if (row.clicks === 0) {
+    return {
+      action: "改标题+描述",
+      detail: `${row.impressions} 次曝光、0 点击，平均排名 ${pos.toFixed(1)}。有曝光无点击 = 承诺没打中，先改 title 和 description。`,
+      impressions: row.impressions, clicks: row.clicks, ctr, position: pos,
+    };
+  }
+  if (ctr < CTR_FLOOR && row.impressions >= 50) {
+    return {
+      action: "改标题",
+      detail: `CTR ${(ctr * 100).toFixed(2)}% 低于 1% 门槛（${row.impressions} 曝光）。排名可接受但抓不住点击，改标题。`,
+      impressions: row.impressions, clicks: row.clicks, ctr, position: pos,
+    };
+  }
+  if (pos > 10 && pos <= 20) {
+    return {
+      action: "优化进首页",
+      detail: `平均排名 ${pos.toFixed(1)}，在第 2 页。补内链、补数据、更新日期，进前 10 有机会。`,
+      impressions: row.impressions, clicks: row.clicks, ctr, position: pos,
+    };
+  }
+  if (pos <= 10) {
+    return {
+      action: "保持并加倍",
+      detail: `平均排名 ${pos.toFixed(1)}，CTR ${(ctr * 100).toFixed(2)}%。方向有效，同类选题加倍。`,
+      impressions: row.impressions, clicks: row.clicks, ctr, position: pos,
+    };
+  }
+  return {
+    action: "观察",
+    detail: `平均排名 ${pos.toFixed(1)}，曝光 ${row.impressions}。排名太浅，先等。`,
+    impressions: row.impressions, clicks: row.clicks, ctr, position: pos,
+  };
+}
+
+const classified = articles
+  .map((a) => ({ ...a, ...classify(a) }))
+  .sort((a, b) => b.impressions - a.impressions);
+
+// Queries the site is not targeting: the topic pool, and the only keyword data
+// that reflects what people actually type.
+const targeted = new Set(articles.map((a) => a.keyword.toLowerCase()).filter(Boolean));
+const untargeted = queryRows
+  .map((r) => ({ query: r.keys[0], impressions: r.impressions, clicks: r.clicks, position: r.position }))
+  .filter((q) => q.impressions >= 3 && !targeted.has(q.query.toLowerCase()))
+  .sort((a, b) => b.impressions - a.impressions)
+  .slice(0, 50);
+
+// ------------------------------------------------------------------ output
+
+const byAction = {};
+for (const c of classified) byAction[c.action] = (byAction[c.action] ?? 0) + 1;
+
+log("");
+log("  action distribution:");
+for (const [k, v] of Object.entries(byAction).sort((a, b) => b[1] - a[1])) {
+  log(`    ${k.padEnd(12)} ${v}`);
+}
+log(`  untargeted queries with >=3 impressions: ${untargeted.length}`);
+
+if (args.dryRun) {
+  log("dry run — nothing written");
+  console.log("\nTop rows:");
+  for (const c of classified.slice(0, 8)) {
+    console.log(`  ${String(c.impressions).padStart(5)} imp  ${c.action.padEnd(12)} ${c.slug}`);
+  }
+  process.exit(0);
+}
+
+// Markdown report — what gets read on Monday.
+const md = [
+  `# GSC 数据回流报告 · ${ISO}`,
+  "",
+  `**窗口**：${window.startDate} → ${window.endDate}（${args.days} 天）`,
+  `**已发布文章**：${articles.length} 篇`,
+  `**GSC 有曝光的页面**：${pageRows.length} 个`,
+  `**未瞄准的真实查询（≥3 次曝光）**：${untargeted.length} 个`,
+  "",
+  "> 这份报告的用途只有一个：**决定下周改什么、写什么、停什么。**",
+  "",
+  "## 一、动作清单",
+  "",
+  "| 文章 | 曝光 | 点击 | CTR | 平均排名 | 动作 |",
+  "| --- | --- | --- | --- | --- | --- |",
+];
+for (const c of classified) {
+  md.push(
+    `| [${c.title}](${c.url}) | ${c.impressions} | ${c.clicks} | ` +
+    `${(c.ctr * 100).toFixed(2)}% | ${c.position ? c.position.toFixed(1) : "-"} | **${c.action}** |`,
+  );
+}
+
+md.push("", "## 二、逐条理由", "");
+for (const c of classified) {
+  md.push(`### ${c.title}`, "", `- 动作：**${c.action}**`, `- ${c.detail}`, "");
+}
+
+md.push(
+  "## 三、未瞄准的真实查询（下周选题池）",
+  "",
+  untargeted.length
+    ? "| 查询 | 曝光 | 点击 | 平均排名 |"
+    : "_窗口内没有出现未瞄准的查询。新站前期属正常。_",
+);
+if (untargeted.length) {
+  md.push("| --- | --- | --- | --- |");
+  for (const q of untargeted) {
+    md.push(`| ${q.query} | ${q.impressions} | ${q.clicks} | ${q.position.toFixed(1)} |`);
+  }
+}
+
+md.push(
+  "",
+  "## 四、窗口内无曝光的文章",
+  "",
+  classified.filter((c) => c.impressions === 0).length
+    ? classified.filter((c) => c.impressions === 0).map((c) => `- [${c.title}](${c.url})`).join("\n")
+    : "_无_",
+  "",
+  "---",
+  "",
+  `_生成于 ${ISO} · 窗口 ${args.days} 天 · 报告只读，不回写任何站点文件_`,
+  "",
+);
+
+const mdPath = join(OUT_DIR, `report_${DATE}.md`);
+writeFileSync(mdPath, md.join("\n"), "utf8");
+
+const csvCell = (v) => {
+  const s = v === null || v === undefined ? "-" : String(v);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+};
+const artPath = join(OUT_DIR, `articles_${DATE}.csv`);
+writeFileSync(
+  artPath,
+  "\uFEFF" + [
+    "slug,title,category,target_keyword,impressions,clicks,ctr,avg_position,action,publish_date",
+    ...classified.map((c) => [
+      c.slug, c.title, c.category, c.keyword || "-",
+      c.impressions, c.clicks, c.ctr.toFixed(4),
+      c.position ? c.position.toFixed(2) : "-", c.action, c.publishDate,
+    ].map(csvCell).join(",")),
+  ].join("\n") + "\n",
+  "utf8",
+);
+
+const qPath = join(OUT_DIR, `queries_${DATE}.csv`);
+writeFileSync(
+  qPath,
+  "\uFEFF" + [
+    "query,impressions,clicks,avg_position,targeted",
+    ...queryRows.map((r) => [
+      r.keys[0], r.impressions, r.clicks, r.position.toFixed(2),
+      targeted.has(r.keys[0].toLowerCase()) ? "true" : "false",
+    ].map(csvCell).join(",")),
+  ].join("\n") + "\n",
+  "utf8",
+);
+
+log("");
+log(`done in ${((Date.now() - stats.started) / 1000).toFixed(1)}s`);
+log(`  report : ${mdPath}`);
+log(`  articles: ${artPath}  (${classified.length} rows)`);
+log(`  queries : ${qPath}  (${queryRows.length} rows)`);
+log(`  gsc calls: ${stats.gscCalls}   retries: ${stats.retries}`);
+if (pageRows.length === 0) {
+  log("  NOTE: zero rows. Expected on a young site; the report records the");
+  log("  absence with a date rather than failing.");
+}
