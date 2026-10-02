@@ -72,6 +72,21 @@ export const blog = defineCollection({
 
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
+
+    // ---- Video (spec v1.3 §15 / roadmap §5.2) ----------------------------
+    /**
+     * YouTube video id only — never the full URL, and never the file. Spec
+     * v1.2 §6 keeps video out of the repository, and an id is enough for the
+     * embed and for the VideoObject structured data.
+     */
+    youtube_id: z
+      .string()
+      .regex(/^[A-Za-z0-9_-]{11}$/, "must be an 11-character YouTube video id")
+      .optional(),
+    /** Shown above the player; falls back to the article title. */
+    videoTitle: z.string().optional(),
+    /** ISO 8601 duration, e.g. PT4M13S. Feeds VideoObject.uploadDate/duration. */
+    videoDuration: z.string().optional(),
   }),
 });
 

@@ -2,6 +2,18 @@
 dist/
 .astro/
 
+# Generated media. `build/video/` holds rendered slides, narration and the
+# assembled MP4 — tens of megabytes per article, and all of it reproducible
+# from the article plus tools/make-video.py. Only the YouTube id is committed.
+build/
+
+# Environment setup scratch
+_env_setup/
+
+# Python
+__pycache__/
+*.pyc
+
 # dependencies
 node_modules/
 

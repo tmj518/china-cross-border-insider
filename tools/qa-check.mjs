@@ -72,6 +72,20 @@ function check(file) {
 
   const fmLine = (key) => new RegExp(`^${key}:\\s*(.+)$`, "m").exec(fm)?.[1]?.trim();
 
+  // ---- encoding integrity -------------------------------------------
+  // This rule exists because the damage already happened once. A PowerShell
+  // `Get-Content -Raw` / `Set-Content` round trip rewrote an article through
+  // the system ANSI codepage (GBK on this machine), and every em dash came
+  // back as "?" — U+FFFD's cousin, and invisible in a browser diff.
+  //
+  // Node's utf8 decoder is lenient: it substitutes U+FFFD for invalid bytes
+  // rather than throwing. That makes one check cover both failures — genuinely
+  // invalid UTF-8, and text that survived a bad round trip.
+  const replacementChars = (raw.match(/\uFFFD/g) || []).length;
+  replacementChars === 0
+    ? add("pass", "text encoding", "valid UTF-8, no replacement characters")
+    : add("block", "text encoding", `${replacementChars} replacement character(s) — file was rewritten through a non-UTF-8 codepage`);
+
   // ---- frontmatter-driven rules -------------------------------------
   const figures = (fm.match(/^\s*- value:/gm) || []).length;
   const sources = (fm.match(/^\s{2}- "/gm) || []).length;

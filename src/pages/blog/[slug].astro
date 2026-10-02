@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 
 import ArticleFooter from "../../components/ArticleFooter.astro";
+import ArticleVideo from "../../components/ArticleVideo.astro";
 import Sidebar from "../../components/Sidebar.astro";
 import {
   AUTHOR,
@@ -93,6 +94,18 @@ const jsonLd = {
         <div class="prose">
           <Content />
         </div>
+
+        {
+          data.youtube_id && (
+            <ArticleVideo
+              videoId={data.youtube_id}
+              title={data.videoTitle ?? data.title}
+              description={data.description}
+              duration={data.videoDuration}
+              uploadDate={data.publishDate}
+            />
+          )
+        }
 
         {
           data.sources.length > 0 && (
