@@ -18,7 +18,13 @@ __pycache__/
 node_modules/
 
 # environment
+# `.env.r2` holds a Cloudflare API token with Object Read & Write on the media
+# bucket. The literal names below did not cover it, so a credential file would
+# have been committable. Match the whole family and re-admit only templates.
 .env
+.env.*
+!.env.example
+!.env.r2.example
 .env.production
 .env.local
 
