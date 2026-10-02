@@ -140,6 +140,18 @@ def paginate(text: str, max_chars: int = SLIDE_CHARS) -> list[str]:
     return chunks or [text.strip()]
 
 
+def read_fm(slug: str) -> dict:
+    path = BLOG / f"{slug}.md"
+    if not path.exists():
+        sys.exit(f"article not found: {path}")
+    return parse_frontmatter(path.read_text(encoding="utf-8"))
+
+
+def fm_title(scenes: list[dict]) -> str:
+    """The article title, which the first scene already carries."""
+    return scenes[0]["heading"] if scenes else ""
+
+
 def build_scenes(slug: str) -> list[dict]:
     path = BLOG / f"{slug}.md"
     if not path.exists():
@@ -293,10 +305,167 @@ def render_slide(scene: dict, chunk: str, index: int, total: int, sub: str, out_
     img.save(out_path, "PNG")
 
 
-async def speak(text: str, voice: str, out_path: Path) -> None:
+async def speak_with_timing(
+    text: str, voice: str, rate: str, audio_path: Path
+) -> list[dict]:
+    """
+    Synthesise the narration and return word-level timings.
+
+    edge-tts emits boundary events alongside the audio with `offset` and
+    `duration` in 100-nanosecond ticks, which gives synced captions without a
+    forced-alignment pass. The catch is the default: `boundary` defaults to
+    SentenceBoundary, so a first attempt that did not pass it explicitly got
+    one event per sentence and produced zero captions. WordBoundary has to be
+    asked for.
+    """
     import edge_tts
 
-    await edge_tts.Communicate(text, voice).save(str(out_path))
+    communicate = edge_tts.Communicate(
+        text, voice, rate=rate, boundary="WordBoundary"
+    )
+    words: list[dict] = []
+    with open(audio_path, "wb") as fh:
+        async for chunk in communicate.stream():
+            if chunk["type"] == "audio":
+                fh.write(chunk["data"])
+            elif chunk["type"] == "WordBoundary":
+                words.append(
+                    {
+                        "text": chunk["text"],
+                        "start": chunk["offset"] / 10_000_000,
+                        "dur": chunk["duration"] / 10_000_000,
+                    }
+                )
+    return words
+
+
+def interpolate_words(text: str, duration: float) -> list[dict]:
+    """
+    Fallback when the service returns no word boundaries.
+
+    Spreads the measured audio duration across the words in proportion to
+    their length. The interval is real and the ordering is real; only the
+    positions inside it are estimated, and caption timing tolerance is well
+    inside the error that introduces.
+    """
+    words = text.split()
+    if not words or duration <= 0:
+        return []
+    weights = [max(1, len(w)) for w in words]
+    total = sum(weights)
+    out, cursor = [], 0.0
+    for w, weight in zip(words, weights):
+        span = duration * weight / total
+        out.append({"text": w, "start": cursor, "dur": span})
+        cursor += span
+    return out
+
+
+def group_words(words: list[dict], max_chars: int = 46, max_gap: float = 0.7) -> list[dict]:
+    """
+    Group word timings into caption phrases.
+
+    Three constraints. A caption past ~46 characters is hard to read at speed.
+    A caption spanning a long pause should have been two captions. And a
+    sentence end always breaks, because without that the first draft rendered
+    "... including above EUR 150 Both" — the start of the next sentence bolted
+    onto the end of the previous one.
+    """
+    out: list[dict] = []
+    cur: list[dict] = []
+    for w in words:
+        if cur:
+            too_long = len(" ".join(x["text"] for x in cur)) + len(w["text"]) + 1 > max_chars
+            gap = w["start"] - (cur[-1]["start"] + cur[-1]["dur"])
+            ended = cur[-1]["text"].rstrip().endswith((".", "!", "?", ":", ";"))
+            if too_long or gap > max_gap or ended:
+                out.append(cur)
+                cur = []
+        cur.append(w)
+    if cur:
+        out.append(cur)
+    return [
+        {
+            "text": " ".join(x["text"] for x in g),
+            "start": g[0]["start"],
+            "end": g[-1]["start"] + g[-1]["dur"],
+        }
+        for g in out
+    ]
+
+
+ASS_HEADER = """[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI Semibold,46,&H00FFFFFF,&H000000FF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,4,2,2,120,120,72,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+
+
+def ass_time(seconds: float) -> str:
+    seconds = max(0.0, seconds)
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = seconds % 60
+    return f"{h}:{m:02d}:{s:05.2f}"
+
+
+def write_ass(captions: list[dict], path: Path) -> None:
+    """
+    Write an ASS subtitle file.
+
+    Escape braces because ASS treats {...} as an override block, and turn
+    newlines into the explicit \\N break ASS expects.
+    """
+    lines = [ASS_HEADER]
+    for c in captions:
+        text = (
+            c["text"]
+            .replace("\\", "")
+            .replace("{", "(")
+            .replace("}", ")")
+            .replace("\n", "\\N")
+        )
+        lines.append(
+            f"Dialogue: 0,{ass_time(c['start'])},{ass_time(c['end'])},Caption,,0,0,0,,"
+            f"{{\\fad(180,180)}}{text}\n"
+        )
+    path.write_text("".join(lines), encoding="utf-8")
+
+
+def srt_time(seconds: float) -> str:
+    seconds = max(0.0, seconds)
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = int(seconds % 60)
+    ms = int(round((seconds - int(seconds)) * 1000))
+    if ms == 1000:
+        s, ms = s + 1, 0
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+
+
+def write_srt(captions: list[dict], path: Path) -> None:
+    """
+    An SRT track for upload to YouTube.
+
+    Preferred over burning in for this channel. YouTube indexes the track, it
+    is toggleable, and — the reason that decided it — the slides already carry
+    text, so burned-in captions put two different sentences on screen at once.
+    """
+    blocks = []
+    for i, c in enumerate(captions, 1):
+        blocks.append(
+            f"{i}\n{srt_time(c['start'])} --> {srt_time(c['end'])}\n{c['text'].strip()}\n"
+        )
+    path.write_text("\n".join(blocks), encoding="utf-8")
 
 
 def audio_seconds(path: Path) -> float:
@@ -312,6 +481,77 @@ def audio_seconds(path: Path) -> float:
         return float(r.stdout.strip())
     except ValueError:
         return 6.0
+
+
+def make_thumbnail(title: str, callout: str, path: Path) -> None:
+    """
+    YouTube thumbnail at 1280x720.
+
+    The SOP this borrows from specifies 1080x1440, which is the 3:4 cover ratio
+    for Douyin and WeChat Channels. YouTube's is 16:9, so the size is adapted
+    rather than copied — a 3:4 upload gets letterboxed or cropped.
+
+    High contrast and few words on purpose: a thumbnail is read at about 210px
+    wide in a search result, where anything past a few words is illegible.
+    """
+    from PIL import Image, ImageDraw
+
+    tw, th = 1280, 720
+    img = Image.new("RGB", (tw, th), NAVY)
+    d = ImageDraw.Draw(img)
+
+    d.rectangle([0, 0, tw, 14], fill=RED)
+    pad = 72
+    d.text((pad, pad), "LANDED MATH", font=load_font(30), fill=(150, 170, 190))
+
+    f_title = load_font(64)
+    y = 190
+    for ln in wrap(d, title, f_title, tw - 2 * pad)[:4]:
+        d.text((pad, y), ln, font=f_title, fill=(255, 255, 255))
+        y += 82
+
+    if callout:
+        f_call = load_font(46)
+        y = max(y + 24, 560)
+        d.rectangle([pad - 16, y - 18, tw - pad + 16, y + 70], fill=RED)
+        d.text((pad, y), " ".join(wrap(d, callout, f_call, tw - 2 * pad)[:1]),
+               font=f_call, fill=(255, 255, 255))
+
+    img.save(path, "PNG")
+
+
+def write_metadata(slug: str, fm: dict, scenes: list[dict], duration: float, path: Path) -> None:
+    """
+    The rest of the delivery, so the upload step is copy-paste.
+
+    Titles are kept under YouTube's 100-character limit and the description
+    leads with the article URL, because the first two lines are what a viewer
+    sees before expanding.
+    """
+    title = fm.get("title", slug)
+    desc = fm.get("description", "")
+    keyword = fm.get("target_keyword", "")
+    tags = [t.strip().strip('"') for t in re.findall(r'"([^"]+)"', fm.get("tags", ""))]
+
+    mins, secs = divmod(int(duration), 60)
+    body = [
+        f"# {title}",
+        "",
+        f"Full analysis with every source: https://landedmath.com/blog/{slug}/",
+        "",
+        desc,
+        "",
+        "Every figure in this video is a published official number, and the",
+        "arithmetic is in the article. Corrections go on the article page.",
+        "",
+        f"Runtime: {mins}:{secs:02d}",
+    ]
+    if keyword:
+        body += ["", f"Target query: {keyword}"]
+    if tags:
+        body += ["", "Tags: " + ", ".join(tags)]
+    body += ["", "---", "Sources are named in the article's frontmatter; no URLs appear in the body."]
+    path.write_text("\n".join(body) + "\n", encoding="utf-8")
 
 
 def report_coverage(scenes: list[dict]) -> float:
@@ -341,8 +581,16 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("slug")
     ap.add_argument("--voice", default="en-US-AndrewNeural")
+    # +12% suits information-dense B2B narration: noticeably quicker without
+    # turning into the +20% that a short-form news recap uses.
+    ap.add_argument("--rate", default="+12%", help="edge-tts rate, e.g. +12%%")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--coverage", action="store_true", help="report parity and exit")
+    ap.add_argument(
+        "--burn-captions",
+        action="store_true",
+        help="burn captions into the picture (for platforms with no track upload)",
+    )
     args = ap.parse_args()
 
     scenes = build_scenes(args.slug)
@@ -361,6 +609,9 @@ def main() -> None:
     report_coverage(scenes)
 
     # Render every slide up front so a failure happens before any ffmpeg work.
+    # Narration is synthesised with word timings, which become the subtitles.
+    captions: list[dict] = []
+    cursor = 0.0
     for i, sc in enumerate(scenes, 1):
         if sc["kind"] == "table":
             render_slide(sc, "", i, len(scenes), "", work / f"{i:02d}-a.png")
@@ -369,8 +620,27 @@ def main() -> None:
                 sub = f"{j + 1}/{len(sc['slides'])}" if len(sc["slides"]) > 1 else ""
                 render_slide(sc, chunk, i, len(scenes), sub,
                              work / f"{i:02d}-{chr(97 + j)}.png")
-        asyncio.run(speak(sc["speak"], args.voice, work / f"{i:02d}.mp3"))
-        print(f"  scene {i} [{sc['kind']}] rendered")
+        mp3 = work / f"{i:02d}.mp3"
+        words = asyncio.run(
+            speak_with_timing(sc["speak"], args.voice, args.rate, mp3)
+        )
+        if not words:
+            # The service occasionally returns audio with no boundary events.
+            words = interpolate_words(sc["speak"], audio_seconds(mp3))
+            print(f"  scene {i}: no boundaries from the service, interpolated")
+        for cap in group_words(words):
+            captions.append(
+                {"text": cap["text"], "start": cap["start"] + cursor, "end": cap["end"] + cursor}
+            )
+        cursor += audio_seconds(mp3) + 0.6
+        print(f"  scene {i} [{sc['kind']}] rendered, {len(words)} words timed")
+
+    ass_path = work / "captions.ass"
+    write_ass(captions, ass_path)
+    srt_path = OUT / f"{args.slug}.srt"
+    write_srt(captions, srt_path)
+    print(f"  captions: {len(captions)} cues -> {srt_path.name}"
+          + (" (burned in)" if args.burn_captions else " (upload as a track)"))
 
     if args.dry_run:
         print("dry run: skipping ffmpeg")
@@ -403,8 +673,8 @@ def main() -> None:
             ["ffmpeg", "-y", "-loglevel", "error",
              "-f", "concat", "-safe", "0", "-i", str(listing),
              "-i", str(mp3),
-             "-c:v", "libx264", "-preset", "medium", "-tune", "stillimage",
-             "-pix_fmt", "yuv420p", "-r", "30",
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
+             "-tune", "stillimage", "-pix_fmt", "yuv420p", "-r", "30",
              "-c:a", "aac", "-b:a", "192k", "-shortest",
              str(seg)],
             check=True, cwd=work,
@@ -413,13 +683,46 @@ def main() -> None:
 
     listing = work / "concat.txt"
     listing.write_text("".join(f"file '{p.name}'\n" for p in parts), encoding="utf-8")
-    final = OUT / f"{args.slug}.mp4"
+    raw = work / "raw.mp4"
     subprocess.run(
         ["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
-         "-i", str(listing), "-c", "copy", str(final)],
+         "-i", str(listing), "-c", "copy", str(raw)],
         check=True,
     )
-    print(f"\nvideo: {final}")
+
+    # Second pass: normalise loudness, and optionally burn the captions.
+    #
+    # -16 LUFS with a -1.5 dBTP ceiling keeps the narration level with the rest
+    # of the platform. Loudness normalisation is not optional; the burn-in is,
+    # because the slides already carry text and YouTube takes an SRT track.
+    final = OUT / f"{args.slug}.mp4"
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw)]
+    if args.burn_captions:
+        cmd += ["-vf", "ass=captions.ass"]
+    cmd += [
+        "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+        "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+        str(final),
+    ]
+    subprocess.run(cmd, check=True, cwd=work)
+
+    # The delivery set: video, thumbnail, and the text an upload form asks for.
+    thumb = OUT / f"{args.slug}-thumb.png"
+    callout = ""
+    for sc in scenes:
+        if sc["kind"] == "table" and len(sc["table"]) > 1:
+            row = sc["table"][1]
+            callout = "  ".join(c["text"] for c in row[-2:])
+            break
+    make_thumbnail(fm_title(scenes), callout, thumb)
+    meta = OUT / f"{args.slug}-youtube.txt"
+    write_metadata(args.slug, parse_frontmatter((BLOG / f"{args.slug}.md").read_text(encoding="utf-8")),
+                   scenes, cursor, meta)
+
+    print(f"\nvideo     : {final}")
+    print(f"thumbnail : {thumb}")
+    print(f"metadata  : {meta}")
     print("Upload it, then set youtube_id in the article frontmatter.")
 
 
