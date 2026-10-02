@@ -56,3 +56,6 @@ _research_*/
 landed-math-dossier-*.txt
 *_dossier*.txt
 *dossier*.md
+
+# curl -o NONE creates a real file on Windows (NUL is the reserved name)
+NONE
