@@ -1,0 +1,6 @@
+﻿keywords_*.csv
+run_*.log
+*.failed
+raw/
+.env.keywords
+
