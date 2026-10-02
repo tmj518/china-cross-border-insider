@@ -148,6 +148,101 @@ git clone --depth 1 https://github.com/octocat/Hello-World.git  → exit 0，2.3
 
 > 备注：`git` 命令需要**新开一个终端**才会进入 PATH（用户级 PATH 的修改不影响已运行的进程）。
 
+### 3.4 ⚠️⚠️ 编辑文本文件：绝不要用 PowerShell 读改写回
+
+**这是本项目真实发生过的一次数据损坏事故。**
+
+2026-10-03，为验证视频组件，我用 PowerShell 对一篇文章做了这个操作：
+
+```powershell
+$orig = Get-Content $f -Raw          # 读
+Set-Content -Path $f -Value $test    # 写（临时测试内容）
+Set-Content -Path $f -Value $orig    # 写回原始内容
+```
+
+**结果：文章里所有 em dash（`—`）都变成了 `—?`。**
+
+原因：本机系统区域是中文，`Set-Content` 用 **GBK 代码页**写出，而 em dash（UTF-8 `E2 80 94`）在 GBK 里无法表示，续字节被换成 `0x3F`（`?`）。字节级证据：
+
+```
+期望: ... E2 80 94 ...
+实际: ... E2 80 3F ...     ← 第三字节变成 '?'
+```
+
+**这类损坏在浏览器里几乎看不出来**，但会污染所有标点。
+
+**正确做法**（按优先级）：
+
+| 方式 | 说明 |
+| --- | --- |
+| **用 `edit` / `write` 工具** | Agent 首选。工具按 UTF-8 处理，不会经过代码页 |
+| `Set-Content -Encoding utf8` | 如果非要用 PowerShell，**必须显式指定编码** |
+| `[System.IO.File]::WriteAllText($p, $s, [System.Text.UTF8Encoding]::new($false))` | .NET 直写，最可控 |
+
+**并且闸门已经加了守卫**：`tools/qa-check.mjs` 的 `text encoding` 规则。
+
+Node 的 utf8 解码器是宽松的——遇到非法字节会替换成 `U+FFFD` 而不是抛错。所以**一条规则同时覆盖两种情况**：真正的非法 UTF-8，以及"经过坏代码页往返"的文本。
+
+```
+✗ BLOCK  text encoding   2 replacement character(s) — file was rewritten
+                         through a non-UTF-8 codepage
+```
+
+已用故意破坏的 em dash 测试过，确实会拦。
+
+**Git 是最后一道保险**：损坏后 `git checkout -- <file>` 可完整恢复。所以**在未提交的状态下做批量文本操作要格外小心**。
+
+### 3.5 本机工具链（2026-10-03 补全）
+
+| 工具 | 版本 | 位置 | 用途 |
+| --- | --- | --- | --- |
+| **Python** | **3.13.16** | `%LOCALAPPDATA%\Programs\Python\Python313\` | Office/数据/PDF/TTS |
+| **ffmpeg / ffprobe** | **9.0.2** (gyan.dev essentials) | `%LOCALAPPDATA%\Programs\ffmpeg\bin\` | 视频编码，**含 libx264** |
+| **yt-dlp** | 2026.08.19 | 同上 | YouTube 下载/元数据 |
+| **n8n** | 见下 | `%LOCALAPPDATA%\Programs\n8n\` | 工作流自动化 |
+| git | 2.56.0 PortableGit | `%LOCALAPPDATA%\Programs\PortableGit\` | 版本控制 |
+
+**为什么 Python 选 3.13 而不是 3.14**：3.14 太新，数据/自动化库仍在对齐；3.13 是"现代又安全"的甜点。3.12 已开始有库放弃支持。
+
+**Python 库**（已装）：pandas 3.0.6 · openpyxl · python-docx · python-pptx · Pillow · lxml · XlsxWriter · requests · beautifulsoup4 · **edge-tts**（免费神经语音 TTS，无需 API key）
+
+**内置 Python 为什么坏**：DSH 运行时里的 `dependencies\python\` 只有 `python.exe` + `python3.dll`，**缺 `python3XX.dll` 和 Lib 内容**。`python3.dll` 是转发层，找不到目标就报 `-1073741515`（`0xC0000135`）。修不如重装——已另装独立 Python，不动 DSH 自带的那份。
+
+**PATH 说明**：Python 与 ffmpeg 已加入用户级 PATH。**已运行的进程看不到**，需新开终端，或在命令里显式加：
+
+```powershell
+$env:PATH = "$env:LOCALAPPDATA\Programs\ffmpeg\bin;$env:LOCALAPPDATA\Programs\Python\Python313;$env:LOCALAPPDATA\Programs\Python\Python313\Scripts;" + $env:PATH
+$env:PYTHONIOENCODING = "utf-8"   # 否则中文区域下 Python 打印非 ASCII 会抛 UnicodeEncodeError
+```
+
+### 3.6 视频：从文章生成英文短视频
+
+```powershell
+python tools/make-video.py <slug>                      # 完整生成
+python tools/make-video.py <slug> --dry-run            # 只出分镜+语音，跳过 ffmpeg
+python tools/make-video.py <slug> --voice en-GB-RyanNeural
+```
+
+流程：**读文章 → 从文章自己的文字里取旁白 → edge-tts 合成 → Pillow 画幻灯片 → ffmpeg 拼接**。
+
+设计要点：
+
+1. **旁白完全来自文章正文**（AI Summary / What happened / So what 的表 / The point），所以**视频不可能说出文章里没有的话**。这是规范 §7「不编造」在视频上的延伸。
+2. **不用任何 API key**：edge-tts 走微软公开的神经语音服务，Pillow 画纯文字幻灯片，因此没有图库授权问题。
+3. **产物在 `build/video/`，已 gitignore**。只有 YouTube id 进仓库。
+
+**已知的第一个坑（已修）**：表格单元格里的 Markdown 粗体 `**€15.00**` 曾被原样画成字面文字，因为段落清洗函数没作用到表格。现在单元格带 `emph` 标记，渲染成强调色。
+
+**发布后回写**：拿到 YouTube 链接后，在文章 frontmatter 加：
+
+```yaml
+youtube_id: "dQw4w9WgXcQ"     # 只要 11 位 id，不要整条 URL
+videoTitle: "..."              # 可选，默认用文章标题
+videoDuration: "PT4M13S"       # 可选，ISO 8601，喂给 VideoObject
+```
+
+`ArticleVideo` 组件会自动渲染 `youtube-nocookie` 播放器（`loading="lazy"`）+ `VideoObject` 结构化数据，**让视频在搜索结果里独立占位**。
+
 ### 3.2 GitHub 仓库（2026-10-01 建立）
 
 | 项 | 值 |
