@@ -215,8 +215,65 @@ $env:PATH = "$env:LOCALAPPDATA\Programs\ffmpeg\bin;$env:LOCALAPPDATA\Programs\Py
 $env:PYTHONIOENCODING = "utf-8"   # 否则中文区域下 Python 打印非 ASCII 会抛 UnicodeEncodeError
 ```
 
-### 3.6 视频：从文章生成英文短视频
+### 3.6 ⚠️⚠️ 命令行上不了 Google —— 本机最关键的一条配置（2026-10-03 解决）
 
+**症状**：浏览器能打开 Google / GSC / Trends / Reddit，但 `curl`、Node `fetch`、Python `requests` 全部**超时**。
+
+**根因**（三层，必须全部解决）：
+
+| 层 | 问题 | 证据 |
+| --- | --- | --- |
+| 1 | **系统代理开着，但命令行工具不读它** | 注册表 `ProxyEnable=1`、`ProxyServer=http=127.0.0.1:7890;https=127.0.0.1:7890`，端口 7890 在监听。浏览器读这个设置，curl 只认 `HTTP_PROXY` 环境变量 |
+| 2 | **设用户级环境变量也没用** | DSH 派生 shell 时捕获了环境块，**新进程不继承**。实测 `Process` 作用域仍是空 |
+| 3 | **走代理后 schannel 报 `0x80092013`** | "吊销服务器离线"——和当初 `git ls-remote` 挂 300 秒是同一个问题 |
+
+**解决方案**：把代理写进 **`%USERPROFILE%\.curlrc`**。curl 每次调用都重新读这个文件，所以绕开了环境块继承问题。
+
+```
+proxy = http://127.0.0.1:7890
+ssl-no-revoke
+connect-timeout = 20
+```
+
+**实测结果**（裸 curl，不传任何参数）：
+
+| 目标 | 配置前 | 配置后 |
+| --- | --- | --- |
+| `google.com` | 超时 | **200** |
+| `trends.google.com` | 超时 | **200** |
+| `searchconsole.googleapis.com` | 超时 | **404（可达）** |
+| `reddit.com` | 超时 | **403（可达）** |
+| `bing.com` | 200 | 200 |
+
+**这件事的意义**：规范和路线图里的「GSC 数据回流闭环」「Google Trends 选题」**在这之前是无法自动化的**——不是设计问题，是命令行根本没有到 Google 的路。
+
+**给 Node / Python 脚本用**（它们不读 `.curlrc`，只能靠环境变量，所以在命令里显式设）：
+
+```powershell
+$env:HTTPS_PROXY = "http://127.0.0.1:7890"
+$env:HTTP_PROXY  = "http://127.0.0.1:7890"
+```
+
+```javascript
+// Node：内置 fetch 不认 HTTPS_PROXY，需要 undici 的 ProxyAgent
+import { ProxyAgent, setGlobalDispatcher } from "undici";
+setGlobalDispatcher(new ProxyAgent("http://127.0.0.1:7890"));
+```
+
+```python
+# Python requests 自动读这两个变量
+proxies = {"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}
+```
+
+**坑中坑**：`Set-Content -Encoding utf8` 在 Windows PowerShell 会**写入 BOM**，而 curl 会把 BOM 当成非法首行。写 `.curlrc` 必须用：
+
+```powershell
+[System.IO.File]::WriteAllText($path, $content, (New-Object System.Text.UTF8Encoding($false)))
+```
+
+**另一个坑**：`.curlrc` 里的 `compressed` 选项**当前 libcurl 不支持**，会每次都打警告。
+
+### 3.7 视频：从文章生成英文短视频
 ```powershell
 python tools/make-video.py <slug>                      # 完整生成
 python tools/make-video.py <slug> --dry-run            # 只出分镜+语音，跳过 ffmpeg
