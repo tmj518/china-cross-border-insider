@@ -1,6 +1,7 @@
 ---
 title: "The EU's 2026 Compliance Sweep: 560 Orders, and the 58% That Should Worry Sellers"
-description: "The Commission checked almost 1,700 listings across 35 marketplaces. The marketplaces fixed their own paperwork. The listings did not. Here is what a takedown costs per SKU per day."
+subtitle: "The EU GPSR enforcement sweep of 2026, and what the takedown arithmetic costs a marketplace seller per SKU per day"
+description: "The Commission's 2026 GPSR enforcement sweep checked almost 1,700 marketplace listings across 35 platforms. The marketplaces fixed their own compliance paperwork. The seller listings did not. Here is what a takedown costs per SKU per day."
 publishDate: 2026-10-02
 category: "platforms"
 audience: "platform-seller"
@@ -62,7 +63,7 @@ sources:
 
 ## AI Summary
 
-The European Commission's 2026 sweep checked almost 1,700 listings across 35 online marketplaces. Marketplaces fixed their own registration obligations; the listings did not. Only 58% showed the manufacturer, the EU responsible person and product identification together, and authorities issued 560 enforcement orders.
+The European Commission's 2026 GPSR enforcement sweep checked almost 1,700 marketplace listings across 35 platforms. Marketplace compliance obligations were met; the seller listings were not. Only 58% showed the manufacturer, the EU responsible person and product identification together, and authorities issued 560 orders.
 
 Here is the part sellers keep missing. The obligation that fails a listing is not the technical file, the test report or the declaration of conformity. It is three pieces of text that belong on the product page, and in 42% of the listings checked, at least one of them was absent.
 
@@ -114,7 +115,7 @@ Two things follow from that table.
 
 **The tail is not safe.** The third row is a low-volume listing where the absolute loss looks tolerable — $899.55. Multiply it across the fifty listings of that size that a mid-sized catalogue contains, and a single sweep becomes a five-figure event. Long-tail listings are also the ones least likely to have a named EU responsible person, because the compliance overhead per SKU looks disproportionate until enforcement arrives.
 
-**So do not treat this as a documentation project. Treat it as the cheapest insurance in the catalogue.** Pull every live listing and check three fields against the source documents: manufacturer name and address, an EU responsible person with real contact details, and product identification that matches the item being sold. Where any field is missing, the listing is one sweep away from the table above. The remediation takes an afternoon per catalogue; the alternative is priced per day.
+**So do not treat this as a documentation project. Treat it as the cheapest insurance in the catalogue.** Pull every live listing and check three fields against the source documents: manufacturer name and address, an EU responsible person with real contact details, and product identification that matches the item being sold. Where any field is missing, the listing is one sweep away from the table above. The remediation takes an afternoon per catalogue; the alternative is priced per day. Note that the listing is also where a second, smaller EU charge attaches under [the 2026 per-item customs charge](/blog/eu-per-item-customs-charge-2026/), so the item count that raises your duty bill is the same count that raises compliance exposure.
 
 ## For you
 

@@ -1,5 +1,6 @@
 ---
 title: "Section 301 Exclusions Expire November 9: The Duty Cliff, Dated and Priced"
+subtitle: "The Section 301 exclusions expiration date is 9 November 2026, and the per-unit math for a US importer of Chinese goods is already fixed"
 description: "USTR's remaining 178 Section 301 exclusions end for goods entered on or after 10 November 2026. Here is the per-unit and per-container math, and the correction window still open on past entries."
 publishDate: 2026-10-01
 category: "trade-policy"
@@ -110,7 +111,7 @@ The pattern to notice: a low unit price does not mean a low exposure. The wire e
 
 **The counterintuitive part is what the exclusion does not cover.** The 9903.88.69 and 9903.88.70 headings exclude you from the technology-transfer action that produced Lists 1 to 4A. They do nothing about the forced-labour action that took effect for entries on or after 24 July 2026, which applies an additional 12.5% to products of 54 economies including China. A product sitting comfortably inside an exclusion today still pays that layer. Importers who assume "I am excluded" means "I am clear" are reading half the entry summary.
 
-**So do not plan around a renewal you have not seen.** If USTR publishes a comment notice, it will arrive in the Federal Register with a short window. Until then, the correct planning assumption is that the rate returns on 10 November 2026, and any renewal is upside. Two moves follow from that: model the snapback against your actual entry volume by SKU, and review entry timing for anything landing in the first half of November. Entry planning is ordinary practice, not a loophole — and it only works if the merchandise genuinely qualifies, with correct classification, valuation and origin.
+**So do not plan around a renewal you have not seen.** If USTR publishes a comment notice, it will arrive in the Federal Register with a short window. Until then, the correct planning assumption is that the rate returns on 10 November 2026, and any renewal is upside. Two moves follow from that: model the snapback against your actual entry volume by SKU, and review entry timing for anything landing in the first half of November. Entry planning is ordinary practice, not a loophole — and it only works if the merchandise genuinely qualifies, with correct classification, valuation and origin. Note that a listed rate is not the only US instrument on Chinese goods: Section 232 can impose a floor instead, as it now does on [polysilicon under Proclamation 11052](/blog/proclamation-11052-polysilicon-minimum-import-price/).
 
 ## For you
 

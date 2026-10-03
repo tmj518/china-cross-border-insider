@@ -1,5 +1,6 @@
 ---
 title: "China Put a Face Check on Company Registration — and Named the Agents Who File It"
+subtitle: "China's 2026 business registration real-name verification rule, and what it changes for supplier verification and due diligence"
 description: "From 1 May 2026 every Chinese business registration needs real-name confirmation reviewed by the registrar. A companion rule built a national registry of filing agents, with a three-year ban for false registration."
 publishDate: 2026-10-02
 category: "sourcing"
@@ -116,7 +117,7 @@ Put the compliance change and the money side by side, because they answer differ
 
 Order value, deposit percentage and check cost are your inputs; the break-even is the output. Read the second row as the decision rule it is: **if the chance that a new supplier's registration is not what it claims is higher than about one in 120, the check pays for itself.** That is a low bar, and it is why verification is an arithmetic question rather than a matter of diligence culture.
 
-**So do not treat this as a compliance update. Treat it as three new questions.** Who filed the registration, and are they in the agent system? When was the registration last amended, and did that happen after 1 May 2026? And which of the entities you deal with is the registered entity — because a trading agent filing on behalf of a factory is now a documented relationship rather than an inference from a business card.
+**So do not treat this as a compliance update. Treat it as three new questions.** Who filed the registration, and are they in the agent system? When was the registration last amended, and did that happen after 1 May 2026? And which of the entities you deal with is the registered entity — because a trading agent filing on behalf of a factory is now a documented relationship rather than an inference from a business card. The identity question has a price attached in the export categories too, since [the export tax rebate](/blog/china-export-tax-rebate-removal-battery-solar/) turns on the exporter's own registration and on the date on the customs declaration.
 
 ## For you
 

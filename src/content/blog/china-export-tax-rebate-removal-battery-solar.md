@@ -1,5 +1,6 @@
 ---
 title: "China Is Removing the Export Rebate That Funded Cheap Quotes"
+subtitle: "The 2026 export tax rebate removal for battery and solar exporters, and what the change does to the importer's FOB price"
 description: "The rebate was cancelled on 249 product lines from 1 April 2026, and the list is not solar-only. Battery rebates fall from 9% to 6%, then to zero on 1 January 2027. Nine points become money on your invoice."
 publishDate: 2026-10-02
 updatedDate: 2026-10-02
@@ -93,7 +94,7 @@ The Ministry of Finance and the State Taxation Administration issued 财政部 �
 
 **And the deadline is a shipping deadline, not a negotiation.** Article 4 of the announcement states that the applicable export rebate rate is determined by the export date recorded on the customs declaration for the goods. Not the order date, not the contract date, not the date the rebate was quoted into your price. Cargo whose declaration date falls on or after 1 April 2026 loses the rebate regardless of when it was ordered.
 
-The predecessor step is worth knowing because it sets the baseline. 财政部 税务总局公告2024年第15号, issued on 15 November 2024 and effective from 1 December 2024, had already cut the rebate on photovoltaic and battery products from 13% to 9%. The full withdrawal therefore happened inside a sixteen-month window rather than as a sudden move.
+The predecessor step is worth knowing because it sets the baseline. 财政部 税务总局公告2024年第15号, issued on 15 November 2024 and effective from 1 December 2024, had already cut the rebate on photovoltaic and battery products from 13% to 9%. The full withdrawal therefore happened inside a sixteen-month window rather than as a sudden move. It is also one half of a two-sided export policy: the same tariff plan taxes raw metal on the way out under [the 2026 export duty schedule](/blog/china-2026-export-duty-wrought-metals/), so material and finished goods are being treated in opposite directions.
 
 Li Xianzhong of the Ministry of Finance described the adjustment at a press conference as a way to curb involuntary competition, promote more efficient use of resources, and reduce environmental pollution and carbon emissions — the same framing the ministry used when it published the announcement. The rebate was already coded out of the system before it disappeared: 税总货劳函〔2026〕27号, issued on 3 March 2026, published rebate rate library 2026A implementing this announcement, a month ahead of the effective date.
 
@@ -125,7 +126,7 @@ Three observations, and the third is the important one.
 
 **The right time to negotiate is now, and the leverage runs the other way from usual.** Buyers normally wait for a price increase and negotiate afterwards. Here the increase is published, dated and known to both sides, which means a supplier quoting 2027 volumes today has to decide whether to price in six points and risk losing the order, or hold the price and carry it. That decision is easier for them to make in your favour if you commit volume in exchange. The window closes when their 2027 price list is final, not when the announcement takes effect.
 
-**So do not ask for a discount. Ask for the mechanism.** Specifically, ask what the 1 January change does to their unit price, whether their quote assumes domestic or exported input VAT treatment, and whether they will hold the current price against a committed volume with a delivery date. A supplier who cannot answer the first question has not modelled it, and will model it in January, on your order.
+**So do not ask for a discount. Ask for the mechanism.** Specifically, ask what the 1 January change does to their unit price, whether their quote assumes domestic or exported input VAT treatment, and whether they will hold the current price against a committed volume with a delivery date. A supplier who cannot answer the first question has not modelled it, and will model it in January, on your order. The same date rule makes the supplier's registration status worth knowing before you commit, which is what [the 2026 real-name registration rule](/blog/china-real-name-registration-supplier-verification/) now exposes.
 
 ## For you
 

@@ -1,5 +1,6 @@
 ---
 title: "The Postal Flat Fee Died in Four Days — Now the Route Itself Is Closing"
+subtitle: "US de minimis is suspended for 2026 and the postal route for a China parcel is closing, so the duty per shipment now turns on classification"
 description: "The $80/$160/$200 per-item postal duty ran from 24 to 27 February 2026, then vanished. From 22 October 2026 Chapter 99 goods lose the postal informal route, and the arithmetic moves to classification."
 publishDate: 2026-10-03
 category: "trade-policy"
@@ -78,7 +79,7 @@ Three instruments, and the sequence matters more than any single rate.
 
 **A flat 10% replaced it, temporarily.** From 28 February 2026, Executive Order 14388 substituted a duty equal to the rate in Proclamation 11012 — a Section 122 temporary import surcharge of 10% ad valorem, assessed on the value of each dutiable postal item. That surcharge had a 150-day life and expired on 24 July 2026 without extension.
 
-**What applies now.** Postal parcels pay ordinary tariff treatment: the Column 1 rate plus whatever Section 301 duty the goods carry. Executive Order 14389 ended the IEEPA duties but expressly preserved Section 232 and Section 301.
+**What applies now.** Postal parcels pay ordinary tariff treatment: the Column 1 rate plus whatever Section 301 duty the goods carry. Executive Order 14389 ended the IEEPA duties but expressly preserved Section 232 and Section 301. That matters more after 9 November 2026, when the remaining exclusions end under [the Section 301 exclusions schedule](/blog/section-301-exclusions-expire-november-2026/), so a parcel that pays the base rate today pays more on the same classification next quarter.
 
 | Period | What a China-origin postal parcel paid |
 | --- | --- |
@@ -130,6 +131,7 @@ The base rate and the Section 301 rate are published; the parcel value, the entr
 - **Sellers whose catalogue is mostly low-value, multi-item parcels:** ad valorem treatment reduced your duty bill relative to the flat schedule, but the fixed entry cost per shipment is now the dominant term. Consolidating shipments reduces the number of times that cost is paid.
 - **Sellers with anti-dumping or countervailing exposure:** entry type 13 is closed to shipments subject to AD/CVD or quota. There is no informal channel for those goods, and the planning should assume formal entry permanently.
 - **Anyone modelling off a published article:** check the date on it. A $200-per-item figure describes four days in February 2026, and a 10% flat rate describes a window that closed on 24 July 2026. At least one widely-read explainer still states the Section 122 surcharge is in effect.
+- **Anyone with the same low-value problem in Europe:** the EU closed its own relief on a different mechanism and a different date, set out in [the EU per-item customs charge analysis](/blog/eu-per-item-customs-charge-2026/). The two regimes do not offset each other, so a seller shipping to both markets carries both.
 
 ## The data point
 

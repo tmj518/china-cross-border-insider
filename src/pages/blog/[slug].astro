@@ -45,6 +45,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: data.title,
+  ...(data.subtitle ? { alternativeHeadline: data.subtitle } : {}),
   description: data.description,
   datePublished: data.publishDate.toISOString(),
   ...(data.updatedDate ? { dateModified: data.updatedDate.toISOString() } : {}),
@@ -57,7 +58,9 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={`${data.title} — ${SITE.name}`}
+  title={data.subtitle
+    ? `${data.title} — ${data.subtitle} — ${SITE.name}`
+    : `${data.title} — ${SITE.name}`}
   description={data.description}
   ogType="article"
   image={data.heroImage}
@@ -71,6 +74,7 @@ const jsonLd = {
         <header class="article-header">
           <a class="tag" href={categoryHref(data.category)}>{siloLabel}</a>
           <h1>{data.title}</h1>
+          {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
           <p class="standfirst">{data.description}</p>
           <div class="meta">
             {formatDate(data.publishDate)} · {minutes} min read · By {AUTHOR.name}

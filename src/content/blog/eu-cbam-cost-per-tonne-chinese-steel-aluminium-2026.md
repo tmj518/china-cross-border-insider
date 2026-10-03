@@ -1,5 +1,6 @@
 ---
 title: "What Chinese Steel Really Costs Under CBAM in 2026, per Tonne"
+subtitle: "The EU CBAM cost per tonne of Chinese steel and aluminium in 2026, with every default value, benchmark and certificate price printed"
 description: "The EU replaced its CBAM default-value tables retroactively on 31 July 2026, and the \"CBAM factor\" is read backwards by almost everyone. Here is what Chinese steel and aluminium actually cost per tonne in 2026, with every input printed."
 publishDate: 2026-10-03
 category: "trade-policy"

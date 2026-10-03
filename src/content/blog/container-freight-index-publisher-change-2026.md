@@ -1,5 +1,6 @@
 ---
 title: "Your Freight Surcharge Points at an Index That Changed Owner in June"
+subtitle: "The CCFI and SCFI container freight index changed publisher in 2026, and every surcharge formula that points at the index changed with it"
 description: "Seven container benchmarks moved publisher on 18 June 2026. The same week the Southeast Asia lane rose 9.1% while Europe fell 2.9% — and the composite said almost nothing moved."
 publishDate: 2026-10-02
 category: "logistics"
@@ -113,7 +114,7 @@ The second conclusion is the expensive one. If the clause references a **composi
 
 Eight dollars on a container is noise. Seventy-nine dollars on every container, for a year, is not — and it fails silently, because a composite-referenced clause still produces a number. It just produces the wrong one.
 
-**So do not renegotiate the rate. Re-point the reference.** Three moves: read your freight and bunker clauses and write down the exact index, publisher and baseline period each one names; check whether that publisher still publishes it and whether the lane you actually ship on is public or behind a subscription; and where the clause references a composite, compute both the composite change and your lane change before accepting the next adjustment. That last calculation takes minutes and is the only one that reconciles to your invoice.
+**So do not renegotiate the rate. Re-point the reference.** Three moves: read your freight and bunker clauses and write down the exact index, publisher and baseline period each one names; check whether that publisher still publishes it and whether the lane you actually ship on is public or behind a subscription; and where the clause references a composite, compute both the composite change and your lane change before accepting the next adjustment. That last calculation takes minutes and is the only one that reconciles to your invoice. Treat it as one line in a budget that has moved on the goods side too — the factory gate prices in [the August PPI reading](/blog/china-ppi-positive-factory-price-drift/) now rise rather than drift down.
 
 ## For you
 

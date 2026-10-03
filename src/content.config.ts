@@ -25,6 +25,17 @@ export const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string().max(120),
+    /**
+     * The positioning line, not a summary. Spec decision 1 (2026-10-03): the
+     * title carries the hook that earns the click, and `subtitle` carries the
+     * target keyword that earns the ranking. It renders visibly under the
+     * <h1> and it goes into the <title> tag, so the keyword reaches the SERP.
+     *
+     * Keep it to one sentence, with the target keyword in it, and without the
+     * hook's rhetoric. It is not the same thing as `description`, which is the
+     * longer card excerpt and the meta description.
+     */
+    subtitle: z.string().max(160).optional(),
     /** Doubles as <meta name="description"> and the card excerpt. */
     description: z.string().max(300),
     publishDate: z.coerce.date(),

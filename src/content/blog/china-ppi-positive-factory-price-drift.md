@@ -1,5 +1,6 @@
 ---
 title: "China's Factory-Gate Prices Turned Positive, and That Ends the Wait-for-Next-Year Trade"
+subtitle: "China's PPI in August 2026 turned positive on factory gate prices, and that resets the importer's sourcing budget for everything bought in 2027"
 description: "PPI rose 3.8% year on year in August 2026 after a 0.7% monthly fall in July, and the year-to-date average is 2%. For buyers whose baseline was that Chinese quotes drift down, the direction has changed."
 publishDate: 2026-10-02
 category: "supply-chain"
@@ -95,7 +96,7 @@ NBS statistician Dong Lijuan attributed the monthly move in part to imported pri
 
 **Much of the driver is imported, not Chinese.** The bureau's own attribution points at international crude oil and nonferrous metal prices. That matters for how a buyer should read the number: this is not a Chinese supplier base deciding to charge more, it is a global input-cost move passing through a manufacturing base that consumes those inputs. The practical consequence is that the same pressure appears in quotes from Vietnam, India and Mexico — so switching country of origin does not address it, while switching material or specification does.
 
-**Two policy changes we have covered run in the same direction.** The withdrawal of export VAT rebates described in [the export rebate piece](/blog/china-export-tax-rebate-removal-battery-solar/) raises the exporter's net cost by the rebate points removed, and the licensing regime described in [the rare earth controls analysis](/blog/china-rare-earth-export-controls-licence-regime/) adds administrative cost and lead time to controlled materials. Input costs, tax treatment and administrative friction are now all pushing the same way. That combination is what makes this more than a monthly data point.
+**Two policy changes we have covered run in the same direction.** The withdrawal of export VAT rebates described in [the export rebate piece](/blog/china-export-tax-rebate-removal-battery-solar/) raises the exporter's net cost by the rebate points removed, and [the rare earth export licensing regime](/blog/china-rare-earth-export-controls-licence-regime/) adds administrative cost and lead time to controlled materials. Input costs, tax treatment and administrative friction are now all pushing the same way. That combination is what makes this more than a monthly data point.
 
 **And the spike is not the budget number.** The August year-on-year reading describes the current quarter. The year-to-date average of 2.0% describes the year that has actually happened. Budgeting a full year on the spike overstates it by nearly a factor of two; budgeting on nothing understates it by the whole move.
 
@@ -116,7 +117,7 @@ Three things follow.
 
 **Passthrough is the negotiation, and it is worth more than the last discount.** Halving the passthrough halves the cost of the drift — $5,000 instead of $10,000 on the budget above. A supplier with idle capacity and a strong order book position will absorb part of an input-cost move to hold volume, and that concession is easier to win at the moment the costs are published than at the moment the quote is issued.
 
-**"Wait for next year" is no longer free.** The strategy depended on drift being negative. On the year-to-date average it now costs 2% a year to defer, before considering anything else. That does not mean buying immediately is always right — a buyer's cost of capital still competes with the drift — but the comparison has changed sign on the price side, and it belongs in the decision rather than behind it.
+**"Wait for next year" is no longer free.** The strategy depended on drift being negative. On the year-to-date average it now costs 2% a year to defer, before considering anything else. That does not mean buying immediately is always right — a buyer's cost of capital still competes with the drift — but the comparison has changed sign on the price side, and it belongs in the decision rather than behind it. The drift is also not the only cost moving on Chinese quotes this year: the export duty schedule analysed in [the wrought metals piece](/blog/china-2026-export-duty-wrought-metals/) adds a charge on raw material that no destination-side model shows.
 
 **So recalibrate the default, not the individual negotiation.** Update the standing assumption in your budget from flat-or-down to the published year-to-date figure; pull your own category series rather than quoting the headline at a supplier; and where a contract runs for a year, put the drift on the agenda at signing rather than at renewal.
 

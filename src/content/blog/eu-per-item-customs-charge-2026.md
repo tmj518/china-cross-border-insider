@@ -1,5 +1,6 @@
 ---
 title: "The EU Now Charges by the Item, Not the Parcel — and Ten Euros Can Cost Fifteen"
+subtitle: "The EU abolished the EUR 150 de minimis relief in 2026 and replaced it with a EUR 3 duty per item, plus a handling fee from November"
 description: "From 1 July 2026 the €150 duty relief is gone, replaced by €3 per item. From 1 November a €2 handling fee stacks on top, including above €150. Both are non-refundable, and both fall on the declarant."
 publishDate: 2026-10-02
 category: "platforms"
@@ -95,7 +96,7 @@ The Irish Revenue Commissioners published the worked example that makes the arit
 
 ## Why now
 
-**The scope limit is narrower than the coverage suggests.** Article 2 of Regulation (EU) 2026/382 applies the €3 duty where the importation is exempt from VAT under Article 143(1)(ca) of the VAT Directive, or where the goods are in a postal consignment. That is a condition, not a description of all e-commerce. Several English summaries describe the measure as covering goods "regardless of VAT scheme", which obscures the test that decides whether it reaches a given shipment. Sellers should check the condition against their own declaration route rather than against a summary.
+**The scope limit is narrower than the coverage suggests.** Article 2 of Regulation (EU) 2026/382 applies the €3 duty where the importation is exempt from VAT under Article 143(1)(ca) of the VAT Directive, or where the goods are in a postal consignment. That is a condition, not a description of all e-commerce. Several English summaries describe the measure as covering goods "regardless of VAT scheme", which obscures the test that decides whether it reaches a given shipment. Sellers should check the condition against their own declaration route rather than against a summary — the same discipline [the CBAM per-tonne arithmetic](/blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026/) demands of anyone quoting a carbon cost.
 
 **The liability sits with you, and it is settled monthly.** The delegated regulation operationalising the duty places responsibility for paying the €3 first and foremost on the declarant — the platforms and sellers, or the carrier or agent declaring the goods — with the consumer only residually. Article 20(5) requires the debtor to pay the handling fee at least once a month to the customs authorities, at the moment of payment of the customs debt. A charge settled monthly against a customs debt is a working-capital item and, for many declarants, a guarantee obligation, not a line on a consumer receipt.
 

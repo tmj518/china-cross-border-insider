@@ -668,8 +668,22 @@ a {
   margin-bottom: 14px;
 }
 
+/*
+ * The subtitle is the positioning line, not a summary (spec decision 1). It
+ * sits between the hook in the <h1> and the longer card excerpt, so it reads
+ * as a deck: smaller than the headline, darker than the standfirst, and it
+ * carries the target keyword into the visible page as well as the <title>.
+ */
+.article-header .subtitle {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--c-ink-4);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
 .article-header .standfirst {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--c-ink-3);
   line-height: 1.6;
 }

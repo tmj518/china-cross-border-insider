@@ -1,5 +1,6 @@
 ---
 title: "China's Origin Data Goes Electronic: The 1 December 2026 Deadline for RCEP Importers"
+subtitle: "The China-Malaysia RCEP certificate of origin goes electronic in 2026: what missing origin data costs an importer at customs release"
 description: "From 1 December 2026, missing electronic origin data for RCEP and ACFTA certificates out of Malaysia means a duty guarantee at release. Here is what that guarantee costs, and what it does not protect."
 publishDate: 2026-10-01
 category: "logistics"
@@ -92,7 +93,7 @@ There is a second reason the timing matters. The manual-entry fallback is not a 
 
 Look at the sequence rather than the single announcement. Announcement No. 34 of 2021 moved preferential origin declaration onto a paperless footing. Announcement No. 74 of 2026 moved the underlying data itself into an exchange between two customs administrations. The next step in that progression is not more manual entry.
 
-Announcement No. 74 covers the China–Malaysia corridor, and every indication is that this is the pattern China is building with free trade agreement partners one corridor at a time rather than a Malaysia-specific arrangement. Importers in other ASEAN markets reading this as someone else's problem are reading it wrong. The correct reading is that Malaysia is the first corridor to reach the end state, and the operational template is now visible.
+Announcement No. 74 covers the China–Malaysia corridor, and every indication is that this is the pattern China is building with free trade agreement partners one corridor at a time rather than a Malaysia-specific arrangement. Importers in other ASEAN markets reading this as someone else's problem are reading it wrong. The correct reading is that Malaysia is the first corridor to reach the end state, and the operational template is now visible. The same shift is under way on the goods themselves, where controlled materials now move under [the rare earth export licence regime](/blog/china-rare-earth-export-controls-licence-regime/) rather than on a declaration alone.
 
 ## So what
 
@@ -110,7 +111,7 @@ The expensive failure is the certificate that never verifies. If the electronic 
 
 **So do not manage the deadline. Manage the transmission.** The action that matters happens upstream, before the vessel sails: confirm that your supplier or trader has actually transmitted the certificate data for that specific shipment, and that the certificate number on the commercial documents matches the transmitted record. That is a five-minute check at the right moment and an expensive problem at the wrong one.
 
-Two habits are worth building now, while the fallback still exists. First, ask for the certificate number as soon as it is issued, not when the goods arrive. Second, when you use a back-to-back certificate through a Malaysian trader, confirm which underlying certificate it references — the linkage is the part most likely to break, and it breaks silently.
+Two habits are worth building now, while the fallback still exists. First, ask for the certificate number as soon as it is issued, not when the goods arrive. Second, when you use a back-to-back certificate through a Malaysian trader, confirm which underlying certificate it references — the linkage is the part most likely to break, and it breaks silently. This is the same pattern as [the freight index publisher change](/blog/container-freight-index-publisher-change-2026/): a reference in a contract quietly stops pointing where it used to, and neither side notices until the invoice.
 
 ## For you
 

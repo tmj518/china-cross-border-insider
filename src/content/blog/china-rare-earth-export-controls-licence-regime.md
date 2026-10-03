@@ -1,5 +1,6 @@
 ---
 title: "China's Rare Earth Controls Are a Licence Regime, Not a Ban — and November 2026 Is the Next Decision"
+subtitle: "China's rare earth export controls in 2026 are a licensing regime, and the November 2026 decision date is the one that moves lead times"
 description: "Five notices, twenty element symbols, fifteen active and five suspended. The constraint that stops most shipments is not the law, it is the seller's willingness to risk a licence file."
 publishDate: 2026-10-02
 category: "supply-chain"
@@ -96,7 +97,7 @@ Three things converge before the end of 2026.
 
 **The suspension window.** The October 2025 package was suspended for a defined period, and that period runs into November 2026. A suspended notice can expire, be extended, or return in revised form. Buyers who treated the suspension as a resolution have been pricing a temporary condition as a permanent one.
 
-**The domestic layer underneath.** The Rare Earth Management Regulations, State Council Order No. 785, took effect on 1 October 2024 and cover mining, smelting and separation, metal smelting, comprehensive utilisation, circulation, import and export. The regulations state that rare earth resources belong to the state. This matters because export controls are not the only constraint on supply: a compliant exporter still needs traceable material from an approved production chain. A supplier who cannot demonstrate origin or quota compliance can decline an order even when the export notice itself is paused.
+**The domestic layer underneath.** The Rare Earth Management Regulations, State Council Order No. 785, took effect on 1 October 2024 and cover mining, smelting and separation, metal smelting, comprehensive utilisation, circulation, import and export. The regulations state that rare earth resources belong to the state. This matters because export controls are not the only constraint on supply: a compliant exporter still needs traceable material from an approved production chain, and the seller's own registration is now documented under [the 2026 real-name registration rule](/blog/china-real-name-registration-supplier-verification/). A supplier who cannot demonstrate origin or quota compliance can decline an order even when the export notice itself is paused.
 
 **The destination and entity layer.** Announcements Nos. 1 and 17 of 2026 extend the controls along two axes that have nothing to do with chemistry — destination and named end user. For a buyer, this means the same material can be routine for one customer and unlicensable for another, with no change to the product or the price.
 

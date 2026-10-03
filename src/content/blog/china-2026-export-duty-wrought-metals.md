@@ -1,5 +1,6 @@
 ---
 title: "China Taxes the Metal on the Way Out, Then Zeroes It Once the Metal Has a Shape"
+subtitle: "China's 2026 export duty list: the 30 percent provisional rate on copper and aluminium raw material, and why every wrought product is zeroed"
 description: "107 goods carry Chinese export duties in 2026 and 68 have provisional rates. For copper and aluminium the pattern is deliberate: raw material taxed at 30 percent, every wrought product zeroed."
 publishDate: 2026-10-03
 category: "sourcing"
@@ -107,7 +108,7 @@ Three reasons this belongs in a sourcing decision this quarter rather than in an
 
 **Some goods have no provisional relief at all, and those are the expensive ones.** Ferrochrome sits at 40 percent with no provisional rate, which is why the announcement names it — 继续对铬铁等107项商品 — as the lead example of the whole list. Steel and cast-iron scrap runs at 40 percent across seven lines. Bone meal and bone waste at 40. Tin ore at 50 percent nominal, cut to a 20 percent provisional. A buyer whose input is on the unrelieved part of this list is paying an export duty that no destination-side analysis will show.
 
-**And the direction of the plan is consistent with the rest of 2026.** China is keeping raw material at home and exporting the manufactured form, while separately withdrawing the export VAT rebate on 249 product lines described in [the export rebate analysis](/blog/china-export-tax-rebate-removal-battery-solar/). An export duty on the input and no rebate on the output is a coherent industrial position: process it here, or pay to take it away.
+**And the direction of the plan is consistent with the rest of 2026.** China is keeping raw material at home and exporting the manufactured form, while separately withdrawing the export VAT rebate on 249 product lines described in [the export rebate analysis](/blog/china-export-tax-rebate-removal-battery-solar/). An export duty on the input and no rebate on the output is a coherent industrial position: process it here, or pay to take it away. Both measures are also part of the same turn in Chinese factory pricing described in [the August PPI reading](/blog/china-ppi-positive-factory-price-drift/).
 
 ## So what
 

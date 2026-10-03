@@ -97,6 +97,7 @@ function loadPublished() {
     out.push({
       slug: file.replace(/\.md$/, ""),
       title: field("title"),
+      subtitle: field("subtitle"),
       description: field("description"),
       keyword: field("target_keyword"),
       gain: field("information_gain"),
@@ -277,7 +278,14 @@ function checkSeo(article) {
   const summary = stripMd(
     /^##\s+AI Summary\s*$([\s\S]*?)(?=^##\s|\Z)/m.exec(article.body)?.[1] ?? "",
   );
-  const cTitle = cover(article.title);
+  /*
+   * The title carries the hook; the subtitle carries the keyword (spec decision
+   * 1, 2026-10-03). They share one <title> tag in the rendered page, so the
+   * coverage test runs against them together — otherwise every hooky headline
+   * fails a rule the page itself satisfies. The threshold is unchanged at 50 %.
+   */
+  const headline = [article.title, article.subtitle].filter(Boolean).join(" — ");
+  const cTitle = cover(headline);
   const cDesc = cover(article.description);
   const cSum = cover(summary);
   const internal = [...article.body.matchAll(/\]\((\/[^)\s]+)\)/g)].length;
@@ -287,7 +295,7 @@ function checkSeo(article) {
   const pass = cTitle >= 0.5 && (cDesc >= 0.5 || cSum >= 0.5) && internal >= 1;
   const pct = (n) => `${(n * 100).toFixed(0)}%`;
   const bits = [
-    `title 覆盖 ${pct(cTitle)}`,
+    `title${article.subtitle ? "+subtitle" : ""} 覆盖 ${pct(cTitle)}${article.subtitle ? "" : "（无副标题）"}`,
     `description ${pct(cDesc)}`,
     `AI Summary ${pct(cSum)}`,
     `内链 ${internal} 条`,
@@ -298,7 +306,19 @@ function checkSeo(article) {
     detail: bits.join(" · "),
     // Density is deliberately not checked: it rewards repetition, and this
     // site's positioning is information gain rather than keyword volume.
-    note: pass ? "关键词落位合格（不查密度，密度会诱导堆砌）" : "标题覆盖不足或内链为 0",
+    // The note names the rule that actually failed — an earlier version said
+    // "标题覆盖不足" for a piece whose title scored 100 % and whose only
+    // failure was zero internal links.
+    note: pass
+      ? "关键词落位合格（不查密度，密度会诱导堆砌）"
+      : [
+          cTitle < 0.5 && `标题+副标题关键词覆盖 ${pct(cTitle)} < 50%`,
+          !(cDesc >= 0.5 || cSum >= 0.5) &&
+            `description ${pct(cDesc)} 与 AI Summary ${pct(cSum)} 都 < 50%`,
+          internal < 1 && "正文内链 0 条（需 ≥1）",
+        ]
+          .filter(Boolean)
+          .join("；"),
   };
 }
 

@@ -1,5 +1,6 @@
 ---
 title: "The Polysilicon Tariff Never Says China — and Buying Cheaper Costs You More"
+subtitle: "Proclamation 11052 sets a Section 232 minimum import price on polysilicon, and a lower invoice raises the effective duty rate"
 description: "Proclamation 11052 sets minimum import prices on polysilicon and its derivatives from 4 December 2026. The mechanism inverts the usual rule: a lower invoice raises your effective duty rate."
 publishDate: 2026-10-02
 category: "trade-policy"
@@ -126,6 +127,7 @@ Three things follow, and the third is the one nobody is pricing.
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.
 - **Solar cell and module importers:** at $0.22/W and $0.38/W, the floors sit close enough to prevailing pricing that the shortfall mechanism applies to ordinary transactions rather than distressed ones. Build the first-sale documentation into your standard order process now, while there is no live entry to fix.
 - **Anyone planning to pull shipments forward:** the stockpiling rule runs to 3 December 2026 and caps newly registered importers of record at volumes measured in kilograms and units per week. A forward-buying plan that ignores the caps produces entries that cannot be made, which is a worse outcome than paying the duty.
+- **Anyone with both Section 232 and Section 301 exposure on the same entry:** a minimum import price is a different instrument from the listed-rate tariffs in [the Section 301 exclusions analysis](/blog/section-301-exclusions-expire-november-2026/), and both can apply to one shipment. Model them as separate lines rather than as one combined rate.
 
 ## The data point
 
