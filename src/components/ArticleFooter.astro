@@ -1,5 +1,5 @@
 ---
-import { AUTHOR, DISCLAIMER } from "../consts";
+import { AUTHOR } from "../consts";
 import NewsletterForm from "./NewsletterForm.astro";
 import RelatedCard from "./RelatedCard.astro";
 import type { CardData } from "../lib/post";
@@ -53,6 +53,9 @@ const {
       )
     }
 
-    <p class="disclaimer">{DISCLAIMER}</p>
+    {/* The disclaimer used to sit here. It now lives in the site footer, which
+        every page already carries, so repeating it on articles said the same
+        thing twice on one screen. This block is also where the audio player and
+        video embed will go, and it should not be crowded. */}
   </div>
 </div>

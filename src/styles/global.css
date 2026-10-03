@@ -222,11 +222,13 @@ a {
 }
 
 /* Footer disclaimer. The footer sits on a dark background, so this cannot use
-   the ink tokens the article-foot version uses. Dimmer and smaller than the
-   tagline above it: a standing notice, not a closing statement. */
+   the ink tokens the article-foot version uses.
+   `margin: auto` rather than `margin: 0` because .footer-inner is centred with
+   text-align and a fixed max-width would otherwise sit hard against the left
+   edge of the footer while its text stayed centred. */
 .footer .disclaimer {
   max-width: 68ch;
-  margin: 18px 0 0;
+  margin: 18px auto 0;
   font-size: 11px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.42);
