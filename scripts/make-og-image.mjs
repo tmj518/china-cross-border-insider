@@ -4,7 +4,9 @@
  *
  * Run:  node scripts/make-og-image.mjs     (dev-only, needs @napi-rs/canvas)
  *
- * Re-run whenever the site name or tagline changes.
+ * Re-run whenever the site name or tagline changes. The 2026-10-03 re-run
+ * dropped "No tracking · No ads" from the card: it duplicated /privacy/ on a
+ * social image, where the space is worth more spent on the positioning line.
  * TODO(brand): replace with a designed 1200x630 card once art exists.
  */
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -72,7 +74,7 @@ ctx.stroke();
 
 ctx.fillStyle = SOFT;
 ctx.font = `24px ${sansStack}`;
-ctx.fillText("No tracking · No ads · Not financial or legal advice", 90, 562);
+ctx.fillText("Independent analysis · Every figure sourced and dated", 90, 562);
 
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, canvas.toBuffer("image/png"));

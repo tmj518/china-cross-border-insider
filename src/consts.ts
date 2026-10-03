@@ -19,10 +19,11 @@ export const SITE = {
   /** Kept under ~140 chars: this doubles as the meta description. */
   description:
     "Independent analysis of China trade policy and supply chains, converted into per-unit landed cost for sellers and importers worldwide.",
-  // The "Not financial or legal advice" fragment was removed from this line
-  // once the full disclaimer moved into the site footer — the two sat directly
-  // above and below each other saying the same thing.
-  tagline: "No tracking · No ads · Independent analysis",
+  // The "No tracking · No ads · Independent analysis" tagline was removed from
+  // the footer on 2026-10-03. None of the three claims was false, but the line
+  // read as marketing, and the substantive version of it already lives on
+  // /privacy/ ("No tracking scripts. No advertising networks. No third-party
+  // analytics"). The footer now carries the disclaimer and the copyright only.
   language: "en",
   /** Newsletter placeholder — swap for the real provider (Buttondown / ConvertKit) later. */
   newsletterAction: "",
