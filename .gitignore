@@ -59,3 +59,21 @@ landed-math-dossier-*.txt
 
 # curl -o NONE creates a real file on Windows (NUL is the reserved name)
 NONE
+
+# Research agent scratch. Third time this has been swept in by git add -A:
+# agents write working files at the repository root, and directory names vary
+# by task (cbam/, out/). Patterns now cover the shapes rather than the names.
+cbam/
+out/
+p_*.txt
+*.bin
+_probe*
+fetch.py
+fetch.ps1
+get.ps1
+h2t.py
+lang.py
+probe.py
+search.py
+cellar*.py
+crop.py
