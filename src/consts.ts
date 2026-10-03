@@ -124,7 +124,24 @@ export const FOOTER_LINKS = [
   { label: "RSS Feed", href: "/rss.xml" },
 ];
 
-export const DISCLAIMER = "Independent analysis, not financial or legal advice";
+/**
+ * Shown at the foot of every article and in the site footer.
+ *
+ * The earlier version read "Independent analysis, not financial or legal
+ * advice" — seven words that miss the two risks this site actually carries. It
+ * did not say we are not a customs broker, and it did not tell the reader to
+ * check a figure against the document it came from. Both matter because the
+ * articles are quantitative: a reader can act on a number.
+ *
+ * Kept short on purpose. A disclaimer nobody reads is not a disclaimer, so
+ * this covers three things and stops — the basis of the content, what we are
+ * not, and what to do before relying on a figure.
+ */
+export const DISCLAIMER =
+  "Analysis of publicly available official documents. Not a customs broker, " +
+  "law firm or tax adviser, and nothing here is legal, tax or investment " +
+  "advice. Every figure is sourced and dated — check the original before you " +
+  "act on it.";
 
 export function categoryLabel(slug: string): string {
   return CATEGORIES.find((c) => c.slug === slug)?.label ?? slug;

@@ -1,5 +1,5 @@
 ---
-import { FOOTER_LINKS, SITE } from "../consts";
+import { DISCLAIMER, FOOTER_LINKS, SITE } from "../consts";
 
 const year = new Date().getFullYear();
 ---
@@ -15,6 +15,9 @@ const year = new Date().getFullYear();
         ))
       }
     </ul>
+    <!-- The disclaimer used to appear only at the foot of articles, so the
+         homepage, category pages and the about page carried none of it. -->
+    <p class="disclaimer">{DISCLAIMER}</p>
     <div class="tagline">
       {SITE.tagline} · © {year} {SITE.name}
     </div>
