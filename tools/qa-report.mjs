@@ -42,10 +42,18 @@ const WORDING_CEILING = 0.5;
 // ------------------------------------------------------------------ parsing
 
 const parse = (raw) => {
-  const m = /^---\n([\s\S]*?)\n---\n/.exec(raw);
+  // \r? on both ends. One article in the library has CRLF line endings while
+  // the rest have LF, and a parser that only matched "\n---\n" returned an
+  // empty frontmatter for it — which surfaced as "no target_keyword, no
+  // information_gain, zero figures" and looked like a legacy article that had
+  // never been converted. It was a parser bug, not a content problem: the body
+  // fell back to the whole file, which is why it still reported a cost table
+  // and 2329 words.
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(raw);
   const fm = m ? m[1] : "";
   const body = m ? raw.slice(m[0].length) : raw;
-  const field = (k) => new RegExp(`^${k}:\\s*"?(.*?)"?\\s*$`, "m").exec(fm)?.[1]?.trim() ?? "";
+  const field = (k) =>
+    new RegExp(`^${k}:\\s*"?(.*?)"?\\s*$`, "m").exec(fm)?.[1]?.trim() ?? "";
   return { fm, body, field };
 };
 
