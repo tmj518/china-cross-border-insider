@@ -195,12 +195,16 @@ export function serpRelevance(keyword, results) {
 /**
  * Money and per-unit detection. This site covers EU, UK and Chinese measures,
  * so a cost table is not always denominated in dollars and a unit is not
- * always a container — hence the multi-currency symbol class and the wider
- * set of unit phrases.
+ * always a container. Three forms are recognised because all three appear in
+ * this library: a currency symbol before a figure ("$48.00"), an ISO code
+ * before a figure ("EUR 75.36"), and a code inside a unit header
+ * ("EUR/t at Q1 2026"). The last one is what a euro-denominated cost table
+ * puts in its column heading, and missing it failed an article whose whole
+ * asset was that table.
  */
-const MONEY = /[$€£¥]\s?\d/;
+const MONEY = /([$€£¥]\s?\d|\b(?:EUR|USD|GBP|CNY|RMB)\b)/i;
 const PER_UNIT =
-  /(per unit|per item|per container|per-container|per 40|per teu|per kg|per kilogram|per watt|per tonne|per declaration line)/i;
+  /(per unit|per item|per container|per-container|per 40|per teu|per kg|per kilogram|per watt|per tonne|per ton|per declaration line)/i;
 
 export function pageSignals(html) {
   const text = stripTags(html);
@@ -419,7 +423,13 @@ async function check(file, provider) {
 
 // ---------------------------------------------------------------- CLI
 
-const args = process.argv.slice(2);
+// The CLI block is guarded so the module can also be imported by tests and by
+// ad-hoc scripts without the process exiting on the import.
+const isMain =
+  process.argv[1] &&
+  /serp-check\.mjs$/.test(process.argv[1].replace(/\\/g, "/"));
+
+const args = isMain ? process.argv.slice(2) : [];
 const providerArg = args.find((a) => a.startsWith("--serp="));
 const provider = providerArg
   ? providerArg.startsWith("--serp=file:")
@@ -429,7 +439,9 @@ const provider = providerArg
 
 const fileArgs = args.filter((a) => !a.startsWith("--") || a === "--all");
 let files;
-if (fileArgs.includes("--all")) {
+if (!isMain) {
+  files = [];
+} else if (fileArgs.includes("--all")) {
   const dir = "src/content/blog";
   files = readdirSync(dir).filter((f) => f.endsWith(".md")).map((f) => join(dir, f));
 } else if (fileArgs.length) {
@@ -464,7 +476,9 @@ for (const file of files) {
   if (r.verdict === "INCONCLUSIVE") inconclusive++;
 }
 
-console.log(
-  `\nRESULT: ${unsupported} unsupported · ${inconclusive} inconclusive · ${files.length - unsupported - inconclusive} supported\n`,
-);
-process.exit(unsupported ? 1 : 0);
+if (isMain) {
+  console.log(
+    `\nRESULT: ${unsupported} unsupported · ${inconclusive} inconclusive · ${files.length - unsupported - inconclusive} supported\n`,
+  );
+  process.exit(unsupported ? 1 : 0);
+}
