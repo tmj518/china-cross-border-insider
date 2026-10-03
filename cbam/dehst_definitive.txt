@@ -1,0 +1,586 @@
+German Emissions Trading Authority (DEHSt) at the German Environment Agency
+
+Navigation and service
+
+Springe direkt zu:
+
+Contents
+
+Main menu
+
+Search
+
+Use of cookies
+
+Cookies help us to provide our services. By using our website you agree that we can use cookies. Read more about our Privacy Policy and visit the following link: Privacy Policy
+
+Cookiebanner_Necessary_Title
+
+Cookiebanner_Necessary_Text
+
+Cookiebanner_Necessary_Label
+
+Ok
+
+Press office
+
+Contact
+
+Deutsch
+
+Topic
+
+Please choose
+
+Aviation
+
+CBAM
+
+Climate projects
+
+EU ETS 1
+
+Marine transport
+
+SPK
+
+Stationary installations
+
+UERV
+
+Various areas of environmental legislation
+
+nEHS/EU ETS 2
+
+Search item
+
+Homepage
+//
+
+Topics
+//
+
+Carbon border adjustment mechanism (CBAM)
+//
+
+CBAM Definitive Regime from 2026
+//
+
+CBAM Definitive Regime from 01/01/2026
+
+Last update
+
+19/03/2026
+
+This page provides detailed information on your obligations in the CBAM Definitive Regime from 01/01/2026 onwards.
+
+Source:
+© Pjjaruwan – stock.adobe.com
+
+Jump to content
+
+To whom do the CBAM obligations apply during the definitive regime?
+
+What are the Obligations in the Definitive Regime?
+
+Notes on import: TARIC document codes
+
+Potential consequences of non-compliance with CBAM obligations in the Definitive Regime
+
+The Carbon Border Adjustment Mechanism ( CBAM ) has been operating in the definitive regime since 01/01/2026. In contrast to the transitional phase (01/10/2023 to 31/12/2025), during which reporting declarants were subject to reporting the embedded emissions of their imported CBAM goods on a quarterly basis, in the definitive regime, CBAM declarations for the reporting year must be submitted annually (for the first time by 30/09/2027 for 2026). Additionally, CBAM certificates corresponding to the embedded emissions reported in the declaration must be surrendered annually by the declarant. In order to import CBAM goods into the customs territory of the Union after 01/01/2026, importers must hold the status of an ‘ authorised CBAM declarant ’ (Article 4 of Regulation ( EU ) 2023/956 of the European Parliament and of the Council of 10 May 2023 establishing a Carbon Border Adjustment Mechanism (hereinafter referred to as the ‘ CBAM Regulation’)).
+
+More detailed information on the authorisation procedure and on provisional imports in 2026 can be found on our authorisation page:
+
+Authorisation for the CBAM definitive regime
+
+Overview of the Compliance Cycle in the Definitive Regime
+Source: DEHSt
+
+To whom do the CBAM obligations apply during the definitive regime?
+
+Whether you are subject to CBAM essentially depends on whether you import CBAM goods originating in a third country and whether the applicable exemptions apply to you . The Overview of CBAM Obligations site provides a detailed explanation of the criteria that determine whether you are in principle affected by the CBAM obligations. If you are not yet sure whether the CBAM obligations apply to you, please visit this site first:
+
+Overview of CBAM Obligations
+
+Compared to the transitional period, one of the major changes in the definitive regime is the introduction of the new de minimis exemption. This exempts imports of CBAM goods (except electricity and hydrogen) where the total annual amount is currently less than 50 tonnes from the CBAM obligations. The following section describes in detail the 50-tonne de minimis exemption and its effects on your obligation to obtain an authorisation, your obligation to submit a declaration and to surrender certificates.
+
+For more information on authorisation, please visit our authorisation site:
+
+Authorisation for the CBAM definitive regime
+
+The 50-tonne de minimis exemption
+
+The exemption from the CBAM obligations due to the newly introduced mass-based threshold is regulated in Article 2a of the CBAM Regulation.
+
+Who is exempt from the mass-based threshold?
+
+The exemption applies to importers for whom the cumulative net mass of imported CBAM goods in the cement, iron and steel, fertilisers and aluminium sectors specified in the customs declarations does not exceed 50 tonnes in a given calendar year. The specific list of CBAM goods can be found in Annex I of the CBAM Regulation ( EU ) 2023/956. However, the threshold does not apply to the CBAM goods hydrogen and electricity. For importers of these goods, the CBAM obligations apply from the very first import.
+
+Note for indirect customs representatives
+
+The threshold exemption does not apply to indirect customs representatives, as they are not ‘importers’ within the meaning of Article 3 of the CBAM Regulation.
+
+Note for indirect customs representatives
+
+According to Article 3(15) of the CBAM Regulation, the ‘importer’ is
+
+either
+
+‘the person who, in their own name and on their own behalf, lodges a customs declaration for the release of goods for free circulation or a settlement in accordance with Article 175(5) of Delegated Regulation ( EU ) 2015/2446’
+
+or
+
+‘where the customs declaration is lodged by an indirect customs representative in accordance with Article 18 of Regulation ( EU ) No 952/2013 – the person on whose behalf such a declaration is lodged’.
+
+Indirect customs representatives act in their own name but on behalf of another person. They are therefore not considered ‘importers’ within the meaning of the CBAM Regulation. They may be subject to CBAM obligations if the importers they represent exceed the 50 tonnes threshold and the exemption from obligations therefore no longer applies.
+
+Various case studies can be found below.
+
+How can it be calculated whether the mass-based threshold is exceeded?
+
+The mass-based threshold is calculated per importer, regardless of whether the importer imports via one or more indirect customs representatives and regardless of how the goods are divided between different consignments or indirect customs representatives. An exceedance is calculated based on whether the total net mass of CBAM goods under all CN codes in Annex I of the CBAM Regulation aggregated per importer and per calendar year cumulatively exceed the mass-based threshold. An overview of the masses of CBAM goods imported in the calendar year will likely be available in the CBAM registry.
+
+Note on importing goods when you are exempt from the CBAM obligations due to the 50-tonne de minimis exemption
+
+If you are exempt from your CBAM obligations under the de minimis exemption, you can also import CBAM goods yourself without authorisation (that means submit a customs declaration for release for free circulation in your own name and on your own account). To do this, you should enter the TARIC document coding Y137 in the customs declaration in ATLAS .
+
+Section ‘Import information’ provides more information on the various TARIC document codes:
+
+TARIC documents codes
+
+Examples
+
+The following examples use various scenarios to illustrate how the 50-tonne de minimis exemption works in practice.
+
+Importers' perspective
+
+Example 1
+
+Example 2
+
+Example 3
+
+Example 4
+
+Example 5
+
+Übersicht:
+Example 1
+
+Example 1: Third-country importers > 50 tonnes
+
+Third-country importers > 50 tonnes
+Source: DEHSt
+
+Importers who are not established in an EU Member State (‘Third-country importers’) can only import CBAM goods via an indirect customs representative. In this example, 40 tonnes of CBAM goods are imported via each of four different indirect customs representatives. This means that the third-country importer cumulatively exceeds the 50-tonne threshold and is therefore no longer exempt from the CBAM obligations. The indirect customs representatives must comply with these obligations – each for 40 tonnes of CBAM goods.
+
+Übersicht:
+Example 2
+
+Example 2: EU importer < 50 tonnes
+
+EU importer < 50 tonnes
+Source: DEHSt
+
+Importers established in an EU Member State (here ‘ EU importers’) may import CBAM goods themselves or via indirect customs representatives. As soon as the sum of the imported CBAM goods exceeds 50 tonnes, the CBAM obligations apply. In this example, the total of imported goods is 35 tonnes. This means that none of the parties are subject to CBAM obligations. The EU importer is therefore also exempt from the obligation to have the status of an authorised CBAM declarant. Indirect customs representatives require authorisation status regardless of how much CBAM goods they import.
+
+For more information on authorisation, please visit our authorisation site
+
+Authorisation for CBAM definitive regime from 2026
+
+Übersicht:
+Example 3
+
+Example 3: EU importer imports > 50 tonnes via indirect customs representatives and they assume the CBAM obligations
+
+EU importer importing > 50 tonnes via indirect customs representatives and they assume the CBAM obligations
+Source: DEHSt
+
+In this example, an EU importer carries out imports exclusively through indirect customs representatives. CBAM obligations apply because the total net mass of the CBAM goods imported amounts to 160 tonnes thereby exceeding 50 tonnes. Indirect customs representatives representing EU importers may decline to act as authorised CBAM declarants for the EU importer and assume the CBAM obligations (Article 5(1a) CBAM Regulation). The assumption of CBAM obligations must therefore be regulated in the internal relationship between the importer and the indirect customs representative. In this example, all indirect customs representatives assume the importer’s CBAM obligations – each in respect of 40 tonnes per indirect customs representative. In this case, the EU importer does not need the status of authorised CBAM declarant, as they do not submit a customs declaration for release for free circulation in their own name and on their own account.
+
+Übersicht:
+Example 4
+
+Example 4: EU importer imports > 50 tonnes via indirect customs representatives, but not all customs representatives assume the CBAM obligations
+
+EU importer imports > 50 tonnes via indirect customs representatives, but not all customs representatives assume the CBAM obligations
+Source: DEHSt
+
+In this example, three of the indirect customs representatives assume the importer’s CBAM obligations, but one of them declines to do so. If an indirect customs representative does not agree to act as an authorised CBAM declarant, the EU importer must fulfil the CBAM obligations and requires an authorisation, as cumulatively over 50 tonnes of CBAM goods are imported. When carrying out import activity, the indirect customs representative must state the CBAM account number of the EU importer in the customs declaration. This will indicate that they are not assuming the CBAM obligations. In this case, the EU importer has the CBAM obligations (declaration submission and certificate surrender) for the 40 tonnes imported via the fourth indirect customs representative.
+
+Übersicht:
+Example 5
+
+Example 5: EU importer imports > 50 tonnes themselves and via indirect customs representatives and these assume the CBAM obligations
+
+Example 5: EU importer imports > 50 tonnes himself and via indirect customs representatives and they assume the CBAM obligations
+Source: DEHSt
+
+In this example, an EU importer submits customs declarations in their own name and on their own account. Since the 50-tonne overall mass-based threshold is exceeded, and though the EU importer only declared 20 tonnes himself, he is subject to CBAM obligations and needs an authorisation to import these 20 tonnes.
+
+Perspective of the indirect customs representative
+
+Example 6
+
+Example 7
+
+Übersicht:
+Example 6
+
+Example 6: Representation of importers with cumulative imports < 50 tonnes
+
+Example 6: Representation of importers with cumulative imports < 50 tonnes
+Source: DEHSt
+
+If an indirect customs representative submits customs declarations for importers that cumulatively (that means all imports added together) remain below 50 tonnes per importer, the customs representative is not subject to CBAM obligations. Authorisation is nevertheless required so that they can import the goods.
+
+Übersicht:
+Example 7
+
+Example 7: Representation of importers > 50 tonnes of cumulative imports
+
+Example 7: Representation of importers > 50 tonnes of cumulative imports
+Source: DEHSt
+
+As soon as a represented importer exceeds the mass-based threshold of 50 tonnes, CBAM obligations apply.
+
+For importers not established in an EU Member State, the indirect customs representative must assume these CBAM obligations in respect of the importer’s CBAM goods imported by the indirect customs representative (Article 5(2) of the CBAM Regulation). However, the indirect customs representative may refuse to act as an authorised CBAM declarant and assume the CBAM obligations of importers established in a Member State who cumulatively exceed the mass-based threshold.
+
+In this example, the indirect customs representative has agreed to act as an authorised CBAM declarant. This means that the CBAM obligations for the 120 tonnes of CBAM goods imported by importer Y and importer A apply to the representative.
+
+Further information
+
+CBAM Regulation (EU) 2023/956
+
+Authorisation for the CBAM definitive regime
+
+What are the Obligations in the Definitive Regime?
+
+Unlike in the transitional period, the definitive regime entails not only declaration obligations, but also financial obligations. CBAM declarants subject to CBAM must submit an annual CBAM declaration and surrender CBAM certificates in the CBAM registry (for the first time by 30/09/2027 for the year 2026) and are required to purchase and hold a certain number of certificates on a quarterly basis.
+
+Please note that you are not affected by the obligations described below if the exemptions (including the 50-tonne de minimis exemption) apply to you.
+
+The exemptions are described in detail on our website:
+
+Overview of CBAM Obligations
+
+1. Obligation to obtain the status of authorised CBAM declarant
+
+Before importing electricity or hydrogen or more than 50 tonnes of other CBAM goods, you must obtain the status of an approved CBAM declarant (Articles 4 and 5 of the CBAM Regulation). All relevant information on authorisation can be found on our website:
+
+Authorisation for the CBAM definitive regime
+
+Please note that a registration/login to the CBAM registry is not sufficient and should not be confused with an authorisation. In order to obtain the status of an authorised CBAM declarant, an application for authorisation in accordance with Article 5 of the CBAM Regulation must be submitted in the CBAM registry, where it will be reviewed and, if the requirements are met, the status of authorised CBAM declarant granted.
+
+2. Submission of a CBAM declaration
+
+Help page of the customs portal
+
+Help page of the customs portal
+
+Authorised CBAM declarants subject to CBAM must submit a CBAM declaration for the preceding calendar year in the CBAM registry by 30 September of each year (Article 6 of the CBAM Regulation). Such a declaration is due for the first time on 30/09/2027 for the year 2026. More information on the content of the CBAM declaration can be found below in the section ‘Creation of the CBAM declaration’.
+
+Please note that a CBAM declaration does not need be submitted if no CBAM goods have been imported.
+
+You can access the CBAM registry via the customs portal of the German customs authorities. A detailed description of how to access the CBAM registry can be found on the Customs website.
+
+Creation of the CBAM declaration
+
+Deadline and declaration content
+
+The first CBAM declaration must be submitted by 30/09/2027 for the 2026 calendar year. For each subsequent year the annual submission deadline for CBAM declarations for the preceding calendar year is also by 30 September.
+
+CBAM declarations can be created in the European Commission's CBAM registry. This is where importers disclose the necessary data and evidence of their imported goods and their relevant embedded emissions. However, CBAM declarations cannot currently be created in the CBAM registry and CBAM declarants can expect to be able to use this option from Q4/2026. We will inform you in detail about the actual starting time through our website and by our newsletter.
+
+Notwithstanding, we strongly recommend that you familiarise yourself with the requirements of the creation of CBAM declarations at an early stage. Article 6 of the CBAM Regulation explains the requirements for the CBAM declaration by setting out the minimum information required:
+
+Volume of imported goods in tonnes or, for electricity, in megawatt-hours broken down by the installations where the goods were produced in the country of origin,
+
+Embedded emissions in tonnes of CO2eq per tonne per type of goods or in tonnes of CO2eq per megawatt-hour for electricity,
+
+Number of CBAM certificates to be surrendered, including any claims for a reduction of certificates to surrender to take account for the carbon price effectively paid in a third country in accordance with Article 9 of the CBAM Regulation and after adjustment for free allocation under the EU ETS 1 in accordance with Article 31 of the CBAM Regulation,
+
+Copy of the verification reports issued by accredited verifiers.
+
+Consolidated text: Regulation ( EU ) 2023/956 of the European Parliament and of the Council of 10 May 2023 establishing a carbon border adjustment mechanism
+
+Use of default values or actual calculated embedded emissions
+
+Both standard values and actual values can be used to calculate the embedded emissions to be reported. Standard values are provided in the CBAM registry and have been published by the European Commission in an implementing regulation:
+
+Implementing Regulation ( EU ) 2025/2621 laying down standard values
+
+Where operators use actual values for the calculation of embedded emissions, those emissions must be monitored and recorded by the operators pursuant to the prescribed methods set out in Article 7 CBAM Regulation, CBAM Implementing Regulation on emissions calculation, and verified by accredited verifiers. In addition, a copy of the verification report issued by the accredited verifier must be submitted together with the CBAM declaration in accordance with Article 8 and Annex VI of the CBAM Regulation.
+
+For more information on verification, please visit our Verifiers and Verification site (site currently under construction).
+
+European Commission information sheet: Actual values vs default values in the CBAM declaration
+
+Implementing Regulation ( EU ) 2025/2547 on emission calculation
+
+Implementing Regulation ( EU ) 2025/2546 on verification
+
+Implementing Regulation ( EU ) 2025/2551 on the accreditation of verifiers
+
+Transfer of data from the CBAM portal for third-country operators ( O3CI )
+
+The O3CI portal is part of the CBAM registry. It enables operators in third countries to provide CBAM declarants with emissions and company data directly in the CBAM registry. The verification status of the operators’ emissions reports is also displayed through the portal. This reduces the need for manual data entry and transmission errors and makes it much easier to use actual emission values in CBAM declarations. Registration in O3CI portal is voluntary for operators.
+
+Please inform operators from whom you purchase CBAM goods about this option and guide them to the detailed information materials of the European Commission.
+
+Information material from the European Commission on the CBAM portal for third-country operators ( O3CI ) is available at:
+
+Information from the European Commission on CBAM Registry and Reporting
+
+Please subscribe to our newsletter. As soon as new information on the practical use of the registry, deadlines or technical interfaces is available, we will inform you via the newsletter and our website.
+
+3. Surrender of CBAM certificates
+
+By 30 September of each year, authorised CBAM declarants must surrender CBAM certificates in the CBAM registry corresponding to the emissions specified in the CBAM declaration (Article 22 CBAM Regulation).
+
+CBAM certificates can be purchased on the centralised common platform through the CBAM registry from February 2027.
+
+For detailed information on CBAM certificates, please visit the CBAM certificates site (site under construction).
+
+Calculation of the number of certificates required
+
+The number of CBAM certificates that you must surrender each year as an authorised CBAM declarant can be calculated according to the following formula.
+
+The price of CBAM certificates depends on the price of emission allowances in EU ETS 1 .
+
+Source: DEHSt
+
+Specific embedded emissions
+
+Determination of the free allocation adjustment
+
+Offsetting CO2 pricing in third countries
+
+Übersicht:
+Specific embedded emissions
+
+The specific embedded emissions associated with the imported goods can be calculated either based on the verified actual values you have received from the manufacturer of the goods or on the basis of the default values set by the European Commission.
+
+Implementing Regulation (EU) 2025/2621 laying down standard values
+
+Übersicht:
+Determination of the free allocation adjustment
+
+The number of CBAM certificates to be surrendered each year is reduced by the extent to which comparable products in EU ETS 1 still receive free allowances. This adjustment is calculated using several parameters, in particular the product-specific CBAM benchmarks and the annually decreasing CBAM factor.
+
+The aim is to take appropriate account of the free allocation granted in EU ETS 1 without giving imported goods more favourable treatment than Union goods.
+
+The CBAM benchmarks were established by the European Commission, taking into account the reference values for free allocation under EU ETS 1 . They will be revised as soon as new EU ETS 1 benchmarks are published in 2026. These updated CBAM benchmarks will then apply to imports from 01/01/2027. The latter are based on a combination of relevant EU ETS 1 benchmarks and are determined at the level of the relevant commodity codes.
+
+The CBAM factor is specified in the EU Emissions Trading Directive 2003/87/ EC (‘ EU ETS Directive‘), Article 10a(1a) and decreases from year to year.
+
+CBAM factor in % | | | | | | | | |
+
+2026 | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 |
+
+97.5 | 95 | 90 | 77.5 | 51.5 | 39 | 26.5 | 14 | |
+
+The complete calculation formulas including all relevant parameters as well as the applicable CBAM benchmarks are set out in the Annex to the Implementing Regulation on the consideration of free allocation.
+
+Übersicht:
+Offsetting CO2 pricing in third countries
+
+If a carbon price has already been paid for the embedded emissions associated with the goods in a third country, this can be taken into account in the calculation in accordance with Article 9 of the CBAM Regulation ( EU ) 2023/956 to prevent double carbon pricing:
+
+The reduction may only be claimed if the carbon price has actually been paid in a third country. All available rebates and other compensation mechanisms in the relevant country that reduce the carbon price actually paid must be taken into account. The carbon price to be taken into account must be supported by relevant documentation of the actual payments.
+
+Alternatively, the reduction in the number of CBAM certificates to be surrendered can be based on a yearly default carbon prices, provided that such default values can be determined by the EU Commission. If embedded emissions are determined based on default emission values, a reduction can only be claimed with reference to the yearly default carbon prices. When determining the yearly default values, the European Commission also takes into account whether there are rebates or other compensation mechanisms in the relevant third country that would reduce the effective carbon price.
+
+The specific calculation method and further details will be regulated in a forthcoming implementing act, which is due to come into force in 2026.
+
+Calculation example
+
+In the following example, the CBAM obligation is calculated for 1000 tonnes of a CBAM product purchased with two different emission factors. It becomes clear that the number of certificates required depends largely on the difference between the benchmark of the goods and the CBAM benchmark.
+
+The calculation example is intended to illustrate the interaction between the benchmark of a simple CBAM goods, the associated CBAM benchmark and the CBAM factor. Other parameters relevant for the calculation such as the cross-sectoral correction factor and the differences in the calculation when using standard emission values and actual values or the special features of the calculation for complex goods, are not taken into account in these examples.
+
+Calculation example for calculating the number of CBAM certificates
+Source: DEHSt
+
+Subscribe to the DEHSt newsletter
+
+Subscribe to our newsletter
+
+Please subscribe to our newsletter. We will inform you via the newsletter and our website as soon as new information on the benchmarks or the information regarding any reduction in certificates to take account of the carbon price paid in a third country is available.
+
+Legal sources on the topic
+
+Emissions Trading Directive 2003/87/EC
+
+CBAM Regulation ( EU ) 2023/956
+
+EU -Implementing Regulation 2025/2620 CBAM free allocation
+
+4. Quarterly holding of CBAM certificates
+
+As from 2027, all CBAM declarants are required ensure that the number of CBAM certificates in their CBAM registry account at the end of each quarter corresponds to at least 50% of the embedded emissions of all goods that they have imported since the beginning of the calendar year. The number of certificates to be held can be determined either by reference to default values or to the number of certificates surrendered in the preceding calendar year (see Article 22 of the CBAM Regulation). For authorised CBAM declarants who were initially exempt under the de minimis exemption, this obligation applies for the first time at the end of the quarter following that in which the mass-based threshold is exceeded (Article 22(2a) of the CBAM Regulation).
+
+CBAM certificates can be purchased on the central common platform through the CBAM registry from February 2027 and surrendered by 30 September of each year. For detailed information on CBAM certificates, please visit the CBAM certificates site (site under construction).
+
+Notes on import: TARIC document codes
+
+In order to import CBAM goods (goods in Annex I of the CBAM Regulation ( EU ) 2023/956) from 01/01/2026, you must have submitted an application for authorisation in the CBAM registry in order to obtain the status of authorised CBAM declarant. Importers of less than 50 tonnes of CBAM goods per year from the cement, iron and steel, fertiliser and aluminium sector are exempt from this obligation (Article 2a CBAM Regulation). Further exemptions exist for goods from certain countries or regions of origin and for goods transported for military activities (Article 2 of the CBAM Regulation).
+
+You must state your authorisation status or relevant exemptions in your customs declaration so that the goods can be imported. You can do this by indicating a specific TARIC document coding.
+
+The following table provides you with an overview of the available TARIC document codes and their application.
+
+TARIC documentation coding for CBAM
+
+Coding | Long text | Explanation | Certification area in the ATLAS specialist application |
+
+Y128 | CBAM account number |
+If you have the status of ‘approved CBAM declarant’, you can enter this code. You will obtain this status after you have submitted an application for approval via the CBAM register and this has been approved.
+
+To use this code, you must enter the CBAM account number in the ‘Document number (item)’ data field and also enter the importer's EORI number in the ‘Consignee (TIN)’ data field and the declarant's EORI number in the ‘Declarant (TIN)’ data field.
+
+| 1 |
+
+Y134 | Goods originating in Büsingen, Heligoland or Livigno (Article 2(4) of Regulation ( EU ) 2023/956) | CBAM does not apply to goods originating in the territories listed in Annex III to the CBAM Regulation. If your goods originate in the regions of Büsingen, Heligoland or Livigno, please use this code. You do not need this code for the other countries and regions listed in Annex III. | 5 |
+
+Y135 | Exemption pursuant to Article 2(3) of Regulation ( EU ) 2023/956 | Goods intended to be transported or used for military activities (within the meaning of Article 1(49) of Commission Delegated Regulation ( EU ) 2015/2446). | 5 |
+
+Y136 | Exemption pursuant to Article 2(3a) of Regulation ( EU ) 2023/956 | Electricity ( CN code: 2716 00 00) or hydrogen ( CN code: 2804 10 00) originating in the exclusive economic zone or on the continental shelf of a Member State is exempt from CBAM . | 5 |
+
+Y137 | Exemption pursuant to Article 2a of Regulation ( EU ) 2023/956 | If you expect to import less than 50 tonnes of CBAM goods cumulatively in the calendar year, you can claim the de minimis exemption under Article 2a of the CBAM Regulation. Please note that this cannot be used for imports of electricity or hydrogen. | 5 |
+
+Y237 | Goods originating in the EU | If the CBAM goods originate in the EU and not in a third country, CBAM does not apply and you can use this code. The rules on non-preferential origin set out in Article 59 of Regulation ( EU ) No 952/2013 (Union Customs Code) apply. | 5 |
+
+Y238 | Application for recognition as an authorised CBAM declarant submitted by 31 March 2026 in accordance with Article 17(7a) of the CBAM Regulation |
+Importers who have not yet obtained CBAM authorised declarant status but have already submitted an application for authorisation (by 31/03/2026 at the latest) before exceeding the 50-tonne threshold may provisionally import CBAM goods (above the threshold) even without authorisation status until a decision on the application for authorisation has been made.
+
+Please use this code for this purpose. Please enter the reference number of your application in the corresponding data field. You will find the reference number (application reference number) in the CBAM register under the tab ‘My applications and authorisations’.
+
+| 5 |
+
+Y422 | Goods listed in Annex I to Regulation ( EU ) 2023/956 which are placed under the inward processing procedure | Use this code in your customs declaration when you transfer CBAM goods for inward processing. This code must also be used in all subsequent customs declarations until customs supervision of the processed goods finally ends, either through release for free circulation or re-exportation. | |
+
+Y195 | Importers who import electricity allocated to them through explicit capacity allocation and who nominate this import capacity |
+Please enter this code in your customs declaration when declaring electricity capacity for import that has been allocated to you through the explicit capacity allocation process and you do not yet have authorisation or a CBAM account number.
+
+This is only a transitional arrangement until you have been granted an authorisation status as CBAM declarant. For information on reporting obligations and obtaining the authorisation status, please follow the instructions on this page and refer to Article 5(4) of Regulation (EU) 2023/956 and Article 8 of Implementing Regulation (EU) 2025/486.
+
+| |
+
+Legal sources on the topic
+
+CBAM Regulation (EU) 2023/956
+
+EU Customs Code Regulation (EU) No. 952/2013
+
+Further information
+
+Information on authorisation: Authorisation for CBAM Definitive Regimebam
+
+Information on the exemption due to the 50-tonne threshold and the authorisation requirement:
+
+Informationsveranstaltung zum CBAM -Zulassungsverfahren (28/11/2025, PDF, 5MB, File meets accessibility standards)
+
+Information from German Customs on TARIC Document Coding
+
+ATLAS-Info 0881/2025
+
+Potential consequences of non-compliance with CBAM obligations in the Definitive Regime
+
+1. Import restrictions in the absence of authorisation status
+
+After 01/01/2026, CBAM goods other than hydrogen and electricity may be imported into the customs territory of the EU above the mass-based threshold of 50 tonnes only by an authorised CBAM declarant according to Article 4 of the CBAM Regulation.
+
+In the first months of 2026, imports above the threshold are also possible under certain conditions if an application for authorisation has been submitted but for which a final decision has not yet been made. More information on this exemption can be found on our site Authorisation for CBAM Definitive Regime and under Article 17(7a) of the CBAM Regulation.
+
+Authorisation for CBAM Definitive Regime
+
+If you exceed the 50-tonne threshold without holding the status of an authorised CBAM declarant – or without having submitted an application for approval in a timely manner – this may affect your import options and result in the initiation of penalty procedures (Article 25a and Article 26(2), (2a) of the CBAM Regulation).
+
+For more information on the subject of penalties, please visit our site:
+
+CBAM Sanctioning
+
+The European Commission monitors compliance with the mass-based threshold and informs the competent authority ( DEHSt ) if that threshold is exceeded. The DEHSt may then request further evidence from the importer, the European Commission or Customs. If it determines that the
+
+threshold has been exceeded, DEHSt shall inform the importer of the obligations applicable under the CBAM Regulation, including, where appropriate, the obligation to obtain the status of an authorised CBAM declarant in accordance with Article 5, before any further goods are imported. The competent authority shall also notify this decision to the customs authorities and the European Commission through the CBAM registry. As a result of this decision, the declarant can no longer use the TARIC code Y137 to indicate an exemption from CBAM due to cumulative imports of less than 50 tonnes in the customs declaration. They can only import CBAM goods using the other TARIC codes.
+
+Where an importer is represented by one or more indirect customs representatives and exceeds the mass-based threshold, the competent authority shall inform the indirect customs representatives designated in accordance with Article 5(1a) or (2). A practice which has been put in place for the purposes of falling below the threshold and which has not been put in place for valid commercial reasons related to the economic activity of the import may be deemed non-genuine, and if so shall be considered a serious infringement of the CBAM Regulation in accordance with Article 25a(4) of the CBAM Regulation. This may result in the criteria for granting the status of authorised CBAM declarant pursuant to Article 17(2)(a) of the CBAM Regulation no longer being met.
+
+2. Non-compliance with the obligation to hold CBAM certificates on a quarterly basis
+
+In the event of serious or repeated infringements of the obligation to hold CBAM certificates on a quarterly basis in accordance with Article 22(2) of the CBAM Regulation, the status of an authorised CBAM declarant may be revoked (Article 17(8)(b) of the CBAM Regulation).
+
+3. Non-compliance with the obligation to surrender CBAM certificates annually
+
+If you fail to comply or only partially comply with your obligation to surrender annual CBAM certificates corresponding to the embedded emissions associated with the goods imported in the preceding calendar year, you may be subject to penalties in accordance with Article 26(1) of the CBAM Regulation. For more information on penalties, please visit our site:
+
+CBAM Sanctioning
+
+In the event of serious or repeated infringements of the obligation to surrender CBAM certificates annually in accordance with Article 22(1) of the CBAM Regulation, the status of authorised CBAM declarant may also be revoked (Article 17(8)(b) of the CBAM Regulation).
+
+footnote
+
+Further information
+
+Understanding CBAM
+
+Overview of CBAM Obligations
+
+CBAM Transitional Period
+
+CBAM Sanctioning
+
+The German Emissions Trading Authority
+
+Interesting facts about DEHSt and its topics
+
+Basic information: DEHSt information library
+
+Always informed. The DEHSt newsletter.
+
+Up-to-date information and focused reporting for participants and interested parties - we will keep you up to date.
+
+Subscribe newsletter
+
+E-mail: *
+
+Subscribe
+
+email text
+
+Topics
+
+EU emissions trading 1 (EU ETS 1)
+
+National emissions trading (nEHS)/EU ETS 2
+
+Electricity price compensation (SPK)
+
+Carbon border adjustment mechanism (CBAM)
+
+Online Services
+
+Forms Management System (FMS)
+
+Virtual Post Office
+
+Electronic Signature
+
+DEHSt Platform
+
+German Emissions Trading Authority (DEHSt) at the German Environment Agency
+
+20 years of DEHSt
+
+Contact
+
+Press office
+
+Sitemap
+
+Editorial information
+
+Privacy Policy
+
+© 2024 German Emissions Trading Authority

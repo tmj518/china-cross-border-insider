@@ -1,0 +1,29 @@
+[ {
+  "htsno" : "9704.00.00.00",
+  "statisticalSuffix" : "00",
+  "description" : "Postage or revenue stamps, stamp-postmarks, first-day covers, postal stationery (stamped paper) and the like, used or unused, other than those of heading 4907",
+  "htscode" : null,
+  "indent" : "0",
+  "footnotes" : [ {
+    "columns" : [ "other" ],
+    "marker" : "1",
+    "value" : "See 9903.90.08. ",
+    "type" : "endnote"
+  } ],
+  "units" : [ "No." ],
+  "tariff" : null,
+  "unique" : null,
+  "hasHighlight" : null,
+  "highlightHtsNo" : null,
+  "highlightStatSuffix" : null,
+  "type" : null,
+  "effectivePeriod" : null,
+  "quotaQuantity" : null,
+  "additionalDuties" : null,
+  "general" : "Free",
+  "other" : "Free",
+  "special" : "",
+  "status" : null,
+  "htmlStatNote" : null,
+  "selector" : "htsno"
+} ]
