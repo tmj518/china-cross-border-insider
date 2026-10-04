@@ -28,6 +28,18 @@ node_modules/
 .env.production
 .env.local
 
+# Google / YouTube OAuth credentials. The client secret and the cached refresh
+# token are each equivalent to an account password: the refresh token alone can
+# upload to the channel. tools/youtube-upload.mjs writes both outside the repo
+# (under %LOCALAPPDATA%\Programs\n8n), so this is a second line of defence for
+# the case where someone runs it with a copy sitting in the working directory.
+youtube-oauth.json
+youtube-token.json
+*youtube-oauth*.json
+*youtube-token*.json
+client_secret*.json
+token.json
+
 # logs
 npm-debug.log*
 pnpm-debug.log*

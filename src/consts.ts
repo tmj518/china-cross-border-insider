@@ -29,6 +29,20 @@ export const SITE = {
   newsletterAction: "",
 };
 
+/**
+ * Cloudflare Web Analytics beacon token.
+ *
+ * Read at build time from the environment, never committed. Set it in the
+ * Cloudflare Pages project (Settings → Environment variables) and in a local
+ * `.env` for preview builds. Absent token means no beacon is rendered at all,
+ * which is what keeps `astro dev` and any fork of this repo from shipping a
+ * script that reports to somebody else's dashboard.
+ *
+ * Chosen over GA4 deliberately (进度日志 §2): Cloudflare Web Analytics sets no
+ * cookies, so it needs no consent banner and no GDPR cookie notice. GA4 would.
+ */
+export const CF_ANALYTICS_TOKEN = import.meta.env.CF_WEB_ANALYTICS_TOKEN ?? "";
+
 /** spec §3 — top navigation. Labels are the short form; the silo page uses
  *  the longer `label` from CATEGORIES. */
 export const NAV_LINKS = [
