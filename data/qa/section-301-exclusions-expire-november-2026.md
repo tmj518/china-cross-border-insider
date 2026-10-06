@@ -1,4 +1,4 @@
-# 质检报告 - Section 301 Exclusions Expire November 9: The Duty Cliff, Dated and Priced - 2026-10-03
+# 质检报告 - Section 301 Exclusions Expire November 9: The Duty Cliff, Dated and Priced - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 

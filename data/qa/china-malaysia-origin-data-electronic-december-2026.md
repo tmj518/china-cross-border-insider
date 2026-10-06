@@ -1,4 +1,4 @@
-# 质检报告 - China's Origin Data Goes Electronic: The 1 December 2026 Deadline for RCEP Importers - 2026-10-03
+# 质检报告 - China's Origin Data Goes Electronic: The 1 December 2026 Deadline for RCEP Importers - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 

@@ -1,4 +1,4 @@
-# 质检报告 - China Taxes the Metal on the Way Out, Then Zeroes It Once the Metal Has a Shape - 2026-10-03
+# 质检报告 - China Taxes the Metal on the Way Out, Then Zeroes It Once the Metal Has a Shape - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 

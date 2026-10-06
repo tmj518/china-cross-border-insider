@@ -141,15 +141,41 @@ function checkTemplateDrift(article, others) {
     .sort((a, b) => String(b.publishDate).localeCompare(String(a.publishDate)))
     .slice(0, 3);
 
+  /*
+   * The closing comparison has to ignore the mandatory disclaimer.
+   *
+   * Spec §12.7 requires every article to end with "Independent analysis, not
+   * financial or legal advice." That line is identical across the library by
+   * design, so comparing raw final sentences scored a 100 % match on every
+   * article that followed the rule — the check was failing the site for
+   * complying with the spec, and it reported it as "公式化措辞，退回重写".
+   *
+   * So the comparison drops trailing disclaimer paragraphs and compares the
+   * last PROSE sentence instead. If a piece is genuinely formulaic, its real
+   * closing line still shows it.
+   */
+  const DISCLAIMER = /independent analysis, not financial or legal advice/i;
+  const closingSentence = (plain) => {
+    const paras = plain
+      .split(/\n\s*\n/)
+      .map((p) => p.trim())
+      .filter(Boolean)
+      .filter((p) => !DISCLAIMER.test(p));
+    // The disclaimer is not always its own paragraph; it can share a line with
+    // the closing prose. Drop it sentence by sentence as well.
+    const sents = sentences(paras.join(" ")).filter((s) => !DISCLAIMER.test(s));
+    return sents.slice(-1)[0] ?? "";
+  };
+
   const myOpen = new Set(contentWords(sentences(article.plain)[0] ?? ""));
-  const myClose = new Set(contentWords(sentences(article.plain).slice(-1)[0] ?? ""));
+  const myClose = new Set(contentWords(closingSentence(article.plain)));
 
   let openMax = 0;
   let closeMax = 0;
   for (const o of recent) {
     const s = sentences(o.plain);
     openMax = Math.max(openMax, jaccard(myOpen, new Set(contentWords(s[0] ?? ""))));
-    closeMax = Math.max(closeMax, jaccard(myClose, new Set(contentWords(s.slice(-1)[0] ?? ""))));
+    closeMax = Math.max(closeMax, jaccard(myClose, new Set(contentWords(closingSentence(o.plain)))));
   }
 
   // Does the AI Summary say anything the title did not?

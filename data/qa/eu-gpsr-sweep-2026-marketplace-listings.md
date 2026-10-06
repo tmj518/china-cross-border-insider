@@ -1,11 +1,11 @@
-# 质检报告 - The EU's 2026 Compliance Sweep: 560 Orders, and the 58% That Should Worry Sellers - 2026-10-03
+# 质检报告 - The EU's 2026 Compliance Sweep: 560 Orders, and the 58% That Should Worry Sellers - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 
 | 检查项 | 结果 | 备注 |
 |--------|------|------|
 | 原创性 | ✅ 通过 — 0% 相似度 | 低于 60% 门槛 |
-| 模板化 | ✅ 通过 — 开头重合 9% · 结尾 4% | 措辞与近三篇有区分（结构固定属设计） |
+| 模板化 | ✅ 通过 — 开头重合 8% · 结尾 4% | 措辞与近三篇有区分（结构固定属设计） |
 | 敏感词 | ✅ 通过 — 0 命中 | - |
 | 一手增量 | ✅ 通过 — custom-calculation · 五元组数字 8 个 · 含成本表 | 声明成立 |
 | 长度 | ✅ 通过 — 1646 词 | - |

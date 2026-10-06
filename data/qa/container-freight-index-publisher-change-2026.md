@@ -1,4 +1,4 @@
-# 质检报告 - Your Freight Surcharge Points at an Index That Changed Owner in June - 2026-10-03
+# 质检报告 - Your Freight Surcharge Points at an Index That Changed Owner in June - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 

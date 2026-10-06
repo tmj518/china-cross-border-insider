@@ -1,4 +1,4 @@
-# 质检报告 - The Polysilicon Tariff Never Says China — and Buying Cheaper Costs You More - 2026-10-03
+# 质检报告 - The Polysilicon Tariff Never Says China — and Buying Cheaper Costs You More - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 

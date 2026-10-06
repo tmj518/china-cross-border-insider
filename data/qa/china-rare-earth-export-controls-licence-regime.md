@@ -1,4 +1,4 @@
-# 质检报告 - China's Rare Earth Controls Are a Licence Regime, Not a Ban — and November 2026 Is the Next Decision - 2026-10-03
+# 质检报告 - China's Rare Earth Controls Are a Licence Regime, Not a Ban — and November 2026 Is the Next Decision - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 

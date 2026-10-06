@@ -134,11 +134,11 @@ Rerun the same chain across China's main CN codes and the shape of the exposure 
 
 **Aluminium is the gap in the coverage, not in the cost.** Chinese primary unwrought aluminium carries EUR 144 a tonne, below hot-rolled coil, because China's default value of 3,000 is under steel's and the benchmark deduction is larger. No English-language page found publishes a per-tonne CBAM cost for Chinese aluminium, and the row that produces the figure was empty in the December 2025 text.
 
-**The bill compounds from both directions.** Holding the benchmark and the price still, Chinese hot-rolled coil runs EUR 163.53 in 2026, EUR 190.08 in 2027 and EUR 219.30 in 2028.
+**The bill compounds from both directions.** Holding the benchmark and the price still, Chinese hot-rolled coil runs EUR 163.53 in 2026, EUR 190.08 in 2027 and EUR 219.30 in 2028. It is not the largest charge on the same tonne: the EU steel out-of-quota duty is 50 per cent of CIF, as [the steel safeguard quota analysis](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/) sets out.
 
-**One number in circulation does not reconcile.** EUROMETAL reported a 2026 China steel slab cost of about EUR 144 a tonne, attributed to Fastmarkets. Chinese slab sits under CN 7207, whose default value with the mark-up is about 3.486 tCO2eq per tonne: roughly EUR 262 before the free-allocation adjustment, about EUR 162 after it. It matches neither, and no CN code, default value or calculation accompanies it.
+**One number in circulation does not reconcile.** EUROMETAL reported a 2026 China steel slab cost of about EUR 144 a tonne, attributed to Fastmarkets. Chinese slab sits under CN 7207, whose default value with the mark-up is about 3.486 tCO2eq per tonne: roughly EUR 262 before the free-allocation adjustment, about EUR 162 after. It matches neither, and no calculation accompanies it.
 
-**One number in circulation does reconcile, and that is the useful test.** SMM's analysis of 18 August 2026 puts Chinese hot-rolled coil at about EUR 163 a tonne and cold-rolled at EUR 158, agreeing with the chain above to within EUR 0.35 a tonne, and it describes the CBAM factor correctly. The same piece cites no default value per CN code, names Regulation (EU) 2026/1740 nowhere in its body, and carries no aluminium figure. Quote a per-tonne CBAM number only with the CN code, the default value and the benchmark behind it: without them it cannot be checked, and the table it came from has already been withdrawn once.
+**One number in circulation does reconcile, and that is the useful test.** SMM's analysis of 18 August 2026 puts Chinese hot-rolled coil at about EUR 163 a tonne and cold-rolled at EUR 158, agreeing with the chain above to within EUR 0.35 a tonne, and it describes the CBAM factor correctly. The same piece cites no default value per CN code, names Regulation (EU) 2026/1740 nowhere, and carries no aluminium figure. Quote a per-tonne CBAM number only with the CN code, default value and benchmark behind it.
 
 ## For you
 
@@ -159,7 +159,7 @@ One row. China's default value for unwrought aluminium, CN 7601, was absent from
 
 ### Why does the CBAM factor of 97.5 per cent not mean 2026 charges 2.5 per cent?
 
-Because it measures what is retained, not what is charged. The factor is the share of free allocation still in place, so 97.5 per cent of the benchmark is deducted before anything is charged, and 2.5 per cent of the benchmark is charged. For Chinese hot-rolled coil the deduction removes 1.33575 tonnes of the 3.5057 tonnes that would otherwise be billed, which is 38 per cent of the bill.
+Because it measures what is retained, not what is charged. The factor is the share of free allocation still in place, so 97.5 per cent of the benchmark is deducted before anything is charged, and 2.5 per cent of the benchmark is charged. For Chinese hot-rolled coil the deduction removes 1.33575 of the 3.5057 tonnes otherwise billed, which is 38 per cent of the bill.
 
 ### Which regulation governs the default values, and what does a tonne cost?
 

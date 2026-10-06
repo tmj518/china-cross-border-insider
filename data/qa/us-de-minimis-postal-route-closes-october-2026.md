@@ -1,11 +1,11 @@
-# 质检报告 - The Postal Flat Fee Died in Four Days — Now the Route Itself Is Closing - 2026-10-03
+# 质检报告 - The Postal Flat Fee Died in Four Days — Now the Route Itself Is Closing - 2026-10-06
 
 ## 机审得分: 8/8 ✅
 
 | 检查项 | 结果 | 备注 |
 |--------|------|------|
-| 原创性 | ✅ 通过 — 0% 相似度 | 低于 60% 门槛 |
-| 模板化 | ✅ 通过 — 开头重合 14% · 结尾 0% | 措辞与近三篇有区分（结构固定属设计） |
+| 原创性 | ✅ 通过 — 0% 相似度（最高：eu-steel-safeguard-quota-2026-chinese-hrc-cost） | 低于 60% 门槛 |
+| 模板化 | ✅ 通过 — 开头重合 15% · 结尾 0% | 措辞与近三篇有区分（结构固定属设计） |
 | 敏感词 | ✅ 通过 — 0 命中 | - |
 | 一手增量 | ✅ 通过 — custom-calculation · 五元组数字 8 个 · 含成本表 | 声明成立 |
 | 长度 | ✅ 通过 — 1859 词 | - |
