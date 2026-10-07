@@ -164,6 +164,10 @@ export const AUTHOR = {
 
 /** spec §3 — footer. */
 export const FOOTER_LINKS = [
+  // The benchmark surfaces its sourcing documentation from the footer under a
+  // "Data sources" heading. Same placement here, because that is where a reader
+  // goes to ask whether the numbers can be trusted.
+  { label: "How the sources work", href: "/sources/" },
   { label: "Privacy Policy", href: "/privacy/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },

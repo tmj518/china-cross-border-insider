@@ -1029,6 +1029,14 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
+/* The sourcing page's last column holds text where the tracker's holds a number. */
+.tracker-meta-cell {
+  color: var(--c-ink-5);
+  font-size: 12px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
 .tracker-pill {
   display: inline-block;
   font-family: var(--font-sans);
