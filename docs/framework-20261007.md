@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 03:41:39 UTC  
+生成时间：2026-10-07 03:49:09 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`f2a0668 feat: run the real build in preflight, because a green gate did not mean the site would build`
+对应提交：`621b6a6 docs: the build guard, and article 17`
 
 ## 顶层结构
 
@@ -22,6 +22,7 @@ china-cross-border-insider/
 │   │   └── run_20261007.log
 │   ├── qa/
 │   │   ├── china-2026-export-duty-wrought-metals.md
+│   │   ├── china-export-rebate-vs-export-duty-2026.md
 │   │   ├── china-export-tax-rebate-removal-battery-solar.md
 │   │   ├── china-malaysia-origin-data-electronic-december-2026.md
 │   │   ├── china-ppi-positive-factory-price-drift.md
@@ -53,6 +54,7 @@ china-cross-border-insider/
 │       ├── eu-gpsr-sweep-2026-marketplace-listings.json
 │       ├── eu-per-item-customs-charge-2026.json
 │       ├── eu-steel-safeguard-quota-2026-chinese-hrc-cost.json
+│       ├── freight-index-linked-contract-two-errors-2026.json
 │       ├── proclamation-11052-polysilicon-minimum-import-price.json
 │       ├── section-301-exclusions-expire-november-2026.json
 │       ├── us-de-minimis-postal-route-closes-october-2026.json
@@ -99,6 +101,7 @@ china-cross-border-insider/
 │   │       ├── eu-gpsr-sweep-2026-marketplace-listings.md
 │   │       ├── eu-per-item-customs-charge-2026.md
 │   │       ├── eu-steel-safeguard-quota-2026-chinese-hrc-cost.md
+│   │       ├── freight-index-linked-contract-two-errors-2026.md
 │   │       ├── how-to-tell-a-factory-from-a-trading-company.md
 │   │       ├── importing-from-china-documents-checklist.md
 │   │       ├── proclamation-11052-polysilicon-minimum-import-price.md
@@ -214,13 +217,13 @@ china-cross-border-insider/
 
 | 项 | 数量 |
 | --- | --- |
-| 已发布文章 | 17 篇 |
+| 已发布文章 | 18 篇 |
 | 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
-| .md 总数 | 25 |
+| .md 总数 | 26 |
 | 成本模型 | 12 |
 | tools 脚本总数 | 31 |
-| SERP 快照 | 17 |
-| 机审报告 | 16 |
+| SERP 快照 | 18 |
+| 机审报告 | 17 |
 
 ## 技术栈
 
