@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:14:55 UTC  
+生成时间：2026-10-07 08:20:11 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`5e7ae71 fix: declare stakes on the four articles the schema was answering for, and report an audit that mostly cleared`
+对应提交：`eea069c feat: the second calculator mode, for the number that changes in 25 days`
 
 ## 顶层结构
 
