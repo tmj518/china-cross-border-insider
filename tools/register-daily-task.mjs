@@ -32,6 +32,8 @@ const getArg = (name, dflt) => {
   return i >= 0 && argv[i + 1] ? argv[i + 1] : dflt;
 };
 const AT = getArg("--at", "08:10");
+const SD = getArg("--sd", new Date().toISOString().slice(0, 10));
+const RUNAS = getArg("--ru", `${process.env.USERDOMAIN}\\${process.env.USERNAME}`);
 const REMOVE = argv.includes("--remove");
 const STATUS = argv.includes("--status");
 
@@ -76,12 +78,27 @@ console.log(`registering ${TASK} daily at ${AT}`);
 console.log(`  wrapper: ${WRAPPER}`);
 console.log(`  workdir: ${REPO}\n`);
 
+/*
+ * Arguments matched field-for-field against the two PolicyBriefEN tasks that run
+ * successfully on this machine:
+ *
+ *   Command          full path to Windows PowerShell, not "powershell.exe". The
+ *                    working task uses the explicit path; relying on PATH was one
+ *                    difference in the version that did not work.
+ *   WorkingDirectory set explicitly. The broken registration left it empty, so
+ *                    anything relative resolved against System32.
+ *   LogonType        InteractiveToken, same as the working tasks.
+ *   /RL omitted      the working tasks carry no RunLevel, and adding HIGHEST here
+ *                    made schtasks refuse with access denied.
+ */
 const create = [
   "/Create",
   "/TN", TASK,
-  "/TR", `powershell.exe -NoProfile -ExecutionPolicy Bypass -File "${WRAPPER}"`,
+  "/TR", `"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "${WRAPPER}"`,
   "/SC", "DAILY",
   "/ST", AT,
+  "/SD", SD,
+  "/RU", RUNAS,
   "/F",
 ];
 const r = schtasks(create, true);

@@ -1,0 +1,36 @@
+feat: the scheduled task now matches the two that already run on this machine
+
+The operator pointed at PolicyBriefEN-Daily and -Weekly, which have run successfully
+here, and asked for the same for this project. Reading their real configuration
+rather than reproducing what I assumed turned up three differences, and two of them
+were faults in my registration.
+
+**The action.** The working tasks execute the full path to Windows PowerShell; mine
+executed bare "powershell.exe" and relied on PATH. They set WorkingDirectory; mine
+left it empty, so anything relative resolved against System32. And schtasks /TR had
+mangled the quoting into `powershell.exe"` with a trailing quote. Rebuilt through
+Set-ScheduledTask, which takes the action as fields, so there is nothing to
+mis-parse. All three tasks now report identical settings: InteractiveToken, WakeToRun,
+StartWhenAvailable, PT6H, IgnoreNew, and a working directory that is set.
+
+**Their script carried two lessons that fix failures I had already hit.** The comment
+in run_daily.ps1 says $ErrorActionPreference stays "Continue" because "Stop" makes a
+native tool's stderr a terminating NativeCommandError — and dsh writes per-step
+diagnostics to stderr, so my wrapper aborted on every run. It also says output is
+appended with Add-Content -Encoding UTF8 rather than Tee-Object, because Tee-Object
+-Append writes UTF-16 and garbles the log, which is exactly what corrupted my first
+transcript. The wrapper is rewritten to follow both, plus $root from $MyInvocation so
+no path is hardcoded.
+
+**Also added:**
+
+DailyCheck.bat, the "sleep well" check, which names the proxy first because that is
+the prerequisite that gets forgotten and its absence is what breaks the push. The
+batch file is pure ASCII, verified: cmd.exe reads a .bat in the OEM code page and this
+project's path contains non-ASCII characters, so any non-ASCII byte in it would be
+misread. The real work is in tools/check-preflight.ps1, which reports the proxy,
+https, all 30 tool scripts parsing, the full preflight, the task's own state, and any
+unpushed commits.
+
+Verified end to end rather than assumed: Running DailyCheck.bat prints ALL CLEAR, and
+the three scheduled tasks now sit side by side with matching configuration.

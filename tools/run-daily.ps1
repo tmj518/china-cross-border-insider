@@ -1,94 +1,122 @@
-﻿# Daily unattended run of the Landed Math workflow.
+﻿# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
 #
-# Registered as a Windows scheduled task by tools/register-daily-task.ps1.
+# Launched by Windows Task Scheduler as LandedMath-Daily, and safe to run by hand:
+#     powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1
 #
-# Why a wrapper rather than calling dsh directly from the task:
+# The task text comes from 自动化_每日任务.txt and is piped into `dsh headless -`.
 #
-#   1. PATH. `dsh headless` does not inherit a PATH containing node, and every tool
-#      in this repository is a node script. Without this the run starts and fails
-#      on its first command. Proven rather than assumed: a headless probe reported
-#      "node is not installed or on PATH" while listing the workspace correctly.
-#   2. Transcript. An unattended run that fails silently is worse than one that does
-#      not run, so stdout and stderr are both written to logs/ with a dated name.
-#   3. The task text is piped from a file, so no shell quoting can corrupt it. An
-#      earlier inline attempt failed on PowerShell quoting rather than on the agent.
+# Patterns taken from the working PolicyBriefEN job in this same DSH install, each
+# one because it fixes a real failure observed here:
+#
+#   * $root from $MyInvocation, not a hardcoded path. The scheduled task was
+#     registered with an empty WorkingDirectory, so anything relative resolved
+#     against System32.
+#   * $ErrorActionPreference = "Continue", never "Stop": with Stop, a native tool
+#     writing to stderr raises a terminating NativeCommandError and aborts the run.
+#     dsh writes per-step diagnostics to stderr, so it aborted every time.
+#   * Output appended with Add-Content -Encoding UTF8, not Tee-Object. Tee-Object
+#     -Append writes UTF-16 and garbled the log.
+#   * node and git placed on PATH explicitly: `dsh headless` does not inherit a PATH
+#     containing node, and every tool in this repository is a node script.
+#   * Fail closed. Preflight runs first; if it does not clear, the reason is written
+#     to the log and the agent is still invoked, because a run that reports nothing
+#     is worse than one that reports a block.
+#
+# Usage:
+#   powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1
+#   powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1 -PreflightOnly
+#   powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1 -TaskFile .\probe.txt
+
+[CmdletBinding()]
+param(
+    [string]$TaskFile = "",
+    [switch]$PreflightOnly
+)
 
 $ErrorActionPreference = "Continue"
 
-# Encoding, set before anything is read or piped. Windows PowerShell 5.1 encodes
-# text sent to a native program with the ANSI code page, which on this machine is
-# GBK; the Chinese instructions therefore reached the agent as question marks even
-# though the file on disk was correct UTF-8 with a BOM.
+# Encoding, set before anything is read or piped. PowerShell 5.1 encodes text sent
+# to a native program with the ANSI code page, which on this machine is GBK, so the
+# Chinese instructions reached the agent as question marks.
 $utf8 = New-Object System.Text.UTF8Encoding $false
 $OutputEncoding = $utf8
 [Console]::OutputEncoding = $utf8
 [Console]::InputEncoding = $utf8
 
-$Repo = "C:\Users\tmj19\Desktop\出海官网更新工作流"
-$NodeBin = "C:\Users\tmj19\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin"
-$Dsh = "$env:LOCALAPPDATA\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd"
-$TaskFile = Join-Path $Repo "自动化_每日任务.txt"
-$LogDir = Join-Path $Repo "logs"
-
-New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+$nodeBin = "C:\Users\tmj19\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin"
+$dsh = "$env:LOCALAPPDATA\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd"
+$logDir = Join-Path $root "logs"
+New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $stamp = Get-Date -Format "yyyy-MM-dd_HHmm"
-$log = Join-Path $LogDir "daily-$stamp.log"
+$log = Join-Path $logDir "daily-$stamp.log"
 
-function Say($m) {
-  $line = "[{0}] {1}" -f (Get-Date -Format "HH:mm:ss"), $m
-  Write-Output $line
-  Add-Content -Path $log -Value $line -Encoding UTF8
+if (-not $TaskFile) { $TaskFile = Join-Path $root "自动化_每日任务.txt" }
+
+function Say($msg) {
+    $line = "[{0}] {1}" -f (Get-Date -Format "yyyy-MM-dd HH:mm:ss"), $msg
+    Write-Host $line
+    Add-Content -Path $log -Value $line -Encoding UTF8
 }
 
-Say "=== daily run started ==="
+Say "==================== daily run start ===================="
+Say "root=$root"
+Say "log=$log"
 
-# 1. Environment. Git and node must be findable by the agent's shell.
-$env:PATH = "$NodeBin;$env:PATH"
+# ---------------------------------------------------------------- 0. environment
 $gitCmd = "$env:LOCALAPPDATA\Programs\PortableGit\cmd"
 if (Test-Path $gitCmd) { $env:PATH = "$gitCmd;$env:PATH" }
+if (Test-Path $nodeBin) { $env:PATH = "$nodeBin;$env:PATH" }
 
-Say "node on PATH: $((Get-Command node -ErrorAction SilentlyContinue) -ne $null)"
-Say "git on PATH : $((Get-Command git -ErrorAction SilentlyContinue) -ne $null)"
-Say "dsh present : $(Test-Path $Dsh)"
-Say "task file   : $(Test-Path $TaskFile)"
+$node = Get-Command node -ErrorAction SilentlyContinue
+$git = Get-Command git -ErrorAction SilentlyContinue
+Say "node : $(if ($node) { $node.Source } else { 'NOT FOUND' })"
+Say "git  : $(if ($git) { $git.Source } else { 'NOT FOUND' })"
+Say "dsh  : $(if (Test-Path $dsh) { $dsh } else { 'NOT FOUND' })"
+Say "task : $(if (Test-Path $TaskFile) { $TaskFile } else { 'NOT FOUND' })"
 
-if (-not (Test-Path $Dsh)) { Say "FATAL: dsh not found at $Dsh"; exit 2 }
-if (-not (Test-Path $TaskFile)) { Say "FATAL: task file not found at $TaskFile"; exit 2 }
+if (-not $node) { Say "FATAL node not found. Nothing can run."; exit 2 }
+if (-not (Test-Path $dsh)) { Say "FATAL dsh not found at $dsh"; exit 2 }
+if (-not (Test-Path $TaskFile)) { Say "FATAL task file not found at $TaskFile"; exit 2 }
 
-Set-Location $Repo
-Say "working directory: $(Get-Location)"
+Set-Location $root
+Say "cwd  : $(Get-Location)"
 
-# 2. Record the state the run starts from, so the log shows what changed.
-try {
-  $head = (& git rev-parse --short HEAD 2>&1) -join ""
-  Say "HEAD before: $head"
-  $dirty = (& git status --porcelain 2>&1 | Measure-Object -Line).Lines
-  Say "uncommitted files before: $dirty"
-} catch { Say "git state unavailable: $_" }
+# ---------------------------------------------------------------- 1. preflight
+Say "step 1/3  preflight"
+$pre = & node (Join-Path $root "tools\preflight.mjs") 2>&1 | ForEach-Object { $_.ToString() }
+$preExit = $LASTEXITCODE
+if ($pre) { $pre | Add-Content -Path $log -Encoding UTF8 }
+foreach ($l in $pre) { if ($l -match "ALL CLEAR|BLOCKING|\[FAIL\]") { Say "  $l" } }
+Say "preflight exit=$preExit"
 
-# 3. Run the workflow. The task text goes in on stdin, which removes all quoting risk.
-Say "invoking dsh headless (this can take a long time)"
+if ($PreflightOnly) { Say "PreflightOnly set - finished."; exit $preExit }
+
+# ---------------------------------------------------------------- 2. the agent
+Say "step 2/3  invoking dsh headless (this can take a long time)"
 $task = [System.IO.File]::ReadAllText($TaskFile, [System.Text.Encoding]::UTF8)
+Say "task text: $($task.Length) chars"
 
 $sw = [System.Diagnostics.Stopwatch]::StartNew()
 try {
-  # Streams kept apart on purpose: merging them with *>&1 turns dsh's stderr
-  # diagnostics into NativeCommandError records and the log becomes UTF-16 noise.
-  $task | & $Dsh headless - 2>> $log | Tee-Object -FilePath $log -Append
-  $code = $LASTEXITCODE
+    # Captured as an array of strings and appended, rather than piped to Tee-Object,
+    # which writes UTF-16 and corrupts the log.
+    $out = $task | & $dsh headless - 2>&1 | ForEach-Object { $_.ToString() }
+    $agentExit = $LASTEXITCODE
+    if ($out) { $out | Add-Content -Path $log -Encoding UTF8 }
 } catch {
-  Say "dsh threw: $_"
-  $code = 1
+    Say "dsh threw: $_"
+    $agentExit = 1
 }
 $sw.Stop()
-Say "dsh finished in $([int]$sw.Elapsed.TotalMinutes) min, exit code $code"
+Say "dsh finished in $([int]$sw.Elapsed.TotalMinutes) min, exit=$agentExit"
 
-# 4. Record what changed, so the log is self-contained.
-try {
-  $head2 = (& git rev-parse --short HEAD 2>&1) -join ""
-  Say "HEAD after: $head2"
-  if ($head -ne $head2) { Say "commits were made during this run" } else { Say "no new commit during this run" }
-} catch {}
-
-Say "=== daily run finished ==="
-exit $code
+# ---------------------------------------------------------------- 3. what changed
+Say "step 3/3  recording what changed"
+$head = (& git -C $root rev-parse --short HEAD 2>&1) -join ""
+$dirty = (& git -C $root status --porcelain 2>&1 | Measure-Object -Line).Lines
+Say "HEAD=$head  uncommitted=$dirty"
+$ahead = (& git -C $root rev-list --count origin/main..HEAD 2>&1) -join ""
+Say "commits not yet pushed: $ahead"
+Say "==================== daily run finished ===================="
+exit $agentExit
