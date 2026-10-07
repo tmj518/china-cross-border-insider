@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:32:34 UTC  
+生成时间：2026-10-07 08:38:01 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`d405bed feat: the CBAM calculator mode, and the escalator that a single-year figure hides`
+对应提交：`eea043f docs: the CBAM mode record, and the fourth bundler normalisation to catch a check`
 
 ## 顶层结构
 
@@ -30,6 +30,7 @@ china-cross-border-insider/
 │   │   ├── china-real-name-registration-supplier-verification.md
 │   │   ├── container-freight-index-publisher-change-2026.md
 │   │   ├── eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026.md
+│   │   ├── eu-cbam-steel-vs-aluminium-carbon-cost-2026.md
 │   │   ├── eu-cbam-vs-steel-safeguard-duty-per-tonne-2026.md
 │   │   ├── eu-gpsr-sweep-2026-marketplace-listings.md
 │   │   ├── eu-per-item-customs-charge-2026.md
@@ -51,6 +52,7 @@ china-cross-border-insider/
 │       ├── china-real-name-registration-supplier-verification.json
 │       ├── container-freight-index-publisher-change-2026.json
 │       ├── eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026.json
+│       ├── eu-cbam-steel-vs-aluminium-carbon-cost-2026.json
 │       ├── eu-cbam-vs-steel-safeguard-duty-per-tonne-2026.json
 │       ├── eu-gpsr-sweep-2026-marketplace-listings.json
 │       ├── eu-per-item-customs-charge-2026.json
@@ -98,6 +100,7 @@ china-cross-border-insider/
 │   │       ├── container-freight-index-publisher-change-2026.md
 │   │       ├── eu-anti-dumping-cellulose-ethers-30-days.md
 │   │       ├── eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026.md
+│   │       ├── eu-cbam-steel-vs-aluminium-carbon-cost-2026.md
 │   │       ├── eu-cbam-vs-steel-safeguard-duty-per-tonne-2026.md
 │   │       ├── eu-gpsr-sweep-2026-marketplace-listings.md
 │   │       ├── eu-per-item-customs-charge-2026.md
@@ -199,7 +202,7 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
-├── MSG50.txt
+├── MSG51.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
@@ -227,13 +230,13 @@ china-cross-border-insider/
 
 | 项 | 数量 |
 | --- | --- |
-| 已发布文章 | 18 篇 |
+| 已发布文章 | 19 篇 |
 | 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
-| .md 总数 | 26 |
+| .md 总数 | 27 |
 | 成本模型 | 12 |
 | tools 脚本总数 | 31 |
-| SERP 快照 | 18 |
-| 机审报告 | 18 |
+| SERP 快照 | 19 |
+| 机审报告 | 19 |
 
 ## 技术栈
 
