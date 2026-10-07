@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 03:16:36 UTC  
+生成时间：2026-10-07 03:36:11 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`783161b docs: dated directory framework snapshot, regenerable by tool`
+对应提交：`e7b1c46 fix: a 163-character subtitle broke the build, and nothing checked field lengths`
 
 ## 顶层结构
 
