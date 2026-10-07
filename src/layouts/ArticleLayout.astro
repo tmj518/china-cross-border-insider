@@ -107,6 +107,36 @@ const siloLabel = categoryLabel(data.category);
           </section>
         )
       }
+
+      {
+        /*
+         * What changed since publication.
+         *
+         * Only rendered when there is something to say. An always-present
+         * "last updated" label would have to show a date, and a date that is a
+         * year old reads as abandonment — it advertises neglect. What earns
+         * trust is stating the change itself, so that is all this shows, and it
+         * shows nothing when nothing has changed.
+         *
+         * The date does NOT appear in the byline. Adding it there would make the
+         * byline churn on every revision, which is the date bumping this whole
+         * mechanism exists to avoid.
+         */
+        data.revisions.length > 0 && (
+          <section class="revisions">
+            <h2>Corrections and updates</h2>
+            <ul>
+              {data.revisions.map((r) => (
+                <li>
+                  <time datetime={r.date.toISOString()}>{formatDate(r.date)}</time>
+                  {" — "}
+                  {r.note}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
     </article>
 
     <ArticleFooter related={related} />

@@ -6,6 +6,9 @@ publishDate: 2026-10-02
 updatedDate: 2026-10-02
 reviewBy: 2027-01-01
 stakes: priced
+revisions:
+  - date: 2026-10-02
+    note: "An earlier version described the cancelled schedule as covering photovoltaic products. It covers 249 product lines spanning nicotine products, lithium compounds, methanol, 1,4-butanediol, phosphite and phosphonate chemicals, glassware and vaping hardware as well as solar cells and modules. The battery sequence was also stated without the preceding cut from 13% to 9% in December 2024, and Article 4's rule that the applicable rate follows the export date on the customs declaration was absent. All three are corrected above."
 category: "sourcing"
 audience: "importer"
 tags: ["export tax rebate", "fob pricing", "batteries", "solar", "supplier negotiation"]
@@ -176,5 +179,3 @@ Substitute your own unit FOB and your supplier's passthrough share. The $3.60 fi
 ## The point
 
 This is a domestic Chinese tax decision whose cost lands on an importer's invoice, which is precisely why it escapes notice. The first three points went by quietly in April. The remaining six arrive on 1 January 2027, and unlike most price movements this one is published, dated, and known to both sides of the table. That makes the next few weeks the cheapest window you will get to fix the number, because a supplier pricing a committed order today is making a different decision from one pricing a spot enquiry in January.
-
-*Correction, 2 October 2026: an earlier version of this article described the cancelled schedule as covering photovoltaic products. It covers 249 product lines spanning nicotine products, lithium compounds, methanol, 1,4-butanediol, phosphite and phosphonate chemicals, glassware and vaping hardware as well as solar cells and modules. The battery sequence was also stated without the preceding cut from 13% to 9% in December 2024, and Article 4's rule that the applicable rate follows the export date on the customs declaration was absent. All three are corrected above.*

@@ -30,11 +30,12 @@ const canonical = new URL(`/blog/${post.id}/`, Astro.site ?? SITE.url).href;
 // depends on the canonical URL and the site config rather than on the article
 // shell.
 //
-// dateModified is emitted only when updatedDate is set, which qa-check does not
-// require. `updatedDate` is the date the content changed, and is deliberately
-// not the review clock (`reviewBy`): feeding a scheduled review date into
-// dateModified would make a date-only edit look like a revision, which is the
-// pattern Google has described as manipulation rather than maintenance.
+// dateModified takes the latest recorded revision. That is the only signal worth
+// emitting: it moves when the content moves. Deriving it from the review clock
+// (`reviewBy`) would make a scheduled look into a claimed revision, which is the
+// date churn Google describes as manipulation rather than maintenance.
+const lastRevision = data.revisions.at(-1);
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -42,7 +43,7 @@ const jsonLd = {
   ...(data.subtitle ? { alternativeHeadline: data.subtitle } : {}),
   description: data.description,
   datePublished: data.publishDate.toISOString(),
-  ...(data.updatedDate ? { dateModified: data.updatedDate.toISOString() } : {}),
+  ...(lastRevision ? { dateModified: lastRevision.date.toISOString() } : {}),
   author: { "@type": "Person", name: AUTHOR.name, jobTitle: AUTHOR.role },
   publisher: { "@type": "Organization", name: SITE.name },
   articleSection: categoryLabel(data.category),

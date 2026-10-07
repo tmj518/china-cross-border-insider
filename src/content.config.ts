@@ -72,6 +72,35 @@ export const blog = defineCollection({
      * to be reviewed within 180 days, and does not constrain the rest.
      */
     stakes: z.enum(["priced", "directional"]).default("directional"),
+    /**
+     * What actually changed after publication, newest last.
+     *
+     * This is the visible half of the review clock, and the distinction between
+     * the two is the whole point. `reviewBy` says when someone should look;
+     * `revisions` says what they found and changed. Only this one is shown to
+     * readers and only this one reaches `dateModified` in the structured data.
+     *
+     * The reason to keep them apart is that a date-only edit is not maintenance.
+     * Google's stated position is that changing dates without changing content
+     * does not improve rankings, and date churn is a pattern it treats as
+     * manipulation. So the process rule attached to this field: a review ends
+     * with either a revision recorded here, or an explicit decision that nothing
+     * needed to change. It never ends with only a bumped date.
+     *
+     * The export-rebate article carried a prose correction at its foot from
+     * 2 October 2026 before this field existed. That note was the right instinct
+     * expressed the only way available at the time; structured, it renders in a
+     * fixed place, states the same thing machine-readably, and can be checked.
+     */
+    revisions: z
+      .array(
+        z.object({
+          date: z.coerce.date(),
+          /** What changed, in the reader's terms. */
+          note: z.string().min(20).max(600),
+        }),
+      )
+      .default([]),
     category: z.enum(categorySlugs),
     /** Who the piece is for; surfaced in the article header. */
     audience: z.enum(audienceValues).default("both"),

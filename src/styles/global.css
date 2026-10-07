@@ -747,6 +747,49 @@ a {
   list-style: none;
 }
 
+/* Corrections and updates.
+ *
+ * Visually distinct from the sources footnote on purpose: a correction is a
+ * claim about our own accuracy, not a citation. The left rule marks it as a note
+ * rather than body copy without shouting, and the date is monospaced so a reader
+ * scanning for "when" finds it first.
+ *
+ * Nothing renders here when no revision has been recorded. That is deliberate:
+ * a permanent "last updated" label has to show a date, and an old date reads as
+ * neglect rather than diligence. */
+.revisions {
+  margin-top: 36px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--c-ink-6);
+  background: var(--c-line-faint);
+  font-size: 14px;
+  color: var(--c-ink-4);
+}
+
+.revisions h2 {
+  font-size: 13px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.revisions ul {
+  list-style: none;
+}
+
+.revisions li + li {
+  margin-top: 8px;
+}
+
+/* No --font-mono is defined in this project, so the fallback is doing the work.
+   Left explicit rather than dropped so the intent is visible if one is added. */
+.revisions time {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 .disclaimer {
   margin-top: 14px;
   font-size: 12px;

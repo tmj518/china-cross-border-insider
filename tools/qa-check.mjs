@@ -182,6 +182,45 @@ function check(file) {
     }
   }
 
+  // ---- revision records ------------------------------------------------
+  // `revisions` is the visible half of the review clock: what actually changed
+  // after publication. It is the only thing that feeds dateModified, because a
+  // date-only edit is not maintenance — Google says changing dates without
+  // changing content does not improve rankings, and treats date churn as
+  // manipulation. So this field is what a review is supposed to produce, and it
+  // is checked for internal consistency rather than for existence: most pieces
+  // legitimately have nothing to record.
+  //
+  // What is checked: a revision cannot predate publication, and `updatedDate`
+  // cannot disagree with the newest revision. The two fields say the same thing
+  // — updatedDate is the legacy alias — so divergence means one of them is
+  // wrong, and a wrong revision date is worse than no revision note.
+  const revDates = [...fm.matchAll(/^\s*-\s*date:\s*(\S+)/gm)].map((m) => m[1]);
+  if (revDates.length) {
+    const published = fmLine("publishDate")?.slice(0, 10) ?? "";
+    const before = revDates.filter((d) => d < published);
+    if (before.length) {
+      add(
+        "block",
+        "revisions consistent",
+        `revision dated ${before[0]} predates publishDate ${published}`,
+      );
+    }
+    const newest = [...revDates].sort().at(-1);
+    const updated = fmLine("updatedDate")?.slice(0, 10);
+    if (!updated) {
+      add("warn", "revisions consistent", `revisions exist but updatedDate is unset (newest ${newest})`);
+    } else if (updated !== newest) {
+      add(
+        "warn",
+        "revisions consistent",
+        `updatedDate ${updated} disagrees with newest revision ${newest}`,
+      );
+    } else {
+      add("pass", "revisions consistent", `${revDates.length} revision(s), newest ${newest}`);
+    }
+  }
+
   // ---- calculation transparency ---------------------------------------
   // Same principle as the primary-source rule above: if the piece claims a
   // custom calculation, the reader has to be able to see the calculation.
@@ -335,6 +374,14 @@ for (const file of files) {
     for (const r of blocks) console.log(`  ✗ BLOCK  ${r.rule.padEnd(38)} ${r.detail}`);
   }
   for (const r of warns) console.log(`  ! warn   ${r.rule.padEnd(38)} ${r.detail}`);
+
+  // Passes are hidden by default because the count on the line above is the
+  // useful part when scanning a whole library. But that leaves no way to confirm
+  // that a specific rule RAN and passed, as opposed to not running at all —
+  // which is indistinguishable from the outside. VERBOSE=1 lists them.
+  if (process.env.VERBOSE) {
+    for (const r of passes) console.log(`  · pass   ${r.rule.padEnd(38)} ${r.detail}`);
+  }
 
   if (!isDraft && blocks.length) anyBlocking = true;
 }
