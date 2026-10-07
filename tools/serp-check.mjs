@@ -265,14 +265,42 @@ function parseFrontmatter(raw) {
   return { fm: m ? m[1] : "", body: m ? raw.slice(m[0].length) : raw };
 }
 
-function articleSignals(body) {
+function articleSignals(fm, body) {
   const tables = (body.match(/^\|.*\|\s*$/gm) || []).join("\n");
+
+  /**
+   * Named sources, counted where sources actually live.
+   *
+   * This used to count bold blockquotes in the body. But a bold blockquote is a
+   * DEFINITION block: qa-check requires at least one, and every article in this
+   * library has exactly one. So the value was always 1, and the cross-source
+   * rule below, which requires at least 2, could never pass for any article.
+   *
+   * The bug was live and invisible: the fourteen previously published pieces all
+   * declare `custom-calculation` or `primary-source`, and only `cross-source`
+   * consults this number. The first cross-source article — a comparison of two
+   * published instruments, with six named sources and eight sourced figures —
+   * was reported as "does not show at least two named sources".
+   *
+   * The deeper mistake is that one field name carried two meanings. The
+   * definition-block rule needs the blockquote count; the cross-source rule needs
+   * sources. They were never the same quantity.
+   */
+  const listedSources = (/^sources:\s*\n((?:\s+-[^\n]*\n?)*)/m.exec(fm)?.[1] ?? "")
+    .split(/\n/)
+    .filter((l) => /^\s+-\s/.test(l)).length;
+  const figureSources = new Set(
+    [...fm.matchAll(/^\s+source:\s*"?([^"\n]+)"?\s*$/gm)].map((m) => m[1].trim()),
+  ).size;
+
   return {
     tableRows: (body.match(/^\|.*\|\s*$/gm) || []).length,
     costTableMoney: MONEY.test(tables),
     perUnitMath: PER_UNIT.test(body),
     primaryDocId: PRIMARY_DOC_PATTERN.test(body),
-    namedSources: (body.match(/^>\s+\*\*/gm) || []).length,
+    namedSources: listedSources + figureSources,
+    /** Kept for the definition-block requirement, which is a different thing. */
+    definitionBlocks: (body.match(/^>\s+\*\*/gm) || []).length,
   };
 }
 
@@ -412,7 +440,7 @@ async function check(file, provider) {
     warnings.push(`only ${loaded.length} competitor page loaded — thin evidence`);
   }
 
-  const verdict = rule.verify(articleSignals(body), loaded);
+  const verdict = rule.verify(articleSignals(fm, body), loaded);
   return {
     ...report,
     warnings,
