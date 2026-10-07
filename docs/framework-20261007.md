@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:02:04 UTC  
+生成时间：2026-10-07 08:09:37 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`4920cb5 feat: find by market, and two wrong measurements caught by checking`
+对应提交：`322e5ff feat: a cadence rule that blocks, because a promise to readers is checkable`
 
 ## 顶层结构
 
