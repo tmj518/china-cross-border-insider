@@ -1,24 +1,10 @@
 ---
 import { getCollection, render } from "astro:content";
 
-import ArticleFooter from "../../components/ArticleFooter.astro";
-import ArticleVideo from "../../components/ArticleVideo.astro";
-import Sidebar from "../../components/Sidebar.astro";
-import {
-  AUTHOR,
-  SITE,
-  audienceLabel,
-  categoryHref,
-  categoryLabel,
-  formatDate,
-} from "../../consts";
+import { SITE, AUTHOR, categoryLabel } from "../../consts";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import {
-  numbersFor,
-  published,
-  readingTime,
-  relatedPosts,
-} from "../../lib/post";
+import { numbersFor, published, relatedPosts } from "../../lib/post";
 
 export async function getStaticPaths() {
   const posts = published(await getCollection("blog"));
@@ -37,10 +23,18 @@ const { Content } = await render(post);
 const posts = published(await getCollection("blog"));
 const numbers = numbersFor(posts);
 
-const minutes = readingTime(post.body);
-const siloLabel = categoryLabel(data.category);
 const canonical = new URL(`/blog/${post.id}/`, Astro.site ?? SITE.url).href;
 
+// Article structured data. The layout renders the visible article; this is the
+// machine-readable statement of the same thing, and it stays here because it
+// depends on the canonical URL and the site config rather than on the article
+// shell.
+//
+// dateModified is emitted only when updatedDate is set, which qa-check does not
+// require. `updatedDate` is the date the content changed, and is deliberately
+// not the review clock (`reviewBy`): feeding a scheduled review date into
+// dateModified would make a date-only edit look like a revision, which is the
+// pattern Google has described as manipulation rather than maintenance.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -51,7 +45,7 @@ const jsonLd = {
   ...(data.updatedDate ? { dateModified: data.updatedDate.toISOString() } : {}),
   author: { "@type": "Person", name: AUTHOR.name, jobTitle: AUTHOR.role },
   publisher: { "@type": "Organization", name: SITE.name },
-  articleSection: siloLabel,
+  articleSection: categoryLabel(data.category),
   keywords: data.tags.join(", "),
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
 };
@@ -68,66 +62,7 @@ const jsonLd = {
   modifiedTime={data.updatedDate}
   jsonLd={jsonLd}
 >
-  <div class="container">
-    <main id="main">
-      <article>
-        <header class="article-header">
-          <a class="tag" href={categoryHref(data.category)}>{siloLabel}</a>
-          <h1>{data.title}</h1>
-          {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
-          <p class="standfirst">{data.description}</p>
-          <div class="meta">
-            {formatDate(data.publishDate)} · {minutes} min read · By {AUTHOR.name}
-            {" · "}For {audienceLabel(data.audience)}
-          </div>
-        </header>
-
-        {
-          data.heroImage && (
-            <figure class="article-hero-img">
-              <img
-                src={data.heroImage}
-                alt={data.heroImageAlt ?? ""}
-                width="1200"
-                height="750"
-              />
-            </figure>
-          )
-        }
-
-        <div class="prose">
-          <Content />
-        </div>
-
-        {
-          data.youtube_id && (
-            <ArticleVideo
-              videoId={data.youtube_id}
-              title={data.videoTitle ?? data.title}
-              description={data.description}
-              duration={data.videoDuration}
-              uploadDate={data.publishDate}
-            />
-          )
-        }
-
-        {
-          data.sources.length > 0 && (
-            <section class="sources">
-              <h2>Sources</h2>
-              <ul>
-                {data.sources.map((source) => (
-                  <li>{source}</li>
-                ))}
-              </ul>
-            </section>
-          )
-        }
-      </article>
-
-      <ArticleFooter related={related} />
-    </main>
-
-    <Sidebar numbers={numbers} />
-  </div>
+  <ArticleLayout post={post} related={related} numbers={numbers}>
+    <Content />
+  </ArticleLayout>
 </BaseLayout>
