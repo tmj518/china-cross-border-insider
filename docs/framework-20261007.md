@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 13:24:38 UTC  
+生成时间：2026-10-07 14:21:18 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`e54adab fix: a gate I broke and pushed, stable article numbering, and what the scheduled task actually did`
+对应提交：`aa656fb feat: a CSP self-check, so a policy that blocks the site's own scripts cannot ship`
 
 ## 顶层结构
 
@@ -72,7 +72,11 @@ china-cross-border-insider/
 │   ├── daily-2026-10-07_2035.log
 │   ├── daily-2026-10-07_2036.log
 │   ├── daily-2026-10-07_2037.log
-│   └── daily-2026-10-07_2040.log
+│   ├── daily-2026-10-07_2040.log
+│   ├── daily-2026-10-07_2135.log
+│   ├── daily-2026-10-07_2144.log
+│   ├── daily-2026-10-07_2151.log
+│   └── daily-2026-10-07_2155.log
 ├── public/   # favicon, og-default.png, _headers
 │   ├── _headers
 │   ├── favicon.svg
@@ -159,6 +163,8 @@ china-cross-border-insider/
 │   │   └── gsc.mjs
 │   ├── _tmp_week.mjs
 │   ├── cbam-cost.mjs
+│   ├── check-csp.mjs
+│   ├── check-preflight.ps1
 │   ├── comparison-candidates.mjs
 │   ├── deposit-risk.mjs
 │   ├── env-proxy.ps1
@@ -189,9 +195,11 @@ china-cross-border-insider/
 │   ├── reviewer-check.mjs
 │   ├── run-daily.ps1
 │   ├── serp-check.mjs
+│   ├── Set-TaskAction.ps1
 │   ├── start-n8n.ps1
 │   ├── steel-trq.mjs
 │   ├── test-tts-retry.py
+│   ├── verify-live.mjs
 │   └── youtube-upload.mjs
 ├── 成本基线与决策提醒_2026-11-07.md
 ├── 初心与目标.md
@@ -217,6 +225,7 @@ china-cross-border-insider/
 ├── cellar_dl.html
 ├── cj.txt
 ├── consol.html
+├── DailyCheck.bat
 ├── eli_reg.html
 ├── eurlex_test.html
 ├── eurlex1.html
@@ -253,7 +262,7 @@ china-cross-border-insider/
 | 草稿 | 7 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
 | .md 总数 | 29 |
 | 成本模型 | 12 |
-| tools 脚本总数 | 36 |
+| tools 脚本总数 | 40 |
 | SERP 快照 | 22 |
 | 机审报告 | 20 |
 
