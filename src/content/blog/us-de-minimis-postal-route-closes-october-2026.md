@@ -11,6 +11,10 @@ tags: ["de minimis", "postal shipments", "section 301", "formal entry", "low-val
 priority: "P0"
 featured: false
 draft: false
+updatedDate: 2026-10-07
+revisions:
+  - date: 2026-10-07
+    note: "Two gaps closed against the rule, 91 FR 37801. The 22 October compliance date covers 19 CFR 145.12(a)(2)(v) as well as (vi), so goods subject to another agency — FDA, USDA, CPSC, FCC, EPA — also leave the postal informal route then, including lines with no Chapter 99 code. And the filer binds harder than the bond: CBP treats the worksheet as customs business because it needs 10-digit HTSUS classification, so unless the filer owns the goods the filing has to come from a licensed customs broker. CBP estimates about half the previously qualified parties are not brokers."
 target_keyword: "US de minimis suspended 2026 postal shipment duty per parcel China"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -59,7 +63,7 @@ sources:
   - "Executive Order 14388, Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries, signed 20 February 2026, 91 FR 9433, republished with Annex at 91 FR 17839"
   - "Executive Order 14324, 90 FR 37775, the per-item postal duty schedule of 29 August 2025"
   - "Proclamation 11012, 91 FR 9339, Section 122 temporary import surcharge"
-  - "CBP interim final rule on low-value shipment processing, 91 FR 37801, 24 June 2026, docket USCBP-2026-0761"
+  - "CBP interim final rule on low-value shipment processing, 91 FR 37801, 24 June 2026, docket USCBP-2026-0761, CBP Dec. 26-13: effective 24 July 2026, with a compliance date of 22 October 2026 for 19 CFR 145.12(a)(2)(v) and (vi); also the source for the licensed-broker conclusion and the bond condition at new 19 CFR 145.15"
   - "CBP interim final rule on entry type 13 electronic informal entry, 91 FR 38007, 24 June 2026"
   - "One Big Beautiful Bill Act, Pub. L. 119-21, enacted 4 July 2025"
   - "Harmonized Tariff Schedule of the United States, U.S. note 2(y)"
@@ -98,9 +102,13 @@ Three instruments, and the sequence matters more than any single rate.
 
 19 CFR 145.12(a)(2)(vi) makes formal entry mandatory for mail merchandise subject to duties under Chapter 98 or Chapter 99 of the tariff schedule. Almost every consumer good made in China carries a Chapter 99 Section 301 code. Those goods therefore fall outside postal informal entry by the text of the regulation itself.
 
-CBP delayed enforcement of that exclusion, and the compliance date is 22 October 2026. From that date a Chinese-origin consumer parcel cannot use the postal informal route at all, unless it enters through the one channel that waives the exclusion.
+**(v) is the other half of the same date, and it catches more than Section 301 does.** The compliance date of 22 October 2026 applies to 19 CFR 145.12(a)(2)(v) as well as (vi). Subparagraph (v) excludes merchandise subject to the requirements of another government agency — FDA, USDA, CPSC, FCC, EPA — which reaches categories that carry no Chapter 99 code at all. A consumer parcel of a regulated product falls outside the informal postal route on that date for a reason that has nothing to do with tariffs, so a seller whose SKUs are not Section 301 goods is not thereby clear.
+
+CBP delayed enforcement of both exclusions, and the compliance date is 22 October 2026. From that date a Chinese-origin consumer parcel cannot use the postal informal route at all, unless it enters through the one channel that waives the exclusion.
 
 **That channel is entry type 13.** The electronic informal entry established by 91 FR 38007 commenced on 22 September 2026 and waives 19 CFR 145.12(a)(2)(v) and (vi) for participants, which makes it the only informal route currently open to Section 301 Chinese goods. Shipments subject to anti-dumping or countervailing duty, or to quota, remain ineligible. A bond is required.
+
+**And the filer is the constraint, not the bond.** The International Mail Duty Worksheet requires all applicable 10-digit HTSUS classifications, and CBP concluded that submitting it is customs business. The consequence is that where the filer is not the owner or purchaser of the goods, **the filing has to come from a licensed customs broker**. CBP's own estimate in the rule is that roughly half the parties qualified to file under the interim process are not licensed brokers, and every one of them is excluded from 22 October. Foreign postal operators that filed on a seller's behalf are in that group. The rule also lets a broker file one consolidated monthly worksheet for all its clients, which is the practical question to ask when choosing one.
 
 **And the statutory position is already settled.** The de minimis exemption under 19 U.S.C. 1321(a)(2)(c) is repealed with effect from 1 July 2027 by Pub. L. 119-21. The suspension is not waiting for a restoration. Only bona fide gifts within the $100 and $200 limits, and informational materials, survive.
 

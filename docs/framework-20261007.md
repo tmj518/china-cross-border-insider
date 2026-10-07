@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:58:07 UTC  
+生成时间：2026-10-07 09:16:16 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`11b0e63 docs: a handoff for running this workflow on another model, and a candid look at where the cost went`
+对应提交：`ebbb78f fix: article 20 was an orphan, and preflight is green at 20 articles`
 
 ## 顶层结构
 
@@ -179,6 +179,7 @@ china-cross-border-insider/
 │   ├── steel-trq.mjs
 │   ├── test-tts-retry.py
 │   └── youtube-upload.mjs
+├── 成本基线与决策提醒_2026-11-07.md
 ├── 初心与目标.md
 ├── 对比内容线_选题矩阵.md
 ├── 合规记录_AI标识.md
@@ -205,6 +206,7 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
+├── MSG55.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt

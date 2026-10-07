@@ -1,0 +1,40 @@
+fix: refresh the article whose deadline is 15 days out, and two gaps it had
+
+Round one of standing instruction C — no external dependencies, improve what is
+already published — applied where it has a deadline. The de minimis postal article
+carries a reviewBy of 22 October, which is 15 days away, and 22 October is the date
+its central fact takes effect. So it was re-read against the rule itself rather than
+left until the date passed.
+
+The rule is 91 FR 37801, published 24 June 2026, and it is already the article's
+cited source — so this was a re-read, not new research. The core facts held: the
+compliance date of 22 October 2026, the $2,500 ceiling, HTSUS chapters 1 to 97, and
+the indefinite suspension of the $800 postal exemption. Two things did not.
+
+First, the article described only half the date. The 22 October compliance date
+covers 19 CFR 145.12(a)(2)(v) as well as (vi). Subparagraph (vi) is the Chapter 98
+and 99 exclusion the article covered; subparagraph (v) excludes merchandise subject
+to another government agency, which reaches product categories carrying no Chapter 99
+code at all. A seller whose SKUs are not Section 301 goods is not thereby clear.
+
+Second, the article treated the bond as the main new requirement and said a shipment
+needs "a broker or a filing process". The rule is harder than that. The International
+Mail Duty Worksheet requires all applicable 10-digit HTSUS classifications, and CBP
+concluded that submitting it is customs business — so where the filer is not the
+owner or purchaser of the goods, the filing has to come from a licensed customs
+broker. CBP's own estimate in the rule is that roughly half the parties qualified
+under the interim process are not licensed brokers, and every one of them is excluded
+from 22 October. Foreign postal operators filing on a seller's behalf are in that
+group. That is an eligibility wall rather than a cost line, and it is the finding
+worth correcting.
+
+Recorded as a visible revision with updatedDate, per the rule that a review ends with
+either a revision or an explicit decision that nothing changed, never with a date
+bump alone. Three of my own mistakes on the way, all caught by measuring afterwards:
+the first revision note was 848 characters against a 600-character cap, my second
+edit's match string was mistyped so the replacement silently did not apply while the
+command reported success, and a duplicate reviewBy key was introduced and then found
+by grepping for it rather than by trusting the edit.
+
+Verified: qa-check 22 passes on the article, build green at 34 pages, 20/20 articles
+built, 20/20 at 8/8, no review date overdue.
