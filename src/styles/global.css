@@ -1064,6 +1064,67 @@ a {
   font-weight: 600;
 }
 
+/* Find by market.
+ *
+ * One block per market, each led by a count so a reader can see at a glance which
+ * markets have depth and which are thin — three articles for ASEAN against
+ * fourteen for China is information, not a defect to hide. The signal line is
+ * deliberately visible rather than tucked away, because the grouping is derived
+ * and a reader deserves to see the rule that filed something. */
+.market-block {
+  margin: 32px 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--c-line);
+}
+
+.market-block h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.market-count {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--c-ink-4);
+  border: 1px solid var(--c-line);
+  border-radius: 10px;
+  padding: 1px 8px;
+}
+
+.market-blurb {
+  margin-bottom: 6px;
+}
+
+.market-signal {
+  font-size: 13px;
+  color: var(--c-ink-5);
+  margin-bottom: 12px;
+}
+
+.market-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.market-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.market-meta {
+  display: block;
+  font-size: 12px;
+  color: var(--c-ink-5);
+  margin-top: 3px;
+  text-transform: capitalize;
+}
+
 /* ---------- 9. Forms ---------- */.newsletter-box {
   font-size: 13px;
 }

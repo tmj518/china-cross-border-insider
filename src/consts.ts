@@ -75,6 +75,7 @@ export const NAV_LINKS = [
   // top of the funnel for the email list.
   { label: "Calculator", href: "/calculator/" },
   { label: "Tracker", href: "/tracker/" },
+  { label: "By market", href: "/markets/" },
   { label: "Trade Policy", href: "/category/trade-policy/" },
   { label: "Platforms", href: "/category/platforms/" },
   { label: "Supply Chain", href: "/category/supply-chain/" },
