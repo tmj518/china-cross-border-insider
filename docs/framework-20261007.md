@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 09:16:16 UTC  
+生成时间：2026-10-07 09:18:59 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`ebbb78f fix: article 20 was an orphan, and preflight is green at 20 articles`
+对应提交：`206e313 fix: refresh the article whose deadline is 15 days out, and two gaps it had`
 
 ## 顶层结构
 
@@ -206,7 +206,6 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
-├── MSG55.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
