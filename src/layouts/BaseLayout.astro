@@ -3,13 +3,18 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import { AUTHOR, CF_ANALYTICS_TOKEN, SITE } from "../consts";
+import { siteBlocks, webPageBlock } from "../lib/seo.mjs";
 
 /**
  * Site chrome + the SEO head.
  *
  * spec §2 makes Google the acquisition channel, so every page ships a
- * canonical URL, a description, Open Graph / Twitter cards and optional
- * JSON-LD — none of which the HTML prototype had.
+ * canonical URL, a description, Open Graph / Twitter cards and JSON-LD.
+ *
+ * The site-wide JSON-LD — WebSite, Organization and BreadcrumbList — is added here
+ * rather than per page. It used to be per page, and five page types ended up with none
+ * of it, which is exactly the failure mode of opt-in metadata: the pages that need it
+ * most are the ones nobody remembers to update.
  */
 export interface Props {
   title: string;
@@ -19,6 +24,8 @@ export interface Props {
   publishedTime?: Date;
   modifiedTime?: Date;
   noindex?: boolean;
+  /** Overrides the page-level schema type; defaults by path. */
+  pageType?: "WebPage" | "CollectionPage";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -30,13 +37,55 @@ const {
   publishedTime,
   modifiedTime,
   noindex = false,
+  pageType,
   jsonLd,
 } = Astro.props;
 
 const site = Astro.site ?? new URL(SITE.url);
 const canonical = new URL(Astro.url.pathname, site).href;
 const ogImage = new URL(image, site).href;
-const blocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+/*
+ * `noindex` pages get no structured data at all. Emitting it on a page we are asking
+ * Google to drop is a contradiction, and the structured-data tests treat it as one.
+ */
+const ownBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+/*
+ * The page-level block is generated here unless the page already declares a more
+ * specific one.
+ *
+ * The five pages that had no structured data — calculator, tracker, markets, sources
+ * and the category hubs — had none because it was opt-in per page. Making it opt-out
+ * means the next page added gets it without anyone remembering to.
+ *
+ * Skipped when the page supplies its own AboutPage, ContactPage, Article or WebSite
+ * block, so no page states two things about itself.
+ */
+const OWN_PAGE_TYPES = ["AboutPage", "ContactPage", "Article", "WebSite", "CollectionPage"];
+const declaresOwn = ownBlocks.some((b) => {
+  const t = (b as { "@type"?: unknown })["@type"];
+  return typeof t === "string" && OWN_PAGE_TYPES.includes(t);
+});
+
+const path = Astro.url.pathname;
+const pageBlocks = noindex
+  ? []
+  : [
+      ...siteBlocks(path, title),
+      ...(declaresOwn
+        ? []
+        : [
+            webPageBlock({
+              type: pageType ?? (path.startsWith("/category/") ? "CollectionPage" : "WebPage"),
+              url: canonical,
+              name: title,
+              description,
+            }),
+          ]),
+    ];
+
+const blocks = [...pageBlocks, ...ownBlocks];
 ---
 
 <!doctype html>

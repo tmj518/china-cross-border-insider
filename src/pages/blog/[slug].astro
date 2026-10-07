@@ -5,6 +5,7 @@ import { SITE, AUTHOR, categoryLabel } from "../../consts";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published, relatedPosts } from "../../lib/post";
+import { personNode, publisherRef } from "../../lib/seo.mjs";
 
 export async function getStaticPaths() {
   const posts = published(await getCollection("blog"));
@@ -33,7 +34,9 @@ const canonical = new URL(`/blog/${post.id}/`, Astro.site ?? SITE.url).href;
 // dateModified takes the latest recorded revision. That is the only signal worth
 // emitting: it moves when the content moves. Deriving it from the review clock
 // (`reviewBy`) would make a scheduled look into a claimed revision, which is the
-// date churn Google describes as manipulation rather than maintenance.
+// date churn Google describes as manipulation rather than maintenance. Articles with
+// no revision therefore carry no dateModified at all, which is correct rather than
+// missing.
 const lastRevision = data.revisions.at(-1);
 
 const jsonLd = {
@@ -44,8 +47,17 @@ const jsonLd = {
   description: data.description,
   datePublished: data.publishDate.toISOString(),
   ...(lastRevision ? { dateModified: lastRevision.date.toISOString() } : {}),
-  author: { "@type": "Person", name: AUTHOR.name, jobTitle: AUTHOR.role },
-  publisher: { "@type": "Organization", name: SITE.name },
+  /*
+   * author as a node with a url, not a bare name.
+   *
+   * The byline is a pen name, and Google's spam policies name fabricated creator
+   * profiles as a deception signal — so the fix is not a fuller invented persona. It is
+   * pointing the existing name at the real background already published on /about/,
+   * which is what makes the byline checkable instead of asserted.
+   */
+  author: personNode(),
+  publisher: publisherRef(),
+  ...(data.heroImage ? { image: new URL(data.heroImage, Astro.site ?? SITE.url).href } : {}),
   articleSection: categoryLabel(data.category),
   keywords: data.tags.join(", "),
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },

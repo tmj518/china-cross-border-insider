@@ -33,13 +33,22 @@ const heroMeta = heroPost
   ? `${formatDate(heroPost.data.publishDate)} · ${readingTime(heroPost.body)} min read · By ${AUTHOR.name}`
   : undefined;
 
+/*
+ * The homepage is an index of the published analysis, so it declares itself as one.
+ *
+ * The WebSite block that used to live here is gone: BaseLayout now emits the site,
+ * organisation and breadcrumb blocks on every page, and two WebSite blocks on one page
+ * is the kind of duplicate that makes a machine pick the wrong node.
+ */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE.name,
-  url: SITE.url,
+  "@type": "CollectionPage",
+  "@id": `${SITE.url}/#page`,
+  url: `${SITE.url}/`,
+  name: SITE.title,
   description: SITE.description,
-  publisher: { "@type": "Organization", name: SITE.name },
+  inLanguage: SITE.language,
+  isPartOf: { "@id": `${SITE.url}/#website` },
 };
 ---
 

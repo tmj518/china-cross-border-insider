@@ -380,6 +380,27 @@ function checkCsp() {
 checkCsp();
 
 /**
+ * Structured data must exist on every page, and be valid where validity is defined.
+ *
+ * Added because five page types had none: the metadata was opt-in per page, so the
+ * pages nobody remembered were exactly the ones missing it. This check is generated
+ * rather than per page for the same reason.
+ */
+function checkStructuredData() {
+  const r = spawnSync(process.execPath, [join(ROOT, "tools", "check-structured-data.mjs")], { encoding: "utf8" });
+  const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
+  const problems = /problems:\s*(\d+)/.exec(out)?.[1] ?? "?";
+  if (r.status === 0) {
+    ok("structured data", `every page carries WebSite, Organization and a page block (${problems} problems)`);
+  } else {
+    const first = out.split("\n").find((l) => /^ {2}\//.test(l) && !/^\s*$/.test(l))?.trim() ?? "";
+    fail("structured data", `${problems} problem(s) | ${first}`.slice(0, 170));
+  }
+}
+
+checkStructuredData();
+
+/**
  * Every page must fit a phone screen.
  *
  * This is here because article pages did not, and nothing said so. A CSS Grid item

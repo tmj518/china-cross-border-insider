@@ -1,0 +1,72 @@
+import { readFileSync, existsSync } from "node:fs";
+
+/**
+ * Re-verify, and make this a permanent check rather than a one-off.
+ *
+ * The five pages without structured data got that way because it was opt-in per page.
+ * The same reasoning applies to the check: if it is not run every build, the next page
+ * added will drift the same way.
+ */
+const PAGES = [
+  ["/", "dist/index.html", false],
+  ["/about/", "dist/about/index.html", false],
+  ["/sources/", "dist/sources/index.html", false],
+  ["/calculator/", "dist/calculator/index.html", false],
+  ["/tracker/", "dist/tracker/index.html", false],
+  ["/markets/", "dist/markets/index.html", false],
+  ["/category/trade-policy/", "dist/category/trade-policy/index.html", false],
+  ["/category/logistics/", "dist/category/logistics/index.html", false],
+  ["/blog/china-industrial-profits-q4-supply-chain/", "dist/blog/china-industrial-profits-q4-supply-chain/index.html", false],
+  ["/blog/china-export-rebate-vs-export-duty-2026/", "dist/blog/china-export-rebate-vs-export-duty-2026/index.html", false],
+  ["/privacy/", "dist/privacy/index.html", true],
+  ["/404.html", "dist/404.html", true],
+];
+
+const problems = [];
+console.log("STRUCTURED DATA CHECK\n" + "=".repeat(80));
+
+for (const [label, file, expectNoIndex] of PAGES) {
+  if (!existsSync(file)) { problems.push(`${label}: file missing`); console.log(`  MISSING ${label}`); continue; }
+  const h = readFileSync(file, "utf8");
+  const blocks = [];
+  for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try { blocks.push(JSON.parse(m[1])); } catch { blocks.push({ "@type": "UNPARSEABLE" }); }
+  }
+  const types = blocks.map((b) => b["@type"]);
+  const dupes = types.filter((t, i) => types.indexOf(t) !== i);
+
+  console.log(`\n  ${label}`);
+  console.log(`     ${types.join(", ")}`);
+
+  if (expectNoIndex) {
+    if (types.length) problems.push(`${label}: noindex page carries structured data`);
+    continue;
+  }
+
+  if (!types.includes("Organization")) problems.push(`${label}: no Organization`);
+  if (!types.includes("WebSite")) problems.push(`${label}: no WebSite`);
+  if (dupes.length) problems.push(`${label}: duplicate block type(s): ${dupes.join(", ")}`);
+  if (!types.some((t) => ["WebPage", "CollectionPage", "AboutPage", "ContactPage", "Article"].includes(t))) {
+    problems.push(`${label}: no page-level block`);
+  }
+
+  const crumb = blocks.find((b) => b["@type"] === "BreadcrumbList");
+  if (crumb) {
+    const items = crumb.itemListElement ?? [];
+    if (items.length < 2) problems.push(`${label}: BreadcrumbList has ${items.length} item(s), needs >= 2`);
+    for (const it of items) {
+      if (!it.position || !it.name || !it.item) problems.push(`${label}: a ListItem is missing position/name/item`);
+    }
+    console.log(`     crumb: ${items.map((i) => i.name).join(" > ")}`);
+  } else if (label !== "/") {
+    problems.push(`${label}: no BreadcrumbList`);
+  }
+
+  const org = blocks.find((b) => b["@type"] === "Organization");
+  if (org && (!org.url || !org.logo)) problems.push(`${label}: Organization missing url or logo`);
+}
+
+console.log("\n" + "=".repeat(80));
+console.log(`problems: ${problems.length}`);
+for (const p of problems) console.log(`  ${p}`);
+process.exit(problems.length ? 1 : 0);
