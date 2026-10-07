@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:40:13 UTC  
+生成时间：2026-10-07 08:58:07 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`2c6eb94 feat: article 19, the instrument that reaches steel and not aluminium`
+对应提交：`11b0e63 docs: a handoff for running this workflow on another model, and a candid look at where the cost went`
 
 ## 顶层结构
 
@@ -30,6 +30,7 @@ china-cross-border-insider/
 │   │   ├── china-real-name-registration-supplier-verification.md
 │   │   ├── container-freight-index-publisher-change-2026.md
 │   │   ├── eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026.md
+│   │   ├── eu-cbam-downstream-extension-material-composition-2028.md
 │   │   ├── eu-cbam-steel-vs-aluminium-carbon-cost-2026.md
 │   │   ├── eu-cbam-vs-steel-safeguard-duty-per-tonne-2026.md
 │   │   ├── eu-gpsr-sweep-2026-marketplace-listings.md
@@ -100,6 +101,7 @@ china-cross-border-insider/
 │   │       ├── container-freight-index-publisher-change-2026.md
 │   │       ├── eu-anti-dumping-cellulose-ethers-30-days.md
 │   │       ├── eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026.md
+│   │       ├── eu-cbam-downstream-extension-material-composition-2028.md
 │   │       ├── eu-cbam-steel-vs-aluminium-carbon-cost-2026.md
 │   │       ├── eu-cbam-vs-steel-safeguard-duty-per-tonne-2026.md
 │   │       ├── eu-gpsr-sweep-2026-marketplace-listings.md
@@ -181,6 +183,7 @@ china-cross-border-insider/
 ├── 对比内容线_选题矩阵.md
 ├── 合规记录_AI标识.md
 ├── 集成配置指南_Notion_飞书_YouTube.md
+├── 交给豆包跑_目录框架提示词.md
 ├── 进度日志.md
 ├── 下一步.md
 ├── 项目规范_英文内容站_v1.0.md
@@ -202,7 +205,6 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
-├── MSG52.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
@@ -230,13 +232,13 @@ china-cross-border-insider/
 
 | 项 | 数量 |
 | --- | --- |
-| 已发布文章 | 19 篇 |
+| 已发布文章 | 20 篇 |
 | 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
-| .md 总数 | 27 |
+| .md 总数 | 28 |
 | 成本模型 | 12 |
 | tools 脚本总数 | 31 |
 | SERP 快照 | 19 |
-| 机审报告 | 19 |
+| 机审报告 | 20 |
 
 ## 技术栈
 

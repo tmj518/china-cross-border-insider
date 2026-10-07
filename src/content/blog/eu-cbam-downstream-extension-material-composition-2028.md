@@ -73,7 +73,7 @@ CBAM today covers goods that are steel or aluminium. The proposed extension woul
 
 **On 12 June 2026 the Council of the EU reached a general approach on extending CBAM to downstream goods.** A general approach is the Council's negotiating position, not law: the proposal still goes to trilogue with the European Parliament, and the extension would apply from **1 January 2028**.
 
-**The change is not that processed steel becomes covered.** Steel structures under CN 7308 and screws, bolts and nuts under CN 7318 are already inside the current Annex I, and this site's own CBAM model prices them. What the extension adds is a different kind of entry.
+**The change is not that processed steel becomes covered.** Steel structures under CN 7308 and screws, bolts and nuts under CN 7318 are already inside the current Annex I, and [this site's CBAM model](/blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026/) prices them. What the extension adds is a different kind of entry.
 
 **It adds ex-codes.** An ex-code captures only the steel or aluminium content of a good rather than the whole good. So the embedded emissions of a covered downstream product are calculated from the metal it contains, and the material composition of each good has to be reported. The categories reported to be affected run from engines, pumps and vehicle parts to refrigerators, washing machines, furniture and prefabricated buildings.
 
