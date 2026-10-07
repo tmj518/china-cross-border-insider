@@ -4,6 +4,7 @@ subtitle: "The 2026 export tax rebate removal for battery and solar exporters, a
 description: "The rebate was cancelled on 249 product lines from 1 April 2026, and the list is not solar-only. Battery rebates fall from 9% to 6%, then to zero on 1 January 2027. Nine points become money on your invoice."
 publishDate: 2026-10-02
 updatedDate: 2026-10-02
+reviewBy: 2027-01-01
 category: "sourcing"
 audience: "importer"
 tags: ["export tax rebate", "fob pricing", "batteries", "solar", "supplier negotiation"]

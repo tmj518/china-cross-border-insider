@@ -3,6 +3,7 @@ title: "The Postal Flat Fee Died in Four Days — Now the Route Itself Is Closin
 subtitle: "US de minimis is suspended for 2026 and the postal route for a China parcel is closing, so the duty per shipment now turns on classification"
 description: "The $80/$160/$200 per-item postal duty ran from 24 to 27 February 2026, then vanished. From 22 October 2026 Chapter 99 goods lose the postal informal route, and the arithmetic moves to classification."
 publishDate: 2026-10-03
+reviewBy: 2026-10-22
 category: "trade-policy"
 audience: "platform-seller"
 tags: ["de minimis", "postal shipments", "section 301", "formal entry", "low-value imports"]

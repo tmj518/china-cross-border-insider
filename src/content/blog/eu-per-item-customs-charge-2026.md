@@ -3,6 +3,7 @@ title: "The EU Now Charges by the Item, Not the Parcel — and Ten Euros Can Cos
 subtitle: "The EU abolished the EUR 150 de minimis relief in 2026 and replaced it with a EUR 3 duty per item, plus a handling fee from November"
 description: "From 1 July 2026 the €150 duty relief is gone, replaced by €3 per item. From 1 November a €2 handling fee stacks on top, including above €150. Both are non-refundable, and both fall on the declarant."
 publishDate: 2026-10-02
+reviewBy: 2026-11-01
 category: "platforms"
 audience: "platform-seller"
 tags: ["eu customs", "de minimis", "ioss", "per-item duty", "landed cost"]

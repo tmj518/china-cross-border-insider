@@ -3,6 +3,7 @@ title: "China's Origin Data Goes Electronic: The 1 December 2026 Deadline for RC
 subtitle: "The China-Malaysia RCEP certificate of origin goes electronic in 2026: what missing origin data costs an importer at customs release"
 description: "From 1 December 2026, missing electronic origin data for RCEP and ACFTA certificates out of Malaysia means a duty guarantee at release. Here is what that guarantee costs, and what it does not protect."
 publishDate: 2026-10-01
+reviewBy: 2026-11-30
 category: "logistics"
 audience: "importer"
 tags: ["rcep", "certificate of origin", "customs clearance", "asean", "working capital"]

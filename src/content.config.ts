@@ -40,6 +40,24 @@ export const blog = defineCollection({
     description: z.string().max(300),
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
+    /**
+     * The date a human should look at this piece again: the date its central
+     * fact is expected to change, not its publish date.
+     *
+     * Every article here is dated and sourced, which is a strength until one of
+     * its dates passes. Ten of the first fourteen published pieces carried a
+     * future deadline and seven fell inside three months. An article whose
+     * central fact has expired is worse than one never written, because it still
+     * ranks and still reads as current.
+     *
+     * Set by hand rather than derived from the body, because a date in prose is
+     * not always a deadline — article 14 mentions a Commission review due in
+     * 2028 as context, not as an expiry. `tools/review-dates.mjs` extracts
+     * candidates and reports what is due; `qa-check` requires the field to
+     * exist, so the decision cannot be skipped by forgetting it. Evergreen
+     * pieces get a quarterly date.
+     */
+    reviewBy: z.coerce.date().optional(),
     category: z.enum(categorySlugs),
     /** Who the piece is for; surfaced in the article header. */
     audience: z.enum(audienceValues).default("both"),

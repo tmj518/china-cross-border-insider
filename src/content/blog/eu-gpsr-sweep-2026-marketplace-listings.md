@@ -3,6 +3,7 @@ title: "The EU's 2026 Compliance Sweep: 560 Orders, and the 58% That Should Worr
 subtitle: "The EU GPSR enforcement sweep of 2026, and what the takedown arithmetic costs a marketplace seller per SKU per day"
 description: "The Commission's 2026 GPSR enforcement sweep checked almost 1,700 marketplace listings across 35 platforms. The marketplaces fixed their own compliance paperwork. The seller listings did not. Here is what a takedown costs per SKU per day."
 publishDate: 2026-10-02
+reviewBy: 2027-01-02
 category: "platforms"
 audience: "platform-seller"
 tags: ["gpsr", "eu compliance", "marketplace enforcement", "responsible person", "takedown"]

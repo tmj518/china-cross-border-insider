@@ -120,6 +120,49 @@ function check(file) {
   keyword ? add("pass", "target_keyword declared", keyword) : add("block", "target_keyword declared", "missing");
   audience ? add("pass", "audience declared", audience) : add("warn", "audience declared", "not set (defaults to both)");
 
+  // ---- review clock ----------------------------------------------------
+  // Every article here is dated and sourced, which is the strength until one of
+  // its dates passes. Ten of the first fourteen published pieces carried a
+  // future deadline and seven fell inside three months. An article whose central
+  // fact has expired is worse than one never written, because it still ranks and
+  // still reads as current.
+  //
+  // `reviewBy` is set by hand, because a date in prose is not necessarily a
+  // deadline: article 14 mentions a Commission review due in 2028 as context.
+  // Doing that job automatically would produce false positives on prose that
+  // merely contains a year. So the gate does not try to compute the date. It
+  // requires that a human recorded one, which is the part that gets forgotten.
+  //
+  // The second check is the cheap cross-check: if the body contains a future
+  // date EARLIER than the declared review date, the piece goes stale before
+  // anyone plans to look at it.
+  const reviewBy = fmLine("reviewBy");
+  if (!reviewBy) {
+    add("block", "reviewBy declared", "no review date — set it, or the piece expires silently");
+  } else {
+    const iso = /^\d{4}-\d{2}-\d{2}/.test(reviewBy) ? reviewBy.slice(0, 10) : null;
+    if (!iso) {
+      add("block", "reviewBy declared", `"${reviewBy}" is not a YYYY-MM-DD date`);
+    } else {
+      add("pass", "reviewBy declared", iso);
+      // Only dates after this article was published are candidates for
+      // staleness. An unbounded lower bound flagged every historical date in
+      // the prose, which is noise: the 2019 safeguard, the 2022 reference
+      // period, the 2024 capacity figure. Those are context, not expiry.
+      const published = fmLine("publishDate")?.slice(0, 10) ?? "";
+      const earlier = (body.match(/\b20\d\d-\d\d-\d\d\b/g) || [])
+        .filter((d) => d > published && d < iso)
+        .sort()[0];
+      if (earlier) {
+        add(
+          "warn",
+          "reviewBy covers the body dates",
+          `body mentions ${earlier}, earlier than reviewBy ${iso} — the piece goes stale sooner than planned`,
+        );
+      }
+    }
+  }
+
   // ---- calculation transparency ---------------------------------------
   // Same principle as the primary-source rule above: if the piece claims a
   // custom calculation, the reader has to be able to see the calculation.

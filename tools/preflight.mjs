@@ -202,6 +202,24 @@ async function checkEnvironment() {
   } else {
     fail("qa-check runs", `exited badly: ${gate.out.split("\n").slice(-1)[0].slice(0, 90)}`);
   }
+
+  // --- the review clock: is any article past the date it goes stale? ---
+  // exit 1 is the signal here, not a failure of the tool, so status is read
+  // rather than throwing.
+  const review = spawnSync(NODE, [join(ROOT, "tools", "review-dates.mjs"), "--overdue"], {
+    encoding: "utf8",
+    timeout: 60000,
+  });
+  const reviewOut = `${review.stdout ?? ""}${review.stderr ?? ""}`.trim();
+  if (review.status === 0) {
+    ok("review-dates", reviewOut.split("\n")[0] || "nothing overdue");
+  } else if (/OVERDUE FOR REVIEW/.test(reviewOut)) {
+    const n = /(\d+) article\(s\) overdue/.exec(reviewOut)?.[1] ?? "?";
+    // Not a hard failure of the environment, but it is a content obligation.
+    note("review-dates", `${n} article(s) past their reviewBy date — see data/review/upcoming.md`);
+  } else {
+    fail("review-dates", `could not run: ${reviewOut.split("\n").slice(-1)[0].slice(0, 90)}`);
+  }
 }
 
 function checkCredentials() {
@@ -235,7 +253,7 @@ const PROFILES = {
     every: "week",
     weekday: 1,
     atHour: 14,
-    what: "GSC pull, gate self-audit, topic pool refresh",
+    what: "review-dates sweep, GSC pull, gate self-audit, topic pool refresh",
     needs: ["proxy", "https reachable", "qa-check runs"],
   },
   monthly: {
@@ -244,6 +262,13 @@ const PROFILES = {
     atHour: 9,
     what: "direction call: which silo to double down on, and the updated-date sweep",
     needs: ["proxy", "https reachable"],
+  },
+  review: {
+    every: "week",
+    weekday: 3,
+    atHour: 9,
+    what: "article review clock: report any piece past its reviewBy date",
+    needs: ["proxy", "https reachable", "review-dates"],
   },
 };
 
