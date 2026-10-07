@@ -1,0 +1,21 @@
+feat: a CSP self-check, so a policy that blocks the site's own scripts cannot ship
+
+The previous commit fixed the policy; this makes the failure impossible to ship again.
+The check is one line of reasoning: for every built page, hash each inline script and
+confirm script-src carries it.
+
+It lives in preflight, after the build, because dist/ is what it inspects.
+
+Getting the check itself right took three attempts, all on the same mistake of being
+clever about quotes. The policy value is wrapped in double quotes and is itself full of
+single quotes ('self', 'unsafe-inline'), so a [^"']* character class stops at the
+opening quote of 'self' and captures twelve characters. Two versions reported all 36
+pages as broken while the browser was happily running the menu. The working version
+matches the attribute's own quote character and lets the content run to the matching
+one.
+
+Also moves frame-ancestors out of the meta policy and into _headers, where browsers
+actually honour it; delivered through a meta element it is ignored and warns on every
+page load.
+
+Preflight now reports: csp PASS, all 32 scripts parse, 22/22 articles built.

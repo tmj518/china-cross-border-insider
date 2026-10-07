@@ -357,6 +357,29 @@ checkBuild();
 checkEveryArticleBuilt();
 
 /**
+ * The policy must permit the scripts the pages ship.
+ *
+ * This check exists because its absence cost real time: Content-Security-Policy in
+ * _headers said `script-src 'self'`, Astro inlines page scripts by default, and the
+ * browser therefore refused every one of them. The mobile Menu button did nothing,
+ * and the build, the four gates, the deploy and the sitemap all reported success.
+ * One line of static checking would have caught it.
+ */
+function checkCsp() {
+  const r = spawnSync(process.execPath, [join(ROOT, "tools", "check-csp.mjs")], { encoding: "utf8" });
+  const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
+  const summary = out.split("\n").find((l) => /RESULT:/.test(l))?.trim() ?? "";
+  if (r.status === 0) {
+    ok("csp", summary || "every page's policy permits its scripts");
+  } else {
+    const first = out.split("\n").find((l) => /inline script not covered|declares its own script-src/.test(l))?.trim() ?? "";
+    fail("csp", `${summary} | ${first}`.slice(0, 160));
+  }
+}
+
+checkCsp();
+
+/**
  * The reviewer stands in for the human read that 初心与目标.md rules out.
  *
  * It checks the classes a reader catches and no other tool does: a summary that

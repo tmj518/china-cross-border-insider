@@ -48,7 +48,6 @@ export default defineConfig({
         "default-src 'self'",
         "img-src 'self' data:",
         "form-action 'self'",
-        "frame-ancestors 'none'",
         "base-uri 'self'",
       ],
       /**
