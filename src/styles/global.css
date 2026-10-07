@@ -797,6 +797,36 @@ a {
   color: var(--c-ink-6);
 }
 
+/* How this was made — the Article 50 disclosure.
+ *
+ * Deliberately NOT styled like the sources footnote and NOT placed in the site
+ * footer. Article 50 requires the disclosure to be clear, distinguishable,
+ * noticeable and accessible, and says in terms that it may not be hidden in the
+ * legal notice or appear only after the content has been read. So it sits in the
+ * article body above the footer, with a rule that separates it from the prose
+ * rather than blending into it. */
+.disclosure {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-line);
+  font-size: 14px;
+  color: var(--c-ink-4);
+}
+
+.disclosure h2 {
+  font-size: 13px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: var(--c-ink-3);
+}
+
+.disclosure a {
+  color: var(--c-ink-2, var(--c-ink-3));
+  text-decoration: underline;
+}
+
 /* ---------- 9. Forms ---------- */
 .newsletter-box {
   font-size: 13px;

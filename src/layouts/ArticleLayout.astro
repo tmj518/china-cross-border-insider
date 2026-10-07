@@ -137,6 +137,42 @@ const siloLabel = categoryLabel(data.category);
           </section>
         )
       }
+      {
+        /*
+         * How the article was produced.
+         *
+         * Added because Article 50 of the EU AI Act requires deployers to
+         * disclose AI-generated or AI-manipulated text published to inform the
+         * public about matters of public interest, and that obligation has been
+         * in force since 2 August 2026. The editorial-responsibility exception
+         * does not apply here: the intended pipeline is data-driven and
+         * automatic, so there is no human review to point at.
+         *
+         * Form matters as much as content. Article 50 requires the disclosure to
+         * be clear, distinguishable, noticeable and accessible, provided no later
+         * than first exposure, and explicitly says it may not be hidden in the
+         * legal notice or become visible only after the content is consumed. That
+         * is why this sits on the article itself, beside Sources, rather than in
+         * the site footer or the privacy policy.
+         *
+         * The wording describes what actually happens rather than the intended
+         * end state, because the obligation is to describe the real process. It
+         * says tool-assisted and item-by-item checked, which is accurate today:
+         * every figure is traced to a primary source, both gates run before
+         * publication, and i.e. corrections are recorded. If the pipeline becomes
+         * fully automatic with no review, this text has to change with it.
+         */
+        <section class="disclosure">
+          <h2>How this was made</h2>
+          <p>
+            Research and drafting are tool-assisted. Every figure is traced to a
+            named primary source and checked against it, each article clears a
+            structural review and an information-gain review before publication,
+            and corrections are recorded in a dated note above. The review
+            process is described on <a href="/about/">the about page</a>.
+          </p>
+        </section>
+      }
     </article>
 
     <ArticleFooter related={related} />
