@@ -1,4 +1,4 @@
-﻿# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
+# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
 #
 # Launched by Windows Task Scheduler as LandedMath-Daily, and safe to run by hand:
 #     powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1
@@ -30,7 +30,8 @@
 [CmdletBinding()]
 param(
     [string]$TaskFile = "",
-    [switch]$PreflightOnly
+    [switch]$PreflightOnly,
+    [switch]$NoPush
 )
 
 $ErrorActionPreference = "Continue"
@@ -59,6 +60,17 @@ function Say($msg) {
     Add-Content -Path $log -Value $line -Encoding UTF8
 }
 
+# Run a native command, return its exit code, append output to the log as UTF-8.
+# Captured as an array and appended rather than piped to Tee-Object, which writes
+# UTF-16 and garbles the log.
+function Run-Cmd {
+    param([string]$Exe, [string[]]$CmdArgs)
+    $lines = & $Exe @CmdArgs 2>&1 | ForEach-Object { $_.ToString() }
+    $code = $LASTEXITCODE
+    if ($lines) { $lines | Add-Content -Path $log -Encoding UTF8 }
+    return $code
+}
+
 Say "==================== daily run start ===================="
 Say "root=$root"
 Say "log=$log"
@@ -83,7 +95,7 @@ Set-Location $root
 Say "cwd  : $(Get-Location)"
 
 # ---------------------------------------------------------------- 1. preflight
-Say "step 1/3  preflight"
+Say "step 1/5  preflight (outside the agent sandbox)"
 $pre = & node (Join-Path $root "tools\preflight.mjs") 2>&1 | ForEach-Object { $_.ToString() }
 $preExit = $LASTEXITCODE
 if ($pre) { $pre | Add-Content -Path $log -Encoding UTF8 }
@@ -93,7 +105,7 @@ Say "preflight exit=$preExit"
 if ($PreflightOnly) { Say "PreflightOnly set - finished."; exit $preExit }
 
 # ---------------------------------------------------------------- 2. the agent
-Say "step 2/3  invoking dsh headless (this can take a long time)"
+Say "step 2/5  invoking dsh headless (this can take a long time)"
 $task = [System.IO.File]::ReadAllText($TaskFile, [System.Text.Encoding]::UTF8)
 Say "task text: $($task.Length) chars"
 
@@ -111,12 +123,66 @@ try {
 $sw.Stop()
 Say "dsh finished in $([int]$sw.Elapsed.TotalMinutes) min, exit=$agentExit"
 
-# ---------------------------------------------------------------- 3. what changed
-Say "step 3/3  recording what changed"
-$head = (& git -C $root rev-parse --short HEAD 2>&1) -join ""
+# ---------------------------------------------------------------- 3. commit
+Say "step 3/5  committing the agent's work"
 $dirty = (& git -C $root status --porcelain 2>&1 | Measure-Object -Line).Lines
-Say "HEAD=$head  uncommitted=$dirty"
-$ahead = (& git -C $root rev-list --count origin/main..HEAD 2>&1) -join ""
-Say "commits not yet pushed: $ahead"
+Say "uncommitted files: $dirty"
+if ($dirty -gt 0) {
+    & git -C $root add -A 2>&1 | Out-Null
+    $msg = "content: unattended run $stamp"
+    & git -C $root commit -q -m $msg 2>&1 | ForEach-Object { $_.ToString() } | Add-Content -Path $log -Encoding UTF8
+    Say "committed"
+}
+$headAfter = (& git -C $root rev-parse --short HEAD 2>&1) -join ""
+Say "HEAD after: $headAfter"
+
+$ahead = [int]((& git -C $root rev-list --count origin/main..HEAD 2>&1) -join "")
+Say "commits ahead of origin: $ahead"
+
+if ($ahead -eq 0) {
+    Say "nothing new to publish - finished."
+    Say "==================== daily run finished ===================="
+    exit 0
+}
+
+if ($NoPush) {
+    Say "NoPush set - $ahead commit(s) left local."
+    Say "==================== daily run finished ===================="
+    exit 0
+}
+
+# ---------------------------------------------------------------- 4. push
+# The gate on publishing. A production build has to succeed here first: it cannot run
+# inside the agent's sandbox, and this is the only place it can run before the work
+# goes live. A build failure means nothing is pushed and the commits stay local.
+Say "step 4/5  verifying the production build before pushing"
+$buildExit = Run-Cmd "node" @((Join-Path $root "node_modules\astro\bin\astro.mjs"), "build")
+Say "astro build exit=$buildExit"
+
+if ($buildExit -ne 0) {
+    Say "BUILD FAILED - refusing to push. The commits stay local."
+    Say "  Fix the build, then: git push origin main"
+    Say "==================== daily run finished ===================="
+    exit 1
+}
+
+Say "pushing to origin/main"
+$pushExit = Run-Cmd "git" @("-C", $root, "push", "origin", "main")
+Say "push exit=$pushExit"
+
+if ($pushExit -ne 0) {
+    Say "PUSH FAILED - is the accelerator running? That is the usual cause."
+    Say "  Commits are safe locally. Push later with: git push origin main"
+    Say "==================== daily run finished ===================="
+    exit 1
+}
+
+# ---------------------------------------------------------------- 5. verify live
+Say "step 5/5  waiting for the deploy, then verifying live"
+Start-Sleep -Seconds 45
+$verify = Run-Cmd "node" @((Join-Path $root "tools\verify-live.mjs"))
+Say "live verification exit=$verify"
+
 Say "==================== daily run finished ===================="
+if ($verify -ne 0) { exit $verify }
 exit $agentExit

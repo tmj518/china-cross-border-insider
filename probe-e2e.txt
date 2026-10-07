@@ -1,0 +1,18 @@
+只在 `进度日志.md` 末尾追加一节，然后本地 commit。不要做别的。
+
+追加内容（原样）：
+
+```
+## 一之四十、定时任务端到端实测（2026-10-07）
+
+这一节由包装脚本的端到端实测产生，用来证明「智能体内写稿 → 本地 commit →
+包装脚本构建 → 推送 → 线上核实」整条链在无人值守下能走完。
+
+沙箱内 dsh headless 做不到构建和推送（实测：构建报 require is not defined，
+push 报 couldn't create signal pipe），而包装脚本在沙箱外两件都能做。
+所以分工是：智能体负责它能做的部分，包装脚本负责它做不了的部分。
+```
+
+然后运行 `git add -A && git commit -m "docs: end-to-end test of the unattended chain"`。
+
+不要 push。不要跑构建。不要跑 preflight。

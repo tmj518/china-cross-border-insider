@@ -1,0 +1,19 @@
+只做诊断，不要改任何文件、不要 commit、不要 push。
+
+这是决定这个定时任务成败的根本问题，请**逐条实测**，不要根据任何文档里的说法推断，也不要引用「已知限制」——那些说法可能是错的。
+
+对每一条，**真的运行它**，然后把完整输出和退出码贴出来：
+
+1. `node node_modules/astro/bin/astro.mjs build`
+2. `git ls-remote origin main`
+3. `git push --dry-run origin main`
+4. `node tools/preflight.mjs`
+
+然后只回答这四个问题，每个一句话：
+
+A. 第 1 条成功还是失败？失败的话，错误的第一行是什么？
+B. 第 2 条成功还是失败？
+C. 第 3 条成功还是失败？
+D. `preflight` 报了几项 BLOCKING？它们分别是什么？
+
+**不要尝试修复任何东西。不要推断。只报你实测到的。**
