@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 14:21:18 UTC  
+生成时间：2026-10-07 14:46:28 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`aa656fb feat: a CSP self-check, so a policy that blocks the site's own scripts cannot ship`
+对应提交：`8690994 fix: article pages did not fit a phone screen, and now a check says so`
 
 ## 顶层结构
 
@@ -164,6 +164,7 @@ china-cross-border-insider/
 │   ├── _tmp_week.mjs
 │   ├── cbam-cost.mjs
 │   ├── check-csp.mjs
+│   ├── check-mobile.mjs
 │   ├── check-preflight.ps1
 │   ├── comparison-candidates.mjs
 │   ├── deposit-risk.mjs
@@ -262,7 +263,7 @@ china-cross-border-insider/
 | 草稿 | 7 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
 | .md 总数 | 29 |
 | 成本模型 | 12 |
-| tools 脚本总数 | 40 |
+| tools 脚本总数 | 41 |
 | SERP 快照 | 22 |
 | 机审报告 | 20 |
 
