@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 07:46:02 UTC  
+生成时间：2026-10-07 07:50:30 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`835cb9a feat: the landed-cost calculator, copied from the benchmark rather than invented`
+对应提交：`3e4f7ad feat: the policy change tracker, the benchmark's fourth navigation item`
 
 ## 顶层结构
 
@@ -129,7 +129,8 @@ china-cross-border-insider/
 │   │   ├── index.astro
 │   │   ├── privacy.astro
 │   │   ├── robots.txt.ts
-│   │   └── rss.xml.ts
+│   │   ├── rss.xml.ts
+│   │   └── tracker.astro
 │   ├── styles/
 │   │   └── global.css   # the only stylesheet
 │   ├── consts.ts   # site constants; SITE_URL, DISCLAIMER and the author persona live only here
