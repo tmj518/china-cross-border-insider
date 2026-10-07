@@ -39,7 +39,7 @@
  */
 
 import { execFileSync, spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -264,7 +264,71 @@ function checkBuild() {
   }
 }
 
+/**
+ * Every published article must have a page in the build output.
+ *
+ * The guard above catches a build that fails. This catches a build that succeeds
+ * while silently dropping an article — a collection filter, a slug collision, a
+ * draft flag applied by mistake. The failure it is really about is scale: on
+ * 2026-10-07 a single schema violation failed the whole build and took all
+ * sixteen articles down to a stale deployment. Eighteen articles now sit behind
+ * one build, and "the build passed" and "the site contains the articles" are
+ * different claims.
+ *
+ * Cheap, because the build has already run: read the markdown filenames and check
+ * that dist/blog/<slug>/index.html exists for each.
+ */
+function checkEveryArticleBuilt() {
+  const blogDir = join(ROOT, "src", "content", "blog");
+  const distDir = join(ROOT, "dist", "blog");
+
+  let published = [];
+  try {
+    published = readdirSync(blogDir)
+      .filter((f) => f.endsWith(".md"))
+      .filter((f) => !/^draft:\s*true/m.test(readFileSync(join(blogDir, f), "utf8")))
+      .map((f) => f.replace(/\.md$/, ""));
+  } catch (e) {
+    fail("articles built", `cannot read the article directory: ${e.message}`);
+    return;
+  }
+
+  if (!published.length) {
+    fail("articles built", "no published articles found — is the content directory right?");
+    return;
+  }
+
+  const missing = published.filter((slug) => !existsSync(join(distDir, slug, "index.html")));
+  if (missing.length === 0) {
+    ok("articles built", `${published.length}/${published.length} published articles have a page in dist/`);
+  } else {
+    fail(
+      "articles built",
+      `${missing.length} of ${published.length} published article(s) produced no page: ` +
+        `${missing.slice(0, 3).join(", ")}${missing.length > 3 ? ", ..." : ""}`,
+    );
+  }
+
+  // The sitemap is what a crawler follows, so a page that built but is not listed
+  // is still a page that will not be found.
+  try {
+    const sm = readFileSync(join(ROOT, "dist", "sitemap-0.xml"), "utf8");
+    const unlisted = published.filter((slug) => !sm.includes(`/blog/${slug}/`));
+    if (unlisted.length) {
+      note("articles in sitemap", `${unlisted.length} built but unlisted: ${unlisted.slice(0, 3).join(", ")}`);
+    } else {
+      ok("articles in sitemap", `all ${published.length} listed`);
+    }
+  } catch {
+    note("articles in sitemap", "dist/sitemap-0.xml not readable — skipped");
+  }
+}
+
 checkBuild();
+// Runs after the build, because it inspects dist/. A build that succeeds while
+// dropping an article is the failure this catches, and the build check above
+// cannot see it.
+checkEveryArticleBuilt();
 
 function checkCredentials() {
   for (const [label, candidates] of Object.entries(CRED_FILES)) {
