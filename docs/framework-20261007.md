@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:38:01 UTC  
+生成时间：2026-10-07 08:40:13 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`eea043f docs: the CBAM mode record, and the fourth bundler normalisation to catch a check`
+对应提交：`2c6eb94 feat: article 19, the instrument that reaches steel and not aluminium`
 
 ## 顶层结构
 
@@ -202,7 +202,7 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
-├── MSG51.txt
+├── MSG52.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
