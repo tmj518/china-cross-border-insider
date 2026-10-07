@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 10:10:48 UTC  
+生成时间：2026-10-07 10:12:20 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`4b4cd9f docs: round one of method C, and the three times I thought an edit had applied`
+对应提交：`5e94b9f feat: a reviewer agent to stand in for the human read the spec rules out`
 
 ## 顶层结构
 
@@ -207,7 +207,6 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
-├── MSG56.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
