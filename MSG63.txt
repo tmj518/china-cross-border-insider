@@ -1,0 +1,29 @@
+docs: a long-term lessons file, and a measured baseline for the SEO work
+
+Two documents, both requested by the operator at the end of the day.
+
+经验与踩坑记录.md collects what this project has learned in a form the next session
+can act on, rather than a timeline of what happened - that is what 进度日志.md is for.
+It leads with the encoding rules, because that single root cause cost more time than
+anything else: Windows PowerShell 5.1 reads a BOM-less UTF-8 file as GBK on this
+locale, which breaks quote pairing inside a script and reports an unterminated string
+against a line that is perfectly correct. It also records the second, subtler layer -
+PowerShell encodes text piped to a native program with the ANSI code page, so the
+Chinese instructions reached the agent as question marks - and the three things never
+to do again, one of which corrupted a gate file and pushed it to production.
+
+The rest is the verification discipline that caught the real faults: read back after
+editing rather than trusting a success message, retry through a deploy window rather
+than believing one 404, prove a check can fail by injecting the defect it looks for,
+and open a real browser when static inspection says the code is correct. Both of
+today's incidents are in there as worked examples, including the measurement I got
+wrong first - the mobile menu was open, its 226px link matched the overflow exactly,
+and I nearly reported the menu as the cause.
+
+docs/站点实测参数.md is the measured baseline: robots, sitemap contents and URL
+distribution, per-page technical elements, asset sizes, response headers and caching,
+and a sweep for the usual traps. The trap sweep came back clean - the slashless URL
+308s to the canonical form, both host variants canonicalise correctly, /about and
+/index.html redirect, and a missing page is a real 404. One thing it did surface as a
+question rather than a defect: the site carries no outbound links anywhere, which for
+a site whose whole proposition is primary sourcing is a tradeoff worth studying.
