@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 07:50:30 UTC  
+生成时间：2026-10-07 07:54:45 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`3e4f7ad feat: the policy change tracker, the benchmark's fourth navigation item`
+对应提交：`fe63afd feat: how the sources work, the module I built instead of the one I planned`
 
 ## 顶层结构
 
@@ -130,6 +130,7 @@ china-cross-border-insider/
 │   │   ├── privacy.astro
 │   │   ├── robots.txt.ts
 │   │   ├── rss.xml.ts
+│   │   ├── sources.astro
 │   │   └── tracker.astro
 │   ├── styles/
 │   │   └── global.css   # the only stylesheet
