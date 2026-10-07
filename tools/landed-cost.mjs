@@ -1,66 +1,18 @@
 /**
- * Landed-cost model — the reusable calculator behind every "So what" section.
+ * Landed-cost model — the command-line check.
  *
- * The point of this file: an article should never do ad-hoc arithmetic in
- * prose. It calls the model, so the same shipment is computed identically in
- * every article that mentions it, and any figure in an article can be
- * recomputed from stated inputs.
- *
- * Model:
- *   duty per unit      = FOB x (MFN rate + Section 301 rate + other rate)
- *   landed cost / unit = FOB + duty per unit + freight per unit + insurance
- *
- * Everything is expressed per unit and per container, because that is the
- * only form a seller can act on.
+ * The arithmetic itself now lives in src/lib/models.mjs, because the calculator
+ * page runs the same model in the browser. Two copies of the maths would let the
+ * published figure and the page disagree, and a reader recomputing our number
+ * would get a different answer from our own tool. Imported here rather than
+ * duplicated.
  *
  * Run:  node tools/landed-cost.mjs
  */
 
-/** @typedef {{ label: string, fobUnit: number, unitsPerContainer: number, mfnRate: number, section301Rate: number, otherDutyRate?: number, freightPerContainer?: number, insuranceRate?: number }} Scenario */
+import { landedCost, delta, money, pct } from "../src/lib/models.mjs";
 
-/**
- * @param {Scenario} s
- */
-export function landedCost(s) {
-  const {
-    fobUnit,
-    unitsPerContainer,
-    mfnRate,
-    section301Rate,
-    otherDutyRate = 0,
-    freightPerContainer = 0,
-    insuranceRate = 0,
-  } = s;
-
-  const dutyRate = mfnRate + section301Rate + otherDutyRate;
-  const dutyPerUnit = fobUnit * dutyRate;
-  const freightPerUnit = unitsPerContainer > 0 ? freightPerContainer / unitsPerContainer : 0;
-  const insurancePerUnit = fobUnit * insuranceRate;
-
-  const landedPerUnit = fobUnit + dutyPerUnit + freightPerUnit + insurancePerUnit;
-
-  return {
-    dutyRate,
-    dutyPerUnit,
-    dutyPerContainer: dutyPerUnit * unitsPerContainer,
-    freightPerUnit,
-    landedPerUnit,
-    landedPerContainer: landedPerUnit * unitsPerContainer,
-  };
-}
-
-/** Percentage delta of b vs a, e.g. the exclusion cliff. */
-export function delta(a, b) {
-  return {
-    dutyPerUnit: b.dutyPerUnit - a.dutyPerUnit,
-    dutyPerContainer: b.dutyPerContainer - a.dutyPerContainer,
-    landedPerUnit: b.landedPerUnit - a.landedPerUnit,
-    landedPct: a.landedPerUnit === 0 ? 0 : (b.landedPerUnit - a.landedPerUnit) / a.landedPerUnit,
-  };
-}
-
-const money = (n) => "$" + n.toFixed(n < 10 ? 3 : 2);
-const pct = (n) => (n * 100).toFixed(1) + "%";
+export { landedCost, delta };
 
 /**
  * Worked examples used in the Section 301 exclusion article.

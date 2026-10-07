@@ -70,6 +70,10 @@ export const CF_ANALYTICS_TOKEN = import.meta.env.CF_WEB_ANALYTICS_TOKEN ?? "";
  *  the longer `label` from CATEGORIES. */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
+  // The calculator leads the navigation, the way the benchmark site does. It is
+  // the only page that does something rather than say something, and it is the
+  // top of the funnel for the email list.
+  { label: "Calculator", href: "/calculator/" },
   { label: "Trade Policy", href: "/category/trade-policy/" },
   { label: "Platforms", href: "/category/platforms/" },
   { label: "Supply Chain", href: "/category/supply-chain/" },

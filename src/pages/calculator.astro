@@ -1,0 +1,260 @@
+---
+/**
+ * Landed-cost calculator — the free tool.
+ *
+ * Built by copying the benchmark rather than by improving on it. TariffsChart, a
+ * site for the same audience with the same deliverable, leads its navigation with
+ * a free landed-cost calculator and sells a human-prepared planning summary at
+ * $29. Its stated thesis is that importers do not lose money because they cannot
+ * multiply a rate by a value, but because one tariff layer was missing from the
+ * model. So the calculator's job is to show the layers, not to be clever.
+ *
+ * The arithmetic is NOT reimplemented here. It is the same model the article
+ * pipeline uses, mirrored from src/lib/models.mjs into the script below because a
+ * static page has no server to call. The mirroring is deliberate and fragile, so
+ * it is marked where it happens: if the model changes, this has to change with
+ * it, or the page and our published figures will disagree.
+ *
+ * Everything runs client-side. No request carries the reader's shipment data
+ * anywhere, which is consistent with the privacy page's promise of no tracking
+ * scripts and no third-party analytics.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../consts";
+
+const title = "Import duty and landed-cost calculator";
+const description =
+  "Work out duty per unit, duty per container and landed cost from your own FOB, quantity and duty rates. Shows each tariff layer separately, including the Section 301 rate that most calculators omit.";
+---
+
+<BaseLayout title={`${title} — ${SITE.name}`} description={description}>
+  <div class="container">
+    <main id="main">
+      <article>
+        <header class="article-header">
+          <h1>{title}</h1>
+          <p class="standfirst">
+            Every figure comes from your inputs. Nothing is sent anywhere — the
+            arithmetic runs in your browser.
+          </p>
+        </header>
+
+        <div class="prose">
+          <p>
+            Importers rarely lose money because they cannot multiply a duty rate
+            by a shipment value. They lose it because one tariff layer was missing
+            from the model: the base rate is counted and the additional listed
+            rate is not, or a country average is treated as a product-specific
+            figure. This calculator keeps the layers separate so you can see which
+            one is doing the damage.
+          </p>
+
+          <div class="calc" id="calc">
+            <fieldset>
+              <legend>Your shipment</legend>
+              <div class="calc-grid">
+                <label>
+                  <span>FOB value per unit</span>
+                  <input id="fobUnit" type="number" min="0" step="0.01" value="12.00" inputmode="decimal" />
+                </label>
+                <label>
+                  <span>Units per container</span>
+                  <input id="units" type="number" min="1" step="1" value="5000" inputmode="numeric" />
+                </label>
+                <label>
+                  <span>Base duty rate (%)</span>
+                  <input id="mfn" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
+                </label>
+                <label>
+                  <span>Additional listed rate (%), e.g. Section 301</span>
+                  <input id="s301" type="number" min="0" step="0.1" value="25" inputmode="decimal" />
+                </label>
+                <label>
+                  <span>Freight per container (optional)</span>
+                  <input id="freight" type="number" min="0" step="1" value="0" inputmode="decimal" />
+                </label>
+                <label>
+                  <span>Insurance (% of FOB, optional)</span>
+                  <input id="insurance" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="calc-result" id="result" aria-live="polite"></div>
+
+            <p class="calc-note">
+              A planning estimate, not a filing calculation. Classification,
+              origin, valuation, anti-dumping scope and preference eligibility are
+              decided by customs, not by arithmetic — see
+              <a href="/about/">how this site works</a>.
+            </p>
+          </div>
+
+          <h2>What the layers are</h2>
+          <p>
+            Each rate below is published and checkable. Only the last two are
+            generally something a buyer sets themselves, and getting one of those
+            wrong moves the estimate by more than most price negotiations do.
+          </p>
+          <table>
+            <thead>
+              <tr><th>Layer</th><th>Who publishes it</th><th>Where to check it</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Base duty rate</td>
+                <td>The importing country's tariff schedule</td>
+                <td>HTSUS for the United States; TARIC for the EU</td>
+              </tr>
+              <tr>
+                <td>Additional listed rate</td>
+                <td>Section 301 determinations in the US; anti-dumping and countervailing measures in the EU</td>
+                <td>USTR for Section 301; the Official Journal for EU measures</td>
+              </tr>
+              <tr>
+                <td>Freight per container</td>
+                <td>Your forwarder</td>
+                <td>Your own quotation — no public figure applies to your lane</td>
+              </tr>
+              <tr>
+                <td>Insurance</td>
+                <td>Your broker or insurer</td>
+                <td>Your own policy</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Where this is worked through in full</h2>
+          <p>
+            The same arithmetic appears in the articles, with the sources for
+            every published rate named:
+          </p>
+          <ul>
+            <li>
+              <a href="/blog/section-301-exclusions-expire-november-2026/">The Section 301 exclusion cliff</a>
+              — what the same shipment costs per unit and per container when an exclusion expires.
+            </li>
+            <li>
+              <a href="/blog/us-de-minimis-postal-route-closes-october-2026/">Low-value parcels into the US</a>
+              — duty, fees and the entry cost that sits on top.
+            </li>
+            <li>
+              <a href="/blog/eu-per-item-customs-charge-2026/">The EU per-item charge</a>
+              — where the charge is per item, not per consignment.
+            </li>
+          </ul>
+
+          <blockquote>
+            <strong>A missing or uncertain figure is safer than a confident guess.</strong>
+            Where this site cannot source a number, it says so on the article rather
+            than filling the gap.
+          </blockquote>
+        </div>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h2>Get the next one</h2>
+        <p>
+          Duty changes are published with dates. The articles here turn them into
+          per-unit cost.
+        </p>
+        <p><a href="/rss.xml">RSS feed</a></p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  /*
+   * Mirrored from src/lib/models.mjs. See the note in the frontmatter: a static
+   * page has no server, so the model is inlined here. If models.mjs changes,
+   * change this with it or the page will disagree with our own articles.
+   */
+  function landedCost(s) {
+    const {
+      fobUnit,
+      unitsPerContainer,
+      mfnRate,
+      section301Rate,
+      otherDutyRate = 0,
+      freightPerContainer = 0,
+      insuranceRate = 0,
+    } = s;
+    const dutyRate = mfnRate + section301Rate + otherDutyRate;
+    const dutyPerUnit = fobUnit * dutyRate;
+    const freightPerUnit = unitsPerContainer > 0 ? freightPerContainer / unitsPerContainer : 0;
+    const insurancePerUnit = fobUnit * insuranceRate;
+    const landedPerUnit = fobUnit + dutyPerUnit + freightPerUnit + insurancePerUnit;
+    return {
+      dutyRate,
+      dutyPerUnit,
+      dutyPerContainer: dutyPerUnit * unitsPerContainer,
+      freightPerUnit,
+      landedPerUnit,
+      landedPerContainer: landedPerUnit * unitsPerContainer,
+      dutyShareOfFob: fobUnit > 0 ? dutyPerUnit / fobUnit : 0,
+    };
+  }
+
+  const num = (id) => {
+    const el = document.getElementById(id);
+    const v = el ? Number(el.value) : 0;
+    return Number.isFinite(v) ? v : 0;
+  };
+  const money = (n) => "$" + n.toFixed(Math.abs(n) < 10 ? 3 : 2);
+  const pctText = (n) => (n * 100).toFixed(1) + "%";
+
+  const out = document.getElementById("result");
+  const ids = ["fobUnit", "units", "mfn", "s301", "freight", "insurance"];
+
+  function render() {
+    if (!out) return;
+    const fobUnit = num("fobUnit");
+    const unitsPerContainer = num("units");
+    const s = {
+      fobUnit,
+      unitsPerContainer,
+      mfnRate: num("mfn") / 100,
+      section301Rate: num("s301") / 100,
+      freightPerContainer: num("freight"),
+      insuranceRate: num("insurance") / 100,
+    };
+    const r = landedCost(s);
+
+    /*
+     * The comparison that matters: the same shipment with the listed rate only,
+     * so the additional layer is visible as its own line rather than folded into
+     * one number. That is the failure the benchmark names — a layer missing from
+     * the model — and showing it is the whole point of the tool.
+     */
+    const baseOnly = landedCost({ ...s, section301Rate: 0 });
+    const extraPerUnit = r.dutyPerUnit - baseOnly.dutyPerUnit;
+    const extraPerContainer = r.dutyPerContainer - baseOnly.dutyPerContainer;
+
+    out.innerHTML = `
+      <table class="calc-table">
+        <tbody>
+          <tr><th>Duty rate applied</th><td>${pctText(r.dutyRate)}</td></tr>
+          <tr><th>Duty per unit</th><td>${money(r.dutyPerUnit)}</td></tr>
+          <tr><th>Duty per container</th><td>${money(r.dutyPerContainer)}</td></tr>
+          <tr><th>Freight per unit</th><td>${money(r.freightPerUnit)}</td></tr>
+          <tr class="calc-total"><th>Landed cost per unit</th><td>${money(r.landedPerUnit)}</td></tr>
+          <tr class="calc-total"><th>Landed cost per container</th><td>${money(r.landedPerContainer)}</td></tr>
+        </tbody>
+      </table>
+      <table class="calc-table">
+        <caption>What the additional listed rate adds</caption>
+        <tbody>
+          <tr><th>Per unit</th><td>${money(extraPerUnit)}</td></tr>
+          <tr><th>Per container</th><td>${money(extraPerContainer)}</td></tr>
+          <tr><th>As a share of FOB</th><td>${pctText(r.dutyShareOfFob)}</td></tr>
+        </tbody>
+      </table>
+    `;
+  }
+
+  for (const id of ids) document.getElementById(id)?.addEventListener("input", render);
+  render();
+</script>

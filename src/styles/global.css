@@ -827,8 +827,115 @@ a {
   text-decoration: underline;
 }
 
-/* ---------- 9. Forms ---------- */
-.newsletter-box {
+/* Landed-cost calculator.
+ *
+ * The only interactive page on the site. Styled to read as a tool rather than an
+ * article: boxed inputs, results in a bordered panel, and the totals given a
+ * heavier rule so the number a reader came for is the one their eye lands on. */
+.calc {
+  margin: 28px 0 8px;
+  padding: 20px;
+  border: 1px solid var(--c-line);
+  border-radius: 4px;
+  background: var(--c-line-faint);
+}
+
+.calc fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.calc legend {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--c-ink-4);
+  margin-bottom: 12px;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px 16px;
+}
+
+.calc-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calc-grid span {
+  font-size: 13px;
+  color: var(--c-ink-4);
+}
+
+.calc-grid input {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--c-line);
+  border-radius: 3px;
+  background: var(--c-bg);
+  color: var(--c-ink);
+  width: 100%;
+}
+
+.calc-grid input:focus {
+  outline: 2px solid var(--c-ink-6);
+  outline-offset: 1px;
+}
+
+.calc-result {
+  margin-top: 4px;
+}
+
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.calc-table caption {
+  text-align: left;
+  font-size: 13px;
+  color: var(--c-ink-4);
+  padding-bottom: 6px;
+}
+
+.calc-table th,
+.calc-table td {
+  text-align: left;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.calc-table th {
+  font-weight: 400;
+  color: var(--c-ink-3);
+}
+
+.calc-table td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The two numbers a reader came for. */
+.calc-table .calc-total th,
+.calc-table .calc-total td {
+  font-weight: 600;
+  color: var(--c-ink);
+  border-bottom-color: var(--c-ink-6);
+}
+
+.calc-note {
+  font-size: 13px;
+  color: var(--c-ink-5);
+}
+
+/* ---------- 9. Forms ---------- */.newsletter-box {
   font-size: 13px;
 }
 
