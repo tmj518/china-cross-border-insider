@@ -109,6 +109,15 @@ export const blog = defineCollection({
     priority: z.enum(["P0", "P1", "P2"]).optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+    /**
+     * The article's number in publication order, written down rather than derived.
+     *
+     * Deriving it by sorting on publishDate is unstable: eight articles share one
+     * date, the tie is broken by slug, so renaming or adding a file renumbers pieces
+     * that are already published and already cited in the ledger. Two pieces both
+     * reported themselves as number 21 before this field existed.
+     */
+    articleNumber: z.number().int().positive().optional(),
     /** Official sources by name only — spec §4.3 forbids URLs in the body. */
     sources: z.array(z.string()).default([]),
 

@@ -11,7 +11,7 @@ tags: ["de minimis", "low value parcels", "customs duty per item", "landed cost"
 priority: "P0"
 featured: false
 draft: false
-articleNumber: 17
+articleNumber: 16
 target_keyword: "US de minimis vs EU per item customs charge low value parcel"
 search_intent: "informational"
 information_gain: "custom-calculation"

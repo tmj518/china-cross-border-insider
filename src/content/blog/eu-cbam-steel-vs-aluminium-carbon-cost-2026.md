@@ -11,7 +11,7 @@ tags: ["cbam", "steel safeguard", "aluminium", "eu tariff rate quota", "carbon c
 priority: "P0"
 featured: false
 draft: false
-articleNumber: 20
+articleNumber: 19
 target_keyword: "CBAM aluminium versus steel cost per tonne EU 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"

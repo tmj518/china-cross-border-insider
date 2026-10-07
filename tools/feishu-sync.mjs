@@ -64,9 +64,14 @@ function published() {
       reviewBy: scalar(fm, "reviewBy"),
       updatedDate: scalar(fm, "updatedDate"),
       revisions: (fm.match(/^\s*-\s*date:/gm) || []).length,
+      articleNumber: Number(scalar(fm, "articleNumber")) || null,
     });
   }
-  return rows.sort((a, b) => a.publishDate.localeCompare(b.publishDate) || a.slug.localeCompare(b.slug));
+  // Number from the frontmatter, not from position in a sort. Deriving it by sorting
+  // on publishDate was unstable: eight articles share one date, the tie broke on
+  // slug, and two pieces ended up both reporting themselves as number 21. The number
+  // is now written down in each file and this only reads it.
+  return rows.sort((a, b) => (a.articleNumber ?? 999) - (b.articleNumber ?? 999) || a.slug.localeCompare(b.slug));
 }
 
 /** The same internal-consistency check the reviewer agent performs, per article. */
@@ -134,7 +139,7 @@ function reviewerFindings(file) {
 const arts = published();
 const total = arts.length;
 const rows = arts.map((a, i) => ({
-  "文章编号": `#${i + 1}`,
+  "文章编号": `#${a.articleNumber ?? i + 1}`,
   "类型": a.updatedDate && a.updatedDate > a.publishDate ? "更正" : "新文章",
   "栏目": a.category,
   "标题": a.title.slice(0, 120),

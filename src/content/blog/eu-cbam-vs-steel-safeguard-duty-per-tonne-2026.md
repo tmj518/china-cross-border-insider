@@ -11,7 +11,7 @@ tags: ["cbam", "eu steel safeguard", "out-of-quota duty", "per tonne cost", "lan
 priority: "P0"
 featured: false
 draft: false
-articleNumber: 16
+articleNumber: 15
 target_keyword: "CBAM vs EU steel safeguard duty cost per tonne"
 search_intent: "informational"
 information_gain: "custom-calculation"

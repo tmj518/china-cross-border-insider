@@ -195,6 +195,32 @@ async function checkEnvironment() {
   }
 
   // --- the gates themselves: a gate that cannot run is not a gate ---
+  /*
+   * Every tool must at least parse, checked before the gates run.
+   *
+   * This exists because one of them silently stopped parsing. A PowerShell
+   * round-trip used for a regression test re-encoded tools/serp-check.mjs through the
+   * ANSI code page, which turned one Chinese character in a regex into a replacement
+   * character and made the file invalid UTF-8. The commit was pushed, and nothing
+   * here noticed: the structural gate still passed, the build still passed, and only
+   * the information-gain gate was dead. A syntax sweep is cheap and would have
+   * caught it on the spot.
+   */
+  const toolFiles = readdirSync(join(ROOT, "tools")).filter((f) => f.endsWith(".mjs"));
+  const broken = [];
+  for (const f of toolFiles) {
+    const r = spawnSync(NODE, ["--check", join(ROOT, "tools", f)], { encoding: "utf8" });
+    if (r.status !== 0) {
+      const why = `${(r.stderr ?? "").split("\n").filter((l) => /Error|SyntaxError/.test(l))[0] ?? "does not parse"}`;
+      broken.push(`${f}: ${why.trim().slice(0, 70)}`);
+    }
+  }
+  if (broken.length === 0) {
+    ok("tools parse", `all ${toolFiles.length} scripts parse — no gate is silently dead`);
+  } else {
+    fail("tools parse", `${broken.length} of ${toolFiles.length} broken | ${broken.slice(0, 3).join(" | ")}`);
+  }
+
   const gate = probe(NODE, [join(ROOT, "tools", "qa-check.mjs"), "--all"], { timeout: 120000 });
   if (gate.ok || gate.out.includes("RESULT:")) {
     const verdict = /RESULT:.*/.exec(gate.out)?.[0] ?? "(no verdict line)";

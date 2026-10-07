@@ -11,7 +11,7 @@ tags: ["export tax rebate", "export duty", "copper", "aluminium", "fob pricing",
 priority: "P0"
 featured: false
 draft: false
-articleNumber: 18
+articleNumber: 17
 target_keyword: "China export tax rebate removal versus export duty 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"

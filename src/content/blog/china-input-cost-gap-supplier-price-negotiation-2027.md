@@ -11,7 +11,7 @@ tags: ["supplier price negotiation", "ppi", "input costs", "sourcing budget", "f
 priority: "P1"
 featured: false
 draft: false
-articleNumber: 22
+articleNumber: 21
 target_keyword: "China PPI August 2026 supplier price increase negotiation importers"
 search_intent: "informational"
 information_gain: "custom-calculation"
