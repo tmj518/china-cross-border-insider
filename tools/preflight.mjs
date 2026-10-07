@@ -380,6 +380,32 @@ function checkCsp() {
 checkCsp();
 
 /**
+ * Every page must fit a phone screen.
+ *
+ * This is here because article pages did not, and nothing said so. A CSS Grid item
+ * defaults to min-width: auto and refuses to shrink below its content; the content
+ * held a <pre> of calculation steps, and a pre does not wrap. The longest line set the
+ * width of main, main set the width of the page, and on a phone every article was cut
+ * off at the right edge. The build, the gates and the deploy all passed.
+ *
+ * It drives a real browser, so it is the slowest check here; it skips with a warning
+ * when no Chrome or Edge is present rather than passing silently.
+ */
+function checkMobile() {
+  const r = spawnSync(process.execPath, [join(ROOT, "tools", "check-mobile.mjs")], { encoding: "utf8", timeout: 600000 });
+  const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
+  const summary = out.split("\n").find((l) => /RESULT:/.test(l))?.trim() ?? "";
+  if (/RESULT: PASS|RESULT: SKIP/.test(summary)) {
+    ok("mobile layout", summary.replace(/^RESULT:\s*/, ""));
+  } else {
+    const first = out.split("\n").find((l) => /^\s+\d+px \//.test(l))?.trim() ?? "";
+    fail("mobile layout", `${summary} | ${first}`.slice(0, 170));
+  }
+}
+
+checkMobile();
+
+/**
  * The reviewer stands in for the human read that 初心与目标.md rules out.
  *
  * It checks the classes a reader catches and no other tool does: a summary that

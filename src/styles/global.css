@@ -100,6 +100,20 @@ a {
   border-radius: 2px;
 }
 
+/*
+ * A backstop against horizontal overflow.
+ *
+ * The specific cause is fixed above (min-width on grid items, and a capped, scrollable
+ * pre), but a single wide element — a long URL, an unbreakable compound, a table with
+ * many columns — should not be able to give the whole page a sideways scrollbar. On a
+ * phone that makes the text unreadable, which is how this was reported.
+ */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* ---------- 3. Layout ---------- */
 .container {
   max-width: var(--w-max);
@@ -109,6 +123,22 @@ a {
   grid-template-columns: 1fr 300px;
   gap: 40px;
   align-items: start;
+}
+
+/*
+ * Grid and flex items default to min-width: auto, which means they refuse to shrink
+ * below the width of their content. On an article that content includes a <pre> of
+ * calculation steps, and a pre defaults to white-space: pre and does not wrap, so the
+ * longest line decided the width of main — and main decided the width of the page.
+ *
+ * The symptom was a phone showing the article cut off at the right edge with a
+ * horizontal scrollbar, on every article but not on the homepage. The cause is not
+ * the pre; it is that nothing was allowed to shrink. min-width: 0 restores that
+ * permission, and the pre then scrolls within its own box instead of widening the
+ * page. Both are needed: this, and overflow-x on the pre below.
+ */
+.container > * {
+  min-width: 0;
 }
 
 .container--flush {
@@ -581,6 +611,55 @@ a {
   max-width: var(--w-read);
   font-size: 17px;
   color: #222;
+}
+
+/*
+ * Code blocks had no styling at all, which is what made them widen the page.
+ *
+ * A <pre> defaults to white-space: pre, so it does not wrap, and with no max-width or
+ * overflow it simply grew. Every calculation section on the site is a fenced code
+ * block, so every article was affected on a phone. Now it is capped at the column
+ * width and scrolls its own content sideways when a line is longer than the screen,
+ * which is the one place a horizontal scroll is the right answer.
+ */
+.prose pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #f6f7f9;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+.prose pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  white-space: pre;
+}
+
+.prose code {
+  background: #f2f3f5;
+  border: 1px solid var(--c-line-soft, var(--c-line));
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 0.92em;
+}
+
+/*
+ * Tables carry the comparison and cost figures, and a five-column table cannot fit a
+ * phone. Wrap the scroll in the table's own box rather than letting it widen the page.
+ */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose > * + * {

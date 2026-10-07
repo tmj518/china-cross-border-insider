@@ -1,0 +1,40 @@
+fix: article pages did not fit a phone screen, and now a check says so
+
+The operator reported that on his phone the article text is cut off at the right edge
+and has to be scrolled sideways, while the desktop is fine. It reproduced on every
+article and on no other page.
+
+Root cause, found by measuring in a real browser rather than by reading the CSS: a CSS
+Grid item defaults to min-width: auto, which means it refuses to shrink below the width
+of its content. The content of an article includes a <pre> of calculation steps, and a
+<pre> defaults to white-space: pre and does not wrap. So the longest calculation line
+set the width of main, main set the width of the page, and the page overflowed the
+viewport. The homepage and the calculator have no <pre>, which is exactly why they were
+fine and why the fault looked like an article problem.
+
+Three fixes, all needed:
+
+  * min-width: 0 on the grid children, which restores permission to shrink. This is the
+    actual bug.
+  * .prose pre and .prose table had no styling at all, so they neither wrapped nor
+    scrolled. Both are now capped at the column width and scroll their own content,
+    which is the one place a sideways scroll is correct.
+  * a max-width and overflow-x backstop on html and body, so one wide element cannot
+    give the whole page a scrollbar again.
+
+Verified in a browser at 320px and 390px across all 35 built pages: zero overflow, and
+the wide code and table content still scrolls inside its own box.
+
+Adds tools/check-mobile.mjs, wired into preflight. It drives a real browser over dist/
+at both widths and fails if any page's scrollWidth exceeds its viewport. It skips with a
+warning if no Chrome or Edge is present, because a missing browser must not block a
+deploy, but it must not pass silently either.
+
+Two notes on getting here. The first measurement was wrong: the mobile menu was open,
+its links contributed an element 226px wide, and that matched the overflow exactly, so
+the menu looked like the cause. Re-measuring with the menu explicitly closed and its
+state asserted is what produced the real answer. And the width of main varied per
+article, which was the clue that content, not a stylesheet rule, was deciding it.
+
+Preflight now takes 88 seconds because of this check. That is acceptable for a job that
+runs once a day.
