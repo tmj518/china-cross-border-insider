@@ -72,7 +72,9 @@ $task = [System.IO.File]::ReadAllText($TaskFile, [System.Text.Encoding]::UTF8)
 
 $sw = [System.Diagnostics.Stopwatch]::StartNew()
 try {
-  $task | & $Dsh headless - *>&1 | Tee-Object -FilePath $log -Append
+  # Streams kept apart on purpose: merging them with *>&1 turns dsh's stderr
+  # diagnostics into NativeCommandError records and the log becomes UTF-16 noise.
+  $task | & $Dsh headless - 2>> $log | Tee-Object -FilePath $log -Append
   $code = $LASTEXITCODE
 } catch {
   Say "dsh threw: $_"
