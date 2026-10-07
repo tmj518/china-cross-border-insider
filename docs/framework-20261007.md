@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 03:49:09 UTC  
+生成时间：2026-10-07 07:46:02 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`621b6a6 docs: the build guard, and article 17`
+对应提交：`835cb9a feat: the landed-cost calculator, copied from the benchmark rather than invented`
 
 ## 顶层结构
 
@@ -34,6 +34,7 @@ china-cross-border-insider/
 │   │   ├── eu-gpsr-sweep-2026-marketplace-listings.md
 │   │   ├── eu-per-item-customs-charge-2026.md
 │   │   ├── eu-steel-safeguard-quota-2026-chinese-hrc-cost.md
+│   │   ├── freight-index-linked-contract-two-errors-2026.md
 │   │   ├── proclamation-11052-polysilicon-minimum-import-price.md
 │   │   ├── section-301-exclusions-expire-november-2026.md
 │   │   ├── us-de-minimis-postal-route-closes-october-2026.md
@@ -114,6 +115,7 @@ china-cross-border-insider/
 │   │   ├── ArticleLayout.astro
 │   │   └── BaseLayout.astro
 │   ├── lib/   # post.ts — published(), relatedPosts(), readingTime(), numbersFor()
+│   │   ├── models.mjs
 │   │   └── post.ts
 │   ├── pages/   # routes; /blog/<slug>/ is frozen, columns come from frontmatter not directories
 │   │   ├── blog/
@@ -122,6 +124,7 @@ china-cross-border-insider/
 │   │   │   └── [category].astro
 │   │   ├── 404.astro
 │   │   ├── about.astro
+│   │   ├── calculator.astro
 │   │   ├── contact.astro
 │   │   ├── index.astro
 │   │   ├── privacy.astro
@@ -169,6 +172,7 @@ china-cross-border-insider/
 │   └── youtube-upload.mjs
 ├── 初心与目标.md
 ├── 对比内容线_选题矩阵.md
+├── 合规记录_AI标识.md
 ├── 集成配置指南_Notion_飞书_YouTube.md
 ├── 进度日志.md
 ├── 下一步.md
@@ -178,6 +182,7 @@ china-cross-border-insider/
 ├── 项目规范_英文内容站_v1.3.md
 ├── 项目路线图_五年_0到100万UV.md
 ├── 英文站首页_完整版.html
+├── 盈亏平衡测算.md
 ├── astro.config.mjs
 ├── cbam_2023R0956.html
 ├── cbam_reg.html
@@ -223,7 +228,7 @@ china-cross-border-insider/
 | 成本模型 | 12 |
 | tools 脚本总数 | 31 |
 | SERP 快照 | 18 |
-| 机审报告 | 17 |
+| 机审报告 | 18 |
 
 ## 技术栈
 
