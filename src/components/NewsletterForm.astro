@@ -4,16 +4,24 @@ import { AUTHOR, SITE } from "../consts";
 /**
  * Newsletter capture.
  *
- * Two states, and the difference matters:
+ * Two states:
  *
- *   - No provider configured (`SITE.newsletterAction` empty) → render a
- *     mailto call to action. Submissions land in the inbox, which works today
- *     because Email Routing forwards hello@ to a real mailbox.
- *   - Provider configured → render a real form posting to it.
+ *   - No provider configured (`SITE.newsletterAction` empty) → a mailto call to
+ *     action. Submissions land in the inbox, which works because Email Routing
+ *     forwards hello@ to a real mailbox.
+ *   - Provider configured → a real form posting to it.
  *
- * The form previously rendered unconditionally with no action, so a submit
- * POSTed to the static page and Cloudflare answered HTTP 405. A capture box
- * that throws an error page is worse than no capture box.
+ * The form previously rendered unconditionally with no action, so a submit POSTed
+ * to the static page and Cloudflare answered HTTP 405. A capture box that throws
+ * an error page is worse than no capture box.
+ *
+ * The copy was rewritten on 2026-10-07 to say what the site actually does. It had
+ * promised "One email every morning" under the heading "Daily Brief", and the
+ * publication record is eighteen articles across five non-consecutive days, with
+ * no email ever sent. Every figure on this site is sourced and dated; a promise to
+ * a reader is a claim about us and was held to the same standard. What remains is
+ * a cadence the data supports — one email when a tracked change actually moves a
+ * per-unit cost — which is also the thing the tracker exists to know.
  */
 export interface Props {
   variant?: "box" | "inline";
@@ -22,17 +30,17 @@ export interface Props {
 const { variant = "box" } = Astro.props;
 const inputId = `newsletter-email-${variant}`;
 const hasProvider = Boolean(SITE.newsletterAction);
-const subscribeHref = `mailto:${AUTHOR.email}?subject=${encodeURIComponent("Subscribe to the Daily Brief")}`;
+const subscribeHref = `mailto:${AUTHOR.email}?subject=${encodeURIComponent("Subscribe to Landed Math")}`;
+
+/** The offer, stated once so both variants and both states say the same thing. */
+const promise = "One email when a tracked change actually moves your per-unit cost. No daily filler.";
 ---
 
 {
   variant === "box" ? (
     <div class="widget newsletter-box">
-      <h2>Daily Brief</h2>
-      <p>
-        One email every morning. 5 minutes. All the China cross-border news that
-        moves your P&amp;L.
-      </p>
+      <h2>Change alerts</h2>
+      <p>{promise}</p>
       {hasProvider ? (
         <form method="post" action={SITE.newsletterAction}>
           <label for={inputId} class="visually-hidden">
@@ -46,7 +54,7 @@ const subscribeHref = `mailto:${AUTHOR.email}?subject=${encodeURIComponent("Subs
             autocomplete="email"
             required
           />
-          <button type="submit">Subscribe Free</button>
+          <button type="submit">Subscribe</button>
         </form>
       ) : (
         <>
@@ -54,15 +62,15 @@ const subscribeHref = `mailto:${AUTHOR.email}?subject=${encodeURIComponent("Subs
             Subscribe by email
           </a>
           <p class="newsletter-note">
-            One-click signup is coming. For now this opens your mail client —
-            send the message and you are on the list.
+            Signup opens your mail client. Send the message and you are on the list —
+            one click is not wired up yet.
           </p>
         </>
       )}
     </div>
   ) : (
     <div class="newsletter-box newsletter-inline">
-      <p>Enjoyed this analysis? Get the next one in your inbox.</p>
+      <p>{promise}</p>
       {hasProvider ? (
         <form method="post" action={SITE.newsletterAction}>
           <div class="field-row">

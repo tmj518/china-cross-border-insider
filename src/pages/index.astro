@@ -56,7 +56,7 @@ const jsonLd = {
       <Hero
         kicker="Coming soon"
         title="The first analysis is being written"
-        excerpt="Numbers-first reporting on China trade, platforms and supply chains. Subscribe to get it the morning it publishes."
+        excerpt="Numbers-first reporting on China trade, platforms and supply chains. Each piece turns a published change into landed cost per unit, with the source and date on every figure."
       />
     )
   }
@@ -90,8 +90,14 @@ const jsonLd = {
             />
           ))
         ) : (
+          // Both branches of this page were written when the site was empty. The
+          // cadence promise in this one — "the archive fills up weekly" — was a
+          // claim the publication record did not support, and it would have gone
+          // live the moment the article list was empty. Removed for the same
+          // reason the newsletter's "every morning" was removed.
           <p class="empty-note">
-            Nothing else published yet. The archive fills up weekly.
+            Nothing published yet. The <a href="/tracker/">tracker</a> lists every
+            change being followed.
           </p>
         )
       }
