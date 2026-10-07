@@ -4,6 +4,7 @@ subtitle: "China's 2026 business registration real-name verification rule, and w
 description: "From 1 May 2026 every Chinese business registration needs real-name confirmation reviewed by the registrar. A companion rule built a national registry of filing agents, with a three-year ban for false registration."
 publishDate: 2026-10-02
 reviewBy: 2026-10-30
+stakes: priced
 category: "sourcing"
 audience: "importer"
 tags: ["supplier verification", "business registration", "due diligence", "deposit risk"]

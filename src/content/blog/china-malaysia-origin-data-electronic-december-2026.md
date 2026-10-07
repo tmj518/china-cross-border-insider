@@ -4,6 +4,7 @@ subtitle: "The China-Malaysia RCEP certificate of origin goes electronic in 2026
 description: "From 1 December 2026, missing electronic origin data for RCEP and ACFTA certificates out of Malaysia means a duty guarantee at release. Here is what that guarantee costs, and what it does not protect."
 publishDate: 2026-10-01
 reviewBy: 2026-11-30
+stakes: priced
 category: "logistics"
 audience: "importer"
 tags: ["rcep", "certificate of origin", "customs clearance", "asean", "working capital"]
@@ -65,7 +66,7 @@ sources:
 
 China's customs authority now exchanges origin certificate data with Malaysia electronically. From 1 December 2026, when that data cannot be found, a duty guarantee becomes the route to advance release instead of manual data entry. The transition window closes on 30 November 2026, and paper certificates still require paper submission.
 
-Most importers will read this as an IT change and file it accordingly. It is a working-capital change dressed as an IT change. The date that matters is not when the system went live, but when the fallback disappears — and the fallback is what most importers have been quietly relying on.
+Most importers will read this as an IT change and file it accordingly. It is a working-capital change dressed as an IT change. The date that matters is not when the system went live, but when the fallback disappears — because paper certificates have been the route that always works, and a route that always works is the one nobody builds a process around.
 
 The good news is that the guarantee itself is cheap. The bad news is that it protects the wrong thing.
 

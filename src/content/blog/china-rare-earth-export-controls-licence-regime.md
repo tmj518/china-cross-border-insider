@@ -4,6 +4,7 @@ subtitle: "China's rare earth export controls in 2026 are a licensing regime, an
 description: "Five notices, twenty element symbols, fifteen active and five suspended. The constraint that stops most shipments is not the law, it is the seller's willingness to risk a licence file."
 publishDate: 2026-10-02
 reviewBy: 2026-11-30
+stakes: priced
 category: "supply-chain"
 audience: "both"
 tags: ["rare earths", "export controls", "critical minerals", "licensing", "lead times"]
