@@ -65,7 +65,15 @@ const jsonLd = {
           for both, and we say which one a piece is for.
         </p>
 
-        <h2>Who is behind this</h2>
+        {/*
+          The id is the anchor the article bylines point at.
+
+          Every Article block carries author.url = /about/#who, and Google's guidance
+          treats a byline as more credible when it resolves to a page explaining who the
+          author is. Without this id the link resolved to the top of this page instead,
+          which made the claim weaker than the markup implied.
+        */}
+        <h2 id="who">Who is behind this</h2>
         <p>
           {AUTHOR.name} — {AUTHOR.role}. Years on the sourcing and platform side
           of cross-border commerce: Amazon FBA, TikTok Shop and Temu, in consumer
