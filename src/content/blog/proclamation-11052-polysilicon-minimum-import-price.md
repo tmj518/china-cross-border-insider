@@ -4,6 +4,7 @@ subtitle: "Proclamation 11052 sets a Section 232 minimum import price on polysil
 description: "Proclamation 11052 sets minimum import prices on polysilicon and its derivatives from 4 December 2026. The mechanism inverts the usual rule: a lower invoice raises your effective duty rate."
 publishDate: 2026-10-02
 reviewBy: 2026-12-04
+stakes: priced
 category: "trade-policy"
 audience: "importer"
 tags: ["section 232", "polysilicon", "solar", "minimum import price", "landed cost"]

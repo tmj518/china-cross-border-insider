@@ -160,6 +160,25 @@ function check(file) {
           `body mentions ${earlier}, earlier than reviewBy ${iso} — the piece goes stale sooner than planned`,
         );
       }
+
+      // A `priced` piece states a per-unit money figure, so a reader can act on
+      // it directly; letting one sit for years is the failure that costs money.
+      // The ceiling is 180 days, which is a generator of reviews rather than a
+      // restriction — no current article breaches it. Directional pieces are
+      // deliberately unconstrained: being old is not the same as being wrong.
+      const stakes = fmLine("stakes") || "directional";
+      if (stakes === "priced") {
+        const today = new Date();
+        const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+        const days = Math.round((Date.parse(iso) - Date.parse(todayIso)) / 86400000);
+        if (days > 180) {
+          add(
+            "warn",
+            "priced piece reviewed within 180 days",
+            `reviewBy is ${days} days out; a piece stating a per-unit cost should be rechecked sooner`,
+          );
+        }
+      }
     }
   }
 

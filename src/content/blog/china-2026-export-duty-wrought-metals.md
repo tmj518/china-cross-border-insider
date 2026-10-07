@@ -4,6 +4,7 @@ subtitle: "China's 2026 export duty list: the 30 percent provisional rate on cop
 description: "107 goods carry Chinese export duties in 2026 and 68 have provisional rates. For copper and aluminium the pattern is deliberate: raw material taxed at 30 percent, every wrought product zeroed."
 publishDate: 2026-10-03
 reviewBy: 2026-12-31
+stakes: priced
 category: "sourcing"
 audience: "importer"
 tags: ["export duty", "copper", "aluminium", "ferrochrome", "landed cost", "tariff schedule"]

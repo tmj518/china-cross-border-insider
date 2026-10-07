@@ -110,6 +110,9 @@ function collect() {
       publishDate: field(fm, "publishDate"),
       updatedDate: field(fm, "updatedDate"),
       reviewBy: field(fm, "reviewBy"),
+      // What an out-of-date fact costs: `priced` pieces state a per-unit money
+      // figure a reader could act on, so they are listed first.
+      stakes: field(fm, "stakes") || "directional",
       future: [...future].sort(),
     });
   }
@@ -138,20 +141,24 @@ if (flag("candidates")) {
 
 // A piece is due when its reviewBy date has arrived. A piece with no reviewBy but
 // future dates in the body is reported as at risk, not as due.
-const due = published
-  .filter((a) => a.reviewBy && a.reviewBy <= TODAY)
-  .sort((a, b) => a.reviewBy.localeCompare(b.reviewBy));
+//
+// Ordering is by consequence first, then by date. A flat date sort treats a
+// piece whose price has moved the same as one whose process description is old,
+// which buries the ones a reader can lose money on.
+const byStakesThenDate = (a, b) =>
+  (a.stakes === b.stakes ? 0 : a.stakes === "priced" ? -1 : 1) ||
+  (a.reviewBy || "9999").localeCompare(b.reviewBy || "9999");
 
-const upcoming = published
-  .filter((a) => a.reviewBy && a.reviewBy > TODAY)
-  .sort((a, b) => a.reviewBy.localeCompare(b.reviewBy));
+const due = published.filter((a) => a.reviewBy && a.reviewBy <= TODAY).sort(byStakesThenDate);
+
+const upcoming = published.filter((a) => a.reviewBy && a.reviewBy > TODAY).sort(byStakesThenDate);
 
 const unset = published.filter((a) => !a.reviewBy);
 
 const line = (a) => {
   const d = a.reviewBy ? days(a.reviewBy, TODAY) : null;
   const when = d === null ? "  --  " : d === 0 ? "today " : `${String(d).padStart(4)}d`;
-  return `  ${when}  ${(a.reviewBy || "(unset)").padEnd(11)}  ${a.category.padEnd(13)} ${a.slug}`;
+  return `  ${when}  ${(a.reviewBy || "(unset)").padEnd(11)}  ${a.stakes.padEnd(11)}  ${a.category.padEnd(13)} ${a.slug}`;
 };
 
 if (flag("overdue")) {
@@ -189,11 +196,13 @@ md.push(`## Coming up (${upcoming.length})`);
 md.push("");
 if (!upcoming.length) md.push(`_None._`);
 else {
-  md.push(`| reviewBy | days away | category | article | future dates in body |`);
-  md.push(`| --- | --- | --- | --- | --- |`);
+  md.push(`  Sorted by consequence first: a priced piece states a per-unit money`);
+  md.push(`  figure a reader can act on.`);
+  md.push(`| reviewBy | days away | stakes | category | article | future dates in body |`);
+  md.push(`| --- | --- | --- | --- | --- | --- |`);
   for (const a of upcoming)
     md.push(
-      `| ${a.reviewBy} | ${days(a.reviewBy, TODAY)} | ${a.category} | \`${a.slug}\` | ${a.future.slice(0, 4).join(", ") || "—"} |`,
+      `| ${a.reviewBy} | ${days(a.reviewBy, TODAY)} | ${a.stakes} | ${a.category} | \`${a.slug}\` | ${a.future.slice(0, 4).join(", ") || "—"} |`,
     );
 }
 md.push("");

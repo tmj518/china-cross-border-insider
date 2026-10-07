@@ -4,6 +4,7 @@ subtitle: "The CCFI and SCFI container freight index changed publisher in 2026, 
 description: "Seven container benchmarks moved publisher on 18 June 2026. The same week the Southeast Asia lane rose 9.1% while Europe fell 2.9% — and the composite said almost nothing moved."
 publishDate: 2026-10-02
 reviewBy: 2027-01-31
+stakes: priced
 category: "logistics"
 audience: "importer"
 tags: ["container freight", "CCFI", "SCFI", "surcharge", "contract clauses"]

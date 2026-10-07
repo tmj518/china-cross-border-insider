@@ -5,6 +5,7 @@ description: "The rebate was cancelled on 249 product lines from 1 April 2026, a
 publishDate: 2026-10-02
 updatedDate: 2026-10-02
 reviewBy: 2027-01-01
+stakes: priced
 category: "sourcing"
 audience: "importer"
 tags: ["export tax rebate", "fob pricing", "batteries", "solar", "supplier negotiation"]

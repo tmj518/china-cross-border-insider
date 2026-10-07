@@ -4,6 +4,7 @@ subtitle: "China's PPI in August 2026 turned positive on factory gate prices, an
 description: "PPI rose 3.8% year on year in August 2026 after a 0.7% monthly fall in July, and the year-to-date average is 2%. For buyers whose baseline was that Chinese quotes drift down, the direction has changed."
 publishDate: 2026-10-02
 reviewBy: 2026-12-31
+stakes: priced
 category: "supply-chain"
 audience: "both"
 tags: ["ppi", "factory pricing", "sourcing budget", "inflation", "negotiation"]

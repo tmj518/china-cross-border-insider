@@ -58,6 +58,20 @@ export const blog = defineCollection({
      * pieces get a quarterly date.
      */
     reviewBy: z.coerce.date().optional(),
+    /**
+     * What an out-of-date fact in this piece costs: `priced` when the article
+     * states a per-unit money figure the reader could act on — price a
+     * contract, book freight, choose a route — and `directional` when it only
+     * describes a direction or a process, where being stale means being old
+     * rather than being wrong in a way that costs money.
+     *
+     * This exists because a flat review rule treated all fourteen pieces as
+     * equally urgent, which both overstates the maintenance bill and buries the
+     * nine that matter. Nine of the first fourteen published pieces state a
+     * per-unit figure; five are directional. The gate requires a `priced` piece
+     * to be reviewed within 180 days, and does not constrain the rest.
+     */
+    stakes: z.enum(["priced", "directional"]).default("directional"),
     category: z.enum(categorySlugs),
     /** Who the piece is for; surfaced in the article header. */
     audience: z.enum(audienceValues).default("both"),

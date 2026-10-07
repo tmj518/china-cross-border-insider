@@ -4,6 +4,7 @@ subtitle: "The 2026 EU steel safeguard quota and the 50% out-of-quota duty: what
 description: "From 1 July 2026 the EU doubled the steel out-of-quota duty to 50% and cut duty-free volumes 47%. China holds named quotas in 4 of 26 categories and none in hot-rolled coil. Here is the per-tonne arithmetic."
 publishDate: 2026-10-05
 reviewBy: 2026-12-31
+stakes: priced
 category: "trade-policy"
 audience: "importer"
 tags: ["eu steel", "tariff rate quota", "safeguard", "out-of-quota duty", "cbam", "landed cost"]
