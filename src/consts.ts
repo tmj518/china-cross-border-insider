@@ -74,6 +74,7 @@ export const NAV_LINKS = [
   // the only page that does something rather than say something, and it is the
   // top of the funnel for the email list.
   { label: "Calculator", href: "/calculator/" },
+  { label: "Tracker", href: "/tracker/" },
   { label: "Trade Policy", href: "/category/trade-policy/" },
   { label: "Platforms", href: "/category/platforms/" },
   { label: "Supply Chain", href: "/category/supply-chain/" },

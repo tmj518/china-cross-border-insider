@@ -935,6 +935,127 @@ a {
   color: var(--c-ink-5);
 }
 
+/* Policy change tracker.
+ *
+ * Same visual language as the calculator page: it is a tool, not an article. The
+ * summary figures lead, because the useful answer is "how much is about to
+ * change", and the four status pills carry the only colour on the page so a
+ * reader scanning for what is urgent finds it without reading. */
+.tracker-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 24px 0 28px;
+  padding: 18px 20px;
+  border: 1px solid var(--c-line);
+  border-radius: 4px;
+  background: var(--c-line-faint);
+}
+
+.tracker-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tracker-num {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 30px;
+  line-height: 1;
+  color: var(--c-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.tracker-lbl {
+  font-size: 12px;
+  color: var(--c-ink-4);
+  line-height: 1.35;
+}
+
+.tracker-alert {
+  padding: 12px 16px;
+  border-left: 3px solid var(--c-ink-6);
+  background: var(--c-line-faint);
+  font-size: 14px;
+}
+
+.tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 18px 0;
+}
+
+.tracker-table th {
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--c-ink-4);
+  font-weight: 400;
+  padding: 0 10px 8px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.tracker-table td {
+  padding: 12px 10px 12px 0;
+  border-bottom: 1px solid var(--c-line);
+  vertical-align: top;
+}
+
+.tracker-date {
+  white-space: nowrap;
+  color: var(--c-ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.tracker-in {
+  color: var(--c-ink-5);
+  font-size: 12px;
+}
+
+.tracker-meta {
+  display: block;
+  font-size: 12px;
+  color: var(--c-ink-5);
+  margin-top: 3px;
+  text-transform: capitalize;
+}
+
+.tracker-num-cell {
+  text-align: right;
+  color: var(--c-ink-4);
+  font-variant-numeric: tabular-nums;
+}
+
+.tracker-pill {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  border: 1px solid var(--c-line);
+  color: var(--c-ink-3);
+  background: var(--c-bg);
+}
+
+/* Only the urgent state gets weight; the rest stay quiet so the scan works. */
+.tracker-pill-due {
+  border-color: var(--c-ink-6);
+  color: var(--c-ink);
+  font-weight: 600;
+}
+
+.tracker-pill-overdue {
+  border-color: var(--c-ink);
+  background: var(--c-ink);
+  color: var(--c-bg);
+  font-weight: 600;
+}
+
 /* ---------- 9. Forms ---------- */.newsletter-box {
   font-size: 13px;
 }
