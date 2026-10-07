@@ -91,3 +91,6 @@ cellar*.py
 crop.py
 
 # QA reports are generated per run; data/qa has its own ignore.
+
+# Unattended run transcripts. Useful on disk, not useful in git.
+logs/
