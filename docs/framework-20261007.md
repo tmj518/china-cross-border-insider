@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:20:11 UTC  
+生成时间：2026-10-07 08:27:12 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`eea069c feat: the second calculator mode, for the number that changes in 25 days`
+对应提交：`d10ddf9 refactor: one CBAM model for the CLI and the browser`
 
 ## 顶层结构
 
@@ -115,6 +115,7 @@ china-cross-border-insider/
 │   │   ├── ArticleLayout.astro
 │   │   └── BaseLayout.astro
 │   ├── lib/   # post.ts — published(), relatedPosts(), readingTime(), numbersFor()
+│   │   ├── cbam.mjs
 │   │   ├── models.mjs
 │   │   └── post.ts
 │   ├── pages/   # routes; /blog/<slug>/ is frozen, columns come from frontmatter not directories
@@ -198,6 +199,7 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
+├── MSG48.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
