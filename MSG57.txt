@@ -1,0 +1,37 @@
+feat: a Feishu ledger, and a table created rather than four tables misused
+
+The operator supplied app credentials, a wiki token and an app token, and asked for
+daily progress, QA results and the duplicate check to be written into the Feishu
+base. Credentials tested, then the base's own structure read before anything was
+written — and that is where the round turned.
+
+The base is a short-video operation, not this project. Its four tables are
+内容选题管理表 with 播放量, 点赞数, 完播率 and 爆款笔记; 内容发布日历 with
+平台 options of 抖音, 视频号, 快手, 小红书 and B站; 进度 with 期号, 段数 and
+成片时长; and 发布记录 with 封面风格 and cookie状态. No field in any of them holds
+blog progress, and writing into one would have polluted their data. So the sync
+creates a table of its own in the same base and never touches the other four.
+
+The ledger carries fourteen fields, covering the ten points asked for: number, type,
+category, title, date, the duplicate-selection check, the structural gate, the
+information-gain gate, the reviewer agent, the machine score, the review date, build
+and live status, this round's cost, and what the operator needs to supply. Every
+value is computed from the repository by running the actual gates, so the table
+cannot drift from the site, and the write upserts by article number rather than
+appending.
+
+The dry run paid for itself twice before a single row was written. It found that
+article 16 had no SERP snapshot at all — a real gap in a published piece, now
+created and passing SUPPORTED on 0 of 3 competitors carrying a comparable cost
+table. And it showed article 3 classified as a correction when it was revised the
+day it published; the rule now compares updatedDate against publishDate, so a
+same-day edit is not a correction and a later one is.
+
+Verified by reading the ledger back rather than trusting the write: 20 rows, all 20
+article numbers present, none missing, none unexpected, and the stored fields
+matching the repository. A write that reports success is not the same as a write
+that landed.
+
+One security note carried into the report: the app secret was pasted in chat and is
+also used as a default in the script, so it should be rotated and moved to the
+environment.

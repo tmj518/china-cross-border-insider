@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 10:12:20 UTC  
+生成时间：2026-10-07 11:58:50 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`5e94b9f feat: a reviewer agent to stand in for the human read the spec rules out`
+对应提交：`e15a01f docs: article numbering and the per-round report, added to the instruction`
 
 ## 顶层结构
 
@@ -53,6 +53,7 @@ china-cross-border-insider/
 │       ├── china-real-name-registration-supplier-verification.json
 │       ├── container-freight-index-publisher-change-2026.json
 │       ├── eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026.json
+│       ├── eu-cbam-downstream-extension-material-composition-2028.json
 │       ├── eu-cbam-steel-vs-aluminium-carbon-cost-2026.json
 │       ├── eu-cbam-vs-steel-safeguard-duty-per-tonne-2026.json
 │       ├── eu-gpsr-sweep-2026-marketplace-listings.json
@@ -153,6 +154,7 @@ china-cross-border-insider/
 │   ├── deposit-risk.mjs
 │   ├── env-proxy.ps1
 │   ├── export-duty.mjs
+│   ├── feishu-sync.mjs
 │   ├── fix-line-endings.mjs
 │   ├── framework-snapshot.mjs
 │   ├── freight-index.mjs
@@ -195,6 +197,7 @@ china-cross-border-insider/
 ├── 项目路线图_五年_0到100万UV.md
 ├── 英文站首页_完整版.html
 ├── 盈亏平衡测算.md
+├── 指令_完整版.md
 ├── astro.config.mjs
 ├── cbam_2023R0956.html
 ├── cbam_reg.html
@@ -207,6 +210,7 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
+├── MSG57.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
@@ -238,8 +242,8 @@ china-cross-border-insider/
 | 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
 | .md 总数 | 28 |
 | 成本模型 | 12 |
-| tools 脚本总数 | 32 |
-| SERP 快照 | 19 |
+| tools 脚本总数 | 33 |
+| SERP 快照 | 20 |
 | 机审报告 | 20 |
 
 ## 技术栈
