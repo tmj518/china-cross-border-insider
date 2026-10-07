@@ -45,6 +45,11 @@ figures:
     period: "2026 base value, before the 10 per cent mark-up; the row was blank in every earlier version"
     source: "Commission Implementing Regulation (EU) 2026/1740, Annex I, China table, CN 7601"
     retrieved: "2026-10-03"
+  - value: "539.91"
+    unit: "EUR per tonne — CBAM cost on Chinese grain-oriented electrical steel, CN 7225 11 00, the most expensive steel line the model prices"
+    period: "2026 declaration year at the Q1 2026 certificate price of EUR 75.36 per tCO2e"
+    source: "Landed Math CBAM model, from corrected Annex I to Regulation (EU) 2026/1740 and the Commission's published certificate price"
+    retrieved: "2026-10-07"
   - value: "1.370"
     unit: "tCO2e per tonne — 2026 CBAM benchmark for CN 7208 on the BF/BOF route"
     period: "2026; Column B, the column that applies to a default-value declaration"
@@ -74,7 +79,7 @@ sources:
 
 ## AI Summary
 
-The 2026 CBAM cost per tonne of Chinese steel lands between EUR 156 and EUR 164. Unwrought aluminium costs EUR 144 and electrical steel EUR 540. Every figure rests on a default-value table the Commission replaced retroactively in July 2026, and on a factor most readers take backwards.
+The 2026 CBAM cost per tonne of Chinese steel lands between EUR 156 and EUR 164. Unwrought aluminium costs EUR 144 and grain-oriented electrical steel EUR 539.91. Every figure rests on a default-value table the Commission replaced retroactively in July 2026, and on a factor most readers take backwards.
 
 Most writing on CBAM repeats a number without the table behind it. There is a specific reason that number cannot be trusted, and it has nothing to do with the arithmetic being hard.
 

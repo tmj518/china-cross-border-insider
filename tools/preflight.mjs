@@ -330,6 +330,37 @@ checkBuild();
 // cannot see it.
 checkEveryArticleBuilt();
 
+/**
+ * The reviewer stands in for the human read that 初心与目标.md rules out.
+ *
+ * It checks the classes a reader catches and no other tool does: a summary that
+ * drifted from the body, an unsupported claim about the site's own process, a
+ * review date that has already passed, a custom calculation with no calculation
+ * section. Advisory grades are reported; only must-fix findings set the exit code.
+ */
+function checkReviewer() {
+  const r = spawnSync(process.execPath, [join(ROOT, "tools", "reviewer-check.mjs"), "--all"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
+  const summary = out.split("\n").find((l) => /must fix/.test(l))?.trim() ?? "";
+
+  if (r.status === 0) {
+    ok("reviewer", summary || "no must-fix findings");
+  } else {
+    const mustFix = out
+      .split("\n")
+      .filter((l) => /^\s*\[HIGH\]/.test(l) || /must fix/.test(l))
+      .slice(0, 4)
+      .map((l) => l.trim())
+      .join(" | ");
+    fail("reviewer", mustFix || "must-fix findings present");
+  }
+}
+
+checkReviewer();
+
 function checkCredentials() {
   for (const [label, candidates] of Object.entries(CRED_FILES)) {
     const found = candidates.find((p) => existsSync(p));
