@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 07:54:45 UTC  
+生成时间：2026-10-07 08:02:04 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`fe63afd feat: how the sources work, the module I built instead of the one I planned`
+对应提交：`4920cb5 feat: find by market, and two wrong measurements caught by checking`
 
 ## 顶层结构
 
@@ -127,6 +127,7 @@ china-cross-border-insider/
 │   │   ├── calculator.astro
 │   │   ├── contact.astro
 │   │   ├── index.astro
+│   │   ├── markets.astro
 │   │   ├── privacy.astro
 │   │   ├── robots.txt.ts
 │   │   ├── rss.xml.ts
