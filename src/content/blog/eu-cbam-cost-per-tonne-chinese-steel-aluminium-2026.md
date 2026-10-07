@@ -11,6 +11,7 @@ tags: ["cbam", "carbon border adjustment", "eu imports", "steel", "aluminium", "
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 13
 target_keyword: "EU CBAM cost per tonne 2026 Chinese steel aluminium"
 search_intent: "informational"
 information_gain: "custom-calculation"

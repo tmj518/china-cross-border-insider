@@ -11,6 +11,7 @@ tags: ["rare earths", "export controls", "critical minerals", "licensing", "lead
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 4
 target_keyword: "China rare earth export controls licensing 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"

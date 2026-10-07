@@ -11,6 +11,7 @@ tags: ["eu steel", "tariff rate quota", "safeguard", "out-of-quota duty", "cbam"
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 14
 target_keyword: "EU steel safeguard quota 2026 Chinese HRC cost"
 search_intent: "informational"
 information_gain: "custom-calculation"

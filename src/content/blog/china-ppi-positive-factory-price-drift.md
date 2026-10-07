@@ -11,6 +11,7 @@ tags: ["ppi", "factory pricing", "sourcing budget", "inflation", "negotiation"]
 priority: "P1"
 featured: false
 draft: false
+articleNumber: 10
 target_keyword: "China PPI August 2026 factory gate prices importer sourcing budget"
 search_intent: "informational"
 information_gain: "custom-calculation"

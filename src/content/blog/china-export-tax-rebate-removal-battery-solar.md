@@ -15,6 +15,7 @@ tags: ["export tax rebate", "fob pricing", "batteries", "solar", "supplier negot
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 3
 target_keyword: "China export tax rebate removal 2026 battery solar importer price"
 search_intent: "informational"
 information_gain: "custom-calculation"

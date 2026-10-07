@@ -11,6 +11,7 @@ tags: ["eu customs", "de minimis", "ioss", "per-item duty", "landed cost"]
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 9
 target_keyword: "EU 150 euro de minimis abolished EUR 3 duty per item 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"

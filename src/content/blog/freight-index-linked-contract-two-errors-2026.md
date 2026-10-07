@@ -11,6 +11,7 @@ tags: ["container freight", "CCFI", "SCFI", "index-linked contract", "BAF", "sur
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 19
 target_keyword: "CCFI SCFI index-linked freight surcharge clause which series"
 search_intent: "informational"
 information_gain: "custom-calculation"

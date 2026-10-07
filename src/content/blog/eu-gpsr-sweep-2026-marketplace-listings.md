@@ -11,6 +11,7 @@ tags: ["gpsr", "eu compliance", "marketplace enforcement", "responsible person",
 priority: "P1"
 featured: false
 draft: false
+articleNumber: 5
 target_keyword: "EU GPSR enforcement marketplace seller compliance 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"

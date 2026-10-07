@@ -11,6 +11,7 @@ tags: ["container freight", "CCFI", "SCFI", "surcharge", "contract clauses"]
 priority: "P1"
 featured: false
 draft: false
+articleNumber: 7
 target_keyword: "CCFI SCFI container freight index 2026 publisher change"
 search_intent: "informational"
 information_gain: "custom-calculation"

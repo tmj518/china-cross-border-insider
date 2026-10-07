@@ -11,6 +11,7 @@ tags: ["section 301", "tariff exclusions", "landed cost", "us imports", "entry d
 priority: "P0"
 featured: true
 draft: false
+articleNumber: 2
 target_keyword: "section 301 exclusions expiration november 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"

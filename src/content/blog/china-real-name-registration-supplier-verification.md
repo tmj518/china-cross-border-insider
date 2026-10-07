@@ -11,6 +11,7 @@ tags: ["supplier verification", "business registration", "due diligence", "depos
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 6
 target_keyword: "China business registration real name verification supplier 2026"
 search_intent: "informational"
 information_gain: "primary-source"

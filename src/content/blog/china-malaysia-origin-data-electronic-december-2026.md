@@ -11,6 +11,7 @@ tags: ["rcep", "certificate of origin", "customs clearance", "asean", "working c
 priority: "P1"
 featured: false
 draft: false
+articleNumber: 1
 target_keyword: "China Malaysia RCEP certificate of origin electronic data 2026"
 search_intent: "informational"
 information_gain: "primary-source"

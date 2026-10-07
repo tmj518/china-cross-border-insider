@@ -11,6 +11,7 @@ tags: ["cbam", "downstream goods", "ex-codes", "material composition", "cbam ext
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 21
 target_keyword: "CBAM downstream extension 2028 ex-codes material composition"
 search_intent: "informational"
 information_gain: "custom-calculation"

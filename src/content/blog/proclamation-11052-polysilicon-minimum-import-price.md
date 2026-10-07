@@ -11,6 +11,7 @@ tags: ["section 232", "polysilicon", "solar", "minimum import price", "landed co
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 8
 target_keyword: "Proclamation 11052 polysilicon minimum import price Section 232"
 search_intent: "informational"
 information_gain: "custom-calculation"

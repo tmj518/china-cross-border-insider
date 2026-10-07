@@ -11,6 +11,7 @@ tags: ["export duty", "copper", "aluminium", "ferrochrome", "landed cost", "tari
 priority: "P1"
 featured: false
 draft: false
+articleNumber: 11
 target_keyword: "China export duty 2026 copper aluminium wrought provisional rate"
 search_intent: "informational"
 information_gain: "custom-calculation"

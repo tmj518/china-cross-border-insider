@@ -11,6 +11,7 @@ tags: ["industrial profits", "working capital", "receivables", "supplier negotia
 priority: "P0"
 featured: false
 draft: false
+articleNumber: 15
 target_keyword: "China industrial profits 2026 receivables collection period suppliers"
 search_intent: "informational"
 information_gain: "custom-calculation"
