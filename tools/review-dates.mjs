@@ -155,6 +155,47 @@ const upcoming = published.filter((a) => a.reviewBy && a.reviewBy > TODAY).sort(
 
 const unset = published.filter((a) => !a.reviewBy);
 
+/**
+ * Publishing cadence against spec v1.3 §8: at most one piece per day, and three
+ * to four per week.
+ *
+ * This exists because the cap had no enforcement at all. The daily profile in
+ * preflight.mjs describes itself as publishing "at most one piece", and nothing
+ * tested it — while the actual record shows eight pieces on 2026-10-02 and three
+ * on 2026-10-03. A written rule with no mechanism is the same failure shape as
+ * the reciprocal-link rule, which decayed for two days unnoticed.
+ *
+ * Reported on the whole library rather than only recent days, because the
+ * question "has this ever been breached" is the one that decides whether the cap
+ * is real or should be revised.
+ */
+const cadence = (() => {
+  const byDay = new Map();
+  for (const a of published) {
+    if (!a.publishDate) continue;
+    const d = a.publishDate.slice(0, 10);
+    byDay.set(d, (byDay.get(d) ?? 0) + 1);
+  }
+  const days = [...byDay].sort();
+  const overCap = days.filter(([, n]) => n > 1);
+
+  // ISO week key, so the per-week figure is comparable across month boundaries.
+  const weekOf = (iso) => {
+    const d = new Date(`${iso}T00:00:00Z`);
+    const day = (d.getUTCDay() + 6) % 7;
+    d.setUTCDate(d.getUTCDate() - day);
+    return d.toISOString().slice(0, 10);
+  };
+  const byWeek = new Map();
+  for (const [d, n] of days) {
+    const w = weekOf(d);
+    byWeek.set(w, (byWeek.get(w) ?? 0) + n);
+  }
+  const overWeek = [...byWeek].filter(([, n]) => n > 4).sort();
+
+  return { byDay: days, overCap, byWeek: [...byWeek].sort(), overWeek };
+})();
+
 const line = (a) => {
   const d = a.reviewBy ? days(a.reviewBy, TODAY) : null;
   const when = d === null ? "  --  " : d === 0 ? "today " : `${String(d).padStart(4)}d`;
@@ -170,6 +211,34 @@ if (flag("overdue")) {
   for (const a of due) console.log(line(a));
   console.log(`\n${due.length} article(s) overdue.`);
   process.exit(1);
+}
+
+if (flag("cadence")) {
+  console.log(`PUBLISHING CADENCE vs spec v1.3 §8 (at most 1/day, 3-4/week)\n`);
+  console.log("  by day:");
+  for (const [d, n] of cadence.byDay) console.log(`    ${d}  ${n} ${n > 1 ? "  <-- OVER CAP" : ""}`);
+  console.log("\n  by week:");
+  for (const [w, n] of cadence.byWeek) console.log(`    week of ${w}  ${n} ${n > 4 ? "  <-- OVER" : ""}`);
+
+  console.log(`\n  days with more than one piece : ${cadence.overCap.length}`);
+  console.log(`  weeks with more than four     : ${cadence.overWeek.length}`);
+  console.log(
+    `  pieces total                  : ${published.length} over ${cadence.byDay.length} publish day(s)`,
+  );
+
+  // Reported, not failed. A checker that fails forever gets ignored, and the cap
+  // has already been exceeded historically — the five-day launch alone put eight
+  // pieces on one day. The live question is whether the cap is real, in which
+  // case the tool needs to block on the CURRENT day, or whether it should be
+  // revised, which is the more likely reading given the operator's own stated
+  // limit of one per category per day, up to five categories.
+  console.log(
+    "\n  This is a report, not a gate. The cap has already been exceeded and a\n" +
+      "  permanent failure would be ignored. Decide which is true:\n" +
+      "    - the cap is real  -> block publication when today already has a piece\n" +
+      "    - the cap is wrong -> revise §8 to match how the site is actually run",
+  );
+  process.exit(0);
 }
 
 const md = [];
