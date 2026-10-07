@@ -118,6 +118,11 @@ const metrics = {
   gscCalls: 0,
   retries: 0,
   failures: 0,
+  /** Per-call failures during discovery; set by expand(). */
+  googleFails: 0,
+  bingSuggestFails: 0,
+  /** True when the shortlist order carries no signal. See the sort above. */
+  rankingDegenerate: false,
   degraded: [],
 };
 
@@ -514,6 +519,12 @@ function expand(seeds) {
     }
   }
   log(`  ${candidates.size} candidates passed the relevance filter (rejected ${rejected}; google failures ${googleFails}, bing ${bingFails})`);
+  // Publish the per-call failure counts so the end-of-run summary can report
+  // them. They were local to this function, and the summary's "source failures"
+  // counter only counts failures that reached a selected row — so a run with 26
+  // failed suggest calls reported zero source failures and looked clean.
+  metrics.googleFails = googleFails;
+  metrics.bingSuggestFails = bingFails;
   return candidates;
 }
 
@@ -736,6 +747,50 @@ scored.sort((a, b) => {
   return a.keyword.length - b.keyword.length;
 });
 
+// Does the ranking actually discriminate, or is it falling through to the last
+// tiebreaker?
+//
+// hit_count is out of three, and with GSC unconfigured no row can exceed two;
+// with no Bing key, monthly_volume is null for every row. When both of those
+// hold, every comparison reaches `a.keyword.length - b.keyword.length`, so the
+// shortlist is ordered by how short the keyword is. That is not a ranking, and
+// it is not visible in any of the counters — the run reports zero failures and
+// looks healthy while the output carries no signal about which keyword matters.
+//
+// This surfaced when the first full candidate pool was written: 395 rows at
+// hit_count 1 or 2, none at 3, and 373 of them at 1.
+const distinctHits = new Set(scored.map((r) => r.hit_count)).size;
+const anyVolume = scored.some((r) => r.monthly_volume !== null && r.monthly_volume !== undefined);
+const rankingDegenerate = distinctHits === 1 || (!anyVolume && distinctHits <= 2);
+
+if (rankingDegenerate) {
+  log("");
+  log("  !! RANKING IS DEGENERATE — the shortlist order carries no signal.");
+  log(`     distinct hit_count values: ${distinctHits}; volume data present: ${anyVolume}`);
+  log("     Every comparison falls through to 'shorter keyword first'. Do not");
+  log("     treat the top of this list as the best opportunities. To fix, supply");
+  log("     BING_API_KEY (absolute volume) and GSC credentials (a third source,");
+  log("     which is what lifts hit_count above 2).");
+  log("");
+  metrics.rankingDegenerate = true;
+}
+
+// ------------------------------------------------------------------- output
+
+/**
+ * CSV cell escaping, used by both the candidate pool and the shortlist.
+ *
+ * Declared before its first use, not beside the shortlist writer. `const` is not
+ * hoisted in any usable sense: the pool is written earlier in the file, so
+ * placing this next to the shortlist produced
+ * "ReferenceError: Cannot access 'csvCell' before initialization" — twice, since
+ * the first attempt simply moved it from after the pool to still-after the pool.
+ */
+const csvCell = (v) => {
+  const s = v === null || v === undefined ? "-" : String(v);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+};
+
 const selected = scored.slice(0, args.limit);
 
 log(`  scored ${scored.length} candidates, selected ${selected.length}`);
@@ -743,8 +798,38 @@ const dist = {};
 for (const r of selected) dist[r.hit_count] = (dist[r.hit_count] ?? 0) + 1;
 log(`  hit_count distribution: ${JSON.stringify(dist)}`);
 
+// Keep the whole scored pool, not just the twelve that made the cut.
+//
+// The first run of this tool scored 139 candidates and kept 12, discarding the
+// other 127 permanently — they were never written anywhere, only counted in a
+// log line. That is the wrong trade for a tool whose output is a list a human
+// picks from: the selected twelve are ranked by hit_count, which on a degraded
+// batch (no volume data, no GSC) is a weak signal, so the ranking is not
+// trustworthy enough to justify throwing the rest away. A later run also only
+// reports what it re-discovers, so a discarded candidate has to be found again.
+//
+// The pool file is a working file, not the deliverable. The CSV stays the
+// fifteen-row shortlist.
+const poolPath = join(OUT_DIR, `candidates_${STAMP}.csv`);
+{
+  const poolLines = [
+    ["keyword", "hit_count", "source_bing", "source_suggest", "source_gsc",
+     "monthly_volume", "competition", "intent", "seeds"].join(","),
+  ];
+  for (const r of scored) {
+    poolLines.push([
+      r.keyword, r.hit_count, r.source_bing, r.source_suggest, r.source_gsc,
+      r.monthly_volume ?? "-", r.competition ?? "-", r.intent,
+      [...(r.seeds ?? [])].join(" "),
+    ].map(csvCell).join(","));
+  }
+  writeFileSync(poolPath, "\uFEFF" + poolLines.join("\n") + "\n", "utf8");
+  log(`  candidate pool : ${scored.length} rows -> ${poolPath.split(/[\\/]/).pop()}`);
+  log(`  shortlist      : ${selected.length} of ${scored.length} kept in the CSV`);
+}
+
 if (args.dryRun) {
-  log("dry run — nothing written");
+  log("dry run — no shortlist written");
   console.log("\nTop 10 preview:");
   for (const r of selected.slice(0, 10)) {
     console.log(`  ${r.hit_count}  ${String(r.monthly_volume ?? "-").padStart(7)}  ${r.intent}  ${r.keyword}`);
@@ -760,10 +845,6 @@ const COLUMNS = [
   "used_date", "note",
 ];
 
-const csvCell = (v) => {
-  const s = v === null || v === undefined ? "-" : String(v);
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-};
 
 const csvPath = join(OUT_DIR, `keywords_${STAMP}.csv`);
 const lines = [COLUMNS.join(",")];
@@ -792,7 +873,25 @@ log(`  bing calls     : ${metrics.bingCalls}`);
 log(`  gsc calls      : ${metrics.gscCalls}`);
 log(`  retries        : ${metrics.retries}`);
 log(`  source failures: ${metrics.failures + bingFailures}`);
+// Per-call failures were invisible in the first run. The summary reported
+// "source failures: 0" while the log carried 26 individual "suggest failed"
+// lines, because this counter only tallies failures that reached a selected
+// row. A batch can therefore look clean while a quarter of its seeds never
+// answered, and the row count alone does not reveal it. Report both.
+log(`  call failures  : google ${metrics.googleFails}, bing suggest ${metrics.bingSuggestFails},` +
+    ` bing stats ${bingFailures}`);
+log(`  calls made     : suggest ${metrics.suggestCalls}, bing ${metrics.bingCalls}`);
+if (metrics.googleFails > 0 || metrics.bingSuggestFails > 0) {
+  log("  NOTE: individual discovery calls failed and were retried a limited number");
+  log("  of times. Expansions for those queries are missing from the pool, so a");
+  log("  re-run will surface candidates this run never saw. This is a partial");
+  log("  batch, not a clean one, even when every selected row looks complete.");
+}
 log(`  DEGRADED       : ${degraded ? metrics.degraded.join("; ") : "no — all three sources answered"}`);
+if (metrics.rankingDegenerate) {
+  log("  DEGRADED       : ranking is degenerate — see the warning above. The");
+  log("                   shortlist is ordered by keyword length, not by demand.");
+}
 if (degraded) {
   log("  This batch is marked degraded. hit_count is out of 3 but the missing");
   log("  source contributes 0 to every row, so cross-source ranking is not");
