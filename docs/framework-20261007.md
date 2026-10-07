@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 11:58:50 UTC  
+生成时间：2026-10-07 13:24:38 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`e15a01f docs: article numbering and the per-round report, added to the instruction`
+对应提交：`e54adab fix: a gate I broke and pushed, stable article numbering, and what the scheduled task actually did`
 
 ## 顶层结构
 
@@ -47,6 +47,8 @@ china-cross-border-insider/
 │       ├── china-2026-export-duty-wrought-metals.json
 │       ├── china-export-rebate-vs-export-duty-2026.json
 │       ├── china-export-tax-rebate-removal-battery-solar.json
+│       ├── china-industrial-profits-q4-supply-chain.json
+│       ├── china-input-cost-gap-supplier-price-negotiation-2027.json
 │       ├── china-malaysia-origin-data-electronic-december-2026.json
 │       ├── china-ppi-positive-factory-price-drift.json
 │       ├── china-rare-earth-export-controls-licence-regime.json
@@ -66,6 +68,11 @@ china-cross-border-insider/
 │       └── us-vs-eu-low-value-parcel-charges-2026.json
 ├── docs/   # generated reference documents
 │   └── framework-20261007.md
+├── logs/
+│   ├── daily-2026-10-07_2035.log
+│   ├── daily-2026-10-07_2036.log
+│   ├── daily-2026-10-07_2037.log
+│   └── daily-2026-10-07_2040.log
 ├── public/   # favicon, og-default.png, _headers
 │   ├── _headers
 │   ├── favicon.svg
@@ -94,6 +101,7 @@ china-cross-border-insider/
 │   │       ├── china-export-rebate-vs-export-duty-2026.md
 │   │       ├── china-export-tax-rebate-removal-battery-solar.md
 │   │       ├── china-industrial-profits-q4-supply-chain.md
+│   │       ├── china-input-cost-gap-supplier-price-negotiation-2027.md
 │   │       ├── china-malaysia-origin-data-electronic-december-2026.md
 │   │       ├── china-ppi-positive-factory-price-drift.md
 │   │       ├── china-rare-earth-export-controls-licence-regime.md
@@ -149,6 +157,7 @@ china-cross-border-insider/
 │   │   └── make-video.cpython-313.pyc
 │   ├── lib/
 │   │   └── gsc.mjs
+│   ├── _tmp_week.mjs
 │   ├── cbam-cost.mjs
 │   ├── comparison-candidates.mjs
 │   ├── deposit-risk.mjs
@@ -175,8 +184,10 @@ china-cross-border-insider/
 │   ├── qa-report.mjs
 │   ├── r2-upload.mjs
 │   ├── rebate-passthrough.mjs
+│   ├── register-daily-task.mjs
 │   ├── review-dates.mjs
 │   ├── reviewer-check.mjs
+│   ├── run-daily.ps1
 │   ├── serp-check.mjs
 │   ├── start-n8n.ps1
 │   ├── steel-trq.mjs
@@ -198,6 +209,7 @@ china-cross-border-insider/
 ├── 英文站首页_完整版.html
 ├── 盈亏平衡测算.md
 ├── 指令_完整版.md
+├── 自动化_每日任务.txt
 ├── astro.config.mjs
 ├── cbam_2023R0956.html
 ├── cbam_reg.html
@@ -210,7 +222,6 @@ china-cross-border-insider/
 ├── eurlex1.html
 ├── eurlex2.html
 ├── landed-math-dossier-2026-10-01.txt
-├── MSG57.txt
 ├── oj_reg.html
 ├── p_6a2f38.txt
 ├── p_a8b32e.txt
@@ -238,12 +249,12 @@ china-cross-border-insider/
 
 | 项 | 数量 |
 | --- | --- |
-| 已发布文章 | 20 篇 |
-| 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
-| .md 总数 | 28 |
+| 已发布文章 | 22 篇 |
+| 草稿 | 7 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
+| .md 总数 | 29 |
 | 成本模型 | 12 |
-| tools 脚本总数 | 33 |
-| SERP 快照 | 20 |
+| tools 脚本总数 | 36 |
+| SERP 快照 | 22 |
 | 机审报告 | 20 |
 
 ## 技术栈

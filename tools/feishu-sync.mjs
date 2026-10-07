@@ -37,6 +37,16 @@ const TABLE_ID = process.env.FEISHU_TABLE_ID ?? "tble72K3njPwJRcN";
 const BASE = "https://open.feishu.cn/open-apis";
 const DRY = process.argv.includes("--dry-run");
 
+/*
+ * --reset deletes every row in this table before writing.
+ *
+ * Needed once, when the numbering scheme changed: rows written under the old
+ * order-derived numbers are keyed differently from the new explicit ones, so an
+ * upsert would leave both sets in place and the ledger would carry each article
+ * twice. Only ever touches the table this project created.
+ */
+const RESET = process.argv.includes("--reset");
+
 /* ------------------------------------------------------------------ repo side */
 
 const DIR = join(ROOT, "src", "content", "blog");
@@ -197,6 +207,17 @@ for (const rec of existing.data?.items ?? []) {
   if (key) byNumber.set(key, rec.record_id);
 }
 console.log(`\n  existing rows in Feishu: ${byNumber.size}`);
+
+if (RESET && byNumber.size) {
+  console.log(`  --reset: deleting ${byNumber.size} existing rows before writing`);
+  let deleted = 0;
+  for (const id of byNumber.values()) {
+    const del = await j(`${BASE}/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records/${id}`, { method: "DELETE", headers: auth });
+    if (del.code === 0) deleted++;
+  }
+  console.log(`  deleted ${deleted} of ${byNumber.size}`);
+  byNumber.clear();
+}
 
 let created = 0, updated = 0, failed = 0;
 for (const r of rows) {
