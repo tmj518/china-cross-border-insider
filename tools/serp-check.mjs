@@ -1,11 +1,11 @@
 /**
- * Information-gain gate ‚Äî spec v1.3 ¬ß9.2 (R3), automated.
+ * Information-gain gate ‚Ä?spec v1.3 ¬ß9.2 (R3), automated.
  *
  * The rule: before publishing, pull the top results for the piece's target
  * keyword and prove the piece contains something they do not. If the claim in
  * `information_gain` cannot be demonstrated, the piece is not published.
  *
- * Architecture note ‚Äî why the SERP source is pluggable:
+ * Architecture note ‚Ä?why the SERP source is pluggable:
  *   Scraping a search engine from this machine is unreliable. Bing truncates
  *   the query and serves dictionary pages, and Google, DuckDuckGo and
  *   Startpage are unreachable. The valuable part of this gate is the
@@ -18,10 +18,10 @@
  *   In the production pipeline the writing/QA agent has a search tool, so it
  *   supplies the snapshot. A paid SERP API drops in the same way.
  *
- * Honesty rules baked in ‚Äî the gate never invents a pass:
- *   - No SERP, or a SERP that is not topically relevant ‚Üí INCONCLUSIVE.
- *   - Fewer than two competitor pages load ‚Üí INCONCLUSIVE.
- *   - `own-data` cannot be verified against a SERP ‚Üí INCONCLUSIVE by design.
+ * Honesty rules baked in ‚Ä?the gate never invents a pass:
+ *   - No SERP, or a SERP that is not topically relevant ‚Ü?INCONCLUSIVE.
+ *   - Fewer than two competitor pages load ‚Ü?INCONCLUSIVE.
+ *   - `own-data` cannot be verified against a SERP ‚Ü?INCONCLUSIVE by design.
  *
  * Run:  node tools/serp-check.mjs <file.md>... [--serp=file:serp.json]
  *       node tools/serp-check.mjs --all --serp=bing
@@ -45,7 +45,7 @@ const JUNK_HOSTS = [
 
 /**
  * Official publishers. For a policy query the top result is frequently the
- * primary document itself ‚Äî a Federal Register notice, a customs
+ * primary document itself ‚Ä?a Federal Register notice, a customs
  * announcement, a ministry page. That is the input this site works from, not
  * competition, so it is reported separately and kept out of the denominator
  * when asking "do competitors already deliver this?".
@@ -147,7 +147,7 @@ const hostOf = (url) => {
 };
 
 /**
- * Document identifiers that count as citing a primary source ‚Äî recognisable
+ * Document identifiers that count as citing a primary source ‚Ä?recognisable
  * numbering schemes rather than the word "announcement", so a loose mention
  * does not satisfy the rule.
  */
@@ -156,8 +156,8 @@ const PRIMARY_DOC_PATTERN = new RegExp(
     "\\b\\d{1,3}\\s?FR\\s?\\d{3,6}\\b",
     "\\bHTSUS\\s?9903\\b",
     "\\bAnnouncement\\s+No\\.?\\s?\\d+",
-    "\\bÂÖ¨Âëä\\s?\\d+\\s?Âè∑",
-    "„Äî\\d{4}„Äï\\s?\\d+\\s?Âè∑",
+    "\\bÂÖ¨Âëä\\s?\\d+\\s?Âè?,
+    "„Äî\\d{4}„Äï\\s?\\d+\\s?Âè?,
     "\\b(?:Periodical|Circular|Order|Decision)\\s+No\\.?\\s?\\(?\\d+",
     "\\bRegulation\\s+\\(EU\\)\\s+\\d{4}/\\d+",
     "\\bCELEX\\b",
@@ -202,7 +202,7 @@ export function serpRelevance(keyword, results) {
  * puts in its column heading, and missing it failed an article whose whole
  * asset was that table.
  */
-const MONEY = /([$‚Ç¨¬£¬•]\s?\d|\b(?:EUR|USD|GBP|CNY|RMB)\b)/i;
+const MONEY = /([$‚Ç¨¬£¬•]\s?\d|\b(?:EUR|USD|GBP|CNY|RMB|yuan)\b)/i;
 const PER_UNIT =
   /(per unit|per item|per container|per-container|per 40|per teu|per kg|per kilogram|per watt|per tonne|per ton|per declaration line)/i;
 
@@ -248,7 +248,7 @@ function serpFromFile(path) {
 
 /**
  * Resolve the snapshot for one article. If the provider points at a directory,
- * the snapshot is `<dir>/<article-basename>.json` ‚Äî so a run over --all picks
+ * the snapshot is `<dir>/<article-basename>.json` ‚Ä?so a run over --all picks
  * up the right file per piece without extra flags.
  */
 function resolveSnapshot(basePath, articleFile) {
@@ -278,8 +278,8 @@ function articleSignals(fm, body) {
    *
    * The bug was live and invisible: the fourteen previously published pieces all
    * declare `custom-calculation` or `primary-source`, and only `cross-source`
-   * consults this number. The first cross-source article ‚Äî a comparison of two
-   * published instruments, with six named sources and eight sourced figures ‚Äî
+   * consults this number. The first cross-source article ‚Ä?a comparison of two
+   * published instruments, with six named sources and eight sourced figures ‚Ä?
    * was reported as "does not show at least two named sources".
    *
    * The deeper mistake is that one field name carried two meanings. The
@@ -346,7 +346,7 @@ const CLAIM_RULES = {
   "own-data": {
     verify: () => ({
       ok: null,
-      why: "proprietary data cannot be verified against a SERP ‚Äî route to a reviewer",
+      why: "proprietary data cannot be verified against a SERP ‚Ä?route to a reviewer",
     }),
   },
 };
@@ -372,7 +372,7 @@ async function check(file, provider) {
         ? serpFromFile(resolveSnapshot(provider.path, file))
         : await serpFromBing(keyword);
   } catch (e) {
-    return { ...report, reason: `SERP fetch failed (${e.message}) ‚Äî cannot verify, refusing to pass` };
+    return { ...report, reason: `SERP fetch failed (${e.message}) ‚Ä?cannot verify, refusing to pass` };
   }
 
   // Drop hosts that can never be a competitor, then split official sources
@@ -384,24 +384,24 @@ async function check(file, provider) {
 
   // Zero non-official competitors is not a failed check, it is a different
   // question. The information-gain claim cannot be false when nobody is
-  // competing, so the claim is trivially supported ‚Äî and the risk moves to
+  // competing, so the claim is trivially supported ‚Ä?and the risk moves to
   // demand, which this gate does not measure. That gets reported as a warning
   // rather than hidden inside an INCONCLUSIVE.
   const warnings = [];
   if (competitors.length === 0) {
     return {
       ...report,
-      reason: `no non-official organic results for this keyword (${official.length} official sources, ${organic.length} raw) ‚Äî differentiation is trivially satisfied, but search demand must be verified separately`,
+      reason: `no non-official organic results for this keyword (${official.length} official sources, ${organic.length} raw) ‚Ä?differentiation is trivially satisfied, but search demand must be verified separately`,
     };
   }
   if (competitors.length < 2) {
     warnings.push(
-      `only ${competitors.length} non-official competitor ‚Äî the differentiation claim is trivially true, so verify demand for this keyword separately`,
+      `only ${competitors.length} non-official competitor ‚Ä?the differentiation claim is trivially true, so verify demand for this keyword separately`,
     );
   }
 
   // The relevance guard exists to catch a scraped SERP that is not about the
-  // query ‚Äî the failure mode that produced a false pass in testing, where
+  // query ‚Ä?the failure mode that produced a false pass in testing, where
   // Bing truncated the keyword and served dictionary pages. A file snapshot is
   // different: its relevance is asserted by whoever produced it, from a real
   // search. Running the guard on it would second-guess the producer with a
@@ -411,7 +411,7 @@ async function check(file, provider) {
     if (!rel.ok) {
       return {
         ...report,
-        reason: `SERP is not topically relevant (${rel.detail}) ‚Äî likely a locale or query-truncation problem. Verify demand for this keyword before publishing; the gate cannot certify it.`,
+        reason: `SERP is not topically relevant (${rel.detail}) ‚Ä?likely a locale or query-truncation problem. Verify demand for this keyword before publishing; the gate cannot certify it.`,
       };
     }
   } else {
@@ -433,11 +433,11 @@ async function check(file, provider) {
   if (loaded.length < 1) {
     return {
       ...report,
-      reason: `no competitor page could be loaded (0/${report.competitors.length}) ‚Äî cannot verify, refusing to pass`,
+      reason: `no competitor page could be loaded (0/${report.competitors.length}) ‚Ä?cannot verify, refusing to pass`,
     };
   }
   if (loaded.length < 2) {
-    warnings.push(`only ${loaded.length} competitor page loaded ‚Äî thin evidence`);
+    warnings.push(`only ${loaded.length} competitor page loaded ‚Ä?thin evidence`);
   }
 
   const verdict = rule.verify(articleSignals(fm, body), loaded);
@@ -485,8 +485,8 @@ let inconclusive = 0;
 for (const file of files) {
   const r = await check(file, provider);
   console.log(`\n${file}`);
-  console.log(`  keyword      : ${r.keyword ?? "‚Äî"}`);
-  console.log(`  claimed gain : ${r.claim ?? "‚Äî"}`);
+  console.log(`  keyword      : ${r.keyword ?? "‚Ä?}`);
+  console.log(`  claimed gain : ${r.claim ?? "‚Ä?}`);
   if (r.official?.length) {
     console.log(`  official sources in SERP (excluded from competition):`);
     for (const o of r.official) console.log(`    ${o.url}`);
@@ -498,7 +498,7 @@ for (const file of files) {
       `    ${c.url}\n      ${s ? `${s.words} words ¬∑ ${s.tables} tables ¬∑ costTable=${s.costTable} ¬∑ perUnit=${s.perUnitMath} ¬∑ primaryDoc=${s.primaryDocId} ¬∑ figures=${s.figureDensity}` : "FETCH FAILED: " + c.error}`,
     );
   }
-  console.log(`  verdict      : ${r.verdict} ‚Äî ${r.reason}`);
+  console.log(`  verdict      : ${r.verdict} ‚Ä?${r.reason}`);
   for (const w of r.warnings ?? []) console.log(`  ! warning    : ${w}`);
   if (r.verdict === "UNSUPPORTED") unsupported++;
   if (r.verdict === "INCONCLUSIVE") inconclusive++;
