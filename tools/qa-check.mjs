@@ -416,6 +416,61 @@ function reportLibraryClaims(files) {
     ],
   ];
 
+  /*
+   * Cadence promises in the site's own copy, checked against the publication
+   * record.
+   *
+   * Added after the capture box was found promising "One email every morning"
+   * under the heading "Daily Brief", while the record was eighteen articles
+   * across five non-consecutive days and no email had ever been sent. Two dead
+   * homepage branches carried the same class of claim — "the morning it
+   * publishes", "the archive fills up weekly" — and would have gone live the
+   * moment the branch rendered.
+   *
+   * Articles are the only thing this site publishes, so their dates are the
+   * record. A copy string asserting a cadence must be one the gaps support. The
+   * rule cannot judge prose in general; it can judge this, and this is what broke.
+   */
+  const publishDates = all
+    .map((raw) => /^publishDate:\s*"?(\d{4}-\d{2}-\d{2})"?\s*$/m.exec(fmOf(raw))?.[1])
+    .filter(Boolean)
+    .sort();
+
+  const cadenceClaims = [];
+  const claimSources = [
+    ...readdirSync("src/pages").filter((f) => f.endsWith(".astro")).map((f) => join("src/pages", f)),
+    ...readdirSync("src/components").filter((f) => f.endsWith(".astro")).map((f) => join("src/components", f)),
+  ];
+  // A promise of daily or weekly delivery, in words a reader sees.
+  const CADENCE = /\b(every (day|morning|week)|daily (brief|email|digest|update)|weekly (digest|email|update)|fills up (daily|weekly)|the (morning|day|week) it publishes)\b/i;
+  for (const f of claimSources) {
+    const lines = readFileSync(f, "utf8").split("\n");
+    for (const [i, line] of lines.entries()) {
+      const t = line.trim();
+      if (!t || /^\s*(\*|\/\/|\/\*)/.test(t)) continue; // comments explain history
+      const text = t.replace(/<[^>]+>/g, " ").replace(/\{[^}]*\}/g, " ").replace(/\s+/g, " ").trim();
+      if (CADENCE.test(text)) cadenceClaims.push(`${f.replace(/\\/g, "/")}:${i + 1} — ${text.slice(0, 70)}`);
+    }
+  }
+
+  // Largest gap between consecutive publication days, in days.
+  let maxGap = 0;
+  for (let i = 1; i < publishDates.length; i++) {
+    const gap = Math.round((new Date(publishDates[i]) - new Date(publishDates[i - 1])) / 86400000);
+    if (gap > maxGap) maxGap = gap;
+  }
+
+  const distinctDays = new Set(publishDates).size;
+  const cadenceOk = cadenceClaims.length === 0;
+  claims.push([
+    "no cadence promise in site copy",
+    cadenceOk,
+    cadenceOk
+      ? `record: ${publishDates.length} article(s) on ${distinctDays} day(s), largest gap ${maxGap}`
+      : `${cadenceClaims.length} claim(s): ${cadenceClaims.join(" | ")}`,
+  ]);
+
+  const cadence = claims.pop();
   console.log("\nABOUT-PAGE CLAIMS (whole library)");
   console.log("=".repeat(78));
   let failed = 0;
@@ -423,13 +478,28 @@ function reportLibraryClaims(files) {
     console.log(`  ${ok ? "[ ok ]" : "[FAIL]"} ${name.padEnd(42)} ${detail}`);
     if (!ok) failed++;
   }
+
+  /*
+   * The cadence check blocks; the four above do not.
+   *
+   * The others are content defects that surface in the library and are printed
+   * loudly but left to the author. A cadence promise is different in kind: it is
+   * a factual claim about this site, published to readers, and checkable against
+   * the publication record. "One email every morning" sat on every page of the
+   * site for a week without a single email having been sent. That belongs in the
+   * exit code, not in a report nobody reads.
+   */
+  const [cName, cOk, cDetail] = cadence;
+  console.log(`  ${cOk ? "[ ok ]" : "[FAIL]"} ${cName.padEnd(42)} ${cDetail}`);
+  if (!cOk) failed++;
+
   if (failed) {
     console.log(
       `\n  ${failed} About-page promise(s) no longer hold. Either fix the library or fix\n` +
         "  the About page — do not leave the site describing a process it abandoned.",
     );
   }
-  return failed;
+  return { total: failed, blocking: cOk ? 0 : 1 };
 }
 
 const args = process.argv.slice(2);
@@ -476,13 +546,14 @@ for (const file of files) {  const raw = readFileSync(file, "utf8");
 }
 
 // Only in library mode: these are claims about the whole set, and running them
-// per file would report the same four lines once per article.
+// per file would report the same lines once per article.
 if (args[0] === "--all") {
-  const claimFailures = reportLibraryClaims(files);
-  // A broken About-page promise is a content defect, not a build failure, so it
-  // does not set exit 1 on its own — but it is printed loudly and it is the kind
-  // of thing that should be fixed the moment it appears.
-  void claimFailures;
+  const claimResult = reportLibraryClaims(files);
+  // Most of these are content defects: printed loudly, left to the author, and
+  // deliberately not build failures. The cadence check is the exception and does
+  // set the exit code — see the note in reportLibraryClaims.
+  if (claimResult.blocking) anyBlocking = true;
+  void claimResult.total;
 }
 
 console.log(anyBlocking ? "\nRESULT: BLOCKED — fix the blocking rules above.\n" : "\nRESULT: PASS — every blocking rule cleared.\n");
