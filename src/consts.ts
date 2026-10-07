@@ -25,7 +25,30 @@ export const SITE = {
   // /privacy/ ("No tracking scripts. No advertising networks. No third-party
   // analytics"). The footer now carries the disclaimer and the copyright only.
   language: "en",
-  /** Newsletter placeholder — swap for the real provider (Buttondown / ConvertKit) later. */
+  /**
+   * Newsletter form target.
+   *
+   * Provider decided 2026-10-07: Buttondown. Spec §P8 listed Buttondown,
+   * ConvertKit and MailerLite with Buttondown marked cheapest. AdSense was
+   * rejected the same day because it conflicts with the privacy page's "no
+   * advertising networks" promise, so the path is free content → email
+   * subscribers → paid subscription, and this form is the only capture point for
+   * step two. Subscriber count is the first KPI.
+   *
+   * Left empty until the account exists, which is why the component renders a
+   * mailto fallback rather than a form: a form posting nowhere returns HTTP 405
+   * from Cloudflare, which is worse than no form. See NewsletterForm.astro.
+   *
+   * TO ENABLE: create the Buttondown account, then set this to
+   *
+   *   "https://buttondown.com/api/emails/embed-subscribe/<username>"
+   *
+   * The embed endpoint takes a POST with the field named `email`, which is what
+   * the component already sends — no other change is needed. Free tier covers the
+   * first 100 subscribers; beyond that it is about $90 a year at ~1,000, the
+   * project's first real operating cost, and it starts exactly when subscriber
+   * count starts to matter.
+   */
   newsletterAction: "",
 };
 
