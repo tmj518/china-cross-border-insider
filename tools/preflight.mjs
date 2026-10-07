@@ -214,13 +214,57 @@ async function checkEnvironment() {
   if (review.status === 0) {
     ok("review-dates", reviewOut.split("\n")[0] || "nothing overdue");
   } else if (/OVERDUE FOR REVIEW/.test(reviewOut)) {
-    const n = /(\d+) article\(s\) overdue/.exec(reviewOut)?.[1] ?? "?";
+    const n = /(\d+ )?article\(s\) overdue|OVERDUE/.test(reviewOut) ? (/(\d+) article\(s\) overdue/.exec(reviewOut)?.[1] ?? "?") : "?";
     // Not a hard failure of the environment, but it is a content obligation.
     note("review-dates", `${n} article(s) past their reviewBy date — see data/review/upcoming.md`);
   } else {
     fail("review-dates", `could not run: ${reviewOut.split("\n").slice(-1)[0].slice(0, 90)}`);
   }
 }
+
+/**
+ * The real build, run locally.
+ *
+ * This is the only check that reproduces what Cloudflare Pages actually does. On
+ * 2026-10-07 a single content-schema violation — a subtitle three characters over
+ * its limit — failed the build and took the whole site down to a stale
+ * deployment for over ten minutes, while every gate reported green because
+ * qa-check reads markdown as text and never validated against the Zod schema.
+ *
+ * A green build locally is not proof the deploy will succeed, but a red one is
+ * proof it will not, and that is the whole value here. It is cheap: about three
+ * seconds and 26 pages on this machine, measured repeatedly.
+ *
+ * Run for every profile. There is no profile where a broken build is acceptable.
+ */
+function checkBuild() {
+  const started = Date.now();
+  const r = spawnSync(NODE, [join(ROOT, "node_modules", "astro", "bin", "astro.mjs"), "build"], {
+    cwd: ROOT,
+    encoding: "utf8",
+    timeout: 300000,
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
+  const secs = ((Date.now() - started) / 1000).toFixed(1);
+
+  if (r.status === 0) {
+    const pages = /(\d+) page\(s\) built/.exec(out)?.[1] ?? "?";
+    ok("astro build", `${pages} pages in ${secs}s — the deploy will build`);
+  } else {
+    // Surface the schema message, which is the part that says what to fix.
+    const reason =
+      /(InvalidContentEntryDataError[\s\S]{0,200})/.exec(out)?.[1]?.replace(/\s+/g, " ").slice(0, 150) ??
+      out.trim().split("\n").slice(-1)[0]?.slice(0, 150) ??
+      "unknown error";
+    fail(
+      "astro build",
+      `BUILD FAILS (${secs}s) — pushing this breaks the live site for every page. ${reason}`,
+    );
+  }
+}
+
+checkBuild();
 
 function checkCredentials() {
   for (const [label, candidates] of Object.entries(CRED_FILES)) {
