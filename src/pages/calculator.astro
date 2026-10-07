@@ -1,30 +1,40 @@
 ---
 /**
- * Landed-cost calculator — the free tool.
+ * Calculators.
  *
- * Built by copying the benchmark rather than by improving on it. TariffsChart, a
- * site for the same audience with the same deliverable, leads its navigation with
- * a free landed-cost calculator and sells a human-prepared planning summary at
- * $29. Its stated thesis is that importers do not lose money because they cannot
- * multiply a rate by a value, but because one tariff layer was missing from the
- * model. So the calculator's job is to show the layers, not to be clever.
+ * Copied from the benchmark's shape rather than invented: TariffsChart leads its
+ * navigation with a free landed-cost calculator and sells a human-prepared check
+ * on top. Ours exposes the same models the articles are built from, so a figure
+ * published in a piece can be recomputed here instead of taken on trust.
  *
- * The arithmetic is NOT reimplemented here. It is the same model the article
- * pipeline uses, mirrored from src/lib/models.mjs into the script below because a
- * static page has no server to call. The mirroring is deliberate and fragile, so
- * it is marked where it happens: if the model changes, this has to change with
- * it, or the page and our published figures will disagree.
+ * Two modes, chosen because each answers a decision a reader is making now:
  *
- * Everything runs client-side. No request carries the reader's shipment data
- * anywhere, which is consistent with the privacy page's promise of no tracking
- * scripts and no third-party analytics.
+ *   - Landed cost from FOB, the base case, all destinations.
+ *   - Low-value parcel, EU, which changed on 1 July 2026 and changes again on
+ *     1 November 2026 when the EUR 2 handling fee starts. That is 25 days away,
+ *     which makes it the most actionable number on the site.
+ *
+ * A third mode was considered and dropped: the export duty on Chinese raw
+ * materials. It is genuinely priced and the article carries the schedule, but the
+ * rate depends on a customs decision a reader does not control, so a calculator
+ * would have implied a precision the tariff schedule does not offer.
+ *
+ * The arithmetic is NOT reimplemented from scratch. The landed-cost model mirrors
+ * src/lib/models.mjs, and the per-item model mirrors tools/per-item-charge.mjs.
+ * Both are marked where they are mirrored: a static page has no server, so the
+ * models are inlined, and if either changes this must change with it or the page
+ * will disagree with our own published figures.
+ *
+ * Everything runs client-side. No request carries the reader's shipment data, so
+ * the privacy page's promise of no tracking scripts holds on the one page where a
+ * reader types real numbers.
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../consts";
 
-const title = "Import duty and landed-cost calculator";
+const title = "Import duty and landed-cost calculators";
 const description =
-  "Work out duty per unit, duty per container and landed cost from your own FOB, quantity and duty rates. Shows each tariff layer separately, including the Section 301 rate that most calculators omit.";
+  "Work out duty per unit and per container from your own FOB and rates, or what a low-value parcel costs per item under the EU rules that change on 1 November 2026. Every tariff layer shown separately, including the ones most calculators omit.";
 ---
 
 <BaseLayout title={`${title} — ${SITE.name}`} description={description}>
@@ -41,60 +51,108 @@ const description =
 
         <div class="prose">
           <p>
-            Importers rarely lose money because they cannot multiply a duty rate
-            by a shipment value. They lose it because one tariff layer was missing
-            from the model: the base rate is counted and the additional listed
-            rate is not, or a country average is treated as a product-specific
-            figure. This calculator keeps the layers separate so you can see which
-            one is doing the damage.
+            Importers rarely lose money because they cannot multiply a duty rate by
+            a shipment value. They lose it because one tariff layer was missing from
+            the model: the base rate is counted and the additional listed rate is
+            not, or a country average is treated as a product-specific figure, or a
+            flat per-item charge that grows as the basket gets cheaper is left out
+            entirely. Each calculator below keeps the layers separate so you can see
+            which one is doing the damage.
           </p>
 
-          <div class="calc" id="calc">
-            <fieldset>
-              <legend>Your shipment</legend>
-              <div class="calc-grid">
-                <label>
-                  <span>FOB value per unit</span>
-                  <input id="fobUnit" type="number" min="0" step="0.01" value="12.00" inputmode="decimal" />
-                </label>
-                <label>
-                  <span>Units per container</span>
-                  <input id="units" type="number" min="1" step="1" value="5000" inputmode="numeric" />
-                </label>
-                <label>
-                  <span>Base duty rate (%)</span>
-                  <input id="mfn" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
-                </label>
-                <label>
-                  <span>Additional listed rate (%), e.g. Section 301</span>
-                  <input id="s301" type="number" min="0" step="0.1" value="25" inputmode="decimal" />
-                </label>
-                <label>
-                  <span>Freight per container (optional)</span>
-                  <input id="freight" type="number" min="0" step="1" value="0" inputmode="decimal" />
-                </label>
-                <label>
-                  <span>Insurance (% of FOB, optional)</span>
-                  <input id="insurance" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
-                </label>
-              </div>
-            </fieldset>
+          <div class="calc">
+            <div class="calc-modes" role="tablist" aria-label="Calculator">
+              <button type="button" class="calc-mode" data-mode="landed" role="tab" aria-selected="true">
+                Landed cost
+              </button>
+              <button type="button" class="calc-mode" data-mode="parcel" role="tab" aria-selected="false">
+                Low-value parcel (EU)
+              </button>
+            </div>
 
-            <div class="calc-result" id="result" aria-live="polite"></div>
+            <!-- Mode 1: landed cost -->
+            <div class="calc-panel" data-panel="landed">
+              <fieldset>
+                <legend>Your shipment</legend>
+                <div class="calc-grid">
+                  <label>
+                    <span>FOB value per unit</span>
+                    <input id="fobUnit" type="number" min="0" step="0.01" value="12.00" inputmode="decimal" />
+                  </label>
+                  <label>
+                    <span>Units per container</span>
+                    <input id="units" type="number" min="1" step="1" value="5000" inputmode="numeric" />
+                  </label>
+                  <label>
+                    <span>Base duty rate (%)</span>
+                    <input id="mfn" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
+                  </label>
+                  <label>
+                    <span>Additional listed rate (%), e.g. Section 301</span>
+                    <input id="s301" type="number" min="0" step="0.1" value="25" inputmode="decimal" />
+                  </label>
+                  <label>
+                    <span>Freight per container (optional)</span>
+                    <input id="freight" type="number" min="0" step="1" value="0" inputmode="decimal" />
+                  </label>
+                  <label>
+                    <span>Insurance (% of FOB, optional)</span>
+                    <input id="insurance" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
+                  </label>
+                </div>
+              </fieldset>
+              <div class="calc-result" id="result-landed" aria-live="polite"></div>
+            </div>
+
+            <!-- Mode 2: EU low-value parcel -->
+            <div class="calc-panel" data-panel="parcel" hidden>
+              <fieldset>
+                <legend>Your consignment</legend>
+                <div class="calc-grid">
+                  <label>
+                    <span>Items in the consignment</span>
+                    <input id="items" type="number" min="1" step="1" value="3" inputmode="numeric" />
+                  </label>
+                  <label>
+                    <span>Value per item (EUR)</span>
+                    <input id="itemValue" type="number" min="0" step="0.01" value="3.34" inputmode="decimal" />
+                  </label>
+                  <label>
+                    <span>VAT rate (%) — leave 0 to exclude</span>
+                    <input id="vatRate" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
+                  </label>
+                  <label>
+                    <span>Consignment value above EUR 150?</span>
+                    <select id="aboveThreshold">
+                      <option value="no" selected>No — the EUR 3 duty applies</option>
+                      <option value="yes">Yes — no EUR 3 duty, fee still applies</option>
+                    </select>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="calc-result" id="result-parcel" aria-live="polite"></div>
+              <p class="calc-note">
+                The EUR 3 per-item duty runs from 1 July 2026 under Regulation (EU)
+                2026/2108. The EUR 2 Union handling fee applies from 1 November 2026.
+                Both amounts are published figures; the item count and value are
+                yours. The fee is per item and does not care what the item is worth,
+                which is why the effective rate rises as the basket gets cheaper.
+              </p>
+            </div>
 
             <p class="calc-note">
-              A planning estimate, not a filing calculation. Classification,
-              origin, valuation, anti-dumping scope and preference eligibility are
-              decided by customs, not by arithmetic — see
-              <a href="/about/">how this site works</a>.
+              A planning estimate, not a filing calculation. Classification, origin,
+              valuation, anti-dumping scope and preference eligibility are decided by
+              customs, not by arithmetic — see
+              <a href="/sources/">how the sources work</a>.
             </p>
           </div>
 
           <h2>What the layers are</h2>
           <p>
-            Each rate below is published and checkable. Only the last two are
-            generally something a buyer sets themselves, and getting one of those
-            wrong moves the estimate by more than most price negotiations do.
+            Each rate below is published and checkable. The last two are generally
+            something a buyer sets themselves, and getting one of those wrong moves
+            the estimate by more than most price negotiations do.
           </p>
           <table>
             <thead>
@@ -112,35 +170,31 @@ const description =
                 <td>USTR for Section 301; the Official Journal for EU measures</td>
               </tr>
               <tr>
-                <td>Freight per container</td>
-                <td>Your forwarder</td>
-                <td>Your own quotation — no public figure applies to your lane</td>
+                <td>Per-item duty and handling fee</td>
+                <td>The EU, for consignments below the relief threshold</td>
+                <td>Regulation (EU) 2026/2108 and the delegated act setting the fee</td>
               </tr>
               <tr>
-                <td>Insurance</td>
-                <td>Your broker or insurer</td>
-                <td>Your own policy</td>
+                <td>Freight and insurance</td>
+                <td>Your forwarder and your broker</td>
+                <td>Your own quotation — no public figure applies to your lane</td>
               </tr>
             </tbody>
           </table>
 
           <h2>Where this is worked through in full</h2>
-          <p>
-            The same arithmetic appears in the articles, with the sources for
-            every published rate named:
-          </p>
           <ul>
             <li>
-              <a href="/blog/section-301-exclusions-expire-november-2026/">The Section 301 exclusion cliff</a>
-              — what the same shipment costs per unit and per container when an exclusion expires.
-            </li>
-            <li>
-              <a href="/blog/us-de-minimis-postal-route-closes-october-2026/">Low-value parcels into the US</a>
-              — duty, fees and the entry cost that sits on top.
-            </li>
-            <li>
               <a href="/blog/eu-per-item-customs-charge-2026/">The EU per-item charge</a>
-              — where the charge is per item, not per consignment.
+              — the schedule the parcel calculator reproduces, with the statutory deadline and the date of the fee.
+            </li>
+            <li>
+              <a href="/blog/section-301-exclusions-expire-november-2026/">The Section 301 exclusion cliff</a>
+              — what the same shipment costs when an exclusion expires on 9 November 2026.
+            </li>
+            <li>
+              <a href="/blog/us-vs-eu-low-value-parcel-charges-2026/">The same parcel into the US and the EU</a>
+              — why one route costs three times the other.
             </li>
           </ul>
 
@@ -155,10 +209,17 @@ const description =
 
     <aside class="sidebar">
       <div class="widget">
-        <h2>Get the next one</h2>
+        <h2>What changes, and when</h2>
         <p>
-          Duty changes are published with dates. The articles here turn them into
-          per-unit cost.
+          The <a href="/tracker/">tracker</a> lists every dated change these models
+          depend on, with the date each one is re-checked.
+        </p>
+      </div>
+      <div class="widget">
+        <h2>Get the changes</h2>
+        <p>
+          Duty changes are published with dates. When one moves a per-unit cost, it
+          becomes an article.
         </p>
         <p><a href="/rss.xml">RSS feed</a></p>
       </div>
@@ -168,9 +229,7 @@ const description =
 
 <script>
   /*
-   * Mirrored from src/lib/models.mjs. See the note in the frontmatter: a static
-   * page has no server, so the model is inlined here. If models.mjs changes,
-   * change this with it or the page will disagree with our own articles.
+   * Landed cost — mirrored from src/lib/models.mjs.
    */
   function landedCost(s) {
     const {
@@ -198,18 +257,41 @@ const description =
     };
   }
 
+  /*
+   * Per-item charge — mirrored from tools/per-item-charge.mjs.
+   *
+   * The EUR 3 duty replaces the relief that only existed up to EUR 150, so a
+   * consignment above that threshold is outside it. The handling fee is not
+   * value-conditioned and applies either way.
+   */
+  function perItemCharge(s) {
+    const { items, itemValue, dutyPerItem = 3, feePerItem = 2, vatRate = 0, aboveReliefThreshold = false } = s;
+    const duty = aboveReliefThreshold ? 0 : items * dutyPerItem;
+    const fee = items * feePerItem;
+    const value = items * itemValue;
+    const vat = value * vatRate;
+    const total = duty + fee + vat;
+    return {
+      value,
+      duty,
+      fee,
+      vat,
+      total,
+      effectiveRate: value === 0 ? Infinity : total / value,
+      chargeOnlyRate: value === 0 ? Infinity : (duty + fee) / value,
+    };
+  }
+
   const num = (id) => {
     const el = document.getElementById(id);
     const v = el ? Number(el.value) : 0;
     return Number.isFinite(v) ? v : 0;
   };
-  const money = (n) => "$" + n.toFixed(Math.abs(n) < 10 ? 3 : 2);
-  const pctText = (n) => (n * 100).toFixed(1) + "%";
+  const money = (n, sym = "$") => sym + (Number.isFinite(n) ? n.toFixed(Math.abs(n) < 10 ? 2 : 2) : "—");
+  const pctText = (n) => (Number.isFinite(n) ? (n * 100).toFixed(1) + "%" : "—");
 
-  const out = document.getElementById("result");
-  const ids = ["fobUnit", "units", "mfn", "s301", "freight", "insurance"];
-
-  function render() {
+  function renderLanded() {
+    const out = document.getElementById("result-landed");
     if (!out) return;
     const fobUnit = num("fobUnit");
     const unitsPerContainer = num("units");
@@ -222,13 +304,6 @@ const description =
       insuranceRate: num("insurance") / 100,
     };
     const r = landedCost(s);
-
-    /*
-     * The comparison that matters: the same shipment with the listed rate only,
-     * so the additional layer is visible as its own line rather than folded into
-     * one number. That is the failure the benchmark names — a layer missing from
-     * the model — and showing it is the whole point of the tool.
-     */
     const baseOnly = landedCost({ ...s, section301Rate: 0 });
     const extraPerUnit = r.dutyPerUnit - baseOnly.dutyPerUnit;
     const extraPerContainer = r.dutyPerContainer - baseOnly.dutyPerContainer;
@@ -255,6 +330,71 @@ const description =
     `;
   }
 
-  for (const id of ids) document.getElementById(id)?.addEventListener("input", render);
-  render();
+  function renderParcel() {
+    const out = document.getElementById("result-parcel");
+    if (!out) return;
+    const above = document.getElementById("aboveThreshold")?.value === "yes";
+    const r = perItemCharge({
+      items: num("items"),
+      itemValue: num("itemValue"),
+      vatRate: num("vatRate") / 100,
+      aboveReliefThreshold: above,
+    });
+
+    /*
+     * The comparison that carries the lesson: the same total spend spread across
+     * more, cheaper items costs more, because the charge is per item and does not
+     * care what each one is worth.
+     */
+    const items = Math.max(1, num("items"));
+    const sameValueOneItem = perItemCharge({
+      items: 1,
+      itemValue: r.value,
+      vatRate: num("vatRate") / 100,
+      aboveReliefThreshold: above,
+    });
+
+    out.innerHTML = `
+      <table class="calc-table">
+        <tbody>
+          <tr><th>Consignment value</th><td>${money(r.value, "€")}</td></tr>
+          <tr><th>Duty at €3 per item</th><td>${money(r.duty, "€")}</td></tr>
+          <tr><th>Handling fee at €2 per item</th><td>${money(r.fee, "€")}</td></tr>
+          ${r.vat > 0 ? `<tr><th>VAT</th><td>${money(r.vat, "€")}</td></tr>` : ""}
+          <tr class="calc-total"><th>Total charge</th><td>${money(r.total, "€")}</td></tr>
+          <tr><th>Charge as a share of goods value</th><td>${pctText(r.chargeOnlyRate)}</td></tr>
+        </tbody>
+      </table>
+      <table class="calc-table">
+        <caption>Same spend, one item instead of ${items}</caption>
+        <tbody>
+          <tr><th>Total charge</th><td>${money(sameValueOneItem.total, "€")}</td></tr>
+          <tr><th>Difference</th><td>${money(r.total - sameValueOneItem.total, "€")}</td></tr>
+        </tbody>
+      </table>
+    `;
+  }
+
+  // Mode switching.
+  const modes = document.querySelectorAll(".calc-mode");
+  const panels = document.querySelectorAll(".calc-panel");
+  function selectMode(mode) {
+    for (const m of modes) m.setAttribute("aria-selected", String(m.dataset.mode === mode));
+    for (const p of panels) {
+      if (p.dataset.panel === mode) p.removeAttribute("hidden");
+      else p.setAttribute("hidden", "");
+    }
+  }
+  for (const m of modes) m.addEventListener("click", () => selectMode(m.dataset.mode));
+
+  for (const id of ["fobUnit", "units", "mfn", "s301", "freight", "insurance"]) {
+    document.getElementById(id)?.addEventListener("input", renderLanded);
+  }
+  for (const id of ["items", "itemValue", "vatRate", "aboveThreshold"]) {
+    document.getElementById(id)?.addEventListener("input", renderParcel);
+    document.getElementById(id)?.addEventListener("change", renderParcel);
+  }
+
+  renderLanded();
+  renderParcel();
 </script>

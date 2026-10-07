@@ -840,6 +840,41 @@ a {
   background: var(--c-line-faint);
 }
 
+.calc-modes {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.calc-mode {
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  background: none;
+  color: var(--c-ink-4);
+  cursor: pointer;
+  border-radius: 3px 3px 0 0;
+}
+
+.calc-mode:hover {
+  color: var(--c-ink);
+}
+
+.calc-mode[aria-selected="true"] {
+  color: var(--c-ink);
+  font-weight: 600;
+  border-bottom-color: var(--c-ink-6);
+}
+
+.calc-mode:focus-visible {
+  outline: 2px solid var(--c-ink-6);
+  outline-offset: 1px;
+}
+
 .calc fieldset {
   border: 0;
   padding: 0;
