@@ -113,9 +113,20 @@ const jsonLd = {
 
         <h2>Corrections</h2>
         <p>
-          If a figure is wrong, it gets corrected and the correction is noted at
-          the foot of the article. Email{" "}
+          If a figure is wrong, it gets corrected and the change is recorded in a
+          dated note on the article itself, under Corrections and updates. The
+          note states what changed, not just that something did, and the
+          machine-readable date the article was last modified moves only when
+          that note is added — never on a schedule. Email{" "}
           <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
+        </p>
+        <p>
+          Every article also carries an internal review date: the point at which
+          its central figure is expected to have moved. Some of these are hard
+          deadlines published by the authority concerned — a duty rate that
+          changes on a named day, a quota period that ends. When one arrives, the
+          article is rechecked and either updated with a note or left alone
+          deliberately. Nothing is re-dated to look fresh.
         </p>
       </div>
     </main>

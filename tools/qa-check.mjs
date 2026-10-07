@@ -342,6 +342,61 @@ function check(file) {
   return results;
 }
 
+// ---------------------------------------------------------------------------
+// Library-wide claims.
+//
+// The About page makes promises about how this site works, and the code has to
+// keep them. A promise the code no longer honours is worse than no promise: the
+// About page stated for a week that a correction "is noted at the foot of the
+// article", which stopped being true the moment corrections moved into
+// structured `revisions` rendered as a fixed block.
+//
+// Declared as a function rather than inlined at module scope so it can run after
+// the file list exists. The first version was inlined above the `const args` and
+// `let files` declarations and would have thrown a temporal-dead-zone
+// ReferenceError on every run — the same mistake made twice already in this
+// project, which is why the check is written this way instead.
+function reportLibraryClaims(files) {
+  const all = files
+    .map((f) => readFileSync(f, "utf8"))
+    .filter((raw) => !/^draft:\s*true/m.test(raw));
+  const fmOf = (raw) => /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(raw)?.[1] ?? "";
+  const count = (raw, re) => (fmOf(raw).match(re) || []).length;
+
+  const noReview = all.filter((raw) => !/^reviewBy:/m.test(fmOf(raw))).length;
+  const fewFigures = all.filter((raw) => count(raw, /^\s+- value:/gm) < 5).length;
+  const noSources = all.filter((raw) => count(raw, /^\s+- /gm) === 0).length;
+  const dateWithoutRevision = all.filter(
+    (raw) => /^updatedDate:/m.test(fmOf(raw)) && count(raw, /^\s+- date:/gm) === 0,
+  ).length;
+
+  const claims = [
+    ["every article carries reviewBy", noReview === 0, `${noReview} missing`],
+    ["every article carries >= 5 figures", fewFigures === 0, `${fewFigures} short`],
+    ["every article names sources", noSources === 0, `${noSources} with none`],
+    [
+      "updatedDate only with a recorded revision",
+      dateWithoutRevision === 0,
+      `${dateWithoutRevision} article(s) update the date with nothing recorded`,
+    ],
+  ];
+
+  console.log("\nABOUT-PAGE CLAIMS (whole library)");
+  console.log("=".repeat(78));
+  let failed = 0;
+  for (const [name, ok, detail] of claims) {
+    console.log(`  ${ok ? "[ ok ]" : "[FAIL]"} ${name.padEnd(42)} ${detail}`);
+    if (!ok) failed++;
+  }
+  if (failed) {
+    console.log(
+      `\n  ${failed} About-page promise(s) no longer hold. Either fix the library or fix\n` +
+        "  the About page — do not leave the site describing a process it abandoned.",
+    );
+  }
+  return failed;
+}
+
 const args = process.argv.slice(2);
 let files;
 if (args[0] === "--all") {
@@ -355,8 +410,7 @@ if (args[0] === "--all") {
 }
 
 let anyBlocking = false;
-for (const file of files) {
-  const raw = readFileSync(file, "utf8");
+for (const file of files) {  const raw = readFileSync(file, "utf8");
   const isDraft = /^draft:\s*true/m.test(raw);
   const results = check(file);
 
@@ -384,6 +438,16 @@ for (const file of files) {
   }
 
   if (!isDraft && blocks.length) anyBlocking = true;
+}
+
+// Only in library mode: these are claims about the whole set, and running them
+// per file would report the same four lines once per article.
+if (args[0] === "--all") {
+  const claimFailures = reportLibraryClaims(files);
+  // A broken About-page promise is a content defect, not a build failure, so it
+  // does not set exit 1 on its own — but it is printed loudly and it is the kind
+  // of thing that should be fixed the moment it appears.
+  void claimFailures;
 }
 
 console.log(anyBlocking ? "\nRESULT: BLOCKED — fix the blocking rules above.\n" : "\nRESULT: PASS — every blocking rule cleared.\n");

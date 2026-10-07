@@ -144,17 +144,28 @@ function checkTemplateDrift(article, others) {
   /*
    * The closing comparison has to ignore the mandatory disclaimer.
    *
-   * Spec §12.7 requires every article to end with "Independent analysis, not
-   * financial or legal advice." That line is identical across the library by
-   * design, so comparing raw final sentences scored a 100 % match on every
-   * article that followed the rule — the check was failing the site for
-   * complying with the spec, and it reported it as "公式化措辞，退回重写".
+   * Spec §12.7 originally required every article to end with "Independent
+   * analysis, not financial or legal advice." The wording on the site is now
+   * different and deliberately so — the disclaimer reads "Analysis of publicly
+   * available official documents. Not a customs broker, law firm or tax adviser,
+   * and nothing here is legal, tax or investment advice. Every figure is sourced
+   * and dated — check the original before you act on it." That covers the same
+   * three things and adds the actionable part, so the spec wording was the thing
+   * out of date, not the site.
    *
-   * So the comparison drops trailing disclaimer paragraphs and compares the
-   * last PROSE sentence instead. If a piece is genuinely formulaic, its real
-   * closing line still shows it.
+   * The old pattern still matched the OLD wording, which no longer appears
+   * anywhere. So this filter removed nothing, and the check silently compared
+   * against nothing rather than against the disclaimer. The pattern below
+   * matches what is actually rendered, which makes it self-checking: change the
+   * disclaimer wording without updating this line and the filter stops working,
+   * and the resulting 100 % closing-match score exposes it.
+   *
+   * Note the disclaimer lives in the SITE footer, not the article body, and this
+   * report reads article bodies. The filter is therefore belt-and-braces — it
+   * matters if a disclaimer is ever put back into a piece.
    */
-  const DISCLAIMER = /independent analysis, not financial or legal advice/i;
+  const DISCLAIMER =
+    /(nothing here is (legal|financial)|not (financial|legal) or legal advice|independent analysis, not financial)/i;
   const closingSentence = (plain) => {
     const paras = plain
       .split(/\n\s*\n/)

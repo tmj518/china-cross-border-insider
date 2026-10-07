@@ -178,7 +178,7 @@ It depends on the product and the CIF value, and the answer flips between them. 
 
 ### How do I work out where the two charges cross over for my product?
 
-Double the CBAM carbon cost for your CN code. That gives the CIF value per tonne at which the two charges are equal. For hot-rolled coil at EUR 163.53 a tonne, the crossover is EUR 327.08 a tonne. For screws and bolts at EUR 428.24, it is EUR 856.48. Below the crossover the safeguard duty is larger; above it the carbon cost is. You need the carbon figure and your own invoice price, and nothing else.
+Double the CBAM carbon cost for your CN code. That gives the CIF value per tonne at which the two charges are equal. For hot-rolled coil at EUR 163.53 a tonne, the crossover is EUR 327.08 a tonne. For screws and bolts at EUR 428.24, it is EUR 856.48. Below the crossover the safeguard duty is larger; above it the carbon cost is. The carbon figure is the only input you need, and it comes from your classification rather than your invoice — so if the crossover lands uncomfortably close to your actual CIF, the thing to check is whether you are on the right code at all.
 
 ### Does the tariff-rate quota remove both charges or only one?
 

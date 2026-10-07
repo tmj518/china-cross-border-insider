@@ -158,7 +158,7 @@ From that date CBP enforces the exclusion in 19 CFR 145.12(a)(2)(vi), which remo
 
 ### Is the exemption coming back?
 
-No. Pub. L. 119-21 repeals the de minimis exemption effective 1 July 2027. The suspension applies to all countries with no restoration date, and the statute removes the provision itself rather than pausing it. The only surviving reliefs are the bona fide gift allowances of $100, and $200 for the Virgin Islands, Guam and American Samoa, together with informational materials and donations.
+No. Pub. L. 119-21 repeals the de minimis exemption effective 1 July 2027. The suspension applies to all countries with no restoration date, and the statute removes the provision itself rather than pausing it. That distinction is the practical one for planning: a suspension can be lifted by an administrative act, while a repealed provision has to be re-enacted by Congress before it can return. The only surviving reliefs are the bona fide gift allowances of $100, and $200 for the Virgin Islands, Guam and American Samoa, together with informational materials and donations.
 
 ## How we calculated this
 
