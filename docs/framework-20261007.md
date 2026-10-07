@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 08:09:37 UTC  
+生成时间：2026-10-07 08:14:55 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`322e5ff feat: a cadence rule that blocks, because a promise to readers is checkable`
+对应提交：`5e7ae71 fix: declare stakes on the four articles the schema was answering for, and report an audit that mostly cleared`
 
 ## 顶层结构
 
