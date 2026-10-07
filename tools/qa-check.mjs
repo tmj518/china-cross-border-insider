@@ -120,6 +120,41 @@ function check(file) {
   keyword ? add("pass", "target_keyword declared", keyword) : add("block", "target_keyword declared", "missing");
   audience ? add("pass", "audience declared", audience) : add("warn", "audience declared", "not set (defaults to both)");
 
+  // ---- schema string limits -------------------------------------------
+  // The collection schema caps title at 120 characters, subtitle at 160 and
+  // description at 300. Exceeding one of those does not warn — it throws
+  // InvalidContentEntryDataError, which fails the whole build, so the article
+  // 404s and nothing else deploys either.
+  //
+  // Nothing here checked this, and on 2026-10-07 a 163-character subtitle
+  // reached main and did exactly that: the site served a stale build for ten
+  // minutes while every article except the new one looked fine, because the
+  // stale build already contained them. The gap existed because this gate reads
+  // markdown as text and the limits live in a Zod schema, so neither side knew
+  // about the other.
+  //
+  // The limits are duplicated here deliberately rather than read from the
+  // schema: importing the config would drag Astro's loaders into a plain Node
+  // script. If the schema limits change, this list has to change with it, and
+  // the comment is the reminder.
+  const LIMITS = { title: 120, subtitle: 160, description: 300 };
+  const overLong = [];
+  for (const [field, limit] of Object.entries(LIMITS)) {
+    const raw = fmLine(field);
+    // fmLine returns the raw value including quotes for these fields.
+    const value = raw ? raw.replace(/^"|"$/g, "") : null;
+    if (value && value.length > limit) overLong.push(`${field} ${value.length}/${limit}`);
+  }
+  if (overLong.length === 0) {
+    add("pass", "schema string limits", "title <= 120, subtitle <= 160, description <= 300");
+  } else {
+    add(
+      "block",
+      "schema string limits",
+      `${overLong.join(", ")} — the Zod schema rejects this and the build fails, taking every page down`,
+    );
+  }
+
   // ---- review clock ----------------------------------------------------
   // Every article here is dated and sourced, which is the strength until one of
   // its dates passes. Ten of the first fourteen published pieces carried a
