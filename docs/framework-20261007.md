@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 03:09:29 UTC  
+生成时间：2026-10-07 03:16:36 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`a54395c fix: the disclaimer check was filtering text that no longer existed, and the spec was wrong not the site`
+对应提交：`783161b docs: dated directory framework snapshot, regenerable by tool`
 
 ## 顶层结构
 
@@ -35,7 +35,8 @@ china-cross-border-insider/
 │   │   ├── eu-steel-safeguard-quota-2026-chinese-hrc-cost.md
 │   │   ├── proclamation-11052-polysilicon-minimum-import-price.md
 │   │   ├── section-301-exclusions-expire-november-2026.md
-│   │   └── us-de-minimis-postal-route-closes-october-2026.md
+│   │   ├── us-de-minimis-postal-route-closes-october-2026.md
+│   │   └── us-vs-eu-low-value-parcel-charges-2026.md
 │   ├── review/
 │   │   └── upcoming.md
 │   └── serp/
@@ -53,7 +54,8 @@ china-cross-border-insider/
 │       ├── eu-steel-safeguard-quota-2026-chinese-hrc-cost.json
 │       ├── proclamation-11052-polysilicon-minimum-import-price.json
 │       ├── section-301-exclusions-expire-november-2026.json
-│       └── us-de-minimis-postal-route-closes-october-2026.json
+│       ├── us-de-minimis-postal-route-closes-october-2026.json
+│       └── us-vs-eu-low-value-parcel-charges-2026.json
 ├── docs/   # generated reference documents
 │   └── framework-20261007.md
 ├── public/   # favicon, og-default.png, _headers
@@ -101,7 +103,8 @@ china-cross-border-insider/
 │   │       ├── section-301-exclusions-expire-november-2026.md
 │   │       ├── temu-semi-managed-traffic-shift.md
 │   │       ├── tiktok-shop-us-sps-score-oct-15.md
-│   │       └── us-de-minimis-postal-route-closes-october-2026.md
+│   │       ├── us-de-minimis-postal-route-closes-october-2026.md
+│   │       └── us-vs-eu-low-value-parcel-charges-2026.md
 │   ├── layouts/   # BaseLayout (site chrome) and ArticleLayout (article chrome)
 │   │   ├── ArticleLayout.astro
 │   │   └── BaseLayout.astro
@@ -209,13 +212,13 @@ china-cross-border-insider/
 
 | 项 | 数量 |
 | --- | --- |
-| 已发布文章 | 15 篇 |
+| 已发布文章 | 16 篇 |
 | 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
-| .md 总数 | 23 |
+| .md 总数 | 24 |
 | 成本模型 | 12 |
 | tools 脚本总数 | 31 |
-| SERP 快照 | 15 |
-| 机审报告 | 15 |
+| SERP 快照 | 16 |
+| 机审报告 | 16 |
 
 ## 技术栈
 
