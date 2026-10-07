@@ -148,6 +148,17 @@ No, and that distinction is why sellers under-prepare. A fine is a defined amoun
 
 Yes, and it is the specific case the responsible person requirement addresses. A seller established outside the Union who sells into the EU market has to have an economic operator established in the Union named on the listing, with contact details, answering for compliance. A marketplace does not stand in for that person. Sellers who assume the platform's own regulatory registration covers their listings are reading the marketplace's obligation as their own. The 58% figure suggests that assumption is widespread, and the 560 orders suggest it is being tested.
 
+## How we calculated this
+
+A takedown is priced by duration, so the inputs are all yours: units per day, unit price, contribution margin and days delisted. The published sweep findings give the probability, not the cost.
+
+```text
+lost contribution margin = units/day x unit price x margin x days delisted
+$4,198.60                = 40 x $29.99 x 25% x 14 days
+```
+
+Substitute your own unit economics and, more importantly, your realistic reinstatement duration — the worked example multiplies damage by three when six weeks replaces two.
+
 ## The point
 
 The 2026 sweep produced one number that platform operators controlled and another that sellers controlled, and the two moved at completely different speeds. Marketplaces fixed their registration because it is a single obligation held by a single company. Listings did not, because the same obligation is replicated across every SKU and every seller. That is the whole problem, and it is also why the fix is boring: three text fields, checked against the documents, across the catalogue. Do it before the next cycle names your category.

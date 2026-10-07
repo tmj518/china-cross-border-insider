@@ -144,6 +144,19 @@ No, and this is the most common misreading of the two headings. The 9903.88.69 a
 
 Only while the correction window is open, and never by changing the entry date. A Post Summary Correction can be filed within 300 days of the entry date and up to 15 days before scheduled liquidation, provided the entry is paid and not under review. That is the mechanism for an entry filed before the cutoff where the exclusion was available and not claimed. Once an entry liquidates, the route is a protest within 180 days of liquidation. No correction retroactively makes a 15 November entry eligible for an exclusion that ended on 9 November.
 
+## How we calculated this
+
+The returning rates are published in the HTSUS headings; the per-unit cost needs your FOB price and your carton quantity, because the duty is ad valorem on the entered value:
+
+```text
+duty added per unit      = FOB per unit x returning rate
+$3.000                   = $12.00 x 25%        (DC motor, List 3)
+duty added per container = per unit x units per 40HQ
+$15,000                  = $3.000 x 5,000
+```
+
+Substitute your own FOB and packing quantity. A low unit price does not mean a low exposure — the wire example adds 25 percent of landed cost on that line.
+
 ## The point
 
 The exclusions were never a permanent feature of these products. They were a temporary carve-out with a date attached, and the date is now close enough to plan against rather than argue about. Confirm which headings you actually clear under, price the snapback at your own volume, and treat a further extension as upside rather than a baseline.

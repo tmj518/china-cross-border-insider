@@ -120,6 +120,62 @@ function check(file) {
   keyword ? add("pass", "target_keyword declared", keyword) : add("block", "target_keyword declared", "missing");
   audience ? add("pass", "audience declared", audience) : add("warn", "audience declared", "not set (defaults to both)");
 
+  // ---- calculation transparency ---------------------------------------
+  // Same principle as the primary-source rule above: if the piece claims a
+  // custom calculation, the reader has to be able to see the calculation.
+  //
+  // Why this exists. The site's moat is the arithmetic, and until now the
+  // arithmetic was invisible. The five-part figures live in frontmatter, which
+  // only a developer reads; the cost models live in tools/. A reader got the
+  // answer with no way to check it. The comparison case study that prompted
+  // this — NapLab — derives its defensibility as much from publishing its
+  // method (ten standardised tests, 43-64 data points, the scoring rule) as
+  // from running it. Article 14 printed every input in a table and that was
+  // exactly the right instinct, but it was done by accident rather than by
+  // rule, so it survived exactly one article.
+  //
+  // What is required, for `custom-calculation` pieces only:
+  //   - a visible "How we calculated this" heading
+  //   - a fenced code block, i.e. the formula or the model output, shown
+  // and what is reported as a warning rather than a block:
+  //   - whether the prose names the reader's own input in so many words
+  //
+  // That last one was a block in the first version and it was wrong. The check
+  // looked for a keyword list — input, cif, value per unit — so a section
+  // saying "the spend is yours" or "unit FOB value is the input" failed it.
+  // That is a test of vocabulary, not of whether the reader can check the
+  // number. The fenced block is the evidence; whether the sentence used the
+  // word "input" is not.
+  //
+  // The model filename is still NOT required: some pieces derive their figure
+  // from a published document rather than from a script in tools/, and
+  // demanding a filename would be a rule about our internal layout rather than
+  // about what the reader can verify.
+  if (gain && /custom-calculation/.test(gain)) {
+    const section =
+      /##\s*How we calculated this\s*\n([\s\S]*?)(?=\n##\s|$)/.exec(body)?.[1] ?? "";
+    if (!section) {
+      add(
+        "block",
+        "calculation shown to reader",
+        "declares custom-calculation but has no '## How we calculated this' section",
+      );
+    } else {
+      const hasFormula = /```[\s\S]*?```/.test(section);
+      const words = wordCount(section);
+      hasFormula
+        ? add("pass", "calculation shown to reader", `formula shown (${words} words)`)
+        : add("block", "calculation shown to reader", "section present but no fenced formula block");
+
+      const namesInput = /\b(spend|input|invoice|fob|cif|value|contract rate|cost of capital|margin|price|units? per|per (tonne|unit|item|container|parcel)|deposit|quote)\b/i.test(
+        section,
+      );
+      if (hasFormula && !namesInput) {
+        add("warn", "calculation names an input", "no reader-supplied input named in the prose");
+      }
+    }
+  }
+
   // ---- body structure ------------------------------------------------
   // The AI Summary rule applies to the summary paragraph itself, not to
   // everything up to the next H2 (the hook paragraph follows it).

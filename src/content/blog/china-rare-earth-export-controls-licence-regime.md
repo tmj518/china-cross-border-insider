@@ -158,6 +158,18 @@ It is when the suspension of the October 2025 package reaches the end of its def
 
 The funding cost is smaller than most buyers expect, which is why it gets ignored. On a $120,000 shipment held ninety days at a 9% annual cost of capital, the interest is $2,663.01. Add port storage at $45 a day and it reaches $6,713.01. The number that matters is not on that table: it is the downstream commitment the shipment was feeding. A paused container in a critical-minerals chain stops earning but does not stop costing, and the missed delivery is the part that does not come back at the next negotiation.
 
+## How we calculated this
+
+The cost of a licence delay is a carrying cost, so the inputs are shipment value, your cost of capital, days held and any storage rate. Nothing here comes from a published tariff; it is your balance sheet applied to a published waiting time.
+
+```text
+funding cost = shipment value x annual cost of capital x days / 365
+$2,663.01    = $120,000 x 9% x 90 / 365
+$6,713.01    = $2,663.01 + 90 days x $45 port storage
+```
+
+Substitute your own value, capital cost and storage rate. The larger number is not on the table: it is the downstream commitment the held shipment was feeding.
+
 ## The point
 
 China has turned strategic materials into a licence-administered supply chain, and the administration is the point. It does not need a dramatic ban to change behaviour: a licence file, a traceability record and a cautious exporter do the work quietly, and they do it per shipment rather than per announcement. The November 2026 window is the next scheduled decision, and the correct preparation for it is not a legal watch — it is knowing, in writing, what your supplier needs from you before they will quote at all.

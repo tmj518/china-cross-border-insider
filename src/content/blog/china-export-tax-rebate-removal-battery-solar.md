@@ -160,6 +160,17 @@ That is a commercial decision, not a published one, and it is the question worth
 
 The Ministry of Finance's stated rationale is to curb involuntary competition — firms competing on price to the point of destroying their own margins — and to push industry toward higher-quality, greener production. That is a deliberate choice to make these exports more expensive, and it is stated publicly rather than disguised. For buyers, the strategic reading matters more than the arithmetic: the cheap pricing in these categories was partly policy-funded, and the policy is being withdrawn on purpose. Planning on the assumption that it returns is planning against the stated direction.
 
+## How we calculated this
+
+Full passthrough is the assumption, and unit FOB value is the input. The rebate is a share of FOB, so the cost of losing it is a share of the same base, and nothing else enters the arithmetic:
+
+```text
+lost rebate per unit = rebate points lost x unit FOB value
+$3.60 = 9 points x $40 FOB        $3,600 per 1,000 units
+```
+
+Substitute your own unit FOB and your supplier's passthrough share. The $3.60 figure assumes the exporter recovers all nine points, which the negotiation decides rather than the announcement.
+
 ## The point
 
 This is a domestic Chinese tax decision whose cost lands on an importer's invoice, which is precisely why it escapes notice. The first three points went by quietly in April. The remaining six arrive on 1 January 2027, and unlike most price movements this one is published, dated, and known to both sides of the table. That makes the next few weeks the cheapest window you will get to fix the number, because a supplier pricing a committed order today is making a different decision from one pricing a spot enquiry in January.

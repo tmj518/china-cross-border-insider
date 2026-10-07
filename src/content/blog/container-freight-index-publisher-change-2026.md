@@ -147,6 +147,17 @@ Because they measure different baskets and they diverged. In the week ending 30 
 
 Yes, as a separate input rather than part of the index. The Suez Canal Authority's Periodical No. 28 of 2026, dated 7 September 2026, extends Periodical No. 1 of 2026 with all its provisions for six months, from 1 August 2026 to 31 January 2027, for all vessel types. Canal terms affect routing and therefore the freight element on Asia-Europe trades, so they belong in the same cost review. What the authority did not publish in a machine-readable form is the toll percentage content of the underlying periodical, so the direction is confirmed and the magnitude is not.
 
+## How we calculated this
+
+Index points are not currency, so a percentage move becomes money only with a freight cost. The index readings are sourced; the per-container cost is your contract:
+
+```text
+adjustment per container = per-container freight x index move
++$81.90                  = $900 x 9.1%      (CCFI Southeast Asia Service)
+```
+
+Substitute your own contract rate, and compute both the composite and your lane: on the same publication in the same week, the Southeast Asia lane moved 9.1 percent while the composite moved 0.33 percent, which is $79 a container of difference.
+
 ## The point
 
 Container contracts are written to move with a benchmark, and the clause is only as good as the buyer's ability to check the benchmark. On 18 June 2026 the publisher changed, and in the week to 30 September the lanes ran in opposite directions while the composite sat still. Neither event is dramatic on its own. Together they mean that the next surcharge adjustment you receive is worth recalculating from the lane rather than accepting from the average — and that the contract term behind it deserves a read before the cycle turns rather than after.

@@ -153,6 +153,17 @@ Only partly, and the distinction is practical. The statistics bureau attributes 
 
 Two things. First, stop treating a flat renewal as the neutral outcome. On a positive drift rate, a supplier holding last year's price has conceded the drift, and that concession is worth naming. Second, negotiate the pass-through basis rather than the price: agree which published series the adjustment follows, how often it resets, and whether the supplier absorbs a share of it. That converts an annual argument about a percentage into a formula both sides can check, and it is far easier to agree while the index print is public than during a dispute about an invoice.
 
+## How we calculated this
+
+The drift rate is published; the spend is yours. The calculation is a passthrough, so the only two inputs are annual spend in the category and the share of the index move your supplier agrees to pass on:
+
+```text
+budget impact = category spend x index move x passthrough share
+$10,000       = $100,000 x 2% (year-to-date average) x 100%
+```
+
+Substitute your own category spend, and pull the category series rather than the composite — six industries subtracted 0.74 point from the August index, so the composite can point the opposite way to your line.
+
 ## The point
 
 A direction is not a forecast, and it is the most consequential thing in a sourcing budget. The official series turned positive in August 2026, with a 3.8% year-on-year reading, a 2% year-to-date average, and a spread inside the headline wide enough that the category matters more than the composite. Much of the driver is imported rather than Chinese, which is why changing country of origin does not answer it. What it does answer is the assumption that deferring a purchase reliably makes it cheaper — an assumption that held for years and no longer matches the data.

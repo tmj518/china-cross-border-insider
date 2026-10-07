@@ -1,4 +1,4 @@
-# 质检报告 - China's Factory-Gate Prices Turned Positive, and That Ends the Wait-for-Next-Year Trade - 2026-10-06
+# 质检报告 - China's Factory-Gate Prices Turned Positive, and That Ends the Wait-for-Next-Year Trade - 2026-10-07
 
 ## 机审得分: 8/8 ✅
 
@@ -8,7 +8,7 @@
 | 模板化 | ✅ 通过 — 开头重合 13% · 结尾 0% | 措辞与近三篇有区分（结构固定属设计） |
 | 敏感词 | ✅ 通过 — 0 命中 | - |
 | 一手增量 | ✅ 通过 — custom-calculation · 五元组数字 9 个 · 含成本表 | 声明成立 |
-| 长度 | ✅ 通过 — 1861 词 | - |
+| 长度 | ✅ 通过 — 1961 词 | - |
 | 版权 | ✅ 通过 — 无外部素材（幻灯片为代码绘制、旁白为 TTS） | 按设计无需授权标注 |
 | 外链/引用 | ✅ 通过 — 正文内链 3 条 · 绝对 URL 0 条（规范要求 0） | 信源以名称列出（规范 §4.3 禁止正文出现 URL） |
 | SEO | ✅ 通过 — title+subtitle 覆盖 80% · description 30% · AI Summary 50% · 内链 3 条 | 关键词落位合格（不查密度，密度会诱导堆砌） |

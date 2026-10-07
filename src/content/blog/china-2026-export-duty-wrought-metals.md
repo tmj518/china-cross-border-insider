@@ -166,6 +166,17 @@ The annex defines it in its own note: for a line marked `ex`, the provisional or
 
 Yes, and favourably. The same plan grants provisional import duty rates below the most-favoured-nation rate on 935 goods, adds national subheadings for intelligent bionic robots, bio-aviation kerosene and forest ginseng to bring the total to 8,972 lines, continues conventional rates under 24 free trade agreements with 34 partner economies, and gives 43 least-developed countries zero tariff on 100 percent of their lines. It also cancels provisional rates and restores the MFN rate on micro motors, printing machines and sulphuric acid, so not every change runs one way.
 
+## How we calculated this
+
+Every rate in the tables comes from the annex itself, row by row. The only calculated figure is the duty on an order, and it needs one input from you: the declared export value, because the duty is ad valorem on that base and not on weight.
+
+```text
+export duty payable = declared export value x applicable rate
+$8,000 = $80,000 copper order x 10% provisional rate
+```
+
+Substitute your own declared value, and check which rate applies — the nominal 30 percent or the provisional 10 percent — since the annex publishes both and the lower one is conditional.
+
 ## The point
 
 A tariff schedule is a statement of what a country wants to export, and China's 2026 version says it plainly: raw metal carries 30 percent, scrap carries 15, and the finished form carries nothing. That is a sourcing map, not a revenue measure, and it is published row by row in an annex that the English coverage of this plan did not open. The practical consequence is that the shape of the metal you buy now has a price attached that is larger than most destination tariffs — $8,000 on a ten-tonne copper order, decided before a single rate is negotiated.

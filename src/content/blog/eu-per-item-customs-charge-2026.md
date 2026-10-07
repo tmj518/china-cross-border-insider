@@ -160,6 +160,17 @@ The declarant, in the first instance. The delegated regulation operationalising 
 
 The handling fee does not. Article 20(6) of Regulation (EU) 2026/2108 states that the Union handling fee is non-refundable, and the Irish Revenue Commissioners confirm in their guidance that the fee is not refunded even where the goods are faulty. The €3 customs duty is also non-refundable unless the goods are faulty. For any seller with a meaningful returns rate, that makes the charge a permanent cost on the returned population, and it belongs in the returns provision rather than in a working-capital forecast.
 
+## How we calculated this
+
+Both charges are per item, not per parcel, so item count is the input that drives everything. The rates are published; the number of distinct items in your consignment is yours to count.
+
+```text
+charge = (EUR 3 duty + EUR 2 handling fee) x distinct items, from 1 November 2026
+EUR 15  = EUR 5 x 3 items          the Irish Revenue worked example
+```
+
+Substitute your own item count per consignment, and remember that consolidating three items into one listing does not change the count — the charge follows declaration lines, not catalogue entries.
+
 ## The point
 
 Two charges, two dates, and one design decision that changes the arithmetic: the EU levies per item rather than per parcel. That single choice turns a low-value exemption into a charge that bites hardest at the bottom of the basket range, applies above the old threshold as well as below it, survives a return, and lands on the declarant monthly. The €15-on-€10 example is not an edge case; it is the transparent consequence of a flat rate applied to the smallest possible unit.

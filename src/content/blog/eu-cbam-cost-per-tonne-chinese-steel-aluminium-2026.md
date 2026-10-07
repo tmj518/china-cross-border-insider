@@ -86,7 +86,7 @@ Two regulations sit under every per-tonne CBAM figure in circulation, and only o
 
 **The second replaced it in its entirety.** Commission Implementing Regulation (EU) 2026/1740 was adopted on 20 July 2026 and published in the Official Journal on 31 July 2026. Article 1(1) does not amend the old annex: "Annex I to Implementing Regulation (EU) 2025/2621 is replaced by the text in Annex I to this Regulation." Article 2 does the rest — the replacement "shall apply from 1 January 2026." The table that governs every CBAM calculation was published in July, and it applies backwards.
 
-**And the correction is not cosmetic.** Compare China's rows in the two texts. For almost every Chinese CN code the number is unchanged. For one it is not. In the 2025 version, China's row for CN 7601, unwrought aluminium, carried no value at all. In the corrected text, CN 7601 reads 3,000 tCO2eq per tonne on route (K), primary aluminium, and the rest of China's aluminium table fills in behind it. Through the first half of 2026, the largest CBAM exposure after steel had no published default value in the table meant to supply it.
+**And the correction is not cosmetic.** Compare China's rows in the two texts. For almost every Chinese CN code the number is unchanged. For one it is not. In the 2025 version, China's row for CN 7601, unwrought aluminium, carried no value at all. In the corrected text, CN 7601 reads 3,000 tCO2eq per tonne on route (K), primary aluminium. Through the first half of 2026, the largest CBAM exposure after steel had no published default value in the table meant to supply it.
 
 **The second trap is built into the table's shape.** The 2025 version printed pre-computed columns for each future year, each already carrying that year's mark-up: a 2026 column, a 2027 column, a 2028 column. The corrected version stripped them out. It prints one bare total per CN code, and the mark-up is then imposed as a rule by the chapeau to Annex I.
 
@@ -100,12 +100,7 @@ A number taken from a page written before 31 July 2026 cannot be traced to one t
 
 **The price is fixed retrospectively, once a quarter.** Under Article 21(1a), inserted by Regulation (EU) 2025/2083, the 2026 price is the quarterly average of EU ETS auction clearing prices for the quarter of importation, weighted by auctioned volume and rounded to the cent. Two of the four 2026 prices exist: EUR 75.36 for Q1, published 7 April 2026, and EUR 75.28 for Q2, published 6 July 2026. Q3 is scheduled for 5 October 2026 and was still blank on the Commission's page on 3 October.
 
-**The deduction is where almost every summary goes wrong.** The charge is not the embedded emissions. It is the emissions minus a free-allocation adjustment, because EU producers receive free allowances and the mechanism is built to match them rather than to exceed them:
-
-```
-chargeable tCO2e/t = (default value x (1 + mark-up)) - (benchmark x CBAM factor x CSCF)
-EUR/t              = chargeable tCO2e/t x certificate price for the quarter of importation
-```
+**The deduction is where almost every summary goes wrong.** The charge is not the embedded emissions. It is the emissions minus a free-allocation adjustment, because EU producers receive free allowances and the mechanism is built to match them rather than exceed them. The full chain is printed below.
 
 **The CBAM factor is the share of free allocation still in place, not the share being charged.** In 2026 it is 97.5 per cent. Read the name the way it sounds and 2026 appears to charge 2.5 per cent of the carbon cost. Read it correctly and 97.5 per cent of the benchmark is deducted, leaving 2.5 per cent of the benchmark charged — an order of magnitude apart, and the second reading is the true one. The phase-down is back-loaded: 95.0 per cent in 2027, 90.0 in 2028, 77.5 in 2029, 51.5 in 2030 and 0.0 by 2034, while the mark-up climbs on the other side of the same subtraction.
 
@@ -113,7 +108,7 @@ One caveat belongs here rather than in a footnote. The CBAM factor is defined by
 
 ## So what
 
-Take one tonne of Chinese hot-rolled coil, CN 7208. Every input is published; only the multiplication is mine. The corrected Annex I gives a default value of 3.187 tCO2eq per tonne, which the 2026 mark-up takes to 3.5057. The CBAM benchmark for that CN code and route, Column B of the Annex to Regulation (EU) 2025/2620, is 1.370 tCO2e per tonne. Multiply by the CBAM factor of 0.975 and the CSCF of 1.0 and 1.33575 is deducted, leaving 2.16995 tCO2eq per tonne chargeable: **EUR 163.53 a tonne** at the published Q1 2026 price of EUR 75.36.
+Take one tonne of Chinese hot-rolled coil, CN 7208, worked step by step under [how we calculated this](#how-we-calculated-this). Every input is published; only the multiplication is mine. The result is **EUR 163.53 a tonne** at the Q1 2026 price of EUR 75.36.
 
 Rerun the same chain across China's main CN codes and the shape of the exposure appears, and it is not what most importers expect:
 
@@ -130,15 +125,14 @@ Rerun the same chain across China's main CN codes and the shape of the exposure 
 | 7604 10 10 | Aluminium profiles | 4.881 | 1.485 | 3.9212 | 295.50 | 295.19 |
 | 7607 | Aluminium foil | 5.559 | 1.599 | 4.5559 | 343.33 | 342.97 |
 
-**Flat steel is cheap; fabricated steel is not.** Hot-rolled coil carries EUR 163 a tonne and cold-rolled EUR 158, but bolts carry EUR 428 and steel structures EUR 391. The reason is not the benchmark, which barely moves, but the default value, which more than doubles once the good is fabricated: a fastener exporter faces two and a half times the carbon cost per tonne of a coil exporter, on the same origin and route. It lands alongside the EU's other tightening border checks on the same shipments — see [the GPSR sweep findings](/blog/eu-gpsr-sweep-2026-marketplace-listings/).
+**Flat steel is cheap; fabricated steel is not.** Hot-rolled coil carries EUR 163 a tonne and cold-rolled EUR 158, but bolts carry EUR 428 and steel structures EUR 391. The reason is not the benchmark, which barely moves, but the default value, which more than doubles once the good is fabricated: a fastener exporter faces two and a half times the carbon cost per tonne of a coil exporter, on the same origin and route. It also lands alongside the EU's other tightening checks, covered in [the GPSR sweep findings](/blog/eu-gpsr-sweep-2026-marketplace-listings/).
 
 **Aluminium is the gap in the coverage, not in the cost.** Chinese primary unwrought aluminium carries EUR 144 a tonne, below hot-rolled coil, because China's default value of 3,000 is under steel's and the benchmark deduction is larger. No English-language page found publishes a per-tonne CBAM cost for Chinese aluminium, and the row that produces the figure was empty in the December 2025 text.
-
 **The bill compounds from both directions.** Holding the benchmark and the price still, Chinese hot-rolled coil runs EUR 163.53 in 2026, EUR 190.08 in 2027 and EUR 219.30 in 2028. It is not the largest charge on the same tonne: the EU steel out-of-quota duty is 50 per cent of CIF, as [the steel safeguard quota analysis](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/) sets out.
 
-**One number in circulation does not reconcile.** EUROMETAL reported a 2026 China steel slab cost of about EUR 144 a tonne, attributed to Fastmarkets. Chinese slab sits under CN 7207, whose default value with the mark-up is about 3.486 tCO2eq per tonne: roughly EUR 262 before the free-allocation adjustment, about EUR 162 after. It matches neither, and no calculation accompanies it.
+**One number in circulation does not reconcile.** EUROMETAL reported a 2026 China steel slab cost of about EUR 144 a tonne, attributed to Fastmarkets. Chinese slab sits under CN 7207, default value with mark-up about 3.486 tCO2eq per tonne: roughly EUR 262 before the free-allocation adjustment, EUR 162 after. It matches neither.
 
-**One number in circulation does reconcile, and that is the useful test.** SMM's analysis of 18 August 2026 puts Chinese hot-rolled coil at about EUR 163 a tonne and cold-rolled at EUR 158, agreeing with the chain above to within EUR 0.35 a tonne, and it describes the CBAM factor correctly. The same piece cites no default value per CN code, names Regulation (EU) 2026/1740 nowhere, and carries no aluminium figure. Quote a per-tonne CBAM number only with the CN code, default value and benchmark behind it.
+**One number in circulation does reconcile, and that is the useful test.** SMM's analysis of 18 August 2026 puts Chinese hot-rolled coil at about EUR 163 a tonne and cold-rolled at EUR 158, agreeing with the chain above to within EUR 0.35 a tonne, and it describes the CBAM factor correctly. The same piece cites no default value per CN code, names Regulation (EU) 2026/1740 nowhere, and carries no aluminium figure.
 
 ## For you
 
@@ -163,7 +157,7 @@ Because it measures what is retained, not what is charged. The factor is the sha
 
 ### Which regulation governs the default values, and what does a tonne cost?
 
-Commission Implementing Regulation (EU) 2026/1740, published 31 July 2026. Article 1(1) replaces Annex I to Regulation (EU) 2025/2621 in its entirety and Article 2 applies the replacement from 1 January 2026. The Commission's stated reason is transcription mistakes made when the 2025 tables were consolidated under time pressure. For most Chinese CN codes the values are unchanged, which is why a number from an older page looks right and cannot be verified. The per-tonne costs are in the table above; each is the corrected default value plus a 10 per cent mark-up, minus the benchmark multiplied by 0.975, times the price for the quarter of importation.
+Commission Implementing Regulation (EU) 2026/1740, published 31 July 2026. Article 1(1) replaces Annex I to Regulation (EU) 2025/2621 in its entirety and Article 2 applies the replacement from 1 January 2026. The Commission's stated reason is transcription mistakes made when the 2025 tables were consolidated under time pressure. For most Chinese CN codes the values are unchanged, which is why a number from an older page looks right and cannot be verified. The per-tonne costs are in the table above; each is the corrected default value plus a 10 per cent mark-up, minus the benchmark multiplied by 0.975, times the quarter's price.
 
 ### When is this actually paid, and is anything due in 2026?
 
@@ -172,6 +166,19 @@ Nothing is paid during 2026. Certificates are sold on the common central platfor
 ### Is any per-tonne figure for Chinese steel or aluminium published officially?
 
 No. The Commission publishes the prices and the inputs, and its Guidance Document No. 4 works through the free-allocation arithmetic using a hypothetical good. No document opened in this research states a per-tonne CBAM cost for a named CN code and a named country, and no third-party page found publishes one for Chinese aluminium. That is why the table above prints every input rather than only the answer: each is checkable against the Official Journal, so the only unpublished step is the multiplication.
+
+## How we calculated this
+
+Every published input is printed in the table under So what; the two inputs that are yours are the CN code and the quarter of importation, because the price is fixed per quarter. The arithmetic is four steps:
+
+```text
+embedded tCO2eq/t = corrected default value x (1 + mark-up)         3.187 x 1.10 = 3.5057
+SEFA tCO2e/t      = benchmark x CBAM factor x CSCF                 1.370 x 0.975 = 1.33575
+chargeable        = embedded - SEFA                                 3.5057 - 1.33575 = 2.16995
+EUR/t             = chargeable x certificate price for that quarter 2.16995 x 75.36 = 163.53
+```
+
+Substitute your own CN code, whose default value and benchmark both come from the Official Journal, and the certificate price for the quarter your goods were imported in.
 
 ## The point
 

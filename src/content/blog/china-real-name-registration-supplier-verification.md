@@ -150,6 +150,17 @@ To the person designated directly responsible for the false registration, which 
 
 They belong in the same review cycle rather than the same rule. The customs change added two conditional-mandatory items to the export declaration form, announced on 15 April 2026, with filing instructions in the single-window system; the text carries no effective date, so confirm the live date rather than assuming the announcement date. The foreign exchange consultation opened on 30 September 2026 and closes to comment on 30 October 2026; it is a draft with a blank commencement date. Neither replaces the registration check, and both affect how a supplier's paperwork behaves at the border and at the bank.
 
+## How we calculated this
+
+The comparison is a break-even, so it needs two numbers from you — deposit exposed and the cost of the check — and it assumes nothing about how often suppliers misrepresent themselves. That is the point of stating it this way:
+
+```text
+break-even risk = check cost / deposit exposed
+0.83%           = $150 / $18,000        first container, 30% deposit
+```
+
+Read it as a decision rule: if the chance that a new supplier's registration is not what it claims exceeds about one in 120, the check pays for itself. Substitute your own order value, deposit percentage and verification quote.
+
 ## The point
 
 For years the practical advice on Chinese supplier verification was to check that the company exists. That test was always weaker than it looked, because existence rested on what someone typed into a form. Since the middle of 2025 the filing side of that market acquired a national registry, a beneficial-owner duty and a three-year ban, and since May 2026 the registration itself requires an identity confirmation that the registrar reviews. None of it makes a bad supplier impossible. All of it makes the answer to "who is this company, and who put it on the register" checkable in a way it was not before — and at a break-even of roughly one in 120, checking is the cheaper option.

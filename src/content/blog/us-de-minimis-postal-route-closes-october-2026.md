@@ -158,6 +158,18 @@ From that date CBP enforces the exclusion in 19 CFR 145.12(a)(2)(vi), which remo
 
 No. Pub. L. 119-21 repeals the de minimis exemption effective 1 July 2027. The suspension applies to all countries with no restoration date, and the statute removes the provision itself rather than pausing it. The only surviving reliefs are the bona fide gift allowances of $100, and $200 for the Virgin Islands, Guam and American Samoa, together with informational materials and donations.
 
+## How we calculated this
+
+No official document states a per-parcel cost for this route, so the figure is built from published rates plus three inputs of yours: parcel value, entry preparation cost and bond cost. The rates are sourced; the rest is your own quotation.
+
+```text
+duty and fees = value x (Column 1 rate + Section 301 rate + MPF 0.3464%)
+$71.54        = $300 x (16.0% + 7.5% + 0.3464%)
+total above goods value = $71.54 + entry preparation and bond ($20 to $60)
+```
+
+Substitute your own parcel value, your SKU's Column 1 rate and the broker quote you actually receive, and keep the entry cost as a separate line rather than blending it into the rate.
+
 ## The point
 
 This is a policy that changed shape three times in five months, and the shape matters more than the rate. A flat per-item fee is a pricing decision; an ad valorem rate is a margin calculation; removing a route is an operational one. The current position is the third kind, and it lands on 22 October 2026 — which means the preparation is classification and enrolment rather than pricing, and the sellers who treat it as a pricing question will discover the difference when a parcel is refused release.

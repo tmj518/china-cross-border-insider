@@ -154,6 +154,17 @@ The minimum import price programme and the additional 15% duty apply to goods en
 
 Yes. The proclamation states that the duties imposed apply in addition to any other duties, taxes, fees, exactions and charges applicable to the products. Foreign trade zone treatment is also restricted: covered goods admitted to a zone on or after the effective date enter only under privileged foreign status, which removes the deferral that zone admission normally provides. Buyers modelling the change should add the two components to their existing duty stack rather than treat them as a replacement for anything.
 
+## How we calculated this
+
+The published inputs are the floors — per kilogram for polysilicon, per watt for cells and modules — so the arithmetic needs your invoice price and one classification decision. The counterintuitive result falls out of the formula rather than from an assumption:
+
+```text
+landed cost = max(invoice value, floor value) + duty on the shortfall
+$22.80      = $12/kg invoice, floored at $21/kg, duty applied to the $9 gap
+```
+
+Substitute your own invoice price. A lower invoice raises the effective rate rather than lowering the cost, which is why the $12 and $21 cases land within 6 percent of each other.
+
 ## The point
 
 A minimum import price is a different instrument from a tariff, and it breaks the assumption that a better purchase price improves the landed cost. On the published floors, a kilogram of polysilicon lands within a few percent of the same figure whether it was bought at $12 or at $21 — because the floor absorbs the difference. What the buyer controls is not the price but the documentation, and the same shipment swings between $23.70 and $41.70 landed on that alone. The date is 4 December 2026, the product scope lives in annexes published as images, and the window before it is governed by a stockpiling rule that most coverage has not mentioned.

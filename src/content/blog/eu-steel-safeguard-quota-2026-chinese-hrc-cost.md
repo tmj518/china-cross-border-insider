@@ -178,6 +178,18 @@ Only the residual pool listed as "Other countries", order number 09.9600, which 
 
 On the published numbers, the safeguard duty. CBAM's cost on Chinese hot-rolled coil is EUR 163.53 a tonne at the Q1 2026 certificate price of EUR 75.36. The safeguard out-of-quota duty is 50 percent of CIF, which is EUR 250 a tonne at a CIF value of EUR 500 and EUR 350 at EUR 700. The duty is larger across the plausible range of steel prices, and it turns on a category number rather than on emissions.
 
+## How we calculated this
+
+The regulation fixes a percentage, never a price, so the per-tonne figure needs one input from you: the CIF value on your entry. The quota volumes are published; the value is yours.
+
+```text
+out-of-quota duty per tonne   = CIF value per tonne x 50%
+quota rent per tonne          = the same number, read from the other side
+EUR 250/t                     = EUR 500 CIF x 0.50
+```
+
+Substitute your own CIF value, and read the allocation for your category and origin from Annex I of Implementing Regulation (EU) 2026/1457 before assuming an in-quota price is available at all.
+
 ## The point
 
 The reform is usually reported as a rate: 25 percent became 50 percent, and duty-free volumes fell by nearly half. Both are true and neither is the operational fact. What decides whether a tonne pays 50 percent or nothing is whether the origin holds a named allocation in that category, and the answer differs by product for the same origin. China's four named allocations do not include hot-rolled coil, and the residual pool that substitutes for one is 5,564 tonnes a quarter for the whole world. An importer who has priced CBAM and not the quota has modelled the smaller of the two charges on the same tonne.
