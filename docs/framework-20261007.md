@@ -1,8 +1,8 @@
 # 目录框架快照 2026-10-07
 
-生成时间：2026-10-07 03:36:11 UTC  
+生成时间：2026-10-07 03:41:39 UTC  
 生成工具：`node tools/framework-snapshot.mjs`  
-对应提交：`e7b1c46 fix: a 163-character subtitle broke the build, and nothing checked field lengths`
+对应提交：`f2a0668 feat: run the real build in preflight, because a green gate did not mean the site would build`
 
 ## 顶层结构
 
@@ -41,6 +41,7 @@ china-cross-border-insider/
 │   │   └── upcoming.md
 │   └── serp/
 │       ├── china-2026-export-duty-wrought-metals.json
+│       ├── china-export-rebate-vs-export-duty-2026.json
 │       ├── china-export-tax-rebate-removal-battery-solar.json
 │       ├── china-malaysia-origin-data-electronic-december-2026.json
 │       ├── china-ppi-positive-factory-price-drift.json
@@ -83,6 +84,7 @@ china-cross-border-insider/
 │   │   └── blog/   # the articles; drafts carry draft: true and are excluded from the gate's blocking rules
 │   │       ├── bonded-logistics-growth-supply-chain.md
 │   │       ├── china-2026-export-duty-wrought-metals.md
+│   │       ├── china-export-rebate-vs-export-duty-2026.md
 │   │       ├── china-export-tax-rebate-removal-battery-solar.md
 │   │       ├── china-industrial-profits-q4-supply-chain.md
 │   │       ├── china-malaysia-origin-data-electronic-december-2026.md
@@ -212,12 +214,12 @@ china-cross-border-insider/
 
 | 项 | 数量 |
 | --- | --- |
-| 已发布文章 | 16 篇 |
+| 已发布文章 | 17 篇 |
 | 草稿 | 8 篇（`draft: true`，闸门的阻断规则对它们降级为警告） |
-| .md 总数 | 24 |
+| .md 总数 | 25 |
 | 成本模型 | 12 |
 | tools 脚本总数 | 31 |
-| SERP 快照 | 16 |
+| SERP 快照 | 17 |
 | 机审报告 | 16 |
 
 ## 技术栈
