@@ -1,0 +1,48 @@
+research: two studies, their verification, and a consolidated action list
+
+Three research deliverables, all requested by the operator, plus the verification that
+makes them usable rather than merely read.
+
+对标分析_两家最强同行.md — the two best-executed sites in adjacent territory, chosen
+with reasons and with the nine rejected candidates explained. Our World in Data for
+verifiability, Trivium China for the business model, because this site has exactly two
+vital signs and one of them is which of those two it resembles. The single
+highest-value finding: OWID gives every figure its own URL - 11 grapher links and 9
+distinct chart URLs in one article - while our 195 figure records have none. Our
+advantage is that each of ours already carries a five-part record including a retrieval
+date, which OWID has no field for.
+
+谷歌官方SEO学习总结.md — Google's own documentation only, 43 pages whose full text is
+kept under the ignored _research/gdocs for re-checking every quote. The substantive
+surprises: the sitelinks search box was removed in November 2024, so adding SearchAction
+today accomplishes nothing; priority and changefreq in a sitemap are ignored outright;
+canonical is a hint rather than a rule; and Article and Organization structured data have
+literally no required properties, which means our missing image and logo are lost
+opportunities rather than violations. Only BreadcrumbList has hard requirements. The
+study also declines to invent Core Web Vitals numbers when the API rate-limited it, and
+says so.
+
+行动清单_两份研究.md — the cross-cutting list, ordered by return rather than by the
+documents' own structure, split into configuration-level work under two days,
+structural work over one to two weeks, and monetisation. It names what not to copy and
+why, including the finding that neither competitor uses HTML tables at all, so our
+per-unit tables are an original form rather than an imitation and should not be removed
+in the name of following best practice.
+
+Two verification documents, docs/SEO缺陷独立核实.md and docs/对标研究核实.md, because a
+subagent's findings are claims and every one of them about this site is checkable. All
+confirmed: www serves 200 without redirecting, no HSTS, no lastmod anywhere in the
+sitemap, no content images at all, no max-image-preview, og-default.png is 1200x630
+rather than 16:9, HTML is not edge-cached while the CSS is, the subscription form is a
+mailto with the operator's own note that one click is not wired up, 195 figures with no
+URLs, no citation metadata, no licence, and five page types with no structured data.
+
+The verification also found something neither study did: the Article JSON-LD emits no
+dateModified at all, even though the rule for it was specified and implemented elsewhere
+in the site. That is a one-line gap rather than a design question.
+
+The competitor study's claim of a 22 KB page turned out to be 26.9 KB of HTML plus
+17.6 KB of CSS measured here - still far below OWID's 155 to 389 KB, with zero external
+scripts.
+
+Removed tools/gdoc_fetch.ps1, a throwaway fetch helper the study wrote.
