@@ -34,10 +34,12 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import random
 import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -305,8 +307,59 @@ def render_slide(scene: dict, chunk: str, index: int, total: int, sub: str, out_
     img.save(out_path, "PNG")
 
 
-async def speak_with_timing(
+class EmptyAudioStream(Exception):
+    """
+    The stream completed without producing any audio bytes.
+
+    Raised as a distinct type so the retry wrapper can treat it as retryable. An
+    empty stream is a service hiccup — the connection is made and then closes
+    without data — not a mistake in the caller's arguments, and not a valid
+    result. Left as a plain RuntimeError it would not be retried, and a zero-byte
+    .mp3 would reach ffmpeg on the next stage.
+
+    A test caught this: the retry list was originally the edge-tts exception
+    family plus OSError, and the empty-stream case fell outside it and failed
+    after a single attempt.
+    """
+
+
+async def _speak_once(
     text: str, voice: str, rate: str, audio_path: Path
+) -> list[dict]:
+    """One synthesis attempt, writing to `audio_path` only if it completes."""
+    import edge_tts
+
+    communicate = edge_tts.Communicate(
+        text, voice, rate=rate, boundary="WordBoundary"
+    )
+    words: list[dict] = []
+    # Write to a temporary file and rename on success. Writing straight to the
+    # destination meant a failed attempt left a truncated .mp3 behind, which the
+    # next stage would happily mux into the video.
+    tmp = audio_path.with_suffix(audio_path.suffix + ".part")
+    try:
+        with open(tmp, "wb") as fh:
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio":
+                    fh.write(chunk["data"])
+                elif chunk["type"] == "WordBoundary":
+                    words.append(
+                        {
+                            "text": chunk["text"],
+                            "start": chunk["offset"] / 10_000_000,
+                            "dur": chunk["duration"] / 10_000_000,
+                        }
+                    )
+        if tmp.stat().st_size == 0:
+            raise EmptyAudioStream("stream produced no audio bytes")
+        tmp.replace(audio_path)
+    finally:
+        tmp.unlink(missing_ok=True)
+    return words
+
+
+async def speak_with_timing(
+    text: str, voice: str, rate: str, audio_path: Path, attempts: int = 4
 ) -> list[dict]:
     """
     Synthesise the narration and return word-level timings.
@@ -317,26 +370,60 @@ async def speak_with_timing(
     SentenceBoundary, so a first attempt that did not pass it explicitly got
     one event per sentence and produced zero captions. WordBoundary has to be
     asked for.
-    """
-    import edge_tts
 
-    communicate = edge_tts.Communicate(
-        text, voice, rate=rate, boundary="WordBoundary"
+    Retries on failure, because the failure is usually transient. Calling this
+    several times in quick succession — which is exactly what happens when six
+    scenes are synthesised back to back, and again when several articles are
+    rendered in one sitting — intermittently raises NoAudioReceived. That
+    exception says "Please verify that your parameters are correct", which sends
+    you looking at the voice name and the rate when the real cause is that the
+    service declined to answer. Rendering all fourteen articles in one run
+    produced two such failures out of fourteen, and both succeeded on a retry
+    seconds later.
+
+    So: back off and retry, and report what actually happened if all attempts
+    fail. The backoff is jittered because the trigger is a rate limit, and
+    identical delays would re-collide.
+
+    Only transport failures are retried. The first version caught bare Exception,
+    and a test that injected a broken stand-in raised TypeError — which was then
+    retried three times with backoff. A TypeError means the code is wrong, not
+    the network; retrying it just delays the error and hides the bug. So the
+    catch list is the edge-tts exception family plus OSError, and anything else
+    propagates on the first attempt.
+    """
+    import edge_tts.exceptions as tts_errors
+
+    retryable = (
+        tts_errors.EdgeTTSException,
+        EmptyAudioStream,
+        OSError,
+        asyncio.TimeoutError,
     )
-    words: list[dict] = []
-    with open(audio_path, "wb") as fh:
-        async for chunk in communicate.stream():
-            if chunk["type"] == "audio":
-                fh.write(chunk["data"])
-            elif chunk["type"] == "WordBoundary":
-                words.append(
-                    {
-                        "text": chunk["text"],
-                        "start": chunk["offset"] / 10_000_000,
-                        "dur": chunk["duration"] / 10_000_000,
-                    }
-                )
-    return words
+
+    last: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return await _speak_once(text, voice, rate, audio_path)
+        except retryable as exc:
+            last = exc
+            if attempt == attempts:
+                break
+            delay = (2 ** (attempt - 1)) * 1.5 + random.uniform(0, 1.0)
+            label = text[:60].replace("\n", " ")
+            print(
+                f"      tts attempt {attempt}/{attempts} failed "
+                f"({type(exc).__name__}); retrying in {delay:.1f}s — \"{label}...\""
+            )
+            await asyncio.sleep(delay)
+
+    raise RuntimeError(
+        f"TTS failed after {attempts} attempts on \"{text[:60]}...\". "
+        f"Last error: {type(last).__name__}: {last}. "
+        "This is usually the service rate-limiting rather than a bad voice or "
+        "rate parameter — wait a minute and re-run before changing any argument."
+    ) from last
+
 
 
 def interpolate_words(text: str, duration: float) -> list[dict]:
@@ -579,7 +666,11 @@ def report_coverage(scenes: list[dict]) -> float:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("slug")
+    ap.add_argument(
+        "slugs",
+        nargs="*",
+        help="one or more article slugs, or use --all for every published article",
+    )
     ap.add_argument("--voice", default="en-US-AndrewNeural")
     # +12% suits information-dense B2B narration: noticeably quicker without
     # turning into the +20% that a short-form news recap uses.
@@ -587,20 +678,69 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--coverage", action="store_true", help="report parity and exit")
     ap.add_argument(
+        "--all",
+        action="store_true",
+        help="render every published article (drafts are skipped)",
+    )
+    ap.add_argument(
+        "--skip-done",
+        action="store_true",
+        help="with --all, skip slugs that already have a rendered mp4",
+    )
+    ap.add_argument(
         "--burn-captions",
         action="store_true",
         help="burn captions into the picture (for platforms with no track upload)",
     )
     args = ap.parse_args()
 
-    scenes = build_scenes(args.slug)
+    slugs = list(args.slugs)
+    if not slugs and not args.all:
+        ap.error("give one or more slugs, or --all")
+    if args.all:
+        slugs = sorted(p.stem for p in BLOG.glob("*.md"))
+        # A draft is not published, so there is nothing to publish a video for.
+        slugs = [
+            s for s in slugs
+            if not re.search(r"^draft:\s*true", (BLOG / f"{s}.md").read_text(encoding="utf-8"), re.M)
+        ]
+        if args.skip_done:
+            slugs = [s for s in slugs if not (OUT / f"{s}.mp4").exists()]
+        print(f"batch: {len(slugs)} article(s)")
+
+    failures: list[tuple[str, str]] = []
+    for n, slug in enumerate(slugs, 1):
+        if len(slugs) > 1:
+            print(f"\n{'=' * 72}\n[{n}/{len(slugs)}] {slug}\n{'=' * 72}")
+        try:
+            render_one(slug, args)
+        except Exception as exc:  # noqa: BLE001 - one bad article must not stop the batch
+            failures.append((slug, f"{type(exc).__name__}: {exc}"))
+            print(f"  FAILED: {type(exc).__name__}: {exc}")
+        # A batch is exactly the pattern that trips the service rate limit, so
+        # leave a gap between articles rather than between scenes only.
+        if len(slugs) > 1 and n < len(slugs):
+            time.sleep(5)
+
+    if failures:
+        print(f"\n{len(failures)} of {len(slugs)} failed:")
+        for slug, err in failures:
+            print(f"  {slug}: {err}")
+        sys.exit(1)
+    if len(slugs) > 1:
+        print(f"\nall {len(slugs)} rendered")
+
+
+def render_one(slug: str, args) -> None:
+    """Render a single article's video, subtitles, thumbnail and metadata."""
+    scenes = build_scenes(slug)
 
     if args.coverage:
         pct = report_coverage(scenes)
         print(f"\ncoverage {pct:.0f}%")
         return
 
-    work = OUT / args.slug
+    work = OUT / slug
     work.mkdir(parents=True, exist_ok=True)
 
     print(f"scenes: {len(scenes)}")
@@ -637,7 +777,7 @@ def main() -> None:
 
     ass_path = work / "captions.ass"
     write_ass(captions, ass_path)
-    srt_path = OUT / f"{args.slug}.srt"
+    srt_path = OUT / f"{slug}.srt"
     write_srt(captions, srt_path)
     print(f"  captions: {len(captions)} cues -> {srt_path.name}"
           + (" (burned in)" if args.burn_captions else " (upload as a track)"))
@@ -695,7 +835,7 @@ def main() -> None:
     # -16 LUFS with a -1.5 dBTP ceiling keeps the narration level with the rest
     # of the platform. Loudness normalisation is not optional; the burn-in is,
     # because the slides already carry text and YouTube takes an SRT track.
-    final = OUT / f"{args.slug}.mp4"
+    final = OUT / f"{slug}.mp4"
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw)]
     if args.burn_captions:
         cmd += ["-vf", "ass=captions.ass"]
@@ -708,7 +848,7 @@ def main() -> None:
     subprocess.run(cmd, check=True, cwd=work)
 
     # The delivery set: video, thumbnail, and the text an upload form asks for.
-    thumb = OUT / f"{args.slug}-thumb.png"
+    thumb = OUT / f"{slug}-thumb.png"
     callout = ""
     for sc in scenes:
         if sc["kind"] == "table" and len(sc["table"]) > 1:
@@ -716,8 +856,8 @@ def main() -> None:
             callout = "  ".join(c["text"] for c in row[-2:])
             break
     make_thumbnail(fm_title(scenes), callout, thumb)
-    meta = OUT / f"{args.slug}-youtube.txt"
-    write_metadata(args.slug, parse_frontmatter((BLOG / f"{args.slug}.md").read_text(encoding="utf-8")),
+    meta = OUT / f"{slug}-youtube.txt"
+    write_metadata(slug, parse_frontmatter((BLOG / f"{slug}.md").read_text(encoding="utf-8")),
                    scenes, cursor, meta)
 
     print(f"\nvideo     : {final}")
