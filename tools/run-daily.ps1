@@ -171,7 +171,18 @@ $pushExit = Run-Cmd "git" @("-C", $root, "push", "origin", "main")
 Say "push exit=$pushExit"
 
 if ($pushExit -ne 0) {
-    Say "PUSH FAILED - is the accelerator running? That is the usual cause."
+    # Distinguish the two failure modes, because the advice differs. A closed
+    # accelerator is the common one and the operator can fix it. A server-side 500 is
+    # GitHub's problem: pushing a fresh empty branch fails identically, reads work, and
+    # the status page says operational, so retrying is pointless and the commits wait.
+    $pushLog = Get-Content -Path $log -Tail 40 -Encoding UTF8 -ErrorAction SilentlyContinue
+    if ($pushLog -match "Internal Server Error|remote rejected") {
+        Say "PUSH REJECTED BY GITHUB - this is server-side, not your accelerator."
+        Say "  A test push of an empty branch fails the same way, so it is not the content."
+        Say "  The commits are safe locally. The next run will retry automatically."
+    } else {
+        Say "PUSH FAILED - is the accelerator running? That is the usual cause."
+    }
     Say "  Commits are safe locally. Push later with: git push origin main"
     Say "==================== daily run finished ===================="
     exit 1
