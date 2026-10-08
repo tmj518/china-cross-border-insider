@@ -12,6 +12,10 @@ priority: "P0"
 featured: true
 draft: false
 articleNumber: 2
+updatedDate: 2026-10-08
+revisions:
+  - date: 2026-10-08
+    note: "Two USTR notices of 7 October 2026 bear on this piece, and neither moves the 9 November lapse date. 91 FR 64212 records that the Section 301 actions did not terminate on 6 July 2026 and remain in effect under the statutory four-year review. 91 FR 64211 makes a conforming amendment to one of the 178 exclusions, moving it to statistical reporting number 8479.90.9591 from 1 July 2026 after the USITC changed its statistical categories; four others were amended at 91 FR 56538 on 2 September 2026. USTR published nine notices since 1 August 2026 and none is a comment notice on this deadline."
 target_keyword: "section 301 exclusions expiration november 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -56,10 +60,23 @@ figures:
     period: "entries on or after 24 July 2026"
     source: "Federal Register, Notice of Actions in Section 301 Investigations Related to Forced Labor, 91 FR 47318"
     retrieved: "2026-10-01"
+  - value: "6 July 2026"
+    unit: "date the Section 301 actions would have terminated had domestic industries not requested continuation"
+    period: "second statutory four-year review, first step announced 6 May 2026"
+    source: "USTR, Continuation of Actions, 91 FR 64212"
+    retrieved: "2026-10-08"
+  - value: "8479.90.9591"
+    unit: "HTSUS statistical reporting number that one of the 178 exclusions moved to"
+    period: "effective 1 July 2026, published 7 October 2026"
+    source: "USTR, Notice of Conforming Amendment to Product Exclusion, 91 FR 64211"
+    retrieved: "2026-10-08"
 sources:
   - "USTR, Notice of Product Exclusion Extensions, 90 FR 55232, 1 December 2025"
   - "USTR press release, USTR Extends Exclusions from China Section 301 Tariffs, 26 November 2025"
   - "Federal Register, Notice of Actions in Section 301 Investigations Related to Forced Labor, 91 FR 47318, 28 July 2026"
+  - "USTR, Continuation of Actions: China's Acts, Policies, and Practices Related to Technology Transfer, Intellectual Property, and Innovation, 91 FR 64212, 7 October 2026"
+  - "USTR, Notice of Conforming Amendment to Product Exclusion, 91 FR 64211, 7 October 2026"
+  - "USTR, Notice of Conforming Amendments to Product Exclusions, 91 FR 56538, 2 September 2026"
   - "US Harmonized Tariff Schedule, Chapter 99 Subchapter III, headings 9903.88.69 and 9903.88.70"
   - "US Customs and Border Protection, Post Summary Correction guidance"
   - "China Council for the Promotion of International Trade, summary of the USTR exclusion extension, 28 November 2025"
@@ -96,7 +113,7 @@ Three clocks are running at once, and only one of them is the November deadline.
 
 **The correction clock.** Entries filed in the past ten months are still inside the Post Summary Correction window, which runs 300 days from the entry date and closes 15 days before scheduled liquidation. If an exclusion was available and not claimed, that window is open now and shuts on its own schedule.
 
-**The extension clock.** This set of exclusions has been renewed in short increments: through 31 May 2025, then 31 August 2025, then a 90-day extension to 29 November 2025, then to 9 November 2026. Before the November 2025 deadline, USTR published a request for comments on 16 September 2025, roughly ten weeks ahead of the cutoff. As of 18 August 2026, no equivalent comment notice for the current deadline has appeared. That absence is not evidence either way.
+**The extension clock.** This set of exclusions has been renewed in short increments: through 31 May 2025, then 31 August 2025, then a 90-day extension to 29 November 2025, then to 9 November 2026. Before the November 2025 deadline, USTR published a request for comments on 16 September 2025, roughly ten weeks ahead of the cutoff. USTR has published nine Federal Register notices since 1 August 2026 and none of them is an equivalent comment notice on this deadline. The two that bear on these exclusions are both dated 7 October 2026. One, at 91 FR 64212, records that the Section 301 actions did not terminate on 6 July 2026 and remain in effect, subject to modification under the statutory four-year review — so the actions behind these exclusions are confirmed alive while the exclusions themselves are not. The other, at 91 FR 64211, makes a conforming amendment to one of the 178, moving it to statistical reporting number 8479.90.9591 from 1 July 2026 after the USITC changed its ten-digit statistical categories; USTR amended four others the same way at 91 FR 56538 on 2 September 2026. Maintaining the coverage of an exclusion you have already scheduled to lapse is housekeeping rather than renewal. The absence of a comment notice is still not evidence either way.
 
 The 2024 four-year review raised rates sharply on strategic categories, including electric vehicles at 100%, solar cells at 50% and lithium-ion batteries at 25%. In July 2026 a separate Section 301 action on forced labour added duty on products of 54 economies, China included. Section 301 survived the February 2026 Supreme Court ruling that struck down the IEEPA tariffs, because it rests on different statutory authority. The direction of travel for the past three years has been more duty, not less.
 

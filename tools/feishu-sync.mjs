@@ -25,9 +25,17 @@
  *   node tools/feishu-sync.mjs               # upsert by 文章编号
  */
 
-import { readdirSync, readFileSync, existsSync } from "node:fs";
+import {
+  readdirSync,
+  readFileSync,
+  existsSync,
+  openSync,
+  closeSync,
+  rmSync,
+  mkdirSync,
+} from "node:fs";
 import { join } from "node:path";
-import { execFileSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 
 const ROOT = process.cwd();
 const APP_ID = process.env.FEISHU_APP_ID ?? "cli_aa4ad6d49975dcc6";
@@ -98,50 +106,85 @@ function consistencyCheck(a) {
   return found.length ? found.join("；") : "通过（与自身记录一致）";
 }
 
+/* ------------------------------------------------------------------ running tools */
+
+/**
+ * Verdicts that could not be computed at all. Collected rather than swallowed,
+ * because this script writes to a system of record.
+ */
+const unverifiedReasons = [];
+function unverified(reason) {
+  unverifiedReasons.push(reason);
+  return `未核实（${reason}）`;
+}
+
+/**
+ * Run a tool and return its output. Not `execFileSync`, and the difference is
+ * the whole point.
+ *
+ * `execFileSync` captures the child through a pipe. This machine's sandbox
+ * denies named pipes, so the child died with EPERM, the catch block fell
+ * through, and every verdict was written to the ledger as `阻塞` /
+ * `INCONCLUSIVE`. On 8 October 2026 a run inside the sandbox overwrote all 22
+ * rows that way — the table then said the entire library had failed both gates
+ * while the gates were in fact passing. The damage was not that the check could
+ * not run; it was that a check which could not run was stored as a check that
+ * failed.
+ *
+ * A file descriptor is not a named pipe. Redirecting the child to a file
+ * returns the same bytes in both environments, so the same code path is used
+ * inside the sandbox and out of it.
+ */
+function run(args) {
+  const dir = join(ROOT, "out");
+  mkdirSync(dir, { recursive: true });
+  const tmp = join(dir, `.feishu-${process.pid}-${Math.random().toString(36).slice(2)}.txt`);
+  let fd;
+  try {
+    fd = openSync(tmp, "w");
+    const r = spawnSync(process.execPath, args, { stdio: ["ignore", fd, fd] });
+    closeSync(fd);
+    fd = undefined;
+    if (r.error) return { ok: false, reason: String(r.error.code ?? r.error.message) };
+    return { ok: true, out: readFileSync(tmp, "utf8") };
+  } catch (e) {
+    if (fd !== undefined) {
+      try { closeSync(fd); } catch { /* already closed */ }
+    }
+    return { ok: false, reason: String(e?.message ?? e) };
+  } finally {
+    try { rmSync(tmp, { force: true }); } catch { /* best effort */ }
+  }
+}
+
 /** qa-check on one file. */
 function qaCheck(file) {
-  try {
-    const out = execFileSync(process.execPath, [join(ROOT, "tools", "qa-check.mjs"), file], { encoding: "utf8" });
-    const m = /(\d+) pass · (\d+) warn · (\d+) BLOCK/.exec(out);
-    return m ? `${m[1]} pass / ${m[3]} block` : "解析失败";
-  } catch (e) {
-    const out = (e.stdout || "") + (e.stderr || "");
-    const m = /(\d+) pass · (\d+) warn · (\d+) BLOCK/.exec(out);
-    return m ? `${m[1]} pass / ${m[3]} block` : "阻塞";
-  }
+  const r = run([join(ROOT, "tools", "qa-check.mjs"), file]);
+  if (!r.ok) return unverified(`qa-check: ${r.reason}`);
+  const m = /(\d+) pass · (\d+) warn · (\d+) BLOCK/.exec(r.out);
+  if (!m) return unverified("qa-check output did not parse");
+  return `${m[1]} pass / ${m[3]} block`;
 }
 
 /** serp-check verdict from the stored snapshot, if one exists. */
 function serpVerdict(slug) {
   const snap = join(ROOT, "data", "serp", `${slug}.json`);
   if (!existsSync(snap)) return "无快照";
-  try {
-    const out = execFileSync(
-      process.execPath,
-      [join(ROOT, "tools", "serp-check.mjs"), join(DIR, `${slug}.md`), `--serp=file:${snap}`],
-      { encoding: "utf8" },
-    );
-    return /SUPPORTED/.test(out) ? "SUPPORTED" : /UNSUPPORTED/.test(out) ? "UNSUPPORTED" : "INCONCLUSIVE";
-  } catch (e) {
-    const out = (e.stdout || "") + (e.stderr || "");
-    if (/UNSUPPORTED/.test(out)) return "UNSUPPORTED";
-    return "INCONCLUSIVE";
-  }
+  const r = run([join(ROOT, "tools", "serp-check.mjs"), join(DIR, `${slug}.md`), `--serp=file:${snap}`]);
+  if (!r.ok) return unverified(`serp-check: ${r.reason}`);
+  if (/SUPPORTED/.test(r.out)) return "SUPPORTED";
+  if (/UNSUPPORTED/.test(r.out)) return "UNSUPPORTED";
+  if (/INCONCLUSIVE/.test(r.out)) return "INCONCLUSIVE";
+  return unverified("serp-check output did not parse");
 }
 
 /** reviewer findings for one file. */
 function reviewerFindings(file) {
-  try {
-    const out = execFileSync(process.execPath, [join(ROOT, "tools", "reviewer-check.mjs"), file], { encoding: "utf8" });
-    const high = (out.match(/\[HIGH\]/g) || []).length;
-    const med = (out.match(/\[MED\]/g) || []).length;
-    return high || med ? `${high} 必须修 / ${med} 应该修` : "0 必须修 / 0 应该修";
-  } catch (e) {
-    const out = (e.stdout || "") + (e.stderr || "");
-    const high = (out.match(/\[HIGH\]/g) || []).length;
-    const med = (out.match(/\[MED\]/g) || []).length;
-    return `${high} 必须修 / ${med} 应该修`;
-  }
+  const r = run([join(ROOT, "tools", "reviewer-check.mjs"), file]);
+  if (!r.ok) return unverified(`reviewer-check: ${r.reason}`);
+  const high = (r.out.match(/\[HIGH\]/g) || []).length;
+  const med = (r.out.match(/\[MED\]/g) || []).length;
+  return high || med ? `${high} 必须修 / ${med} 应该修` : "0 必须修 / 0 应该修";
 }
 
 /* ------------------------------------------------------------------ build rows */
@@ -174,6 +217,19 @@ for (const r of rows) {
   console.log(
     `  ${r["文章编号"].padEnd(4)} ${r["类型"].padEnd(6)} ${r["栏目"].padEnd(15)} ${r["结构闸门"].padEnd(14)} ${r["信息增量闸门"].padEnd(13)} ${r["审核智能体"]}`,
   );
+}
+
+/*
+ * Refuse to write an uncomputed verdict. A gate that cannot run is not a gate
+ * that failed, and the ledger is read as fact, so the only safe behaviour is to
+ * leave the previous row alone and say why.
+ */
+if (unverifiedReasons.length) {
+  const unique = [...new Set(unverifiedReasons)];
+  console.log(`\n  ABORT — ${unverifiedReasons.length} verdict(s) could not be computed; nothing written.`);
+  console.log("  Writing them would record a check that could not run as a check that failed.");
+  for (const reason of unique) console.log(`    ${reason}`);
+  process.exit(1);
 }
 
 if (DRY) {
