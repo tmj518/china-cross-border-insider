@@ -1,0 +1,47 @@
+feat: a net-new article every day, and the rule conflict that had to be settled first
+
+The operator asked why today produced no new article. The answer is that the rule made
+it conditional: write a new piece only when a category is at zero for the week. All five
+categories already had at least one, so the condition was false, the run did a
+correction and stopped. It followed the rule; the rule was wrong.
+
+So the rule is now unconditional, in three places:
+
+  * 初心与目标.md had to change, and this is the part worth recording. It said "no volume
+    route, because scale ends in content abuse" - and a daily requirement reads as a
+    contradiction of exactly that. The operator chose to make the prohibition precise
+    rather than drop it: what is banned is relaxing the entry standard to raise the
+    count, not publishing every day. The file says it should be amended in the open, so
+    it is amended in the open, with the date and the reason beside the line.
+  * daily-task.txt now fixes a three-step order: review the nearest reviewBy article and
+    correct it or record that nothing changed, then pick the category with the fewest
+    pieces this week, then write a new one. Step three has no condition on it.
+  * 指令_完整版.md carries the same rule and the updated arithmetic.
+
+Two quantitative bounds: at least 1 net-new article per day, at most 15 per week. A
+correction does not count towards the day's net-new, which is the precise defect that
+let today pass as a production day.
+
+The report format changed for the same reason. Item zero is now the net-new article for
+the day, or an explicit statement that there is none and why - the only admissible
+reasons being the weekly cap or genuinely no qualifying topic. Today's run buried
+"0 new articles" in the body of a long report, and the report is what a human reads to
+see progress.
+
+The real constraint is stated plainly, because it is not money. Seven articles a week
+means 1,820 five-part figure records and 1,092 primary-source citations a year, and the
+gates refuse a topic with no quotable numbers. So the rule's actual test is whether a
+qualifying topic can be found every day. When it cannot, the report must say so rather
+than lower the standard to fill the slot. That is the one part of this change that does
+not bend.
+
+Costed for the 2026-11-07 review: 7/week is about 79 yuan a month, the 15/week cap
+about 170.
+
+Also recorded: the same run found and fixed two checks that were lying. The Feishu sync
+captured children through a pipe, the sandbox denies named pipes, and the catch blocks
+wrote "blocked" for all 22 rows while both gates were passing - a check that could not
+run was stored as a check that failed. And verify-live demanded that figure values
+appear in rendered HTML, which no template does, so it reported 12 of 22 articles broken
+and the log only quoted the reassuring line. Both fixed so an uncomputable verdict
+aborts the write instead of being persisted.
