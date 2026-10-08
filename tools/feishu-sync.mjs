@@ -197,6 +197,19 @@ const rows = arts.map((a, i) => ({
   "栏目": a.category,
   "标题": a.title.slice(0, 120),
   "日期": a.publishDate,
+  /*
+   * 最近更新 and 更正次数 exist because the table could not answer "what changed today".
+   *
+   * It recorded publishDate only, so this morning's correction to article 2 left no
+   * trace: the sync reported zero amended rows while the article had in fact been
+   * amended. A ledger that cannot show change over time is not a ledger, it is a
+   * snapshot with a date on it.
+   *
+   * 最近更新 falls back to the publish date so the column is always readable, and
+   * 更正次数 comes from the revisions array, which is the site's own record of them.
+   */
+  "最近更新": a.updatedDate || a.publishDate,
+  "更正次数": a.revisions,
   "重复选题检查": consistencyCheck(a),
   "结构闸门": qaCheck(a.file),
   "信息增量闸门": serpVerdict(a.slug),
