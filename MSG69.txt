@@ -1,0 +1,33 @@
+feat: the daily rule verified end to end - article 23 in 36 minutes, and a ledger that can show change
+
+The operator asked whether the new rule actually produces a new article, and how long it
+takes. Both answered by running it.
+
+Article 23: china-container-suitability-check-frozen-food-export-2026, in logistics -
+which is the category the rule should have chosen, because logistics and platforms were
+the two sitting at one piece for the week. The run picked the floor itself, without
+being told which category. 2,488 words, 10 five-part figure records, importer audience,
+stakes priced, custom-calculation gain, reviewBy 2027-01-15.
+
+Timing, measured: 35.9 minutes end to end. Preflight 1.7 minutes, the agent 32.8, then
+build, push and live verification in under two. So 91 per cent of the cost is the writing
+step - reading primary sources, composing 2,488 words, ten figure records and a cost
+calculation - and the gating and delivery are almost free by comparison.
+
+Live verification: 12 of 12 checks pass, including the Article and BreadcrumbList blocks
+added yesterday and exactly one h1. dateModified is absent, which is correct for an
+article with no revisions yet.
+
+Feishu read back rather than trusted: 23 rows, numbers 1 to 23 complete, no blocked or
+inconclusive verdicts, and no row missing either new field.
+
+Those two fields are the second thing this round fixed, and it was a real gap. The ledger
+recorded publishDate only, so it could not answer "what changed today" - reading it
+reported zero amended rows while article 2 had in fact been amended that morning. It now
+carries 最近更新 and 更正次数, so a row whose update date differs from its publish date is
+visibly a corrected piece. Immediately useful: article 2 shows updated today, article 12
+shows updated on the 7th, and the other 21 rows show the two dates equal.
+
+Weekly state: 10 of the 15 cap, distributed 3/1/2/2/2 across the five categories, with
+platforms now the only one still at its floor - which is what tomorrow's run should pick
+up on its own.
