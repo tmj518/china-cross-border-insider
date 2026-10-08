@@ -1,9 +1,22 @@
-# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
+﻿# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
 #
 # Launched by Windows Task Scheduler as LandedMath-Daily, and safe to run by hand:
 #     powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1
 #
-# The task text comes from 自动化_每日任务.txt and is piped into `dsh headless -`.
+# The task text comes from daily-task.txt and is piped into `dsh headless -`.
+#
+# KEEP THIS FILE PURE ASCII, and keep the task file's NAME pure ASCII. No em dashes,
+# no warning symbols, no Chinese, not even inside comments.
+#
+# Why, precisely. On 2026-10-08 the 08:10 run died on its second line with "task file
+# not found", and the path in the error was mojibake. The task file was named in
+# Chinese, this script had lost its UTF-8 BOM, and Windows PowerShell 5.1 therefore
+# decoded the script as GBK on this locale. Run by hand it worked; run by Task
+# Scheduler it did not, because the two entry points decode the file differently.
+#
+# So the durable fix is not "remember the BOM" - it is having no byte in this file
+# whose meaning depends on the encoding. The task TEXT may be Chinese: it is read from
+# its own file with an explicit UTF-8 decoding, which is unambiguous.
 #
 # Patterns taken from the working PolicyBriefEN job in this same DSH install, each
 # one because it fixes a real failure observed here:
@@ -52,7 +65,7 @@ New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $stamp = Get-Date -Format "yyyy-MM-dd_HHmm"
 $log = Join-Path $logDir "daily-$stamp.log"
 
-if (-not $TaskFile) { $TaskFile = Join-Path $root "自动化_每日任务.txt" }
+if (-not $TaskFile) { $TaskFile = Join-Path $root "daily-task.txt" }
 
 function Say($msg) {
     $line = "[{0}] {1}" -f (Get-Date -Format "yyyy-MM-dd HH:mm:ss"), $msg

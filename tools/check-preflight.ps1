@@ -1,6 +1,6 @@
 ﻿# check-preflight.ps1 - the "sleep well" check for Landed Math.
 #
-# Run by 每日体检.bat, or directly:
+# Run by DailyCheck.bat, or directly:
 #     powershell -NoProfile -ExecutionPolicy Bypass -File tools\check-preflight.ps1
 #
 # It answers one question: will the 08:10 unattended run complete?
