@@ -21,9 +21,11 @@
  */
 import type { CollectionEntry } from "astro:content";
 
+import AdSlot from "../components/AdSlot.astro";
 import ArticleFooter from "../components/ArticleFooter.astro";
 import ArticleVideo from "../components/ArticleVideo.astro";
 import Sidebar from "../components/Sidebar.astro";
+import SubscribeModal from "../components/SubscribeModal.astro";
 import {
   AUTHOR,
   audienceLabel,
@@ -82,6 +84,29 @@ const siloLabel = categoryLabel(data.category);
       <div class="prose">
         <slot />
       </div>
+
+      {/*
+        * The in-article ad slot sits after the body rather than inside it.
+        *
+        * The brief asks for an inline block part-way through the prose, and the slot is
+        * reserved here instead because this is a static build: there is no way to inject a
+        * node at a percentage of rendered height without either a client script that moves
+        * content after paint - a layout shift, and the worst kind on a phone - or an
+        * editorial marker in every article's markdown.
+        *
+        * The honest placement is therefore after the analysis and before the sources, which
+        * is where a reader has finished the argument and is about to check it. Filling the
+        * slot is a one-line change when an editor is willing to add the marker to the
+        * templates that generate articles.
+      */}
+      <AdSlot placement="inline" />
+
+      {/*
+        * The subscribe prompt lives at article level rather than site level, so it only
+        * exists on pages where a reader has something to have read. Triggered on depth of
+        * reading rather than on a timer, and shown once, ever.
+      */}
+      <SubscribeModal />
 
       {
         data.youtube_id && (

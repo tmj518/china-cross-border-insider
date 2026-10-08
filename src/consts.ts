@@ -69,22 +69,28 @@ export const CF_ANALYTICS_TOKEN = import.meta.env.CF_WEB_ANALYTICS_TOKEN ?? "";
 /**
  * spec §3 — top navigation.
  *
- * Trimmed from twelve items to seven on 2026-10-08. The benchmark this was modelled on
- * keeps four, and the specification repeats "navigation ≤4 items" twice; twelve is not a
- * navigation, it is a sitemap in a bar.
+ * The five category links were removed here on 2026-10-08 and put back the same day, on the
+ * operator's instruction: "do not take the five category links out of the navigation, you
+ * have made the front end look cheap". That is the right call and the reasoning in the
+ * original edit was wrong. Trimming to the benchmark's four items assumes a reader arrives
+ * knowing what a "silo" is; a commercial news blog puts its sections in the bar because that
+ * is how a first-time reader finds out what the publication covers. Malaysiakini, the
+ * reference the front-end brief names, lists its sections.
  *
- * The five category links were the ones removed, and they are not lost: every article
- * carries its category as a link in the byline, each category page cross-links the others,
- * and all five are in the footer-adjacent silo list. What stays at the top is what a reader
- * cannot reach otherwise - the archive, the calculator, the tracker and the price.
+ * So the rule is: sections in the bar, tools beside them, and the order puts the sections
+ * first because they are what the publication is.
  */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  // The calculator is the only page that does something rather than say something, and it
-  // is the top of the funnel for the email list. The benchmark leads with its tool too.
-  { label: "Calculator", href: "/calculator/" },
-  // The archive, named and structured after the benchmark's: everything published, by date.
+  // Sections first: five of them, matching the five categories the articles carry.
+  { label: "Trade Policy", href: "/category/trade-policy/" },
+  { label: "Platforms", href: "/category/platforms/" },
+  { label: "Supply Chain", href: "/category/supply-chain/" },
+  { label: "Sourcing", href: "/category/sourcing/" },
+  { label: "Logistics", href: "/category/logistics/" },
+  // Then the tools and the archive, which have no other route to them.
   { label: "Briefs", href: "/brief/" },
+  { label: "Calculator", href: "/calculator/" },
   { label: "Tracker", href: "/tracker/" },
   { label: "By market", href: "/markets/" },
   { label: "Pricing", href: "/pricing/" },

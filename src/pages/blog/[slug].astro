@@ -41,7 +41,20 @@ const lastRevision = data.revisions.at(-1);
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  /*
+   * NewsArticle rather than Article, on the front-end brief's instruction.
+   *
+   * Both types take the same properties, so this is not a correctness fix - it is a
+   * classification one. NewsArticle is what a reader-facing trade publication should claim:
+   * it tells an aggregator that the piece is dated reporting on a change, which is what
+   * earns the news treatments in search and in news surfaces. Article would be the honest
+   * type for an undated explainer, and this site does not publish those.
+   *
+   * `dateline` is deliberately absent. It means the place from which a report was filed,
+   * and the piece is written from a desk in Shenzhen about documents published in Beijing,
+   * Brussels and Washington. Claiming a dateline would assert a reporting trip.
+   */
+  "@type": "NewsArticle",
   headline: data.title,
   ...(data.subtitle ? { alternativeHeadline: data.subtitle } : {}),
   description: data.description,

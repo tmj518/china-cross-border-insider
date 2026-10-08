@@ -32,6 +32,19 @@ const isActive = (href: string) =>
           </li>
         ))
       }
+      {/*
+        * The subscription button lives inside the list so that at the mobile band, where the
+        * whole list collapses behind the hamburger, it is reachable in the same place as
+        * everything else rather than stranded outside the menu.
+        *
+        * The brief asks for a subscribe control in the header; this is the honest version of
+        * it. It anchors to the capture form rather than rendering a form that would post
+        * nowhere: `SITE.newsletterAction` is still empty, so a real form here would return
+        * HTTP 405 from Cloudflare, which is worse than a link that works.
+      */}
+      <li class="nav-cta-item">
+        <a class="nav-cta" href="/#subscribe">Subscribe</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -39,6 +52,10 @@ const isActive = (href: string) =>
 <script>
   // The prototype hid navigation below 900px with no way back in.
   // This keeps the same visual result but leaves the links reachable.
+  //
+  // Collapsing now happens at 767px, the mobile band the front-end brief names, rather than
+  // at 900px. The script is unchanged: it toggles one attribute and the stylesheet decides
+  // what that attribute means at each width.
   const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
   const links = document.getElementById("nav-links");
 
@@ -47,5 +64,15 @@ const isActive = (href: string) =>
     const open = links.dataset.open === "true";
     links.dataset.open = String(!open);
     toggle.setAttribute("aria-expanded", String(!open));
+  });
+
+  // Escape closes the menu. Without this the only way out on a phone is to find the button
+  // again, which with eleven links open is a scroll away.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && links?.dataset.open === "true") {
+      links.dataset.open = "false";
+      toggle?.setAttribute("aria-expanded", "false");
+      toggle?.focus();
+    }
   });
 </script>

@@ -120,9 +120,24 @@ body {
   margin: 40px auto;
   padding: 0 var(--gutter);
   display: grid;
-  grid-template-columns: 1fr 300px;
+  /*
+   * 12-column grid so the main column and the sidebar can hold a ratio rather than a fixed
+   * width. It was `1fr 300px`, which is fine at one screen size and wrong at every other:
+   * a fixed sidebar cannot shrink, so it either overflows or the main column collapses.
+   * Desktop 8/12 + 4/12 is the 70/30 the front-end brief asks for.
+   */
+  grid-template-columns: repeat(12, 1fr);
   gap: 40px;
   align-items: start;
+}
+
+/* The two children of a content container: main text and the sidebar. */
+.container > main {
+  grid-column: span 8;
+}
+
+.container > aside {
+  grid-column: span 4;
 }
 
 /*
@@ -203,6 +218,29 @@ body {
 .nav-links a[aria-current="page"] {
   color: var(--c-red);
   border-bottom-color: var(--c-red);
+}
+
+/* ---------- header subscribe button ----------
+ * The brief asks for a subscribe control in the header. It is a filled button so that it
+ * reads as the primary action on the bar rather than as a twelfth section, and it is
+ * separated from the links by the margin on its list item.
+ */
+.nav-cta-item {
+  margin-left: 4px;
+}
+
+.nav-cta {
+  background: var(--c-red);
+  color: #fff !important;
+  padding: 7px 14px !important;
+  border-radius: var(--radius);
+  border-bottom: 2px solid transparent !important;
+}
+
+.nav-cta:hover {
+  background: var(--c-navy);
+  border-bottom-color: transparent !important;
+  color: #fff !important;
 }
 
 /* Mobile: prototype hid the nav entirely. We keep it reachable. */
@@ -1439,24 +1477,99 @@ body {
   font-style: italic;
 }
 
-@media (max-width: 900px) {
+/* ==========================================================================
+   RESPONSIVE — three bands, mobile-first rules applied by max-width
+   ==========================================================================
+
+   The front-end brief names three breakpoints and the site had one, at 900px,
+   which is not any of them:
+
+     mobile    0–767px     single column, sidebar removed, nav collapsed
+     tablet    768–1023px  two columns, narrower sidebar, smaller type
+     desktop   1024px+     two columns at 70/30
+
+   900px was the worst of both: a 900px-wide window got the tablet grid with
+   desktop type. These are `max-width` queries, so the desktop rules above stay
+   as the default and each band below only overrides what changes.
+   -------------------------------------------------------------------------- */
+
+/* ---------- tablet: 768–1023 ---------- */
+@media (max-width: 1023px) {
+  :root {
+    --gutter: 20px;
+  }
+
   .container {
-    grid-template-columns: 1fr;
     gap: 28px;
+    margin: 32px auto;
+  }
+
+  /* 7/12 + 5/12 — a proportionally wider sidebar on a narrower screen. */
+  .container > main {
+    grid-column: span 7;
+  }
+
+  .container > aside {
+    grid-column: span 5;
   }
 
   .hero {
-    padding: 48px var(--gutter);
+    padding: 52px var(--gutter);
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 32px;
+  }
+
+  .article-header h1 {
+    font-size: 30px;
+  }
+
+  .prose {
+    font-size: 16.5px;
+  }
+
+  /* Cards lose their thumbnail column before they lose their thumbnail. */
+  .article-row {
+    gap: 14px;
+  }
+}
+
+/* ---------- mobile: 0–767 ---------- */
+@media (max-width: 767px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin: 24px auto;
+  }
+
+  /* One column: the sidebar is dropped from the layout rather than squeezed. */
+  .container > main,
+  .container > aside {
+    grid-column: 1 / -1;
+  }
+
+  .hero {
+    padding: 40px var(--gutter);
+  }
+
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  .article-header h1 {
+    font-size: 25px;
   }
 
   .related-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Navigation collapses to the hamburger at the mobile band, not at 900px. */
   .nav-toggle {
     display: inline-block;
   }
@@ -1477,16 +1590,54 @@ body {
 
   .nav-links a {
     display: block;
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: none;
   }
 
-  .article-header h1 {
-    font-size: 28px;
+  .prose {
+    font-size: 17px;
+    /* Generous leading is what makes a long analysis readable on a phone. */
+    line-height: 1.72;
   }
 
-  .prose {
-    font-size: 16px;
+  .prose p {
+    margin-bottom: 1.15em;
+  }
+
+  /* ---------- touch targets ----------
+   * Every interactive element gets at least 44x44 CSS pixels of tappable area, which is
+   * the figure both Apple's and Google's guidance converge on. Applied by padding rather
+   * than by min-width so inline links inside a paragraph are not stretched - a link in a
+   * sentence is a different control from a link in a bar.
+   */
+  .nav-links a,
+  .nav-toggle,
+  .btn,
+  .hero-button,
+  .plan-cta,
+  .newsletter-cta,
+  button[type="submit"],
+  .article-row h3 a,
+  .brief-row h2 a,
+  .brief-item h2 a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Tables and code cannot reflow, so they scroll inside their own box. */
+  .prose table,
+  .table-wrap table,
+  .prose pre {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* An ad slot in the sidebar has nowhere to go when the sidebar is gone. */
+  .ad-slot--sidebar {
+    display: none;
   }
 }
 

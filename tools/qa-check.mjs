@@ -560,15 +560,33 @@ function reportLibraryClaims(files) {
     ...readdirSync("src/pages").filter((f) => f.endsWith(".astro")).map((f) => join("src/pages", f)),
     ...readdirSync("src/components").filter((f) => f.endsWith(".astro")).map((f) => join("src/components", f)),
   ];
-  // A promise of daily or weekly delivery, in words a reader sees.
+  /*
+   * A promise of daily or weekly delivery, in words a reader sees.
+   *
+   * Negations and conditionals are excluded, because the copy that explains the choice uses
+   * the same words as the promise that broke this rule. The site deliberately does not send a
+   * daily digest and says so in three places - "not a daily digest", "no daily filler", "a
+   * daily digest would have to invent something to say". A bare word match reported all three
+   * as cadence promises, which is the second time this gate mistook a sentence about a thing
+   * for the thing itself; the first was `may`, where the permissive sense used throughout
+   * regulations was read as a hedge.
+   *
+   * The distinction is grammatical rather than approximate, so it is matched rather than
+   * guessed: a cadence phrase preceded by a negation or a conditional is a counterfactual, not
+   * a commitment.
+   */
   const CADENCE = /\b(every (day|morning|week)|daily (brief|email|digest|update)|weekly (digest|email|update)|fills up (daily|weekly)|the (morning|day|week) it publishes)\b/i;
+  const NOT_A_CLAIM = /\b(not|no|never|without|instead of|rather than|would|could|might|if)\b[^.;]{0,44}$/i;
   for (const f of claimSources) {
     const lines = readFileSync(f, "utf8").split("\n");
     for (const [i, line] of lines.entries()) {
       const t = line.trim();
       if (!t || /^\s*(\*|\/\/|\/\*)/.test(t)) continue; // comments explain history
       const text = t.replace(/<[^>]+>/g, " ").replace(/\{[^}]*\}/g, " ").replace(/\s+/g, " ").trim();
-      if (CADENCE.test(text)) cadenceClaims.push(`${f.replace(/\\/g, "/")}:${i + 1} — ${text.slice(0, 70)}`);
+      const m = CADENCE.exec(text);
+      if (!m) continue;
+      if (NOT_A_CLAIM.test(text.slice(0, m.index))) continue;
+      cadenceClaims.push(`${f.replace(/\\/g, "/")}:${i + 1} — ${text.slice(0, 70)}`);
     }
   }
 

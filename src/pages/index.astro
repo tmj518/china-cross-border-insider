@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 
 import ArticleRow from "../components/ArticleRow.astro";
+import AdSlot from "../components/AdSlot.astro";
 import FeaturedCard from "../components/FeaturedCard.astro";
 import HeroLead from "../components/HeroLead.astro";
 import Sidebar from "../components/Sidebar.astro";
@@ -73,6 +74,11 @@ const jsonLd = {
     sources={sources}
     instruments={instrumentRegistry.instruments.length}
   />
+
+  {/* Homepage top banner. Hidden below 768px, where a 728-wide unit cannot fit. */}
+  <div class="container container--flush">
+    <AdSlot placement="banner" />
+  </div>
 
   <div class="container">
     <main id="main">

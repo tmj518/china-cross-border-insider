@@ -46,7 +46,13 @@ for (const [label, file, expectNoIndex] of PAGES) {
   if (!types.includes("Organization")) problems.push(`${label}: no Organization`);
   if (!types.includes("WebSite")) problems.push(`${label}: no WebSite`);
   if (dupes.length) problems.push(`${label}: duplicate block type(s): ${dupes.join(", ")}`);
-  if (!types.some((t) => ["WebPage", "CollectionPage", "AboutPage", "ContactPage", "Article"].includes(t))) {
+  /*
+   * NewsArticle is accepted alongside Article. Both take the same properties, so the article
+   * pages claim the news type deliberately - it is the correct classification for dated
+   * reporting on a change, which is all this site publishes - and a gate that only knew about
+   * Article would reject every article page as having no page-level block.
+   */
+  if (!types.some((t) => ["WebPage", "CollectionPage", "AboutPage", "ContactPage", "Article", "NewsArticle"].includes(t))) {
     problems.push(`${label}: no page-level block`);
   }
 

@@ -60,13 +60,25 @@ const ownBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
  * means the next page added gets it without anyone remembering to.
  *
 /*
- * Skipped when the page supplies its own AboutPage, ContactPage, Article, WebSite, CollectionPage
- * or Dataset block, so no page states two things about itself.
+ * Skipped when the page supplies its own AboutPage, ContactPage, NewsArticle, WebSite,
+ * CollectionPage or Dataset block, so no page states two things about itself.
+ *
+ * NewsArticle is in the list for the article pages, which emit it deliberately: both types
+ * take the same properties, so claiming the news type is a classification choice rather than
+ * a correctness one, and a page must not carry both.
  *
  * Dataset is in the list for the /instrument/<id>/ pages: a set of measured values with
  * provenance is not a WebPage, and emitting both would have the page describe itself twice.
  */
-const OWN_PAGE_TYPES = ["AboutPage", "ContactPage", "Article", "WebSite", "CollectionPage", "Dataset"];
+const OWN_PAGE_TYPES = [
+  "AboutPage",
+  "ContactPage",
+  "Article",
+  "NewsArticle",
+  "WebSite",
+  "CollectionPage",
+  "Dataset",
+];
 const declaresOwn = ownBlocks.some((b) => {
   const t = (b as { "@type"?: unknown })["@type"];
   return typeof t === "string" && OWN_PAGE_TYPES.includes(t);
