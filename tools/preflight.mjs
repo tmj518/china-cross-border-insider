@@ -225,7 +225,7 @@ async function checkEnvironment() {
     ["对标学习10条.md", 3000, "the ten mechanisms to copy, one of which each run must advance"],
     ["必读清单与开工指令.md", 4000, "what to read each day, and what not to read"],
     ["daily-task.txt", 8000, "the flow the run actually executes"],
-    ["项目规范_英文内容站_v1.3.md", 10000, "the governing spec, current version"],
+    ["项目规范_英文内容站_v1.4.md", 10000, "the governing spec, current version"],
   ];
   const docProblems = [];
   for (const [name, minBytes, why] of REQUIRED_DOCS) {
@@ -293,6 +293,26 @@ async function checkEnvironment() {
     ok("qa-check runs", verdict.trim());
   } else {
     fail("qa-check runs", `exited badly: ${gate.out.split("\n").slice(-1)[0].slice(0, 90)}`);
+  }
+
+  /*
+   * --- the instrument registry: is it in step with the articles? ---
+   *
+   * /instrument/<id>/ pages are generated from a registry derived from article
+   * frontmatter. It goes stale silently: a document that crosses the depth threshold
+   * simply never gets a page, and nothing looks wrong. --check regenerates in memory and
+   * compares, so the drift is caught here rather than discovered months later.
+   */
+  const registry = spawnSync(NODE, [join(ROOT, "tools", "build-instruments.mjs"), "--check"], {
+    encoding: "utf8",
+    timeout: 60000,
+  });
+  const regOut = `${registry.stdout ?? ""}${registry.stderr ?? ""}`.trim();
+  if (registry.status === 0) {
+    ok("instrument registry", regOut.split("\n").filter(Boolean).slice(-1)[0]?.trim() ?? "up to date");
+  } else {
+    const why = regOut.split("\n").filter((l) => /STALE|would be|run:/.test(l)).map((l) => l.trim()).join(" | ");
+    fail("instrument registry", why || "out of step with the articles");
   }
 
   // --- the review clock: is any article past the date it goes stale? ---

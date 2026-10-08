@@ -59,10 +59,14 @@ const ownBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
  * and the category hubs — had none because it was opt-in per page. Making it opt-out
  * means the next page added gets it without anyone remembering to.
  *
- * Skipped when the page supplies its own AboutPage, ContactPage, Article or WebSite
- * block, so no page states two things about itself.
+/*
+ * Skipped when the page supplies its own AboutPage, ContactPage, Article, WebSite, CollectionPage
+ * or Dataset block, so no page states two things about itself.
+ *
+ * Dataset is in the list for the /instrument/<id>/ pages: a set of measured values with
+ * provenance is not a WebPage, and emitting both would have the page describe itself twice.
  */
-const OWN_PAGE_TYPES = ["AboutPage", "ContactPage", "Article", "WebSite", "CollectionPage"];
+const OWN_PAGE_TYPES = ["AboutPage", "ContactPage", "Article", "WebSite", "CollectionPage", "Dataset"];
 const declaresOwn = ownBlocks.some((b) => {
   const t = (b as { "@type"?: unknown })["@type"];
   return typeof t === "string" && OWN_PAGE_TYPES.includes(t);

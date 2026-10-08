@@ -1,0 +1,1185 @@
+{
+  "generated": "2026-10-08",
+  "instruments": [
+    {
+      "id": "european-commission-2026-coordinated-product-safety-sweep-re",
+      "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+      "figures": [
+        {
+          "articleSlug": "eu-gpsr-sweep-2026-marketplace-listings",
+          "articleNum": 5,
+          "value": "1,700",
+          "unit": "online listings examined (approximately)",
+          "period": "sweep conducted May to July 2026",
+          "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "eu-gpsr-sweep-2026-marketplace-listings",
+          "articleNum": 5,
+          "value": "35",
+          "unit": "online marketplaces checked",
+          "period": "sweep conducted May to July 2026",
+          "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "eu-gpsr-sweep-2026-marketplace-listings",
+          "articleNum": 5,
+          "value": "560",
+          "unit": "enforcement orders sent to marketplaces for non-compliant listings",
+          "period": "following the 2026 sweep",
+          "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "eu-gpsr-sweep-2026-marketplace-listings",
+          "articleNum": 5,
+          "value": "58",
+          "unit": "percent of listings showing manufacturer, EU responsible person and product identification together",
+          "period": "2026 sweep",
+          "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "eu-gpsr-sweep-2026-marketplace-listings",
+          "articleNum": 5,
+          "value": "91",
+          "unit": "percent of marketplaces registered on the Safety Gate Portal, against 53 percent in 2025",
+          "period": "2026 sweep",
+          "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "eu-gpsr-sweep-2026-marketplace-listings",
+          "articleNum": 5,
+          "value": "100",
+          "unit": "percent of marketplaces designating a single consumer contact point, against 64 percent in 2025",
+          "period": "2026 sweep",
+          "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        5
+      ],
+      "articleSlugs": [
+        "eu-gpsr-sweep-2026-marketplace-listings"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-bureau-of-statistics-of-china-industrial-producer-p",
+      "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+      "figures": [
+        {
+          "articleSlug": "china-input-cost-gap-supplier-price-negotiation-2027",
+          "articleNum": 21,
+          "value": "5.8",
+          "unit": "percent — year-on-year rise in the purchasing price index for industrial producers, the inputs a factory buys",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-input-cost-gap-supplier-price-negotiation-2027",
+          "articleNum": 21,
+          "value": "3.8",
+          "unit": "percent — year-on-year rise in the producer price index, the prices factories charge at the gate",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-input-cost-gap-supplier-price-negotiation-2027",
+          "articleNum": 21,
+          "value": "3.2",
+          "unit": "percent — average year-on-year rise in the purchasing price index for industrial producers",
+          "period": "January to August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-input-cost-gap-supplier-price-negotiation-2027",
+          "articleNum": 21,
+          "value": "2.0",
+          "unit": "percent — average year-on-year rise in the producer price index",
+          "period": "January to August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-input-cost-gap-supplier-price-negotiation-2027",
+          "articleNum": 21,
+          "value": "19.8",
+          "unit": "percent — year-on-year rise in purchasing prices for nonferrous metals and cables",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-input-cost-gap-supplier-price-negotiation-2027",
+          "articleNum": 21,
+          "value": "-0.5",
+          "unit": "percent — year-on-year change in producer prices for consumer goods, a fall",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes in August 2026, released 10 September 2026",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        21
+      ],
+      "articleSlugs": [
+        "china-input-cost-gap-supplier-price-negotiation-2027"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "presidential-proclamation-11052-91-fr-51975",
+      "source": "Presidential Proclamation 11052, 91 FR 51975",
+      "figures": [
+        {
+          "articleSlug": "proclamation-11052-polysilicon-minimum-import-price",
+          "articleNum": 8,
+          "value": "21",
+          "unit": "US dollars per kilogram — minimum import price for polysilicon",
+          "period": "effective 4 December 2026",
+          "source": "Presidential Proclamation 11052, 91 FR 51975",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "proclamation-11052-polysilicon-minimum-import-price",
+          "articleNum": 8,
+          "value": "100",
+          "unit": "US dollars per kilogram — minimum import price for polysilicon ingots and wafers",
+          "period": "effective 4 December 2026",
+          "source": "Presidential Proclamation 11052, 91 FR 51975",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "proclamation-11052-polysilicon-minimum-import-price",
+          "articleNum": 8,
+          "value": "0.22",
+          "unit": "US dollars per watt — minimum import price for solar cells",
+          "period": "effective 4 December 2026",
+          "source": "Presidential Proclamation 11052, 91 FR 51975",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "proclamation-11052-polysilicon-minimum-import-price",
+          "articleNum": 8,
+          "value": "0.38",
+          "unit": "US dollars per watt — minimum import price for solar modules",
+          "period": "effective 4 December 2026",
+          "source": "Presidential Proclamation 11052, 91 FR 51975",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "proclamation-11052-polysilicon-minimum-import-price",
+          "articleNum": 8,
+          "value": "15",
+          "unit": "percent ad valorem — additional Section 232 duty on covered goods",
+          "period": "entries on or after 12:01 a.m. eastern time on 4 December 2026",
+          "source": "Presidential Proclamation 11052, 91 FR 51975",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "proclamation-11052-polysilicon-minimum-import-price",
+          "articleNum": 8,
+          "value": "8",
+          "unit": "named Trade Agreement Partners (United Kingdom, European Union, Japan, Republic of Korea, Switzerland, Liechtenstein, Mexico, Canada) plus future trade-and-security-agreement partners",
+          "period": "as published 11 August 2026",
+          "source": "Presidential Proclamation 11052, 91 FR 51975",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        8
+      ],
+      "articleSlugs": [
+        "proclamation-11052-polysilicon-minimum-import-price"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "customs-tariff-commission-of-the-state-council-annex-3",
+      "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, rows 29 and 30",
+      "figures": [
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "40",
+          "unit": "percent — export duty on ferrochrome, the good the announcement names as its lead example",
+          "period": "2026, with no provisional rate",
+          "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, rows 29 and 30",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "30",
+          "unit": "percent — export duty on copper cathode, reduced to a 10 percent provisional rate",
+          "period": "2026",
+          "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, rows 39 to 46",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "30",
+          "unit": "percent — export duty on copper waste and scrap, reduced to a 15 percent provisional rate",
+          "period": "2026",
+          "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, row 50",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "0",
+          "unit": "percent — provisional export duty on every wrought copper line: wire, bar, rod, plate, sheet and strip",
+          "period": "2026, against a nominal rate of 30 percent",
+          "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, rows 51 to 71",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "0",
+          "unit": "percent — provisional export duty on every wrought aluminium line: bar, rod, profile, wire, plate, sheet and strip",
+          "period": "2026, against a nominal rate of 20 percent",
+          "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, rows 81 to 100",
+          "retrieved": "2026-10-03"
+        }
+      ],
+      "articleNums": [
+        11
+      ],
+      "articleSlugs": [
+        "china-2026-export-duty-wrought-metals"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-bureau-of-statistics-of-china-via-xinhua-9",
+      "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
+      "figures": [
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "10.4",
+          "unit": "percent — month-on-month rise in oil extraction prices",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "4.1",
+          "unit": "percent — month-on-month rise in refined petroleum product prices",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "3.5",
+          "unit": "percent — month-on-month rise in electronic circuit manufacturing prices",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "0.31",
+          "unit": "percentage points — combined contribution to the monthly PPI rise from oil extraction, refined petroleum, organic chemical materials and nonferrous metal smelting",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "0.74",
+          "unit": "percentage points — combined downward contribution from the six industries with the largest negative impact",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        10
+      ],
+      "articleSlugs": [
+        "china-ppi-positive-factory-price-drift"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "general-administration-of-customs-of-the-prc-announcement-no-1",
+      "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+      "figures": [
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "74",
+          "unit": "announcement number (2026)",
+          "period": "issued 29 May 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "4",
+          "unit": "document types covered (RCEP certificates, back-to-back certificates, ACFTA certificates, movement certificates)",
+          "period": "from 1 June 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "30 November 2026",
+          "unit": "last day manual origin-data entry is accepted as a remedy",
+          "period": "transition window opened 1 June 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "1 December 2026",
+          "unit": "date a duty guarantee becomes the route to advance release",
+          "period": "from this date onward",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        }
+      ],
+      "articleNums": [
+        1
+      ],
+      "articleSlugs": [
+        "china-malaysia-origin-data-electronic-december-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ministry-of-finance-of-the-prc-and-state-taxation",
+      "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
+      "figures": [
+        {
+          "articleSlug": "china-export-tax-rebate-removal-battery-solar",
+          "articleNum": 3,
+          "value": "1 April 2026",
+          "unit": "date the export VAT rebate on photovoltaic products was abolished",
+          "period": "announcement published early January 2026",
+          "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-export-tax-rebate-removal-battery-solar",
+          "articleNum": 3,
+          "value": "9 to 6",
+          "unit": "percent — the export VAT rebate rate for battery-related products from 1 April 2026",
+          "period": "effective 1 April 2026",
+          "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-export-tax-rebate-removal-battery-solar",
+          "articleNum": 3,
+          "value": "1 January 2027",
+          "unit": "date the battery-related export VAT rebate is abolished",
+          "period": "second stage of the same announcement",
+          "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-export-tax-rebate-removal-battery-solar",
+          "articleNum": 3,
+          "value": "9",
+          "unit": "percentage points of export value removed from the rebate across both stages",
+          "period": "9% to 6% in April 2026, then 6% to zero in January 2027",
+          "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        3
+      ],
+      "articleSlugs": [
+        "china-export-tax-rebate-removal-battery-solar"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ustr-notice-of-product-exclusion-extensions-90-fr-55232",
+      "source": "USTR, Notice of Product Exclusion Extensions, 90 FR 55232",
+      "figures": [
+        {
+          "articleSlug": "section-301-exclusions-expire-november-2026",
+          "articleNum": 2,
+          "value": "178",
+          "unit": "product exclusions",
+          "period": "as of 1 December 2025",
+          "source": "USTR, Notice of Product Exclusion Extensions, 90 FR 55232",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "section-301-exclusions-expire-november-2026",
+          "articleNum": 2,
+          "value": "164",
+          "unit": "exclusions under HTSUS 9903.88.69",
+          "period": "as of 1 December 2025",
+          "source": "USTR, Notice of Product Exclusion Extensions, 90 FR 55232",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "section-301-exclusions-expire-november-2026",
+          "articleNum": 2,
+          "value": "14",
+          "unit": "solar manufacturing equipment exclusions under HTSUS 9903.88.70",
+          "period": "as of 1 December 2025",
+          "source": "USTR, Notice of Product Exclusion Extensions, 90 FR 55232",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "section-301-exclusions-expire-november-2026",
+          "articleNum": 2,
+          "value": "9 November 2026, 11:59 p.m. Eastern",
+          "unit": "final entry date covered by the extension",
+          "period": "extension window opened 30 November 2025",
+          "source": "USTR, Notice of Product Exclusion Extensions, 90 FR 55232",
+          "retrieved": "2026-10-01"
+        }
+      ],
+      "articleNums": [
+        2
+      ],
+      "articleSlugs": [
+        "section-301-exclusions-expire-november-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "cbp-interim-final-rule-91-fr-37801",
+      "source": "CBP interim final rule, 91 FR 37801",
+      "figures": [
+        {
+          "articleSlug": "us-de-minimis-postal-route-closes-october-2026",
+          "articleNum": 12,
+          "value": "2,500",
+          "unit": "US dollars — the value ceiling for postal informal entry under 19 CFR 145.12(b)",
+          "period": "in force from 24 July 2026",
+          "source": "CBP interim final rule, 91 FR 37801",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "us-de-minimis-postal-route-closes-october-2026",
+          "articleNum": 12,
+          "value": "8.62",
+          "unit": "percent — CBP's stated effective average non-IEEPA duty rate on entry type 11 filings",
+          "period": "CBP sample of September to November 2025 entries",
+          "source": "CBP interim final rule, 91 FR 37801",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "us-de-minimis-postal-route-closes-october-2026",
+          "articleNum": 12,
+          "value": "316,163,988",
+          "unit": "US dollars — CBP's estimated annual increase in duty collections under the rule",
+          "period": "estimate published with the rule, 24 June 2026",
+          "source": "CBP interim final rule, 91 FR 37801",
+          "retrieved": "2026-10-03"
+        }
+      ],
+      "articleNums": [
+        12
+      ],
+      "articleSlugs": [
+        "us-de-minimis-postal-route-closes-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "customs-tariff-commission-of-the-state-council-official-inte",
+      "source": "Customs Tariff Commission of the State Council, official interpretation of the 2026 tariff adjustment plan, 29 December 2025",
+      "figures": [
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "68",
+          "unit": "of those goods subject to a provisional export duty rate",
+          "period": "2026, effective 1 January 2026",
+          "source": "Customs Tariff Commission of the State Council, official interpretation of the 2026 tariff adjustment plan, 29 December 2025",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "8,972",
+          "unit": "total tariff lines after the 2026 adjustment, with new national subheadings added for intelligent bionic robots, bio-aviation kerosene and forest ginseng",
+          "period": "from 1 January 2026",
+          "source": "Customs Tariff Commission of the State Council, official interpretation of the 2026 tariff adjustment plan, 29 December 2025",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "china-2026-export-duty-wrought-metals",
+          "articleNum": 11,
+          "value": "935",
+          "unit": "goods granted provisional import duty rates below the most-favoured-nation rate",
+          "period": "2026, from 1 January 2026",
+          "source": "Customs Tariff Commission of the State Council, official interpretation of the 2026 tariff adjustment plan, 29 December 2025",
+          "retrieved": "2026-10-03"
+        }
+      ],
+      "articleNums": [
+        11
+      ],
+      "articleSlugs": [
+        "china-2026-export-duty-wrought-metals"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "lanthanides-io-regulatory-tracker-dataset-dated-5-june-2026",
+      "source": "lanthanides.io regulatory tracker, dataset dated 5 June 2026",
+      "figures": [
+        {
+          "articleSlug": "china-rare-earth-export-controls-licence-regime",
+          "articleNum": 4,
+          "value": "5",
+          "unit": "Chinese regulatory notices tracked, covering 20 element symbols",
+          "period": "as of 5 June 2026",
+          "source": "lanthanides.io regulatory tracker, dataset dated 5 June 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-rare-earth-export-controls-licence-regime",
+          "articleNum": 4,
+          "value": "15",
+          "unit": "element symbols classified as active under Chinese export controls",
+          "period": "as of 5 June 2026",
+          "source": "lanthanides.io regulatory tracker, dataset dated 5 June 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-rare-earth-export-controls-licence-regime",
+          "articleNum": 4,
+          "value": "5",
+          "unit": "element symbols suspended from the October 2025 expansion (holmium, erbium, thulium, europium, ytterbium)",
+          "period": "as of 5 June 2026",
+          "source": "lanthanides.io regulatory tracker, dataset dated 5 June 2026",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        4
+      ],
+      "articleSlugs": [
+        "china-rare-earth-export-controls-licence-regime"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-bureau-of-statistics-of-china-producer-price-index",
+      "source": "National Bureau of Statistics of China, producer price index, released 9 September 2026",
+      "figures": [
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "3.8",
+          "unit": "percent — year-on-year change in the producer price index",
+          "period": "August 2026, growth widening by 0.3 percentage point from July",
+          "source": "National Bureau of Statistics of China, producer price index, released 9 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "0.4",
+          "unit": "percent — month-on-month change in the producer price index, reversing a 0.7 percent decline in July",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, producer price index, released 9 September 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-ppi-positive-factory-price-drift",
+          "articleNum": 10,
+          "value": "2.0",
+          "unit": "percent — average year-on-year increase in the producer price index",
+          "period": "January to August 2026",
+          "source": "National Bureau of Statistics of China, producer price index, released 9 September 2026",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        10
+      ],
+      "articleSlugs": [
+        "china-ppi-positive-factory-price-drift"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-bureau-of-statistics-of-china-same-release-table-22",
+      "source": "National Bureau of Statistics of China, same release, table 2",
+      "figures": [
+        {
+          "articleSlug": "china-industrial-profits-q4-supply-chain",
+          "articleNum": 22,
+          "value": "72.2",
+          "unit": "days — average receivables collection period, up 0.9 days year on year",
+          "period": "as at end of August 2026",
+          "source": "National Bureau of Statistics of China, same release, table 2",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-industrial-profits-q4-supply-chain",
+          "articleNum": 22,
+          "value": "21.3",
+          "unit": "days — finished-goods inventory turnover, up 0.6 days year on year",
+          "period": "as at end of August 2026",
+          "source": "National Bureau of Statistics of China, same release, table 2",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-industrial-profits-q4-supply-chain",
+          "articleNum": 22,
+          "value": "5.66",
+          "unit": "per cent — operating revenue profit margin, up 0.44 percentage points",
+          "period": "January to August 2026",
+          "source": "National Bureau of Statistics of China, same release, table 2",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        22
+      ],
+      "articleSlugs": [
+        "china-industrial-profits-q4-supply-chain"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "official-work-guidance-on-gacc-announcement-no-136-of-23",
+      "source": "Official work guidance on GACC Announcement No. 136 of 2026, circulated by customs, 3 October 2026",
+      "figures": [
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "1973",
+          "unit": "the year China opened international sea container transport, when suitability inspection was applied for voluntarily",
+          "period": "business history recorded in the official work guidance",
+          "source": "Official work guidance on GACC Announcement No. 136 of 2026, circulated by customs, 3 October 2026",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "1984",
+          "unit": "the year a State Council commodity inspection regulation made container suitability inspection mandatory",
+          "period": "business history recorded in the official work guidance",
+          "source": "Official work guidance on GACC Announcement No. 136 of 2026, circulated by customs, 3 October 2026",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "2018",
+          "unit": "the year customs became the enforcement body for container suitability inspection, after the State Council institutional reform",
+          "period": "business history recorded in the official work guidance",
+          "source": "Official work guidance on GACC Announcement No. 136 of 2026, circulated by customs, 3 October 2026",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        23
+      ],
+      "articleSlugs": [
+        "china-container-suitability-check-frozen-food-export-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "shanghai-shipping-research-institute-in-preparation-ccfi-ind",
+      "source": "Shanghai Shipping Research Institute (in Preparation), CCFI index page",
+      "figures": [
+        {
+          "articleSlug": "container-freight-index-publisher-change-2026",
+          "articleNum": 7,
+          "value": "1923.93",
+          "unit": "CCFI composite index points, previous reading 1917.68 (+0.3%)",
+          "period": "week ending 30 September 2026",
+          "source": "Shanghai Shipping Research Institute (in Preparation), CCFI index page",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "container-freight-index-publisher-change-2026",
+          "articleNum": 7,
+          "value": "1322.15",
+          "unit": "CCFI Southeast Asia Service points, previous reading 1211.87 (+9.1%)",
+          "period": "week ending 30 September 2026",
+          "source": "Shanghai Shipping Research Institute (in Preparation), CCFI index page",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "container-freight-index-publisher-change-2026",
+          "articleNum": 7,
+          "value": "1970.38",
+          "unit": "CCFI Europe Service points, previous reading 2028.95 (-2.9%)",
+          "period": "week ending 30 September 2026",
+          "source": "Shanghai Shipping Research Institute (in Preparation), CCFI index page",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        7
+      ],
+      "articleSlugs": [
+        "container-freight-index-publisher-change-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "shanghai-shipping-research-institute-ccfi-index-page",
+      "source": "Shanghai Shipping Research Institute, CCFI index page",
+      "figures": [
+        {
+          "articleSlug": "freight-index-linked-contract-two-errors-2026",
+          "articleNum": 18,
+          "value": "1322.15",
+          "unit": "CCFI Southeast Asia Service index points, previous reading 1211.87",
+          "period": "week ending 30 September 2026, a rise of 9.1 per cent",
+          "source": "Shanghai Shipping Research Institute, CCFI index page",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "freight-index-linked-contract-two-errors-2026",
+          "articleNum": 18,
+          "value": "1970.38",
+          "unit": "CCFI Europe Service index points, previous reading 2028.95",
+          "period": "week ending 30 September 2026, a fall of 2.9 per cent",
+          "source": "Shanghai Shipping Research Institute, CCFI index page",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "freight-index-linked-contract-two-errors-2026",
+          "articleNum": 18,
+          "value": "1923.93",
+          "unit": "CCFI composite index points, previous reading 1917.68",
+          "period": "week ending 30 September 2026, a rise of 0.33 per cent",
+          "source": "Shanghai Shipping Research Institute, CCFI index page",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        18
+      ],
+      "articleSlugs": [
+        "freight-index-linked-contract-two-errors-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "state-administration-for-market-regulation-and-people-s-bank",
+      "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕3号, Art. 3 and 7",
+      "figures": [
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "25 September 2025",
+          "unit": "date the national registration-agent information system went live",
+          "period": "created under a rule effective 15 September 2025",
+          "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕3号, Art. 3 and 7",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "3",
+          "unit": "years — period during which filings from a person designated directly responsible for a false registration are refused",
+          "period": "counted from the date the registration is revoked",
+          "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕3号, Art. 38",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "10",
+          "unit": "years — minimum retention of business and transaction records by registration agents",
+          "period": "in force from 15 September 2025",
+          "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕3号, Art. 26",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        6
+      ],
+      "articleSlugs": [
+        "china-real-name-registration-supplier-verification"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "state-council-customs-tariff-commission-2026-tariff-adjustme",
+      "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan",
+      "figures": [
+        {
+          "articleSlug": "china-export-rebate-vs-export-duty-2026",
+          "articleNum": 17,
+          "value": "30",
+          "unit": "per cent — nominal export duty on copper cathode, reduced to 10 per cent provisional",
+          "period": "from 1 January 2026",
+          "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-export-rebate-vs-export-duty-2026",
+          "articleNum": 17,
+          "value": "40",
+          "unit": "per cent — export duty on ferrochrome, which has no provisional rate",
+          "period": "2026",
+          "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-export-rebate-vs-export-duty-2026",
+          "articleNum": 17,
+          "value": "0",
+          "unit": "per cent — provisional export duty on every wrought copper and wrought aluminium line",
+          "period": "2026",
+          "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        17
+      ],
+      "articleSlugs": [
+        "china-export-rebate-vs-export-duty-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "commission-implementing-regulation-eu-2026-1740-annex-i",
+      "source": "Commission Implementing Regulation (EU) 2026/1740, Annex I",
+      "figures": [
+        {
+          "articleSlug": "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026",
+          "articleNum": 15,
+          "value": "428.24",
+          "unit": "EUR per tonne — CBAM carbon cost for Chinese screws and bolts, CN 7318 15, at the Q1 2026 certificate price",
+          "period": "Q1 2026 certificate price of EUR 75.36 per tonne of CO2e",
+          "source": "Commission Implementing Regulation (EU) 2026/1740, Annex I",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026",
+          "articleNum": 15,
+          "value": "144.13",
+          "unit": "EUR per tonne — CBAM carbon cost for Chinese unwrought aluminium, CN 7601, at the Q1 2026 certificate price",
+          "period": "Q1 2026 certificate price of EUR 75.36 per tonne of CO2e",
+          "source": "Commission Implementing Regulation (EU) 2026/1740, Annex I",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        15
+      ],
+      "articleSlugs": [
+        "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "council-regulation-eu-2026-382-article-2",
+      "source": "Council Regulation (EU) 2026/382, Article 2",
+      "figures": [
+        {
+          "articleSlug": "us-vs-eu-low-value-parcel-charges-2026",
+          "articleNum": 16,
+          "value": "150",
+          "unit": "euro — the intrinsic value ceiling above which the EU EUR 3 per-item duty does not apply",
+          "period": "from 1 July 2026",
+          "source": "Council Regulation (EU) 2026/382, Article 2",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "us-vs-eu-low-value-parcel-charges-2026",
+          "articleNum": 16,
+          "value": "3",
+          "unit": "euro — flat EU customs duty per item in a consignment at or below EUR 150",
+          "period": "from 1 July 2026 until the permanent system replaces it",
+          "source": "Council Regulation (EU) 2026/382, Article 2",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        16
+      ],
+      "articleSlugs": [
+        "us-vs-eu-low-value-parcel-charges-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-dg-taxud-price-of-cbam-certificates",
+      "source": "European Commission, DG TAXUD, Price of CBAM certificates",
+      "figures": [
+        {
+          "articleSlug": "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026",
+          "articleNum": 13,
+          "value": "EUR 75.36",
+          "unit": "per tonne of CO2e — CBAM certificate price for Q1 2026",
+          "period": "Q1 2026 (1 January to 31 March 2026), published 7 April 2026",
+          "source": "European Commission, DG TAXUD, Price of CBAM certificates",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026",
+          "articleNum": 13,
+          "value": "EUR 75.28",
+          "unit": "per tonne of CO2e — CBAM certificate price for Q2 2026",
+          "period": "Q2 2026 (1 April to 30 June 2026), published 6 July 2026",
+          "source": "European Commission, DG TAXUD, Price of CBAM certificates",
+          "retrieved": "2026-10-03"
+        }
+      ],
+      "articleNums": [
+        13
+      ],
+      "articleSlugs": [
+        "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ministry-of-finance-and-state-taxation-administration-2026-2-3",
+      "source": "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Annex 1",
+      "figures": [
+        {
+          "articleSlug": "china-export-rebate-vs-export-duty-2026",
+          "articleNum": 17,
+          "value": "249",
+          "unit": "product lines in Annex 1 that lose the export VAT rebate outright",
+          "period": "from 1 April 2026",
+          "source": "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Annex 1",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-export-tax-rebate-removal-battery-solar",
+          "articleNum": 3,
+          "value": "249",
+          "unit": "product lines in Annex 1 (photovoltaic and other products) that lose the export VAT rebate",
+          "period": "published 8 January 2026, effective 1 April 2026",
+          "source": "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Annex 1",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        3,
+        17
+      ],
+      "articleSlugs": [
+        "china-export-rebate-vs-export-duty-2026",
+        "china-export-tax-rebate-removal-battery-solar"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-bureau-of-statistics-of-china-industrial-enterprise",
+      "source": "National Bureau of Statistics of China, industrial enterprise profits for January to August 2026",
+      "figures": [
+        {
+          "articleSlug": "china-industrial-profits-q4-supply-chain",
+          "articleNum": 22,
+          "value": "52719.8",
+          "unit": "100 million yuan — total industrial enterprise profit, January to August 2026",
+          "period": "January to August 2026, published 28 September 2026",
+          "source": "National Bureau of Statistics of China, industrial enterprise profits for January to August 2026",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-industrial-profits-q4-supply-chain",
+          "articleNum": 22,
+          "value": "15.7",
+          "unit": "per cent — year-on-year growth in that cumulative profit figure, on a comparable basis",
+          "period": "January to August 2026",
+          "source": "National Bureau of Statistics of China, industrial enterprise profits for January to August 2026",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        22
+      ],
+      "articleSlugs": [
+        "china-industrial-profits-q4-supply-chain"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "regulation-eu-2026-1384-recital-18",
+      "source": "Regulation (EU) 2026/1384, recital 18",
+      "figures": [
+        {
+          "articleSlug": "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026",
+          "articleNum": 15,
+          "value": "18,345,922",
+          "unit": "tonnes — total EU steel tariff-rate quota across all covered categories",
+          "period": "quota year 1 July 2026 to 30 June 2027",
+          "source": "Regulation (EU) 2026/1384, recital 18",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "eu-steel-safeguard-quota-2026-chinese-hrc-cost",
+          "articleNum": 14,
+          "value": "18,345,922",
+          "unit": "tonnes — total annual tariff-rate quota across all covered categories",
+          "period": "quota year 1 July 2026 to 30 June 2027",
+          "source": "Regulation (EU) 2026/1384, recital 18",
+          "retrieved": "2026-10-05"
+        }
+      ],
+      "articleNums": [
+        14,
+        15
+      ],
+      "articleSlugs": [
+        "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026",
+        "eu-steel-safeguard-quota-2026-chinese-hrc-cost"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "regulation-on-the-implementation-of-the-law-of-the",
+      "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
+      "figures": [
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "100,000",
+          "unit": "yuan — the statutory maximum fine, per container, for using a container that was never suitability-inspected",
+          "period": "in force",
+          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "200,000",
+          "unit": "yuan — the statutory maximum fine, per container, for using a container that failed suitability inspection",
+          "period": "in force",
+          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        23
+      ],
+      "articleSlugs": [
+        "china-container-suitability-check-frozen-food-export-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "state-administration-for-market-regulation-2026-5",
+      "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+      "figures": [
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "1 May 2026",
+          "unit": "date the 2026 registration document and materials standards take effect nationwide",
+          "period": "notice signed 6 January 2026, published 12 January 2026",
+          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "1",
+          "unit": "new standalone form, 《实名登记确认表》 (real-name registration confirmation form)",
+          "period": "introduced in the 2026 standards",
+          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        6
+      ],
+      "articleSlugs": [
+        "china-real-name-registration-supplier-verification"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "state-council-customs-tariff-commission-2026-tariff-adjustme-17",
+      "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan, export duty schedule",
+      "figures": [
+        {
+          "articleSlug": "china-export-rebate-vs-export-duty-2026",
+          "articleNum": 17,
+          "value": "107",
+          "unit": "goods subject to Chinese export duty in 2026, counted row by row from the published schedule",
+          "period": "2026 tariff adjustment plan",
+          "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan, export duty schedule",
+          "retrieved": "2026-10-07"
+        },
+        {
+          "articleSlug": "china-export-rebate-vs-export-duty-2026",
+          "articleNum": 17,
+          "value": "68",
+          "unit": "of those 107 goods carrying a provisional export duty rate rather than the nominal one",
+          "period": "2026",
+          "source": "State Council Customs Tariff Commission, 2026 tariff adjustment plan, export duty schedule",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        17
+      ],
+      "articleSlugs": [
+        "china-export-rebate-vs-export-duty-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "suez-canal-authority-periodical-no-28-of-2026",
+      "source": "Suez Canal Authority, Periodical No. 28 of 2026",
+      "figures": [
+        {
+          "articleSlug": "container-freight-index-publisher-change-2026",
+          "articleNum": 7,
+          "value": "1 August 2026 to 31 January 2027",
+          "unit": "six-month extension of Suez Canal Periodical No. 1 of 2026 to all vessel types",
+          "period": "circular dated 7 September 2026",
+          "source": "Suez Canal Authority, Periodical No. 28 of 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "freight-index-linked-contract-two-errors-2026",
+          "articleNum": 18,
+          "value": "1 August 2026 to 31 January 2027",
+          "unit": "six-month extension of Suez Canal Periodical No. 1 of 2026, all vessel types",
+          "period": "circular dated 7 September 2026 — routing cost rather than index composition",
+          "source": "Suez Canal Authority, Periodical No. 28 of 2026",
+          "retrieved": "2026-10-07"
+        }
+      ],
+      "articleNums": [
+        7,
+        18
+      ],
+      "articleSlugs": [
+        "container-freight-index-publisher-change-2026",
+        "freight-index-linked-contract-two-errors-2026"
+      ],
+      "modelOutput": false
+    }
+  ]
+}
