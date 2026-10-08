@@ -108,7 +108,7 @@ Set-Location $root
 Say "cwd  : $(Get-Location)"
 
 # ---------------------------------------------------------------- 1. preflight
-Say "step 1/5  preflight (outside the agent sandbox)"
+Say "step 1/6  preflight (outside the agent sandbox)"
 $pre = & node (Join-Path $root "tools\preflight.mjs") 2>&1 | ForEach-Object { $_.ToString() }
 $preExit = $LASTEXITCODE
 if ($pre) { $pre | Add-Content -Path $log -Encoding UTF8 }
@@ -118,7 +118,7 @@ Say "preflight exit=$preExit"
 if ($PreflightOnly) { Say "PreflightOnly set - finished."; exit $preExit }
 
 # ---------------------------------------------------------------- 2. the agent
-Say "step 2/5  invoking dsh headless (this can take a long time)"
+Say "step 2/6  invoking dsh headless (this can take a long time)"
 $task = [System.IO.File]::ReadAllText($TaskFile, [System.Text.Encoding]::UTF8)
 Say "task text: $($task.Length) chars"
 
@@ -137,7 +137,7 @@ $sw.Stop()
 Say "dsh finished in $([int]$sw.Elapsed.TotalMinutes) min, exit=$agentExit"
 
 # ---------------------------------------------------------------- 3. commit
-Say "step 3/5  committing the agent's work"
+Say "step 3/6  committing the agent's work"
 $dirty = (& git -C $root status --porcelain 2>&1 | Measure-Object -Line).Lines
 Say "uncommitted files: $dirty"
 if ($dirty -gt 0) {
@@ -168,7 +168,7 @@ if ($NoPush) {
 # The gate on publishing. A production build has to succeed here first: it cannot run
 # inside the agent's sandbox, and this is the only place it can run before the work
 # goes live. A build failure means nothing is pushed and the commits stay local.
-Say "step 4/5  verifying the production build before pushing"
+Say "step 4/6  verifying the production build before pushing"
 $buildExit = Run-Cmd "node" @((Join-Path $root "node_modules\astro\bin\astro.mjs"), "build")
 Say "astro build exit=$buildExit"
 
@@ -202,10 +202,27 @@ if ($pushExit -ne 0) {
 }
 
 # ---------------------------------------------------------------- 5. verify live
-Say "step 5/5  waiting for the deploy, then verifying live"
+Say "step 5/6  waiting for the deploy, then verifying live"
 Start-Sleep -Seconds 45
 $verify = Run-Cmd "node" @((Join-Path $root "tools\verify-live.mjs"))
 Say "live verification exit=$verify"
+
+# ---------------------------------------------------------------- 6. tell engines, pull data
+#
+# IndexNow only, because there is no public Google API for submitting an ordinary article:
+# the Indexing API accepts JobPosting and BroadcastEvent, and Google documents that using it
+# for other content is against its terms. Google's channel is the sitemap, which now carries
+# an accurate lastmod on every URL, derived from content rather than from the build clock.
+#
+# Both calls are advisory. Neither can fail the run: an endpoint being down says nothing about
+# whether the article published, and marking it as a failure would train whoever reads the log
+# to ignore a line that matters.
+Say "step 6/6  submitting changed URLs, then pulling search data"
+$submit = Run-Cmd "node" @((Join-Path $root "tools\submit-urls.mjs"), "--changed")
+Say "url submission exit=$submit"
+$gsc = Run-Cmd "node" @((Join-Path $root "tools\gsc-report.mjs"))
+Say "search report exit=$gsc"
+Say "  advisory only: a missing credential or an unreachable endpoint is not a failed run"
 
 Say "==================== daily run finished ===================="
 if ($verify -ne 0) { exit $verify }

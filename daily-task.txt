@@ -1,4 +1,4 @@
-﻿本工作区是 Landed Math（landedmath.com），一个英文内容站，把中国的一手官方数字变成外国买家发票上的钱。
+本工作区是 Landed Math（landedmath.com），一个英文内容站，把中国的一手官方数字变成外国买家发票上的钱。
 
 你由定时任务启动（每天 08:10）。这一份文件就是用户平时手动发的那条指令——**跑完整流程，到点自己开始，不需要他再说什么。**
 
@@ -287,6 +287,30 @@ node tools/build-instruments.mjs
 **它会写入 `src/data/instruments.json`，preflight 会检查它与文章是否同步。**
 **新文书跨过深度阈值（供出 ≥2 个数字，或被 ≥2 篇文章引用）时会自动多出页面，不需要手写。**
 **排除规则**：`Landed Math <模型名>` 来源是我们的算术不是外部文书，会被排除。
+
+### ★★ 提交收录与搜索监测（自动化）
+
+**★ 先说清楚哪条能做、哪条不存在**：**Google 没有普通文章的收录提交 API。**
+Indexing API 只对 JobPosting 与 BroadcastEvent 生效，**拿它提交文章违反谷歌政策**。
+**"请求编入索引"那个按钮只能人工点，不能脚本化。**
+
+**能自动化的两条**：
+
+```
+node tools/submit-urls.mjs --changed      # 提交今天的 URL 给 IndexNow（必应 + Yandex）
+node tools/gsc-report.mjs                 # 拉搜索数据，给每篇文章一个动作
+```
+
+| 工具 | 做什么 | 需要什么 |
+| --- | --- | --- |
+| **`submit-urls.mjs`** | 读 sitemap 里 `lastmod` 是今天的 URL，POST 给 IndexNow；日志写 `logs/submissions.jsonl` | **已配好**（密钥在 `public/<key>.txt`，已托管） |
+| **`gsc-report.mjs`** | 按规格 §8 给每篇文章判定动作（改标题 / 优化 / 保持 / 回选题池），输出 `data/gsc/` | **需要服务账号密钥** `gsc-service-account.json` + 把服务账号邮箱加进 GSC 用户权限 |
+
+**★ Google 那边靠什么**：**sitemap 的 `lastmod`**——构建时自动写入，**74/74 条都有**，日期来自内容（`updatedDate` → `revisions` → `publishDate`），不是构建时间戳（构建戳会被 Google 忽略）。
+
+**没凭据时 `gsc-report.mjs` 会明确列出要找的路径和五步配置方法，绝不假装有数据。**
+
+**每周读一次 `data/gsc/report_*.md`**——**那是唯一不是猜的关键词数据来源**。
 
 **`git add -A && git commit`** 在闸门全绿之后。
 

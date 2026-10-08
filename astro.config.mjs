@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 import { SITE_URL } from "./src/consts";
+import sitemapLastmod from "./tools/sitemap-lastmod.mjs";
 
 /**
  * Astro 7 static build.
@@ -31,6 +32,13 @@ export default defineConfig({
        */
       filter: (page) => !/\/(privacy|contact|confirmed)\/$/.test(page),
     }),
+    /*
+     * Adds a real `lastmod` to sitemap entries, derived from the content rather than from the
+     * build. The sitemap carried 74 URLs and no lastmod on any of them, which is the one field
+     * that tells a crawler what it cannot work out for itself. Order matters: this runs after
+     * the sitemap plugin and patches its output.
+     */
+    sitemapLastmod(),
   ],
   markdown: {
     shikiConfig: { theme: "github-light" },

@@ -40,6 +40,22 @@ youtube-token.json
 client_secret*.json
 token.json
 
+# Google Search Console service-account key, used by tools/gsc-report.mjs.
+#
+# A service-account private key is a credential: it grants read access to the Search Console
+# property for as long as it exists, with no second factor and no expiry. It was missing from
+# this file until 2026-10-08, which meant the key would have been committable the moment
+# anyone created it in the project root - the default location the tool documents.
+#
+# Local alternative: put it under %LOCALAPPDATA%\dsh\ where nothing is tracked at all.
+gsc-service-account*.json
+*-service-account*.json
+.gsc/
+
+# IndexNow key files are the opposite and are deliberately NOT ignored: the endpoint verifies
+# ownership by fetching /<key>.txt and comparing, so the file is meant to be public. See
+# tools/submit-urls.mjs.
+
 # logs
 npm-debug.log*
 pnpm-debug.log*
