@@ -220,7 +220,7 @@ Say "live verification exit=$verify"
 Say "step 6/6  submitting changed URLs, then pulling search data"
 $submit = Run-Cmd "node" @((Join-Path $root "tools\submit-urls.mjs"), "--changed")
 Say "url submission exit=$submit"
-$gsc = Run-Cmd "node" @((Join-Path $root "tools\gsc-report.mjs"))
+$gsc = Run-Cmd "node" @((Join-Path $root "tools\gsc-report.mjs"), "--allow-missing-credentials")
 Say "search report exit=$gsc"
 Say "  advisory only: a missing credential or an unreachable endpoint is not a failed run"
 

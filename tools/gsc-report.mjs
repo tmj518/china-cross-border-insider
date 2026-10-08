@@ -40,10 +40,11 @@ const OUT_DIR = join(ROOT, "data", "gsc");
 const BLOG_DIR = join(ROOT, "src", "content", "blog");
 const ENV_FILE = join(ROOT, ".env.keywords"); // shared with the keyword miner
 
-const args = { days: 28, dryRun: false, force: false };
+const args = { days: 28, dryRun: false, force: false, allowMissingCredentials: false };
 for (const a of process.argv.slice(2)) {
   if (a === "--dry-run") args.dryRun = true;
   else if (a === "--force") args.force = true;
+  else if (a === "--allow-missing-credentials") args.allowMissingCredentials = true;
   else if (a.startsWith("--days=")) args.days = parseInt(a.slice(7), 10);
   else { console.error(`unknown argument: ${a}`); process.exit(2); }
 }
@@ -63,11 +64,28 @@ function log(msg) {
   appendFileSync(LOG, line + "\n", "utf8");
 }
 
+/**
+ * Stop the run, recording why.
+ *
+ * `--allow-missing-credentials` changes one outcome and only one: an unconfigured Search
+ * Console exits 0 instead of 1. The distinction matters because the daily wrapper runs this
+ * advisory - a credential nobody has created yet says nothing about whether an article
+ * published, and returning 1 there would mark every run as failed until the setup was done,
+ * which teaches whoever reads the log to ignore the step entirely.
+ *
+ * Every other reason still exits 1: an API that rejects the credentials, a property that
+ * cannot be read, a malformed response. Those are real failures and should look like failures.
+ */
 function bail(reason) {
+  const unconfigured = /not configured/i.test(reason);
   const marker = join(OUT_DIR, `report_${DATE}.failed`);
   writeFileSync(marker, `run: ${DATE}\nreason: ${reason}\nstats: ${JSON.stringify(stats)}\n`, "utf8");
   log(`FAILED: ${reason}`);
   log(`marker: ${marker}`);
+  if (unconfigured && args.allowMissingCredentials) {
+    log("treating an unconfigured Search Console as advisory (--allow-missing-credentials)");
+    process.exit(0);
+  }
   process.exit(1);
 }
 

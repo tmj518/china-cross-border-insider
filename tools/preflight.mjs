@@ -274,6 +274,31 @@ async function checkEnvironment() {
     fail("doc encoding", `replacement characters outside code: ${corrupted.join(", ")}`);
   }
 
+  /*
+   * --- the daily automation: does the chain still run? ---
+   *
+   * Publishing, sitemap, submission and analysis are four separate pieces that have to line up
+   * for the daily run to be automatic. Each was tested on its own and the chain was not, which
+   * is exactly how a pipeline that looks wired stops working without anyone noticing: a renamed
+   * tool, a lost flag, a sitemap that stopped carrying dates.
+   *
+   * --dry-run style checks only: nothing is submitted to the network from preflight, because a
+   * health check that sends requests is a health check that can be rate-limited.
+   */
+  const automation = spawnSync(NODE, [join(ROOT, "tools", "prove-automation.mjs")], {
+    encoding: "utf8",
+    timeout: 180000,
+    env: { ...process.env, PROVE_NO_SUBMIT: "1" },
+  });
+  const autoOut = `${automation.stdout ?? ""}${automation.stderr ?? ""}`;
+  const passed = /(\d+) of (\d+) checks passed/.exec(autoOut);
+  if (automation.status === 0 && passed) {
+    ok("daily automation", `${passed[1]}/${passed[2]} links in the chain verified`);
+  } else {
+    const failedNames = [...autoOut.matchAll(/^\s+FAIL\s+(.+)$/gm)].map((m) => m[1].trim());
+    fail("daily automation", failedNames.length ? failedNames.join(" | ").slice(0, 160) : "the end-to-end check did not pass");
+  }
+
   const toolFiles = readdirSync(join(ROOT, "tools")).filter((f) => f.endsWith(".mjs"));
   const broken = [];
   for (const f of toolFiles) {
