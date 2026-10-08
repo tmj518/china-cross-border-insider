@@ -74,6 +74,10 @@ export const NAV_LINKS = [
   // the only page that does something rather than say something, and it is the
   // top of the funnel for the email list.
   { label: "Calculator", href: "/calculator/" },
+  // The archive, named and structured after the benchmark's: a dated list of everything
+  // published, newest first. It sits above the category links because it is the one page
+  // that shows the whole body of work rather than a slice of it.
+  { label: "Briefs", href: "/brief/" },
   { label: "Tracker", href: "/tracker/" },
   { label: "By market", href: "/markets/" },
   { label: "Trade Policy", href: "/category/trade-policy/" },
@@ -179,12 +183,15 @@ export const FOOTER_LINKS = [
   // goes to ask whether the numbers can be trusted.
   { label: "How the sources work", href: "/sources/" },
   { label: "Instruments", href: "/instrument/" },
+  { label: "Briefs", href: "/brief/" },
   { label: "Pricing", href: "/pricing/" },
   // The whitelisting page lives here rather than in the top navigation because it is
   // support, not a destination: you reach it when an email did not arrive, or from the
   // footer of one that did. Without this link it existed only in the sitemap, and a page
   // nothing links to is not published.
   { label: "Make sure emails arrive", href: "/whitelist/" },
+  { label: "Terms", href: "/terms/" },
+  { label: "Refunds", href: "/refund/" },
   { label: "Privacy Policy", href: "/privacy/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
