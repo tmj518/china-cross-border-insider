@@ -219,9 +219,11 @@ async function checkEnvironment() {
    */
   const REQUIRED_DOCS = [
     ["信源清单.md", 4000, "the tested inventory of 23 reachable official sources"],
-    ["初心与目标.md", 2000, "the single standard for judging trade-offs"],
+    ["初心与目标.md", 2000, "the single standard, including completeness before length"],
     ["经验与踩坑记录.md", 4000, "the reusable lessons, including the benchmark findings"],
     ["对标学习10条.md", 3000, "the ten mechanisms to copy, one of which each run must advance"],
+    ["必读清单与开工指令.md", 4000, "what to read each day, and what not to read"],
+    ["daily-task.txt", 8000, "the flow the run actually executes"],
   ];
   const docProblems = [];
   for (const [name, minBytes, why] of REQUIRED_DOCS) {
@@ -234,6 +236,38 @@ async function checkEnvironment() {
     ok("required docs", `${REQUIRED_DOCS.length} present — sources, goals, lessons, benchmarks`);
   } else {
     fail("required docs", docProblems.join(" | "));
+  }
+
+  /*
+   * Encoding sweep over the rule documents.
+   *
+   * PowerShell's Get-Content decoded a valid UTF-8 file as GBK during 2026-10-08 and made
+   * the governing spec look corrupted, which nearly produced the wrong fix. Node does not
+   * guess, so the check runs here where it cannot be fooled.
+   *
+   * A replacement character is only a corruption signal outside code spans: the log
+   * legitimately quotes U+FFFD when describing the 2026-10-07 incident in which a stray
+   * byte broke a gate, and a checker that cannot tell a quotation from the damage it
+   * describes will cry wolf. Inline code and fenced blocks are therefore stripped first.
+   */
+  const DOC_GLOBS = [".md", "docs"];
+  const docFiles = [
+    ...readdirSync(ROOT).filter((f) => f.endsWith(".md")),
+    ...readdirSync(join(ROOT, "docs")).filter((f) => f.endsWith(".md")).map((f) => `docs/${f}`),
+  ];
+  const corrupted = [];
+  for (const rel of docFiles) {
+    const text = readFileSync(join(ROOT, rel), "utf8");
+    const prose = text
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/`[^`\n]*`/g, " ");
+    const n = (prose.match(/\uFFFD/g) || []).length;
+    if (n > 0) corrupted.push(`${rel} (${n})`);
+  }
+  if (corrupted.length === 0) {
+    ok("doc encoding", `${docFiles.length} documents are valid UTF-8, ignoring quoted examples`);
+  } else {
+    fail("doc encoding", `replacement characters outside code: ${corrupted.join(", ")}`);
   }
 
   const toolFiles = readdirSync(join(ROOT, "tools")).filter((f) => f.endsWith(".mjs"));
