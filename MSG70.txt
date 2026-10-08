@@ -1,0 +1,40 @@
+feat: the hand-start prompt, and an honest benchmark list including four sites never studied
+
+Two documents, and one of them records a gap rather than closing it.
+
+手工启动指示词.md is the text the operator pastes to start a run by hand. It is the expanded
+form of the one-liner in 启动指令.md, and it is deliberately equivalent to daily-task.txt:
+one file for the human to paste, one for the scheduled task to read. Both go down the same
+path, so a manual run and an unattended run cannot drift apart. It also carries five short
+prompts for narrower jobs - preflight only, status only, live check only, a rule change,
+and benchmark learning alone.
+
+对标清单.md sorts the benchmarks by role, because the roles are not interchangeable and
+conflating them produces wrong conclusions: craft (Our World in Data - methodology, and its
+scale is not transferable), business (Trivium China - pricing, with the 1,177 paywalled
+source pages as the most important negative lesson), growth (ChinaTalk, Sinocism, Net
+Interest - the one-to-a-few-person ceiling), and page templates (TLDR, The Ken,
+DealStreetAsia - structure to copy directly).
+
+Then the part that is a gap rather than a finding. All twelve URLs were checked today. Four
+of the sites the operator named as templates had never been looked at by this project:
+TLDR, The Ken's pricing page, DealStreetAsia, and Stratechery, which returns 403 and has
+only ever appeared in a word-count table. The first three are reachable and were measured.
+
+What that measurement already shows:
+
+  TLDR            Its H1 promises time rather than content: keep up with tech in five
+                  minutes. One button, the email contents listed on the homepage, three
+                  fields per item and no summary. Worth copying the shape, not the form -
+                  it curates, we calculate.
+
+  The Ken         Its H1 claims to be the only business subscription you need. Three tiers
+                  plus a Comparison Chart, struck-through prices for anchoring, a MOST
+                  POPULAR tier, and a gift-a-year mechanism that costs nothing and recruits
+                  on the subscriber's behalf. Our site has no pricing page at all, which is
+                  the largest conversion gap we have.
+
+  DealStreetAsia  A non-anglophone region's business news sold in English. Structurally the
+                  same thing we are attempting, so it is evidence the path exists.
+
+preflight now requires ten documents, including both new ones.
