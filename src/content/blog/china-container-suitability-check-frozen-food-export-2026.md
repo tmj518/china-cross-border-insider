@@ -78,15 +78,13 @@ sources:
 
 ## AI Summary
 
-China's container suitability inspection for perishable and frozen food exports took effect on 1 October 2026. The result is valid 21 days, measured from the pass to the export declaration. A failed validation rejects the declaration. The statutory maximum fine is CNY 200,000 per container, but the recurring cost is the clock.
-
-Read the first English coverage and the change looks administrative: a filing channel, a declaration template, a module on the Single Window. Read the instruments and something else is doing the work. The announcement's stated purpose is to reduce the burden on exporters, which it does by deleting the pre-inspection step. What it adds is a clock — 21 days, from the pass to the export declaration. A clock is not paperwork, and this one is attached to the container rather than to the goods.
+China's container suitability inspection for frozen and perishable food exports took effect on 1 October 2026 and its result lasts 21 days, measured from the pass to the export declaration. A failed validation rejects the declaration. The statutory maximum fine is CNY 200,000 per container, but the recurring cost is the clock: a 14-day lapse on a CNY 800,000 reefer costs about CNY 6,127. The interval it prices is the one exporters already control — waiting, not transit.
 
 ## What happened
 
 Announcement No. 136 of 2026 was published by the General Administration of Customs on 8 September 2026 and took effect on 1 October 2026. It governs container suitability inspection for exported perishable and frozen food: the check that a box is fit to carry food before the food goes into it.
 
-The legal duty is old. Article 18 of the Import and Export Commodity Inspection Law requires the carrier or the stuffing unit to apply for inspection before loading, and Article 30 of the implementing regulation requires a check of cleanliness, sanitation, refrigeration and sealing. The announcement changes how that duty is discharged.
+The legal duty is old. Article 18 of the Import and Export Commodity Inspection Law requires the carrier or the stuffing unit to apply for inspection before loading, and Article 30 of the implementing regulation requires a check of cleanliness, sanitation, refrigeration and sealing.
 
 | Instrument | Date | What it does |
 | --- | --- | --- |
@@ -95,25 +93,23 @@ The legal duty is old. Article 18 of the Import and Export Commodity Inspection 
 | GACC Announcement No. 136 of 2026 | 8 September 2026 | Moves the mode from pre-inspection to a compliance declaration |
 | Export validation begins | 1 October 2026 | A container number absent from the qualified database rejects the declaration |
 
-The mode moved from enterprise pre-inspection with customs sampling to what the official interpretation calls a compliance guarantee plus customs review and risk-based spot checks. The carrier, the stuffing unit or its agent applies before loading through the outbound container suitability module of the China International Trade Single Window, uploading an Export Container Suitability Compliance Declaration. A box that passes enters the qualified database.
+The mode moved from enterprise pre-inspection with customs sampling to a compliance guarantee plus customs review and risk-based spot checks. The carrier, the stuffing unit or its agent applies before loading through the outbound container suitability module of the China International Trade Single Window. A box that passes enters the qualified database.
 
-Two details decide who does the work. Six categories of party can sign the declaration — carrier, stuffing unit, agent, exporter, container yard and container management unit — so what matters is who is named as the stuffing unit on the export declaration. And the application goes to the customs office where the container is stored, not to the port of export: the step that goes wrong when the stuffing site and the declaring site differ.
+Two details decide who does the work. Six categories of party can sign the declaration — carrier, stuffing unit, agent, exporter, container yard and container management unit — so what matters is who is named as the stuffing unit on the export declaration. And the application goes to the customs office where the container is stored, not to the port of export.
 
-The scope moved too. The official guidance records that the covered goods shifted from 6 HS headings to 13-digit commodity codes, under dynamic management. Chapter-level familiarity is no longer the test; the line is.
+The scope moved too: covered goods shifted from 6 HS headings to 13-digit commodity codes under dynamic management. Chapter-level familiarity is no longer the test; the line is.
 
-> **Container suitability inspection** — the check, performed on an empty container before stuffing, that the box is clean, sanitary, capable of holding its temperature and sealed. It certifies the container, not the cargo inside it. That distinction is what makes the 21-day validity a constraint on the box rather than on the shipment: the same goods in a different container carry a different compliance status.
+> **Container suitability inspection** — the check, performed on an empty container before stuffing, that the box is clean, sanitary, capable of holding its temperature and sealed. It certifies the container, not the cargo inside it. That is what makes the 21-day validity a constraint on the box rather than on the shipment.
+
+The boundary of the window is stated explicitly, and it is not the one exporters assume. The 21 days run from the time the passed container enters the qualified database to the time of the export declaration. The guidance warns against reading the effective date as a preparatory period: 1 October 2026 is the date validation starts rejecting declarations, not the date applications open.
 
 ## Why now
 
-Suitability inspection began as a voluntary application when China opened international sea container transport in 1973. A State Council commodity inspection regulation made it mandatory in 1984, the 1989 inspection law put the pre-loading requirement into statute, and customs became the enforcement body in 2018.
+The change moves the burden of proof rather than the scope. Every previous revision since the voluntary regime of 1973 — mandatory under a 1984 State Council regulation, in statute with the 1989 inspection law, enforced by customs since 2018 — altered what had to be inspected. The enterprise used to obtain a pre-inspection result while customs sampled boxes; now it signs a declaration of conformity and customs reviews it. Responsibility shifts from the yard's record to the exporter's signature.
 
-The 2026 change is the first that moves the burden of proof rather than the scope. The enterprise used to obtain a pre-inspection result while customs sampled the boxes; now it signs a declaration of conformity and customs reviews it and checks the container on risk. Responsibility shifts from the yard's record to the exporter's signature.
+A conformity declaration with no expiry would be a permanent licence for a container number. The 21-day validity converts a one-off certificate into a dated asset that has to be inside its window at the moment of declaration.
 
-A conformity declaration with no expiry would be a permanent licence for a container number. The 21-day validity stops it being one: it converts a one-off certificate into a dated asset that has to be inside its window at the moment of declaration.
-
-This is the second China-side obligation in a year whose deadline falls before the goods move rather than at the destination. The other is the electronic transmission of origin data that [the Malaysia origin-data deadline](/blog/china-malaysia-origin-data-electronic-december-2026/) covers, where the export declaration is again the step that fails when the upstream record is missing. Both put the compliance cost at the origin, and both are invisible to a buyer who reads only the arrival paperwork.
-
-The boundary of the window is stated explicitly, and it is not the one exporters assume. The guidance says the 21 days run from the time the passed container enters the qualified database to the time of the export declaration. It then adds a warning aimed at anyone who read the effective date as the start of a preparatory period: 1 October 2026 is the date export validation starts rejecting declarations, not the date from which applications open. A container already stuffed in a yard on that date needed a result that had passed before it.
+This is the second China-side obligation this year whose deadline falls before the goods move rather than at the destination. The other is the electronic transmission of origin data that [the Malaysia origin-data deadline](/blog/china-malaysia-origin-data-electronic-december-2026/) covers, where the export declaration is again the step that fails when the upstream record is missing.
 
 ## So what
 
@@ -128,13 +124,11 @@ That is a calculation on stated inputs. Take one 40-foot reefer of frozen goods 
 | 21 | CNY 1,841.10 | CNY 7,350.00 | CNY 9,191.10 | 1.149% |
 | 30 | CNY 2,630.14 | CNY 10,500.00 | CNY 13,130.14 | 1.641% |
 
-**The clock measures the interval exporters already control.** It ends at the declaration, not at loading or sailing. Ocean transit consumes none of it; stuffing, inland haulage, yard waiting and document preparation consume all of it.
-
-**Because the clock starts when the box passes, filing early is the expensive mistake.** Clearing the container as soon as it is available spends the window before the goods are ready. The pass belongs as close to the declaration as the customs review and spot check allow.
+**The clock measures the interval exporters already control.** It ends at the declaration, not at loading or sailing. Ocean transit consumes none of it; stuffing, inland haulage, yard waiting and document preparation consume all of it. Because it starts when the box passes, filing early is the expensive mistake: the pass belongs as close to the declaration as the customs review allows.
 
 **A lapsed result cannot be renewed in place.** The application is made on an empty container, because the object of the inspection is the box. Once a result expires with the goods loaded, the container comes out of the cargo: a destuffing, a lost booking and a second stuffing.
 
-Against that, the penalties are the rare event. Article 51 sets a maximum of CNY 100,000 for using a container that was never inspected and CNY 200,000 for one that failed. Both are caps, both apply per container, and both require customs to establish the breach. A fourteen-day lapse costs about 6 per cent of the smaller maximum — small enough that a supplier absorbs it without saying so, which is why it appears in no quotation.
+Against that, the penalties are the rare event. Article 51 sets a maximum of CNY 100,000 for a container never inspected and CNY 200,000 for one that failed. Both are caps, both apply per container, and both require customs to establish the breach. A fourteen-day lapse costs about 6 per cent of the smaller maximum — small enough that a supplier absorbs it without saying so, which is why it appears in no quotation.
 
 | Exposure | Amount, per container | What it is |
 | --- | --- | --- |
@@ -145,38 +139,56 @@ Against that, the penalties are the rare event. Article 51 sets a maximum of CNY
 
 The habits that reduce freight cost are the ones the clock taxes. Consolidating several SKUs into one box takes longer to fill; stuffing early holds a booking and gives the window away. Neither practice is wrong, but both now carry a date — set before the goods are in the box.
 
+## How confident
+
+**已确认（原始文献支撑）**
+
+- The 21-day window runs from entering the qualified database to the export declaration. Announcement No. 136 and its official interpretation state that boundary. It is the load-bearing fact here, not an inference.
+- Validation began rejecting declarations on 1 October 2026, which the interpretation says explicitly is not the date applications open.
+- Fine maxima are CNY 100,000 for a container never inspected and CNY 200,000 for one that failed — Article 51, both stated as caps.
+- Six categories of party can sign the declaration; covered goods moved from 6 HS headings to 13-digit codes.
+
+**推断（我的判断，证据不直接支撑）**
+
+- **That the clock is the recurring cost and the fine the rare one.** No instrument compares them. A lapse produces an automatic rejection rather than a penalty, and the maxima require customs to establish a breach, so the fine needs a finding the clock does not. 【推断】
+- **That filing early is the expensive mistake.** Where the clock starts is documented; that exporters will file early is my expectation about behaviour. 【推断】
+- **That a supplier absorbs a 14-day lapse without disclosing it.** The arithmetic is stated; the commercial behaviour is my reading of a cost small enough to hide, and I have no evidence of it. 【观点】
+
+**什么情况下我会错**
+
+- If customs reviews results manually instead of matching container numbers automatically, a lapse becomes negotiable and the cost argument collapses.
+- If the qualified database allows a passed result to be re-dated or extended, the window is soft and a lapse costs a fee rather than a destuff. Nothing published says either way.
+- If the 21 days are read operationally as running from application rather than from the pass, early filing is not expensive and the advice above reverses.
+- The cost table uses your inputs. Change goods value, funding rate or storage per day and the figure moves proportionally: CNY 6,127.40 is one worked case.
+
 ## For you
 
-- **Importers buying frozen or perishable food from China:** put the container number on your document checklist with its pass date and the planned declaration date. Ask for it before the declaration is filed rather than after, because after is when a rejection arrives and the vessel has already sailed.
-- **Suppliers and their forwarders:** the filing party is whoever is named as the stuffing unit on the export declaration, and the application goes to the customs office where the box is stored. Confirm that one line first. If it names your forwarder, the obligation is on your desk.
-- **Anyone consolidating several SKUs into one container:** consolidation lengthens the fill, and the window opens on the day the box passes rather than the day it is full. Plan the pass against the sailing.
-- **Anyone whose box is already stuffed:** compare the pass date with the planned declaration date. If more than 21 days separate them, the result is gone and the container has to be emptied to be re-inspected.
-- **Buyers in distant markets:** the clock ends at the China export declaration, so your ocean transit does not consume it. The risk sits in the fortnight before the box is declared, even when the sailing is five weeks out.
+- **Importers of frozen or perishable food from China:** put the container number on your checklist with its pass date and the planned declaration date. Ask before the declaration is filed, not after — after is when a rejection arrives and the vessel has sailed.
+- **Suppliers and forwarders:** the filing party is whoever is named as the stuffing unit on the export declaration, and the application goes to the customs office where the box is stored. Confirm that line first.
+- **Anyone consolidating SKUs:** consolidation lengthens the fill, and the window opens the day the box passes, not the day it is full. Plan the pass against the sailing.
+- **Anyone whose box is already stuffed:** compare pass date with declaration date. More than 21 days apart and the result is gone; the container has to be emptied to be re-inspected.
+- **Buyers in distant markets:** the clock ends at the China export declaration, so ocean transit does not consume it. The risk sits in the fortnight before declaration, even on a five-week sailing.
 
 ## The data point
 
 <div class="callout">
 <span class="callout-label">Data point</span>
-Twenty-one days, measured to the declaration. Not to loading, not to sailing, not to arrival. The interval this rule prices is the one nobody was managing: how long a box waits between passing inspection and being declared. Distance sits outside the clock. Waiting sits inside it.
+Twenty-one days, measured to the declaration. Not to loading, not to sailing, not to arrival. Distance sits outside the clock; waiting sits inside it.
 </div>
 
 ## FAQ
 
 ### What does the 21-day validity actually measure?
 
-The interval between the moment a passed container enters the qualified database and the moment the export declaration is filed. The official guidance states that boundary explicitly, which is why the answer is not the obvious one. Ocean transit, port rotation and days at sea consume none of the window, because the declaration is already filed by then. Stuffing, inland haulage, time in a yard and document preparation consume all of it. A container that passed and then waited three weeks for a booking has no valid result left.
+The interval between a passed container entering the qualified database and the export declaration being filed. The official guidance states that boundary, which is why the answer is not the obvious one. Ocean transit, port rotation and days at sea consume none of the window, because the declaration is already filed by then. Stuffing, inland haulage, yard time and document preparation consume all of it. A container that passed and then waited three weeks for a booking has no valid result left.
 
-### Who has to file the application for suitability inspection?
+### Who files the application?
 
-The carrier, the stuffing unit or an agent acting for either, through the outbound container suitability module of the China International Trade Single Window, to the customs office where the container is stored. The useful question is not who is legally capable of signing the declaration, because six categories of party can. It is who is actually named as the stuffing unit on the export declaration, because that line decides whose operations team does the filing and whose name sits on the conformity guarantee.
+The carrier, the stuffing unit or an agent for either, through the outbound container suitability module of the China International Trade Single Window, to the customs office where the container is stored. The useful question is not who is legally able to sign, because six categories of party can. It is who is named as the stuffing unit on the export declaration, because that line decides whose team files.
 
-### What happens if the validation fails at export declaration?
+### What happens if validation fails at declaration?
 
-The declaration is rejected. The customs system matches the container number against the qualified database automatically, and where the match fails the entry is refused and the receipt returned to the filer states that the container number is not in the qualified database. Nothing is charged at that point and no penalty is imposed for the rejection itself. The cost is operational: the declaration has to be refiled, the booking is at risk, and if the result expired rather than never having existed, the container has to be emptied before it can be inspected again.
-
-### Do the fines apply per container or per shipment?
-
-Per container. Article 51 of the implementing regulation sets a maximum of CNY 100,000 for using a container that was never suitability-inspected and CNY 200,000 for using one that failed inspection. A consolidated box carrying several suppliers' goods is one container for this purpose, so a single lapse puts the whole load behind one number. The maxima are caps rather than tariffs, and they require customs to establish the breach. Treat them as tail risk rather than as the expected cost of the rule.
+The declaration is rejected. Customs matches the container number against the qualified database automatically, and where the match fails the entry is refused and the receipt states that the number is not in the database. Nothing is charged and no penalty applies to the rejection itself. The cost is operational: refiling, a booking at risk, and — if the result expired rather than never existed — an empty container before re-inspection.
 
 ## How we calculated this
 

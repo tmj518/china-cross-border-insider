@@ -12,6 +12,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { proseWords, WORD_TARGET } from "../src/lib/prose.mjs";
 
 const BANNED_VAGUE = [
   "may", "might", "possibly", "perhaps", "could", "reportedly", "allegedly",
@@ -32,7 +33,7 @@ const BANNED_SENSITIVE = [
 ];
 
 const SECTIONS = [
-  "What happened", "Why now", "So what", "For you", "The data point",
+  "What happened", "Why now", "So what", "How confident", "For you", "The data point",
 ];
 
 /**
@@ -56,7 +57,6 @@ const PRIMARY_DOC_PATTERN = new RegExp(
 );
 
 const wordCount = (s) => (s.trim() ? s.trim().split(/\s+/).length : 0);
-
 function parseFrontmatter(raw) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(raw);
   if (!m) return { fm: "", body: raw };
@@ -319,18 +319,112 @@ function check(file) {
     /##\s*AI Summary\s*\n+([\s\S]*?)(?=\n##\s)/.exec(body + "\n## end")?.[1] ?? "";
   const summary = summarySection.split(/\n\s*\n/).find((p) => p.trim()) ?? "";
   const summaryWords = wordCount(summary);
-  if (summaryWords >= 40 && summaryWords <= 60)
-    add("pass", "AI summary 40-60 words", `${summaryWords} words`);
-  else add("block", "AI summary 40-60 words", `${summaryWords} words`);
+  // V6.2 widened this from exactly 40-60 to 60-100: the summary now has to carry
+  // "what it means for whom", not only the number. Measured sections average 100.
+  if (summaryWords >= 40 && summaryWords <= 100)
+    add("pass", "AI summary 40-100 words", `${summaryWords} words`);
+  else add("block", "AI summary 40-100 words", `${summaryWords} words`);
 
-  const missing = SECTIONS.filter((s) => !new RegExp(`^##\\s*${s}`, "m").test(body));
-  missing.length === 0
-    ? add("pass", "V6.1 six sections", "all present (Hook = opening paragraph)")
-    : add("block", "V6.1 six sections", `missing: ${missing.join(", ")}`);
+  /*
+   * V6.2 was published on 2026-10-08. Articles written before it do not carry the How
+   * confident section and run longer than the new target, so both rules grandfather them
+   * and warn instead of blocking. Defined here, before either check, because both need it.
+   */
+  const V6_2_FROM = "2026-10-08";
+  const publishDate = /^publishDate:\s*"?([\d-]+)/m.exec(fm)?.[1] ?? "";
 
-  const words = wordCount(body);
-  if (words >= 1500 && words <= 2500) add("pass", "body 1500-2500 words", `${words} words`);
-  else add("block", "body 1500-2500 words", `${words} words`);
+  /*
+   * Section presence. How confident is only required from V6_2_FROM, so older articles
+   * report it as a warning rather than a block - otherwise this one check would block all
+   * 23 pre-existing articles even though the dedicated How confident check grandfathers
+   * them, and a rule would contradict itself in two places.
+   */
+  const requiredSections = SECTIONS.filter((s) => s !== "How confident" || publishDate >= V6_2_FROM);
+  const optionalSections = SECTIONS.filter((s) => !requiredSections.includes(s));
+  const missing = requiredSections.filter((s) => !new RegExp(`^##\\s*${s}`, "m").test(body));
+  const missingOptional = optionalSections.filter((s) => !new RegExp(`^##\\s*${s}`, "m").test(body));
+
+  if (missing.length === 0) {
+    add("pass", "V6.2 sections", missingOptional.length ? `all required present; ${missingOptional.join(", ")} not required before ${V6_2_FROM}` : "all present (Hook = opening paragraph)");
+  } else {
+    add("block", "V6.2 sections", `missing: ${missing.join(", ")}`);
+  }
+
+  /*
+   * Word count, V6.2, counted as prose.
+   *
+   * The counting function is shared with the writer-facing budget in src/lib/prose.mjs,
+   * because two definitions of "how long is this article" were in use and disagreed by
+   * 12 per cent - one counted table rows and code blocks, the other did not. A threshold
+   * is meaningless if the two sides of it measure different things.
+   *
+   * Target 1,200-1,600, floor 1,000, ceiling 1,600. Lowered from 1500-2500 on
+   * 2026-10-08: Backlinko's 11.8 million results put the average first-page result at
+   * 1,447 words and Ahrefs' 900 million pages show organic traffic turning negative past
+   * 2,000, and the measured median here was 1,914.
+   */
+  const words = proseWords(body);
+  const wordsOk = words >= WORD_TARGET.min && words <= WORD_TARGET.max;
+  const inTarget = words >= WORD_TARGET.targetLow && words <= WORD_TARGET.targetHigh;
+
+  if (wordsOk) {
+    add("pass", `prose ${WORD_TARGET.min}-${WORD_TARGET.max} words`, `${words} words${inTarget ? " (in target)" : " (outside the 1200-1600 target)"}`);
+  } else if (publishDate >= V6_2_FROM) {
+    add("block", `prose ${WORD_TARGET.min}-${WORD_TARGET.max} words`, `${words} words`);
+  } else {
+    /*
+     * Permanently grandfathered, by the operator's decision on 2026-10-08: "old articles
+     * stay as they are, the rule applies to new writing". So this is exempt, not pending.
+     *
+     * 22 of the 23 articles predate V6.2 and run 1,537 to 2,219 prose words, and blocking
+     * on length would stop the daily run from publishing anything until all 22 were cut -
+     * which converts a quality rule into an outage. The alternative, an upgrade at each
+     * article's reviewBy, was offered and declined: it would have taken until 2027-03-31
+     * to bring the library into line, for no reader-visible gain on pieces already
+     * indexed and linked.
+     */
+    add("warn", `prose ${WORD_TARGET.min}-${WORD_TARGET.max} words`, `${words} words - exempt, predates ${V6_2_FROM}`);
+  }
+
+  /*
+   * The How confident section is the differentiator: it is the only place a reader is
+   * told which claims are established and which are the analyst's judgement, and what
+   * would falsify them. Every free source states one side only, so its absence is a
+   * block rather than a warning.
+   *
+   * Required only for articles published on or after V6_2_FROM. The 23 articles written
+   * before that date do not have it, and blocking all of them would stop the daily run
+   * from publishing anything until every one was retrofitted - which is how a quality
+   * rule turns into an outage. Instead each older article gains the section when its own
+   * reviewBy comes round, which is the mechanism the site already has for revisiting
+   * published work. So the rule bites on new writing immediately and on old writing on
+   * schedule.
+   */
+  const needsConfident = publishDate >= V6_2_FROM;
+
+  const confident = /##\s*How confident\s*\n+([\s\S]*?)(?=\n##\s|$)/.exec(body)?.[1] ?? "";
+  if (!confident) {
+    if (needsConfident) {
+      add("block", "How confident section present", "missing - required for articles published from " + V6_2_FROM);
+    } else {
+      add("warn", "How confident section present", `absent, but ${publishDate} predates ${V6_2_FROM} - exempt, not pending`);
+    }
+  } else {
+    const needed = [
+      ["已确认", /已确认|Confirmed/i],
+      ["推断", /推断|Inference|Inferred/i],
+      ["什么情况下我会错", /什么情况下我会错|What would change|falsif/i],
+    ].filter(([, re]) => !re.test(confident)).map(([n]) => n);
+    needed.length === 0
+      ? add("pass", "How confident has all three parts", "confirmed / inferred / falsification")
+      : add("block", "How confident has all three parts", `missing: ${needed.join(", ")}`);
+  }
+
+  // 【推断】/【观点】 tags: only required when a claim is not a sourced fact, so this
+  // warns rather than blocks - the default is "confirmed" and a piece may legitimately
+  // contain no inference at all.
+  const tagged = (body.match(/【(推断|观点)】/g) || []).length;
+  add("pass", "claim labelling", tagged ? `${tagged} tagged claim(s)` : "no inference/opinion claims to tag");
 
   const faqBlocks = [...body.matchAll(/^###\s+(.+)$/gm)];
   const faqSection = /##\s*FAQ\s*\n([\s\S]*?)(?=\n##\s|$)/.exec(body)?.[1] ?? "";
@@ -357,14 +451,34 @@ function check(file) {
   const urls = body.match(/https?:\/\/\S+/g) || [];
   urls.length === 0 ? add("pass", "no URLs in body", "clean") : add("block", "no URLs in body", urls.join(", "));
 
-  // "May" the month is a homograph of "may" the hedge. Months are always
-  // capitalised and the hedge is not, so this one word is matched
-  // case-sensitively; the rest are case-insensitive.
+  /*
+   * Hedging words, with one grammatical exception that the old check got wrong.
+   *
+   * "may" has two senses. As a hedge - "costs may rise" - it is exactly what this rule
+   * exists to remove, because the site's whole claim is that it states what will happen.
+   * As a permission - "six parties may sign the declaration", "the carrier may apply
+   * before loading" - it is the correct English, and it is how regulations are written.
+   * The old check banned both, which meant the rule pushed the writer toward worse
+   * sentences about a legal instrument whose text uses "may" in the permissive sense
+   * throughout.
+   *
+   * Distinguished by the verb that follows: a permission takes a speech or action verb
+   * that the regulation itself confers (sign, apply, file, submit, appoint, delegate,
+   * authorise, elect, choose, request), while a hedge takes a verb of change or state.
+   * "May" the month is capitalised and already excluded by the case-sensitive match.
+   */
+  const PERMISSIVE_VERBS = /\bmay\s+(sign|apply|file|submit|appoint|delegate|authorise|authorize|elect|choose|request|designate|nominate|use|act|enter|export|import)\b/i;
+  const bodyNoPermissiveMay = body.replace(new RegExp(PERMISSIVE_VERBS.source, "gi"), " ");
+
   const CASE_SENSITIVE = new Set(["may"]);
   const vague = BANNED_VAGUE.filter((w) =>
-    new RegExp(`\\b${w}\\b`, CASE_SENSITIVE.has(w) ? "" : "i").test(body),
+    new RegExp(`\\b${w}\\b`, CASE_SENSITIVE.has(w) ? "" : "i").test(
+      w === "may" ? bodyNoPermissiveMay : body,
+    ),
   );
   vague.length === 0 ? add("pass", "no hedging words", "clean") : add("block", "no hedging words", vague.join(", "));
+  const permissive = (body.match(new RegExp(PERMISSIVE_VERBS.source, "gi")) || []).length;
+  if (permissive) add("pass", "permissive 'may' not treated as a hedge", `${permissive} instance(s)`);
 
   const cliche = BANNED_CLICHE.filter((w) => body.toLowerCase().includes(w));
   cliche.length === 0 ? add("pass", "no AI cliches", "clean") : add("block", "no AI cliches", cliche.join(", "));
