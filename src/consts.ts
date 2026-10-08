@@ -178,6 +178,13 @@ export const FOOTER_LINKS = [
   // "Data sources" heading. Same placement here, because that is where a reader
   // goes to ask whether the numbers can be trusted.
   { label: "How the sources work", href: "/sources/" },
+  { label: "Instruments", href: "/instrument/" },
+  { label: "Pricing", href: "/pricing/" },
+  // The whitelisting page lives here rather than in the top navigation because it is
+  // support, not a destination: you reach it when an email did not arrive, or from the
+  // footer of one that did. Without this link it existed only in the sitemap, and a page
+  // nothing links to is not published.
+  { label: "Make sure emails arrive", href: "/whitelist/" },
   { label: "Privacy Policy", href: "/privacy/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
