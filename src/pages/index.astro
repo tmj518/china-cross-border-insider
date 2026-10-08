@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import ArticleRow from "../components/ArticleRow.astro";
 import FeaturedCard from "../components/FeaturedCard.astro";
-import Hero from "../components/Hero.astro";
+import HeroLead from "../components/HeroLead.astro";
 import Sidebar from "../components/Sidebar.astro";
 import { AUTHOR, SITE, formatDate } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -14,6 +14,7 @@ import {
   readingTime,
   toCard,
 } from "../lib/post";
+import instrumentRegistry from "../data/instruments.json";
 
 const posts = published(await getCollection("blog"));
 
@@ -29,9 +30,16 @@ const latest = posts
 
 const numbers = numbersFor(posts);
 
-const heroMeta = heroPost
-  ? `${formatDate(heroPost.data.publishDate)} · ${readingTime(heroPost.body)} min read · By ${AUTHOR.name}`
-  : undefined;
+/*
+ * Corpus totals for the first screen, counted from the articles rather than written down.
+ *
+ * The benchmark's version of this line is a subscriber count and a list of well-known
+ * readers. We have neither, and stating one would be the failure this site is built to
+ * avoid. Counting at build time means the numbers cannot drift: adding an article changes
+ * them, and no one has to remember to edit a headline.
+ */
+const figures = posts.reduce((a, p) => a + (p.data.figures?.length ?? 0), 0);
+const sources = posts.reduce((a, p) => a + (p.data.sources?.length ?? 0), 0);
 
 /*
  * The homepage is an index of the published analysis, so it declares itself as one.
@@ -53,25 +61,35 @@ const jsonLd = {
 ---
 
 <BaseLayout title={SITE.title} description={SITE.description} jsonLd={jsonLd}>
-  {
-    heroPost ? (
-      <Hero
-        title={heroPost.data.title}
-        href={`/blog/${heroPost.id}/`}
-        excerpt={heroPost.data.description}
-        meta={heroMeta}
-      />
-    ) : (
-      <Hero
-        kicker="Coming soon"
-        title="The first analysis is being written"
-        excerpt="Numbers-first reporting on China trade, platforms and supply chains. Each piece turns a published change into landed cost per unit, with the source and date on every figure."
-      />
-    )
-  }
+  {/*
+    * The first screen states what this is, who it is for, and offers one action.
+    *
+    * It used to lead with the newest article's title, which told a first-time visitor
+    * nothing about the product and gave them no way to subscribe without scrolling.
+  */}
+  <HeroLead
+    analyses={posts.length}
+    figures={figures}
+    sources={sources}
+    instruments={instrumentRegistry.instruments.length}
+  />
 
   <div class="container">
     <main id="main">
+      {
+        heroPost && (
+          <div class="lead-story">
+            <h2 class="section-title">Today's lead</h2>
+            <ArticleRow
+              href={`/blog/${heroPost.id}/`}
+              date={`${formatDate(heroPost.data.publishDate)} · ${readingTime(heroPost.body)} min read`}
+              title={heroPost.data.title}
+              excerpt={heroPost.data.description}
+            />
+          </div>
+        )
+      }
+
       {
         featuredPost && (
           <FeaturedCard
