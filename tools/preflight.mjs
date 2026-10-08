@@ -218,12 +218,14 @@ async function checkEnvironment() {
    * Size matters as well as presence: a truncated or emptied file would otherwise pass.
    */
   const REQUIRED_DOCS = [
+    ["启动指令.md", 2000, "the single entry point: the command to start a run"],
     ["信源清单.md", 4000, "the tested inventory of 23 reachable official sources"],
     ["初心与目标.md", 2000, "the single standard, including completeness before length"],
     ["经验与踩坑记录.md", 4000, "the reusable lessons, including the benchmark findings"],
     ["对标学习10条.md", 3000, "the ten mechanisms to copy, one of which each run must advance"],
     ["必读清单与开工指令.md", 4000, "what to read each day, and what not to read"],
     ["daily-task.txt", 8000, "the flow the run actually executes"],
+    ["项目规范_英文内容站_v1.3.md", 10000, "the governing spec, current version"],
   ];
   const docProblems = [];
   for (const [name, minBytes, why] of REQUIRED_DOCS) {
