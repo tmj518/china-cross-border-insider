@@ -17,8 +17,19 @@ export default defineConfig({
   trailingSlash: "ignore",
   integrations: [
     sitemap({
-      // Legal / utility pages add no search value.
-      filter: (page) => !/\/(privacy|contact)\/$/.test(page),
+      /*
+       * Utility and legal pages, plus anything the page itself marks noindex.
+       *
+       * `/confirmed/` was missing from this list until 2026-10-08, which produced the exact
+       * contradiction the rule exists to prevent: the page carried
+       * `<meta name="robots" content="noindex">` while the sitemap handed the same URL to
+       * Google. A page asking not to be indexed must not be submitted for indexing.
+       *
+       * The rule, rather than the instance: everything excluded here is either a legal or
+       * transactional page with no search value, or a page that sets noindex on itself. When
+       * a page gains noindex, it belongs in this pattern.
+       */
+      filter: (page) => !/\/(privacy|contact|confirmed)\/$/.test(page),
     }),
   ],
   markdown: {
