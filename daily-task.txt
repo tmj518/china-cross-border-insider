@@ -108,13 +108,29 @@ node tools/preflight.mjs
 
 ## 第五步：交付（你负责到本地 commit 为止）
 
+**★ 闸门只跑一遍，在所有编辑做完之后。用这一个命令：**
+
 ```
-node tools/qa-check.mjs <文件>
-node tools/serp-check.mjs <文件> --serp=file:data/serp/<文章名>.json
-node tools/reviewer-check.mjs --all
-node tools/link-check.mjs
-git add -A && git commit
+node tools/gate.mjs
 ```
+
+**它一次跑全部 7 项闸门，且带缓存**：
+
+```
+第一次（或改了很多文件后）  约 2–4 分钟   ← serp-check 抓竞品页 + 移动端开浏览器
+之后同一天再跑              约 0–1 秒     ← 按输入哈希命中缓存
+```
+
+**实测：改一篇文章之后再跑全部闸门 = 1 秒。**（之前是 5.5 分钟，而那 5.5 分钟里 81% 是重复联网抓同一批竞品页。）
+
+**所以：**
+
+- **不要**每改一处就重跑闸门。**攒到全部改完，跑一次 `node tools/gate.mjs`。**
+- **不要**分别手跑 qa-check / reviewer-check / serp-check —— `gate.mjs` 一次全跑，并行了那几项快的。
+- `--fresh` **只在需要强制重算时用**（例如怀疑缓存不对）。**默认不要用。**
+- 竞品页缓存 **24 小时**过期 → 隔天第一次跑会真抓，之后走缓存。
+
+**`git add -A && git commit`** 在闸门全绿之后。
 
 **推送、构建验证、线上核实由包装脚本接手。** 你只要保证本地 commit 是干净的。
 

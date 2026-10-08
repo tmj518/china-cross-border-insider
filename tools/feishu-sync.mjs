@@ -33,6 +33,7 @@ import {
   closeSync,
   rmSync,
   mkdirSync,
+  statSync,
 } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -187,6 +188,39 @@ function reviewerFindings(file) {
   return high || med ? `${high} 必须修 / ${med} 应该修` : "0 必须修 / 0 应该修";
 }
 
+/* ------------------------------------------------------------------ run timing */
+
+/**
+ * How long the last unattended run took, read from its own transcript.
+ *
+ * The operator asked for this to be in the ledger, and it is worth having as a number
+ * rather than prose because it varies enormously with what else the run has to do. The
+ * 2026-10-08 run took 36 minutes, and 33 of those were the agent - but that run also
+ * found and fixed two broken tools, which is not a normal day.
+ *
+ * Written to every row because the ledger has no separate run table; the value is the
+ * same for all rows written by one run, which is accurate and keeps the shape simple.
+ */
+function lastRunTiming() {
+  const dir = join(ROOT, "logs");
+  if (!existsSync(dir)) return { minutes: null, finished: null };
+  const logs = readdirSync(dir)
+    .filter((f) => f.startsWith("daily-") && f.endsWith(".log"))
+    .map((f) => ({ f, m: statSync(join(dir, f)).mtimeMs }))
+    .sort((a, b) => b.m - a.m);
+  if (!logs.length) return { minutes: null, finished: null };
+
+  const text = readFileSync(join(dir, logs[0].f), "utf8");
+  const start = /\[([\d-]+ [\d:]+)\] ==================== daily run start/.exec(text)?.[1];
+  const finish = /\[([\d-]+ [\d:]+)\] ==================== daily run finished/.exec(text)?.[1];
+  if (!start) return { minutes: null, finished: finish ?? null };
+  const end = finish ?? new Date().toISOString().slice(0, 19).replace("T", " ");
+  const minutes = Math.round((new Date(end) - new Date(start)) / 60000);
+  return { minutes: Number.isFinite(minutes) ? minutes : null, finished: end };
+}
+
+const timing = lastRunTiming();
+
 /* ------------------------------------------------------------------ build rows */
 
 const arts = published();
@@ -210,6 +244,8 @@ const rows = arts.map((a, i) => ({
    */
   "最近更新": a.updatedDate || a.publishDate,
   "更正次数": a.revisions,
+  "本轮耗时(分)": timing.minutes ?? "",
+  "完成时间": timing.finished ?? "",
   "重复选题检查": consistencyCheck(a),
   "结构闸门": qaCheck(a.file),
   "信息增量闸门": serpVerdict(a.slug),

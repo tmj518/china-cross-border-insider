@@ -94,3 +94,7 @@ crop.py
 
 # Unattended run transcripts. Useful on disk, not useful in git.
 logs/
+
+# Gate results cache. Keyed by input hash, so it is correct to regenerate and never
+# worth committing. See tools/gate.mjs and tools/serp-check.mjs.
+.cache/

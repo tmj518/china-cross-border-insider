@@ -28,7 +28,8 @@
  *
  * Exit code is non-zero on UNSUPPORTED.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 
 const UA =
@@ -103,6 +104,102 @@ function unwrapBingUrl(href) {
   }
 }
 
+/**
+ * Competitor page signals, cached on disk.
+ *
+ * This is the single most expensive operation in the whole gate suite. A full pass
+ * fetches 46 to 69 competitor pages, and measured at 270 seconds it was 81 per cent of
+ * one gate pass - which is why a run that edited one article several times spent most of
+ * its wall clock re-downloading pages that had not changed.
+ *
+ * The cache stores the extracted signals, not the raw HTML. Caching the HTML was tried
+ * first and only saved a third of the time, because parsing a few hundred kilobytes of
+ * markup per page is itself most of the cost. Storing the answer skips both steps.
+ *
+ * Keyed by URL and a format version, expiring after CACHE_TTL_MS. SERP_NO_CACHE=1
+ * bypasses it, which is what a periodic refresh should do so the comparison does not
+ * silently go stale.
+ */
+const CACHE_TTL_MS = Number(process.env.SERP_CACHE_TTL_MS ?? 24 * 60 * 60 * 1000); // 24h
+const NO_CACHE = process.env.SERP_NO_CACHE === "1";
+const SIGNALS_VERSION = 2;
+const PAGE_CACHE_DIR = join(process.cwd(), ".cache", "serp-signals");
+
+function cachePathFor(url) {
+  return join(PAGE_CACHE_DIR, createHash("sha256").update(`v${SIGNALS_VERSION}:${url}`).digest("hex").slice(0, 20) + ".json");
+}
+
+function readCachedSignals(url) {
+  if (NO_CACHE) return undefined;
+  try {
+    const p = cachePathFor(url);
+    if (!existsSync(p)) return undefined;
+    const entry = JSON.parse(readFileSync(p, "utf8"));
+    if (Date.now() - entry.at > CACHE_TTL_MS) return undefined;
+    return entry.signals;
+  } catch {
+    return undefined;
+  }
+}
+
+function writeCachedSignals(url, signals) {
+  try {
+    mkdirSync(PAGE_CACHE_DIR, { recursive: true });
+    writeFileSync(cachePathFor(url), JSON.stringify({ url, at: Date.now(), signals }), "utf8");
+  } catch { /* a cache that cannot be written is not an error */ }
+}
+
+/**
+ * Fetch a page and reduce it to signals, using the cache for both steps.
+ *
+ * Failures are cached too, and that turned out to matter more than caching successes.
+ * Of the 67 competitor URLs a pass touches, 18 were not cached and 13 of those were
+ * permanently unavailable - 404, 403, 401, a bot challenge, or a timeout. Each pass
+ * retried all of them with backoff, and one government page took the full 25-second
+ * timeout before failing. A failure cache with a shorter life stops re-asking a question
+ * whose answer has not changed, while still allowing a site that was briefly down to
+ * recover.
+ */
+const FAIL_TTL_MS = Number(process.env.SERP_FAIL_TTL_MS ?? 6 * 60 * 60 * 1000); // 6h
+const FETCH_TIMEOUT_MS = Number(process.env.SERP_TIMEOUT_MS ?? 10000);
+
+function readCached(url) {
+  if (NO_CACHE) return undefined;
+  try {
+    const p = cachePathFor(url);
+    if (!existsSync(p)) return undefined;
+    const entry = JSON.parse(readFileSync(p, "utf8"));
+    const ttl = entry.failed ? FAIL_TTL_MS : CACHE_TTL_MS;
+    if (Date.now() - entry.at > ttl) return undefined;
+    return entry;
+  } catch {
+    return undefined;
+  }
+}
+
+async function signalsFor(url) {
+  const cached = readCached(url);
+  if (cached !== undefined) {
+    if (cached.failed) throw new Error(cached.error ?? "cached failure");
+    return cached.signals;
+  }
+  try {
+    const signals = pageSignals(await get(url));
+    writeCache(url, { signals });
+    return signals;
+  } catch (e) {
+    writeCache(url, { failed: true, error: e.message });
+    throw e;
+  }
+}
+
+function writeCache(url, payload) {
+  try {
+    mkdirSync(PAGE_CACHE_DIR, { recursive: true });
+    writeFileSync(cachePathFor(url), JSON.stringify({ url, at: Date.now(), ...payload }), "utf8");
+  } catch { /* a cache that cannot be written is not an error */ }
+}
+
 async function get(url, attempts = 3) {
   let last;
   for (let i = 1; i <= attempts; i++) {
@@ -110,13 +207,13 @@ async function get(url, attempts = 3) {
       const res = await fetch(url, {
         headers: { "User-Agent": UA, "Accept-Language": "en-US,en;q=0.9" },
         redirect: "follow",
-        signal: AbortSignal.timeout(25000),
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
       return await res.text();
     } catch (e) {
       last = e;
-      if (i < attempts) await new Promise((r) => setTimeout(r, 1200 * i));
+      if (i < attempts) await new Promise((r) => setTimeout(r, 700 * i));
     }
   }
   throw last;
@@ -421,13 +518,33 @@ async function check(file, provider) {
   }
 
   // ---- competitor pages ----------------------------------------------
-  for (const r of competitors.slice(0, TOP_N)) {
-    try {
-      report.competitors.push({ url: r.url, title: r.title, signals: pageSignals(await get(r.url)) });
-    } catch (e) {
-      report.competitors.push({ url: r.url, title: r.title, error: e.message });
-    }
-  }
+  /*
+   * Fetched concurrently, capped at CONCURRENCY.
+   *
+   * Sequentially this is 46 to 69 requests at roughly five seconds each, which is where
+   * the 270-second gate pass came from. Concurrency is capped rather than unlimited so
+   * the run stays a polite client of the sites it reads; six parallel requests to
+   * publisher pages is unremarkable traffic.
+   */
+  const CONCURRENCY = Number(process.env.SERP_CONCURRENCY ?? 6);
+  const targets = competitors.slice(0, TOP_N);
+  const pages = new Array(targets.length);
+  let next = 0;
+  await Promise.all(
+    Array.from({ length: Math.min(CONCURRENCY, targets.length) }, async () => {
+      while (true) {
+        const i = next++;
+        if (i >= targets.length) return;
+        const r = targets[i];
+        try {
+          pages[i] = { url: r.url, title: r.title, signals: await signalsFor(r.url) };
+        } catch (e) {
+          pages[i] = { url: r.url, title: r.title, error: e.message };
+        }
+      }
+    }),
+  );
+  report.competitors.push(...pages.filter(Boolean));
 
   const loaded = report.competitors.filter((c) => c.signals);
   if (loaded.length < 1) {
