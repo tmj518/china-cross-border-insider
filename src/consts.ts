@@ -81,6 +81,15 @@ export const NAV_LINKS = [
   { label: "Supply Chain", href: "/category/supply-chain/" },
   { label: "Sourcing", href: "/category/sourcing/" },
   { label: "Logistics", href: "/category/logistics/" },
+  // Added 2026-10-08 with the page itself. Before this the page existed in the
+  // sitemap and nowhere else - a page with no inbound link is not published.
+  //
+  // NOTE: this list is now eleven items, and the benchmark the navigation was
+  // modelled on keeps four. The five category links are the ones to reconsider:
+  // they are reachable from every article's category tag, so they do not need
+  // top-level slots. Left as-is rather than changed in the same edit as adding a
+  // page, but it should be trimmed.
+  { label: "Pricing", href: "/pricing/" },
   { label: "About", href: "/about/" },
 ];
 

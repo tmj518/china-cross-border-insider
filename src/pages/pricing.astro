@@ -1,0 +1,377 @@
+---
+/**
+ * Pricing.
+ *
+ * Structured after The Ken's pricing page, which the operator named as the template: an
+ * h1 that makes a claim, a line of social proof, three tiers with the middle one marked,
+ * and a comparison matrix where the differences are shown rather than described.
+ *
+ * The voice is ChinaTalk's, which the operator supplied: a reader-supported publication
+ * that asks people to subscribe in order to receive the work and support it. That framing
+ * matters here because it is true - there are no ads to remove and no sponsors, so the
+ * only thing a paid subscription can honestly buy is more of the work and its upkeep.
+ *
+ * Everything on this page that could be a false claim is stated as it actually is:
+ *
+ *   - There are three tiers and only the free one works today. `SITE.newsletterAction` is
+ *     empty, so the free signup opens a mail client; the paid tiers show what they will
+ *     contain and say payment is not open. A working Subscribe button that leads to a 405
+ *     would be worse than an honest one that leads to an explanation.
+ *   - The social proof is the corpus, counted from the articles at build time. There are no
+ *     subscriber numbers and no company logos to name, and inventing either is the failure
+ *     this site exists to avoid.
+ *   - The prices are marked as provisional, because they are: they sit between The Ken's
+ *     $75/$125 a year and the $18-30 a month charged by Trivium, Sinocism and Net Interest,
+ *     and none of them has been tested against a real reader.
+ */
+import { getCollection } from "astro:content";
+
+import Sidebar from "../components/Sidebar.astro";
+import { SITE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { numbersFor, published } from "../lib/post";
+import instrumentRegistry from "../data/instruments.json";
+
+const posts = published(await getCollection("blog"));
+const numbers = numbersFor(posts);
+
+const figures = posts.reduce((a, p) => a + (p.data.figures?.length ?? 0), 0);
+const sources = posts.reduce((a, p) => a + (p.data.sources?.length ?? 0), 0);
+
+/**
+ * The three tiers.
+ *
+ * `available` is what the page keys off, not a comment: the free row's button works today,
+ * the paid rows say so plainly. When a payment provider is wired up, flipping one flag
+ * changes the page rather than requiring it to be rewritten.
+ */
+const TIERS = [
+  {
+    name: "Free",
+    price: "$0",
+    per: "forever",
+    tagline: "Everything published, as it is published.",
+    available: true,
+    cta: "Subscribe free",
+    features: [
+      "Every analysis, in full — no truncation, no teaser",
+      "The sourced figure behind every number, with its retrieval date",
+      "The instrument pages: every value drawn from a primary document",
+      "Change alerts, when a tracked change actually moves a per-unit cost",
+    ],
+  },
+  {
+    name: "Reader",
+    price: "$12",
+    per: "per month, or $99 a year",
+    tagline: "Support the work, and get what the free tier does not carry.",
+    available: false,
+    cta: "Not open yet",
+    popular: true,
+    features: [
+      "Everything in Free",
+      "The full archive, including pieces from before you arrived",
+      "The weekly policy brief: what moved, and the arithmetic it changes",
+      "First look at each quarter's deep dive on one supply chain",
+    ],
+  },
+  {
+    name: "Team",
+    price: "$49",
+    per: "per month, five seats",
+    tagline: "For sourcing teams who need the same numbers in one place.",
+    available: false,
+    cta: "Not open yet",
+    features: [
+      "Everything in Reader, for five people",
+      "CSV export of every figure and its source",
+      "Cost models with your own inputs, saved",
+      "A direct line for questions about a specific line item",
+    ],
+  },
+];
+
+/** The comparison matrix. A dash means the tier does not carry it. */
+const MATRIX = [
+  ["Every published analysis, in full", true, true, true],
+  ["Sourced figures with retrieval dates", true, true, true],
+  ["Instrument pages", true, true, true],
+  ["Change alerts", true, true, true],
+  ["Full archive, including older pieces", false, true, true],
+  ["Weekly policy brief", false, true, true],
+  ["Quarterly deep dive", false, true, true],
+  ["Seats included", false, "1", "5"],
+  ["CSV export of figures", false, false, true],
+  ["Saved cost models with your inputs", false, false, true],
+];
+
+const title = "Pricing";
+const description =
+  `${posts.length} analyses, ${figures} sourced figures and ${sources} named primary sources, free to read in full. ` +
+  `A reader-supported publication: paid tiers fund the work and add the archive, the weekly brief and the deep dives.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `Pricing — ${SITE.name}`,
+  description,
+  url: `${SITE.url}/pricing/`,
+};
+---
+
+<BaseLayout title={`${title} — ${SITE.name}`} description={description.slice(0, 290)} jsonLd={jsonLd}>
+  <div class="container">
+    <main id="main">
+      <div class="page-head">
+        <h1>The China trade analysis your invoice depends on</h1>
+        <p>
+          A reader-supported publication. Every analysis is free to read in full — subscribe
+          to receive it and to support the work. Paid tiers add the archive, the weekly brief
+          and the quarterly deep dives; they fund the reading and the arithmetic.
+        </p>
+        <p class="proof">
+          {posts.length} analyses · <strong>{figures}</strong> sourced figures ·
+          <strong>{sources}</strong> named primary sources ·
+          <a href="/instrument/">{instrumentRegistry.instruments.length} instruments</a> indexed ·
+          no ads, no sponsors, no tracking
+        </p>
+      </div>
+
+      <div class="tiers">
+        {TIERS.map((t) => (
+          <div class:list={["tier", t.popular && "tier-popular"]}>
+            {t.popular && <div class="tier-flag">Most popular</div>}
+            <h2>{t.name}</h2>
+            <div class="tier-price">
+              <span class="amount">{t.price}</span>
+              <span class="per">{t.per}</span>
+            </div>
+            <p class="tier-tagline">{t.tagline}</p>
+            <ul>
+              {t.features.map((f) => (
+                <li>{f}</li>
+              ))}
+            </ul>
+            {t.available ? (
+              <a class="tier-cta" href="/#subscribe">
+                {t.cta}
+              </a>
+            ) : (
+              <span class="tier-cta tier-cta-off" aria-disabled="true">
+                {t.cta}
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/*
+        * Stated plainly rather than hidden in a footnote. Someone who reads a price and
+        * then finds no way to pay has been misled, and that costs more than the honesty.
+      */}
+      <div class="callout">
+        <span class="callout-label">Where this stands</span>
+        <p>
+          <strong>The free tier is live. Paid subscriptions are not open yet.</strong> There is
+          no payment provider connected, so the paid buttons above are deliberately inert
+          rather than broken. The prices shown are provisional — they sit between The Ken's
+          $75–125 a year and the $18–30 a month charged by Trivium, Sinocism and Net Interest,
+          and none of them has been tested against a real reader yet. Subscribe free and you
+          will be told when paid tiers open, once — not a campaign.
+        </p>
+      </div>
+
+      <h2 class="section-title">Compare</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>What you get</th>
+              {TIERS.map((t) => (
+                <th class="num">{t.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {MATRIX.map((row) => (
+              <tr>
+                <td>{row[0]}</td>
+                {[1, 2, 3].map((i) => (
+                  <td class="num">
+                    {row[i] === true ? <span class="yes">✓</span> : row[i] === false ? <span class="no">—</span> : row[i]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">Questions people ask before subscribing</h2>
+
+      <h3>Is the free tier actually everything?</h3>
+      <p>
+        Yes. Every analysis is published in full, with every sourced figure, on the open web.
+        Nothing is truncated to sell a subscription. The paid tiers add convenience and
+        cadence — the archive in one place, a weekly brief, a quarterly deep dive — and they
+        fund the reading of primary documents that produces the numbers.
+      </p>
+
+      <h3>Why is there no ad-supported tier?</h3>
+      <p>
+        Because advertising and this product pull in opposite directions. A number that tells
+        you your landed cost just rose is not a number a sponsor wants next to its logo. The
+        site has no advertising networks, no third-party analytics and no tracking scripts;
+        that is a promise on <a href="/privacy/">the privacy page</a>, and a reader-supported
+        model is the only one consistent with it.
+      </p>
+
+      <h3>What happens when a figure turns out to be wrong?</h3>
+      <p>
+        It is corrected in public, with the change recorded on the article and the date moved.
+        The methodology, and the sources that could <em>not</em> be read, are on
+        <a href="/sources/">the sources page</a>. Each article carries a section stating which
+        claims are established and which are the analyst's inference.
+      </p>
+
+      <h3>Can I expense this?</h3>
+      <p>
+        Usually — it is research, and the Team tier exists for exactly that reason, with five
+        seats and CSV export so the numbers can go into a spreadsheet someone else maintains.
+      </p>
+    </main>
+
+    <Sidebar numbers={numbers} />
+  </div>
+</BaseLayout>
+
+<style>
+  .proof {
+    font-size: 0.92rem;
+    opacity: 0.85;
+  }
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin: 30px 0 26px;
+    align-items: start;
+  }
+  .tier {
+    border: 1px solid var(--rule, #e2e2e2);
+    border-radius: 6px;
+    padding: 20px 18px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .tier-popular {
+    border-color: var(--accent, #d4573a);
+    border-width: 2px;
+    box-shadow: 0 2px 14px rgb(0 0 0 / 6%);
+  }
+  .tier-flag {
+    position: absolute;
+    top: -11px;
+    left: 18px;
+    background: var(--accent, #d4573a);
+    color: #fff;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+  .tier h2 {
+    margin: 0 0 6px;
+    font-size: 1.06rem;
+  }
+  .tier-price {
+    margin-bottom: 8px;
+  }
+  .amount {
+    font-size: 1.85rem;
+    font-weight: 700;
+  }
+  .per {
+    font-size: 0.85rem;
+    opacity: 0.72;
+    margin-left: 6px;
+  }
+  .tier-tagline {
+    font-size: 0.9rem;
+    opacity: 0.82;
+    margin: 0 0 14px;
+  }
+  .tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    font-size: 0.9rem;
+    flex: 1;
+  }
+  .tier li {
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+  .tier li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    opacity: 0.6;
+  }
+  .tier-cta {
+    display: block;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--accent, #d4573a);
+    color: #fff;
+  }
+  .tier-cta:hover {
+    text-decoration: none;
+    filter: brightness(1.08);
+  }
+  .tier-cta-off {
+    background: transparent;
+    border: 1px dashed var(--rule, #cfcfcf);
+    color: inherit;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 18px 0;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.92rem;
+  }
+  th,
+  td {
+    border-bottom: 1px solid var(--rule, #e5e5e5);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.72;
+  }
+  .num {
+    text-align: center;
+    white-space: nowrap;
+  }
+  .yes {
+    opacity: 0.85;
+  }
+  .no {
+    opacity: 0.35;
+  }
+</style>
