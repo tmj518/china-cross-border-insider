@@ -24,6 +24,7 @@
  */
 import NewsletterForm from "./NewsletterForm.astro";
 import { AUTHOR } from "../consts";
+import { AUDIENCE, CTA, CTA_NOTE, HEADLINE, SUBTITLE, WHAT_YOU_GET } from "../lib/copy";
 
 export interface Props {
   /** Generated from the published collection, never typed by hand. */
@@ -40,16 +41,20 @@ const { analyses, figures, sources, instruments } = Astro.props;
   <div class="hero-inner">
     <div class="kicker">Independent analysis · no ads · no tracking</div>
 
-    <h1>China's trade rules, converted into your landed cost</h1>
+    <h1>{HEADLINE}</h1>
 
-    <p class="hero-sub">
-      What a published change costs you per unit, per container, per tonne — with the
-      source and the retrieval date on every figure, and a calculation you can check.
-      For importers, brands and sourcing teams.
-    </p>
+    <p class="hero-sub">{SUBTITLE}</p>
+    <p class="hero-audience">{AUDIENCE}</p>
+
+    <ul class="hero-gets">
+      {WHAT_YOU_GET.map((w) => (
+        <li>{w}</li>
+      ))}
+    </ul>
 
     <div class="hero-cta">
-      <a class="hero-button" href="#subscribe">Get the change alerts →</a>
+      <a class="hero-button" href="#subscribe">{CTA} →</a>
+      <p class="hero-cta-note">{CTA_NOTE}</p>
     </div>
 
     <p class="hero-proof">
@@ -71,9 +76,33 @@ const { analyses, figures, sources, instruments } = Astro.props;
 <style>
   .hero-sub {
     max-width: 46ch;
-    margin: 0 auto 20px;
+    margin: 0 auto 8px;
     font-size: 1.02rem;
     opacity: 0.92;
+  }
+  .hero-audience {
+    max-width: 46ch;
+    margin: 0 auto 18px;
+    font-size: 0.92rem;
+    opacity: 0.78;
+  }
+  .hero-gets {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 20px;
+    max-width: 30ch;
+    text-align: left;
+    font-size: 0.92rem;
+  }
+  .hero-gets li {
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }
+  .hero-gets li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    opacity: 0.6;
   }
   .hero-cta {
     margin: 22px 0 18px;
@@ -90,6 +119,11 @@ const { analyses, figures, sources, instruments } = Astro.props;
   .hero-button:hover {
     text-decoration: none;
     filter: brightness(1.08);
+  }
+  .hero-cta-note {
+    font-size: 0.84rem;
+    opacity: 0.72;
+    margin: 9px 0 0;
   }
   .hero-proof {
     font-size: 0.92rem;

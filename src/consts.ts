@@ -66,33 +66,27 @@ export const SITE = {
  */
 export const CF_ANALYTICS_TOKEN = import.meta.env.CF_WEB_ANALYTICS_TOKEN ?? "";
 
-/** spec §3 — top navigation. Labels are the short form; the silo page uses
- *  the longer `label` from CATEGORIES. */
+/**
+ * spec §3 — top navigation.
+ *
+ * Trimmed from twelve items to seven on 2026-10-08. The benchmark this was modelled on
+ * keeps four, and the specification repeats "navigation ≤4 items" twice; twelve is not a
+ * navigation, it is a sitemap in a bar.
+ *
+ * The five category links were the ones removed, and they are not lost: every article
+ * carries its category as a link in the byline, each category page cross-links the others,
+ * and all five are in the footer-adjacent silo list. What stays at the top is what a reader
+ * cannot reach otherwise - the archive, the calculator, the tracker and the price.
+ */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  // The calculator leads the navigation, the way the benchmark site does. It is
-  // the only page that does something rather than say something, and it is the
-  // top of the funnel for the email list.
+  // The calculator is the only page that does something rather than say something, and it
+  // is the top of the funnel for the email list. The benchmark leads with its tool too.
   { label: "Calculator", href: "/calculator/" },
-  // The archive, named and structured after the benchmark's: a dated list of everything
-  // published, newest first. It sits above the category links because it is the one page
-  // that shows the whole body of work rather than a slice of it.
+  // The archive, named and structured after the benchmark's: everything published, by date.
   { label: "Briefs", href: "/brief/" },
   { label: "Tracker", href: "/tracker/" },
   { label: "By market", href: "/markets/" },
-  { label: "Trade Policy", href: "/category/trade-policy/" },
-  { label: "Platforms", href: "/category/platforms/" },
-  { label: "Supply Chain", href: "/category/supply-chain/" },
-  { label: "Sourcing", href: "/category/sourcing/" },
-  { label: "Logistics", href: "/category/logistics/" },
-  // Added 2026-10-08 with the page itself. Before this the page existed in the
-  // sitemap and nowhere else - a page with no inbound link is not published.
-  //
-  // NOTE: this list is now eleven items, and the benchmark the navigation was
-  // modelled on keeps four. The five category links are the ones to reconsider:
-  // they are reachable from every article's category tag, so they do not need
-  // top-level slots. Left as-is rather than changed in the same edit as adding a
-  // page, but it should be trimmed.
   { label: "Pricing", href: "/pricing/" },
   { label: "About", href: "/about/" },
 ];
