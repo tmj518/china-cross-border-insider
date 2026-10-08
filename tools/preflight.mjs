@@ -39,7 +39,7 @@
  */
 
 import { execFileSync, spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -206,6 +206,36 @@ async function checkEnvironment() {
    * the information-gain gate was dead. A syntax sweep is cheap and would have
    * caught it on the spot.
    */
+  /*
+   * The documents the daily run is required to read.
+   *
+   * The operator asked on 2026-10-08 for two things to stop depending on good intentions:
+   * that the source inventory is actually consulted before choosing a topic, and that
+   * lessons from the benchmark research are actually applied rather than filed. A rule in
+   * a text file that nobody opens is not a rule, so the files are checked for existence
+   * and for a plausible size here, and a missing one fails the preflight.
+   *
+   * Size matters as well as presence: a truncated or emptied file would otherwise pass.
+   */
+  const REQUIRED_DOCS = [
+    ["信源清单.md", 4000, "the tested inventory of 23 reachable official sources"],
+    ["初心与目标.md", 2000, "the single standard for judging trade-offs"],
+    ["经验与踩坑记录.md", 4000, "the reusable lessons, including the benchmark findings"],
+    ["对标学习10条.md", 3000, "the ten mechanisms to copy, one of which each run must advance"],
+  ];
+  const docProblems = [];
+  for (const [name, minBytes, why] of REQUIRED_DOCS) {
+    const p = join(ROOT, name);
+    if (!existsSync(p)) { docProblems.push(`${name} missing (${why})`); continue; }
+    const size = statSync(p).size;
+    if (size < minBytes) docProblems.push(`${name} is only ${size} bytes, expected at least ${minBytes}`);
+  }
+  if (docProblems.length === 0) {
+    ok("required docs", `${REQUIRED_DOCS.length} present — sources, goals, lessons, benchmarks`);
+  } else {
+    fail("required docs", docProblems.join(" | "));
+  }
+
   const toolFiles = readdirSync(join(ROOT, "tools")).filter((f) => f.endsWith(".mjs"));
   const broken = [];
   for (const f of toolFiles) {

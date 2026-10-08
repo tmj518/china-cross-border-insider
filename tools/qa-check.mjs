@@ -12,7 +12,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { proseWords, WORD_TARGET } from "../src/lib/prose.mjs";
+import { proseWords, WORD_TARGET, hasCostTable } from "../src/lib/prose.mjs";
 
 const BANNED_VAGUE = [
   "may", "might", "possibly", "perhaps", "could", "reportedly", "allegedly",
@@ -358,19 +358,24 @@ function check(file) {
    * 12 per cent - one counted table rows and code blocks, the other did not. A threshold
    * is meaningless if the two sides of it measure different things.
    *
-   * Target 1,200-1,600, floor 1,000, ceiling 1,600. Lowered from 1500-2500 on
-   * 2026-10-08: Backlinko's 11.8 million results put the average first-page result at
-   * 1,447 words and Ahrefs' 900 million pages show organic traffic turning negative past
-   * 2,000, and the measured median here was 1,914.
+   * Two tiers, because an article carrying a cost model has a structural floor that one
+   * without does not. The tier is detected from the body - a markdown table carrying
+   * currency amounts - rather than declared in frontmatter, so it cannot be claimed
+   * falsely. The operator's rule, 2026-10-08: completeness and search intent come first;
+   * the ceiling exists to prevent padding, not coverage.
    */
+  const costTable = hasCostTable(body);
+  const tier = costTable ? WORD_TARGET.withCostTable : WORD_TARGET.withoutCostTable;
+  const tierName = costTable ? "with a cost table" : "no cost table";
+
   const words = proseWords(body);
-  const wordsOk = words >= WORD_TARGET.min && words <= WORD_TARGET.max;
-  const inTarget = words >= WORD_TARGET.targetLow && words <= WORD_TARGET.targetHigh;
+  const wordsOk = words >= tier.min && words <= tier.max;
+  const inTarget = words >= tier.targetLow && words <= tier.targetHigh;
 
   if (wordsOk) {
-    add("pass", `prose ${WORD_TARGET.min}-${WORD_TARGET.max} words`, `${words} words${inTarget ? " (in target)" : " (outside the 1200-1600 target)"}`);
+    add("pass", `prose ${tier.min}-${tier.max} words (${tierName})`, `${words} words${inTarget ? " (in target)" : ` (outside the ${tier.targetLow}-${tier.targetHigh} target)`}`);
   } else if (publishDate >= V6_2_FROM) {
-    add("block", `prose ${WORD_TARGET.min}-${WORD_TARGET.max} words`, `${words} words`);
+    add("block", `prose ${tier.min}-${tier.max} words (${tierName})`, `${words} words`);
   } else {
     /*
      * Permanently grandfathered, by the operator's decision on 2026-10-08: "old articles
@@ -379,11 +384,11 @@ function check(file) {
      * 22 of the 23 articles predate V6.2 and run 1,537 to 2,219 prose words, and blocking
      * on length would stop the daily run from publishing anything until all 22 were cut -
      * which converts a quality rule into an outage. The alternative, an upgrade at each
-     * article's reviewBy, was offered and declined: it would have taken until 2027-03-31
-     * to bring the library into line, for no reader-visible gain on pieces already
-     * indexed and linked.
+     * article's reviewBy, was offered and declined. Whether the library should ever be
+     * brought into line is a question for the search data, once there is any, not for a
+     * rule applied blind.
      */
-    add("warn", `prose ${WORD_TARGET.min}-${WORD_TARGET.max} words`, `${words} words - exempt, predates ${V6_2_FROM}`);
+    add("warn", `prose ${tier.min}-${tier.max} words (${tierName})`, `${words} words - exempt, predates ${V6_2_FROM}`);
   }
 
   /*
