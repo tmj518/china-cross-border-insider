@@ -87,6 +87,7 @@ const jsonLd = {
   publishedTime={data.publishDate}
   modifiedTime={data.updatedDate}
   jsonLd={jsonLd}
+  citation={{ title: data.title, date: data.publishDate }}
 >
   <ArticleLayout post={post} related={related} numbers={numbers}>
     <Content />

@@ -27,6 +27,27 @@ export interface Props {
   /** Overrides the page-level schema type; defaults by path. */
   pageType?: "WebPage" | "CollectionPage";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /**
+   * Highwire Press citation metadata, for article pages only.
+   *
+   * Mechanism 2 of 对标学习10条, executed 2026-10-09. The benchmark carries seven of these tags
+   * on every article and two anchored blocks in the body, and the reason is that three different
+   * kinds of reader want three different things: academic databases read `citation_*`, AI
+   * crawlers read the most structured passage, and a human wants a string they can paste into a
+   * document. Putting all three on one page takes the friction out of citing, and being cited is
+   * the only distribution this site can get without an audience or a backlink profile.
+   *
+   * Deliberately not `citation_journal_title` alone: the benchmark's equivalent is its own name,
+   * and here that is set from SITE.name so it cannot drift.
+   */
+  citation?: {
+    title: string;
+    /** ISO date. Defaults to publishedTime when omitted. */
+    date?: Date;
+    authors?: string[];
+    /** Article PDF or full text URL; defaults to the canonical URL. */
+    fullTextUrl?: string;
+  };
 }
 
 const {
@@ -39,11 +60,26 @@ const {
   noindex = false,
   pageType,
   jsonLd,
+  citation,
 } = Astro.props;
 
 const site = Astro.site ?? new URL(SITE.url);
 const canonical = new URL(Astro.url.pathname, site).href;
 const ogImage = new URL(image, site).href;
+
+/*
+ * The citation block, assembled once. `citation_publication_date` and the full-text URL both
+ * default to values the layout already has, so an article page supplies only its title and the
+ * rest cannot be left blank by omission.
+ */
+const cite = citation
+  ? {
+      title: citation.title,
+      date: (citation.date ?? publishedTime)?.toISOString().slice(0, 10),
+      authors: citation.authors?.length ? citation.authors : [AUTHOR.name],
+      fullTextUrl: citation.fullTextUrl ?? canonical,
+    }
+  : null;
 
 /*
  * `noindex` pages get no structured data at all. Emitting it on a page we are asking
@@ -123,6 +159,31 @@ const blocks = [...pageBlocks, ...ownBlocks];
     />
     <meta name="theme-color" content="#0a2540" />
     <meta name="author" content={AUTHOR.name} />
+
+    {/*
+      * Highwire Press citation metadata — mechanism 2 of 对标学习10条, executed 2026-10-09.
+      *
+      * These tags do not affect ranking. What they do is make the article citable without the
+      * reader having to decide how to label it: an academic index reads the citation_* set, an AI
+      * crawler reads the most structured passage on the page, and a person wants a string they
+      * can paste. The benchmark carries all seven on every article for that reason, and being
+      * cited is the one distribution channel that works with no audience and no backlinks.
+      */}
+    {
+      cite && (
+        <>
+          <meta name="citation_title" content={cite.title} />
+          {cite.authors.map((a) => (
+            <meta name="citation_author" content={a} />
+          ))}
+          <meta name="citation_publication_date" content={cite.date} />
+          <meta name="citation_journal_title" content={SITE.name} />
+          <meta name="citation_journal_abbrev" content={SITE.name} />
+          <meta name="citation_fulltext_html_url" content={cite.fullTextUrl} />
+          <meta name="citation_fulltext_world_readable" content="" />
+        </>
+      )
+    }
 
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:type" content={ogType} />
