@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "instruments": [
     {
       "id": "european-commission-2026-coordinated-product-safety-sweep-re",
@@ -866,6 +866,37 @@
       "modelOutput": false
     },
     {
+      "id": "cbp-proposed-rule-low-value-shipments-91-fr-docket",
+      "source": "CBP proposed rule, Low-Value Shipments, 91 FR, docket USCBP-2026-0298",
+      "figures": [
+        {
+          "articleSlug": "us-low-value-shipment-entry-rule-2026",
+          "articleNum": 24,
+          "value": "2,500",
+          "unit": "US dollars — the value ceiling for an informal entry, and the population the proposal covers",
+          "period": "in force, from 19 U.S.C. 1498(a)(1)(A)",
+          "source": "CBP proposed rule, Low-Value Shipments, 91 FR, docket USCBP-2026-0298",
+          "retrieved": "2026-10-09"
+        },
+        {
+          "articleSlug": "us-low-value-shipment-entry-rule-2026",
+          "articleNum": 24,
+          "value": "1,000",
+          "unit": "US dollars — the proposed floor for liquidated damages arising from a breach of a customs bond securing an informal entry",
+          "period": "proposed 8 October 2026, not in force",
+          "source": "CBP proposed rule, Low-Value Shipments, 91 FR, docket USCBP-2026-0298",
+          "retrieved": "2026-10-09"
+        }
+      ],
+      "articleNums": [
+        24
+      ],
+      "articleSlugs": [
+        "us-low-value-shipment-entry-rule-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "commission-implementing-regulation-eu-2026-1740-annex-i",
       "source": "Commission Implementing Regulation (EU) 2026/1740, Annex I",
       "figures": [
@@ -1019,6 +1050,39 @@
       ],
       "articleSlugs": [
         "china-industrial-profits-q4-supply-chain"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "one-big-beautiful-bill-act-pub-l-119-21",
+      "source": "One Big Beautiful Bill Act, Pub. L. 119-21",
+      "figures": [
+        {
+          "articleSlug": "us-de-minimis-postal-route-closes-october-2026",
+          "articleNum": 12,
+          "value": "1 July 2027",
+          "unit": "date the de minimis exemption is repealed by statute, with no restoration in the interim",
+          "period": "enacted 4 July 2025",
+          "source": "One Big Beautiful Bill Act, Pub. L. 119-21",
+          "retrieved": "2026-10-03"
+        },
+        {
+          "articleSlug": "us-low-value-shipment-entry-rule-2026",
+          "articleNum": 24,
+          "value": "1 July 2027",
+          "unit": "the date the de minimis exemption is repealed by statute, after which no restoration is administratively possible",
+          "period": "enacted 4 July 2025",
+          "source": "One Big Beautiful Bill Act, Pub. L. 119-21",
+          "retrieved": "2026-10-09"
+        }
+      ],
+      "articleNums": [
+        12,
+        24
+      ],
+      "articleSlugs": [
+        "us-de-minimis-postal-route-closes-october-2026",
+        "us-low-value-shipment-entry-rule-2026"
       ],
       "modelOutput": false
     },
