@@ -545,13 +545,32 @@ function inputsFor(p, s) {
   }
 }
 
-/** Fold a flat payload list into one record per article, keeping the article's own metadata. */
+/**
+ * Fold a flat payload list into one record per article, keeping the article's own metadata.
+ *
+ * `figures` is filled from the whole atom pool rather than from the list being grouped, and that
+ * distinction was a live defect. The list passed in has already been filtered to one payload - the
+ * calculation section for devto, the data point for beehiiv - and the article-shaped renderers all
+ * read `a.figures` to build their input lists. So for any platform whose payload is a cost-table or
+ * a data point, the record arrived with `figures: []` and the renderer emitted an empty input list:
+ * devto shipped `## The inputs` with nothing under it, and beehiiv shipped `SUBJECT:` followed by a
+ * blank, because `a.figures[0]` was undefined and the template read `.value` off it. Structurally
+ * valid, over the length floor, and empty - the same shape of failure as the data-point placeholder.
+ *
+ * `items` still holds only the filtered atoms, because that is what the payload-specific renderers
+ * want and what `--only` operates on. Everything else is article context and comes from the pool.
+ */
 function groupByArticle(list) {
   const by = new Map();
   for (const it of list) {
     const k = it.article_number;
     if (!by.has(k)) {
       const meta = articles.find((a) => String(a.number) === String(k)) ?? {};
+      /*
+       * The article's number figures, which every article-shaped template quotes. A note-shaped
+       * figure is a definition rather than a value and does not belong in an input list.
+       */
+      const own = atoms.filter((x) => String(x.article_number) === String(k) && x.kind === "figure" && x.shape === "number");
       by.set(k, {
         number: k,
         slug: it.article_slug,
@@ -560,13 +579,12 @@ function groupByArticle(list) {
         audience: it.audience,
         published: it.published,
         canonical: it.canonical,
-        figures: [],
+        figures: own.length ? own : atoms.filter((x) => String(x.article_number) === String(k) && x.kind === "figure"),
         dataPoint: meta.dataPoint ?? "",
         items: [],
       });
     }
     const rec = by.get(k);
-    rec.figures.push(it);
     rec.items.push(it);
   }
   return [...by.values()];

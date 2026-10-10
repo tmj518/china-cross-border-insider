@@ -99,7 +99,17 @@
       "mechanics": "支持 canonical_url 字段。取『如何计算』那一块。",
       "payload": "cost-table",
       "render": "article",
-      "requiresCanonical": true
+      "requiresCanonical": true,
+      "api": {
+        "transport": "http",
+        "method": "POST",
+        "endpoint": "https://dev.to/api/articles",
+        "authHeader": "api-key",
+        "credentialEnv": "DEVTO_API_KEY",
+        "contentType": "application/json",
+        "bodyShape": "devto-article",
+        "notes": "The canonical_url field is mandatory here and is the reason Dev.to replaces Medium: it tells Dev.to the piece was published elsewhere first, so the original keeps the search signal. Dev.to rejects a body over 64 KB and a title over 128 characters."
+      }
     },
     {
       "id": "substack",
@@ -119,7 +129,18 @@
       "dislikes": ["过长的邮件（读者在手机上读）"],
       "mechanics": "与 Substack 同形，占位符 {{unsubscribe_url}}。",
       "payload": "data-point",
-      "render": "article"
+      "render": "article",
+      "api": {
+        "transport": "http",
+        "method": "POST",
+        "endpoint": "https://api.buttondown.com/v1/emails",
+        "authHeader": "Authorization",
+        "authScheme": "Token",
+        "credentialEnv": "BUTTONDOWN_API_KEY",
+        "contentType": "application/json",
+        "bodyShape": "buttondown-email",
+        "notes": "Buttondown is the intended first provider because its free tier is 100 subscribers, which is where a list starts. The endpoint here is the email-send route; a draft is created with status: draft so the first sends can be inspected before any reader receives one. beehiiv is kept in the spec as the alternative because it is a different product, not a different key for the same one."
+      }
     },
     {
       "id": "ghost",
