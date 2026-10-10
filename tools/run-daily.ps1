@@ -1,4 +1,4 @@
-﻿# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
+# run-daily.ps1 - the full daily job for Landed Math: review, write, gate, publish.
 #
 # Launched by Windows Task Scheduler as LandedMath-Daily, and safe to run by hand:
 #     powershell -NoProfile -ExecutionPolicy Bypass -File tools\run-daily.ps1
@@ -223,6 +223,14 @@ Say "url submission exit=$submit"
 $gsc = Run-Cmd "node" @((Join-Path $root "tools\gsc-report.mjs"), "--allow-missing-credentials")
 Say "search report exit=$gsc"
 Say "  advisory only: a missing credential or an unreachable endpoint is not a failed run"
+
+# The three platforms that need no credential are exported here rather than sent anywhere: a
+# landing page is a file a static host serves, a deck is uploaded by hand, and the feed is already
+# published by the site. Running it inside the daily job means the exports are as current as the
+# renders, which is the only way they stay useful. Advisory, like the two steps above it.
+Say "step 6b  exporting the no-credential platforms (landing pages, decks)"
+$export = Run-Cmd "node" @((Join-Path $root "tools\export.mjs"))
+Say "export exit=$export"
 
 Say "==================== daily run finished ===================="
 if ($verify -ne 0) { exit $verify }

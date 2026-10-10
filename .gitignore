@@ -69,6 +69,11 @@ yarn-error.log*
 data/renders/
 data/tmp/
 
+# Exported deliverables — the pages and decks built from the renders by `node tools/export.mjs`.
+# Same reasoning, and one more: these are upload payloads. A file that gets uploaded somewhere is
+# not source, and a repository that tracks it will show a diff every time a figure is corrected.
+exports/
+
 # editors / OS
 .vscode/*
 !.vscode/extensions.json

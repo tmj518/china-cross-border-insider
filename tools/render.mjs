@@ -493,14 +493,25 @@ const RENDER = {
    * the heading, not the answer - so the answer slot is marked for the one pass that can write
    * it, and the page is not emitted as if it were complete.
    */
+  /*
+   * A landing page per FAQ question, which is mechanism 4 of the benchmark study: each question is
+   * an independent search intent, so it gets its own page rather than sitting in a list.
+   *
+   * Two placeholder defects lived here and both are now closed by fields the atom pool gained.
+   * `ANSWER` was a literal note saying the pool carries the question and not the answer, which was
+   * true when it was written; the atomizer pairs each question with its answer from the article now.
+   * `SOURCE` read `q.source`, a field an FAQ atom has never had, so it rendered blank - the same
+   * mistake the Reddit and Quora renderers made. An FAQ atom's citations live in the article it came
+   * from, so the page states the retrieval date and links to the source list rather than claiming a
+   * source it does not have.
+   */
   "landing-page": (q, vp) =>
     [
       `H1: ${q.text}`,
-      `ANSWER: [NEEDS THE ANSWER TEXT — the atom pool carries the question, not the answer]`,
-      `SOURCE: ${q.source}`,
+      `ANSWER: ${q.answer || "[no answer recorded in the article]"}`,
       `RETRIEVED: ${q.retrieved}`,
       `CATEGORY: ${q.category}`,
-      `RELATED ANALYSIS: ${q.canonical}`,
+      `SOURCES AND WORKING: ${q.canonical}`,
     ].join("\n\n"),
 
   rss: () => "(handled by src/pages/rss.xml.ts — not rendered here)",
