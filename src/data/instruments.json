@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "instruments": [
     {
       "id": "european-commission-2026-coordinated-product-safety-sweep-re",
@@ -1242,6 +1242,37 @@
       "articleSlugs": [
         "container-freight-index-publisher-change-2026",
         "freight-index-linked-contract-two-errors-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "wto-committee-on-safeguards-g-sg-n-8-idn-25",
+      "source": "WTO Committee on Safeguards, G/SG/N/8/IDN/35/Corr.1, Table 7",
+      "figures": [
+        {
+          "articleSlug": "indonesia-tarpaulin-safeguard-duty-2026",
+          "articleNum": 25,
+          "value": "12,391",
+          "unit": "rupiah per kilogram — the specific safeguard duty in stage two",
+          "period": "stage two of three, notified 6 October 2026",
+          "source": "WTO Committee on Safeguards, G/SG/N/8/IDN/35/Corr.1, Table 7",
+          "retrieved": "2026-10-10"
+        },
+        {
+          "articleSlug": "indonesia-tarpaulin-safeguard-duty-2026",
+          "articleNum": 25,
+          "value": "11,458",
+          "unit": "rupiah per kilogram — the specific safeguard duty in stage three",
+          "period": "stage three of three, notified 6 October 2026",
+          "source": "WTO Committee on Safeguards, G/SG/N/8/IDN/35/Corr.1, Table 7",
+          "retrieved": "2026-10-10"
+        }
+      ],
+      "articleNums": [
+        25
+      ],
+      "articleSlugs": [
+        "indonesia-tarpaulin-safeguard-duty-2026"
       ],
       "modelOutput": false
     }

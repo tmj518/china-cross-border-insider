@@ -28,6 +28,7 @@ import Sidebar from "../components/Sidebar.astro";
 import SubscribeModal from "../components/SubscribeModal.astro";
 import {
   AUTHOR,
+  SITE,
   audienceLabel,
   categoryHref,
   categoryLabel,
@@ -52,6 +53,38 @@ const { data } = post;
 
 const minutes = readingTime(post.body);
 const siloLabel = categoryLabel(data.category);
+
+/*
+ * The citation strings, built once.
+ *
+ * `retrieved` is the newest retrieval date among the article's own figures, because that is when
+ * the facts were last checked against their sources - the honest date for a citation, and the same
+ * date the sitemap carries. Falling back to the publication date keeps the block populated for the
+ * four pre-V6.2 articles that carry no figures at all.
+ */
+const retrieved = (data.figures ?? [])
+  .map((f) => f.retrieved)
+  .filter(Boolean)
+  .sort()
+  .at(-1) ?? data.publishDate.toISOString().slice(0, 10);
+
+const citationUrl = new URL(`/blog/${post.id}/`, Astro.site ?? SITE.url).href;
+const citationYear = String(data.publishDate.getUTCFullYear());
+
+const citationPlain =
+  `${AUTHOR.name}. "${data.title}." ${SITE.name}, ${data.publishDate.toISOString().slice(0, 10)}. ` +
+  `Figures retrieved ${retrieved}. ${citationUrl}`;
+
+const bibtex =
+  `@misc{landedmath${post.id.replace(/[^a-z0-9]/gi, "")},\n` +
+  `  author       = {${AUTHOR.name}},\n` +
+  `  title        = {${data.title}},\n` +
+  `  howpublished = {${SITE.name}},\n` +
+  `  year         = {${citationYear}},\n` +
+  `  month        = {${data.publishDate.toISOString().slice(5, 7)}},\n` +
+  `  note         = {Figures retrieved ${retrieved}},\n` +
+  `  url          = {${citationUrl}}\n` +
+  `}`;
 ---
 
 <div class="container">
@@ -199,6 +232,33 @@ const siloLabel = categoryLabel(data.category);
         </section>
       }
     </article>
+
+    {/*
+      * Mechanism 2, human-readable layer: the citation block and the licence.
+      *
+      * The Highwire `citation_*` tags added on 2026-10-09 let a machine cite this page. This is the
+      * other half of the same mechanism, and the benchmark carries both: a string a reader can
+      * paste into a document, a BibTeX entry for anyone writing a paper, and a stated licence so
+      * that reusing the figure needs no permission request. The friction being removed is the
+      * reader's uncertainty about how to attribute the work - and being cited is the one form of
+      * distribution available to a site with no audience and no backlinks.
+      *
+      * The date is the retrieval date the figures themselves carry, not the build date, because the
+      * citation belongs to the version a reader actually saw.
+    */}
+    <section id="article-citation" class="citation-block">
+      <h2 class="section-title">Cite this analysis</h2>
+      <p class="citation-note">
+        Every figure here is traceable to a named document and a retrieval date. Reuse is welcome
+        under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>
+        — attribute {AUTHOR.name} / {SITE.name} and link back to this page. No permission needed.
+      </p>
+      <pre class="citation-pre"><code>{citationPlain}</code></pre>
+      <details class="citation-bibtex">
+        <summary>BibTeX</summary>
+        <pre class="citation-pre"><code>{bibtex}</code></pre>
+      </details>
+    </section>
 
     <ArticleFooter related={related} />
   </main>

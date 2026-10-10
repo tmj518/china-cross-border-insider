@@ -62,6 +62,13 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Render output — 5,130 files and 2.6 MB, all of it reproducible from the atom pool by running
+# `node tools/render.mjs --emit`. Committing it would put a copy of every derivative in the
+# repository and turn each re-render into a five-thousand-file diff. The atom pool it derives from
+# stays tracked, because the n8n workflow reads it and regenerating it needs a source read.
+data/renders/
+data/tmp/
+
 # editors / OS
 .vscode/*
 !.vscode/extensions.json
