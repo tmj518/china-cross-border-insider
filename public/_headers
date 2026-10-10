@@ -40,22 +40,41 @@
   Content-Security-Policy: frame-ancestors 'none'
   #
   # ---------------------------------------------------------------------------------------------
-  # HTML at the edge. Added 2026-10-10.
+  # HTML at the edge. Added 2026-10-10. READ THIS BEFORE ASSUMING CACHING WORKS.
   #
-  # Measured before writing this: every HTML response carried `Cache-Control: public, max-age=0,
-  # must-revalidate` with `cf-cache-status: DYNAMIC`, which means Cloudflare was not caching the
-  # pages at all and every request came back to the origin. That is the default for HTML on Pages,
-  # and it is the wrong default for a statically generated site: the HTML changes only when a deploy
-  # happens, and a deploy purges the cache anyway.
+  # Measured before writing it: every HTML response carried `Cache-Control: public, max-age=0,
+  # must-revalidate` with `cf-cache-status: DYNAMIC`, so no page was cached and every request came
+  # back to the origin. The asset rule below was already working, which is how the difference showed
+  # up: /og-default.png returned a MISS while the HTML returned DYNAMIC on every hit.
   #
-  # The two directives do different jobs and the split is the point:
+  # THIS HEADER IS A NECESSARY CONDITION AND NOT A SUFFICIENT ONE. `s-maxage` says how long something
+  # may be cached, not whether it may be cached at all, and Cloudflare Pages treats HTML as dynamic
+  # until told otherwise. The result is a header that reads correctly in the source, is present in
+  # the response, passes every gate, and changes nothing - which is worse than having no header,
+  # because it invites the belief that caching is handled.
+  #
+  # Two conditions must both hold:
+  #
+  #   1. No Set-Cookie on the response. Verified: this site sets none.
+  #   2. A Cache Rule in the Cloudflare dashboard marking these paths cacheable. NOT DONE - it is a
+  #      dashboard change and cannot be made from this repository.
+  #
+  #        Cloudflare dashboard -> Caching -> Cache Rules -> Create rule
+  #          When incoming requests match : hostname equals landedmath.com
+  #          Then : Eligible for cache;  Edge TTL -> "Use cache-control header if present"
+  #
+  # The header is kept because the rule is useless without it: the rule defers to the origin's
+  # s-maxage for the duration. It is also kept so tools/check-edge-cache.mjs has something real to
+  # test - run it and read `cf-cache-status`; a HIT is the only proof, and until then this directive
+  # does nothing at all. That tool is the check, not this comment.
+  #
+  # The split between the directives is the point:
   #
   #   - `max-age=0` is for the browser. A reader who reloads gets the current page, never a stale
   #     copy held on their machine. This site publishes corrections and they have to land at once.
-  #   - `s-maxage=604800` is for Cloudflare's edge, which is what costs time when it is bypassed.
-  #     A week is safe because a deploy invalidates it.
-  #   - `stale-while-revalidate=86400` lets the edge serve the cached copy while it refreshes behind
-  #     the reader, so even the first request after a purge does not wait on the origin.
+  #   - `s-maxage=604800` is for the edge, once the Cache Rule exists. A week is safe because a
+  #     deploy purges it.
+  #   - `stale-while-revalidate=86400` lets the edge serve while it refreshes behind the reader.
   #
   # This sits in the same block as the security headers rather than in a second `/*` block: two
   # blocks matching the same path both apply, which reads as two rules that might conflict, and the
