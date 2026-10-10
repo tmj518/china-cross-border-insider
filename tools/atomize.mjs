@@ -82,7 +82,18 @@ function readArticles() {
 
     /* FAQ questions are headings under the FAQ section: each is a search intent. */
     const faqSection = /##\s*FAQ\s*\r?\n([\s\S]*?)(?=\r?\n##\s|$)/.exec(raw)?.[1] ?? "";
-    const faqs = [...faqSection.matchAll(/^###\s+(.+?)\s*$/gm)].map((m) => m[1].trim());
+    /*
+     * Each question is paired with its answer here, where the article text is in scope.
+     *
+     * The pool previously held only the question heading, so a landing page could say what it was
+     * about but not answer it, and the preflight's digit check failed on questions that legitimately
+     * contain no number. Parsing the pair at read time keeps `raw` in the scope where it exists
+     * instead of threading it through the emitter.
+     */
+    const faqs = [...faqSection.matchAll(/^###\s+(.+?)\s*\r?\n([\s\S]*?)(?=\r?\n###\s|\r?\n##\s|$)/gm)].map((m) => ({
+      question: m[1].trim(),
+      answer: m[2].replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/[#*`]/g, " ").replace(/\s+/g, " ").trim(),
+    }));
 
     /*
      * The cost table as its own payload.
@@ -96,6 +107,27 @@ function readArticles() {
     const calcFormula = [...calcSection.matchAll(/^```[a-z]*\r?\n([\s\S]*?)```$/gm)].map((m) => m[1].trim()).join("\n");
     const calcText = calcSection.replace(/```[\s\S]*?```/g, " ").replace(/[#*`]/g, " ").replace(/\s+/g, " ").trim();
 
+    /*
+     * The data point itself, not a pointer to it.
+     *
+     * The atom carried `Data point from <title>` as its text - a placeholder written when the
+     * payload was first wired up and never replaced with the content. Nine platforms consume this
+     * payload, and they were being handed a sentence that says where the data point is rather than
+     * the data point. The n8n preflight's digit check caught it on three articles, which is how a
+     * placeholder survives: it fails only where the title happens to contain no number.
+     */
+    const dataPointMatch = /##\s*The data point\s*\r?\n([\s\S]*?)(?=\r?\n##\s|$)/.exec(raw)?.[1] ?? "";
+    const dataPointText = dataPointMatch
+      .replace(/<div[^>]*>/g, " ")
+      .replace(/<\/div>/g, " ")
+      .replace(/<span[^>]*>([\s\S]*?)<\/span>/g, "$1")
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/[#*`]/g, " ")
+      /* The callout's own label, which sits inside the block once the tags are gone. */
+      .replace(/^\s*(Data point|数据点)\s*/i, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
     out.push({
       slug,
       number: Number(scalar("articleNumber")) || 0,
@@ -108,6 +140,7 @@ function readArticles() {
       faqs,
       calcFormula,
       calcText,
+      dataPointText,
       hasDataPoint: /##\s*The data point/.test(raw),
     });
   }
@@ -241,22 +274,41 @@ for (const a of articles) {
   });
 
   if (a.hasDataPoint) {
+    /*
+     * The retrieval date for a derived atom.
+     *
+     * A data point, an FAQ question and the calculation section are all derived from the article
+     * rather than from a single document, so none of them had a retrieval date of their own - and
+     * the n8n preflight rejects any piece without one, which held back fourteen of the twenty-two
+     * platforms, not the three the task assumed.
+     *
+     * The honest date for a derived atom is the newest retrieval date among the article's own
+     * figures: that is the moment its inputs were last checked against their sources, and it is the
+     * same date the sitemap carries for the article.
+     */
+    const articleRetrieved = a.figures.map((f) => f.retrieved).filter(Boolean).sort().at(-1) ?? "";
+
     atoms.push({
       ...common,
       kind: "data-point",
       ref: "#the-data-point",
-      text: `Data point from ${a.title}`,
+      text: a.dataPointText || `Data point from ${a.title}`,
+      retrieved: articleRetrieved,
       canonical: `${url}#the-data-point`,
     });
   }
 
   if (KINDS.includes("faq")) {
+    /* The same derived retrieval date the data point uses: newest among the article's figures. */
+    const faqRetrieved = a.figures.map((f) => f.retrieved).filter(Boolean).sort().at(-1) ?? "";
     for (const q of a.faqs) {
       atoms.push({
         ...common,
         kind: "faq",
         ref: "#faq",
-        text: q,
+        text: q.question,
+        answer: q.answer,
+        retrieved: faqRetrieved,
         canonical: url,
         note: "one landing page per question — an independent search intent",
       });
@@ -265,12 +317,14 @@ for (const a of articles) {
 
   /* The arithmetic, as its own atom, for the platforms that consume a formula. */
   if (a.calcFormula || a.calcText) {
+    const calcRetrieved = a.figures.map((f) => f.retrieved).filter(Boolean).sort().at(-1) ?? "";
     atoms.push({
       ...common,
       kind: "cost-table",
       ref: "#how-we-calculated-this",
       text: a.calcFormula || a.calcText,
       formula: a.calcFormula,
+      retrieved: calcRetrieved,
       note: a.calcText.slice(0, 200),
       canonical: `${url}#how-we-calculated-this`,
     });
@@ -344,6 +398,7 @@ const HEAD = [
   "unit",
   "period",
   "text",
+  "answer",
   "source",
   "retrieved",
   "canonical",
@@ -368,6 +423,7 @@ const csv = [
       a.unit ?? "",
       a.period ?? "",
       a.text,
+      a.answer ?? "",
       a.source ?? "",
       a.retrieved ?? "",
       a.canonical,
@@ -408,6 +464,7 @@ const flat = atoms.map((a) => ({
   unit: a.unit ?? "",
   period: a.period ?? "",
   text: a.text,
+  answer: a.answer ?? "",
   source: a.source ?? "",
   retrieved: a.retrieved ?? "",
   canonical: a.canonical,

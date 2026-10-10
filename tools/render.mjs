@@ -340,11 +340,19 @@ const RENDER = {
         : vp === "decision-maker"
           ? "The cost angle, since that is usually what people are really asking."
           : "Short answer first, then where it comes from.";
+    /*
+     * The answer now leads, because the atom carries one.
+     *
+     * Both of these renderers previously read `q.source`, which an FAQ atom has never had, so what
+     * they produced was a question, a fixed sentence and a link - structurally valid and empty. The
+     * atomizer now pairs each question with its answer from the article, and the answer is the
+     * piece. The source line is dropped rather than left blank, since the article holds the
+     * citations and the link goes there.
+     */
     return [
       q.text,
-      `${opener}\n\nWhat people usually get wrong is treating this as a rate change. It is a route and process change, and those do not scale the same way.`,
-      q.source ? `Primary source: ${q.source}` : "",
-      `I wrote up the figures with the arithmetic here, in case it is useful: ${q.canonical}`,
+      `${opener}\n\n${q.answer || "What people usually get wrong is treating this as a rate change. It is a route and process change, and those do not scale the same way."}`,
+      `Figures as of ${q.retrieved}. The arithmetic, in case it is useful: ${q.canonical}`,
     ]
       .filter(Boolean)
       .join("\n\n");
@@ -353,11 +361,11 @@ const RENDER = {
   "quora-answer": (q, vp) =>
     [
       q.text,
-      vp === "general"
-        ? "The short version: this changes what clearance costs, not what the goods are worth."
-        : "The document is the source, not a summary of it — check the paragraph that sets the date.",
-      q.source ? `Primary source: ${q.source}` : "",
-      `Figures and calculation: ${q.canonical}`,
+      q.answer ||
+        (vp === "general"
+          ? "The short version: this changes what clearance costs, not what the goods are worth."
+          : "The document is the source, not a summary of it — check the paragraph that sets the date."),
+      `Figures as of ${q.retrieved}. Working and citations: ${q.canonical}`,
     ]
       .filter(Boolean)
       .join("\n\n"),

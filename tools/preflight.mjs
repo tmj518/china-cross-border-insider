@@ -299,6 +299,24 @@ async function checkEnvironment() {
     fail("daily automation", failedNames.length ? failedNames.join(" | ").slice(0, 160) : "the end-to-end check did not pass");
   }
 
+  /*
+   * The platform preflight, run locally so its effect is measured rather than assumed.
+   *
+   * Added 2026-10-10 after a task specified an acceptance criterion - "12/15 to 15/15" - that
+   * matched no counter in this repository: 12/15 is the chain check in prove-automation.mjs, and
+   * this file's own tally is larger than fifteen. A fix cannot be verified against a number nobody
+   * can measure, so this reproduces the n8n workflow's preflight node and reports the platform
+   * count it produces. That count is the real acceptance measure for "can this piece be sent".
+   */
+  const platPre = spawnSync(NODE, [join(ROOT, "tools", "check-preflight.mjs")], { encoding: "utf8", timeout: 120000 });
+  const platOut = `${platPre.stdout ?? ""}${platPre.stderr ?? ""}`;
+  const platMatch = /TOTAL: (\d+) of (\d+) platforms pass/.exec(platOut);
+  if (platPre.status === 0 && platMatch) {
+    ok("platform preflight", `${platMatch[1]}/${platMatch[2]} platforms pass the n8n preflight`);
+  } else {
+    fail("platform preflight", (platOut.split("\n").filter(Boolean).pop() ?? "did not run").slice(0, 140));
+  }
+
   const toolFiles = readdirSync(join(ROOT, "tools")).filter((f) => f.endsWith(".mjs"));
   const broken = [];
   for (const f of toolFiles) {
