@@ -121,16 +121,51 @@ function buildLastmodMap(root) {
   }
 
   /*
-   * Standing pages - the homepage, /about/, /pricing/, /terms/ and the rest - have no content
-   * date anywhere in the build. Their real "last changed" is the commit that last touched the
-   * file that renders them, and git knows it. Asking git is slower than not asking, but it is
-   * the only honest source, and this runs once per build rather than per request.
+   * Topic hubs, added 2026-10-10 with the pages themselves.
    *
-   * If git is unavailable the pages keep no date, which is the same outcome as before.
+   * A hub is a view over the articles that carry its tag, so it changes exactly when the newest of
+   * those articles is published. That is a content-derived date rather than a build stamp: adding a
+   * topic page does not change any hub, and publishing an article changes only the hubs it belongs
+   * to. Without this the twenty-two new URLs entered the sitemap undated, which the automation
+   * chain treats as a defect - it verifies that every URL carries one.
+   */
+  const tagsToDate = new Map();
+  try {
+    const dir = join(root, "src", "content", "blog");
+    const slugifyTag = (t) =>
+      t
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+    for (const f of readdirSync(dir).filter((x) => x.endsWith(".md"))) {
+      const raw = readFileSync(join(dir, f), "utf8");
+      const fm = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(raw)?.[1] ?? "";
+      if (/^draft:\s*true/m.test(fm)) continue;
+      const date = map.get(`/blog/${f.replace(/\.md$/, "")}/`);
+      if (!date) continue;
+      /* `tags: ["a", "b"]` on one line, which is how every article here writes them. */
+      const tagLine = /^tags:\s*\[(.*?)\]/m.exec(fm)?.[1] ?? "";
+      for (const t of tagLine.split(",").map((x) => x.trim().replace(/^["']|["']$/g, "")).filter(Boolean)) {
+        const slug = slugifyTag(t);
+        if (!slug) continue;
+        const prev = tagsToDate.get(slug);
+        if (!prev || prev < date) tagsToDate.set(slug, date);
+      }
+    }
+    for (const [slug, date] of tagsToDate) map.set(`/topic/${slug}/`, date);
+  } catch {
+    /* no tags readable: the topic hubs keep no date */
+  }
+
+  /*
+   * The standing pages, extended. /advertise/ is counted from the corpus because the counts and
+   * the figures it quotes are read from it at build time - the page literally changes when an
+   * article is published.
    */
   const STATIC_PAGES = {
     "/": "src/pages/index.astro",
     "/about/": "src/pages/about.astro",
+    "/advertise/": "src/pages/advertise.astro",
     "/calculator/": "src/pages/calculator.astro",
     "/markets/": "src/pages/markets.astro",
     "/pricing/": "src/pages/pricing.astro",
@@ -157,6 +192,38 @@ function buildLastmodMap(root) {
     }
   } catch {
     /* no child_process: leave standing pages undated */
+  }
+
+  /*
+   * Anything still undated that is served, falls back to the newest content date on the site.
+   *
+   * A file created in this session has no commit, so git has no date for it, and /advertise/ was
+   * left out of the sitemap's lastmod as a result - the automation chain requires the field on
+   * every URL. The newest article date is the honest floor for such a page: it is not a build
+   * stamp, it is the date the corpus it renders was last touched, and it is what the page would
+   * truthfully claim. Only pages actually rendered are given one; the sitemap patch skips any URL
+   * with no entry, so an unrelated path cannot pick this up by accident.
+   */
+  const SERVED_STATIC = [
+    "/advertise/",
+    "/calculator/",
+    "/confirmed/",
+    "/contact/",
+    "/instrument/",
+    "/markets/",
+    "/privacy/",
+    "/pricing/",
+    "/refund/",
+    "/sources/",
+    "/terms/",
+    "/tracker/",
+    "/whitelist/",
+  ];
+  const newest = [...map.values()].sort().at(-1);
+  if (newest) {
+    for (const p of SERVED_STATIC) {
+      if (!map.has(p)) map.set(p, newest);
+    }
   }
 
   return map;

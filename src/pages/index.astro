@@ -16,8 +16,33 @@ import {
   toCard,
 } from "../lib/post";
 import instrumentRegistry from "../data/instruments.json";
+import { MIN_CLUSTER, slugify } from "../lib/topics";
 
 const posts = published(await getCollection("blog"));
+
+/*
+ * The topic hubs, counted here so the homepage can link to them.
+ *
+ * Astro resolves the topic route separately, so the front page has to do its own clustering rather
+ * than importing getStaticPaths. The two use the same slugify and the same floor from lib/topics,
+ * which is what keeps a link from pointing at a page that was never generated.
+ */
+const topics = (() => {
+  const counts = new Map<string, { tag: string; count: number }>();
+  for (const p of posts) {
+    for (const tag of p.data.tags ?? []) {
+      const slug = slugify(tag);
+      if (!slug) continue;
+      const cur = counts.get(slug);
+      if (cur) cur.count++;
+      else counts.set(slug, { tag, count: 1 });
+    }
+  }
+  return [...counts.entries()]
+    .filter(([, v]) => v.count >= MIN_CLUSTER)
+    .map(([slug, v]) => ({ slug, tag: v.tag, count: v.count }))
+    .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+})();
 
 const heroPost = leadStory(posts);
 const featuredPost =
@@ -134,8 +159,69 @@ const jsonLd = {
           </p>
         )
       }
+
+      {/*
+        Browse by topic — mechanism 4 of the benchmark study, surfaced where it can be found.
+        A hub page with nothing linking to it is not published, which this project has already
+        learned the hard way, so the homepage carries the entry point. The list is built from the
+        corpus at build time and can never go stale; it grows on its own as articles accumulate.
+      */}
+      {
+        topics.length > 0 && (
+          <section class="home-topics">
+            <h2 class="section-title">Browse by topic</h2>
+            <ul class="home-topic-list">
+              {topics.map((t) => (
+                <li>
+                  <a href={`/topic/${t.slug}/`}>
+                    {t.tag} <span class="home-topic-count">{t.count}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
     </main>
 
     <Sidebar numbers={numbers} showNumbers={posts.length > 0} />
   </div>
 </BaseLayout>
+
+<style>
+  .home-topics {
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 1px solid var(--c-line);
+  }
+  .home-topic-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+  .home-topic-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    font-size: 13.5px;
+    text-decoration: none;
+    /* 44px minimum touch target, the same rule the mobile layout gate enforces. */
+    min-height: 44px;
+  }
+  .home-topic-list a:hover {
+    border-color: var(--c-red);
+  }
+  .home-topic-count {
+    font-size: 11.5px;
+    color: var(--c-ink-4);
+    background: var(--c-line-faint);
+    border-radius: 999px;
+    padding: 1px 7px;
+  }
+</style>

@@ -185,6 +185,14 @@ export const FOOTER_LINKS = [
   { label: "Instruments", href: "/instrument/" },
   { label: "Briefs", href: "/brief/" },
   { label: "Pricing", href: "/pricing/" },
+  /*
+   * The commercial page, in the footer rather than the top navigation.
+   *
+   * It sits beside Pricing because that is where a reader already thinking about money is. Without
+   * this link the page would exist only in the sitemap, and this project has already published
+   * pages that nothing linked to - the defect the orphan check exists to catch.
+   */
+  { label: "Licensing and sponsorship", href: "/advertise/" },
   // The whitelisting page lives here rather than in the top navigation because it is
   // support, not a destination: you reach it when an email did not arrive, or from the
   // footer of one that did. Without this link it existed only in the sitemap, and a page
