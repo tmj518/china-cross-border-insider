@@ -300,6 +300,23 @@ async function checkEnvironment() {
   }
 
   /*
+   * The send-client mock tests.
+   *
+   * These cover the two platforms that can be sent today - Dev.to and Buttondown - including the
+   * failure paths: a missing key, an over-long title, a missing canonical link, an invalid status.
+   * They run without a credential, because the mock transport answers as the provider does, so the
+   * HTTP path and the error handling are exercised now rather than on the first real send.
+   */
+  const clientTests = spawnSync(NODE, [join(ROOT, "tools", "check-clients.mjs")], { encoding: "utf8", timeout: 120000 });
+  const clientOut = `${clientTests.stdout ?? ""}${clientTests.stderr ?? ""}`;
+  const clientMatch = /(\d+) passed, (\d+) failed/.exec(clientOut);
+  if (clientTests.status === 0 && clientMatch) {
+    ok("send clients", `${clientMatch[1]} mock tests pass, 0 failed`);
+  } else {
+    fail("send clients", (clientOut.split("\n").filter(Boolean).pop() ?? "did not run").slice(0, 140));
+  }
+
+  /*
    * The platform preflight, run locally so its effect is measured rather than assumed.
    *
    * Added 2026-10-10 after a task specified an acceptance criterion - "12/15 to 15/15" - that
