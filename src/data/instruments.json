@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10",
+  "generated": "2026-10-11",
   "instruments": [
     {
       "id": "european-commission-2026-coordinated-product-safety-sweep-re",
@@ -315,6 +315,55 @@
       ],
       "articleSlugs": [
         "china-ppi-positive-factory-price-drift"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "eurasian-economic-commission-announcement-2026-520-ad16r2",
+      "source": "Eurasian Economic Commission announcement 2026/520/AD16R2",
+      "figures": [
+        {
+          "articleSlug": "eaeu-anti-dumping-oil-well-pipe-2026",
+          "articleNum": 26,
+          "value": "9 October 2026",
+          "unit": "the date the Internal Market Protection Department published the announcement",
+          "period": "30 days before the measure takes effect",
+          "source": "Eurasian Economic Commission announcement 2026/520/AD16R2",
+          "retrieved": "2026-10-11"
+        },
+        {
+          "articleSlug": "eaeu-anti-dumping-oil-well-pipe-2026",
+          "articleNum": 26,
+          "value": "2031-10-05",
+          "unit": "the last day the measure runs, inclusive",
+          "period": "five-year extension",
+          "source": "Eurasian Economic Commission announcement 2026/520/AD16R2",
+          "retrieved": "2026-10-11"
+        },
+        {
+          "articleSlug": "eaeu-anti-dumping-oil-well-pipe-2026",
+          "articleNum": 26,
+          "value": "Hunting Energy Services (Wuxi) Co. Ltd.",
+          "unit": "the exporter removed from the price undertaking list by the same decision",
+          "period": "announced 9 October 2026",
+          "source": "Eurasian Economic Commission announcement 2026/520/AD16R2",
+          "retrieved": "2026-10-11"
+        },
+        {
+          "articleSlug": "eaeu-anti-dumping-oil-well-pipe-2026",
+          "articleNum": 26,
+          "value": "7304 22, 7304 23, 7304 24, 7304 29 and 7304 30",
+          "unit": "the Eurasian Customs Union tariff headings the measure covers",
+          "period": "as notified, with the full nine-digit subdivisions listed in the announcement",
+          "source": "Eurasian Economic Commission announcement 2026/520/AD16R2",
+          "retrieved": "2026-10-11"
+        }
+      ],
+      "articleNums": [
+        26
+      ],
+      "articleSlugs": [
+        "eaeu-anti-dumping-oil-well-pipe-2026"
       ],
       "modelOutput": false
     },

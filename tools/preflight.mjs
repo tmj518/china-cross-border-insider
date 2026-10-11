@@ -300,6 +300,25 @@ async function checkEnvironment() {
   }
 
   /*
+   * The public data files.
+   *
+   * /unreadable.json is served to readers and cited from /sources/, and nothing else checks it: a
+   * malformed JSON payload would build and deploy, and the first sign would be a reader seeing a
+   * parse error. The check is deliberately about shape rather than existence - every entry must
+   * carry a host, an outcome and a date, because an undated failure record cannot be aged and a
+   * record without an outcome cannot be acted on.
+   */
+  try {
+    const u = JSON.parse(readFileSync(join(ROOT, "data", "unreadable.json"), "utf8"));
+    const bad = (u.failures ?? []).filter((f) => !f.host || !f.outcome || !f.tested);
+    if (!u.updated) fail("unreadable.json", "no `updated` date, so the record cannot be aged");
+    else if (bad.length) fail("unreadable.json", `${bad.length} entr(ies) missing host, outcome or tested date`);
+    else ok("unreadable.json", `${u.failures.length} failure records, all with host, outcome and date, updated ${u.updated}`);
+  } catch (e) {
+    fail("unreadable.json", `unreadable or invalid: ${e.message.slice(0, 100)}`);
+  }
+
+  /*
    * The send-client mock tests.
    *
    * These cover the two platforms that can be sent today - Dev.to and Buttondown - including the

@@ -166,6 +166,12 @@ function buildLastmodMap(root) {
     "/": "src/pages/index.astro",
     "/about/": "src/pages/about.astro",
     "/advertise/": "src/pages/advertise.astro",
+    /*
+     * /unreadable.json is an endpoint rather than a page, but it is linked and it changes on its own
+     * schedule: its `updated` field moves when a source is retested. Data files are dateable for the
+     * same reason instrument pages are, so it is listed here rather than left undated.
+     */
+    "/unreadable.json": "data/unreadable.json",
     "/calculator/": "src/pages/calculator.astro",
     "/markets/": "src/pages/markets.astro",
     "/pricing/": "src/pages/pricing.astro",
