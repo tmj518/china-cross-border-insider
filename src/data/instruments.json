@@ -2,7 +2,7 @@
   "generated": "2026-10-11",
   "instruments": [
     {
-      "id": "european-commission-2026-coordinated-product-safety-sweep-re",
+      "id": "european-commission-2026-coordinated-product-safety-sweep-re-5",
       "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
       "figures": [
         {
@@ -65,6 +65,75 @@
       ],
       "articleSlugs": [
         "eu-gpsr-sweep-2026-marketplace-listings"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "general-administration-of-customs-of-the-prc-announcement-no-1",
+      "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+      "figures": [
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "74",
+          "unit": "announcement number (2026)",
+          "period": "issued 29 May 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "4",
+          "unit": "document types covered (RCEP certificates, back-to-back certificates, ACFTA certificates, movement certificates)",
+          "period": "from 1 June 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "30 November 2026",
+          "unit": "last day manual origin-data entry is accepted as a remedy",
+          "period": "transition window opened 1 June 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
+          "articleNum": 1,
+          "value": "1 December 2026",
+          "unit": "date a duty guarantee becomes the route to advance release",
+          "period": "from this date onward",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "4",
+          "unit": "document types accepted for electronic origin data under RCEP — certificates of origin, back-to-back certificates, ACFTA certificates and movement certificates",
+          "period": "accepted from 1 June 2026, in the transition window that closes on 30 November 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "1 December 2026",
+          "unit": "the date from which a duty guarantee becomes the route to advance a release before electronic origin data is confirmed",
+          "period": "the day after the transition window closes",
+          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
+          "retrieved": "2026-10-01"
+        }
+      ],
+      "articleNums": [
+        1,
+        27
+      ],
+      "articleSlugs": [
+        "china-malaysia-origin-data-electronic-december-2026",
+        "importing-from-china-documents-checklist"
       ],
       "modelOutput": false
     },
@@ -261,6 +330,64 @@
       "modelOutput": false
     },
     {
+      "id": "national-bureau-of-statistics-of-china-industrial-producer-p-28",
+      "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
+      "figures": [
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "5.8",
+          "unit": "per cent — year-on-year rise in the purchasing price index for industrial producers",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
+          "retrieved": "2026-10-06"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "3.8",
+          "unit": "per cent — year-on-year rise in the producer price index, the price a factory receives",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
+          "retrieved": "2026-10-06"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "3.2",
+          "unit": "per cent — average year-on-year rise in the purchasing price index, January to August 2026",
+          "period": "year to date, January to August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
+          "retrieved": "2026-10-06"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "-0.5",
+          "unit": "per cent — year-on-year change in producer prices for consumer goods, the output side of the same release",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
+          "retrieved": "2026-10-06"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "19.8",
+          "unit": "per cent — year-on-year rise in purchasing prices for non-ferrous metals, the input beside the average",
+          "period": "August 2026",
+          "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
+          "retrieved": "2026-10-06"
+        }
+      ],
+      "articleNums": [
+        28
+      ],
+      "articleSlugs": [
+        "how-to-tell-a-factory-from-a-trading-company"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "national-bureau-of-statistics-of-china-via-xinhua-9",
       "source": "National Bureau of Statistics of China, via Xinhua, 9 September 2026",
       "figures": [
@@ -368,55 +495,6 @@
       "modelOutput": false
     },
     {
-      "id": "general-administration-of-customs-of-the-prc-announcement-no-1",
-      "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
-      "figures": [
-        {
-          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
-          "articleNum": 1,
-          "value": "74",
-          "unit": "announcement number (2026)",
-          "period": "issued 29 May 2026",
-          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
-          "retrieved": "2026-10-01"
-        },
-        {
-          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
-          "articleNum": 1,
-          "value": "4",
-          "unit": "document types covered (RCEP certificates, back-to-back certificates, ACFTA certificates, movement certificates)",
-          "period": "from 1 June 2026",
-          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
-          "retrieved": "2026-10-01"
-        },
-        {
-          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
-          "articleNum": 1,
-          "value": "30 November 2026",
-          "unit": "last day manual origin-data entry is accepted as a remedy",
-          "period": "transition window opened 1 June 2026",
-          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
-          "retrieved": "2026-10-01"
-        },
-        {
-          "articleSlug": "china-malaysia-origin-data-electronic-december-2026",
-          "articleNum": 1,
-          "value": "1 December 2026",
-          "unit": "date a duty guarantee becomes the route to advance release",
-          "period": "from this date onward",
-          "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
-          "retrieved": "2026-10-01"
-        }
-      ],
-      "articleNums": [
-        1
-      ],
-      "articleSlugs": [
-        "china-malaysia-origin-data-electronic-december-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "ministry-of-finance-of-the-prc-and-state-taxation",
       "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
       "figures": [
@@ -462,6 +540,108 @@
       ],
       "articleSlugs": [
         "china-export-tax-rebate-removal-battery-solar"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "regulation-on-the-implementation-of-the-law-of-the",
+      "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
+      "figures": [
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "100,000",
+          "unit": "yuan — the statutory maximum fine, per container, for using a container that was never suitability-inspected",
+          "period": "in force",
+          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "200,000",
+          "unit": "yuan — the statutory maximum fine, per container, for using a container that failed suitability inspection",
+          "period": "in force",
+          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "100,000",
+          "unit": "yuan — the statutory maximum fine per container for using a container that failed the suitability check",
+          "period": "in force",
+          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, as cited in the official work guidance on GACC Announcement No. 136 of 2026",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "200,000",
+          "unit": "yuan — the statutory maximum fine per container for a related violation of the same regulation",
+          "period": "in force",
+          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, as cited in the official work guidance on GACC Announcement No. 136 of 2026",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        23,
+        27
+      ],
+      "articleSlugs": [
+        "china-container-suitability-check-frozen-food-export-2026",
+        "importing-from-china-documents-checklist"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "state-administration-for-market-regulation-2026-5",
+      "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+      "figures": [
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "1 May 2026",
+          "unit": "date the 2026 registration document and materials standards take effect nationwide",
+          "period": "notice signed 6 January 2026, published 12 January 2026",
+          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "1",
+          "unit": "new standalone form, 《实名登记确认表》 (real-name registration confirmation form)",
+          "period": "introduced in the 2026 standards",
+          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "1 May 2026",
+          "unit": "the date the 2026 registration document and materials standards took effect, replacing the 2022 editions",
+          "period": "notice signed 6 January 2026, published 12 January 2026",
+          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "1",
+          "unit": "new standalone form, the real-name registration confirmation form (《实名登记确认表》), introduced by the 2026 standards",
+          "period": "introduced in the 2026 standards, in force from 1 May 2026",
+          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        6,
+        28
+      ],
+      "articleSlugs": [
+        "china-real-name-registration-supplier-verification",
+        "how-to-tell-a-factory-from-a-trading-company"
       ],
       "modelOutput": false
     },
@@ -591,6 +771,46 @@
       ],
       "articleSlugs": [
         "china-2026-export-duty-wrought-metals"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-2026-coordinated-product-safety-sweep-re",
+      "source": "European Commission, 2026 coordinated product safety sweep results",
+      "figures": [
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "58",
+          "unit": "per cent of online listings that showed the manufacturer, the EU responsible person or the product identification required by the General Product Safety Regulation",
+          "period": "2026 coordinated sweep, conducted May to July 2026",
+          "source": "European Commission, 2026 coordinated product safety sweep results",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "560",
+          "unit": "enforcement orders sent to online marketplaces over non-compliant listings after the 2026 sweep",
+          "period": "following the sweep conducted May to July 2026",
+          "source": "European Commission, 2026 coordinated product safety sweep results",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "1,700",
+          "unit": "online listings examined in the sweep, across 35 marketplaces",
+          "period": "May to July 2026",
+          "source": "European Commission, 2026 coordinated product safety sweep results",
+          "retrieved": "2026-10-02"
+        }
+      ],
+      "articleNums": [
+        27
+      ],
+      "articleSlugs": [
+        "importing-from-china-documents-checklist"
       ],
       "modelOutput": false
     },
@@ -836,6 +1056,46 @@
     },
     {
       "id": "state-administration-for-market-regulation-and-people-s-bank",
+      "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕",
+      "figures": [
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "25 September 2025",
+          "unit": "the date the national registration-agent information system went live",
+          "period": "created under a rule effective 15 September 2025",
+          "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "3",
+          "unit": "years — the period during which filings from a person designated directly responsible for a false registration are refused, counted from the date the registration is revoked",
+          "period": "in force from 15 September 2025",
+          "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "10",
+          "unit": "years — minimum retention of business and transaction records by registration agents",
+          "period": "in force from 15 September 2025",
+          "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        28
+      ],
+      "articleSlugs": [
+        "how-to-tell-a-factory-from-a-trading-company"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "state-administration-for-market-regulation-and-people-s-bank-6",
       "source": "State Administration for Market Regulation and People's Bank of China, 国市监注规〔2025〕3号, Art. 3 and 7",
       "figures": [
         {
@@ -1039,6 +1299,72 @@
       "modelOutput": false
     },
     {
+      "id": "gacc-announcement-no-136-of-2026-article-2",
+      "source": "GACC Announcement No. 136 of 2026, Article 2",
+      "figures": [
+        {
+          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
+          "articleNum": 23,
+          "value": "4",
+          "unit": "self-check items the exporting producer must confirm on the container: clean, sanitary, refrigerated and sealed",
+          "period": "in force from 1 October 2026",
+          "source": "GACC Announcement No. 136 of 2026, Article 2",
+          "retrieved": "2026-10-08"
+        },
+        {
+          "articleSlug": "importing-from-china-documents-checklist",
+          "articleNum": 27,
+          "value": "4",
+          "unit": "self-check items the exporting producer must confirm on the container suitability declaration",
+          "period": "in force from 1 October 2026",
+          "source": "GACC Announcement No. 136 of 2026, Article 2",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        23,
+        27
+      ],
+      "articleSlugs": [
+        "china-container-suitability-check-frozen-food-export-2026",
+        "importing-from-china-documents-checklist"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "general-administration-of-customs-of-the-prc-announcement-no-6",
+      "source": "General Administration of Customs of the PRC, Announcement No. 40 of 2026",
+      "figures": [
+        {
+          "articleSlug": "china-real-name-registration-supplier-verification",
+          "articleNum": 6,
+          "value": "2",
+          "unit": "new conditional-mandatory export declaration items (restricted-goods control code and control declaration elements)",
+          "period": "announcement dated 15 April 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 40 of 2026",
+          "retrieved": "2026-10-02"
+        },
+        {
+          "articleSlug": "how-to-tell-a-factory-from-a-trading-company",
+          "articleNum": 28,
+          "value": "2",
+          "unit": "new conditional-mandatory items added to the export declaration form, for restricted goods",
+          "period": "GACC announcement dated 15 April 2026",
+          "source": "General Administration of Customs of the PRC, Announcement No. 40 of 2026",
+          "retrieved": "2026-10-08"
+        }
+      ],
+      "articleNums": [
+        6,
+        28
+      ],
+      "articleSlugs": [
+        "china-real-name-registration-supplier-verification",
+        "how-to-tell-a-factory-from-a-trading-company"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ministry-of-finance-and-state-taxation-administration-2026-2-3",
       "source": "Ministry of Finance and State Taxation Administration, 财政部 税务总局公告2026年第2号, Annex 1",
       "figures": [
@@ -1165,68 +1491,6 @@
       "articleSlugs": [
         "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026",
         "eu-steel-safeguard-quota-2026-chinese-hrc-cost"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "regulation-on-the-implementation-of-the-law-of-the",
-      "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
-      "figures": [
-        {
-          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
-          "articleNum": 23,
-          "value": "100,000",
-          "unit": "yuan — the statutory maximum fine, per container, for using a container that was never suitability-inspected",
-          "period": "in force",
-          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
-          "retrieved": "2026-10-08"
-        },
-        {
-          "articleSlug": "china-container-suitability-check-frozen-food-export-2026",
-          "articleNum": 23,
-          "value": "200,000",
-          "unit": "yuan — the statutory maximum fine, per container, for using a container that failed suitability inspection",
-          "period": "in force",
-          "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
-          "retrieved": "2026-10-08"
-        }
-      ],
-      "articleNums": [
-        23
-      ],
-      "articleSlugs": [
-        "china-container-suitability-check-frozen-food-export-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "state-administration-for-market-regulation-2026-5",
-      "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
-      "figures": [
-        {
-          "articleSlug": "china-real-name-registration-supplier-verification",
-          "articleNum": 6,
-          "value": "1 May 2026",
-          "unit": "date the 2026 registration document and materials standards take effect nationwide",
-          "period": "notice signed 6 January 2026, published 12 January 2026",
-          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
-          "retrieved": "2026-10-02"
-        },
-        {
-          "articleSlug": "china-real-name-registration-supplier-verification",
-          "articleNum": 6,
-          "value": "1",
-          "unit": "new standalone form, 《实名登记确认表》 (real-name registration confirmation form)",
-          "period": "introduced in the 2026 standards",
-          "source": "State Administration for Market Regulation, 国市监注发〔2026〕5号",
-          "retrieved": "2026-10-02"
-        }
-      ],
-      "articleNums": [
-        6
-      ],
-      "articleSlugs": [
-        "china-real-name-registration-supplier-verification"
       ],
       "modelOutput": false
     },
