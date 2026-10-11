@@ -167,9 +167,11 @@ function buildLastmodMap(root) {
     "/about/": "src/pages/about.astro",
     "/advertise/": "src/pages/advertise.astro",
     /*
-     * /unreadable.json is an endpoint rather than a page, but it is linked and it changes on its own
-     * schedule: its `updated` field moves when a source is retested. Data files are dateable for the
-     * same reason instrument pages are, so it is listed here rather than left undated.
+     * /unreadable.json is a data endpoint, not a page, and @astrojs/sitemap collects pages - so this
+     * entry does nothing today and is kept for the case where the route changes shape and starts
+     * being collected. The endpoint is discoverable by the link on /sources/, which is the right
+     * discovery path for it: a sitemap is a list of pages for a search engine, and putting a JSON
+     * payload in one is noise. Recorded here so the absence is a decision rather than an oversight.
      */
     "/unreadable.json": "data/unreadable.json",
     "/calculator/": "src/pages/calculator.astro",
