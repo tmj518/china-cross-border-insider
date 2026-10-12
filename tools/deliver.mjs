@@ -256,19 +256,36 @@ export function mockTransport(request, ctx = {}) {
   return { status: 404, ok: false, json: { error: "no mock for this endpoint" } };
 }
 
-/** The real transport. Injectable so the mock path and the live path share every line above it. */
+/**
+ * The real transport. Injectable so the mock path and the live path share every line above it.
+ *
+ * It does not throw. `fetch` rejects on a timeout, a reset connection, a DNS failure or a TLS
+ * problem, and those are ordinary outcomes for a network call rather than exceptions: treating them
+ * as throws meant a single unreachable endpoint propagated out of `deliver` and out of the dispatch
+ * loop, ending the run with a stack trace instead of reporting one platform as failed. Every failure
+ * comes back in the same shape as an HTTP response so a caller reads one structure either way.
+ *
+ * `status: 0` is reserved for "no response arrived". No HTTP status can be 0, so a caller can tell a
+ * network failure from a provider error without inspecting the body.
+ */
 export async function httpTransport(request) {
-  const r = await fetch(request.url, {
-    method: request.method,
-    headers: request.headers,
-    body: JSON.stringify(request.body),
-    signal: AbortSignal.timeout(45000),
-  });
+  let r;
+  try {
+    r = await fetch(request.url, {
+      method: request.method,
+      headers: request.headers,
+      body: JSON.stringify(request.body),
+      signal: AbortSignal.timeout(45000),
+    });
+  } catch (e) {
+    const code = e?.cause?.code ?? e?.name ?? "transport error";
+    return { status: 0, ok: false, json: { error: "transport", message: String(e?.message ?? e), code } };
+  }
   let json = null;
   try {
     json = await r.json();
   } catch {
-    /* A provider that returns nothing useful still has a status worth reporting. */
+    /* A provider that returns nothing useful, or returns HTML, still has a status worth reporting. */
   }
   return { status: r.status, ok: r.ok, json };
 }
@@ -307,14 +324,57 @@ export async function deliver(platform, opts = {}) {
 
   mkdirSync(OUTBOX, { recursive: true });
   mkdirSync(dirname(LOG), { recursive: true });
-  writeFileSync(join(OUTBOX, `${platform}-${attempt.at.replace(/[:.]/g, "-")}.json`), JSON.stringify(attempt, null, 2), "utf8");
+  /*
+   * The attempt is recorded before it is made, and a failure to record it must not abort the send
+   * that follows: an outbox that cannot be written is a disk problem, and refusing to attempt a
+   * delivery because a log file is missing is the wrong trade. The log stays best-effort throughout.
+   */
+  try {
+    writeFileSync(join(OUTBOX, `${platform}-${attempt.at.replace(/[:.]/g, "-")}.json`), JSON.stringify(attempt, null, 2), "utf8");
+  } catch {
+    /* best effort */
+  }
 
-  const res = mode === "live" ? await httpTransport(built.request) : mockTransport(built.request, opts);
+  /*
+   * The transport call is wrapped, and that is the point of this block.
+   *
+   * `httpTransport` awaits `fetch`, which rejects on a timeout, a reset connection, a DNS failure or
+   * a TLS problem. Until 2026-10-12 nothing caught that, so a single unreachable endpoint threw out
+   * of `deliver` and out of the dispatch loop: the run died with a stack trace instead of reporting
+   * one platform as failed and continuing with the rest. A high-pressure test on the failure paths
+   * found it, which is what the test was for.
+   *
+   * The error is turned into a result in the same shape as an HTTP failure, so a caller has one way
+   * to read every outcome: `sent` false, a `stage` of transport, and a `status` of 0, which is the
+   * value `httpTransport` cannot produce because it comes back only when no response arrived.
+   */
+  let res;
+  try {
+    res = mode === "live" ? await httpTransport(built.request) : mockTransport(built.request, opts);
+  } catch (e) {
+    const code = e?.cause?.code ?? e?.name ?? "transport error";
+    res = { status: 0, ok: false, json: { error: "transport", message: String(e?.message ?? e), code } };
+  }
 
-  const record = { ...attempt, status: res.status, ok: res.ok, response: res.json, simulated: mode !== "live" };
+  const record = {
+    ...attempt,
+    status: res.status,
+    ok: res.ok,
+    response: res.json,
+    simulated: mode !== "live",
+    ...(res.status === 0 ? { transportFailed: true } : {}),
+  };
   appendFileSyncSafe(LOG, JSON.stringify(record) + "\n");
 
-  return { platform, sent: res.ok, stage: "send", status: res.status, response: res.json, simulated: mode !== "live", file: built.file };
+  return {
+    platform,
+    sent: res.ok,
+    stage: res.status === 0 ? "transport" : "send",
+    status: res.status,
+    response: res.json,
+    simulated: mode !== "live",
+    file: built.file,
+  };
 }
 
 function appendFileSyncSafe(p, s) {

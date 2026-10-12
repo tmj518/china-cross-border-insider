@@ -97,13 +97,32 @@ let sent = 0;
 let blocked = 0;
 
 for (const platform of targets) {
-  const r = await deliver(platform, opts);
+  /*
+   * Each platform is attempted inside its own try, so one failure cannot end the batch.
+   *
+   * `deliver` turns a transport error into a result rather than throwing, but this guard stays: an
+   * unexpected throw - a render file that cannot be read, a shape with no client - should cost one
+   * platform rather than the run. Before the guard existed a single unreachable endpoint ended the
+   * loop and the remaining platforms were never attempted, with nothing in the output saying so.
+   */
+  let r;
+  try {
+    r = await deliver(platform, opts);
+  } catch (e) {
+    console.log(`  CRASHED  ${platform}`);
+    console.log(`             - ${String(e?.message ?? e).slice(0, 140)}`);
+    blocked++;
+    continue;
+  }
   const mark = r.sent ? "SENT" : "BLOCKED";
   console.log(`  ${mark.padEnd(8)} ${platform.padEnd(16)} ${r.stage ?? ""}`.trimEnd());
   if (r.problems) for (const p of r.problems) console.log(`             - ${p}`);
   if (r.response && r.sent) {
     const url = r.response.url ?? r.response.id ?? "";
     console.log(`             status ${r.status}${r.simulated ? " (simulated)" : ""}  ${url}`);
+  }
+  if (!r.sent && r.status === 0) {
+    console.log(`             transport failure: ${r.response?.code ?? "no response"} - ${String(r.response?.message ?? "").slice(0, 90)}`);
   }
   if (r.sent) sent++;
   else blocked++;

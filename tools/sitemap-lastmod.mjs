@@ -153,6 +153,17 @@ function buildLastmodMap(root) {
       }
     }
     for (const [slug, date] of tagsToDate) map.set(`/topic/${slug}/`, date);
+
+    /*
+     * The topic index changes when a new hub appears, which is when some tag reaches its second
+     * article - so its date is the newest hub date rather than the newest article date. Without this
+     * the index entered the sitemap undated, which the automation chain counts as a defect: it
+     * verifies that every URL carries a lastmod, and it reported 122 of 123 on the day the page was
+     * added. It also only covers the hubs that survived the floor, because tagsToDate is filled from
+     * every tag and the hubs are the subset with two or more articles.
+     */
+    const hubDates = [...tagsToDate.values()].sort();
+    if (hubDates.length) map.set("/topic/", hubDates[hubDates.length - 1]);
   } catch {
     /* no tags readable: the topic hubs keep no date */
   }

@@ -340,6 +340,24 @@ async function checkEnvironment() {
   }
 
   /*
+   * The failure paths of the send clients.
+   *
+   * Separate from the mock tests above, which cover the provider's own rejections. These cover
+   * everything between the caller and the provider - a reset connection, a timeout, a DNS failure, a
+   * 500 with an HTML body, a log file that cannot be written - because those are the paths a real
+   * credential will exercise, and the first run of this test found that the transport let network
+   * errors throw out of the dispatch loop entirely.
+   */
+  const failTests = spawnSync(NODE, [join(ROOT, "tools", "check-client-failures.mjs")], { encoding: "utf8", timeout: 180000 });
+  const failOut = `${failTests.stdout ?? ""}${failTests.stderr ?? ""}`;
+  const failMatch = /(\d+) passed, (\d+) failed/.exec(failOut);
+  if (failTests.status === 0 && failMatch) {
+    ok("send failures", `${failMatch[1]} failure-path tests pass, 0 failed`);
+  } else {
+    fail("send failures", (failOut.split("\n").filter(Boolean).pop() ?? "did not run").slice(0, 140));
+  }
+
+  /*
    * The send-client mock tests.
    *
    * These cover the two platforms that can be sent today - Dev.to and Buttondown - including the
