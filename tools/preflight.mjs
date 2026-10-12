@@ -340,6 +340,29 @@ async function checkEnvironment() {
   }
 
   /*
+   * Draft readiness.
+   *
+   * A draft is invisible to every other check here: `published()` filters it out of the build, so no
+   * gate, no sitemap check and no build step ever looks at one. A skeleton can therefore sit in the
+   * repository indefinitely with nothing reporting that it would fail the moment someone set
+   * `draft: false`. This runs the readiness check and reports the count.
+   *
+   * It is advisory rather than blocking, deliberately: a draft that is not ready is the normal state
+   * of a draft, and failing the preflight for it would train whoever reads the output to ignore the
+   * line. What matters is that the number is visible and that it moves when someone works on one.
+   */
+  const draftCheck = spawnSync(NODE, [join(ROOT, "tools", "check-publish-ready.mjs")], { encoding: "utf8", timeout: 300000 });
+  const draftOut = `${draftCheck.stdout ?? ""}${draftCheck.stderr ?? ""}`;
+  const draftMatch = /ready\s+:\s+(\d+) of (\d+)/.exec(draftOut);
+  if (draftMatch) {
+    const [, r, n] = draftMatch;
+    if (Number(r) === Number(n)) ok("draft readiness", `${r}/${n} drafts publish-ready`);
+    else ok("draft readiness", `${r} of ${n} drafts publish-ready — the rest are skeletons; run node tools/check-publish-ready.mjs`);
+  } else {
+    fail("draft readiness", (draftOut.split("\n").filter(Boolean).pop() ?? "did not run").slice(0, 140));
+  }
+
+  /*
    * The failure paths of the send clients.
    *
    * Separate from the mock tests above, which cover the provider's own rejections. These cover
