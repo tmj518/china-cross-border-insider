@@ -6,17 +6,26 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published, relatedPosts } from "../../lib/post";
 import { personNode, publisherRef } from "../../lib/seo.mjs";
+import { buildHubs, hubsFor } from "../../lib/topics";
 
 export async function getStaticPaths() {
   const posts = published(await getCollection("blog"));
 
+  /*
+   * The hub set is built once here and each article's own hubs are resolved from it, rather than
+   * every article page recomputing the cluster counts. A hub link has to point at a page that was
+   * generated, so both the route and these links come from the same buildHubs call - which is the
+   * reason the clustering lives in lib/topics.ts and not in either file.
+   */
+  const hubs = buildHubs(posts);
+
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: { post, related: relatedPosts(posts, post) },
+    props: { post, related: relatedPosts(posts, post), hubs: hubsFor(post.data.tags, hubs) },
   }));
 }
 
-const { post, related } = Astro.props;
+const { post, related, hubs } = Astro.props;
 const { data } = post;
 
 const { Content } = await render(post);
@@ -89,7 +98,7 @@ const jsonLd = {
   jsonLd={jsonLd}
   citation={{ title: data.title, date: data.publishDate }}
 >
-  <ArticleLayout post={post} related={related} numbers={numbers}>
+  <ArticleLayout post={post} related={related} numbers={numbers} hubs={hubs}>
     <Content />
   </ArticleLayout>
 </BaseLayout>

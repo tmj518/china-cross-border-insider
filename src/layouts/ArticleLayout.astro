@@ -39,6 +39,7 @@ import {
 // mean depending on two definitions of the same shape staying in step.
 import { readingTime } from "../lib/post";
 import type { CardData, NumberItem } from "../lib/post";
+import type { Hub } from "../lib/topics";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -46,9 +47,15 @@ export interface Props {
   related: CardData[];
   /** The homepage numbers rail, shown alongside the article. */
   numbers: NumberItem[];
+  /**
+   * The topic hubs this article belongs to, resolved by the caller from the same clustering the
+   * hub routes use. Passed in rather than computed here so the layout does not need the whole
+   * collection, and so a link cannot be built against a hub that was never generated.
+   */
+  hubs?: Hub[];
 }
 
-const { post, related, numbers } = Astro.props;
+const { post, related, numbers, hubs = [] } = Astro.props;
 const { data } = post;
 
 const minutes = readingTime(post.body);
@@ -260,7 +267,7 @@ const bibtex =
       </details>
     </section>
 
-    <ArticleFooter related={related} />
+    <ArticleFooter related={related} hubs={hubs} />
   </main>
 
   <Sidebar numbers={numbers} />
