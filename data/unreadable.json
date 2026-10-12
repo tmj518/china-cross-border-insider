@@ -6,9 +6,11 @@
     "",
     "The distinction that matters most is between 412 and 404, because the remedy differs: 412 is a reverse-proxy gateway that refuses automated reads while the page itself is fine, so the answer is to change entry point or route; 404 means the path is gone, so the answer is to find the new path. Recording both as 'source down' would be wrong in opposite directions.",
     "",
-    "Entries are appended as failures are found. A failure that has since been resolved keeps its record with a resolution field, because a list that quietly shrinks teaches nothing about how often this happens."
+    "Entries are appended as failures are found. A failure that has since been resolved keeps its record with a resolution field, because a list that quietly shrinks teaches nothing about how often this happens.",
+    "",
+    "2026-10-12: two entries below were RESOLVED rather than removed. Both were reachable all along by a route that had not been tried - a per-case XML endpoint on the Commission's register, and a real browser for EUR-Lex. That is the useful lesson in this file: 'we could not read it' has so far always meant 'we had not found the route yet', and the resolution field records which route worked so the next reader starts there."
   ],
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "failures": [
     {
       "host": "stats.customs.gov.cn",
@@ -89,6 +91,28 @@
       "purpose": "Commodity price reporting, used as an industry cross-check on steel and pipe prices.",
       "whatItMeans": "Blocked, so no industry price reading from this source is used in any cost model on this site. Where a per-tonne figure appears, its basis is stated in the article.",
       "usedInstead": "Nothing for this article. The worked example uses a CIF value as a stated reader input rather than a market price."
+    },
+    {
+      "host": "tron.trade.ec.europa.eu",
+      "url": "https://tron.trade.ec.europa.eu/investigations",
+      "outcome": "resolved",
+      "kind": "was client-rendered, is now readable",
+      "tested": "2026-10-12",
+      "purpose": "The European Commission's trade-defence register, where an anti-dumping proceeding is listed by case number with its timetable.",
+      "whatItMeans": "A plain fetch returned HTTP 200 with 28 characters because the page is assembled by JavaScript, which is why this was recorded as unreadable on 2026-10-12. It is not unreadable. A real browser renders 4,187 characters and the full list of 75 ongoing investigations, and - more usefully - the register exposes a per-case XML endpoint that needs no browser at all: /investigations/api/download/eucase/rss/case/<caseId> returns application/xml with the initiation date, the expected dates for verification visits, pre-disclosure, provisional measures, comments and definitive measures, and direct links to the Official Journal and to each questionnaire.",
+      "resolved": "Read with a browser to find the case, then with a plain fetch once the XML endpoint was known. Case AD760, Cellulose ethers, caseId 2905.",
+      "usedInstead": "Not applicable - the source is readable by two routes."
+    },
+    {
+      "host": "eur-lex.europa.eu",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202604924",
+      "outcome": "resolved",
+      "kind": "was 202 to an automated request, is now readable in a browser",
+      "tested": "2026-10-12",
+      "purpose": "The Official Journal, where a notice of initiation is published - the primary document behind an anti-dumping article.",
+      "whatItMeans": "Every direct fetch returns HTTP 202 with a two-kilobyte body: the HTML route, the PDF route and the ELI route all behave the same way, which is a bot challenge rather than a missing document. A real browser loads the notice in full - 54,630 characters of text - so the document was always available and the limitation was the client, not the source.",
+      "resolved": "tools/render-page.mjs, which drives the Chrome that check-mobile.mjs already required. Two settings mattered: the page needs around twenty seconds because the text assembles after load, and the browser has to be told about the proxy explicitly because it does not inherit the shell's environment.",
+      "usedInstead": "Not applicable - the notice was read in full. Notice C/2026/6637, OJ C/2026/4924, document 52026XC04924."
     }
   ]
 }
