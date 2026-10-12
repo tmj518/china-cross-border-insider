@@ -218,14 +218,26 @@ async function checkEnvironment() {
    * Size matters as well as presence: a truncated or emptied file would otherwise pass.
    */
   const REQUIRED_DOCS = [
-    ["启动指令.md", 2000, "the single entry point: the command to start a run"],
     ["手工启动指示词.md", 2500, "the text the operator pastes to start a run by hand"],
     ["信源清单.md", 4000, "the tested inventory of 23 reachable official sources"],
     ["初心与目标.md", 2000, "the single standard, including completeness before length"],
     ["经验与踩坑记录.md", 4000, "the reusable lessons, including the benchmark findings"],
     ["对标学习10条.md", 3000, "the ten mechanisms to copy, one of which each run must advance"],
     ["对标清单.md", 4000, "which sites we benchmark against, which we studied, and the gaps"],
-    ["必读清单与开工指令.md", 4000, "what to read each day, and what not to read"],
+    /*
+     * The master instruction, and only it.
+     *
+     * `启动指令.md` and `必读清单与开工指令.md` were required here until 2026-10-12, when the
+     * director's v1.5 decision made the master instruction the single source and both files were
+     * moved to docs/archive/. Keeping them in this list would have made the archive a defect: a
+     * required document that has deliberately been superseded is not missing, and a check that
+     * cannot tell the two apart trains whoever reads it to ignore the line.
+     *
+     * The check now asserts the thing that actually matters - that exactly one instruction document
+     * sits at the repository root. Two of them is the condition that caused the archives, and it is
+     * worse than none, because a reader with two versions picks the one that suits them.
+     */
+    ["指令_完整版.md", 20000, "the master instruction, the only source, at v1.5"],
     ["daily-task.txt", 8000, "the flow the run actually executes"],
     ["项目规范_英文内容站_v1.4.md", 10000, "the governing spec, current version"],
   ];
@@ -236,8 +248,17 @@ async function checkEnvironment() {
     const size = statSync(p).size;
     if (size < minBytes) docProblems.push(`${name} is only ${size} bytes, expected at least ${minBytes}`);
   }
+
+  /* Exactly one instruction document at the root. Two is the condition the archive exists to prevent. */
+  const instructionDocs = readdirSync(ROOT).filter((f) => /指令/.test(f) && f.endsWith(".md"));
+  if (instructionDocs.length !== 1) {
+    docProblems.push(
+      `${instructionDocs.length} instruction documents at the root (${instructionDocs.join(", ")}); exactly one is expected, see docs/archive/README.md`,
+    );
+  }
+
   if (docProblems.length === 0) {
-    ok("required docs", `${REQUIRED_DOCS.length} present — sources, goals, lessons, benchmarks`);
+    ok("required docs", `${REQUIRED_DOCS.length} present, one master instruction — sources, goals, lessons, benchmarks`);
   } else {
     fail("required docs", docProblems.join(" | "));
   }

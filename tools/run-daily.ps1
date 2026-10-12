@@ -73,6 +73,39 @@ function Say($msg) {
     Add-Content -Path $log -Value $line -Encoding UTF8
 }
 
+<#
+    Raise an alert.
+
+    Added 2026-10-12. The audit found that this script wrote everything to a log and told nobody:
+    thirteen daily logs sat in logs/ and the last one was four days old, which is exactly the
+    failure a log cannot report on its own. A file named alert-<stamp>.txt is written to the same
+    directory, so a person or a watcher can look for the newest alert rather than reading every
+    daily log. It is deliberately a separate file and not a line in the log: a line is what got
+    missed in the first place.
+
+    No external service is called. Sending mail or a chat message needs a credential this project
+    does not have, and the rail in force is that nothing leaves the machine without one.
+#>
+function Raise-Alert {
+    param([string]$Reason, [string]$Detail = "")
+    $alert = Join-Path $logDir "alert-$stamp.txt"
+    $body = @(
+        "Landed Math daily run - ATTENTION REQUIRED",
+        "time    : $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')",
+        "reason  : $Reason",
+        "detail  : $Detail",
+        "log     : $log",
+        "repo    : $root",
+        "",
+        "The run did not publish. The commits are local and nothing was pushed.",
+        "Read the log above, then either fix and re-run, or push by hand:",
+        "  git -C `"$root`" push origin main"
+    ) -join "`r`n"
+    Set-Content -Path $alert -Value $body -Encoding UTF8
+    Say "ALERT RAISED -> $alert"
+    Say "  reason: $Reason"
+}
+
 # Run a native command, return its exit code, append output to the log as UTF-8.
 # Captured as an array and appended rather than piped to Tee-Object, which writes
 # UTF-16 and garbles the log.
@@ -175,9 +208,70 @@ Say "astro build exit=$buildExit"
 if ($buildExit -ne 0) {
     Say "BUILD FAILED - refusing to push. The commits stay local."
     Say "  Fix the build, then: git push origin main"
+    Raise-Alert -Reason "production build failed" -Detail "astro build exit=$buildExit"
     Say "==================== daily run finished ===================="
     exit 1
 }
+
+<#
+    The gate on publishing, widened on 2026-10-12.
+
+    Until today the only condition between the agent's output and the live site was that the build
+    succeeded. The audit made the gap explicit: preflight runs BEFORE the agent and therefore cannot
+    see what the agent wrote, and the seven gates run INSIDE the agent's turn as advisory checks. A
+    run could therefore publish anything that compiled.
+
+    Two conditions are added here, and a third is checked rather than assumed:
+
+      1. every gate green - node tools/gate.mjs, which now covers structure, the reviewer, internal
+         links, structured data, CSP, mobile layout and information gain
+      2. a publish manifest that lists what is about to go live, written to logs/ so the decision
+         can be reviewed afterwards rather than reconstructed
+
+    A failure at either point refuses the push and raises an alert. The commits stay local, which is
+    the same contract the build check already had: nothing reaches a reader without passing here.
+#>
+Say "step 4a/6  running the seven gates before any push"
+$gateExit = Run-Cmd "node" @((Join-Path $root "tools\gate.mjs"))
+Say "gate exit=$gateExit"
+
+if ($gateExit -ne 0) {
+    Say "GATES FAILED - refusing to push. The commits stay local."
+    Say "  Run: node tools/gate.mjs   and read the failing gate."
+    Raise-Alert -Reason "one or more gates failed" -Detail "node tools/gate.mjs exit=$gateExit"
+    Say "==================== daily run finished ===================="
+    exit 1
+}
+
+<#
+    The publish manifest.
+
+    Written before the push so it describes what is about to go live rather than what did. Three
+    lines are enough to answer the question a person asks afterwards - what changed, which articles
+    are in it, and which commit - and anything longer would not be read.
+#>
+Say "step 4b/6  writing the publish manifest"
+$manifest = Join-Path $logDir "publish-$stamp.txt"
+$newArticles = (& git -C $root diff --name-only "origin/main..HEAD" -- "src/content/blog" 2>&1) |
+    Where-Object { $_ -match "\.md$" } | ForEach-Object { "  " + $_ }
+$articlesBlock = if ($newArticles) { $newArticles -join "`r`n" } else { "  (no article files changed)" }
+$manifestBody = @(
+    "Landed Math publish manifest",
+    "time      : $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')",
+    "commit    : $headAfter",
+    "commits   : $ahead ahead of origin/main",
+    "gate      : every gate passed (exit 0)",
+    "build     : astro build passed (exit 0)",
+    "",
+    "article files in this publish:",
+    $articlesBlock,
+    "",
+    "changed files:",
+    (((& git -C $root diff --name-only "origin/main..HEAD" 2>&1) | ForEach-Object { "  " + $_ }) -join "`r`n")
+) -join "`r`n"
+Set-Content -Path $manifest -Value $manifestBody -Encoding UTF8
+Say "manifest: $manifest"
+Say "  articles in this publish: $(if ($newArticles) { $newArticles.Count } else { 0 })"
 
 Say "pushing to origin/main"
 $pushExit = Run-Cmd "git" @("-C", $root, "push", "origin", "main")
@@ -193,8 +287,10 @@ if ($pushExit -ne 0) {
         Say "PUSH REJECTED BY GITHUB - this is server-side, not your accelerator."
         Say "  A test push of an empty branch fails the same way, so it is not the content."
         Say "  The commits are safe locally. The next run will retry automatically."
+        Raise-Alert -Reason "push rejected by GitHub (server-side)" -Detail "commit $headAfter is local"
     } else {
         Say "PUSH FAILED - is the accelerator running? That is the usual cause."
+        Raise-Alert -Reason "push failed (likely the accelerator)" -Detail "commit $headAfter is local"
     }
     Say "  Commits are safe locally. Push later with: git push origin main"
     Say "==================== daily run finished ===================="
