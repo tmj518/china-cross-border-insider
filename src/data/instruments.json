@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11",
+  "generated": "2026-10-12",
   "instruments": [
     {
       "id": "european-commission-2026-coordinated-product-safety-sweep-re-5",
@@ -442,6 +442,55 @@
       ],
       "articleSlugs": [
         "china-ppi-positive-factory-price-drift"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "counted-from-the-annex-to-announcement-no-5-of",
+      "source": "Counted from the annex to Announcement No. 5 of 2026",
+      "figures": [
+        {
+          "articleSlug": "china-zero-tariff-20-african-countries-2026",
+          "articleNum": 29,
+          "value": "22",
+          "unit": "HS chapters covered by the concession, running from chapter 01 to chapter 22 without a gap",
+          "period": "the 2026 schedule",
+          "source": "Counted from the annex to Announcement No. 5 of 2026",
+          "retrieved": "2026-10-12"
+        },
+        {
+          "articleSlug": "china-zero-tariff-20-african-countries-2026",
+          "articleNum": 29,
+          "value": "300",
+          "unit": "tariff lines in chapter 03, fish and crustaceans — the largest single chapter in the concession",
+          "period": "the 2026 schedule",
+          "source": "Counted from the annex to Announcement No. 5 of 2026",
+          "retrieved": "2026-10-12"
+        },
+        {
+          "articleSlug": "china-zero-tariff-20-african-countries-2026",
+          "articleNum": 29,
+          "value": "130",
+          "unit": "tariff lines in chapter 12, oil seeds and oleaginous fruits — the second largest chapter",
+          "period": "the 2026 schedule",
+          "source": "Counted from the annex to Announcement No. 5 of 2026",
+          "retrieved": "2026-10-12"
+        },
+        {
+          "articleSlug": "china-zero-tariff-20-african-countries-2026",
+          "articleNum": 29,
+          "value": "5",
+          "unit": "tariff lines in chapter 22, beverages, spirits and vinegar — the smallest chapter in the concession",
+          "period": "the 2026 schedule",
+          "source": "Counted from the annex to Announcement No. 5 of 2026",
+          "retrieved": "2026-10-12"
+        }
+      ],
+      "articleNums": [
+        29
+      ],
+      "articleSlugs": [
+        "china-zero-tariff-20-african-countries-2026"
       ],
       "modelOutput": false
     },
@@ -1264,6 +1313,37 @@
       ],
       "articleSlugs": [
         "us-vs-eu-low-value-parcel-charges-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "customs-tariff-commission-of-the-state-council-announcement-29",
+      "source": "Customs Tariff Commission of the State Council, Announcement No. 5 of 2026",
+      "figures": [
+        {
+          "articleSlug": "china-zero-tariff-20-african-countries-2026",
+          "articleNum": 29,
+          "value": "1 May 2026",
+          "unit": "the date the zero-tariff measure took effect",
+          "period": "announcement dated 28 April 2026",
+          "source": "Customs Tariff Commission of the State Council, Announcement No. 5 of 2026",
+          "retrieved": "2026-10-12"
+        },
+        {
+          "articleSlug": "china-zero-tariff-20-african-countries-2026",
+          "articleNum": 29,
+          "value": "30 April 2028",
+          "unit": "the date the measure ends — a two-year window, not a permanent concession",
+          "period": "the term set in the announcement",
+          "source": "Customs Tariff Commission of the State Council, Announcement No. 5 of 2026",
+          "retrieved": "2026-10-12"
+        }
+      ],
+      "articleNums": [
+        29
+      ],
+      "articleSlugs": [
+        "china-zero-tariff-20-african-countries-2026"
       ],
       "modelOutput": false
     },
