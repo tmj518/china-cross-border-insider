@@ -363,6 +363,37 @@ async function checkEnvironment() {
   }
 
   /*
+   * The L1-L5 audit, and proof that it can fail.
+   *
+   * Two runs, because one is not evidence. The published corpus must come back clean, since a check
+   * that passes nothing is broken, and the draft corpus must come back failed, since a check that
+   * passes everything is broken too. Both mistakes were made in the course of building this - the
+   * first version failed twenty of twenty-nine published articles for citing real documents that the
+   * registry had not catalogued, and then passed all five skeletons because `qa-check` exempts a
+   * draft from its blocking rules.
+   *
+   * The draft run is the load-bearing one. Only a run that is expected to fail detects a check that
+   * has stopped discriminating.
+   */
+  const auditPub = spawnSync(NODE, [join(ROOT, "tools", "audit.mjs"), "--published", "--out=data/tmp/preflight-audit-pub.json"], { encoding: "utf8", timeout: 600000 });
+  const auditDrf = spawnSync(NODE, [join(ROOT, "tools", "audit.mjs"), "--drafts", "--out=data/tmp/preflight-audit-drafts.json"], { encoding: "utf8", timeout: 600000 });
+  const pubLine = /AUTO-PUBLISH OK\s*:\s*(\d+) of (\d+)/.exec(`${auditPub.stdout ?? ""}`);
+  const drfLine = /AUTO-PUBLISH OK\s*:\s*(\d+) of (\d+)/.exec(`${auditDrf.stdout ?? ""}`);
+  if (!pubLine || !drfLine) {
+    fail("audit L1-L5", "the audit did not report a verdict");
+  } else {
+    const [, pubOk, pubN] = pubLine;
+    const [, drfOk, drfN] = drfLine;
+    if (pubOk === pubN && drfOk === "0") {
+      ok("audit L1-L5", `${pubOk}/${pubN} published pass, ${drfOk}/${drfN} drafts pass — the check discriminates`);
+    } else if (pubOk !== pubN) {
+      fail("audit L1-L5", `${pubN - pubOk} published article(s) fail — run node tools/audit.mjs --published`);
+    } else {
+      fail("audit L1-L5", `every draft passed (${drfOk}/${drfN}), which cannot be right — the check is not discriminating`);
+    }
+  }
+
+  /*
    * The failure paths of the send clients.
    *
    * Separate from the mock tests above, which cover the provider's own rejections. These cover

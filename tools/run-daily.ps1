@@ -244,13 +244,42 @@ if ($gateExit -ne 0) {
 }
 
 <#
+    step 4b  the L1-L5 audit (audit_protocol.md)
+
+    Runs after the gates and before the push, and it is the layer that decides whether a publish is
+    allowed rather than whether the code is well-formed.
+
+    The gates and the audit answer different questions. A gate asks "is this article constructed
+    correctly". The audit asks "should this article go out" - L2 whether every figure points at a
+    document the project has catalogued, L3 whether a figure resting on a single document says so, L4
+    whether the piece narrates an experience that never happened, L5 whether anything in it is a
+    political, legal, reputational or promotional risk. L1 is the gates restated, so a failure here
+    means one of the four others.
+
+    L5 defaults to "not sure". It is not a filter that opens when nothing matches a keyword; it is a
+    layer that reports uncertainty as an alert, because the judgement it stands for is the one thing
+    here that cannot be automated. Anything that is not AUTO-PUBLISH OK writes logs/alert-audit-* and
+    stops the push, which is the protocol's whole purpose.
+#>
+Say "step 4b/6  running the L1-L5 audit before any push"
+$auditExit = Run-Cmd "node" @((Join-Path $root "tools\audit.mjs"), "--published")
+Say "audit exit=$auditExit"
+
+if ($auditExit -ne 0) {
+    Say "AUDIT NOT CLEAR - refusing to push. See logs/alert-audit-*.txt."
+    Raise-Alert -Reason "the L1-L5 audit did not clear" -Detail "node tools/audit.mjs --published exit=$auditExit"
+    Say "==================== daily run finished ===================="
+    exit 1
+}
+
+<#
     The publish manifest.
 
     Written before the push so it describes what is about to go live rather than what did. Three
     lines are enough to answer the question a person asks afterwards - what changed, which articles
     are in it, and which commit - and anything longer would not be read.
 #>
-Say "step 4b/6  writing the publish manifest"
+Say "step 4c/6  writing the publish manifest"
 $manifest = Join-Path $logDir "publish-$stamp.txt"
 $newArticles = (& git -C $root diff --name-only "origin/main..HEAD" -- "src/content/blog" 2>&1) |
     Where-Object { $_ -match "\.md$" } | ForEach-Object { "  " + $_ }
