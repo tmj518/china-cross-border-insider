@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-15",
   "instruments": [
     {
       "id": "european-commission-2026-coordinated-product-safety-sweep-re-5",
@@ -1375,6 +1375,37 @@
       ],
       "articleSlugs": [
         "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
+      "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
+      "figures": [
+        {
+          "articleSlug": "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
+          "articleNum": 30,
+          "value": "ex 3912 39 85",
+          "unit": "the Combined Nomenclature heading covering the product, with TARIC codes 3912 39 85 30, 3912 39 85 60 and 3912 39 85 90",
+          "period": "classification given in the notice for information and without prejudice to a later change",
+          "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
+          "retrieved": "2026-10-13"
+        },
+        {
+          "articleSlug": "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
+          "articleNum": 30,
+          "value": "6",
+          "unit": "the number of distinct cellulose ethers in scope, identified by CAS number rather than by trade name",
+          "period": "methyl cellulose 9004-67-5, hydroxyethyl cellulose 9004-62-0 and 80455-45-4, hydroxyethyl methyl cellulose 9032-42-2, hydroxypropyl methyl cellulose 9004-65-3, ethyl hydroxyethyl cellulose 9004-58-4, and methyl ethyl hydroxyethyl cellulose",
+          "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
+          "retrieved": "2026-10-13"
+        }
+      ],
+      "articleNums": [
+        30
+      ],
+      "articleSlugs": [
+        "eu-anti-dumping-cellulose-ethers-ad760-registration-2026"
       ],
       "modelOutput": false
     },

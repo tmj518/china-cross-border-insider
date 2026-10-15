@@ -87,9 +87,21 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={data.subtitle
-    ? `${data.title} — ${data.subtitle} — ${SITE.name}`
-    : `${data.title} — ${SITE.name}`}
+  /*
+   * The subtitle is deliberately not part of the title tag, and this was wrong until 2026-10-15.
+   *
+   * The page title used to be `title - subtitle - site`, which read well in a browser tab and badly
+   * everywhere the title is actually consumed. Measured on the live site: the EAEU article's title
+   * was 255 characters and the AD760 article's was 159, against roughly 60 that a search result
+   * shows and 90 that the site's own subtitle-free articles use. The same composed string fed
+   * `og:title` and `twitter:title`, so the truncation reached every share card too.
+   *
+   * The subtitle is not lost by dropping it here. It renders as the standfirst under the headline,
+   * and the structured data already carries it as `alternativeHeadline`, which is the property
+   * schema.org provides for exactly this. `description` is the metadata field for the summary and is
+   * already supplied separately.
+   */
+  title={`${data.title} — ${SITE.name}`}
   description={data.description}
   ogType="article"
   image={data.heroImage}
