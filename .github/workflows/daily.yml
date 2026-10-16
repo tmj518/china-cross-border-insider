@@ -40,7 +40,92 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # ---------------------------------------------------------------------------------------------
+  # Preflight. Proves the secrets exist and actually work before the expensive job starts.
+  #
+  # Two failures are possible and they look identical from a distance: the secret is missing, or the
+  # secret is present and wrong - an expired key, a depleted balance, a name that does not match the
+  # environment variable the code reads. Without this job, both appear as a NO-KEYS alert after the
+  # daily run has already spent its time, and the operator has to guess which one it was.
+  #
+  # The call is deliberately the smallest possible: one token, no content. It costs nothing measurable
+  # and it distinguishes "the key works" from "the key is there".
+  # ---------------------------------------------------------------------------------------------
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      keys_ok: ${{ steps.check.outputs.ok }}
+      summary: ${{ steps.check.outputs.summary }}
+    steps:
+      - id: check
+        name: Verify each provider key with a one-token call
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          set +e
+          OK="true"
+          SUMMARY=""
+          check() {
+            NAME="$1"; URL="$2"; MODEL="$3"; KEY="$4"
+            if [ -z "$KEY" ]; then
+              echo "::warning::$NAME is not set"
+              SUMMARY="$SUMMARY\n- $NAME: MISSING"
+              OK="false"
+              return
+            fi
+            CODE=$(curl -s -o /tmp/resp.json -w '%{http_code}' --max-time 45 \
+              -H "content-type: application/json" -H "authorization: Bearer $KEY" \
+              -d "{\"model\":\"$MODEL\",\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}],\"max_tokens\":1}" \
+              "$URL")
+            if [ "$CODE" = "200" ]; then
+              echo "$NAME: working (HTTP 200)"
+              SUMMARY="$SUMMARY\n- $NAME: working"
+            else
+              ERR=$(head -c 300 /tmp/resp.json | tr -d '\n')
+              echo "::error::$NAME failed with HTTP $CODE: $ERR"
+              SUMMARY="$SUMMARY\n- $NAME: HTTP $CODE $ERR"
+              OK="false"
+            fi
+          }
+          check DEEPSEEK_API_KEY https://api.deepseek.com/chat/completions deepseek-chat "$DEEPSEEK_API_KEY"
+          check OPENAI_API_KEY https://api.openai.com/v1/chat/completions gpt-4o "$OPENAI_API_KEY"
+          echo "ok=$OK" >> "$GITHUB_OUTPUT"
+          {
+            echo "summary<<EOF"
+            echo -e "$SUMMARY"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo ""
+          echo "=== key check ==="
+          echo -e "$SUMMARY"
+
+      - name: Report which secret names the pipeline reads
+        if: steps.check.outputs.ok != 'true'
+        run: |
+          cat <<'MSG'
+          ::: The keys did not verify. The most common cause is a name mismatch, because the code reads
+          ::: exact environment variable names:
+          :::
+          :::   DEEPSEEK_API_KEY    https://platform.deepseek.com  -> API keys
+          :::   OPENAI_API_KEY      https://platform.openai.com/api-keys
+          :::
+          ::: A secret named anything else - APIKEY..., MY_KEY, deepseek - is stored correctly and never
+          ::: reaches the pipeline, which then reports NO-KEYS.
+          :::
+          ::: Other causes this step distinguishes: 401 wrong or revoked key, 402 insufficient balance
+          ::: (DeepSeek requires a funded account), 429 rate limit, and a name that exists but holds a
+          ::: value from a different service.
+          MSG
+          exit 1
+
   daily:
+    needs: preflight
+    # Skipped when the keys did not verify. Letting it run would repeat the same conclusion more
+    # slowly and then overwrite the useful error with a generic NO-KEYS alert - but the operator still
+    # needs a message, which is what the notify-keys job below is for.
+    if: needs.preflight.outputs.keys_ok == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -152,3 +237,47 @@ jobs:
             data/drafts/
           if-no-files-found: warn
           retention-days: 30
+
+  # ---------------------------------------------------------------------------------------------
+  # The message when the keys did not verify.
+  #
+  # The daily job is skipped in that case, so without this the operator would get nothing at all and
+  # would have to guess whether the schedule failed to fire or the keys are wrong. The whole point of
+  # the notification channel is that it answers that question without anyone opening a browser.
+  # ---------------------------------------------------------------------------------------------
+  notify-keys:
+    needs: preflight
+    if: needs.preflight.outputs.keys_ok != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Write the report the notifier reads
+        run: |
+          mkdir -p data/tmp
+          cat > data/tmp/orchestrator-report.json <<JSON
+          {
+            "at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "verdict": "KEYS-FAILED",
+            "providers": [],
+            "article": null,
+            "seconds": 0,
+            "usage": { "calls": 0, "failed": 0, "usd": 0 },
+            "reasons": [
+              "The provider keys did not verify, so the pipeline was skipped rather than run.",
+              "${{ needs.preflight.outputs.summary }}",
+              "Check Settings -> Secrets and variables -> Actions. The code reads the exact names DEEPSEEK_API_KEY and OPENAI_API_KEY."
+            ]
+          }
+          JSON
+
+      - name: Notify Feishu
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: node tools/notify-feishu.mjs
