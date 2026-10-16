@@ -1,0 +1,61 @@
+name: Source reachability probe
+
+# Asks the question the whole cloud migration depends on: can a data-centre runner read China's
+# official sites?
+#
+# The earlier measurement of "5 of 6 reachable from a foreign IP" went through a local proxy whose
+# exit node may be a residential address. GitHub runners egress from data-centre ranges, and Chinese
+# government sites treat those differently. So this runs the probe from the runner and reports.
+#
+# It is deliberately separate from any build or publish workflow: it changes nothing and answers one
+# question. Run it from the Actions tab with "Run workflow", and read the summary at the end of the
+# log.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly, Mondays 00:20 UTC. Blocking policy drifts, so the answer is re-measured rather than
+    # assumed once.
+    - cron: '20 0 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Show the runner's egress
+        run: |
+          echo "runner: $RUNNER_OS $RUNNER_ARCH"
+          echo "--- egress address ---"
+          curl -s --max-time 20 https://api.ipify.org || echo "(ipify unreachable)"
+          echo ""
+          echo "--- reverse lookup ---"
+          IP=$(curl -s --max-time 20 https://api.ipify.org || echo "")
+          if [ -n "$IP" ]; then getent hosts "$IP" || echo "(no PTR record)"; fi
+          echo "--- region hints ---"
+          curl -s --max-time 20 https://ipinfo.io/json || echo "(ipinfo unreachable)"
+          echo ""
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      # No install step. The probe uses only Node's built-in fetch and fs, and skipping the install
+      # keeps the question clean: if it fails, the network is the reason, not a dependency.
+      - name: Run the reachability probe
+        run: node tools/check-source-reachability.mjs --out=data/tmp/reachability.json
+        continue-on-error: true
+
+      - name: Upload the result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-reachability
+          path: data/tmp/reachability.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -24,16 +24,42 @@ import { existsSync, statSync, readFileSync, readdirSync, mkdtempSync, rmSync } 
 import { tmpdir } from "node:os";
 import { join, extname } from "node:path";
 
+/*
+ * Browser discovery, made portable on 2026-10-16 for the cloud migration.
+ *
+ * This was four hard-coded Windows paths, so on a Linux runner the check found no browser and printed
+ * SKIP. A gate that skips is not a gate: mobile layout would have reported green while measuring
+ * nothing, which is worse than failing.
+ *
+ * The order prefers an explicit override, then a real install, then whatever `chromium` or
+ * `google-chrome` resolves to on the PATH - which is how a runner with apt-installed Chromium presents
+ * it. Windows paths are kept last so this machine keeps working exactly as before.
+ */
 const BROWSERS = [
+  process.env.CHROME_PATH,
+  process.env.PUPPETEER_EXECUTABLE_PATH,
+  "/usr/bin/google-chrome",
+  "/usr/bin/google-chrome-stable",
+  "/usr/bin/chromium",
+  "/usr/bin/chromium-browser",
+  "/snap/bin/chromium",
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
   "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
   "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
-];
+].filter(Boolean);
 const browser = BROWSERS.find((b) => existsSync(b));
 if (!browser) {
-  console.log("RESULT: SKIP - no Chrome or Edge found, so overflow cannot be measured here");
-  process.exit(0);
+  /*
+   * The exit code is the point. This used to exit 0 with SKIP, so a missing browser counted as a pass
+   * in every caller, including the publish gate. CI installs the browser; when it is absent, that is a
+   * configuration failure and it is reported as one. `--allow-skip` keeps the old behaviour for the
+   * case where someone genuinely wants to run the rest of the gate without a browser.
+   */
+  const allowSkip = process.argv.includes("--allow-skip");
+  console.log("RESULT: " + (allowSkip ? "SKIP" : "FAIL") + " - no Chrome or Chromium found, so overflow cannot be measured");
+  console.log("  looked for: " + BROWSERS.join(", "));
+  process.exit(allowSkip ? 0 : 1);
 }
 if (!existsSync("dist")) {
   console.log("RESULT: FAIL - dist/ does not exist, run the build first");
