@@ -1,0 +1,146 @@
+name: LandedMath Daily
+
+# The unattended run. Triggered by cron at 23:20 UTC, which is 07:20 in Beijing.
+#
+# It is safe to leave enabled before the pipeline can do anything: with no provider key the
+# orchestrator exits 78 after printing exactly which secrets are missing, and it writes nothing. A run
+# that cannot work says so rather than doing something.
+#
+# What runs on a good day:
+#   orchestrator -> writer -> reviewer -> publish -> registry rebuild -> commit and push
+# Cloudflare Pages deploys from the push. Feishu gets the report either way.
+#
+# What it will not do:
+#   invent its own subject. With no directive at data/directive.json the run exits 0 and reports that
+#   there was nothing to write. A day without a qualifying subject is a day without an article, which
+#   is the rule, not a failure.
+
+on:
+  schedule:
+    # 23:20 UTC = 07:20 Beijing. GitHub's scheduler can lag by several minutes under load; the
+    # pipeline does not depend on the exact minute.
+    - cron: '20 23 * * *'
+  workflow_dispatch:
+    inputs:
+      directive_file:
+        description: 'Path to a directive JSON. Leave empty to use data/directive.json.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # A full history is not needed and this keeps the checkout quick.
+          fetch-depth: 1
+          # The push at the end needs the token that can write.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install Chromium for the mobile gate
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq chromium-browser || sudo apt-get install -y -qq chromium
+          FOUND=""
+          for p in /usr/bin/chromium-browser /usr/bin/chromium /usr/bin/google-chrome /snap/bin/chromium; do
+            if [ -x "$p" ]; then FOUND="$p"; break; fi
+          done
+          if [ -z "$FOUND" ]; then
+            echo "::error::no Chromium binary found, so the mobile layout gate cannot run"
+            exit 1
+          fi
+          echo "CHROME_PATH=$FOUND" >> "$GITHUB_ENV"
+          "$FOUND" --version
+
+      - name: Install dependencies
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Build
+        # The gate reads dist/, so the site has to exist before anything is judged.
+        run: pnpm exec astro build
+
+      - name: Run the orchestrator
+        id: run
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: |
+          DIRECTIVE="${{ github.event.inputs.directive_file }}"
+          if [ -n "$DIRECTIVE" ]; then
+            node tools/cloud-orchestrator.mjs --directive-file="$DIRECTIVE"
+          else
+            node tools/cloud-orchestrator.mjs
+          fi
+
+      - name: Commit and push anything that was approved
+        id: commit
+        run: |
+          git config user.name "landedmath-bot"
+          git config user.email "bot@landedmath.com"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "nothing to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git add -A
+          git commit -m "daily: $(date -u +%F) — $(node -e "try{console.log(require('./data/tmp/orchestrator-report.json').verdict)}catch{console.log('run')}")"
+          git push
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Feishu
+        # Always runs. A run that failed is precisely the run the operator needs to hear about, and
+        # this is the only channel that reaches them when the computer is off.
+        if: always()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: node tools/notify-feishu.mjs
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## LandedMath daily"
+            echo ""
+            echo "| field | value |"
+            echo "| --- | --- |"
+            echo "| verdict | \`$(node -e "try{console.log(require('./data/tmp/orchestrator-report.json').verdict)}catch{console.log('no report')}")\` |"
+            echo "| article | \`$(node -e "try{console.log(require('./data/tmp/orchestrator-report.json').article||'-')}catch{console.log('-')}")\` |"
+            echo "| pushed | \`${{ steps.commit.outputs.committed || 'false' }}\` |"
+            echo "| commit | \`${{ steps.commit.outputs.sha || '-' }}\` |"
+            echo "| providers | $(node -e "try{const r=require('./data/tmp/orchestrator-report.json');console.log((r.providers||[]).join(', ')||'none')}catch{console.log('unknown')}") |"
+            echo ""
+            echo "The full report is \`data/tmp/orchestrator-report.json\` in the run's commit, and the"
+            echo "per-run ledger is \`logs/orchestrator.jsonl\`."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload run artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-run
+          path: |
+            data/tmp/orchestrator-report.json
+            logs/orchestrator.jsonl
+            logs/usage.jsonl
+            data/drafts/
+          if-no-files-found: warn
+          retention-days: 30

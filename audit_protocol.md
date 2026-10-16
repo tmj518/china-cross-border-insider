@@ -195,6 +195,90 @@ run-daily.ps1   step 4a  七道闸门
 
 ---
 
+## ★ P2 设计：`evidence` 字段与核查闸门（2026-10-16 起草，**未实施**）
+
+> **状态：P1 先跑通，本设计等 P1 上线后再实施（总监 v6.1 定案）。**
+> **本文只写设计，`tools/` 里没有对应脚本，闸门里没有这一条。**
+
+### 一、它要解决的那一个问题
+
+**L1–L5 全部是"读执行器写出来的东西"。它们看不到原始文件。**
+
+```
+执行器写：  value: "17.45%"   source: "越南工贸部决定 2652/QD-BCT"
+L2 看到：来源非空、不匿名、日期合法、在文书库里  →  过
+L4 看到：没有编造标记                          →  过
+L5 看到：论断与数字自洽、算术对、无风险词        →  过
+★ 而 17.45% 若是读错的、或整段是编的，【没有任何一层有依据发现】
+```
+
+**这是信息问题，不是模型能力问题：审核者手上没有原件，就无法核对原件。**
+
+### 二、设计
+
+**给每个 figure 增加第六个字段 `evidence`：从原文里逐字摘出的那一句或那一行。**
+
+```yaml
+figures:
+  - value: "17.45%"
+    unit: "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value"
+    period: "applies to the catch-all category for all producers and exporters not named in the annex"
+    source: "越南工贸部决定 2652/QD-BCT 附件"
+    retrieved: "2026-10-16"
+    evidence: "其他生产商 / 出口商 | 17.45%"            # ← 新增：原文里逐字存在的片段
+    evidence_from: "data/sources/2026-10-16/vietnam-polyester-decision-gsgu0.html"   # ← 新增：存档文件
+```
+
+**闸门 `check-evidence.mjs`（P2 写）做三件事：**
+
+```
+1. 每个 external figure 必须有 evidence 与 evidence_from
+2. 打开 evidence_from 那个存档文件，去掉标签后搜索 evidence 字符串
+   · 找到 → 过
+   · 找不到 → BLOCK，并打印"存档里最接近的 200 字符"，方便人判断是摘录写错还是数字编的
+3. evidence_from 指向的文件必须存在，且 sha256 与 store-source 的 manifest 一致
+   （★ 这一条防的是"事后补一个假存档"）
+```
+
+### 三、为什么它能挡住 L1–L5 挡不住的那一类
+
+```
+编造一个数字，现在只需要编一个来源名（一个字符串）
+编造一个数字，届时需要：
+  ① 编一个数字
+  ② 编一段【在原文里逐字存在】的摘录 —— 而那等于真的去读了那份文件
+  ③ 让那段摘录出现在一个 sha256 对得上的存档里
+★ 三件事同时做到，与"我真的读了原件"是同一件事
+```
+
+**★ 而它的成本是零**：不调模型，纯字符串查找，毫秒级。
+
+### 四、它挡不住什么（必须写明，否则会给人虚假的安心）
+
+```
+✗ 原件本身写错了 —— 我们只能保证"我们如实引用了它"
+✗ 摘录取自文档的 A 处，数字却取自 B 处 —— 需要 evidence 与 value 同时出现才算强校验
+   ★ 所以 P2 的判据应升级为"evidence 字符串里包含该 value"
+✗ 数字读错（规则 A 那类：9 34 读成 $9.34）—— 除非摘录恰好包含脚注与值的边界
+   ★ 缓解：evidence 要求【整行】而不是片段
+```
+
+### 五、实施顺序（P2 开工时按此做）
+
+```
+1. 写 tools/check-evidence.mjs
+2. ★ 先证明它会失败：造一条 evidence 在存档里不存在的记录，必须 BLOCK
+3. 再证明它不误杀：拿 #31 那 14 个 figure 回填 evidence，必须全过
+   （#31 的存档已在 data/sources/2026-10-16/vietnam-polyester-decision-*.html）
+4. 回填既有 31 篇（可分批；未回填的标为"未回填"而不是"未通过"，否则会误判旧文）
+5. 接进 gate.mjs 作为第八道闸门
+```
+
+**★ 第 2 步是这个设计的核心。** 一个从不失败的核查器没有判别力——这条纪律在
+`tools/blue-ocean.mjs` 的校准样本上已经用过一次，P2 沿用同一种做法。
+
+---
+
 ## 建立这个协议时我自己犯的四个错（留痕）
 
 **因为每一个都是"看起来对"的错，不记下来就会重犯。**
