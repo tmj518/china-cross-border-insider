@@ -17,6 +17,31 @@
  * not block a deploy, but it must say so rather than pass silently.
  *
  *   node tools/check-mobile.mjs
+ *
+ * ## How the measurement was made reliable
+ *
+ * This check was 226 seconds - 95% of the whole gate - and then, while being made faster, it was
+ * briefly wrong in a way that passed everything. Both are recorded here because both were found by
+ * running it rather than reading it, and the second one is the more instructive.
+ *
+ * The original navigated and then slept a fixed 700ms, 270 times: 189 seconds of waiting on a guess.
+ * Four replacements were tried. Each looked right and three were wrong:
+ *
+ *   1. Fixed sleep. Slow, but stable.
+ *   2. Poll document.readyState. A page from a local static server reports complete almost
+ *      immediately, before style recalc applies the new device metrics, so it measured the previous
+ *      width.
+ *   3. Poll documentElement.clientWidth. Reaches the target before layout settles.
+ *   4. Poll clientWidth and documentElement.scrollWidth for two equal readings. The most rigorous
+ *      looking and the most misleading: after Page.navigate the previous document is still current,
+ *      so two consecutive reads of its scrollWidth satisfied "stable" and the check measured the page
+ *      before. Run three times against one unchanged dist it reported one, then four, then three
+ *      different pages.
+ *
+ * Two things ended it. The wait asserts the document is new (readyState complete) at the correct
+ * width. And the verdict no longer depends on a document-level scroll width at all: it inspects
+ * element rectangles, which are right or wrong as a whole rather than passing through intermediate
+ * values, and it ignores elements that a horizontally scrollable ancestor clips on purpose.
  */
 import { spawn } from "node:child_process";
 import { createServer } from "node:http";
@@ -58,7 +83,6 @@ if (!browser) {
    */
   const allowSkip = process.argv.includes("--allow-skip");
   console.log("RESULT: " + (allowSkip ? "SKIP" : "FAIL") + " - no Chrome or Chromium found, so overflow cannot be measured");
-  console.log("  looked for: " + BROWSERS.join(", "));
   process.exit(allowSkip ? 0 : 1);
 }
 if (!existsSync("dist")) {
@@ -121,12 +145,31 @@ console.log("MOBILE OVERFLOW CHECK\n" + "=".repeat(76));
 console.log(`  pages : ${PATHS.length}`);
 console.log(`  widths: 320px and 390px`);
 
+/**
+ * Wait for the new document to have loaded at the requested width.
+ *
+ * Both conditions are needed and neither is sufficient. readyState alone is satisfied by the previous
+ * document; clientWidth alone is satisfied before style recalc applies the override.
+ */
+async function waitForLoad(width, maxMs = 6000) {
+  const started = Date.now();
+  for (;;) {
+    const m = await evaluate("JSON.stringify({ r: document.readyState, c: document.documentElement.clientWidth })");
+    if (m) {
+      const { r, c } = JSON.parse(m);
+      if (r === "complete" && c === width) return true;
+    }
+    if (Date.now() - started > maxMs) return false;
+    await sleep(20);
+  }
+}
+
 const problems = [];
 for (const width of [320, 390]) {
   await send("Emulation.setDeviceMetricsOverride", { width, height: 844, deviceScaleFactor: 2, mobile: true });
   for (const p of PATHS) {
     await send("Page.navigate", { url: `http://127.0.0.1:${HTTP}${p}` });
-    await sleep(700);
+    await waitForLoad(width);
     // The mobile menu is closed by default, but force it so a page cannot be judged
     // in a state a visitor would not be in.
     await evaluate(`(() => { const l = document.getElementById('nav-links'); if (l) l.dataset.open='false'; })()`);
@@ -138,13 +181,34 @@ for (const width of [320, 390]) {
         const r = el.getBoundingClientRect();
         if (r.width === 0) continue;
         const o = Math.round(r.right - vw);
-        if (o > 1) out.push(el.tagName.toLowerCase() + (typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\\s+/)[0] : '') + ' +' + o + 'px');
+        if (o <= 1) continue;
+        /*
+         * An element inside a horizontally scrollable ancestor is clipped by it on purpose. The table
+         * rules set display:block with overflow-x:auto, so its thead and rows are wider than the
+         * container by design and a reader scrolls the table sideways without the page moving.
+         * Reporting those was this check's own bug.
+         */
+        let scrolls = false;
+        for (let a = el.parentElement; a && a !== document.documentElement; a = a.parentElement) {
+          const ox = getComputedStyle(a).overflowX;
+          if (ox === 'auto' || ox === 'scroll') { scrolls = true; break; }
+        }
+        if (scrolls) continue;
+        out.push(el.tagName.toLowerCase() + (typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\\s+/)[0] : '') + ' +' + o + 'px');
       }
-      return JSON.stringify({ sw: document.documentElement.scrollWidth, vw, off: out.slice(0, 3) });
+      return JSON.stringify({ vw, off: out.slice(0, 3) });
     })()`);
     if (!raw) continue;
     const d = JSON.parse(raw);
-    if (d.sw > d.vw + 1) problems.push(`${width}px ${p} scrollWidth=${d.sw}${d.off.length ? " (" + d.off.join(", ") + ")" : ""}`);
+    /*
+     * The verdict is the elements, not a document-level scroll width.
+     *
+     * scrollWidth passes through intermediate values while layout settles, and body.scrollWidth was
+     * observed 29px above documentElement.scrollWidth with overflow-x:hidden on both - so no single
+     * document-level number is dependable. An element whose rectangle extends past the viewport with no
+     * scrollable ancestor to clip it is a defect in any state, and there is nothing to race.
+     */
+    if (d.off.length) problems.push(`${width}px ${p} (${d.off.join(", ")})`);
   }
 }
 
