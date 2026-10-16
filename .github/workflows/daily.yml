@@ -224,6 +224,18 @@ jobs:
         # runs before the orchestrator so a subject published yesterday cannot be proposed again today.
         run: node tools/research.mjs --ledger > /dev/null 2>&1 || true
 
+      - name: Record today's readership before the writer runs
+        # Without CF_ACCOUNT_ID and CF_API_TOKEN this exits 0 having recorded nothing, and the writer is
+        # told there is no readership evidence. That is the correct behaviour and not a failure: a
+        # missing analytics credential must not stop a day's publishing, and an empty brief is honest
+        # where a fabricated one would not be.
+        continue-on-error: true
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: node tools/analytics.mjs --fetch --days=7
+
       - name: Run the orchestrator
         id: run
         env:
