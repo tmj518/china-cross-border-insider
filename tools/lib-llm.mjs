@@ -94,16 +94,15 @@ const PROVIDERS = {
      * OWNER_KEY_1 and OWNER_KEY_2 are the operator's existing secrets, read so a credential stored
      * under a generated name still reaches the pipeline.
      *
-     * Note the deliberate cross-assignment: OWNER_KEY_2 leads the *writer* list and OWNER_KEY_1 leads
-     * the *reviewer* list. That is what makes the fallback arrangement independent when the Doubao
-     * endpoint is not configured. If both roles led with the same name the review would use the
-     * writer's own credential and report itself as independent, which is the failure this whole
-     * ordering exists to prevent.
+     * OWNER_KEY_1 is deliberately absent here. In this deployment it holds the Volcano Ark
+     * credential, so offering it to the DeepSeek reviewer would send an Ark key to api.deepseek.com,
+     * which answers 401 and reads as a broken DeepSeek key. OWNER_KEY_2 is the DeepSeek credential and
+     * serves both roles, which is safe because it is one vendor and one account.
      */
     keys: {
-      writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OWNER_KEY_2", "OWNER_KEY_1"],
-      reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "OWNER_KEY_1", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_2"],
-      planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_1", "OWNER_KEY_2"],
+      writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OWNER_KEY_2"],
+      reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "OWNER_KEY_2", "DEEPSEEK_WRITE_API_KEY"],
+      planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_2"],
     },
   },
   openai: {
