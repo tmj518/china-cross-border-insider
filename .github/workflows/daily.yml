@@ -243,6 +243,20 @@ jobs:
           echo "committed=true" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
+      - name: Sync the ledger to Feishu
+        # Runs after the push so the table reflects what is actually committed. Optional: without the
+        # four app credentials tools/feishu-sync.mjs exits 2 naming what is missing, and
+        # continue-on-error keeps that from failing a run that published correctly. A notification
+        # channel that is not configured must not break the pipeline it reports on.
+        if: always()
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
+          FEISHU_TABLE_ID: ${{ secrets.FEISHU_TABLE_ID }}
+        run: node tools/feishu-sync.mjs
+
       - name: Notify Feishu
         # Always runs. A run that failed is precisely the run the operator needs to hear about, and
         # this is the only channel that reaches them when the computer is off.

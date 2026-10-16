@@ -39,12 +39,56 @@ import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const ROOT = process.cwd();
-const APP_ID = process.env.FEISHU_APP_ID ?? "cli_aa4ad6d49975dcc6";
-const APP_SECRET = process.env.FEISHU_APP_SECRET ?? "VVOR63QZPk4NleCYZoH73gxGsnprYjF1";
-const APP_TOKEN = process.env.FEISHU_APP_TOKEN ?? "C670bKbxdanRS9s36xucdqbWnUd";
-const TABLE_ID = process.env.FEISHU_TABLE_ID ?? "tble72K3njPwJRcN";
+
+/*
+ * Credentials come from the environment only, and the defaults were removed on 2026-10-16.
+ *
+ * They were hard-coded here, which put an app secret in the repository and therefore in every clone,
+ * every fork and every Actions log that printed the file. The secret in question has since stopped
+ * working - the API answers 21001, access denied - so the exposure is historical rather than live.
+ * It is removed regardless, because a default that works is a default nobody rotates, and the next
+ * person to run this would have inherited a credential they did not choose and cannot audit.
+ *
+ * The names are unchanged so a deployment that already sets them keeps working:
+ *   FEISHU_APP_ID  FEISHU_APP_SECRET  FEISHU_APP_TOKEN  FEISHU_TABLE_ID
+ *
+ * The script now fails with the missing name rather than a 21001 several steps later, because those
+ * two failures look identical from the outside and only one of them is fixable by the operator.
+ */
+const APP_ID = (process.env.FEISHU_APP_ID ?? "").trim();
+const APP_SECRET = (process.env.FEISHU_APP_SECRET ?? "").trim();
+const APP_TOKEN = (process.env.FEISHU_APP_TOKEN ?? "").trim();
+const TABLE_ID = (process.env.FEISHU_TABLE_ID ?? "").trim();
 const BASE = "https://open.feishu.cn/open-apis";
 const DRY = process.argv.includes("--dry-run");
+
+const MISSING = [
+  ["FEISHU_APP_ID", APP_ID],
+  ["FEISHU_APP_SECRET", APP_SECRET],
+  ["FEISHU_APP_TOKEN", APP_TOKEN],
+  ["FEISHU_TABLE_ID", TABLE_ID],
+]
+  .filter(([, v]) => !v)
+  .map(([k]) => k);
+
+if (MISSING.length && !DRY) {
+  console.log("FEISHU SYNC — cannot run");
+  console.log("");
+  console.log("  Missing: " + MISSING.join(", "));
+  console.log("");
+  console.log("  These are read from the environment and have no defaults, because a default secret in a");
+  console.log("  repository is a secret in every clone of it. Set them as repository secrets and expose");
+  console.log("  them to the workflow, or export them locally:");
+  console.log("");
+  console.log("    FEISHU_APP_ID      the app id from the Feishu open-platform console (cli_...)");
+  console.log("    FEISHU_APP_SECRET  its secret");
+  console.log("    FEISHU_APP_TOKEN   the Bitable app token, from the base URL (bascn... or the older form)");
+  console.log("    FEISHU_TABLE_ID    the table id inside that base (tbl...)");
+  console.log("");
+  console.log("  The app needs the permission bitable:app, and the base has to be shared with the app.");
+  console.log("  --dry-run computes the rows and prints them without needing any of this.");
+  process.exit(2);
+}
 
 /*
  * --reset deletes every row in this table before writing.
