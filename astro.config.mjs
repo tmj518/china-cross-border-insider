@@ -68,16 +68,32 @@ export default defineConfig({
         "img-src 'self' data:",
         "form-action 'self'",
         "base-uri 'self'",
+        /*
+         * Cloudflare Web Analytics sends its measurement to cloudflareinsights.com, which is a
+         * different origin from the script that collects it. Without this the beacon loads and then its
+         * request is refused, so the dashboard stays empty while the page looks fine - the same silent
+         * failure this whole feature already suffered once when the token was missing.
+         */
+        "connect-src 'self' https://cloudflareinsights.com",
       ],
       /**
        * script-src and style-src are not settable in `directives`; Astro owns them
-       * because it is the thing that knows the hashes. Astro's defaults for both are
-       * `'self'`, so nothing extra is needed for scripts.
+       * because it is the thing that knows the hashes.
        *
-       * styles do need one addition: Shiki emits inline style attributes for syntax
-       * highlighting, and `resources` does not include 'self' by default, so it is
-       * named here along with the inline allowance.
+       * `resources` lists the external origins allowed here. The critical part is that Astro keeps
+       * emitting the hashes for the scripts it inlines alongside them - those hashes are what makes the
+       * site's own JavaScript run, mobile Menu button included, after the hand-written `script-src
+       * 'self'` refused every inline script and silently killed every interaction. Adding an origin
+       * here must not be allowed to drop them, so the built output is checked for both after a change:
+       * the hashes are still present and the beacon is present.
+       *
+       * styles need one addition of their own: Shiki emits inline style attributes for syntax
+       * highlighting, and `resources` does not include 'self' by default, so it is named here along
+       * with the inline allowance.
        */
+      scriptDirective: {
+        resources: ["'self'", "https://static.cloudflareinsights.com"],
+      },
       styleDirective: {
         resources: ["'self'", "'unsafe-inline'"],
       },

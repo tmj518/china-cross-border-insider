@@ -55,16 +55,29 @@ export const SITE = {
 /**
  * Cloudflare Web Analytics beacon token.
  *
- * Read at build time from the environment, never committed. Set it in the
- * Cloudflare Pages project (Settings → Environment variables) and in a local
- * `.env` for preview builds. Absent token means no beacon is rendered at all,
- * which is what keeps `astro dev` and any fork of this repo from shipping a
- * script that reports to somebody else's dashboard.
+/**
+ * Cloudflare Web Analytics site token.
  *
- * Chosen over GA4 deliberately (进度日志 §2): Cloudflare Web Analytics sets no
- * cookies, so it needs no consent banner and no GDPR cookie notice. GA4 would.
+ * Committed rather than read from the environment, and the reasoning changed after watching the
+ * environment variable fail in exactly the way that costs an afternoon.
+ *
+ * The token is a public identifier. It is printed in the HTML of every page, in an attribute any
+ * visitor can read, and it authorises nothing: it tells Cloudflare which site a measurement belongs
+ * to. Treating it as a secret bought no safety and cost a real one - the variable was never set, so
+ * the build emitted no beacon on any of 135 pages and the analytics dashboard stayed empty. Nothing
+ * failed, nothing warned, and the only symptom was silence on a page nobody had opened yet.
+ *
+ * The previous comment argued that an absent token keeps a fork from reporting into this dashboard.
+ * That is true and it was weighed: a fork shipping this file reports its own traffic here. The trade
+ * is accepted because a metric that silently does not exist is worse than a fork's pageviews, and
+ * because the token is not a credential.
+ *
+ * Chosen over GA4 deliberately (进度日志 §2): Cloudflare Web Analytics sets no cookies, so it needs no
+ * consent banner and no GDPR cookie notice. GA4 would.
+ *
+ * Overridable, so the Pages project or a preview build can point somewhere else.
  */
-export const CF_ANALYTICS_TOKEN = import.meta.env.CF_WEB_ANALYTICS_TOKEN ?? "";
+export const CF_ANALYTICS_TOKEN = import.meta.env.CF_WEB_ANALYTICS_TOKEN || "be1864c080cf47f88bd1c126a8571ede";
 
 /**
  * spec §3 — top navigation.
