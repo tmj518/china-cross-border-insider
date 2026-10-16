@@ -17,8 +17,8 @@ name: LandedMath Daily
 
 on:
   schedule:
-    # 23:20 UTC = 07:20 Beijing. GitHub's scheduler can lag by several minutes under load; the
-    # pipeline does not depend on the exact minute.
+    # 23:20 UTC = 07:20 Beijing. GitHub's scheduler can lag by several minutes under load, and it can
+    # skip a run entirely when the queue is busy, so this is the primary trigger and not the only one.
     - cron: '20 23 * * *'
   workflow_dispatch:
     inputs:
@@ -26,6 +26,11 @@ on:
         description: 'Path to a directive JSON. Leave empty to use data/directive.json.'
         required: false
         default: ''
+  # The backup trigger. GitHub's own cron is best-effort; a Cloudflare Worker cron can call the API at
+  # the same time every day and dispatch this event, which is a promise rather than a hope. Wiring the
+  # Worker is optional and this listener costs nothing until it exists.
+  repository_dispatch:
+    types: [daily-run]
 
 permissions:
   contents: write
@@ -83,6 +88,9 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: |
           DIRECTIVE="${{ github.event.inputs.directive_file }}"
+          if [ -z "$DIRECTIVE" ] && [ -n "${{ github.event.client_payload.directive_file }}" ]; then
+            DIRECTIVE="${{ github.event.client_payload.directive_file }}"
+          fi
           if [ -n "$DIRECTIVE" ]; then
             node tools/cloud-orchestrator.mjs --directive-file="$DIRECTIVE"
           else

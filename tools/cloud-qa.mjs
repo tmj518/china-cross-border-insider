@@ -60,11 +60,36 @@ const report = { slug, at: new Date().toISOString(), layers: {}, verdict: null, 
  * removed afterwards - including the case where the validation itself throws, which is why the
  * removal is in a finally.
  */
+/*
+ * The gate reads three of its seven checks out of `dist/`: structured data, the content security
+ * policy, and the mobile layout. Those pages are built by the workflow, which runs before the writer,
+ * so at this point `dist/` describes the site as it was WITHOUT the draft - there is no page for the
+ * article being judged.
+ *
+ * Left alone, the gate would report on a site that does not contain the article, and the three
+ * dist-based checks would be measuring nothing while the other four passed. That is the same failure
+ * the mobile gate had when it silently skipped on a runner without a browser: a green result on
+ * unmeasured input.
+ *
+ * So the site is rebuilt with the draft staged. It costs a build - about ten seconds here, more on a
+ * runner - and it is the difference between checking the article and checking its absence.
+ */
 const staged = join(BLOG, `${slug}.md`);
 let stagedCopy = false;
+let buildNote = "";
 try {
   copyFileSync(draftPath, staged);
   stagedCopy = true;
+
+  try {
+    execFileSync("pnpm", ["exec", "astro", "build"], { encoding: "utf8", timeout: 600000, cwd: ROOT, shell: process.platform === "win32" });
+    buildNote = "dist rebuilt with the draft staged";
+  } catch (e) {
+    /* A build failure is not fatal to the report: the other four gates still carry information, and
+       the failure is recorded so it cannot be mistaken for a pass. */
+    buildNote = `dist rebuild failed, so three checks saw the previous build: ${String(e.message).slice(0, 120)}`;
+  }
+
   let out = "";
   try {
     out = execFileSync(process.execPath, [join(ROOT, "tools", "gate.mjs"), "--fresh"], { encoding: "utf8", timeout: 900000 });
@@ -73,7 +98,11 @@ try {
   }
   const passed = /RESULT:\s*every gate passed/i.test(out);
   const failed = [...out.matchAll(/^\s*(?:\[FAIL\]|✗|FAIL)\s*([^\n]{0,110})/gm)].map((m) => m[1].trim()).slice(0, 6);
-  report.layers.L1 = { pass: passed, detail: passed ? "every gate passed" : `${failed.length} gate failure(s)`, failed };
+  report.layers.L1 = {
+    pass: passed,
+    detail: (passed ? "every gate passed" : `${failed.length} gate failure(s)`) + ` — ${buildNote}`,
+    failed,
+  };
 } finally {
   if (stagedCopy) {
     try {
