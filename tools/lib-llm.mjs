@@ -34,54 +34,117 @@ import { join, dirname } from "node:path";
 
 const ROOT = process.cwd();
 
+/*
+ * Providers, and the keys that can serve each one.
+ *
+ * The first version modelled a provider as having exactly one key, which assumed that independence in
+ * review comes from using a different vendor. The operator's arrangement is different and better
+ * suited to this pipeline: two keys from the same vendor, one for writing and one for reviewing. That
+ * is a real separation - a second credential with its own quota, its own rate limit and its own audit
+ * trail - and the earlier shape silently ignored the second key.
+ *
+ * So a provider now carries a list of candidate credentials in preference order, and the role decides
+ * which one it gets. The reviewer is deliberately given a different key from the writer even when both
+ * are DeepSeek, and a different vendor if one is configured, because either separation buys something
+ * the other does not: a second key isolates quota and blame, a second vendor isolates reasoning.
+ */
 const PROVIDERS = {
   deepseek: {
-    env: "DEEPSEEK_API_KEY",
     url: "https://api.deepseek.com/chat/completions",
     model: process.env.DEEPSEEK_MODEL || "deepseek-chat",
-    /* DeepSeek prices per million tokens in USD. Recorded from its published rate at the time of
-       writing so the log carries an estimate; the authoritative number is the invoice. */
+    /* DeepSeek prices per million tokens in USD, recorded from its published rate so the log carries
+       an estimate. The invoice is authoritative. */
     inPerM: 0.27,
     outPerM: 1.1,
+    /* Order matters. A dedicated review key is preferred for the reviewer, a dedicated write key for
+       the writer, and the generic name is the fallback for both. */
+    keys: {
+      writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY"],
+      reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY"],
+      planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY"],
+    },
   },
   openai: {
-    env: "OPENAI_API_KEY",
     url: "https://api.openai.com/v1/chat/completions",
     model: process.env.OPENAI_MODEL || "gpt-4o",
     inPerM: 2.5,
     outPerM: 10,
+    keys: {
+      writer: ["OPENAI_API_KEY"],
+      reviewer: ["OPENAI_REVIEW_API_KEY", "OPENAI_API_KEY"],
+      planner: ["OPENAI_API_KEY"],
+    },
   },
 };
 
-/** Which providers have a key in this environment. */
+/** Environment variable names that hold a usable key for a role, in preference order. */
+function keyNamesFor(providerName, role) {
+  return PROVIDERS[providerName]?.keys?.[role] ?? PROVIDERS[providerName]?.keys?.writer ?? [];
+}
+
+/** The first set variable among a provider's candidates for a role, with its name. */
+function resolveKey(providerName, role, exclude = []) {
+  for (const name of keyNamesFor(providerName, role)) {
+    const v = (process.env[name] ?? "").trim();
+    if (v && !exclude.includes(name)) return { name, value: v };
+  }
+  return null;
+}
+
+/** Which providers have at least one usable key. */
 export function available() {
-  return Object.entries(PROVIDERS)
-    .filter(([, p]) => (process.env[p.env] ?? "").trim().length > 0)
-    .map(([name]) => name);
+  return Object.keys(PROVIDERS).filter((name) => keyNamesFor(name, "writer").some((n) => (process.env[n] ?? "").trim()));
+}
+
+/**
+ * Whether two roles would use the same credential, which is the condition that makes a second review
+ * ceremonial rather than independent.
+ */
+export function reviewIsIndependent() {
+  const w = resolveKey("deepseek", "writer");
+  const r = resolveKey("deepseek", "reviewer", w ? [w.name] : []);
+  const wOpen = resolveKey("openai", "writer");
+  const rOpen = resolveKey("openai", "reviewer", wOpen ? [wOpen.name] : []);
+  /* Independent if the reviewer can use a key the writer does not, in either vendor. */
+  return Boolean((w && r) || (wOpen && rOpen) || (w && rOpen) || (wOpen && r));
 }
 
 export function summary() {
-  const have = available();
-  const lines = Object.entries(PROVIDERS).map(([name, p]) => {
-    const set = (process.env[p.env] ?? "").trim().length > 0;
-    return `    ${name.padEnd(9)} ${p.env.padEnd(18)} ${set ? "set" : "MISSING"}   model ${p.model}`;
-  });
-  return `  providers (${have.length} of 2 usable):\n${lines.join("\n")}`;
+  const lines = [];
+  for (const name of Object.keys(PROVIDERS)) {
+    const w = resolveKey(name, "writer");
+    const r = resolveKey(name, "reviewer");
+    const model = PROVIDERS[name].model;
+    lines.push(
+      `    ${name.padEnd(9)} writer=${(w?.name ?? "MISSING").padEnd(26)} reviewer=${(r?.name ?? "MISSING").padEnd(26)} ${model}`,
+    );
+  }
+  const indep = reviewIsIndependent();
+  return (
+    `  providers usable: ${available().join(", ") || "none"}\n` +
+    lines.join("\n") +
+    `\n    review independent: ${indep ? "yes" : "NO - the reviewer would use the writer's own key"}`
+  );
 }
 
 /*
- * Role to provider preference. The reviewer prefers the provider the writer did not use, which is the
- * only arrangement in which a second review is worth paying for.
+ * Role to provider preference.
+ *
+ * DeepSeek first on cost. The reviewer is moved to the other vendor when one is configured, because a
+ * different vendor isolates reasoning in a way a second key cannot. When both keys are DeepSeek - which
+ * is the operator's setup - the separation is still real and comes from the key: separate quota,
+ * separate rate limit, separate audit trail, and the ability to revoke one without the other.
  */
 function pickProvider(role, avoid) {
   const have = available();
   if (!have.length) return null;
   if (role === "reviewer" && avoid) {
     const other = have.find((p) => p !== avoid);
-    if (other) return other;
+    /* Only switch vendors when the other one actually has a reviewer-capable key. */
+    if (other && resolveKey(other, "reviewer")) return other;
   }
-  /* Cost order: DeepSeek first everywhere else. */
-  return have.includes("deepseek") ? "deepseek" : have[0];
+  if (have.includes("deepseek") && resolveKey("deepseek", role)) return "deepseek";
+  return have.find((p) => resolveKey(p, role)) ?? null;
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -107,10 +170,19 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
   const providerName = pickProvider(role, avoidProvider);
   if (!providerName) {
     meter({ at: new Date().toISOString(), role, ok: false, error: "no provider key present", providers: available() });
-    return { ok: false, error: "no provider key present", need: Object.values(PROVIDERS).map((p) => p.env) };
+    return {
+      ok: false,
+      error: "no provider key present",
+      need: ["DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OPENAI_API_KEY"],
+    };
   }
   const p = PROVIDERS[providerName];
-  const key = (process.env[p.env] ?? "").trim();
+  const cred = resolveKey(providerName, role);
+  if (!cred) {
+    meter({ at: new Date().toISOString(), role, ok: false, provider: providerName, error: "no key for this role" });
+    return { ok: false, error: `no key configured for role ${role} on ${providerName}`, need: keyNamesFor(providerName, role) };
+  }
+  const key = cred.value;
   const body = {
     model: p.model,
     messages: system ? [{ role: "system", content: system }, ...messages] : messages,
@@ -138,7 +210,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
       const ms = Date.now() - started;
       if (!r.ok || json?.error) {
         lastError = json?.error?.message ?? `HTTP ${r.status}: ${text.slice(0, 200)}`;
-        meter({ at: new Date().toISOString(), role, provider: providerName, model: p.model, ok: false, ms, status: r.status, error: lastError, attempt });
+        meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: p.model, ok: false, ms, status: r.status, error: lastError, attempt });
         /* 429 and 5xx are worth another attempt; 401 and 400 are not. */
         if (r.status === 401 || r.status === 400 || r.status === 402 || r.status === 403) break;
         await sleep(2000 * (attempt + 1));
@@ -151,6 +223,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
         at: new Date().toISOString(),
         role,
         provider: providerName,
+        keyName: cred.name,
         model: p.model,
         ok: true,
         ms,
@@ -163,6 +236,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
         ok: true,
         text: json?.choices?.[0]?.message?.content ?? "",
         provider: providerName,
+        keyName: cred.name,
         model: p.model,
         usage,
         estimatedUsd: Number(cost.toFixed(6)),
@@ -171,11 +245,11 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
     } catch (e) {
       const ms = Date.now() - started;
       lastError = `${e.cause?.code ?? e.name ?? "error"}: ${e.message}`;
-      meter({ at: new Date().toISOString(), role, provider: providerName, model: p.model, ok: false, ms, error: lastError, attempt });
+      meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: p.model, ok: false, ms, error: lastError, attempt });
       await sleep(2000 * (attempt + 1));
     }
   }
-  return { ok: false, provider: providerName, error: lastError };
+  return { ok: false, provider: providerName, keyName: cred.name, error: lastError };
 }
 
 /**
