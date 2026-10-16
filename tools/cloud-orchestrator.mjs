@@ -245,6 +245,19 @@ const revisionDir = join(ROOT, "data", "tmp", "revisions");
 const attempts = [];
 let wroteIt = false;
 let qa = null;
+/*
+ * Declared here, outside the loop, and the placement is the whole point.
+ *
+ * `let` inside a loop body is scoped to each iteration, so reading it after the loop is not a syntax
+ * error - which is why `node --check` passed on the broken version and the bug survived review - but a
+ * runtime ReferenceError. It fired on the third attempt of a real run when the loop exited through
+ * `break` before reaching the declaration, so the orchestrator died before writing its report and the
+ * operator received "no run report" instead of a verdict.
+ *
+ * Anything the loop sets and the code after the loop reads belongs here. `qaCode` joins `qa` for exactly
+ * that reason, and the two are easy to pull back inside when the loop body grows.
+ */
+let qaCode = 1;
 let writeOut = "";
 let writeCode = 0;
 
@@ -324,7 +337,6 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
   }
 
   let qaOut = "";
-  let qaCode = 1;
   try {
     qaOut = execFileSync(
       process.execPath,

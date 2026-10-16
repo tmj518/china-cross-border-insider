@@ -7,7 +7,19 @@
 /** Production domain (registered 2026-10-01).
  *  Everything SEO-related — canonical, sitemap, RSS, og:image — derives from
  *  this single value, so changing it here is enough. */
-export const SITE_URL = "https://landedmath.com";
+/**
+ * The canonical origin, with www, because that is the domain Cloudflare serves as primary.
+ *
+ * This was the bare domain and both forms answered HTTP 200 with identical content - two live URLs for
+ * every page, which is the duplicate-content arrangement that splits signals between them. Only the
+ * bare form redirected, and it redirected to www, which made bare the wrong choice for canonical.
+ *
+ * Two changes belong together and neither is sufficient alone: this constant, so every canonical, og:url,
+ * JSON-LD url and sitemap entry names www; and the 301 in public/_redirects, so the bare form stops
+ * answering 200 at all. A canonical that names a URL the server does not redirect to is a suggestion,
+ * and search engines are entitled to ignore it.
+ */
+export const SITE_URL = "https://www.landedmath.com";
 
 export const SITE = {
   url: SITE_URL,
