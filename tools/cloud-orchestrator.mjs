@@ -97,6 +97,17 @@ if (existsSync(STATE)) {
 
 /* the weekly ceiling, which is a rule from 初心与目标.md: at most 15 net-new articles a week */
 let weekCount = 0;
+/*
+ * Per-category coverage for the current week.
+ *
+ * The operator made "every section gets at least one deep article a week" a hard rule, so it is checked
+ * and reported rather than assumed. A category that exists in the published set and has no net-new
+ * article this week is the thing the rule is about, and it is invisible without counting.
+ *
+ * The count is reported whether or not it passes, because "5 of 5 sections covered" is the answer to a
+ * question someone will ask, and a check that only speaks when it fails cannot answer it.
+ */
+const categoryActivity = new Map();
 try {
   const today = new Date();
   const monday = new Date(today);
@@ -104,11 +115,29 @@ try {
   const since = monday.toISOString().slice(0, 10);
   for (const f of readdirSync(join(ROOT, "src", "content", "blog")).filter((x) => x.endsWith(".md"))) {
     const t = readFileSync(join(ROOT, "src", "content", "blog", f), "utf8");
+    if (/^draft:\s*true/m.test(t)) continue;
     const d = /^publishDate:\s*"?([\d-]+)/m.exec(t)?.[1] ?? "";
+    const category = /^category:\s*"?([a-z-]+)/m.exec(t)?.[1] ?? "";
     if (d >= since) weekCount++;
+    if (!category) continue;
+    const entry = categoryActivity.get(category) ?? { thisWeek: 0, total: 0 };
+    entry.total++;
+    if (d >= since) entry.thisWeek++;
+    categoryActivity.set(category, entry);
   }
 } catch {}
 step("weekly ceiling", weekCount < 15, `${weekCount} of 15 net-new this week`);
+
+const uncovered = [...categoryActivity.entries()].filter(([, e]) => e.thisWeek === 0).map(([c]) => c);
+step(
+  "sections covered this week",
+  uncovered.length === 0,
+  uncovered.length === 0
+    ? `every section has a net-new article this week (${categoryActivity.size} sections)`
+    : `${uncovered.length} of ${categoryActivity.size} sections have none yet: ${uncovered.join(", ")}`,
+);
+run.categoryActivity = Object.fromEntries([...categoryActivity.entries()].map(([c, e]) => [c, e.thisWeek]));
+run.uncoveredSections = uncovered;
 
 if (weekCount >= 15) {
   console.log("");

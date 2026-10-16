@@ -164,6 +164,101 @@ function readershipBrief() {
   return lines.join("\n");
 }
 
+/**
+ * Ask the writer to repair its own frontmatter, rather than throwing the article away.
+ *
+ * The operator's question was why the limits cannot simply be told to the writer, and the answer is that
+ * they are told and a prompt is a probability rather than a guarantee. The first version of this
+ * therefore rejected a draft whose subtitle was 163 characters against a limit of 160 - discarding 1,800
+ * words of correct work over three characters, and spending a full regeneration to get them back.
+ *
+ * So the writer is now asked to fix the field, in a call that sends back only the offending values. It is
+ * cheap (a few hundred tokens against a full regeneration), it cannot damage the body because the body is
+ * not sent, and it is the same model correcting its own work with the exact number in front of it rather
+ * than a general instruction to be careful.
+ *
+ * The target is 92% of the limit rather than the limit itself. A value written to exactly 160 leaves no
+ * room for a later revision to add a word, and the revision is where the length creeps - which is how a
+ * draft that was legal when written becomes illegal when corrected.
+ *
+ * If the repair fails or the model returns something that still does not fit, the caller falls back to
+ * refusing the draft, so this is an improvement and not a new way to publish an invalid file.
+ */
+async function repairFrontmatter(article, violations, limits) {
+  const fields = frontmatter(article);
+  if (!fields) return null;
+
+  const asks = violations
+    .map((v) => {
+      const name = Object.keys(limits).find((k) => v.startsWith(k));
+      if (!name) return null;
+      const target = Math.floor(limits[name] * 0.92);
+      return { field: name, current: fields[name] ?? "", target, limit: limits[name] };
+    })
+    .filter(Boolean);
+
+  /* Nothing to fix, or a violation that is not a length - the caller handles the rest. */
+  if (!asks.length) return null;
+
+  const instruction = asks
+    .map(
+      (a) =>
+        `FIELD: ${a.field}\n` +
+        `LIMIT: ${a.limit} characters. TARGET: ${a.target} characters or fewer.\n` +
+        `CURRENT (${[...String(a.current)].length} characters, too long):\n${a.current}\n`,
+    )
+    .join("\n");
+
+  const r = await askJson({
+    role: "writer",
+    system:
+      "You shorten metadata for a publication. You keep the meaning, the subject and the specificity, and " +
+      "you return only JSON. You never invent a fact, a number or a name that is not already present.",
+    messages: [
+      {
+        role: "user",
+        content:
+          `Each field below is too long for a hard schema limit and the whole site fails to build when one ` +
+          `is exceeded. Rewrite each to the target length or shorter.\n\n` +
+          `Rules:\n` +
+          `  - Keep the concrete subject. Drop qualifiers and subordinate clauses before dropping the subject.\n` +
+          `  - Keep any figure, date, country or obligation that is already there if it fits. The number is\n` +
+          `    usually the reason the sentence exists.\n` +
+          `  - Do not add anything that is not in the current text.\n` +
+          `  - Count characters. A target of 147 means 147 or fewer, not approximately.\n\n` +
+          `${instruction}\n` +
+          `Return exactly: {"${asks.map((a) => a.field).join('": "...", "')}": "..."}`,
+      },
+    ],
+    maxTokens: 1024,
+  });
+
+  if (!r.json) return null;
+  const fixed = { ...fields };
+  let changed = 0;
+  for (const a of asks) {
+    const v = r.json[a.field];
+    if (typeof v !== "string") continue;
+    const clean = v.replace(/\s+/g, " ").trim();
+    if (!clean) continue;
+    if ([...clean].length > a.limit) continue; /* still too long: keep the original and let the caller refuse */
+    fixed[a.field] = clean;
+    changed++;
+  }
+  if (!changed) return null;
+
+  /*
+   * Rebuild the file from the parsed fields rather than editing text in place. A regex on a JSON file is
+   * the kind of edit that silently corrupts a value containing a colon or a quote, and the frontmatter
+   * here is flat and known.
+   */
+  const body = article.replace(/^---\r?\n[\s\S]*?\r?\n---/, "").replace(/^\r?\n/, "");
+  const head = Object.entries(fixed)
+    .map(([k, v]) => `${k}: ${/[:#"'\n]/.test(v) ? JSON.stringify(v) : v}`)
+    .join("\n");
+  return { article: `---\n${head}\n---\n\n${body}`, repaired: asks.map((a) => a.field) };
+}
+
 /** The structure, as a specification the model is asked to satisfy. */
 const STRUCTURE = `The article must have this exact shape.
 
@@ -443,17 +538,38 @@ ${previous.slice(0, 60000)}`;
   }
 
   const outSlug = String(extracted.slug ?? directive.slug).replace(/[^a-z0-9-]/g, "").slice(0, 80);
-  const violations = schemaViolations(extracted.article);
+  let article = extracted.article;
+  let violations = schemaViolations(article);
 
-  /*
-   * A draft that cannot build is not written out at all. Writing it and letting the next stage discover
-   * it is how a schema violation became a report about the review.
-   */
   console.log(`  provider  : ${r.provider} / ${r.model}`);
   console.log(`  shape     : ${extracted.shape}`);
   if (extracted.notes) console.log(`  notes     : ${String(extracted.notes).slice(0, 200)}`);
   console.log(`  tokens    : ${r.usage?.prompt_tokens ?? "?"} in, ${r.usage?.completion_tokens ?? "?"} out`);
   console.log(`  estimated : $${r.estimatedUsd ?? "?"}`);
+
+  /*
+   * Repair before refusing. A draft that is three characters over one limit is not a draft to discard;
+   * it is a draft with a typo, and the fix costs a few hundred tokens instead of a full regeneration.
+   */
+  if (violations.length) {
+    console.log("");
+    console.log(`  schema    : ${violations.length} violation(s), asking the writer to repair the field(s)`);
+    for (const v of violations) console.log(`      - ${v}`);
+    const rep = await repairFrontmatter(article, violations, LIMITS);
+    if (rep) {
+      const after = schemaViolations(rep.article);
+      if (!after.length) {
+        article = rep.article;
+        violations = [];
+        console.log(`  repaired  : ${rep.repaired.join(", ")} - now within every limit`);
+      } else {
+        console.log(`  repair    : did not fix everything (${after.length} left), refusing the draft`);
+        violations = after;
+      }
+    } else {
+      console.log("  repair    : the writer did not return a usable fix, refusing the draft");
+    }
+  }
 
   if (violations.length) {
     console.log("");
@@ -476,9 +592,9 @@ ${previous.slice(0, 60000)}`;
 
   mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
   const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
-  writeFileSync(outFile, extracted.article, "utf8");
+  writeFileSync(outFile, article, "utf8");
 
-  const words = (extracted.article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
+  const words = (article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
   console.log(`  written   : ${outFile.replace(/\\/g, "/").replace(ROOT.replace(/\\/g, "/") + "/", "")}`);
   console.log(`  words     : ${words}`);
   console.log("");

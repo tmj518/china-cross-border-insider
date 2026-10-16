@@ -25,9 +25,9 @@
  *   reviewer   a second opinion; deliberately a DIFFERENT provider when one is available, because a
  *              model reviewing its own output shares its blind spots and the review becomes ceremony
  *
- * DeepSeek is the default for everything on cost grounds. OpenAI is used only where a different model
- * is the point. If only one key is present the pipeline still runs and says so in its report rather
- * than pretending the review was independent.
+ * Doubao writes and DeepSeek reviews: two vendors, which is the strongest independence available
+ * because they share neither training data nor failure modes. If only one credential is present the
+ * pipeline still runs and says so in its report rather than pretending the review was independent.
  */
 import { appendFileSync, mkdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -103,17 +103,6 @@ const PROVIDERS = {
       writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OWNER_KEY_2"],
       reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "OWNER_KEY_2", "DEEPSEEK_WRITE_API_KEY"],
       planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_2"],
-    },
-  },
-  openai: {
-    url: "https://api.openai.com/v1/chat/completions",
-    model: process.env.OPENAI_MODEL || "gpt-4o",
-    inPerM: 2.5,
-    outPerM: 10,
-    keys: {
-      writer: ["OPENAI_API_KEY"],
-      reviewer: ["OPENAI_REVIEW_API_KEY", "OPENAI_API_KEY"],
-      planner: ["OPENAI_API_KEY"],
     },
   },
 };
@@ -198,9 +187,9 @@ export function summary() {
  * provider name rather than assumed, so the arrangement survives a configuration change.
  */
 const ROLE_PREFERENCE = {
-  writer: ["volces", "deepseek", "openai"],
-  planner: ["volces", "deepseek", "openai"],
-  reviewer: ["deepseek", "openai", "volces"],
+  writer: ["volces", "deepseek"],
+  planner: ["volces", "deepseek"],
+  reviewer: ["deepseek", "volces"],
 };
 
 export function providerFor(role, avoid) {
@@ -247,7 +236,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
     return {
       ok: false,
       error: "no provider key present",
-      need: ["DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OPENAI_API_KEY"],
+      need: ["ARK_API_KEY + ARK_MODEL for the writer, DEEPSEEK_REVIEW_API_KEY for the reviewer"],
     };
   }
   const p = PROVIDERS[providerName];
