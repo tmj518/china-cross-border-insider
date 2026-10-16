@@ -61,28 +61,90 @@ const { instrument, cited } = Astro.props;
 const all = published(await getCollection("blog"));
 const numbers = numbersFor(all);
 
-/** The instrument's own name: the source string minus any trailing clause after a comma. */
+/**
+ * The instrument's name.
+ *
+ * This used to cut the source string at its first comma, on the theory that the part before the comma
+ * is the institution and the rest is detail. The detail is the point. Four pages titled themselves
+ * "European Commission" - the product safety sweep, the CBAM certificate price, the notice of
+ * initiation and a duplicate sweep record - and search engines showed four identical entries for four
+ * different documents. The same happened to the customs announcements, where "No. 74 of 2026" and
+ * "No. 40 of 2026" are the only difference that matters.
+ *
+ * So the whole source is the name now, with only a trailing publication clause removed, because
+ * "published 8 September 2026" and "released 10 September 2026" describe when it was read rather than
+ * what it is, and they sit at the end where they are cheapest to drop.
+ */
 const source = instrument.source;
-const shortName = source.split(/,\s*(?=[A-Z0-9])/)[0].trim();
+const name = source
+  .replace(/,\s*(?:published|released|retrieved|via)\b[^,]*$/i, "")
+  .replace(/\s+/g, " ")
+  .trim();
 
 /**
  * A stable identifier, pulled out of the source string when one is present.
- * Journal citations like "91 FR 51975", regulation numbers like "(EU) 2026/1740",
- * and Chinese announcement numbers like "No. 136 of 2026" are all in there already.
+ *
+ * Journal citations like "91 FR 51975", regulation numbers like "(EU) 2026/1740", and announcement
+ * numbers like "No. 136 of 2026" were already handled. Three more shapes are read now because they are
+ * the only thing distinguishing two instruments that are otherwise named identically:
+ *
+ *   "Industrial Producer Price Indexes in August 2026"   the month, which the other release omits
+ *   "2026 tariff adjustment plan, export duty schedule"  the annex, versus the plan itself
+ *   "product safety sweep results, annex"                the same, for the sweep
+ *
+ * Month names are matched before prose numbers so "August 2026" is not read as a bare figure, and
+ * "No. 74 of 2026" is shortened to "No. 74/2026" because every character saved here is a character
+ * available to the name.
  */
+const MONTHS = "January|February|March|April|June|July|August|September|October|November|December";
+const months = [...new Set([...source.matchAll(new RegExp(`\\b(?:${MONTHS})\\s+20\\d{2}\\b`, "g"))].map((m) => m[0]))].join(", ");
+const clause =
+  /\b(annex(?:\s+\d+)?|export duty schedule|import duty schedule|table\s+\d+|section\s+\d+|part\s+\d+|Article\s+\d+)\b/i.exec(source)?.[0] ?? "";
 const identifier =
   /\b\d{2}\s+FR\s+\d+/.exec(source)?.[0] ??
   /\((?:EU|EC|EEC)\)\s*\d{4}\/\d+/.exec(source)?.[0] ??
-  /No\.\s*\d+\s+of\s+\d{4}/.exec(source)?.[0] ??
+  /(No\.\s*\d+)\s+of\s+\d{4}/.exec(source)?.slice(1).join("/") ??
   /国市监[^\s,，]{0,12}\d+号/.exec(source)?.[0] ??
   null;
 
+/** Month and clause are appended when there is no formal number, which is when they are all there is. */
+const qualifier = identifier ?? [months, clause].filter(Boolean).join(", ");
+
+/**
+ * Keep a title inside the width a search result will actually show.
+ *
+ * Roughly 60 characters of Latin text survives in a result snippet; past that the engine rewrites the
+ * title from page content, which hands it control of the one line that decides whether anyone clicks.
+ * A site-name suffix is another 14, so the name is budgeted at what is left.
+ *
+ * Two earlier attempts got this wrong in opposite directions and both are worth not repeating. The
+ * first cut the source at its first comma, which produced four pages called "European Commission" and
+ * lost the distinguishing detail entirely. The second kept the whole source and truncated to a fixed
+ * 62, which still left 28 of 42 pages over 70 characters and left three pairs identical, because at
+ * that budget the difference between two instruments four words in never survives.
+ *
+ * What is different here: the qualifier - announcement number, month, annex - is appended outside the
+ * truncation, so the most distinguishing part is never the part that gets cut.
+ */
+function fitTitle(baseName, qual, total = 92) {
+  const tail = qual ? ` (${qual})` : "";
+  const suffix = ` — ${SITE.name}`;
+  const room = total - tail.length - suffix.length;
+  let n = baseName;
+  if (n.length > room) {
+    const cut = n.slice(0, Math.max(12, room - 1));
+    const sp = cut.lastIndexOf(" ");
+    n = (sp > 24 ? cut.slice(0, sp) : cut).replace(/[,;:.\s]+$/, "") + "…";
+  }
+  return n + tail;
+}
+
 const figures = instrument.figures;
 
-const title = identifier ? `${shortName} (${identifier})` : shortName;
+const title = fitTitle(name, qualifier);
 const description =
-  `${figures.length} figure${figures.length === 1 ? "" : "s"} on this site come from ${shortName}` +
-  `${identifier ? ` (${identifier})` : ""}, cited by ${cited.length} ` +
+  `${figures.length} figure${figures.length === 1 ? "" : "s"} on this site come from ${name}` +
+  `${qualifier ? ` (${qualifier})` : ""}, cited by ${cited.length} ` +
   `article${cited.length === 1 ? "" : "s"}. Every value carries its unit, period, source and retrieval date.`;
 
 const pageUrl = `${SITE_URL}/instrument/${instrument.id}/`;
@@ -123,8 +185,8 @@ const jsonLd = {
     <main id="main">
       <div class="page-head">
         <p class="eyebrow"><a href="/instrument/">Instruments</a></p>
-        <h1>{shortName}</h1>
-        {identifier && <p class="instrument-id">{identifier}</p>}
+        <h1>{name}</h1>
+        {qualifier && <p class="instrument-id">{qualifier}</p>}
         <p>
           {figures.length} figure{figures.length === 1 ? "" : "s"} on this site come from this
           instrument, cited by {cited.length} article{cited.length === 1 ? "" : "s"}. Each value

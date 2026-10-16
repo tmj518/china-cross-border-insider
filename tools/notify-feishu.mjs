@@ -84,6 +84,21 @@ if (!report) {
     lines.push("Needs a decision or a fix:");
     for (const r of report.reasons.slice(0, 6)) lines.push(`  • ${String(r).slice(0, 220)}`);
     if (report.reasons.length > 6) lines.push(`  … and ${report.reasons.length - 6} more in the report`);
+    /*
+     * Quote the reviewer's own output when the failure was a response we could not parse.
+     *
+     * The card is the only thing the operator sees, and on 2026-10-17 it said "no parseable verdict",
+     * which describes the symptom and gives nothing to act on: the two likely causes - prose around
+     * the object, and a response cut off at the token ceiling - need opposite fixes. The first and
+     * last few hundred characters are what tells them apart.
+     */
+    const l5 = report.qa?.layers?.L5;
+    if (l5 && l5.responseHead) {
+      lines.push("");
+      lines.push(`  reviewer said: ${String(l5.responseHead).slice(0, 220)}`);
+      if (l5.responseTail) lines.push(`  reviewer ended: ${String(l5.responseTail).slice(0, 140)}`);
+      if (l5.completionTokens != null) lines.push(`  completion tokens: ${l5.completionTokens}`);
+    }
   }
 
   if (report.qa?.layers) {

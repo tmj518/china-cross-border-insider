@@ -334,17 +334,85 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
  * alert containing what the model actually said, which is the only useful thing to do with a parse
  * failure at three in the morning.
  */
+/**
+ * Pull a JSON object out of a model response.
+ *
+ * Asking for JSON does not reliably produce a bare JSON document, and the ways it fails need different
+ * handling.
+ *
+ * The obvious one is a wrapper: prose before the object, or a ```json fence. The fence is tried first,
+ * then a brace-matched span, which covers both.
+ *
+ * The one that cost a run is truncation. On 2026-10-17 the reviewer output was unparseable and the
+ * pipeline reported "no parseable verdict" without saying why, so the next step was a guess. A
+ * brace-matched scan that tracks string state and escapes finds a *complete* object anywhere in the
+ * response, which a first-brace-to-last-brace slice does not: if the text ends mid-object, that slice is
+ * a fragment and fails, whereas the scan correctly reports that nothing complete is present.
+ *
+ * Cut off and malformed are different failures and the caller is told which. A balanced object is worth
+ * a retry with a larger budget; an unbalanced one is not.
+ */
+function balancedJsonSpan(s) {
+  const start = s.indexOf("{");
+  if (start < 0) return null;
+  let depth = 0;
+  let inStr = false;
+  let esc = false;
+  for (let i = start; i < s.length; i++) {
+    const c = s[i];
+    if (esc) { esc = false; continue; }
+    if (c === "\\") { esc = true; continue; }
+    if (c === '"') { inStr = !inStr; continue; }
+    if (inStr) continue;
+    if (c === "{") depth++;
+    else if (c === "}") {
+      depth--;
+      if (depth === 0) return s.slice(start, i + 1);
+    }
+  }
+  /* Opened and never closed: the response was cut off mid-object. */
+  return null;
+}
+
 export async function askJson(opts) {
   const r = await ask({ ...opts, temperature: opts.temperature ?? 0 });
   if (!r.ok) return { ...r, json: null };
   const raw = r.text ?? "";
+
+  const candidates = [];
   const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(raw)?.[1];
-  const candidate = fenced ?? raw.slice(raw.indexOf("{") >= 0 ? raw.indexOf("{") : 0, raw.lastIndexOf("}") + 1 || undefined);
-  try {
-    return { ...r, json: JSON.parse(candidate) };
-  } catch {
-    return { ...r, json: null, parseError: "response was not JSON", raw: raw.slice(0, 2000) };
+  if (fenced) candidates.push(fenced);
+  const balanced = balancedJsonSpan(raw);
+  if (balanced) candidates.push(balanced);
+  /* Last resort: the original slice, for the rare case where a brace inside a string confuses the scan. */
+  const first = raw.indexOf("{");
+  if (first >= 0 && raw.lastIndexOf("}") > first) candidates.push(raw.slice(first, raw.lastIndexOf("}") + 1));
+
+  for (const c of candidates) {
+    try {
+      const parsed = JSON.parse(c);
+      if (parsed && typeof parsed === "object") return { ...r, json: parsed };
+    } catch {
+      /* try the next shape */
+    }
   }
+
+  /*
+   * No parseable object. Say which failure it was, and quote the response, because "the model wrote
+   * prose" and "the model was cut off" call for opposite fixes - change the prompt, or raise the
+   * budget - and neither is guessable from a stack trace.
+   */
+  const opened = raw.includes("{");
+  const closed = raw.includes("}");
+  const hitCeiling = r.usage?.completion_tokens != null && opts.maxTokens != null && r.usage.completion_tokens >= opts.maxTokens - 8;
+  const parseError = !opened
+    ? "the response contained no JSON object at all"
+    : hitCeiling
+      ? `the response ran to the ${opts.maxTokens}-token ceiling, so the object was cut off`
+      : closed
+        ? "the response contained a JSON object that does not parse"
+        : "the response opened an object and never closed it";
+  return { ...r, json: null, parseError, raw: raw.slice(0, 2000), head: raw.slice(0, 400), tail: raw.slice(-200) };
 }
 
 /** Running total from the meter, for the daily report. */

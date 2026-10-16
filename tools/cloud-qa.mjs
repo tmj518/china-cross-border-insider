@@ -176,15 +176,35 @@ if (!mechanicallyClear) {
 Set pass to false if any check is false.`,
       },
     ],
-    maxTokens: 4096,
+    /*
+     * 8192 rather than 4096. The reviewer reads the whole draft and then writes a verdict; on
+     * 2026-10-17 it returned something unparseable and 4096 was tight enough that truncation was a
+     * live possibility. The response is small, so this costs almost nothing and removes one way for
+     * the review to fail for a reason that has nothing to do with the draft.
+     */
+    maxTokens: 8192,
   });
 
   if (!r.ok) {
     report.layers.L5 = { pass: false, detail: `review call failed: ${r.error}` };
     report.reasons.push("L5: the review call failed, so nothing was approved");
   } else if (!r.json) {
-    report.layers.L5 = { pass: false, detail: `reviewer did not return JSON${r.parseError ? ` (${r.parseError})` : ""}` };
-    report.reasons.push("L5: reviewer output unparseable");
+    /*
+     * Quote what the reviewer actually returned. On 2026-10-17 this branch fired and the report said
+     * "no parseable verdict", which is a description of the symptom and gives the next person nothing
+     * to act on - the two likely causes, prose around the object and a response cut off at the token
+     * ceiling, need opposite fixes. The head and tail are what tells them apart, and they go into the
+     * report so they reach the notification rather than a log nobody opens.
+     */
+    report.layers.L5 = {
+      pass: false,
+      detail: `reviewer did not return JSON - ${r.parseError ?? "unknown reason"}`,
+      reviewer: `${r.provider}/${r.model}`,
+      completionTokens: r.usage?.completion_tokens ?? null,
+      responseHead: (r.head ?? "").replace(/\s+/g, " ").slice(0, 300),
+      responseTail: (r.tail ?? "").replace(/\s+/g, " ").slice(0, 200),
+    };
+    report.reasons.push(`L5: reviewer output unparseable - ${r.parseError ?? "unknown reason"}`);
   } else {
     review = r.json;
     report.layers.L5 = {
