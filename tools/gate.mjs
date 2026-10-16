@@ -171,6 +171,14 @@ function runOne(gate) {
   const r = spawnSync(NODE, gate.args, { cwd: ROOT, encoding: "utf8", maxBuffer: 128 * 1024 * 1024 });
   const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
   const ms = Date.now() - t;
+  /*
+   * A signalled gate is not a verdict. Same reasoning as the parallel branch: caching the output of an
+   * interrupted run stores a FAIL that no later invocation will re-derive, because the input hash has
+   * not changed. Only a clean exit is remembered.
+   */
+  if (r.signal) {
+    return { ...gate, ms, status: r.status ?? 1, cached: false, out: out + `\n[gate killed by ${r.signal}; not cached]` };
+  }
   cache[gate.id] = { key, status: r.status ?? 1, out: out.slice(-4000) };
   return { ...gate, ms, status: r.status ?? 1, cached: false, out };
 }
@@ -192,7 +200,25 @@ const pending = fastGates.map(
     let buf = "";
     child.stdout.on("data", (d) => (buf += d));
     child.stderr.on("data", (d) => (buf += d));
-    child.on("close", (code) => {
+    child.on("close", (code, signal) => {
+      /*
+       * A gate killed by a signal is not a verdict, and must not be cached.
+       *
+       * This is not hypothetical. A cold full run takes fifteen minutes on this machine because
+       * serp-check fetches competitor pages; interrupting one leaves whatever the child managed to
+       * print, and caching that records a FAIL produced by an incomplete run. The next invocation then
+       * reuses it, because the input hash has not changed - so a killed run poisons every run after it
+       * until someone deletes .cache/gates.json. That happened four times on 2026-10-16, each time
+       * reporting a mobile overflow on a different page, and each page passed when measured on its own.
+       *
+       * Only a clean exit is cached. A signalled exit is reported as a failure for this run and not
+       * remembered, which is the conservative direction: a check that runs again costs time, a check
+       * that remembers a wrong answer costs trust.
+       */
+      if (signal) {
+        resolve({ ...g, ms: Date.now() - t, status: code ?? 1, cached: false, out: buf + `\n[gate killed by ${signal}; not cached]` });
+        return;
+      }
       cache[g.id] = { key, status: code ?? 1, out: buf.slice(-4000) };
       resolve({ ...g, ms: Date.now() - t, status: code ?? 1, cached: false, out: buf });
     });

@@ -61,6 +61,10 @@ jobs:
       - id: check
         name: Verify each provider key with a one-token call
         env:
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+          OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
+          OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
+          ARK_MODEL: ${{ secrets.ARK_MODEL }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
           DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
@@ -83,6 +87,12 @@ jobs:
               fi
               return
             fi
+            if [ -z "$MODEL" ]; then
+              echo "::error::$NAME is set but no model or endpoint id is configured"
+              SUMMARY="$SUMMARY\n- $NAME: key set, but ARK_MODEL / endpoint id MISSING"
+              OK="false"
+              return
+            fi
             CODE=$(curl -s -o /tmp/resp.json -w '%{http_code}' --max-time 45 \
               -H "content-type: application/json" -H "authorization: Bearer $KEY" \
               -d "{\"model\":\"$MODEL\",\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}],\"max_tokens\":1}" \
@@ -97,17 +107,16 @@ jobs:
               OK="false"
             fi
           }
+          ARK=https://ark.cn-beijing.volces.com/api/v3/chat/completions
           DS=https://api.deepseek.com/chat/completions
-          # The writer key is the one that must work. The generic name is accepted as the writer.
-          WRITER_KEY="${DEEPSEEK_WRITE_API_KEY:-$DEEPSEEK_API_KEY}"
-          check "DEEPSEEK write key (DEEPSEEK_WRITE_API_KEY or DEEPSEEK_API_KEY)" "$DS" deepseek-chat "$WRITER_KEY" required
-          # The review key determines whether the second review is independent. Optional, and its
-          # absence is reported as such rather than as a failure.
-          check "DEEPSEEK review key (DEEPSEEK_REVIEW_API_KEY)" "$DS" deepseek-chat "$DEEPSEEK_REVIEW_API_KEY" optional
-          check "OPENAI_API_KEY" https://api.openai.com/v1/chat/completions gpt-4o "$OPENAI_API_KEY" optional
-          if [ -z "$DEEPSEEK_REVIEW_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
-            SUMMARY="$SUMMARY\n- NOTE: no separate review credential, so the review will use the writer's own key and is not independent."
-          fi
+          # Doubao writes. Ark addresses a model by ENDPOINT ID, created in the console; passing a
+          # model name returns "model does not exist", so a missing ARK_MODEL is reported as itself
+          # rather than as a bad key.
+          check "Doubao writer (ARK_API_KEY + ARK_MODEL)" "$ARK" "$ARK_MODEL" "$ARK_API_KEY" required
+          # DeepSeek reviews. Either a dedicated review key or the generic name.
+          REVIEW_KEY="${DEEPSEEK_REVIEW_API_KEY:-$DEEPSEEK_API_KEY}"
+          check "DeepSeek reviewer (DEEPSEEK_REVIEW_API_KEY or DEEPSEEK_API_KEY)" "$DS" deepseek-chat "$REVIEW_KEY" required
+          check "OPENAI_API_KEY (optional)" https://api.openai.com/v1/chat/completions gpt-4o "$OPENAI_API_KEY" optional
           echo "ok=$OK" >> "$GITHUB_OUTPUT"
           {
             echo "summary<<EOF"
@@ -117,25 +126,31 @@ jobs:
           echo ""
           echo "=== key check ==="
           echo -e "$SUMMARY"
+          echo ""
+          echo "roles: Doubao writes, DeepSeek reviews — two vendors, which is the strongest"
+          echo "independence available because they share neither training data nor failure modes."
 
       - name: Report which secret names the pipeline reads
         if: steps.check.outputs.ok != 'true'
         run: |
           cat <<'MSG'
-          ::: A required key did not verify. The most common cause is a name mismatch, because the code
-          ::: reads exact environment variable names. These are the names it reads:
+          ::: A required credential did not verify. The most common cause is a name mismatch, because the
+          ::: code reads exact environment variable names. These are the names it reads:
           :::
-          :::   DEEPSEEK_WRITE_API_KEY   the writer   (DEEPSEEK_API_KEY also accepted)
-          :::   DEEPSEEK_REVIEW_API_KEY  the reviewer (optional; without it the review is not independent)
-          :::   DEEPSEEK_PLAN_API_KEY    the planner  (optional; falls back to the writer key)
-          :::   OPENAI_API_KEY           alternative reviewer (optional)
-          :::   FEISHU_WEBHOOK           the daily report
+          :::   ARK_API_KEY                the Doubao writer, from the Volcano Ark console
+          :::   ARK_MODEL                  the ENDPOINT ID, not the model name. Looks like ep-2026...
+          :::                              Create it in Ark under 在线推理 -> 创建推理接入点
+          :::   DEEPSEEK_REVIEW_API_KEY    the reviewer  (DEEPSEEK_API_KEY also accepted)
+          :::   DEEPSEEK_WRITE_API_KEY     optional alternate writer key, used if no Ark key exists
+          :::   OPENAI_API_KEY             optional alternative reviewer
+          :::   FEISHU_WEBHOOK             the daily report, the only channel that reaches you when
+          :::                              the computer is off
           :::
           ::: A secret named anything else - APIKEY..., MY_KEY - is stored correctly and never reaches
           ::: the pipeline, which then reports NO-KEYS.
           :::
-          ::: Other causes this step distinguishes: 401 wrong or revoked key, 402 insufficient balance
-          ::: (DeepSeek requires a funded account), 429 rate limit.
+          ::: Other causes this step distinguishes: 401 wrong or revoked key, 402 insufficient balance,
+          ::: 429 rate limit, and a key that is valid but paired with no endpoint id.
           MSG
           exit 1
 
@@ -191,7 +206,13 @@ jobs:
       - name: Run the orchestrator
         id: run
         env:
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+          OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
+          OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
+          ARK_MODEL: ${{ secrets.ARK_MODEL }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
+          DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}

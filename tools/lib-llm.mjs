@@ -37,18 +37,51 @@ const ROOT = process.cwd();
 /*
  * Providers, and the keys that can serve each one.
  *
- * The first version modelled a provider as having exactly one key, which assumed that independence in
- * review comes from using a different vendor. The operator's arrangement is different and better
- * suited to this pipeline: two keys from the same vendor, one for writing and one for reviewing. That
- * is a real separation - a second credential with its own quota, its own rate limit and its own audit
- * trail - and the earlier shape silently ignored the second key.
+ * Two shapes are supported and the operator uses both.
  *
- * So a provider now carries a list of candidate credentials in preference order, and the role decides
- * which one it gets. The reviewer is deliberately given a different key from the writer even when both
- * are DeepSeek, and a different vendor if one is configured, because either separation buys something
- * the other does not: a second key isolates quota and blame, a second vendor isolates reasoning.
+ *   Vendor separation. Doubao (Volcano Ark) writes and DeepSeek reviews. This is the stronger form of
+ *   independence: two vendors do not share training data, alignment choices or failure modes, so a
+ *   blind spot in one is unlikely to be repeated in the other.
+ *
+ *   Credential separation. Two keys from one vendor, one per role. Weaker on reasoning, stronger on
+ *   operations - separate quota, separate rate limit, separate revocation, and an audit trail that can
+ *   attribute a spend to a key.
+ *
+ * A provider therefore carries candidate credentials per role in preference order, and the role
+ * decides which one it gets. Getting this wrong is quiet rather than loud: a reviewer handed the
+ * writer's own credential reports itself as independent and is not.
  */
 const PROVIDERS = {
+  /*
+   * Volcano Ark, the Doubao endpoint.
+   *
+   * Two things differ from the OpenAI-shaped APIs and both cause a 400 rather than a clear message.
+   * The base URL is Ark's, not OpenAI's. And the `model` field takes an ENDPOINT ID - `ep-...` - which
+   * is created in the Ark console from a model and carries the deployment's settings. Passing
+   * "doubao-pro-32k" produces "the model does not exist", because on Ark the model name is not
+   * addressable; the endpoint is.
+   */
+  volces: {
+    url: process.env.ARK_BASE_URL ? `${process.env.ARK_BASE_URL.replace(/\/$/, "")}/chat/completions` : "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+    /*
+     * No default, and deliberately no fallback to any key variable: an endpoint id is `ep-...` and a
+     * key is `sk-...` or `ark-...`. An earlier version fell back to a key name here, which would have
+     * sent an API key in the model field - a silent misconfiguration that returns a 400 and looks like
+     * a bad key. The preflight reports a missing endpoint id as itself.
+     */
+    model: process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
+    /* Ark bills in CNY. These are the published Doubao Pro rates converted at 7.1 CNY/USD so the meter
+       stays in one currency; the invoice is authoritative. */
+    inPerM: 0.11,
+    outPerM: 0.28,
+    keys: {
+      writer: ["ARK_API_KEY", "DOUBAO_API_KEY", "VOLCES_API_KEY", "OWNER_KEY_1"],
+      reviewer: ["ARK_REVIEW_API_KEY", "ARK_API_KEY", "DOUBAO_API_KEY", "OWNER_KEY_1"],
+      planner: ["ARK_API_KEY", "DOUBAO_API_KEY", "OWNER_KEY_1"],
+    },
+    /* Set when the model field is required to be an endpoint id, so the failure can be explained. */
+    needsEndpointId: true,
+  },
   deepseek: {
     url: "https://api.deepseek.com/chat/completions",
     model: process.env.DEEPSEEK_MODEL || "deepseek-chat",
@@ -56,12 +89,21 @@ const PROVIDERS = {
        an estimate. The invoice is authoritative. */
     inPerM: 0.27,
     outPerM: 1.1,
-    /* Order matters. A dedicated review key is preferred for the reviewer, a dedicated write key for
-       the writer, and the generic name is the fallback for both. */
+    /*
+     * Order matters: a dedicated review key for the reviewer, a dedicated write key for the writer.
+     * OWNER_KEY_1 and OWNER_KEY_2 are the operator's existing secrets, read so a credential stored
+     * under a generated name still reaches the pipeline.
+     *
+     * Note the deliberate cross-assignment: OWNER_KEY_2 leads the *writer* list and OWNER_KEY_1 leads
+     * the *reviewer* list. That is what makes the fallback arrangement independent when the Doubao
+     * endpoint is not configured. If both roles led with the same name the review would use the
+     * writer's own credential and report itself as independent, which is the failure this whole
+     * ordering exists to prevent.
+     */
     keys: {
-      writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY"],
-      reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY"],
-      planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY"],
+      writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OWNER_KEY_2", "OWNER_KEY_1"],
+      reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "OWNER_KEY_1", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_2"],
+      planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_1", "OWNER_KEY_2"],
     },
   },
   openai: {
@@ -101,50 +143,83 @@ export function available() {
  * ceremonial rather than independent.
  */
 export function reviewIsIndependent() {
-  const w = resolveKey("deepseek", "writer");
-  const r = resolveKey("deepseek", "reviewer", w ? [w.name] : []);
-  const wOpen = resolveKey("openai", "writer");
-  const rOpen = resolveKey("openai", "reviewer", wOpen ? [wOpen.name] : []);
-  /* Independent if the reviewer can use a key the writer does not, in either vendor. */
-  return Boolean((w && r) || (wOpen && rOpen) || (w && rOpen) || (wOpen && r));
+  /*
+   * Independence means the reviewer gets a credential, a vendor, or both, that the writer did not.
+   * Asked of the resolver rather than assumed from configuration, because the whole point is that a
+   * misconfiguration here is silent: a reviewer holding the writer's own key reports itself as
+   * independent and is not.
+   */
+  const writer = providerFor("writer");
+  const reviewer = providerFor("reviewer", writer);
+  if (!writer || !reviewer) return false;
+  if (writer !== reviewer) return true;
+  const wKey = resolveKey(writer, "writer");
+  const rKey = resolveKey(reviewer, "reviewer", wKey ? [wKey.name] : []);
+  return Boolean(rKey);
 }
 
 export function summary() {
   const lines = [];
   for (const name of Object.keys(PROVIDERS)) {
+    const p = PROVIDERS[name];
     const w = resolveKey(name, "writer");
     const r = resolveKey(name, "reviewer");
-    const model = PROVIDERS[name].model;
+    const model = p.needsEndpointId ? (p.model || "NO ENDPOINT ID SET") : p.model;
     lines.push(
-      `    ${name.padEnd(9)} writer=${(w?.name ?? "MISSING").padEnd(26)} reviewer=${(r?.name ?? "MISSING").padEnd(26)} ${model}`,
+      "    " +
+        name.padEnd(9) +
+        " writer=" + (w?.name ?? "MISSING").padEnd(24) +
+        " reviewer=" + (r?.name ?? "MISSING").padEnd(26) +
+        " " + model,
     );
   }
+  const wProv = providerFor("writer");
+  const rProv = providerFor("reviewer", wProv);
   const indep = reviewIsIndependent();
+  const cross = wProv && rProv ? `${wProv} writes, ${rProv} reviews` : "no complete role assignment";
   return (
-    `  providers usable: ${available().join(", ") || "none"}\n` +
+    "  providers usable: " + (available().join(", ") || "none") + "\n" +
     lines.join("\n") +
-    `\n    review independent: ${indep ? "yes" : "NO - the reviewer would use the writer's own key"}`
+    "\n    roles: " + cross +
+    "\n    review independent: " + (indep ? "yes" : "NO - the reviewer would use the writer's own credential")
   );
 }
 
 /*
  * Role to provider preference.
  *
- * DeepSeek first on cost. The reviewer is moved to the other vendor when one is configured, because a
- * different vendor isolates reasoning in a way a second key cannot. When both keys are DeepSeek - which
- * is the operator's setup - the separation is still real and comes from the key: separate quota,
- * separate rate limit, separate audit trail, and the ability to revoke one without the other.
+ * The operator's arrangement is that Doubao writes and DeepSeek reviews, which is vendor separation and
+ * the strongest independence available: two vendors do not share training data, alignment choices or
+ * failure modes, so a blind spot in one is unlikely to repeat in the other.
+ *
+ * The order encodes that, with a fallback per role so a missing key downgrades rather than halts - and
+ * the downgrade is announced in the summary rather than left to be discovered.
+ *
+ * The reviewer is additionally kept away from whatever provider the writer actually used, compared by
+ * provider name rather than assumed, so the arrangement survives a configuration change.
  */
-function pickProvider(role, avoid) {
+const ROLE_PREFERENCE = {
+  writer: ["volces", "deepseek", "openai"],
+  planner: ["volces", "deepseek", "openai"],
+  reviewer: ["deepseek", "openai", "volces"],
+};
+
+export function providerFor(role, avoid) {
   const have = available();
   if (!have.length) return null;
-  if (role === "reviewer" && avoid) {
-    const other = have.find((p) => p !== avoid);
-    /* Only switch vendors when the other one actually has a reviewer-capable key. */
-    if (other && resolveKey(other, "reviewer")) return other;
-  }
-  if (have.includes("deepseek") && resolveKey("deepseek", role)) return "deepseek";
-  return have.find((p) => resolveKey(p, role)) ?? null;
+  const order = ROLE_PREFERENCE[role] ?? ROLE_PREFERENCE.writer;
+  const usable = (name) =>
+    have.includes(name) &&
+    Boolean(resolveKey(name, role)) &&
+    /* A provider that needs an endpoint id and has none cannot be called, so it is not chosen. */
+    !(PROVIDERS[name].needsEndpointId && !PROVIDERS[name].model);
+
+  for (const name of order) if (name !== avoid && usable(name)) return name;
+  /* Nothing matched with the exclusion applied. The exclusion is dropped before the review is,
+     because a same-vendor review is worth more than none - provided it is labelled as such, which
+     both the caller and the notification do. */
+  for (const name of order) if (usable(name)) return name;
+  return null;
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -167,7 +242,7 @@ function meter(entry) {
  * a catch block at each call site, where it would be made differently each time.
  */
 export async function ask({ role = "writer", messages, system, temperature = 0.2, maxTokens = 8192, avoidProvider = null, retries = 2 }) {
-  const providerName = pickProvider(role, avoidProvider);
+  const providerName = providerFor(role, avoidProvider);
   if (!providerName) {
     meter({ at: new Date().toISOString(), role, ok: false, error: "no provider key present", providers: available() });
     return {
