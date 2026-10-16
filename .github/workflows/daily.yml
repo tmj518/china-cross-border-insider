@@ -85,6 +85,31 @@ jobs:
             echo "ok=false" >> "$GITHUB_OUTPUT"
             echo "::error::a provider did not verify; see the lines above"
           fi
+          # The failure has to be readable without opening a log viewer and without downloading an
+          # artifact from a private repository, which needs a token. Writing it into the step summary
+          # puts the whole output on the run page itself, which is the first thing anyone sees and the
+          # only channel that needs no credential at all.
+          {
+            echo "## Provider check"
+            echo ""
+            if [ "$CODE" = "0" ]; then
+              echo "Both providers answered."
+            else
+              echo "**A provider did not verify.** The block below is the entire output."
+            fi
+            echo ""
+            echo '```'
+            cat /tmp/provider-test.txt
+            echo '```'
+            echo ""
+            echo "Names the pipeline reads, first match wins:"
+            echo ""
+            echo '| role | names |'
+            echo '| --- | --- |'
+            echo '| writer key | ARK_API_KEY, DOUBAO_API_KEY, OWNER_KEY_1 |'
+            echo '| writer model | ARK_MODEL, DOUBAO_ENDPOINT - an ep-... endpoint id, not a model name |'
+            echo '| reviewer key | DEEPSEEK_REVIEW_API_KEY, DEEPSEEK_API_KEY, OWNER_KEY_2 |'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Report which secret names the pipeline reads
         if: steps.check.outputs.ok != 'true'
