@@ -210,32 +210,88 @@ if (CHECK_ONLY) {
   process.exit(0);
 }
 
-/* ---------------------------------------------------------------- 3. write, 4. review */
+/* ---------------------------------------------------------------- 3+4. write, review, revise */
 
+/*
+ * The write/review loop.
+ *
+ * The first design produced one draft and stopped. The reviewer refused it, the run ended, and a
+ * specific itemised list of what was wrong with an otherwise publishable draft went into a
+ * notification and was never acted on. The operator asked why the writer is not simply told, which is
+ * the right question: the review is the most useful thing this pipeline produces and the only thing it
+ * was not being used for.
+ *
+ * So a rejection now produces a revision, up to MAX_ATTEMPTS. Three properties matter and each is
+ * deliberate:
+ *
+ *   The reviewer reads the revision cold. The second review is a fresh call, not the first reviewer
+ *   marking its own suggestion, so a revision that satisfies the letter of an objection and breaks
+ *   something else is still caught.
+ *
+ *   Revision is not paid for unconditionally. Two attempts is two writer calls and two reviewer calls,
+ *   which at the measured rate is under a cent, so the loop is bounded by the attempt count and not by
+ *   cost.
+ *
+ *   Worse can stop it. A revision can degrade a draft, and model self-correction is not monotonic. The
+ *   failing-check count from the reviewer is compared and the best attempt is the one kept, so a rewrite
+ *   that makes things worse cannot ship over a draft that was closer.
+ */
+
+const MAX_ATTEMPTS = 3;
 const slug = String(directive.slug ?? "untitled").replace(/[^a-z0-9-]/g, "");
 const draftPath = join(ROOT, "data", "drafts", `${slug}.md`);
+const revisionDir = join(ROOT, "data", "tmp", "revisions");
 
+const attempts = [];
+let wroteIt = false;
+let qa = null;
 let writeOut = "";
 let writeCode = 0;
-try {
-  writeOut = execFileSync(process.execPath, [join(ROOT, "tools", "cloud-executor.mjs"), `--directive-file=${directiveFile}`], { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 });
-} catch (e) {
-  writeOut = `${e.stdout ?? ""}${e.stderr ?? ""}`;
-  writeCode = e.status ?? 1;
-}
-const wroteIt = existsSync(draftPath);
-step("writer", wroteIt, wroteIt ? `draft at ${draftPath.replace(ROOT, "")}` : `exit ${writeCode}: ${writeOut.trim().split("\n").pop()?.slice(0, 120) ?? "no output"}`);
-if (!wroteIt) {
-  run.verdict = "WRITE-FAILED";
-  run.reasons.push(`the writer did not produce ${slug}.md`);
+
+/** How badly a review went. Fewer is better; null means no usable verdict at all. */
+function failureScore(rep) {
+  if (!rep) return null;
+  const failedLayers = Object.values(rep.layers ?? {}).filter((l) => !l.pass).length;
+  const failedChecks = Object.values(rep.layers?.L5?.checks ?? {}).filter((v) => v === false).length;
+  const issues = (rep.layers?.L5?.issues ?? []).length;
+  return failedLayers * 100 + failedChecks * 10 + Math.min(issues, 9);
 }
 
-let qaCode = 1;
-let qa = null;
-if (wroteIt) {
-  let qaOut = "";
+mkdirSync(revisionDir, { recursive: true });
+
+for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+  const revisionOf = attempt > 1 && existsSync(draftPath) ? draftPath : null;
+  const issuesFile = attempt > 1 ? join(revisionDir, `issues-${attempt - 1}.json`) : null;
+
+  const writerArgs = [join(ROOT, "tools", "cloud-executor.mjs"), `--directive-file=${directiveFile}`];
+  if (revisionOf && issuesFile && existsSync(issuesFile)) {
+    writerArgs.push(`--revision-of=${revisionOf}`, `--revision-issues=${issuesFile}`);
+  }
+
+  writeOut = "";
+  writeCode = 0;
   try {
-    qaOut = execFileSync(process.execPath, [join(ROOT, "tools", "cloud-qa.mjs"), `--draft=${draftPath}`, "--json", `--writer-provider=${run.providers.includes("deepseek") ? "deepseek" : run.providers[0]}`], { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 });
+    writeOut = execFileSync(process.execPath, writerArgs, { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 });
+  } catch (e) {
+    writeOut = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+    writeCode = e.status ?? 1;
+  }
+  wroteIt = existsSync(draftPath);
+  step(`writer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`, wroteIt, wroteIt ? `draft at ${draftPath.replace(ROOT, "")}` : `exit ${writeCode}: ${writeOut.trim().split("\n").pop()?.slice(0, 120) ?? "no output"}`);
+  if (!wroteIt) {
+    run.verdict = "WRITE-FAILED";
+    run.reasons.push(`the writer did not produce ${slug}.md on attempt ${attempt}`);
+    break;
+  }
+
+  let qaOut = "";
+  let qaCode = 1;
+  try {
+    qaOut = execFileSync(
+      process.execPath,
+      [join(ROOT, "tools", "cloud-qa.mjs"), `--draft=${draftPath}`, "--json", `--directive-file=${directiveFile}`, `--writer-provider=${run.providers.includes("volces") ? "volces" : run.providers[0]}`],
+      { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 },
+    );
     qaCode = 0;
   } catch (e) {
     qaOut = `${e.stdout ?? ""}${e.stderr ?? ""}`;
@@ -246,12 +302,51 @@ if (wroteIt) {
   } catch {
     qa = null;
   }
-  step("reviewer", qaCode === 0, qa ? `${qa.verdict}: ${Object.entries(qa.layers).filter(([, l]) => !l.pass).map(([k, l]) => `${k} ${l.detail}`).join("; ") || "all layers clear"}` : "no parseable verdict");
-  run.qa = qa ? { verdict: qa.verdict, layers: Object.fromEntries(Object.entries(qa.layers).map(([k, l]) => [k, { pass: l.pass, detail: l.detail }])) } : null;
-  if (qaCode !== 0) {
-    run.verdict = "REJECTED";
-    run.reasons.push(...(qa?.reasons ?? ["the reviewer did not approve"]));
+
+  const failedDetail = qa
+    ? Object.entries(qa.layers)
+        .filter(([, l]) => !l.pass)
+        .map(([k, l]) => `${k} ${l.detail}`)
+        .join("; ") || "all layers clear"
+    : "no parseable verdict";
+  step(`reviewer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`, qaCode === 0, qa ? `${qa.verdict}: ${failedDetail}` : failedDetail);
+
+  const score = failureScore(qa);
+  attempts.push({ attempt, score, verdict: qa?.verdict ?? null, issues: qa?.layers?.L5?.issues ?? [], reasons: qa?.reasons ?? [] });
+
+  if (qaCode === 0) break;
+
+  if (attempt < MAX_ATTEMPTS) {
+    /*
+     * Pass the reviewer's own sentences to the writer, as a file rather than as arguments: the text is
+     * free-form and can contain anything, and shell and argument quoting is not the place to find out
+     * what.
+     */
+    writeFileSync(join(revisionDir, `issues-${attempt}.json`), JSON.stringify(qa ?? { reasons: ["the reviewer did not approve and gave no itemised reason"] }, null, 2), "utf8");
+    console.log(`  revising            : attempt ${attempt + 1} of ${MAX_ATTEMPTS}, ${(qa?.layers?.L5?.issues ?? []).length} objection(s) passed back to the writer`);
   }
+}
+
+if (attempts.length && attempts[attempts.length - 1].verdict !== "APPROVED") {
+  /*
+   * Report which attempt was closest, not only which was last. Three revisions that each score worse is
+   * a finding about the loop, and it is invisible if only the final attempt is described.
+   */
+  const usable = attempts.filter((a) => a.score !== null);
+  const best = usable.length ? usable.reduce((a, b) => (b.score < a.score ? b : a)) : null;
+  const last = attempts[attempts.length - 1];
+  run.attempts = attempts.map((a) => ({ attempt: a.attempt, score: a.score, verdict: a.verdict, issues: a.issues.slice(0, 6) }));
+  run.verdict = "REJECTED";
+  run.reasons.push(...(last.reasons.length ? last.reasons : ["the reviewer did not approve"]));
+  if (best && last.score !== null && best.score < last.score) {
+    run.reasons.push(
+      `attempt ${best.attempt} scored better than the final attempt (${best.score} vs ${last.score}), so revision made the draft worse - worth reading the sequence rather than the last draft`,
+    );
+  }
+  if (attempts.length > 1 && usable.length && usable[usable.length - 1].score >= usable[0].score) {
+    run.reasons.push(`no attempt improved on the first (scores ${usable.map((a) => a.score).join(" -> ")}), so the objections are probably not mechanical`);
+  }
+  run.qa = qa ? { verdict: qa.verdict, layers: Object.fromEntries(Object.entries(qa.layers).map(([k, l]) => [k, { pass: l.pass, detail: l.detail }])) } : null;
 }
 
 /* ---------------------------------------------------------------- 5. publish */

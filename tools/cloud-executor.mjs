@@ -119,12 +119,21 @@ const RULES = `Non-negotiable rules.
 5. Write in plain declarative sentences. State what happens. Never hedge.
 6. The reader is an importer or a foreign merchant, not a lawyer. Give them the number and the action.`;
 
+/**
+ * Read a `--name=value` argument.
+ *
+ * Module level rather than local to parseDirective, because the revision round reads two more flags and
+ * a copy inside one function is invisible to the other. The first version defined it inside
+ * parseDirective only, and the revision path failed with "flag is not defined" on its first run -
+ * which is the good outcome, since the alternative was a silent fallback to a fresh article instead of
+ * a revision.
+ */
+function flag(name, dflt) {
+  const hit = process.argv.slice(2).find((a) => a.startsWith(`--${name}=`));
+  return hit ? hit.slice(name.length + 3) : dflt;
+}
+
 function parseDirective() {
-  const args = process.argv.slice(2);
-  const flag = (name, dflt) => {
-    const hit = args.find((a) => a.startsWith(`--${name}=`));
-    return hit ? hit.slice(name.length + 3) : dflt;
-  };
   const file = flag("directive-file", null);
   if (file && existsSync(file)) return JSON.parse(readFileSync(file, "utf8"));
   const keyword = flag("keyword", null);
@@ -176,7 +185,7 @@ async function main() {
   }
 
   const examples = exemplars();
-  const task = `Write one article for Landed Math.
+  const task0 = `Write one article for Landed Math.
 
 DIRECTIVE
   slug      : ${directive.slug}
@@ -207,11 +216,98 @@ ${examples[1] ? `\n--- EXEMPLAR 2 ---\n${examples[1].slice(0, 9000)}` : ""}` : "
 Return the complete markdown file including its frontmatter, and nothing else. Do not wrap it in a
 code fence and do not add commentary before or after it.`;
 
-  console.log(`EXECUTOR  slug=${directive.slug}`);
+  /*
+   * A revision round.
+   *
+   * The first design produced one draft and stopped: the reviewer refused it and the run ended with a
+   * notification. That wastes the most valuable thing the pipeline generates - a specific, itemised
+   * list of what is wrong with a draft that was otherwise good enough to write - and it means a draft
+   * fails for a reason nobody acts on.
+   *
+   * The operator asked the obvious question: when the review rejects it, why not tell the writer and
+   * have it correct itself? So the same model that wrote the draft is asked to fix it, with the
+   * reviewer's own sentences in front of it. The reviewer then reads the revision cold, because the
+   * second review is a fresh call and not the first reviewer marking its own suggestion.
+   *
+   * The writer is told, explicitly, that it may only change what the issues name and may not introduce
+   * a figure that was not in the original bundle. A revision instruction is an invitation to invent,
+   * and this closes that door the same way the first prompt does.
+   */
+  const revisionOf = flag("revision-of", null);
+  const revisionIssues = flag("revision-issues", null);
+
+  let task = task0;
+
+  console.log(`EXECUTOR  slug=${directive.slug}${revisionOf ? "  (revision)" : ""}`);
   console.log(providerSummary());
   console.log(`  figures handed over : ${sourced.length}`);
   console.log(`  exemplars           : ${examples.length}`);
+  if (revisionOf) console.log(`  revising            : ${revisionOf}`);
   console.log("");
+
+  if (revisionOf && existsSync(revisionOf)) {
+    const previous = readFileSync(revisionOf, "utf8");
+    const issues = revisionIssues
+      ? (() => {
+          /*
+           * Accept either shape. The orchestrator writes the QA report verbatim, so the fields are at
+           * the top level; an earlier version of this looked only under `qa.layers`, which is where they
+           * sit in the orchestrator's own summary. It silently fell back to the first `reason` string and
+           * passed one objection to the writer instead of the full list - a revision told to fix one
+           * thing when five are wrong.
+           */
+          try {
+            const parsed = JSON.parse(readFileSync(revisionIssues, "utf8"));
+            const l5 = parsed?.layers?.L5 ?? parsed?.qa?.layers?.L5 ?? null;
+            const list = l5?.issues ?? parsed?.qa?.layers?.L5?.issues ?? [];
+            if (list.length) return list.map(String);
+            return (parsed?.reasons ?? []).map(String);
+          } catch {
+            return [String(revisionIssues)];
+          }
+        })()
+      : [];
+    console.log(`  issues to fix       : ${issues.length}`);
+    for (const i of issues.slice(0, 6)) console.log(`      - ${String(i).slice(0, 130)}`);
+
+    task = `You wrote a draft for Landed Math. A separate reviewer, using a different model from a
+different company, read it and refused to approve it. Fix exactly what it named and change nothing else.
+
+THE REVIEWER'S OBJECTIONS, most serious first:
+${issues.length ? issues.map((i, n) => `${n + 1}. ${i}`).join("\n") : "(no itemised list was recorded; re-read the whole draft against the rules below and correct any violation)"}
+
+$(revisionOf ? "")THE REVIEWER'S CHECKS THAT FAILED:
+${JSON.stringify((() => { try { return JSON.parse(readFileSync(revisionIssues, "utf8"))?.qa?.layers?.L5?.checks ?? {}; } catch { return {}; } })(), null, 2)}
+
+THE REVIEWER'S SUMMARY:
+${(() => { try { return JSON.parse(readFileSync(revisionIssues, "utf8"))?.qa?.layers?.L5?.summary ?? "(none)"; } catch { return "(none)"; } })()}
+
+HOW TO REVISE
+
+  - Address every objection above. If one is unclear, remove the sentence it refers to rather than
+    guessing at a fix.
+  - Do not add a number. Every figure must already appear in the bundle below, with the same value,
+    unit, period, source and retrieval date. A revision is the single most likely place for an invented
+    number to enter, because the instruction to improve something invites filling gaps.
+  - Do not invent an experience, a quotation, a person or a panel of data. The first person is banned.
+  - Keep everything the reviewer did not object to. A revision that rewrites the whole article loses the
+    parts that were already approved and usually introduces new problems.
+  - Return the complete corrected markdown file, frontmatter included, and nothing else.
+
+${STRUCTURE}
+
+${RULES}
+
+THE FIGURES - the only numbers permitted:
+${JSON.stringify(sourced, null, 2)}
+
+THE BIBLIOGRAPHY:
+${JSON.stringify(directive.sources ?? [], null, 2)}
+
+THE DRAFT THE REVIEWER REJECTED
+
+${previous.slice(0, 60000)}`;
+  }
 
   const r = await askJson({
     role: "writer",
