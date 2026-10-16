@@ -25,7 +25,7 @@
  * from a text generator pointed at a keyword, and it is the mechanical half of the rule that a number
  * must be traceable to a document.
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 import { askJson, summary as providerSummary } from "./lib-llm.mjs";
 
@@ -66,6 +66,62 @@ export function extractArticle(r, fallbackSlug) {
     notes: `unwrapped markdown; title read as "${title.slice(0, 60)}"`,
     shape: "markdown",
   };
+}
+
+/**
+ * Check the frontmatter against the content schema's hard limits before anything downstream sees it.
+ *
+ * The schema is not advisory. `subtitle: z.string().max(160)` means a 161-character subtitle fails
+ * Astro's content validation, and a failed content validation fails the *whole build* - every page,
+ * not just the new one. On 2026-10-17 a generated draft carried a subtitle over the limit, the build
+ * died with InvalidContentEntryDataError, and the pipeline reported "the reviewer did not approve":
+ * the review had been handed a file that could not compile, so its verdict described the build rather
+ * than the article. Two symptoms, one cause, and the cause was three lines from the top.
+ *
+ * The prompt states the limits. The prompt is not a guarantee. This is the check that makes it one, and
+ * it runs before the draft is written anywhere: a draft that cannot build is not a draft, and passing
+ * it to a reviewer wastes a model call and produces a report about the wrong thing.
+ *
+ * Deliberately strict about the declared limits rather than about what the schema happens to accept,
+ * because the schema has been tightened before and a document that only just passed is the one that
+ * breaks later.
+ */
+const LIMITS = { title: 120, subtitle: 160, description: 300 };
+
+function frontmatter(article) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(article);
+  if (!m) return null;
+  const fields = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const kv = /^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    let v = kv[2].trim();
+    if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1).replace(/\\"/g, '"');
+    fields[kv[1]] = v;
+  }
+  return fields;
+}
+
+function schemaViolations(article) {
+  const f = frontmatter(article);
+  const out = [];
+  if (!f) return ["no frontmatter block: the file must open with --- on its own line and close it the same way"];
+  for (const [field, max] of Object.entries(LIMITS)) {
+    const v = f[field];
+    if (v == null) {
+      out.push(`${field} is missing`);
+      continue;
+    }
+    /*
+     * Counted in code points, not UTF-16 units, because the schema counts characters and an emoji or a
+     * Chinese character is one character to Zod and two to String.length. Getting this wrong in the
+     * strict direction would reject a valid draft.
+     */
+    const n = [...v].length;
+    if (n > max) out.push(`${field} is ${n} characters, the schema allows ${max}: "${v.slice(0, 120)}"`);
+    if (!v) out.push(`${field} is empty`);
+  }
+  return out;
 }
 
 /** The structure, as a specification the model is asked to satisfy. */
@@ -246,6 +302,18 @@ code fence and do not add commentary before or after it.`;
   console.log("");
 
   if (revisionOf && existsSync(revisionOf)) {
+    /*
+     * Keep the draft being revised. The revision overwrites the same path, and a revision that fails
+     * validation would otherwise leave nothing behind - the good draft destroyed by the attempt to
+     * improve it. The orchestrator picks the best attempt by score, which requires the earlier drafts to
+     * still exist.
+     */
+    const keepDir = join(ROOT, "data", "tmp", "revisions");
+    mkdirSync(keepDir, { recursive: true });
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    copyFileSync(revisionOf, join(keepDir, `kept-${stamp}.md`));
+    console.log(`  kept previous       : data/tmp/revisions/kept-${stamp}.md`);
+
     const previous = readFileSync(revisionOf, "utf8");
     const issues = revisionIssues
       ? (() => {
@@ -335,16 +403,42 @@ ${previous.slice(0, 60000)}`;
   }
 
   const outSlug = String(extracted.slug ?? directive.slug).replace(/[^a-z0-9-]/g, "").slice(0, 80);
-  mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
-  const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
-  writeFileSync(outFile, extracted.article, "utf8");
+  const violations = schemaViolations(extracted.article);
 
-  const words = (extracted.article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
+  /*
+   * A draft that cannot build is not written out at all. Writing it and letting the next stage discover
+   * it is how a schema violation became a report about the review.
+   */
   console.log(`  provider  : ${r.provider} / ${r.model}`);
   console.log(`  shape     : ${extracted.shape}`);
   if (extracted.notes) console.log(`  notes     : ${String(extracted.notes).slice(0, 200)}`);
   console.log(`  tokens    : ${r.usage?.prompt_tokens ?? "?"} in, ${r.usage?.completion_tokens ?? "?"} out`);
   console.log(`  estimated : $${r.estimatedUsd ?? "?"}`);
+
+  if (violations.length) {
+    console.log("");
+    console.log(`  REFUSED - the draft would fail the content schema, which fails the whole build:`);
+    for (const v of violations) console.log(`      - ${v}`);
+    console.log("");
+    console.log("  Nothing was written. The limits are in src/content.config.ts and they apply to every");
+    console.log("  page, so a draft that breaks one takes the site down rather than the article.");
+    /* The violations are structured so the orchestrator can pass them back as a revision order. */
+    const reportPath = process.env.EXECUTOR_VIOLATIONS;
+    if (reportPath) {
+      writeFileSync(
+        reportPath,
+        JSON.stringify({ layers: { L5: { pass: false, issues: violations, summary: "the draft violates the content schema" } }, reasons: violations }, null, 2),
+        "utf8",
+      );
+    }
+    process.exit(4);
+  }
+
+  mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
+  const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
+  writeFileSync(outFile, extracted.article, "utf8");
+
+  const words = (extracted.article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
   console.log(`  written   : ${outFile.replace(/\\/g, "/").replace(ROOT.replace(/\\/g, "/") + "/", "")}`);
   console.log(`  words     : ${words}`);
   console.log("");

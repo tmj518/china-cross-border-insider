@@ -270,17 +270,56 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
 
   writeOut = "";
   writeCode = 0;
+  /*
+   * The executor writes its schema violations here rather than only printing them, so they can be
+   * handed straight back as the next revision order. A draft that fails the content schema has not been
+   * reviewed - it could not build - and on 2026-10-17 that distinction was lost: the build error was
+   * reported as "the reviewer did not approve", which pointed at the reviewer instead of at a subtitle
+   * three characters too long.
+   */
+  const violationsFile = join(revisionDir, `violations-${attempt}.json`);
   try {
-    writeOut = execFileSync(process.execPath, writerArgs, { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 });
+    writeOut = execFileSync(process.execPath, writerArgs, {
+      encoding: "utf8",
+      timeout: 1800000,
+      maxBuffer: 64 * 1024 * 1024,
+      env: { ...process.env, EXECUTOR_VIOLATIONS: violationsFile },
+    });
   } catch (e) {
     writeOut = `${e.stdout ?? ""}${e.stderr ?? ""}`;
     writeCode = e.status ?? 1;
   }
   wroteIt = existsSync(draftPath);
-  step(`writer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`, wroteIt, wroteIt ? `draft at ${draftPath.replace(ROOT, "")}` : `exit ${writeCode}: ${writeOut.trim().split("\n").pop()?.slice(0, 120) ?? "no output"}`);
+  step(
+    `writer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`,
+    wroteIt,
+    wroteIt
+      ? `draft at ${draftPath.replace(ROOT, "")}`
+      : writeCode === 4
+        ? `refused: the draft violates the content schema and would fail the whole build`
+        : `exit ${writeCode}: ${writeOut.trim().split("\n").pop()?.slice(0, 120) ?? "no output"}`,
+  );
   if (!wroteIt) {
+    if (writeCode === 4 && attempt < MAX_ATTEMPTS) {
+      /*
+       * A schema violation is the most mechanically fixable rejection there is: the field, the actual
+       * length and the limit are all known and exact. It is worth a revision even though no review ran.
+       */
+      if (existsSync(violationsFile)) {
+        writeFileSync(join(revisionDir, `issues-${attempt}.json`), readFileSync(violationsFile), "utf8");
+        console.log(`  revising            : attempt ${attempt + 1} of ${MAX_ATTEMPTS}, the schema violations are passed back`);
+        continue;
+      }
+      run.verdict = "WRITE-FAILED";
+      run.reasons.push(`the writer produced a draft that violates the content schema and the violations were not recorded, so there is nothing to revise against`);
+      break;
+    }
     run.verdict = "WRITE-FAILED";
-    run.reasons.push(`the writer did not produce ${slug}.md on attempt ${attempt}`);
+    run.reasons.push(
+      writeCode === 4
+        ? `the writer's draft violates the content schema on every attempt (${MAX_ATTEMPTS}), so the limits are not reaching the model`
+        : `the writer did not produce ${slug}.md on attempt ${attempt}`,
+    );
     break;
   }
 
