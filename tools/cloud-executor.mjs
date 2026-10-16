@@ -13,9 +13,9 @@
  * The structure is fifteen frontmatter fields and ten body sections with rules attached to each: the
  * confidence section's three headings must be exactly `Confirmed.` / `Inferred.` / `What would change
  * my mind.`; there must be at least one blockquote; the FAQ answers run 80 to 150 words; `may` and
- * `could` are blocked outright, including the month. Describing that produces something close and
- * wrong. Two published articles are passed in full as the shape to match, with the instruction to
- * follow the form and replace every fact.
+ * `could` are blocked outright. Describing that produces something close and wrong. Two published
+ * articles are passed in full as the shape to match, with the instruction to follow the form and
+ * replace every fact.
  *
  * ## What it refuses to do
  *
@@ -31,74 +31,44 @@ import { askJson, summary as providerSummary } from "./lib-llm.mjs";
 
 const ROOT = process.cwd();
 const BLOG = join(ROOT, "src", "content", "blog");
-const args = process.argv.slice(2);
-const flag = (name, dflt) => {
-  const hit = args.find((a) => a.startsWith(`--${name}=`));
-  return hit ? hit.slice(name.length + 3) : dflt;
-};
-
-/* ---------------------------------------------------------------- the directive */
-
-let directive = null;
-const directiveFile = flag("directive-file", null);
-if (directiveFile && existsSync(directiveFile)) {
-  directive = JSON.parse(readFileSync(directiveFile, "utf8"));
-} else {
-  const keyword = flag("keyword", null);
-  if (keyword) {
-    directive = {
-      slug: flag("slug", keyword.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60)),
-      title_idea: flag("title", keyword),
-      keyword,
-      angle: flag("angle", ""),
-      category: flag("category", "trade-policy"),
-      audience: flag("audience", "importer"),
-      figures: [],
-      sources: [],
-    };
-  }
-}
-
-if (!directive) {
-  console.log("usage: node tools/cloud-executor.mjs --directive-file=data/tmp/directive.json");
-  console.log("       node tools/cloud-executor.mjs --keyword=... --angle=...");
-  process.exit(2);
-}
-
-/* ---------------------------------------------------------------- refuse an unsourced brief */
-
 const MIN_FIGURES = 5;
-const figures = Array.isArray(directive.figures) ? directive.figures : [];
-const sourced = figures.filter((f) => f && f.value && f.source && f.retrieved);
-if (sourced.length < MIN_FIGURES) {
-  console.log(`REFUSED - the directive carries ${sourced.length} sourced figure(s), the gate requires ${MIN_FIGURES}.`);
-  console.log("");
-  console.log("  A writer told to produce an article will produce one, and the numbers it cannot find it");
-  console.log("  will invent in the right format. The instruction to this module is therefore that it");
-  console.log("  writes only from figures it was handed. Populate the directive first - by reading the");
-  console.log("  source documents and archiving them with tools/store-source.mjs - and run this again.");
-  console.log("");
-  console.log("  Each figure needs all five parts: value, unit, period, source, retrieved.");
-  process.exit(3);
-}
 
-/* ---------------------------------------------------------------- the example to match */
-
-function pickExemplars(n = 2) {
-  const out = [];
-  for (const f of readdirSync(BLOG).filter((x) => x.endsWith(".md"))) {
-    const t = readFileSync(join(BLOG, f), "utf8");
-    if (/^draft:\s*true/m.test(t)) continue;
-    if (!/^information_gain:\s*"?custom-calculation/m.test(t)) continue;
-    out.push(t);
-    if (out.length >= n) break;
+/**
+ * Pull the article out of a model response, accepting two shapes.
+ *
+ * Asking for JSON does not guarantee getting it. On the first live run Doubao returned the article as
+ * plain markdown with no wrapper, and the run failed with WRITE-FAILED while a complete article sat in
+ * the response. The article was there; only the envelope was missing, and packaging is the part this
+ * code can do for itself.
+ *
+ *   1. JSON with an `article` key - the shape requested.
+ *   2. Raw markdown beginning with frontmatter - what a model produces when it reads the instructions
+ *      as a specification rather than a protocol. Detected by a leading `---` followed by a `title:`
+ *      within the first block, which is specific enough that prose cannot be mistaken for it.
+ *   3. The same markdown inside a code fence, which some models add unprompted.
+ *
+ * Anything else returns null, and the caller reports what the response actually began with rather than
+ * a generic parse error.
+ */
+export function extractArticle(r, fallbackSlug) {
+  if (r?.json?.article) {
+    return { article: r.json.article, slug: r.json.slug ?? fallbackSlug, notes: r.json.notes, shape: "json" };
   }
-  return out;
+  const raw = String(r?.text ?? "").trim();
+  if (!raw) return null;
+  const unfenced = /^```(?:markdown|md)?\s*\n([\s\S]*?)\n```\s*$/.exec(raw)?.[1] ?? raw;
+  const looksLikeArticle = unfenced.startsWith("---") && /^title:\s/m.test(unfenced.slice(0, 3000));
+  if (!looksLikeArticle) return null;
+  const title = /^title:\s*"?(.+?)"?\s*$/m.exec(unfenced)?.[1] ?? "";
+  return {
+    article: unfenced,
+    slug: fallbackSlug,
+    notes: `unwrapped markdown; title read as "${title.slice(0, 60)}"`,
+    shape: "markdown",
+  };
 }
-const exemplars = pickExemplars();
 
-/* ---------------------------------------------------------------- the instruction */
-
+/** The structure, as a specification the model is asked to satisfy. */
 const STRUCTURE = `The article must have this exact shape.
 
 Frontmatter fields, all required: title, subtitle, description, publishDate, reviewBy, stakes,
@@ -149,7 +119,64 @@ const RULES = `Non-negotiable rules.
 5. Write in plain declarative sentences. State what happens. Never hedge.
 6. The reader is an importer or a foreign merchant, not a lawyer. Give them the number and the action.`;
 
-const task = `Write one article for Landed Math.
+function parseDirective() {
+  const args = process.argv.slice(2);
+  const flag = (name, dflt) => {
+    const hit = args.find((a) => a.startsWith(`--${name}=`));
+    return hit ? hit.slice(name.length + 3) : dflt;
+  };
+  const file = flag("directive-file", null);
+  if (file && existsSync(file)) return JSON.parse(readFileSync(file, "utf8"));
+  const keyword = flag("keyword", null);
+  if (!keyword) return null;
+  return {
+    slug: flag("slug", keyword.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60)),
+    title_idea: flag("title", keyword),
+    keyword,
+    angle: flag("angle", ""),
+    category: flag("category", "trade-policy"),
+    audience: flag("audience", "importer"),
+    figures: [],
+    sources: [],
+  };
+}
+
+function exemplars(n = 2) {
+  const out = [];
+  for (const f of readdirSync(BLOG).filter((x) => x.endsWith(".md"))) {
+    const t = readFileSync(join(BLOG, f), "utf8");
+    if (/^draft:\s*true/m.test(t)) continue;
+    if (!/^information_gain:\s*"?custom-calculation/m.test(t)) continue;
+    out.push(t);
+    if (out.length >= n) break;
+  }
+  return out;
+}
+
+async function main() {
+  const directive = parseDirective();
+  if (!directive) {
+    console.log("usage: node tools/cloud-executor.mjs --directive-file=data/tmp/directive.json");
+    console.log("       node tools/cloud-executor.mjs --keyword=... --angle=...");
+    process.exit(2);
+  }
+
+  const figures = Array.isArray(directive.figures) ? directive.figures : [];
+  const sourced = figures.filter((f) => f && f.value && f.source && f.retrieved);
+  if (sourced.length < MIN_FIGURES) {
+    console.log(`REFUSED - the directive carries ${sourced.length} sourced figure(s), the gate requires ${MIN_FIGURES}.`);
+    console.log("");
+    console.log("  A writer told to produce an article will produce one, and the numbers it cannot find it");
+    console.log("  will invent in the right format. The instruction to this module is therefore that it");
+    console.log("  writes only from figures it was handed. Populate the directive first - by reading the");
+    console.log("  source documents and archiving them with tools/store-source.mjs - and run this again.");
+    console.log("");
+    console.log("  Each figure needs all five parts: value, unit, period, source, retrieved.");
+    process.exit(3);
+  }
+
+  const examples = exemplars();
+  const task = `Write one article for Landed Math.
 
 DIRECTIVE
   slug      : ${directive.slug}
@@ -169,57 +196,64 @@ ${JSON.stringify(sourced, null, 2)}
 THE BIBLIOGRAPHY - cite these, and only these, in the sources field:
 ${JSON.stringify(directive.sources ?? [], null, 2)}
 
-${exemplars.length ? `TWO PUBLISHED ARTICLES, for the shape only. Copy the form, the section order, the
+${examples.length ? `TWO PUBLISHED ARTICLES, for the shape only. Copy the form, the section order, the
 tone and the density. Every fact, number and name in them belongs to a different subject and must not
 appear in your article.
 
 --- EXEMPLAR 1 ---
-${exemplars[0].slice(0, 9000)}
-${exemplars[1] ? `\n--- EXEMPLAR 2 ---\n${exemplars[1].slice(0, 9000)}` : ""}` : ""}
+${examples[0].slice(0, 9000)}
+${examples[1] ? `\n--- EXEMPLAR 2 ---\n${examples[1].slice(0, 9000)}` : ""}` : ""}
 
-Return a JSON object with three keys: "slug", "article" (the complete markdown file including
-frontmatter), and "notes" (anything you could not do, in one or two sentences). Return only the JSON.`;
+Return the complete markdown file including its frontmatter, and nothing else. Do not wrap it in a
+code fence and do not add commentary before or after it.`;
 
-/* ---------------------------------------------------------------- run */
+  console.log(`EXECUTOR  slug=${directive.slug}`);
+  console.log(providerSummary());
+  console.log(`  figures handed over : ${sourced.length}`);
+  console.log(`  exemplars           : ${examples.length}`);
+  console.log("");
 
-console.log(`EXECUTOR  slug=${directive.slug}`);
-console.log(providerSummary());
-console.log(`  figures handed over : ${sourced.length}`);
-console.log(`  exemplars           : ${exemplars.length}`);
-console.log("");
+  const r = await askJson({
+    role: "writer",
+    system:
+      "You are the writer for Landed Math, an English site that turns Chinese and other official " +
+      "primary documents into per-unit cost consequences for importers. You write only from the " +
+      "figures you are given. You never invent a number, a source, a quotation or an experience. You " +
+      "return the finished markdown file and nothing else.",
+    messages: [{ role: "user", content: task }],
+    maxTokens: 16384,
+  });
 
-const r = await askJson({
-  role: "writer",
-  system:
-    "You are the writer for Landed Math, an English site that turns Chinese and other official " +
-    "primary documents into per-unit cost consequences for importers. You write only from the " +
-    "figures you are given. You never invent a number, a source, a quotation or an experience.",
-  messages: [{ role: "user", content: task }],
-  maxTokens: 16384,
-});
+  if (!r.ok) {
+    console.log(`  FAILED - ${r.error}`);
+    if (r.need) console.log(`  needs: ${r.need.join(", ")}`);
+    process.exit(1);
+  }
 
-if (!r.ok) {
-  console.log(`  FAILED - ${r.error}`);
-  if (r.need) console.log(`  needs: ${r.need.join(", ")}`);
-  process.exit(1);
+  const extracted = extractArticle(r, directive.slug);
+  if (!extracted) {
+    console.log(`  FAILED - the response was neither JSON with an article nor markdown with frontmatter`);
+    if (r.parseError) console.log(`  parse    : ${r.parseError}`);
+    console.log(`  response began: ${String(r.text ?? "").slice(0, 300).replace(/\s+/g, " ")}`);
+    process.exit(1);
+  }
+
+  const outSlug = String(extracted.slug ?? directive.slug).replace(/[^a-z0-9-]/g, "").slice(0, 80);
+  mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
+  const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
+  writeFileSync(outFile, extracted.article, "utf8");
+
+  const words = (extracted.article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
+  console.log(`  provider  : ${r.provider} / ${r.model}`);
+  console.log(`  shape     : ${extracted.shape}`);
+  if (extracted.notes) console.log(`  notes     : ${String(extracted.notes).slice(0, 200)}`);
+  console.log(`  tokens    : ${r.usage?.prompt_tokens ?? "?"} in, ${r.usage?.completion_tokens ?? "?"} out`);
+  console.log(`  estimated : $${r.estimatedUsd ?? "?"}`);
+  console.log(`  written   : ${outFile.replace(/\\/g, "/").replace(ROOT.replace(/\\/g, "/") + "/", "")}`);
+  console.log(`  words     : ${words}`);
+  console.log("");
+  console.log("  Next: node tools/cloud-qa.mjs --draft=" + outFile.replace(/\\/g, "/"));
 }
-if (!r.json?.article) {
-  console.log(`  FAILED - no article in the response${r.parseError ? ` (${r.parseError})` : ""}`);
-  if (r.raw) console.log(`  raw head: ${r.raw.slice(0, 400)}`);
-  process.exit(1);
-}
 
-const outSlug = String(r.json.slug ?? directive.slug).replace(/[^a-z0-9-]/g, "").slice(0, 80);
-mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
-const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
-writeFileSync(outFile, r.json.article, "utf8");
-
-const words = (r.json.article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
-console.log(`  provider  : ${r.provider} / ${r.model}`);
-console.log(`  tokens    : ${r.usage?.prompt_tokens ?? "?"} in, ${r.usage?.completion_tokens ?? "?"} out`);
-console.log(`  estimated : $${r.estimatedUsd ?? "?"}`);
-console.log(`  written   : ${outFile.replace(ROOT + "\\", "").replace(ROOT + "/", "")}`);
-console.log(`  words     : ${words}`);
-if (r.json.notes) console.log(`  notes     : ${String(r.json.notes).slice(0, 300)}`);
-console.log("");
-console.log("  Next: node tools/cloud-qa.mjs --draft=" + outFile.replace(/\\/g, "/"));
+const IS_MAIN = process.argv[1] ? process.argv[1].replace(/\\/g, "/").endsWith("cloud-executor.mjs") : false;
+if (IS_MAIN) await main();
