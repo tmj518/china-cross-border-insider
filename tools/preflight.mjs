@@ -474,6 +474,28 @@ async function checkEnvironment() {
   }
 
   /*
+   * The orchestrator's exit paths, rehearsed with the model stubbed.
+   *
+   * This is here because three of the ten failed runs on 2026-10-16/17 were bugs in code written the
+   * same day, and each was pushed after a check that could not have caught it: a dangling reference
+   * passes `node --check`, and running the writer alone never reaches the revision loop's third
+   * iteration. The operator was being used as the test harness.
+   *
+   * It takes about a second, it needs no credentials and no network, and it fails loudly with the full
+   * output of the first broken path - so a program error is found here instead of in a cloud run.
+   */
+  const rehearse = probe(NODE, [join(ROOT, "tools", "rehearse.mjs")], { timeout: 180000 });
+  const tally = /(\d+) passed, (\d+) failed/.exec(rehearse.out);
+  if (tally && tally[2] === "0") {
+    ok("orchestrator paths", `${tally[1]} exit path(s) rehearse clean — no path dies without a report`);
+  } else if (tally) {
+    const firstFail = (rehearse.out.match(/FAIL\s+(.+)/) ?? [])[1] ?? "(unnamed)";
+    fail("orchestrator paths", `${tally[2]} of ${Number(tally[1]) + Number(tally[2])} paths broken, first: ${firstFail}`);
+  } else {
+    fail("orchestrator paths", `the rehearsal did not run: ${rehearse.out.split("\n").slice(-1)[0].slice(0, 90)}`);
+  }
+
+  /*
    * --- the instrument registry: is it in step with the articles? ---
    *
    * /instrument/<id>/ pages are generated from a registry derived from article
