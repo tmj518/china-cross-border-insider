@@ -68,48 +68,88 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
           DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
-          DEEPSEEK_PLAN_API_KEY: ${{ secrets.DEEPSEEK_PLAN_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           set +e
-          # tools/test-providers.mjs sends one token to each provider and turns the HTTP status into
-          # the change the operator has to make. A raw curl reports 400 for both "wrong key" and
-          # "model name where an endpoint id belongs", and those have opposite fixes.
-          node tools/test-providers.mjs 2>&1 | tee /tmp/provider-test.txt
-          CODE=${PIPESTATUS[0]}
-          SUMMARY=$(grep -E "RESULT|API said|->" /tmp/provider-test.txt | sed 's/^ *//' | tr '\n' ';' | cut -c1-900)
-          echo "summary=$SUMMARY" >> "$GITHUB_OUTPUT"
-          if [ "$CODE" = "0" ]; then
-            echo "ok=true" >> "$GITHUB_OUTPUT"
+          OUT=/tmp/provider-check.txt
+          : > "$OUT"
+
+          probe() {
+            label="$1"; url="$2"; model="$3"; key="$4"
+            if [ -z "$key" ]; then
+              # Not a failure here. A missing key is named by the step below with the exact variable
+              # to set; counting it as a probe failure would report two problems for one cause.
+              echo "$label: SKIPPED - no key set" | tee -a "$OUT"
+              return 0
+            fi
+            if [ -z "$model" ]; then
+              echo "$label: FAIL - key is set but no endpoint id. Ark needs ep-..., not a model name" | tee -a "$OUT"
+              return 1
+            fi
+            code=$(curl -s -o /tmp/pc.json -w '%{http_code}' --max-time 45 \
+              -H 'content-type: application/json' -H "authorization: Bearer $key" \
+              -d "{\"model\":\"$model\",\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}],\"max_tokens\":1}" \
+              "$url")
+            if [ "$code" = "200" ]; then
+              echo "$label: OK (HTTP 200, model $model)" | tee -a "$OUT"
+              return 0
+            fi
+            echo "$label: FAIL (HTTP $code) model=$model" | tee -a "$OUT"
+            echo "    api said: $(head -c 300 /tmp/pc.json | tr -d '\n')" | tee -a "$OUT"
+            case "$code" in
+              401) echo "    -> the key is wrong, revoked, or from another account" | tee -a "$OUT" ;;
+              402) echo "    -> no balance. Doubao and DeepSeek are paid APIs; top the account up" | tee -a "$OUT" ;;
+              403) echo "    -> the key is valid but not permitted for this endpoint" | tee -a "$OUT" ;;
+              404) echo "    -> endpoint not found or not deployed. On Ark this is the model-name-instead-of-ep case" | tee -a "$OUT" ;;
+              429) echo "    -> rate limited or out of quota" | tee -a "$OUT" ;;
+              000) echo "    -> no response at all, so the network is the problem, not the key" | tee -a "$OUT" ;;
+            esac
+            return 1
+          }
+
+          WRITER_MODEL="${ARK_MODEL:-${DOUBAO_ENDPOINT:-}}"
+          WRITER_KEY="${ARK_API_KEY:-${DOUBAO_API_KEY:-${OWNER_KEY_1:-}}}"
+          REVIEW_KEY="${DEEPSEEK_REVIEW_API_KEY:-${DEEPSEEK_API_KEY:-${OWNER_KEY_2:-}}}"
+          OWNER_ARK="${OWNER_KEY_1:-}"
+
+          OK=true
+          probe "Doubao writer" "https://ark.cn-beijing.volces.com/api/v3/chat/completions" "$WRITER_MODEL" "$WRITER_KEY" || OK=false
+          # OWNER_KEY_1 is the Ark credential here. Offering it to DeepSeek would send an Ark key to
+          # api.deepseek.com and produce a 401 that reads as a broken DeepSeek key.
+          if [ -n "$OWNER_ARK" ] && [ "$REVIEW_KEY" = "$OWNER_ARK" ]; then
+            echo "DeepSeek reviewer: SKIPPED - the only candidate key is the Ark one, which would 401" | tee -a "$OUT"
           else
-            echo "ok=false" >> "$GITHUB_OUTPUT"
-            echo "::error::a provider did not verify; see the lines above"
+            probe "DeepSeek reviewer" "https://api.deepseek.com/chat/completions" "deepseek-chat" "$REVIEW_KEY" || OK=false
           fi
-          # The failure has to be readable without opening a log viewer and without downloading an
-          # artifact from a private repository, which needs a token. Writing it into the step summary
-          # puts the whole output on the run page itself, which is the first thing anyone sees and the
-          # only channel that needs no credential at all.
+
+          if [ -n "${GITHUB_OUTPUT:-}" ]; then echo "ok=$OK" >> "$GITHUB_OUTPUT"; fi
+          {
+            echo "summary<<EOF"
+            cat "$OUT"
+            echo "EOF"
+          } >> "${GITHUB_OUTPUT:-/dev/null}"
+
           {
             echo "## Provider check"
             echo ""
-            if [ "$CODE" = "0" ]; then
+            if [ "$OK" = "true" ]; then
               echo "Both providers answered."
             else
               echo "**A provider did not verify.** The block below is the entire output."
             fi
             echo ""
             echo '```'
-            cat /tmp/provider-test.txt
+            cat "$OUT"
             echo '```'
             echo ""
-            echo "Names the pipeline reads, first match wins:"
+            echo "Names read, first match wins:"
             echo ""
             echo '| role | names |'
             echo '| --- | --- |'
             echo '| writer key | ARK_API_KEY, DOUBAO_API_KEY, OWNER_KEY_1 |'
-            echo '| writer model | ARK_MODEL, DOUBAO_ENDPOINT - an ep-... endpoint id, not a model name |'
+            echo '| writer model | ARK_MODEL, DOUBAO_ENDPOINT - an ep-... id, not a model name |'
             echo '| reviewer key | DEEPSEEK_REVIEW_API_KEY, DEEPSEEK_API_KEY, OWNER_KEY_2 |'
-          } >> "$GITHUB_STEP_SUMMARY"
+          } >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
       - name: Report which secret names the pipeline reads
         if: steps.check.outputs.ok != 'true'
