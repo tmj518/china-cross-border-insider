@@ -396,9 +396,18 @@ if (AS_JSON) {
 /* Leave nothing behind: the scratch copies exist only for qa-check to read. */
 rmSync(join(ROOT, "data", "tmp", "audit"), { recursive: true, force: true });
 
-/* Write an alert when anything is not publishable, as the protocol requires. */
+/* Write an alert when anything is not publishable, as the protocol requires.
+ *
+ * `--no-alert` exists because the draft run is a self-test rather than an audit of work: every draft
+ * fails by definition until it is finished, so preflight's `--drafts` invocation wrote an identical
+ * alert file on every run. Nine had accumulated by 2026-10-16, and an alert directory that fills with
+ * expected failures is one nobody reads, which is the opposite of what the file is for.
+ *
+ * The check's value is its exit code and the paired assertion in preflight. The alert is for a human,
+ * so it is written only when a run is reporting on work that was meant to be publishable.
+ */
 const failed = results.filter((r) => r.verdict !== "AUTO-PUBLISH OK");
-if (failed.length && !AS_JSON) {
+if (failed.length && !AS_JSON && !args.includes("--no-alert")) {
   mkdirSync(join(ROOT, "logs"), { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
   const p = join(ROOT, "logs", `alert-audit-${stamp}.txt`);

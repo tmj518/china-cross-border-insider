@@ -375,8 +375,12 @@ async function checkEnvironment() {
    * The draft run is the load-bearing one. Only a run that is expected to fail detects a check that
    * has stopped discriminating.
    */
-  const auditPub = spawnSync(NODE, [join(ROOT, "tools", "audit.mjs"), "--published", "--out=data/tmp/preflight-audit-pub.json"], { encoding: "utf8", timeout: 600000 });
-  const auditDrf = spawnSync(NODE, [join(ROOT, "tools", "audit.mjs"), "--drafts", "--out=data/tmp/preflight-audit-drafts.json"], { encoding: "utf8", timeout: 600000 });
+  /*
+   * `--no-alert` because the draft run fails by definition and wrote an identical alert every time,
+   * which by 2026-10-16 had produced nine files in logs/ that nobody needed to read.
+   */
+  const auditPub = spawnSync(NODE, [join(ROOT, "tools", "audit.mjs"), "--published", "--no-alert", "--out=data/tmp/preflight-audit-pub.json"], { encoding: "utf8", timeout: 600000 });
+  const auditDrf = spawnSync(NODE, [join(ROOT, "tools", "audit.mjs"), "--drafts", "--no-alert", "--out=data/tmp/preflight-audit-drafts.json"], { encoding: "utf8", timeout: 600000 });
   const pubLine = /AUTO-PUBLISH OK\s*:\s*(\d+) of (\d+)/.exec(`${auditPub.stdout ?? ""}`);
   const drfLine = /AUTO-PUBLISH OK\s*:\s*(\d+) of (\d+)/.exec(`${auditDrf.stdout ?? ""}`);
   if (!pubLine || !drfLine) {
