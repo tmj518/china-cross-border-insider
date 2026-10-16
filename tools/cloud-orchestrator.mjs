@@ -137,11 +137,54 @@ if (existsSync(directiveFile)) {
 }
 
 if (!directive) {
+  /*
+   * No directive, so research runs. This is the difference between P1 and B: in P1 the run stopped
+   * here and reported NO-DIRECTIVE, which is honest but needs a person to produce the subject every
+   * day. In B the pipeline fetches sources, proposes a subject from documents it has archived, verifies
+   * every figure's excerpt against those archives with tools/check-evidence.mjs, and writes the
+   * directive itself.
+   *
+   * If research cannot produce a verified subject it writes nothing and says why, and this run reports
+   * NO-SUBJECT. That is still a day without an article, but it is now a day the pipeline decided,
+   * rather than a day nobody prepared for.
+   */
+  console.log("  no directive, so research starts");
   console.log("");
-  console.log("  No directive, so there is nothing to write. This is the intended behaviour and not a");
-  console.log("  failure: the pipeline does not choose its own subject, because a subject it invents is");
-  console.log("  a subject nobody has established the facts for. Populate the directive and run again.");
-  run.verdict = "NO-DIRECTIVE";
+  const budget = flag("research-budget", "0.40");
+  const maxSources = flag("research-sources", "4");
+  let researchOut = "";
+  let researchCode = 0;
+  try {
+    researchOut = execFileSync(
+      process.execPath,
+      [join(ROOT, "tools", "research.mjs"), `--budget=${budget}`, `--sources=${maxSources}`],
+      { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 },
+    );
+  } catch (e) {
+    researchOut = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+    researchCode = e.status ?? 1;
+  }
+  for (const line of researchOut.split("\n")) if (line.trim()) console.log(`  | ${line}`);
+  console.log("");
+
+  if (existsSync(directiveFile)) {
+    try {
+      directive = JSON.parse(readFileSync(directiveFile, "utf8"));
+      step("research", true, `proposed ${directive.slug}, ${(directive.figures ?? []).length} verified figure(s)`);
+    } catch (e) {
+      step("research", false, `wrote a directive that does not parse: ${e.message}`);
+    }
+  } else {
+    step("research", false, `no verified subject today (exit ${researchCode})`);
+  }
+}
+
+if (!directive) {
+  console.log("");
+  console.log("  Research could not produce a subject backed by documents it fetched and verified. No");
+  console.log("  article was written. That is the intended outcome: the pipeline states it has nothing");
+  console.log("  rather than writing something it cannot support.");
+  run.verdict = "NO-SUBJECT";
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
   writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
   process.exit(0);
