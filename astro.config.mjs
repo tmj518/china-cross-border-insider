@@ -16,6 +16,15 @@ export default defineConfig({
   // Single source of truth for the domain lives in src/consts.ts.
   site: SITE_URL,
   trailingSlash: "ignore",
+  /**
+   * The source directory, overridable so a rehearsal can build a scratch tree.
+   *
+   * tools/rehearse.mjs runs the whole pipeline with the model stubbed and checks that the article it
+   * produces actually passes the content schema. It cannot do that against the working tree without
+   * writing a rehearsed article into the real collection, so it points `srcDir` at its scratch copy
+   * instead. The default is unchanged and nothing in a normal build sets this.
+   */
+  srcDir: process.env.ASTRO_SRC_DIR || "./src",
   integrations: [
     sitemap({
       /*

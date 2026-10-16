@@ -271,6 +271,38 @@ const covered = ledger
   .map((r) => `  #${r.articleNumber} ${r.slug} — keyword "${r.keyword}"`)
   .join("\n");
 
+/*
+ * Which sections the operator's rule says are behind.
+ *
+ * The rule is one to three articles per section per week, and the orchestrator computes which sections
+ * have none yet. Those are passed here because the subject is chosen in this module and nowhere else -
+ * a rule checked but not acted on is a report, not a rule.
+ *
+ * It is a preference and not a constraint, and the wording says so. If today's documents do not support
+ * an article in the section that is behind, forcing one produces exactly the thing the quality rule
+ * exists to prevent: a summary with no arithmetic in it, which is what search engines demote. So the
+ * model is told that favouring a section is worth a little and damaging the article is worth more.
+ */
+const behind = (process.env.UNCOVERED_SECTIONS ?? "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
+
+const sectionBlock = behind.length
+  ? `
+SECTION COVERAGE — the operator's rule is one to three articles per section per week
+
+These sections have had no net-new article this week: ${behind.join(", ")}
+
+Prefer a subject in one of them when the documents below genuinely support it. A subject in a covered
+section that the documents support well is better than a subject in a behind section that they support
+thinly: an article without five citable numbers and a cost consequence is the commodity summary this
+site exists not to publish, and publishing one costs more than a week's gap in a section. Say which
+section your subject belongs to in "category", and if the documents do not support the section that is
+behind, choose what they do support.
+`
+  : "";
+
 const prompt = `You are choosing today's subject for Landed Math, an English site that turns official
 documents into per-unit cost consequences for importers.
 
@@ -286,7 +318,7 @@ WHAT IS REJECTED
   - a subject whose numbers are not in the documents below
   - a subject that repeats one of the listed articles, even under a different title
   - political, religious, military or reputation commentary. Trade and cost facts only.
-
+${sectionBlock}
 THE SOURCES
 
 ${corpus}

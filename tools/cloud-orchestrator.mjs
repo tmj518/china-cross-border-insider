@@ -187,7 +187,21 @@ if (!directive) {
     researchOut = execFileSync(
       process.execPath,
       [join(ROOT, "tools", "research.mjs"), `--budget=${budget}`, `--sources=${maxSources}`],
-      { encoding: "utf8", timeout: 1800000, maxBuffer: 64 * 1024 * 1024 },
+      {
+        encoding: "utf8",
+        timeout: 1800000,
+        maxBuffer: 64 * 1024 * 1024,
+        /*
+         * The sections that have had nothing this week, so the subject choice can favour them.
+         *
+         * The rule "one to three articles per section per week" is computed a few lines above and would
+         * otherwise only be reported. The subject is chosen in research.mjs and nowhere else, so a rule
+         * that is checked but not passed along is a report rather than a rule. It is a preference there,
+         * not an instruction: if today's documents do not support the section that is behind, forcing one
+         * produces the commodity summary that the quality rule exists to prevent.
+         */
+        env: { ...process.env, UNCOVERED_SECTIONS: uncovered.join(",") },
+      },
     );
   } catch (e) {
     researchOut = `${e.stdout ?? ""}${e.stderr ?? ""}`;

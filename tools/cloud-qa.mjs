@@ -77,6 +77,22 @@ const report = { slug, at: new Date().toISOString(), layers: {}, verdict: null, 
 const staged = join(BLOG, `${slug}.md`);
 let stagedCopy = false;
 let buildNote = "";
+/*
+ * A build failure ends the mechanical layers.
+ *
+ * It used to be recorded and then the gates were run anyway. That is worse than stopping: `dist/` is
+ * whatever the last successful build produced, so the gates report on the previous site while the report
+ * implies they reported on this draft. On 2026-10-17 a draft with `stakes: "high"` failed the build with
+ * `Invalid option: expected one of "priced"|"directional"`, the gates ran against the old dist and
+ * passed, and the pipeline's verdict was "the reviewer did not approve" - three layers of description
+ * between the operator and a two-word enum.
+ *
+ * A draft that cannot compile has not been reviewed. It is not a rejected article; it is an invalid file,
+ * and the difference decides who fixes it: the build error names a field and a value, and a model can
+ * repair that, whereas "the reviewer did not approve" sends someone to read a review that never happened.
+ */
+let buildFailed = false;
+let buildError = "";
 try {
   copyFileSync(draftPath, staged);
   stagedCopy = true;
@@ -85,24 +101,44 @@ try {
     execFileSync("pnpm", ["exec", "astro", "build"], { encoding: "utf8", timeout: 600000, cwd: ROOT, shell: process.platform === "win32" });
     buildNote = "dist rebuilt with the draft staged";
   } catch (e) {
-    /* A build failure is not fatal to the report: the other four gates still carry information, and
-       the failure is recorded so it cannot be mistaken for a pass. */
-    buildNote = `dist rebuild failed, so three checks saw the previous build: ${String(e.message).slice(0, 120)}`;
+    buildFailed = true;
+    /*
+     * The useful text is the collection validation error, which Astro writes to stderr. `e.message` is
+     * the spawn summary and contains none of it, which is why the first version of this note read
+     * "Command failed" and told nobody anything.
+     */
+    buildError = `${e.stdout ?? ""}${e.stderr ?? ""}`.trim();
+    const field = /(?:^|\n)\s*([a-zA-Z_][a-zA-Z0-9_]*):\s*([^\n]{0,160})/m.exec(buildError)?.[0]?.trim() ?? "";
+    buildNote = `dist rebuild failed: ${field || String(e.message).slice(0, 120)}`;
   }
 
   let out = "";
-  try {
-    out = execFileSync(process.execPath, [join(ROOT, "tools", "gate.mjs"), "--fresh"], { encoding: "utf8", timeout: 900000 });
-  } catch (e) {
-    out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+  if (buildFailed) {
+    /*
+     * Recorded as its own layer with the build's own words. The verdict is REJECTED either way, but the
+     * reason reaches the notification, and "stakes is required" is a repair instruction while "the
+     * reviewer did not approve" is a puzzle.
+     */
+    report.layers.build = {
+      pass: false,
+      detail: `the draft does not match the content schema, so the site does not build: ${buildNote}`,
+      error: buildError.slice(0, 600),
+    };
+    report.reasons.push(`build: the draft fails content validation - ${buildNote}`);
+  } else {
+    try {
+      out = execFileSync(process.execPath, [join(ROOT, "tools", "gate.mjs"), "--fresh"], { encoding: "utf8", timeout: 900000 });
+    } catch (e) {
+      out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+    }
+    const passed = /RESULT:\s*every gate passed/i.test(out);
+    const failed = [...out.matchAll(/^\s*(?:\[FAIL\]|✗|FAIL)\s*([^\n]{0,110})/gm)].map((m) => m[1].trim()).slice(0, 6);
+    report.layers.L1 = {
+      pass: passed,
+      detail: (passed ? "every gate passed" : `${failed.length} gate failure(s)`) + ` — ${buildNote}`,
+      failed,
+    };
   }
-  const passed = /RESULT:\s*every gate passed/i.test(out);
-  const failed = [...out.matchAll(/^\s*(?:\[FAIL\]|✗|FAIL)\s*([^\n]{0,110})/gm)].map((m) => m[1].trim()).slice(0, 6);
-  report.layers.L1 = {
-    pass: passed,
-    detail: (passed ? "every gate passed" : `${failed.length} gate failure(s)`) + ` — ${buildNote}`,
-    failed,
-  };
 } finally {
   if (stagedCopy) {
     try {

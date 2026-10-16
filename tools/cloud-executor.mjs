@@ -28,6 +28,13 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 import { askJson, summary as providerSummary } from "./lib-llm.mjs";
+/*
+ * The frontmatter constraints live in one place so the prompt, this validator and the parity check all
+ * read the same list. They were described in three places that could not check each other, and twice in
+ * one day a field fell through the gap - `stakes` was never validated at all, and a draft whose value
+ * was "high" passed every check and then failed the build.
+ */
+import { TEXT_LIMITS, ENUMS, REQUIRED, violationsOf, limitsForPrompt } from "../src/lib/schema-rules.ts";
 
 const ROOT = process.cwd();
 const BLOG = join(ROOT, "src", "content", "blog");
@@ -86,8 +93,18 @@ export function extractArticle(r, fallbackSlug) {
  * because the schema has been tightened before and a document that only just passed is the one that
  * breaks later.
  */
-const LIMITS = { title: 120, subtitle: 160, description: 300 };
+/*
+ * The constraints are imported rather than restated. The previous version of this file carried its own
+ * three-entry list of text limits, and the schema has twenty fields - so `stakes`, an enum, was never
+ * checked, a draft with `stakes: "high"` was written to the collection, and the build failed with
+ * `Invalid option: expected one of "priced"|"directional"`. The reviewer then reported "no parseable
+ * verdict", having been handed a file that could not compile.
+ *
+ * tools/check-schema-parity.mjs proves the imported list and the schema agree, so this cannot drift
+ * silently again.
+ */
 
+/** Parse the flat frontmatter block into an object, unquoting simple values. */
 function frontmatter(article) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(article);
   if (!m) return null;
@@ -102,174 +119,21 @@ function frontmatter(article) {
   return fields;
 }
 
+/** Every way this draft would fail the content schema, which fails the whole build. */
 function schemaViolations(article) {
   const f = frontmatter(article);
-  const out = [];
   if (!f) return ["no frontmatter block: the file must open with --- on its own line and close it the same way"];
-  for (const [field, max] of Object.entries(LIMITS)) {
-    const v = f[field];
-    if (v == null) {
-      out.push(`${field} is missing`);
-      continue;
-    }
-    /*
-     * Counted in code points, not UTF-16 units, because the schema counts characters and an emoji or a
-     * Chinese character is one character to Zod and two to String.length. Getting this wrong in the
-     * strict direction would reject a valid draft.
-     */
-    const n = [...v].length;
-    if (n > max) out.push(`${field} is ${n} characters, the schema allows ${max}: "${v.slice(0, 120)}"`);
-    if (!v) out.push(`${field} is empty`);
-  }
-  return out;
-}
-
-/**
- * What the site's own readers have actually done, if anything is recorded.
- *
- * The pipeline decided what to write from the primary documents alone - what changed, what is uncovered,
- * what the competition looks like - and nothing from whether the last thirty articles were read. The
- * operator asked for that loop directly.
- *
- * It is passed to the writer as context and never as an instruction to imitate, because with one month
- * of data across thirty articles every difference is consistent with noise, and a writer told to copy a
- * three-pageview article copies nothing in particular. The brief says so in its own words.
- *
- * Read from the recorded snapshots only. This does not touch the network: a writer call must not fail
- * because an analytics endpoint was slow, and the data would be a day old either way.
- */
-function readershipBrief() {
-  const dir = join(ROOT, "data", "analytics");
-  if (!existsSync(dir)) return null;
-  let latest = null;
-  for (const f of readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
-    try {
-      latest = JSON.parse(readFileSync(join(dir, f), "utf8"));
-    } catch {
-      /* a malformed snapshot is the analytics tool's problem, reported there */
-    }
-  }
-  if (!latest) return null;
-  const lines = [`READERSHIP - measured, ${latest.totalPageviews} pageview(s) over the last ${latest.windowDays} day(s)`];
-  const articles = (latest.pages ?? []).filter((p) => p.path?.startsWith("/blog/"));
-  if (!articles.length) {
-    lines.push("  No article has been read in this window. That is a fact about distribution, not about");
-    lines.push("  the subjects, so it is not a reason to avoid or prefer any topic.");
-  } else {
-    for (const p of articles.slice(0, 12)) lines.push(`  ${String(p.views).padStart(5)}  ${p.path}`);
-    lines.push(`  Across ${articles.length} article(s). This is not enough to rank subjects - do not imitate the`);
-    lines.push("  most read or avoid the least read; neither has been read by enough people for the");
-    lines.push("  difference to mean anything. Use it only to notice that a subject was read at all.");
-  }
-  return lines.join("\n");
-}
-
-/**
- * Ask the writer to repair its own frontmatter, rather than throwing the article away.
- *
- * The operator's question was why the limits cannot simply be told to the writer, and the answer is that
- * they are told and a prompt is a probability rather than a guarantee. The first version of this
- * therefore rejected a draft whose subtitle was 163 characters against a limit of 160 - discarding 1,800
- * words of correct work over three characters, and spending a full regeneration to get them back.
- *
- * So the writer is now asked to fix the field, in a call that sends back only the offending values. It is
- * cheap (a few hundred tokens against a full regeneration), it cannot damage the body because the body is
- * not sent, and it is the same model correcting its own work with the exact number in front of it rather
- * than a general instruction to be careful.
- *
- * The target is 92% of the limit rather than the limit itself. A value written to exactly 160 leaves no
- * room for a later revision to add a word, and the revision is where the length creeps - which is how a
- * draft that was legal when written becomes illegal when corrected.
- *
- * If the repair fails or the model returns something that still does not fit, the caller falls back to
- * refusing the draft, so this is an improvement and not a new way to publish an invalid file.
- */
-async function repairFrontmatter(article, violations, limits) {
-  const fields = frontmatter(article);
-  if (!fields) return null;
-
-  const asks = violations
-    .map((v) => {
-      const name = Object.keys(limits).find((k) => v.startsWith(k));
-      if (!name) return null;
-      const target = Math.floor(limits[name] * 0.92);
-      return { field: name, current: fields[name] ?? "", target, limit: limits[name] };
-    })
-    .filter(Boolean);
-
-  /* Nothing to fix, or a violation that is not a length - the caller handles the rest. */
-  if (!asks.length) return null;
-
-  const instruction = asks
-    .map(
-      (a) =>
-        `FIELD: ${a.field}\n` +
-        `LIMIT: ${a.limit} characters. TARGET: ${a.target} characters or fewer.\n` +
-        `CURRENT (${[...String(a.current)].length} characters, too long):\n${a.current}\n`,
-    )
-    .join("\n");
-
-  const r = await askJson({
-    role: "writer",
-    system:
-      "You shorten metadata for a publication. You keep the meaning, the subject and the specificity, and " +
-      "you return only JSON. You never invent a fact, a number or a name that is not already present.",
-    messages: [
-      {
-        role: "user",
-        content:
-          `Each field below is too long for a hard schema limit and the whole site fails to build when one ` +
-          `is exceeded. Rewrite each to the target length or shorter.\n\n` +
-          `Rules:\n` +
-          `  - Keep the concrete subject. Drop qualifiers and subordinate clauses before dropping the subject.\n` +
-          `  - Keep any figure, date, country or obligation that is already there if it fits. The number is\n` +
-          `    usually the reason the sentence exists.\n` +
-          `  - Do not add anything that is not in the current text.\n` +
-          `  - Count characters. A target of 147 means 147 or fewer, not approximately.\n\n` +
-          `${instruction}\n` +
-          `Return exactly: {"${asks.map((a) => a.field).join('": "...", "')}": "..."}`,
-      },
-    ],
-    maxTokens: 1024,
-  });
-
-  if (!r.json) return null;
-  const fixed = { ...fields };
-  let changed = 0;
-  for (const a of asks) {
-    const v = r.json[a.field];
-    if (typeof v !== "string") continue;
-    const clean = v.replace(/\s+/g, " ").trim();
-    if (!clean) continue;
-    if ([...clean].length > a.limit) continue; /* still too long: keep the original and let the caller refuse */
-    fixed[a.field] = clean;
-    changed++;
-  }
-  if (!changed) return null;
-
-  /*
-   * Rebuild the file from the parsed fields rather than editing text in place. A regex on a JSON file is
-   * the kind of edit that silently corrupts a value containing a colon or a quote, and the frontmatter
-   * here is flat and known.
-   */
-  const body = article.replace(/^---\r?\n[\s\S]*?\r?\n---/, "").replace(/^\r?\n/, "");
-  const head = Object.entries(fixed)
-    .map(([k, v]) => `${k}: ${/[:#"'\n]/.test(v) ? JSON.stringify(v) : v}`)
-    .join("\n");
-  return { article: `---\n${head}\n---\n\n${body}`, repaired: asks.map((a) => a.field) };
+  return violationsOf(f);
 }
 
 /** The structure, as a specification the model is asked to satisfy. */
 const STRUCTURE = `The article must have this exact shape.
 
-Frontmatter fields, all required: title, subtitle, description, publishDate, reviewBy, stakes,
-category, audience, tags, priority, featured, draft, articleNumber, target_keyword, search_intent,
-information_gain, sources, figures.
+Frontmatter fields: title, subtitle, description, publishDate, reviewBy, stakes, category, audience,
+tags, priority, featured, draft, articleNumber, target_keyword, search_intent, information_gain,
+sources, figures.
 
-Hard limits that break the build if exceeded - the schema rejects them and every page goes down:
-  title          <= 120 characters
-  subtitle       <= 160 characters
-  description    <= 300 characters
+${limitsForPrompt()}
 
 Body sections, in this order and with these exact headings:
   ## AI Summary         60 to 100 words. Conclusion first: what the change is and what it costs whom.
@@ -555,7 +419,7 @@ ${previous.slice(0, 60000)}`;
     console.log("");
     console.log(`  schema    : ${violations.length} violation(s), asking the writer to repair the field(s)`);
     for (const v of violations) console.log(`      - ${v}`);
-    const rep = await repairFrontmatter(article, violations, LIMITS);
+    const rep = await repairFrontmatter(article, violations);
     if (rep) {
       const after = schemaViolations(rep.article);
       if (!after.length) {
