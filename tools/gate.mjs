@@ -42,20 +42,60 @@ function saveCache(c) {
   try { mkdirSync(CACHE_DIR, { recursive: true }); writeFileSync(CACHE_FILE, JSON.stringify(c, null, 0), "utf8"); } catch { /* non-fatal */ }
 }
 
-/** Hash a set of paths: contents for files, a sorted listing for directories. */
+/**
+ * Hash a set of paths: contents for files, a recursive walk for directories.
+ *
+ * The directory branch used to read the entries of the top level only:
+ *
+ *     for (const f of readdirSync(abs).sort()) {
+ *       try { h.update(f).update(readFileSync(join(abs, f))); }
+ *       catch { h.update(f + ":unreadable"); }
+ *     }
+ *
+ * For `dist` that read nothing at all. Its top level holds directories - blog, instrument, topic,
+ * category and so on - so every entry went to the catch branch and contributed only its name. The
+ * hash of `dist` was therefore very nearly constant, and the two gates that take it as their input,
+ * mobile layout and CSP, served verdicts from a previous build.
+ *
+ * What that looked like in practice, twice on 2026-10-16: preflight reported a mobile overflow on a
+ * specific page - a table 71px too wide, then a code block 87px too wide - while check-mobile alone
+ * passed all 135 pages. Both were real numbers attached to a stale dist. The tell was that the gate
+ * said 131 pages and the standalone check said 135.
+ *
+ * A recursive walk costs a little more and cannot produce that class of wrong answer. Paths are
+ * hashed alongside contents so a file moving does not leave the key unchanged.
+ */
 function hashPaths(paths) {
   const h = createHash("sha256");
-  for (const p of paths.sort()) {
-    const abs = join(ROOT, p);
-    if (!existsSync(abs)) { h.update(p + ":missing"); continue; }
-    const st = statSync(abs);
-    if (st.isDirectory()) {
-      for (const f of readdirSync(abs).sort()) {
-        try { h.update(f).update(readFileSync(join(abs, f))); } catch { h.update(f + ":unreadable"); }
-      }
-    } else {
-      h.update(p).update(readFileSync(abs));
+  const walk = (abs, rel) => {
+    let entries;
+    try {
+      entries = readdirSync(abs, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name));
+    } catch {
+      h.update(`${rel}:unreadable`);
+      return;
     }
+    for (const e of entries) {
+      const childAbs = join(abs, e.name);
+      const childRel = `${rel}/${e.name}`;
+      if (e.isDirectory()) walk(childAbs, childRel);
+      else {
+        try {
+          h.update(childRel).update(readFileSync(childAbs));
+        } catch {
+          h.update(`${childRel}:unreadable`);
+        }
+      }
+    }
+  };
+  for (const p of [...paths].sort()) {
+    const abs = join(ROOT, p);
+    if (!existsSync(abs)) {
+      h.update(`${p}:missing`);
+      continue;
+    }
+    if (statSync(abs).isDirectory()) walk(abs, p);
+    else h.update(p).update(readFileSync(abs));
   }
   return h.digest("hex").slice(0, 16);
 }
