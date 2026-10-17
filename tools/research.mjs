@@ -626,6 +626,8 @@ const PROPOSAL_ATTEMPTS = 3;
 const rejectedSubjects = [];
 let r = null;
 let proposal = null;
+/** The duplicate score of the accepted proposal, for the directive's _research block. */
+let acceptedDupScore = null;
 
 for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
   const retryNote = rejectedSubjects.length
@@ -682,6 +684,8 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
 
   if (checkDup.score < 4) {
     proposal = candidate;
+    /* The score that let it through, kept for the directive's provenance line. */
+    acceptedDupScore = checkDup;
     break;
   }
 
@@ -773,8 +777,8 @@ const directive = {
     fetched: fetched.map((f) => ({ url: f.url, file: f.file, bytes: f.bytes })),
     model: `${r.provider}/${r.model}`,
     spentUsd: Number(spent.toFixed(4)),
-    duplicateScore: dup.score,
-    duplicateAgainst: dup.against ?? null,
+    duplicateScore: acceptedDupScore?.score ?? 0,
+    duplicateAgainst: acceptedDupScore?.against ?? null,
   },
   slug: proposal.slug,
   title_idea: proposal.title_idea,
