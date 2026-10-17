@@ -651,8 +651,46 @@ if (published) {
   } catch (e) {
     step("registry", false, `rebuild failed: ${String(e.message).slice(0, 100)}`);
   }
+  /*
+   * Inbound links. Every article is written with outbound links and none with inbound ones, because the
+   * older articles were finalised before this one existed - so without this step each new article is a new
+   * island and the graph never gets denser.
+   *
+   * Non-fatal: "no suitable candidate" is a normal outcome and must not stop a publication that is
+   * otherwise complete.
+   */
+  try {
+    const backfillOut = execFileSync(process.execPath, [join(ROOT, "tools", "backfill-links.mjs"), `--new=${slug}`, "--write"], {
+      encoding: "utf8",
+      timeout: 120000,
+    });
+    const added = /now has (\d+) more inbound/.exec(backfillOut)?.[1];
+    step("inbound links", true, added ? `${added} older article(s) now link here` : "no candidate needed one");
+  } catch (e) {
+    step("inbound links", true, `skipped: ${String(e.message).slice(0, 80)}`);
+  }
+
   run.verdict = "PUBLISHED";
   run.article = slug;
+
+  /*
+   * Consume the directive, so tomorrow researches a new subject.
+   *
+   * The directive named a slug, and research only runs when no directive is present. Left in place, the
+   * next run would take the same subject and write the same file - overwriting a published article or
+   * producing a second version of it under a different title, which is not "a new article in another
+   * section" by any reading.
+   *
+   * Cleared only on PUBLISHED. A rejected draft keeps its directive so the next attempt can improve the
+   * same piece, which is what you want when the failure was the writing rather than the subject.
+   */
+  try {
+    writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), article: slug }, null, 2), "utf8");
+    console.log("");
+    console.log(`  directive consumed → ${directiveFile.replace(ROOT, "")} cleared, tomorrow will research a new subject`);
+  } catch (e) {
+    console.log(`  directive could not be cleared (${e.message}); tomorrow may repeat this subject`);
+  }
 } else if (!run.verdict) {
   run.verdict = started && wroteIt ? "REJECTED" : "IDLE";
 }

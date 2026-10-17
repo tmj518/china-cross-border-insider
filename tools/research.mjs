@@ -288,11 +288,35 @@ const behind = (process.env.UNCOVERED_SECTIONS ?? "")
   .map((s) => s.trim())
   .filter(Boolean);
 
+/*
+ * The section that most needs an article today.
+ *
+ * Behind sections are ordered by how long they have gone without one, and the orchestrator passes them in
+ * that order. The first is the primary instruction rather than a suggestion: the previous version listed
+ * the behind sections and let the model choose, and it chose a covered section while four had nothing.
+ *
+ * The fallback is part of the instruction, not a silent failure. If today's documents do not support a
+ * subject in the primary section, the honest answer is another section - forcing an article out of
+ * material that does not carry five citable figures produces the commodity summary this site exists not to
+ * publish.
+ */
+const PRIMARY_SECTION = behind[0] ?? "";
 const sectionBlock = behind.length
   ? `
 SECTION COVERAGE — the operator's rule is one to three articles per section per week
 
 These sections have had no net-new article this week: ${behind.join(", ")}
+
+YOUR PRIMARY SECTION TODAY: ${PRIMARY_SECTION}
+
+Choose a subject in ${PRIMARY_SECTION} if the documents below genuinely support one. This is the section
+the operator's rule says is furthest behind, so it takes precedence over a subject in a covered section.
+Your "category" field must be "${PRIMARY_SECTION}" if you take it.
+
+If the documents do not support a ${PRIMARY_SECTION} subject - fewer than five figures that appear
+verbatim, or no cost consequence an importer can act on - then choose what they do support and say so in
+"angle". Forcing an article out of material that cannot carry it produces the commodity summary this site
+exists not to publish, and one week's gap in a section costs less than that.
 
 Prefer a subject in one of them when the documents below genuinely support it. A subject in a covered
 section that the documents support well is better than a subject in a behind section that they support

@@ -111,6 +111,8 @@ Three things follow, and the first one inverts the usual reading of an extension
 
 **And the emergency mechanism is not a planning assumption.** The proposal carries a provision allowing the Commission to exempt goods temporarily where inclusion severely harms the internal market, cited in one secondary account as a sustained price increase above 50 per cent. That is a relief valve, not a route to plan on.
 
+> Also read: [The EU Registered Your Cellulose Ether Imports, and the Duty Comes Later](/blog/eu-cellulose-ethers-duty-timeline/)
+
 ## For you
 
 - **If you import machinery, appliances, vehicles or parts containing steel or aluminium into the EU:** the practical first step is not a cost estimate, it is to find out how much metal is in each SKU. Ask your supplier for the steel and aluminium mass per unit, per material, with the origin of each. That figure does not exist in most product documentation today, and it is the input everything else depends on.

@@ -80,6 +80,20 @@ for (const [slug, targets] of g) {
 
 const orphans = slugs.filter((s) => g.get(s).size === 0);
 
+/*
+ * Two different questions, and only one of them was being asked.
+ *
+ * `orphans` counts articles with no OUTBOUND link - one that points at nothing is a dead end, and that
+ * stays blocking. The line below it read "articles with zero", which is how the inbound question reads,
+ * and while ten of thirty-two published articles had zero INBOUND links this check reported zero.
+ *
+ * Inbound is a warning. An orphan page is a real defect - it receives no internal weight and is hard to
+ * discover - but every new article is an orphan until something links to it, so it cannot be blocking.
+ */
+const inbound = new Map(slugs.map((s) => [s, 0]));
+for (const [, targets] of g) for (const t of targets) if (inbound.has(t)) inbound.set(t, inbound.get(t) + 1);
+const noInbound = slugs.filter((s) => (inbound.get(s) ?? 0) === 0);
+
 const reciprocal = [];
 for (const [slug, targets] of g) {
   for (const t of targets) {
@@ -120,7 +134,12 @@ console.log("INTERNAL LINK GRAPH\n" + "=".repeat(80));
 console.log(`published articles : ${slugs.length}`);
 console.log(`prose links        : ${totalLinks}`);
 console.log(`links per article  : ${(totalLinks / slugs.length).toFixed(1)} average`);
-console.log(`articles with zero : ${orphans.length}${orphans.length ? " -> " + orphans.join(", ") : ""}`);
+console.log(`articles with zero : ${orphans.length}${orphans.length ? " -> " + orphans.join(", ") : ""}  (outbound - a dead end)`);
+  console.log(`zero inbound       : ${noInbound.length}  (nothing links here - a warning)`);
+  if (noInbound.length) {
+    for (const s of noInbound.slice(0, 8)) console.log(`    no inbound: ${s}`);
+    if (noInbound.length > 8) console.log(`    ... and ${noInbound.length - 8} more`);
+  }
 console.log(`broken targets     : ${missingTargets.length}${missingTargets.length ? " -> " + missingTargets.join(", ") : ""}`);
 console.log(`reciprocal pairs   : ${reciprocal.length}${reciprocal.length ? " -> see --pairs" : ""}`);
 

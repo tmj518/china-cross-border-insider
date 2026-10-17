@@ -140,6 +140,8 @@ Zero is not a number a buyer can put on an invoice until it is set against the r
 
 **What would change my mind.** If China's standard rates for these chapters are low — and for some primary commodities they are — then the saving is real but small, and the measure is closer to a rounding than to the concession the headline suggests; a reader with the schedule should substitute the actual rate and the table above will show it. If the gaps in the sequence numbers correspond to lines that carry a non-zero rate in the version circulated to customs, then "every rate is zero" is a statement about the annex I read rather than about the measure, and that distinction matters. And if the term is extended before April 2028, the contract-length argument in this article loses its force, though the coverage does not change.
 
+> Also read: [The EU Registered Your Cellulose Ether Imports, and the Duty Comes Later](/blog/eu-cellulose-ethers-duty-timeline/)
+
 ## For you
 
 - **Exporters in the 20 listed countries shipping farm or food goods:** the concession covers chapters 01 to 22 and nothing else. If your product is outside those chapters, this instrument does not touch it, and the least-developed-country arrangement or a bilateral agreement is where to look instead. The scope is the first thing to check, before the paperwork.
