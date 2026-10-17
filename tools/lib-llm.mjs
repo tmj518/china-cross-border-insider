@@ -229,7 +229,16 @@ function meter(entry) {
  * failure - retry, fall back, or write an alert - and an exception here would move that decision into
  * a catch block at each call site, where it would be made differently each time.
  */
-export async function ask({ role = "writer", messages, system, temperature = 0.2, maxTokens = 8192, avoidProvider = null, retries = 2 }) {
+/**
+ * One model call.
+ *
+ * `tools` is optional and passed through untouched. Both providers here are OpenAI-compatible and both
+ * support tool calling, which is what lets tools/agent-run.mjs exist without a broker process: the agent
+ * loop is a plain conversation, and this is the only place that has to know how a tool call is shaped.
+ *
+ * The existing callers pass no tools and read only `text`, so adding the field changes nothing for them.
+ */
+export async function ask({ role = "writer", messages, system, temperature = 0.2, maxTokens = 8192, avoidProvider = null, retries = 2, tools = null, toolChoice = null }) {
   const providerName = providerFor(role, avoidProvider);
   if (!providerName) {
     meter({ at: new Date().toISOString(), role, ok: false, error: "no provider key present", providers: available() });
@@ -252,6 +261,15 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
     temperature,
     max_tokens: maxTokens,
   };
+
+  /*
+   * Sent only when there is something to send. An empty tools array is rejected by some gateways, and
+   * only the agent loop passes tools at all.
+   */
+  if (tools && tools.length) {
+    body.tools = tools;
+    if (toolChoice) body.tool_choice = toolChoice;
+  }
 
   let lastError = "";
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -298,6 +316,15 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
       return {
         ok: true,
         text: json?.choices?.[0]?.message?.content ?? "",
+        /*
+         * Null when the model answered in prose, which is how the agent loop knows a turn is finished.
+         * The raw message is returned too so it can be appended to the conversation verbatim: an
+         * assistant turn that made tool calls has to go back exactly as it came, or the provider rejects
+         * the tool result that follows it.
+         */
+        toolCalls: json?.choices?.[0]?.message?.tool_calls ?? null,
+        rawMessage: json?.choices?.[0]?.message ?? null,
+        finishReason: json?.choices?.[0]?.finish_reason ?? null,
         provider: providerName,
         keyName: cred.name,
         model: p.model,

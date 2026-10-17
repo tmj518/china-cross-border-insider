@@ -502,6 +502,25 @@ async function checkEnvironment() {
    * It takes about a second, it needs no credentials and no network, and it fails loudly with the full
    * output of the first broken path - so a program error is found here instead of in a cloud run.
    */
+  /*
+   * The agent loop's paths and guards, rehearsed with the model stubbed.
+   *
+   * Two routes run this pipeline: the fixed orchestrator and an agent that decides. The agent's guards
+   * are the part that has to be provably intact - an allowlist that does not hold, or a
+   * check-before-publish rule that can be skipped, is worse than no agent, because it publishes without
+   * the checks while looking like it ran them.
+   */
+  const agentRehearse = probe(NODE, [join(ROOT, "tools", "rehearse-agent.mjs")], { timeout: 180000 });
+  const agentTally = /(\d+) passed, (\d+) failed/.exec(agentRehearse.out);
+  if (agentTally && agentTally[2] === "0") {
+    ok("agent guards", agentTally[1] + " agent path(s) rehearse clean — the loop terminates and the guards hold");
+  } else if (agentTally) {
+    const firstFail = (agentRehearse.out.match(/FAIL\s+(.+)/) ?? [])[1] ?? "(unnamed)";
+    fail("agent guards", agentTally[2] + " agent path(s) broken, first: " + firstFail);
+  } else {
+    fail("agent guards", "the agent rehearsal did not run: " + agentRehearse.out.split("\n").slice(-1)[0].slice(0, 90));
+  }
+
   const rehearse = probe(NODE, [join(ROOT, "tools", "rehearse.mjs")], { timeout: 180000 });
   const tally = /(\d+) passed, (\d+) failed/.exec(rehearse.out);
   if (tally && tally[2] === "0") {
