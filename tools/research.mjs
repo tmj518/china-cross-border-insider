@@ -230,6 +230,133 @@ for (const [url, label, why] of CANDIDATES) {
   if (ok && file) fetched.push({ url, label, why, file: file.replace(/\\/g, "/"), bytes });
 }
 
+/*
+ * The second hop: an index page is a table of contents, not a document.
+ *
+ * Everything below the fold of a listing is the actual document - the notice with the rate, the release with the
+ * figure. The listing is read for its links, up to two articles per source are archived alongside it, and the
+ * model receives the articles.
+ *
+ * The shape test is deliberate: four or more consecutive digits in the path, and a path deeper than the index. A
+ * navigation link - index.html, more.html, #, / - has neither, so it falls out without a list of patterns per
+ * site. Eight candidate sources would otherwise be eight parsers to break when a site is redesigned.
+ */
+/*
+ * The registrable domain, near enough for the sources this site reads.
+ *
+ * Two-level public suffixes (gov.cn, com.cn, org.cn, net.cn) make the last three labels the domain; everywhere else
+ * the last two. A full public suffix list would be more correct and would be wrong the moment it went stale, and
+ * these are Chinese ministry domains - the three cases above cover them, and a mistake here fails closed (a link
+ * is skipped) rather than open.
+ */
+/*
+ * Decode an archived page using the charset it declares, then the usual fallbacks.
+ *
+ * The score is the number of replacement characters, because a page decoded with the wrong charset produces a
+ * lot of them and the right one produces none. Trying the declared charset first means the common case costs one
+ * pass; the alternatives exist because ministry sites declare gb2312 while serving gb18030.
+ */
+function decodeHtml(buf) {
+  const head = buf.subarray(0, 4096).toString("latin1");
+  const declared = (/<meta[^>]+charset\s*=\s*["']?([\w-]+)/i.exec(head)?.[1] ?? "").toLowerCase();
+  const candidates = [declared, "utf-8", "gb18030", "gbk"].filter(Boolean);
+  let best = null;
+  let bestBad = Infinity;
+  for (const enc of candidates) {
+    let text;
+    try {
+      text = new TextDecoder(enc, { fatal: false }).decode(buf);
+    } catch {
+      continue;
+    }
+    const bad = (text.match(/\uFFFD/g) ?? []).length;
+    if (bad < bestBad) {
+      best = text;
+      bestBad = bad;
+    }
+    if (bad === 0) break;
+  }
+  return best ?? buf.toString("latin1");
+}
+
+function registrable(host) {
+  const parts = String(host ?? "").toLowerCase().split(".").filter(Boolean);
+  if (parts.length <= 2) return parts.join(".");
+  const last2 = parts.slice(-2).join(".");
+  if (/^(?:gov|com|org|net|edu)\.cn$/.test(last2)) return parts.slice(-3).join(".");
+  return last2;
+}
+
+const ARTICLE_HINT = /\/\d{4,}|\d{6,}|\d{4}-\d{2}/;
+
+function articleLinks(indexFile, baseUrl, limit) {
+  let html = "";
+  try {
+    html = readFileSync(join(ROOT, indexFile), "latin1");
+  } catch {
+    return [];
+  }
+  const base = new URL(baseUrl);
+  const seen = new Set();
+  const out = [];
+  for (const m of html.matchAll(/href\s*=\s*["']([^"'#]+)["']/gi)) {
+    /* The escaped ampersand is how a query string arrives; leaving it in produces a 404, not a decoded URL. */
+    const raw = m[1].replace(/&amp;/g, "&").replace(/&#38;/g, "&");
+    let abs;
+    try {
+      abs = new URL(raw, base).toString();
+    } catch {
+      continue;
+    }
+    /* A ministry publishes across subdomains; the registrable domain is the boundary, not the origin. */
+    if (registrable(new URL(abs).hostname) !== registrable(base.hostname)) continue;
+    if (abs === baseUrl) continue;
+    if (/\.(?:css|js|png|jpe?g|gif|svg|ico|pdf|zip|docx?|xlsx?)(?:$|\?)/i.test(abs)) continue;
+    if (!ARTICLE_HINT.test(abs)) continue;
+    if (seen.has(abs)) continue;
+    seen.add(abs);
+    out.push(abs);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+const articles = [];
+for (const page of fetched) {
+  const links = articleLinks(page.file, page.url, 2);
+  for (const link of links) {
+    if (articles.length >= MAX_SOURCES * 2) break;
+    const label = `${page.label.replace(/^research-/, "")}-article`;
+    let out = "";
+    try {
+      out = execFileSync(process.execPath, [join(ROOT, "tools", "store-source.mjs"), `--url=${link}`, `--label=research-${label}`], {
+        encoding: "utf8",
+        timeout: 120000,
+      });
+    } catch (e) {
+      out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+    }
+    const ok = /^\s+ok\s/m.test(out);
+    const file = /archived: (\S+)/.exec(out)?.[1] ?? null;
+    const bytes = Number(/ok\s+\d+\s+(\d+) bytes/.exec(out)?.[1] ?? 0);
+    console.log(`  ${ok ? "ok  " : "skip"}  ${label.padEnd(24)} ${String(bytes).padStart(8)}B  ${ok ? "article archived" : "not usable"}`);
+    if (ok && file) articles.push({ url: link, label, why: `an article linked from ${page.label}`, file: file.replace(/\\/g, "/"), bytes });
+  }
+}
+
+if (articles.length) {
+  /*
+   * Articles first in the corpus. The model reads the first three entries, and a listing in that position is what
+   * produced "no figure to write from".
+   */
+  fetched.unshift(...articles);
+  console.log(`\n  articles : ${articles.length} followed from the listings`);
+} else {
+  console.log("");
+  console.log("  articles : none found behind the listings. A listing alone cannot support an article with five");
+  console.log("             cost figures, so the model is told to report that rather than write from navigation.");
+}
+
 if (!fetched.length) {
   console.log("");
   console.log("  Nothing was fetched. Research stops here rather than proposing a subject from memory.");
@@ -247,13 +374,39 @@ console.log(`\n  ledger: ${ledger.length} published subject(s) to avoid repeatin
  * The archives are passed as text with their paths. The model is told to quote from them and to give
  * the path it quoted from; the checker verifies both, so a quotation from memory fails.
  */
+/*
+ * Two kinds of document arrive now, and they are not interchangeable.
+ *
+ * A listing names subjects and dates. An article carries the rates, thresholds and amounts that a per-unit cost
+ * needs. Saying so is not a nicety: yesterday the model received three listings, correctly reported that no
+ * five citable cost figures could be drawn from them, and wrote nothing. It was right about its input, and the
+ * input was the wrong kind.
+ */
+const CORPUS_NOTE = [
+  "TWO KINDS OF DOCUMENT ARE BELOW, and only one of them can carry an article.",
+  "",
+  "  A LISTING IS A TABLE OF CONTENTS. It gives subject names, dates and document numbers. It cannot supply",
+  "  rates, thresholds or amounts, so nothing in it may be used as a figure.",
+  "",
+  "  AN ARTICLE IS THE DOCUMENT ITSELF. Its body carries the percentages, amounts and deadlines. Every figure",
+  "  you propose must come from an article, and never from a listing's headline.",
+  "",
+  "If the corpus holds listings only, say so and report infeasible - that is the correct answer and it is worth",
+  "more than an article assembled from navigation text.",
+].join("\n");
+
 const corpus = fetched
-  .slice(0, 3)
+  .slice(0, 5)
   .map((f) => {
     const p = join(ROOT, f.file);
     let body = "";
     try {
-      body = readFileSync(p, "latin1")
+      /*
+       * Decoded by charset rather than read as latin1. Latin1 kept the digits and destroyed every word around
+       * them, so the writer received pages where the figures existed and were unreadable - which reads as
+       * evidence and cannot be used.
+       */
+      body = decodeHtml(readFileSync(p))
         .replace(/<script[\s\S]*?<\/script>/gi, " ")
         .replace(/<style[\s\S]*?<\/style>/gi, " ")
         .replace(/<[^>]+>/g, " ")
@@ -377,7 +530,7 @@ Give five to eight figures. Every one needs an evidence excerpt that literally c
 literally appears in the document it names. If the documents do not support five figures, set
 feasible to false and say so — that is a correct and useful answer, not a failure.`;
 
-console.log(`  proposing a subject from ${Math.min(fetched.length, 3)} archived document(s)...`);
+console.log(`  proposing a subject from ${Math.min(fetched.length, 5)} archived document(s)...`);
 const r = await askJson({
   role: "planner",
   system:

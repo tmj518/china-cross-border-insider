@@ -70,8 +70,17 @@ if (!report) {
   lines.push("scheduled run that means the job failed before it could write anything; read the Actions log.");
 } else {
   const verdict = report.verdict ?? "(none)";
+  /*
+   * Which pipeline spoke.
+   *
+   * The script route and the agent route write the same kind of card, and the same failure means different things
+   * on each: a rejected draft is a writing problem, a TURN-LIMIT is a budget problem. Naming the route is the
+   * difference between reading a card and looking one up.
+   */
+  const route = report.route ?? (report.turns != null ? "agent" : "script");
+
   const icon = verdict === "PUBLISHED" ? "✅" : verdict === "NO-DIRECTIVE" || verdict === "CEILING" || verdict === "IDLE" ? "🟡" : "🔴";
-  lines.push(`${icon} Landed Math — ${verdict}`);
+  lines.push(`${icon} Landed Math — ${verdict}   [${route}]`);
   lines.push("");
   if (report.article) lines.push(`Article: ${report.article}`);
   if (report.qa?.verdict) lines.push(`Review: ${report.qa.verdict}`);

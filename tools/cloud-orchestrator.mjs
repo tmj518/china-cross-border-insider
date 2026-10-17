@@ -61,6 +61,9 @@ const step = (name, ok, detail) => {
   console.log(`  ${ok ? "ok  " : "FAIL"} ${name.padEnd(22)} ${detail}`);
 };
 
+/* Which pipeline wrote this report. The notification names it: the same verdict means different things on
+ * each route, and a card that does not say which has to be looked up. */
+run.route = "script";
 console.log(`CLOUD ORCHESTRATOR  ${run.at}\n${"=".repeat(84)}`);
 console.log(providerSummary());
 console.log("");

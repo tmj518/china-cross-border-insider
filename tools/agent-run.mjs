@@ -670,6 +670,8 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
 
 const report = {
   at: new Date().toISOString(),
+  /* Which pipeline wrote this report; the notification names it so the same verdict is read correctly. */
+  route: "agent",
   verdict: finished?.verdict ?? (err ? "MODEL-FAILED" : turn > MAX_TURNS ? "TURN-LIMIT" : "NO-VERDICT"),
   summary: finished?.summary ?? (err ? err : "the agent stopped without calling finish"),
   turns: Math.min(turn, MAX_TURNS + 1) - 1,
