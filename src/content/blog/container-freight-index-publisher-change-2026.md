@@ -119,6 +119,8 @@ Eight dollars on a container is noise. Seventy-nine dollars on every container, 
 
 **So do not renegotiate the rate. Re-point the reference.** Three moves: read your freight and bunker clauses and write down the exact index, publisher and baseline period each one names; check whether that publisher still publishes it and whether the lane you actually ship on is public or behind a subscription; and where the clause references a composite, compute both the composite change and your lane change before accepting the next adjustment. That last calculation takes minutes and is the only one that reconciles to your invoice. Treat it as one line in a budget that has moved on the goods side too — the factory gate prices in [the August PPI reading](/blog/china-ppi-positive-factory-price-drift/) now rise rather than drift down.
 
+> Also read: [China's Food-Export Container Check Expires in 21 Days, and the Clock Starts Before Loading](/blog/china-container-suitability-check-frozen-food-export-2026/)
+
 ## For you
 
 - **Importers on Asia-Europe:** the lane reading fell 2.9% in the week to 30 September while the CCFI composite was flat. If your surcharge went up on a composite-based clause, you are paying an adjustment your lane did not support. Ask for the lane series behind the number.

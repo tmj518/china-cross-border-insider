@@ -137,6 +137,8 @@ Four conclusions, and the first one changes a purchasing decision.
 
 **So classify the form before negotiating the price.** Three moves: pull the tariff code for the exact form of the material you buy rather than its generic name, because the schedule and the annex's `ex` note both turn on the specific description; model the Chinese export duty as a line in the landed cost, since it is a percentage of FOB and computes like any tariff; and where your specification allows a wrought form, price it against the raw form. The gap can exceed the entire destination tariff.
 
+> Also read: [How to Tell a Factory From a Trading Company Before You Wire a Deposit](/blog/how-to-tell-a-factory-from-a-trading-company/)
+
 ## For you
 
 - **Buyers of unwrought or semi-finished metals from China:** your input is on the taxed part of the schedule. Check the provisional rate for your exact code before assuming the nominal rate applies — copper cathode's 30 percent nominal is actually 10 percent payable, and aluminium of 99.995 percent purity or above carries a zero provisional rate that lower grades do not.

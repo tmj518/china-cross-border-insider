@@ -139,6 +139,22 @@ const GATES = [
     fast: true,
   },
   {
+    /*
+     * Titles and descriptions as a search result shows them: 60 display columns for a title, 155 for a
+     * description, both unique across the site. It read 174 violations the first time it ran - the longest
+     * title was 125 columns - and zero after the pages were wired to fitTitle/fitDescription.
+     *
+     * Soft, and on the publish path anyway: it costs about a second, needs no network, and a duplicate title
+     * between two articles is cheap to prevent and expensive to discover.
+     */
+    id: "check-meta",
+    tier: "soft",
+    label: "titles and descriptions",
+    args: ["tools/check-meta.mjs"],
+    inputs: ["dist"],
+    fast: true,
+  },
+  {
     id: "check-csp",
     tier: "soft",
     label: "content security policy",

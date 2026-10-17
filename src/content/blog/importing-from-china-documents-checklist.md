@@ -151,6 +151,8 @@ The document set is cheap. Failing it is not, and the arithmetic is worth doing 
 
 **What would change my mind.** If the manual origin route is extended past 30 November 2026, the guarantee leaves the calendar and the first calculation becomes hypothetical. If the 21-day validity runs from a different event than the date the result is issued — a reading I have taken from Article 3, which a customs notice is free to restate — then every shipment planned around the window moves. And if the per-container fine is assessed at a fraction of the statutory maximum in practice, the urgency argument needs a different number behind it, which is the honest weakness of quoting a maximum.
 
+> Also read: [China's Food-Export Container Check Expires in 21 Days, and the Clock Starts Before Loading](/blog/china-container-suitability-check-frozen-food-export-2026/)
+
 ## For you
 
 - **First shipment:** ask the supplier for the invoice and packing list in draft before production finishes. At that stage an error is a correction; after the vessel sails it is a delay.

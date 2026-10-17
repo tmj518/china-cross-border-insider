@@ -15,6 +15,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../consts";
+import { fitTitle, fitDescription } from "../lib/meta";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 
@@ -42,7 +43,7 @@ const description =
   "Every figure on this site carries a value, unit, period, named source and retrieval date. Here is how many, from which registers, and which sources we could not read.";
 ---
 
-<BaseLayout title={`${title} — ${SITE.name}`} description={description}>
+<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={description}>
   <div class="container">
     <main id="main">
       <article>

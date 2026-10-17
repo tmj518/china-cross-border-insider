@@ -7,6 +7,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published, relatedPosts } from "../../lib/post";
 import { personNode, publisherRef } from "../../lib/seo.mjs";
 import { buildHubs, hubsFor } from "../../lib/topics";
+import { fitTitle, fitDescription } from "../../lib/meta";
 
 export async function getStaticPaths() {
   const posts = published(await getCollection("blog"));
@@ -101,7 +102,7 @@ const jsonLd = {
    * schema.org provides for exactly this. `description` is the metadata field for the summary and is
    * already supplied separately.
    */
-  title={`${data.title} — ${SITE.name}`}
+  title={`${fitTitle(data.title, "", SITE.name)} — ${SITE.name}`}
   description={data.description}
   ogType="article"
   image={data.heroImage}

@@ -31,13 +31,14 @@
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../consts";
+import { fitTitle, fitDescription } from "../lib/meta";
 
 const title = "Import duty and landed-cost calculators";
 const description =
   "Work out duty per unit and per container from your own FOB and rates, or what a low-value parcel costs per item under the EU rules that change on 1 November 2026. Every tariff layer shown separately, including the ones most calculators omit.";
 ---
 
-<BaseLayout title={`${title} — ${SITE.name}`} description={description}>
+<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={description}>
   <div class="container">
     <main id="main">
       <article>

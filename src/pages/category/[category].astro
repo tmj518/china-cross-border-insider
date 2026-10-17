@@ -6,6 +6,7 @@ import Sidebar from "../../components/Sidebar.astro";
 import { CATEGORIES, SITE } from "../../consts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published, toCard } from "../../lib/post";
+import { fitTitle, fitDescription } from "../../lib/meta";
 
 /** spec §3 navigation silos — one listing page per category. */
 export async function getStaticPaths() {
@@ -29,7 +30,7 @@ const numbers = numbersFor(all);
 ---
 
 <BaseLayout
-  title={`${category.label} — ${SITE.name}`}
+  title={`${fitTitle(category.label, "", SITE.name)} — ${SITE.name}`}
   description={category.description}
 >
   <div class="container">

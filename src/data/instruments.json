@@ -593,7 +593,7 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-notice-of-initiation-c-2026-6637-section-24",
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
       "figures": [
         {
@@ -616,7 +616,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "ex 3912 39 85",
           "unit": "the Combined Nomenclature heading covering the product, with TARIC codes 3912 39 85 30, 3912 39 85 60 and 3912 39 85 90",
           "period": "classification given in the notice for information and without prejudice to a later change",
@@ -625,7 +625,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "6",
           "unit": "the number of distinct cellulose ethers in scope, identified by CAS number rather than by trade name",
           "period": "methyl cellulose 9004-67-5, hydroxyethyl cellulose 9004-62-0 and 80455-45-4, hydroxyethyl methyl cellulose 9032-42-2, hydroxypropyl methyl cellulose 9004-65-3, ethyl hydroxyethyl cellulose 9004-58-4, and methyl ethyl hydroxyethyl cellulose",
@@ -634,8 +634,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1369,7 +1369,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "190 days",
           "unit": "the gap between the closed comment window and the earliest possible provisional duty — the stretch in which registration can be ordered with nothing payable yet",
           "period": "10 days from publication to 4 October 2026, against the seven-month provisional date of 24 April 2027",
@@ -1378,8 +1378,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1402,7 +1402,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "0 to 25,000 dollars",
           "unit": "the duty on one 50,000-dollar container across the same range — the per-container exposure a buyer cannot price today",
           "period": "calculated on CIF value, which is the basis Regulation (EU) 2016/1036 uses for ad valorem duty",
@@ -1411,8 +1411,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1590,7 +1590,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "24 September 2026",
           "unit": "the date the notice of initiation was published, which is the date every deadline in the case runs from",
           "period": "initiation of case AD760, an initial investigation",
@@ -1599,8 +1599,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1623,7 +1623,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "10 August 2026",
           "unit": "the date the complaint was lodged, by Ashland Industries Nederland BV, Ashland Specialties Belgium BV and SE Tylose GmbH & Co. KG",
           "period": "six weeks before the Commission opened the case",
@@ -1632,8 +1632,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1642,7 +1642,7 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-notice-of-initiation-c-2026-6637-section-24",
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 5.1, Investigation period and period considered",
       "figures": [
         {
@@ -1656,7 +1656,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "1 April 2025 to 31 March 2026",
           "unit": "the investigation period over which dumping and injury are measured",
           "period": "the injury trend is examined from 1 January 2022 to the end of the investigation period",
@@ -1665,8 +1665,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1675,7 +1675,7 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-notice-of-initiation-c-2026-6637-section-24",
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 5.2, Comments on the complaint and the initiation of the investigation",
       "figures": [
         {
@@ -1689,7 +1689,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "10 days",
           "unit": "the window to comment on the product scope, counted from publication — it closed on 4 October 2026",
           "period": "the same section allows 15 days for a hearing request and 15 days to comment on provisional measures, closed 9 October 2026",
@@ -1698,8 +1698,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1708,7 +1708,7 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-notice-of-initiation-c-2026-6637-section-24",
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 5.3, Procedure for the determination of dumping",
       "figures": [
         {
@@ -1722,7 +1722,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "30 days",
           "unit": "the time a sampled exporting producer has to return the questionnaire after being told it is in the sample",
           "period": "the sampling decision had not been published when this article was written",
@@ -1731,8 +1731,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1741,7 +1741,7 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-notice-of-initiation-c-2026-6637-section-24",
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 7, Schedule of the investigation; Regulation (EU) 2016/1036 Article 7(1)",
       "figures": [
         {
@@ -1755,7 +1755,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "24 May 2027",
           "unit": "the last day on which provisional duties can be imposed — eight months from publication",
           "period": "Article 7(1) of Regulation (EU) 2016/1036 allows seven months, and eight months at the outside",
@@ -1764,8 +1764,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1774,7 +1774,7 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-notice-of-initiation-c-2026-6637-section-24",
+      "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 7; Regulation (EU) 2016/1036 Article 6(9)",
       "figures": [
         {
@@ -1788,7 +1788,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "24 November 2027",
           "unit": "the last day of the investigation — fourteen months from publication, the outer limit in Article 6(9)",
           "period": "the notice states the investigation concludes within one year, and not more than fourteen months, of publication",
@@ -1797,8 +1797,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
@@ -1821,7 +1821,7 @@
         },
         {
           "articleSlug": "eu-cellulose-ethers-duty-timeline",
-          "articleNum": 24,
+          "articleNum": 32,
           "value": "C/2026/6637",
           "unit": "the notice of initiation, published as document 52026XC04924 in Official Journal C/2026/4924",
           "period": "published 24 September 2026",
@@ -1830,8 +1830,8 @@
         }
       ],
       "articleNums": [
-        24,
-        30
+        30,
+        32
       ],
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",

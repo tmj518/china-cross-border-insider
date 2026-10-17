@@ -113,6 +113,8 @@ Three things follow, and the first one inverts the usual reading of an extension
 
 > Also read: [The EU Registered Your Cellulose Ether Imports, and the Duty Comes Later](/blog/eu-cellulose-ethers-duty-timeline/)
 
+> Also read: [China Dropped Tariffs to Zero on 1,344 Farm and Food Lines for 20 African Countries](/blog/china-zero-tariff-20-african-countries-2026/)
+
 ## For you
 
 - **If you import machinery, appliances, vehicles or parts containing steel or aluminium into the EU:** the practical first step is not a cost estimate, it is to find out how much metal is in each SKU. Ask your supplier for the steel and aluminium mass per unit, per material, with the origin of each. That figure does not exist in most product documentation today, and it is the input everything else depends on.

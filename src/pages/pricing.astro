@@ -31,6 +31,7 @@ import { SITE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { numbersFor, published } from "../lib/post";
 import instrumentRegistry from "../data/instruments.json";
+import { fitTitle, fitDescription } from "../lib/meta";
 
 const posts = published(await getCollection("blog"));
 const numbers = numbersFor(posts);
@@ -140,7 +141,7 @@ const jsonLd = {
 };
 ---
 
-<BaseLayout title={`${title} — ${SITE.name}`} description={description.slice(0, 290)} jsonLd={jsonLd}>
+<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={fitDescription(description)} jsonLd={jsonLd}>
   <div class="container">
     <main id="main">
       <div class="page-head">

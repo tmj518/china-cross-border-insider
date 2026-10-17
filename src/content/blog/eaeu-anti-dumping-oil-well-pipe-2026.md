@@ -138,6 +138,8 @@ The undertaking list cuts deeper than the range. An exporter on it sells without
 
 **What would change my mind.** If the price undertaking list contains entities beyond those named in the summary I read, then the practical choice for a buyer is wider than this article implies — the announcement lists the removals, and I did not obtain the full current list, so a company that appears absent here is not thereby off it. If the Commission applies the duty to a value other than the declared CIF, every dollar figure above moves. And if the measure is challenged or suspended before it takes effect at the end of the 30-day interval, the operative date changes while the rates do not.
 
+> Also read: [China's Factory Profits Rose 15.7%, and Their Customers Started Paying Later](/blog/china-industrial-profits-q4-supply-chain/)
+
 ## For you
 
 - **Buyers of oil country tubular goods into Russia, Kazakhstan, Belarus, Armenia or Kyrgyzstan:** ask the mill for its undertaking status in writing before the order, not at the port. The question is whether the specific exporting legal entity is on the list, because the list names entities and the removal this month named one.

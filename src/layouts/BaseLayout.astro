@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import { AUTHOR, CF_ANALYTICS_TOKEN, SITE } from "../consts";
 import { siteBlocks, webPageBlock } from "../lib/seo.mjs";
+import { fitDescription } from "../lib/meta";
 
 /**
  * Site chrome + the SEO head.
@@ -138,6 +139,18 @@ const pageBlocks = noindex
     ];
 
 const blocks = [...pageBlocks, ...ownBlocks];
+
+/*
+ * The description as a search result will show it.
+ *
+ * A meta description longer than about 155 columns is cut by the engine, and the cut lands wherever the
+ * engine chooses - usually mid-clause. fitDescription in src/lib/meta.ts cuts on a sentence boundary when
+ * one falls late enough to stay informative, and on a word boundary otherwise, counting CJK as two columns.
+ *
+ * Applied here rather than per page because every page reaches the reader through this file, and twelve of
+ * them passed a description straight through at up to 290 characters.
+ */
+const fittedDescription = fitDescription(description);
 ---
 
 <!doctype html>
@@ -146,7 +159,7 @@ const blocks = [...pageBlocks, ...ownBlocks];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={fittedDescription} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -188,7 +201,7 @@ const blocks = [...pageBlocks, ...ownBlocks];
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={fittedDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="en_US" />
@@ -211,7 +224,7 @@ const blocks = [...pageBlocks, ...ownBlocks];
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={fittedDescription} />
     <meta name="twitter:image" content={ogImage} />
 
     {

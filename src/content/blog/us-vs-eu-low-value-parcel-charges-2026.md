@@ -112,6 +112,8 @@ Three things follow.
 
 **And on the US side the binding cost is administrative rather than dutiable.** The duty on a EUR 10 parcel is trivial; the entry preparation and bond is $20 to $60. Postal informal entry under 19 CFR 145.12 is capped at **$2,500** and excludes mail subject to Chapter 98 or Chapter 99 duties. Nearly all Chinese consumer goods carry a Chapter 99 Section 301 code, so they lose that route and need entry type 13 or a formal entry. **A parcel whose duty is under a dollar can cost more to clear than to buy.**
 
+> Also read: [Your Parcel Is Getting Cheaper to Clear — and Harder to File](/blog/us-low-value-shipment-entry-rule-2026/)
+
 ## For you
 
 - **Sellers whose catalogue is low-value multi-item parcels:** Europe is now your expensive market, not America. The EUR 3 duty is per item, so a three-item parcel pays three times what a one-item parcel of the same total value pays. Consolidating SKUs into single-item listings, or moving to a single unit per parcel, is the only lever the EU design responds to.

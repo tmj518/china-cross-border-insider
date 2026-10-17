@@ -122,6 +122,31 @@ const SCENARIOS = [
     transcriptContains: "verdict says PUBLISHED but nothing was published",
   },
   {
+    name: "a repeated call is answered, not re-run",
+    why: "four reads of the same file cost sixteen turns in the run that failed",
+    turns: [
+      [{ name: "read_file", args: { path: "daily-task.txt" } }],
+      [{ name: "read_file", args: { path: "daily-task.txt" } }],
+      [{ name: "read_file", args: { path: "daily-task.txt" } }],
+      [
+        {
+          name: "write_file",
+          args: {
+            path: "data/drafts/repeat.md",
+            content:
+              '---\ntitle: "A title"\nsubtitle: "A subtitle that is short enough to pass the schema check"\ndescription: "A description that is also short enough to pass the schema check on the first attempt."\npublishDate: 2026-10-17\ncategory: trade-policy\nstakes: directional\naudience: importer\n---\n\n## AI Summary\n\nBody.\n"',
+          },
+        },
+      ],
+      [{ name: "check_draft", args: { path: "data/drafts/repeat.md" } }],
+      [{ name: "publish_draft", args: { path: "data/drafts/repeat.md" } }],
+      [{ name: "finish", args: { verdict: "PUBLISHED", summary: "wrote after three redundant reads" } }],
+    ],
+    verdict: "PUBLISHED",
+    published: ["repeat"],
+    transcriptContains: "answered from memory",
+  },
+  {
     name: "a model that only talks",
     why: "the loop must end, and it must report a verdict rather than running to the turn limit quietly",
     turns: [[], [], [], []],

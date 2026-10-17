@@ -15,6 +15,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published } from "../../lib/post";
 import registry from "../../data/instruments.json";
 import { getCollection } from "astro:content";
+import { fitTitle, fitDescription } from "../../lib/meta";
 
 const all = published(await getCollection("blog"));
 const numbers = numbersFor(all);
@@ -49,7 +50,7 @@ const description =
 ---
 
 <BaseLayout
-  title={`${title} — ${SITE.name}`}
+  title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`}
   description={description}
   pageType="CollectionPage"
 >

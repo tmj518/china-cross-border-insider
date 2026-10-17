@@ -138,6 +138,8 @@ Two numbers decide whether this measure changes your landed cost, and neither is
 
 **What would change my mind.** If the finance ministry decree implements the stages on a schedule that differs from the notification, or applies them to a different weight basis, the per-container totals move and the stage table is a shape rather than a plan. If the corrected per-kilogram heading is itself a second error and the operative measure is per tonne, then the duty is negligible and this article is wrong about its central claim — I regard that as unlikely because a corrigendum exists precisely to fix the heading, and because the Chinese summary uses per kilogram in the sentence nearest the source. And if Indonesia terminates or shortens the measure following the revision, none of the stage arithmetic survives.
 
+> Also read: [The Same Parcel Costs Three Times More in America Than in Europe](/blog/us-vs-eu-low-value-parcel-charges-2026/)
+
 ## For you
 
 - **Importers of PE tarpaulins into Indonesia:** the duty is charged per kilogram, so your first task is the entered weight of each SKU, not its value. A 4 by 6 metre sheet at 200 grams per square metre carries $3.60 in stage one; at 150 grams it carries $2.70.

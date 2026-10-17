@@ -25,6 +25,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../consts";
+import { fitTitle, fitDescription } from "../lib/meta";
 
 /**
  * Publisher to market. Ordered, and each rule names the body it matches, so a
@@ -126,7 +127,7 @@ const description =
   "Which markets each article draws its sources from, assigned by the body that published each source. Every piece prices a shipment moving between two or more markets.";
 ---
 
-<BaseLayout title={`${title} — ${SITE.name}`} description={description}>
+<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={description}>
   <div class="container">
     <main id="main">
       <article>

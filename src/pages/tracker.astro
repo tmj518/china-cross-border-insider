@@ -21,6 +21,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../consts";
+import { fitTitle, fitDescription } from "../lib/meta";
 
 const TODAY = new Date("2026-10-07T00:00:00Z");
 
@@ -77,7 +78,7 @@ const description =
   "Every dated policy change this site tracks, with the date it takes effect, the date the analysis is re-checked, and a named source for each. A review prompt, not a filing conclusion.";
 ---
 
-<BaseLayout title={`${title} — ${SITE.name}`} description={description}>
+<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={description}>
   <div class="container">
     <main id="main">
       <article>

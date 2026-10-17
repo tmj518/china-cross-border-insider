@@ -25,6 +25,7 @@ import { CATEGORIES, SITE } from "../../consts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published, toCard } from "../../lib/post";
 import { MIN_CLUSTER, slugify } from "../../lib/topics";
+import { fitTitle, fitDescription } from "../../lib/meta";
 
 export async function getStaticPaths() {
   const posts = published(await getCollection("blog"));
@@ -88,7 +89,7 @@ const categoryLabel = (s: string) => CATEGORIES.find((c) => c.slug === s)?.label
 const description = `Every analysis on ${tag}: ${posts.length} pieces, each figure traceable to a named document and a retrieval date.`;
 ---
 
-<BaseLayout title={`${tag} — ${SITE.name}`} description={description.slice(0, 290)}>
+<BaseLayout title={`${fitTitle(tag, "", SITE.name)} — ${SITE.name}`} description={fitDescription(description)}>
   <div class="container">
     <main id="main">
       <div class="page-head">

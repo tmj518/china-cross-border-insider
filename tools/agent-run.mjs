@@ -53,7 +53,23 @@ const flag = (name, dflt) => {
 };
 
 const TASK_FILE = flag("task", "daily-task.txt");
-const MAX_TURNS = Number(flag("max-turns", 24));
+/*
+ * Forty turns, not twenty-four.
+ *
+ * The run that failed spent all twenty-four on preparation and never wrote a draft, so the ceiling was not
+ * the binding constraint - but twenty-four is also too few for a task that legitimately needs a draft, two
+ * revisions and a publish. Forty leaves room for the work while the budget and the repeat guard below stop
+ * the preparing from filling it.
+ */
+const MAX_TURNS = Number(flag("max-turns", 40));
+
+/*
+ * How many turns may be spent reading and inspecting before writing has to start.
+ *
+ * Chosen as a share of the budget rather than a constant, so --max-turns=12 does not leave a reading
+ * allowance larger than the whole run.
+ */
+const PREP_TURNS = Math.max(3, Math.floor(MAX_TURNS / 4));
 const DRY = args.includes("--dry-run");
 const REPORT = join(ROOT, "data", "tmp", "agent-report.json");
 const TRANSCRIPT = join(ROOT, "data", "tmp", "agent-transcript.jsonl");
@@ -376,7 +392,26 @@ The rules that are not negotiable, because they are the reason this site is wort
   5. When you are done, call finish with a verdict and one sentence. If you could not do the day's work,
      say why in that sentence rather than finishing quietly.
 
-Work in small steps and look at the result of each one. The task file below is your instructions.`;
+HOW YOUR TURNS WORK - read this before your first tool call.
+
+You have ${MAX_TURNS} turns. The first ${PREP_TURNS} are for reading and inspecting. From turn
+${PREP_TURNS + 1} you must be writing, checking and publishing. If you are still reading at turn
+${PREP_TURNS + 1}, you will run out of turns with nothing written, which has happened once already and
+produced nothing at all.
+
+The task file is long and it names many documents and many tools. You are not required to read all of it or
+run all of them. Read what you need to write today's article, and stop. A check that tells you what you
+already know costs a turn you will want later.
+
+If a tool or file does not exist, that is information, not an obstacle: note it and carry on. Do not try a
+different path to the same missing thing.
+
+Do not repeat a call. If you have read a file, you have read it; if you have run a check, its answer will not
+change because you ran it again. A repeated call is refused without being executed, and you are told what it
+returned the first time.
+
+The first thing you should do is decide what today's article is about. The directive at data/directive.json
+may already name a subject; if it does not, one research call decides it. Then write.`;
 
 let messages = [
   {
@@ -390,6 +425,18 @@ ${instructions}
 Begin. Look at the repository state first, then decide what the day needs.`,
   },
 ];
+
+/*
+ * What each read-only call returned, so a repeat is answered rather than re-run.
+ *
+ * Keyed on tool and arguments, so a different path is a different call. Only read-only tools are recorded:
+ * write_file and publish_draft are how a draft gets corrected, and finish is how the loop ends, so
+ * suppressing any of those would break a run rather than shorten it.
+ */
+const seenCalls = new Map();
+const REPEATABLE = new Set(["read_file", "list_dir", "check_draft"]);
+const callKey = (name, args) => `${name}:${JSON.stringify(args ?? {})}`;
+let repeatCount = 0;
 
 let turn = 0;
 let err = null;
@@ -427,7 +474,27 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
     }
     const label = c.function?.name === "run" ? input.command : input.path ?? "";
     console.log(`  turn ${turn} · ${c.function?.name}  ${String(label).slice(0, 90)}`);
-    const result = runTool(c.function?.name, input);
+    /*
+     * Answered, not re-run, and not refused outright: the point is to let the model continue from where it
+     * was rather than invite it to look for a variant that costs the same turn.
+     */
+    const name = c.function?.name;
+    let result;
+    const key = REPEATABLE.has(name) ? callKey(name, input) : null;
+    if (key && seenCalls.has(key)) {
+      repeatCount++;
+      result = `You already made this call. It returned:\n\n${seenCalls.get(key)}\n\nNothing has changed since. Do not call it again - use this answer and go on to writing.`;
+      console.log(`  turn ${turn} · ${name} repeated, answered from memory`);
+      /*
+       * In the transcript as well as on the console. A guard that only prints is invisible to the report and
+       * to any later reading of the run, and "how many turns were wasted re-asking" is exactly the number
+       * that tells you whether the prompt is working.
+       */
+      record({ turn, repeated: name, key: key.slice(0, 120), note: "answered from memory, not executed" });
+    } else {
+      result = runTool(name, input);
+      if (key) seenCalls.set(key, result);
+    }
     messages.push({ role: "tool", tool_call_id: c.id, content: result });
   }
 }
@@ -439,6 +506,8 @@ const report = {
   verdict: finished?.verdict ?? (err ? "MODEL-FAILED" : turn > MAX_TURNS ? "TURN-LIMIT" : "NO-VERDICT"),
   summary: finished?.summary ?? (err ? err : "the agent stopped without calling finish"),
   turns: Math.min(turn, MAX_TURNS + 1) - 1,
+  /* A run that spends its turns re-asking has a prompt problem, and this number is how you see it. */
+  repeatedCalls: repeatCount,
   published: [...published],
   usage: usageToday(),
   checkOnly: false,

@@ -121,6 +121,8 @@ Three things follow.
 
 **The ranking between the two metals is not stable over time either.** Holding the certificate price flat, the aluminium-to-steel CBAM ratio falls from 6.00x in 2026 to 4.11x in 2034, because both materials' benchmarks are deducted on the same schedule while the phase-out moves the base. The gap narrows without the ranking flipping, over the years the free-allocation adjustment runs to zero.
 
+> Also read: [China Cut the Refund on Finished Goods and Added a Tax on Raw Metal](/blog/china-export-rebate-vs-export-duty-2026/)
+
 ## For you
 
 - **Importing steel into the EU:** work out which category your goods sit in before anything else, because the duty applies per category and the quota is allocated per category and origin. Then compute both charges. On hot-rolled coil the quota duty is the larger one above a CIF of EUR 327 a tonne, which is almost every real shipment.

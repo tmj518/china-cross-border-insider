@@ -104,6 +104,37 @@ export function extractArticle(r, fallbackSlug) {
  * silently again.
  */
 
+
+/**
+ * The next article number, from the collection rather than from the model.
+ *
+ * A number identifies a position in the sequence, so a new article is one past the highest that exists. The
+ * writer is asked for the field because the prompt's specification names it, but its value is replaced here -
+ * on 2026-10-17 a draft arrived with #24 and the collection already had a #24, which puts two pages in the
+ * same slot and shows up on a listing page weeks later.
+ *
+ * Recomputed at write time from what is on disk, so it cannot itself collide.
+ */
+function nextArticleNumber() {
+  const dir = join(ROOT, "src", "content", "blog");
+  let max = 0;
+  if (existsSync(dir)) {
+    for (const f of readdirSync(dir).filter((x) => x.endsWith(".md"))) {
+      const m = /^articleNumber:\s*(\d+)/m.exec(readFileSync(join(dir, f), "utf8"));
+      if (m) max = Math.max(max, Number(m[1]));
+    }
+  }
+  /* Drafts in flight have not been numbered yet, but a re-run of the same subject should not skip. */
+  const drafts = join(ROOT, "data", "drafts");
+  if (existsSync(drafts)) {
+    for (const f of readdirSync(drafts).filter((x) => x.endsWith(".md"))) {
+      const m = /^articleNumber:\s*(\d+)/m.exec(readFileSync(join(drafts, f), "utf8"));
+      if (m) max = Math.max(max, Number(m[1]));
+    }
+  }
+  return max + 1;
+}
+
 /** Parse the flat frontmatter block into an object, unquoting simple values. */
 function frontmatter(article) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(article);
@@ -618,7 +649,24 @@ ${previous.slice(0, 60000)}`;
 
   mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
   const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
-  writeFileSync(outFile, article, "utf8");
+
+  /*
+   * The number is assigned here, not taken from the draft.
+   *
+   * A number identifies a position in the sequence, so a new article is one past the highest that exists. On
+   * 2026-10-17 a draft arrived carrying #24 and the collection already had one, which puts two pages in the
+   * same slot - a defect that surfaces on a listing page weeks later and takes an afternoon to trace. The
+   * writer still supplies the field because the prompt's specification names it; the value is replaced.
+   */
+  const assigned = nextArticleNumber();
+  const previous = /^articleNumber:\s*(\d+)\s*$/m.exec(article)?.[1];
+  const withNumber = /^articleNumber:\s*\d+\s*$/m.test(article)
+    ? article.replace(/^articleNumber:\s*\d+\s*$/m, `articleNumber: ${assigned}`)
+    : article.replace(/^---\r?\n/, `---\narticleNumber: ${assigned}\n`);
+  if (previous && Number(previous) !== assigned) {
+    console.log(`  number    : the draft said #${previous}, the collection needs #${assigned} - assigned #${assigned}`);
+  }
+  writeFileSync(outFile, withNumber, "utf8");
 
   const words = (article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
   console.log(`  written   : ${outFile.replace(/\\/g, "/").replace(ROOT.replace(/\\/g, "/") + "/", "")}`);

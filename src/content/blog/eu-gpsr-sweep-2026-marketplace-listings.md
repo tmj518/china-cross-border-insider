@@ -120,6 +120,10 @@ Two things follow from that table.
 
 **So do not treat this as a documentation project. Treat it as the cheapest insurance in the catalogue.** Pull every live listing and check three fields against the source documents: manufacturer name and address, an EU responsible person with real contact details, and product identification that matches the item being sold. Where any field is missing, the listing is one sweep away from the table above. The remediation takes an afternoon per catalogue; the alternative is priced per day. Note that the listing is also where a second, smaller EU charge attaches under [the 2026 per-item customs charge](/blog/eu-per-item-customs-charge-2026/), so the item count that raises your duty bill is the same count that raises compliance exposure.
 
+> Also read: [Your Parcel Is Getting Cheaper to Clear — and Harder to File](/blog/us-low-value-shipment-entry-rule-2026/)
+
+> Also read: [The Same Parcel Costs Three Times More in America Than in Europe](/blog/us-vs-eu-low-value-parcel-charges-2026/)
+
 ## For you
 
 - **Sellers with an EU responsible person already named:** verify that the details on the live listing match the mandate. A responsible person who has changed address, gone out of business, or never agreed to be named for that specific product creates the same exposure as having none, with the added risk that the seller believes the box is ticked.

@@ -135,6 +135,8 @@ The verification order below costs nothing until the last step, and the last ste
 
 **What would change my mind.** If the agent registry is not searchable by a foreign buyer without a Chinese identity, the check I describe as cheap becomes unavailable rather than cheap, and steps 1 and 2 carry the whole load. If the three-year ban is applied only to the designated person and never to the company, then a revoked registration leaves the entity able to re-register through a different agent, and the register's deterrent value for a buyer is smaller than this article suggests. And if I have the retention period attached to the wrong obligation — the rule covers agents' records, and a buyer's practical interest is in the registration record itself — then that figure matters less than its prominence here implies.
 
+> Also read: [Two EU Charges Reach Steel and Only One Reaches Aluminium, and That Reverses the Ranking](/blog/eu-cbam-steel-vs-aluminium-carbon-cost-2026/)
+
 ## For you
 
 - **First-time importer:** run steps 1 to 3 on every supplier you shortlist. They cost an hour and eliminate most of the field. Do them before any deposit conversation, not as part of it.

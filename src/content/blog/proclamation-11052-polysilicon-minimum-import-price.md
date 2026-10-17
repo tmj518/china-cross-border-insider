@@ -125,6 +125,10 @@ Three things follow, and the third is the one nobody is pricing.
 
 **So stop treating this as a tariff to absorb and start treating it as a floor to plan against.** The moves that follow: confirm whether each product you buy falls inside Annexes I or II by reading the annexes rather than a summary; establish the documentation that supports a first arm's-length US sale at or above the floor, because that single item is worth $18 per kilogram in the example above; and check the stockpiling caps before arranging a pre-December shipment, since the window from 22 September to 3 December is precisely when the pull-forward would otherwise happen.
 
+> Also read: [China Dropped Tariffs to Zero on 1,344 Farm and Food Lines for 20 African Countries](/blog/china-zero-tariff-20-african-countries-2026/)
+
+> Also read: [CBAM Is Moving From Goods That Are Steel to Goods That Contain It](/blog/eu-cbam-downstream-extension-material-composition-2028/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

@@ -54,10 +54,25 @@ function truncate(s, limit) {
   let out = "";
   for (const word of str.split(" ")) {
     const next = out ? `${out} ${word}` : word;
-    if (displayWidth(next) + 1 > limit) break;
+    /* +2: the space this word introduces, and the ellipsis appended after the loop. */
+    if (displayWidth(next) + 2 > limit) break;
     out = next;
   }
-  if (!out) out = str.slice(0, Math.max(1, limit - 1));
+  /*
+   * No word fitted: cut by display width, one character at a time.
+   *
+   * This was `str.slice(0, limit - 1)`, which counts characters - right for Latin text, wrong by a factor of
+   * two for Chinese, where a 38-column budget produced a 76-column title. A single unbroken token reaches
+   * here, and a Chinese sentence is one token because it has no spaces.
+   */
+  if (!out) {
+    let grown = "";
+    for (const ch of str) {
+      if (displayWidth(grown + ch) + 1 > limit) break;
+      grown += ch;
+    }
+    out = grown || [...str][0] || "";
+  }
   return out.replace(/[,;:.\-–—\s]+$/, "") + "…";
 }
 
@@ -66,8 +81,12 @@ function truncate(s, limit) {
  *
  * `qualifier` is the most distinguishing part of an instrument's identity and is deliberately not
  * truncated. `siteName` is appended by the layout and is subtracted here so the total is what fits.
+ *
+ * The default is 60 rather than a round number above it: 60 display columns is where a result truncates,
+ * and the checker that enforces it uses the same figure. Two numbers for one limit is how a title ends up
+ * one column over the line, which is what happened.
  */
-export function fitTitle(name, qualifier, siteName, limit = 62) {
+export function fitTitle(name, qualifier, siteName, limit = 60) {
   const suffix = siteName ? ` — ${siteName}` : "";
   const tail = qualifier ? ` (${qualifier})` : "";
   const room = Math.max(18, limit - displayWidth(suffix) - displayWidth(tail));
@@ -79,9 +98,10 @@ export function fitTitle(name, qualifier, siteName, limit = 62) {
  *
  * Cuts on a sentence boundary when one falls late enough to keep the result informative, and on a word
  * boundary otherwise. A description that is silently halved mid-clause is worse than a shorter one that
- * ends: the reader's decision happens in those 155 characters.
+ * ends: the reader's decision happens in those 155 characters, which is why the default is 155 and not the
+ * 158 that was here - the checker measures against 155, and a limit one above the rule is a rule that fails.
  */
-export function fitDescription(text, limit = 158) {
+export function fitDescription(text, limit = 155) {
   const str = String(text).replace(/\s+/g, " ").trim();
   if (displayWidth(str) <= limit) return str;
   const floor = Math.floor(limit * 0.62);

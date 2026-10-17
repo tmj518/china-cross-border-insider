@@ -32,6 +32,7 @@ import { SITE, SITE_URL } from "../../consts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { numbersFor, published } from "../../lib/post";
 import registry from "../../data/instruments.json";
+import { fitTitle, fitDescription } from "../../lib/meta";
 
 export async function getStaticPaths() {
   const posts = published(await getCollection("blog"));
@@ -76,10 +77,34 @@ const numbers = numbersFor(all);
  * what it is, and they sit at the end where they are cheapest to drop.
  */
 const source = instrument.source;
-const name = source
-  .replace(/,\s*(?:published|released|retrieved|via)\b[^,]*$/i, "")
-  .replace(/\s+/g, " ")
-  .trim();
+/*
+ * The source, with a repeated publisher prefix moved out of the title.
+ *
+ * Two instruments from the same agency were producing identical sixty-column titles, because the publisher
+ * is identical on both and the distinguishing clause sits after the first comma - so truncating from the
+ * front kept the shared part and discarded the difference.
+ *
+ * The publisher is not lost: it is in the description, in the citation metadata and in the JSON-LD, which is
+ * where a reader looking for provenance finds it. The title spends its budget on what separates this
+ * document from the other one.
+ *
+ * Narrow on purpose. Only when the first comma-separated part has no digits and is shorter than the rest - a
+ * source whose leading segment carries the identifying number, such as "91 FR 51975", is left alone.
+ */
+const cleaned = source.replace(/,\s*(?:published|released|retrieved|via)\b[^,]*$/i, "").replace(/\s+/g, " ").trim();
+const commaAt = cleaned.indexOf(",");
+const head = commaAt > 0 ? cleaned.slice(0, commaAt).trim() : "";
+const tail = commaAt > 0 ? cleaned.slice(commaAt + 1).trim() : "";
+/*
+ * Is the leading segment a publisher rather than the name?
+ *
+ * The first version compared lengths, which works when the distinguishing clause is long and fails when it
+ * is short - and a short tail is exactly the case where the shared prefix is most of the title. A publisher
+ * is recognisable on its own terms: more than twenty columns and no digits. A segment carrying "91 FR 51975"
+ * has digits and is therefore never treated as a prefix.
+ */
+const publisherIsShared = commaAt > 0 && !/\d/.test(head) && head.length > 20;
+const name = (publisherIsShared ? tail : cleaned).trim();
 
 /**
  * A stable identifier, pulled out of the source string when one is present.
@@ -107,43 +132,41 @@ const identifier =
   /国市监[^\s,，]{0,12}\d+号/.exec(source)?.[0] ??
   null;
 
-/** Month and clause are appended when there is no formal number, which is when they are all there is. */
-const qualifier = identifier ?? [months, clause].filter(Boolean).join(", ");
+/**
+ * A parenthetical inside the publisher's name is a qualifier, not part of the publisher.
+ *
+ * "(in Preparation)", "(draft)", "(revised)" - these describe the document's status and are often the only
+ * thing separating two releases from the same agency. Lifting one out means it lands in the qualifier, which
+ * is appended outside the truncation, so it cannot be the part that gets cut.
+ */
+const statusQualifier = /\(([^)]{2,40})\)/.exec(head)?.[1] ?? "";
 
 /**
- * Keep a title inside the width a search result will actually show.
- *
- * Roughly 60 characters of Latin text survives in a result snippet; past that the engine rewrites the
- * title from page content, which hands it control of the one line that decides whether anyone clicks.
- * A site-name suffix is another 14, so the name is budgeted at what is left.
- *
- * Two earlier attempts got this wrong in opposite directions and both are worth not repeating. The
- * first cut the source at its first comma, which produced four pages called "European Commission" and
- * lost the distinguishing detail entirely. The second kept the whole source and truncated to a fixed
- * 62, which still left 28 of 42 pages over 70 characters and left three pairs identical, because at
- * that budget the difference between two instruments four words in never survives.
- *
- * What is different here: the qualifier - announcement number, month, annex - is appended outside the
- * truncation, so the most distinguishing part is never the part that gets cut.
+ * Month, clause and status are appended when there is no formal number, which is when they are all there is.
  */
-function fitTitle(baseName, qual, total = 92) {
-  const tail = qual ? ` (${qual})` : "";
-  const suffix = ` — ${SITE.name}`;
-  const room = total - tail.length - suffix.length;
-  let n = baseName;
-  if (n.length > room) {
-    const cut = n.slice(0, Math.max(12, room - 1));
-    const sp = cut.lastIndexOf(" ");
-    n = (sp > 24 ? cut.slice(0, sp) : cut).replace(/[,;:.\s]+$/, "") + "…";
-  }
-  return n + tail;
-}
+const qualifier = identifier ?? [months, clause, statusQualifier].filter(Boolean).join(", ");
+
 
 const figures = instrument.figures;
 
-const title = fitTitle(name, qualifier);
+/*
+ * The complete title, suffix included, inside 60 display columns.
+ *
+ * The qualifier - an announcement number, a month, an annex - is passed separately so the name is what gets
+ * shortened and the distinguishing part survives. fitTitle subtracts the suffix from the budget, so this is
+ * the width a result actually shows.
+ */
+const title = `${fitTitle(name, qualifier, SITE.name, 60)} — ${SITE.name}`;
+/*
+ * The publisher leads the description when the title dropped it.
+ *
+ * The title moves a repeated publisher out of its sixty columns so the distinguishing clause survives. That
+ * is only honest if the publisher is still visible, and a reader deciding whether to trust a figure wants
+ * the agency before the figure.
+ */
+const publisherPrefix = publisherIsShared ? `${head}. ` : "";
 const description =
-  `${figures.length} figure${figures.length === 1 ? "" : "s"} on this site come from ${name}` +
+  `${publisherPrefix}${figures.length} figure${figures.length === 1 ? "" : "s"} on this site come from ${name}` +
   `${qualifier ? ` (${qualifier})` : ""}, cited by ${cited.length} ` +
   `article${cited.length === 1 ? "" : "s"}. Every value carries its unit, period, source and retrieval date.`;
 
@@ -177,8 +200,8 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={`${title} — ${SITE.name}`}
-  description={description.slice(0, 290)}
+  title={title}
+  description={fitDescription(description)}
   jsonLd={jsonLd}
 >
   <div class="container">

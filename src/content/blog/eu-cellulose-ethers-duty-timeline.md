@@ -1,5 +1,5 @@
 ---
-title: "The EU Registered Your Cellulose Ether Imports, and the Duty Comes Later"
+title: "AD760: Registration Is Ordered Now, and the Money Starts in April 2027"
 subtitle: "Case AD760 opened on 24 September 2026. Registration can be ordered with nothing payable until 24 April 2027, and the duty lands on the full period."
 description: "The EU opened anti-dumping case AD760 on cellulose ethers on 24 September 2026. No duty exists yet. Registration can be ordered 190 days before the earliest provisional duty, and any duty reaches back to the registration date."
 publishDate: 2026-10-16
@@ -11,7 +11,7 @@ tags: ["anti-dumping", "cellulose ethers", "AD760", "EU trade defence", "registr
 priority: "P0"
 featured: false
 draft: false
-articleNumber: 24
+articleNumber: 32
 target_keyword: "EU anti-dumping cellulose ethers AD760 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"
