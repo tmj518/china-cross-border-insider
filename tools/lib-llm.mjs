@@ -70,6 +70,20 @@ const PROVIDERS = {
      * a bad key. The preflight reports a missing endpoint id as itself.
      */
     model: process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
+    /*
+     * One endpoint per role, when the operator has made more than one.
+     *
+     * Ark creates an endpoint from a model, and a deployment can hold several - a Doubao endpoint for writing and
+     * a DeepSeek endpoint for review, on the same key. A single `model` string cannot express that, and a reviewer
+     * running the writer's model is not a second opinion.
+     *
+     * Both fall back to ARK_MODEL, so a deployment with one endpoint behaves exactly as before.
+     */
+    models: {
+      writer: process.env.ARK_MODEL_WRITER || process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
+      reviewer: process.env.ARK_MODEL_REVIEWER || process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
+      planner: process.env.ARK_MODEL_PLANNER || process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
+    },
     /* Ark bills in CNY. These are the published Doubao Pro rates converted at 7.1 CNY/USD so the meter
        stays in one currency; the invoice is authoritative. */
     inPerM: 0.11,
@@ -138,7 +152,7 @@ export function needFor(role = "writer") {
     const p = PROVIDERS[name];
     if (!p) continue;
     for (const k of p.keys?.[role] ?? []) {
-      const label = name === "volces" && p.needsEndpointId ? `${k} (plus ARK_MODEL, an ep-... endpoint id)` : k;
+      const label = name === "volces" && p.needsEndpointId ? `${k} (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)` : k;
       if (!out.includes(label)) out.push(label);
     }
   }
@@ -162,11 +176,43 @@ export function reviewIsIndependent() {
    */
   const writer = providerFor("writer");
   const reviewer = providerFor("reviewer", writer);
-  if (!writer || !reviewer) return false;
-  if (writer !== reviewer) return true;
+  if (!writer || !reviewer) return "none";
+
+  /* A different vendor. The strongest arrangement, and the one that survives an outage. */
+  if (writer !== reviewer) return "provider";
+
+  /*
+   * The same vendor. Two things could still differ: the model, and the credential.
+   *
+   * A different model is a real second opinion - it fails differently - but it shares the account, the rate limit
+   * and the bill. A different credential on the same model is not a second opinion at all: the same weights asked
+   * the same question return the same mistake with a different prompt wrapped round it.
+   */
+  const wModel = modelFor(PROVIDERS[writer], "writer");
+  const rModel = modelFor(PROVIDERS[reviewer], "reviewer");
+  if (wModel && rModel && wModel !== rModel) return "model";
+
   const wKey = resolveKey(writer, "writer");
   const rKey = resolveKey(reviewer, "reviewer", wKey ? [wKey.name] : []);
-  return Boolean(rKey);
+  return rKey ? "credential" : "none";
+}
+
+/**
+ * The same answer as a sentence, for the run summary.
+ *
+ * Callers printed "review independent: NO" from a boolean and then explained the yes case in a comment. A level
+ * says which of the four things happened without a lookup table.
+ */
+export function reviewIndependenceLabel() {
+  const level = reviewIsIndependent();
+  const writer = providerFor("writer");
+  const reviewer = providerFor("reviewer", writer);
+  const wm = writer ? modelFor(PROVIDERS[writer], "writer") : "";
+  const rm = reviewer ? modelFor(PROVIDERS[reviewer], "reviewer") : "";
+  if (level === "provider") return `yes - ${writer} writes, ${reviewer} reviews`;
+  if (level === "model") return `model-level - same provider (${writer}), different endpoint: ${wm} writes, ${rm} reviews. Shared credential and rate limit`;
+  if (level === "credential") return `credential only - same model (${wm}); a shared model is not a second opinion`;
+  return `no - the reviewer would use the writer's own model`;
 }
 
 export function summary() {
@@ -175,7 +221,7 @@ export function summary() {
     const p = PROVIDERS[name];
     const w = resolveKey(name, "writer");
     const r = resolveKey(name, "reviewer");
-    const model = p.needsEndpointId ? (p.model || "NO ENDPOINT ID SET") : p.model;
+    const model = p.needsEndpointId ? (modelFor(p, "writer") || "NO ENDPOINT ID SET") : p.model;
     lines.push(
       "    " +
         name.padEnd(9) +
@@ -192,7 +238,7 @@ export function summary() {
     "  providers usable: " + (available().join(", ") || "none") + "\n" +
     lines.join("\n") +
     "\n    roles: " + cross +
-    "\n    review independent: " + (indep ? "yes" : "NO - the reviewer would use the writer's own credential")
+    "\n    review independent: " + reviewIndependenceLabel()
   );
 }
 
@@ -209,6 +255,18 @@ export function summary() {
  * The reviewer is additionally kept away from whatever provider the writer actually used, compared by
  * provider name rather than assumed, so the arrangement survives a configuration change.
  */
+/**
+ * The model a provider should call for a role.
+ *
+ * Providers with per-role endpoints (Ark) answer with the one for this role; everyone else has one model and
+ * answers with it. Kept next to ROLE_PREFERENCE because it is the same question asked of the provider rather than
+ * of the role: which of these things can do this job.
+ */
+function modelFor(provider, role) {
+  const perRole = provider.models?.[role];
+  return perRole || provider.model;
+}
+
 const ROLE_PREFERENCE = {
   /*
    * DeepSeek for both roles.
@@ -221,8 +279,18 @@ const ROLE_PREFERENCE = {
    * Doubao remains as the fallback, so a working Ark key restores the two-vendor arrangement with no code
    * change. The summary prints which arrangement is in force rather than always claiming two vendors.
    */
-  writer: ["deepseek", "volces"],
-  planner: ["deepseek", "volces"],
+  /*
+   * ark leads both roles now, with a different endpoint for each.
+   *
+   * This is the arrangement the notes above describe and used to rule out: the writer and the reviewer are
+   * different models, so the reviewer is a second opinion rather than the same opinion with a different prompt.
+   * Two models make different mistakes, and a reviewer that shares the writer's always misses exactly what the
+   * writer missed.
+   *
+   * deepseek stays second so a deployment with only a DeepSeek key still runs.
+   */
+  writer: ["volces", "deepseek"],
+  planner: ["volces", "deepseek"],
   /*
    * DeepSeek for the reviewer as well, and the operator's reasoning wins over mine here.
    *
@@ -240,7 +308,13 @@ const ROLE_PREFERENCE = {
    * volces is deliberately absent from this list. Adding ARK_API_KEY back restores the two-vendor
    * arrangement by appending it here - one line, which is the right size for a decision this reversible.
    */
-  reviewer: ["deepseek"],
+  /*
+   * ark first, and its reviewer endpoint is a different model from its writer endpoint.
+   *
+   * The independence rule is unchanged: a reviewer should not be the writer. What changed is that "not the writer"
+   * can now be satisfied inside one provider, by a different model, and the report says which of the two it got.
+   */
+  reviewer: ["volces", "deepseek"],
 };
 
 export function providerFor(role, avoid) {
@@ -250,8 +324,14 @@ export function providerFor(role, avoid) {
   const usable = (name) =>
     have.includes(name) &&
     Boolean(resolveKey(name, role)) &&
-    /* A provider that needs an endpoint id and has none cannot be called, so it is not chosen. */
-    !(PROVIDERS[name].needsEndpointId && !PROVIDERS[name].model);
+    /*
+     * A provider that needs an endpoint id and has none for THIS ROLE cannot be called, so it is not chosen.
+     *
+     * It tested the provider's single model, which was right while there was one. With an endpoint per role,
+     * a deployment could hold a writer endpoint and no reviewer endpoint, and the old test would still call it
+     * usable and then send an empty model field.
+     */
+    !(PROVIDERS[name].needsEndpointId && !modelFor(PROVIDERS[name], role));
 
   /*
    * `avoid` is honoured only when the preference order does not already answer the question.
@@ -320,7 +400,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
   }
   const key = cred.value;
   const body = {
-    model: p.model,
+    model: modelFor(p, role),
     messages: system ? [{ role: "system", content: system }, ...messages] : messages,
     temperature,
     max_tokens: maxTokens,
@@ -355,7 +435,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
       const ms = Date.now() - started;
       if (!r.ok || json?.error) {
         lastError = json?.error?.message ?? `HTTP ${r.status}: ${text.slice(0, 200)}`;
-        meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: p.model, ok: false, ms, status: r.status, error: lastError, attempt });
+        meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: modelFor(p, role), ok: false, ms, status: r.status, error: lastError, attempt });
         /* 429 and 5xx are worth another attempt; 401 and 400 are not. */
         if (r.status === 401 || r.status === 400 || r.status === 402 || r.status === 403) break;
         await sleep(2000 * (attempt + 1));
@@ -369,7 +449,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
         role,
         provider: providerName,
         keyName: cred.name,
-        model: p.model,
+        model: modelFor(p, role),
         ok: true,
         ms,
         promptTokens: usage.prompt_tokens ?? 0,
@@ -391,7 +471,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
         finishReason: json?.choices?.[0]?.finish_reason ?? null,
         provider: providerName,
         keyName: cred.name,
-        model: p.model,
+        model: modelFor(p, role),
         usage,
         estimatedUsd: Number(cost.toFixed(6)),
         ms,
@@ -399,7 +479,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
     } catch (e) {
       const ms = Date.now() - started;
       lastError = `${e.cause?.code ?? e.name ?? "error"}: ${e.message}`;
-      meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: p.model, ok: false, ms, error: lastError, attempt });
+      meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: modelFor(p, role), ok: false, ms, error: lastError, attempt });
       await sleep(2000 * (attempt + 1));
     }
   }

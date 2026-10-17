@@ -78,6 +78,10 @@ jobs:
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
           ARK_MODEL: ${{ secrets.ARK_MODEL }}
+          # One endpoint per role. A reviewer running the writer's model is the same opinion with a different
+          # prompt, and it misses exactly what the writer missed. Both fall back to ARK_MODEL.
+          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER }}
+          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -122,7 +126,7 @@ jobs:
             return 1
           }
 
-          WRITER_MODEL="${ARK_MODEL:-${DOUBAO_ENDPOINT:-}}"
+          WRITER_MODEL="${ARK_MODEL_WRITER:-${ARK_MODEL:-${DOUBAO_ENDPOINT:-}}}"
           WRITER_KEY="${ARK_API_KEY:-${DOUBAO_API_KEY:-${OWNER_KEY_1:-}}}"
           REVIEW_KEY="${DEEPSEEK_REVIEW_API_KEY:-${DEEPSEEK_API_KEY:-${OWNER_KEY_2:-}}}"
           OWNER_ARK="${OWNER_KEY_1:-}"
@@ -175,6 +179,10 @@ jobs:
           :::
           :::   ARK_API_KEY                the Doubao writer, from the Volcano Ark console
           :::   ARK_MODEL                  the ENDPOINT ID, not the model name. Looks like ep-2026...
+:::   ARK_MODEL_WRITER           optional: the endpoint the writer calls. Falls back to ARK_MODEL.
+:::   ARK_MODEL_REVIEWER         optional: the endpoint the reviewer calls. Falls back to ARK_MODEL.
+:::                              Two different endpoints make the reviewer a second opinion rather than the
+:::                              same model with a different prompt.
           :::                              Create it in Ark under 在线推理 -> 创建推理接入点
           :::   DEEPSEEK_REVIEW_API_KEY    the reviewer  (DEEPSEEK_API_KEY also accepted)
           :::   DEEPSEEK_WRITE_API_KEY     optional alternate writer key, used if no Ark key exists
@@ -322,6 +330,8 @@ jobs:
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
           ARK_MODEL: ${{ secrets.ARK_MODEL }}
+          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER }}
+          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
           DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
