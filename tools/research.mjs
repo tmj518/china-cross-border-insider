@@ -121,12 +121,39 @@ export function buildLedger() {
   return rows;
 }
 
-const STOP = new Set(["duty", "duties", "rate", "rates", "2026", "2027", "china", "chinese", "the", "and", "for", "from", "anti", "dumping", "tariff", "cost", "price", "import", "imports", "importing", "trade", "export", "exports"]);
+/*
+ * Words that describe the reader or the beat rather than a subject.
+ *
+ * A title on this site is built from an audience word (importer, supplier, buyer), a beat word (sourcing, landed
+ * cost, supply chain) and a subject. Only the subject distinguishes one article from another, so only the subject
+ * may score. The first version of this list had the beat's regulatory vocabulary - duty, tariff, price - and not
+ * the words the titles are actually made of, which is why two of them were enough to reject an unrelated subject.
+ */
+const STOP = new Set([
+  "duty", "duties", "rate", "rates", "2026", "2027", "2025", "2028", "china", "chinese", "the", "and", "for", "from",
+  "anti", "dumping", "tariff", "tariffs", "cost", "costs", "price", "prices", "import", "imports", "importing",
+  "trade", "export", "exports", "exporting",
+  /* The audience. Every article here is for one of these. */
+  "importer", "importers", "exporter", "exporters", "supplier", "suppliers", "buyer", "buyers", "seller", "sellers",
+  "manufacturer", "manufacturers", "shipper", "shippers", "platform", "platforms", "merchant", "merchants",
+  /* The beat. */
+  "sourcing", "source", "sources", "supply", "chain", "chains", "landed", "margin", "margins", "logistics",
+  "shipment", "shipments", "customs", "clearance", "compliance", "policy", "policies", "measure", "measures",
+  "sector", "sectors", "industry", "industries", "market", "markets", "year", "annual", "monthly", "quarter",
+  "analysis", "insight", "insights", "guide", "update", "report", "reports", "data",
+]);
 const stems = (s) => String(s).toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter((w) => w.length > 3 && !STOP.has(w));
 
 /** Words that identify an institution across the ways it gets written. */
 const ORG_STOP = new Set(["general", "administration", "ministry", "commission", "state", "council", "national", "bureau", "department", "republic", "peoples", "people", "official", "notice", "announcement", "regulation", "customs", "the", "and", "for", "from"]);
-const orgTokens = (s) => String(s).toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter((w) => w.length > 3 && !ORG_STOP.has(w));
+const orgTokens = (s) =>
+  String(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    /* A year is not an institution. "2026" is four characters and was not on the stop list, so every article
+       published that year shared it. */
+    .filter((w) => w.length > 3 && !ORG_STOP.has(w) && !/^\d+$/.test(w));
 
 /**
  * Overlap between a proposal and the corpus.
@@ -136,8 +163,10 @@ const orgTokens = (s) => String(s).toLowerCase().replace(/[^a-z0-9\s]/g, " ").sp
  * stem is next. A shared institution is weakest on its own - many subjects come from the same ministry
  * - so it counts for one.
  *
- * The threshold is four. A single shared value plus a shared keyword stem reaches it, which is the
- * case that matters: the same number under a different headline.
+ * The threshold is four, and it is now hard to reach without a shared figure. A shared value counts three and a
+ * shared subject stem two; a shared institution counts one. With the beat's vocabulary excluded, two stems means
+ * two words about the same subject rather than two words about the same audience - which is the case this exists to
+ * catch: the same number, or the same subject, under a different headline.
  */
 function duplicateScore(proposal, ledger) {
   const pk = new Set(stems(proposal.keyword ?? ""));
@@ -582,30 +611,98 @@ Give five to eight figures. Every one needs an evidence excerpt that literally c
 literally appears in the document it names. If the documents do not support two cost figures, set
 feasible to false and say so — that is a correct and useful answer, not a failure.`;
 
-console.log(`  proposing a subject from ${Math.min(fetched.length, 5)} archived document(s)...`);
-const r = await askJson({
-  role: "planner",
-  system:
-    "You select subjects for a trade-cost publication from documents supplied to you. You quote only " +
-    "from those documents and you say so when they do not support an article. You never supply a " +
-    "number that is not literally in a document you were given.",
-  messages: [{ role: "user", content: prompt }],
-  maxTokens: 8192,
-});
+/*
+ * Up to three proposals, each told what the last one lost to.
+ *
+ * A single proposal that the duplicate check rejects ended the run, which is the wrong response to a working check:
+ * the corpus is deep, and the next subject a model names is usually a different one. The retry carries the rejected
+ * keyword and slug so the second attempt is a different subject rather than the same one reworded - which is what
+ * the duplicate check would reject again.
+ *
+ * The evidence check and the verification below run on the accepted proposal only, so a retry costs one model call
+ * and no fetches.
+ */
+const PROPOSAL_ATTEMPTS = 3;
+const rejectedSubjects = [];
+let r = null;
+let proposal = null;
 
-const spent = usageToday().usd - started.usd;
-if (!r.ok || !r.json) {
-  console.log(`\n  FAILED - ${r.error ?? r.parseError ?? "unparseable response"}`);
-  if (r.raw) console.log(`  raw head: ${String(r.raw).slice(0, 400)}`);
-  console.log(`  spent   : ~$${spent.toFixed(4)}`);
-  process.exit(1);
+for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
+  const retryNote = rejectedSubjects.length
+    ? [
+        "",
+        "ALREADY REJECTED — do not propose these again, and do not reword them:",
+        ...rejectedSubjects.map((x, i) => `  ${i + 1}. ${x.keyword}`),
+        "",
+        "Choose a different subject. A different product, a different measure, or a different institution.",
+      ].join("\n")
+    : "";
+
+  console.log(
+    `  proposing a subject from ${Math.min(fetched.length, 5)} archived document(s)` +
+      (attempt > 1 ? ` (attempt ${attempt} of ${PROPOSAL_ATTEMPTS})` : "") +
+      "...",
+  );
+
+  r = await askJson({
+    role: "planner",
+    system:
+      "You select subjects for a trade-cost publication from documents supplied to you. You quote only " +
+      "from those documents and you say so when they do not support an article. You never supply a " +
+      "number that is not literally in a document you were given.",
+    messages: [{ role: "user", content: prompt + retryNote }],
+    maxTokens: 8192,
+  });
+
+  const spentHere = usageToday().usd - started.usd;
+  if (!r.ok || !r.json) {
+    console.log(`\n  FAILED - ${r.error ?? r.parseError ?? "unparseable response"}`);
+    if (r.raw) console.log(`  raw head: ${String(r.raw).slice(0, 400)}`);
+    console.log(`  spent   : ~${spentHere.toFixed(4)}`);
+    process.exit(1);
+  }
+
+  const candidate = r.json;
+  console.log(`  spent   : ~${spentHere.toFixed(4)}  (ceiling ${BUDGET.toFixed(2)})`);
+  console.log(`  model   : ${r.provider}/${r.model}`);
+  console.log("");
+  console.log(`  feasible: ${candidate.feasible}`);
+
+  if (candidate.feasible === false) {
+    /* The documents do not support anything. A retry would ask the same question of the same material. */
+    proposal = candidate;
+    break;
+  }
+
+  const checkDup = duplicateScore(candidate, ledger);
+  console.log(`  slug    : ${candidate.slug}`);
+  console.log(`  keyword : ${candidate.keyword}`);
+  console.log(`  duplicate check: score ${checkDup.score}${checkDup.against ? ` against ${checkDup.against}` : ""}`);
+  if (checkDup.why?.length) for (const w of checkDup.why) console.log(`      ${w}`);
+
+  if (checkDup.score < 4) {
+    proposal = candidate;
+    break;
+  }
+
+  console.log("");
+  console.log("  REJECTED as a duplicate - trying another subject rather than ending the day.");
+  rejectedSubjects.push({ keyword: candidate.keyword, slug: candidate.slug, score: checkDup.score });
+  proposal = null;
 }
 
-const proposal = r.json;
-console.log(`  spent   : ~$${spent.toFixed(4)}  (ceiling $${BUDGET.toFixed(2)})`);
-console.log(`  model   : ${r.provider}/${r.model}`);
-console.log("");
-console.log(`  feasible: ${proposal.feasible}`);
+const spent = usageToday().usd - started.usd;
+
+if (!proposal) {
+  console.log("");
+  console.log(
+    `  All ${PROPOSAL_ATTEMPTS} proposals were duplicates of published articles. No directive was written.`,
+  );
+  console.log("  That is the duplicate check working: the corpus already covers what today's documents offered.");
+  console.log("  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT rather than a failure.");
+  process.exit(2);
+}
+
 if (proposal.feasible === false) {
   console.log(`  reason  : ${proposal.reason_if_not}`);
   console.log("");
@@ -620,15 +717,10 @@ console.log(`  figures : ${(proposal.figures ?? []).length}`);
 
 /* ---------------------------------------------------------------- 3. duplicate check */
 
-const dup = duplicateScore(proposal, ledger);
-console.log(`\n  duplicate check: score ${dup.score}${dup.against ? ` against ${dup.against}` : ""}`);
-if (dup.why?.length) for (const w of dup.why) console.log(`      ${w}`);
-if (dup.score >= 4) {
-  console.log("");
-  console.log("  REJECTED as a duplicate. The proposal shares enough with a published article that it is");
-  console.log("  the same subject under a different title. No directive was written.");
-  process.exit(2);
-}
+/*
+ * The duplicate check now runs inside the proposal loop, so a rejection retries instead of ending the run. Nothing
+ * to check here: `proposal` is a subject that already cleared it.
+ */
 
 /* ---------------------------------------------------------------- 4. verify the evidence */
 

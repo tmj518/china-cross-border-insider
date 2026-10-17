@@ -244,15 +244,44 @@ if (!directive) {
   for (const line of researchOut.split("\n")) if (line.trim()) console.log(`  | ${line}`);
   console.log("");
 
+  /*
+   * A directive is a slug and at least one figure, or it is not a directive.
+   *
+   * existsSync alone accepted whatever the file held. After research declined a duplicate it left the previous
+   * run's file in place, which parsed as an object with neither field - truthy, so the run continued into the
+   * figure gate and reported THIN-DIRECTIVE. A correct decline was presented as a broken pipeline.
+   */
+  const usableDirective = (d) => Boolean(d && d.slug) && Array.isArray(d.figures) && d.figures.length > 0;
   if (existsSync(directiveFile)) {
     try {
-      directive = JSON.parse(readFileSync(directiveFile, "utf8"));
-      step("research", true, `proposed ${directive.slug}, ${(directive.figures ?? []).length} verified figure(s)`);
+      const parsed = JSON.parse(readFileSync(directiveFile, "utf8"));
+      if (usableDirective(parsed)) {
+        directive = parsed;
+        step("research", true, `proposed ${directive.slug}, ${directive.figures.length} verified figure(s)`);
+      } else {
+        step("research", false, `no verified subject today (exit ${researchCode})`);
+      }
     } catch (e) {
       step("research", false, `wrote a directive that does not parse: ${e.message}`);
     }
   } else {
     step("research", false, `no verified subject today (exit ${researchCode})`);
+  }
+
+  /*
+   * research exits 2 when the proposal duplicates a published subject. That is the choosing layer working, not the
+   * writing layer failing, and it needs its own verdict rather than being reported as NO-SUBJECT: the response to
+   * it is "the corpus is saturated on this beat", not "the documents held nothing".
+   */
+  if (!directive && researchCode === 2) {
+    run.verdict = "DUPLICATE-SUBJECT";
+    run.reasons.push(
+      "research proposed a subject already covered by a published article and declined to write a directive. " +
+        "Nothing was published, which is the duplicate check working.",
+    );
+    mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
+    writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+    process.exit(0);
   }
 }
 
@@ -305,7 +334,7 @@ if (directive.slug && existsSync(existingPath)) {
 }
 
 const figures = (directive.figures ?? []).filter((f) => f?.value && f?.source && f?.retrieved);
-if (figures.length < 5) {
+if (figures.length < MIN_SUBSTANTIVE) {
   step("directive figures", false, `${figures.length} sourced, the gate requires ${MIN_SUBSTANTIVE}`);
   run.verdict = "THIN-DIRECTIVE";
   run.reasons.push(`the directive carries ${figures.length} sourced figure(s)`);
