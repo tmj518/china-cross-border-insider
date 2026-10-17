@@ -34,7 +34,7 @@ import { askJson, summary as providerSummary } from "./lib-llm.mjs";
  * one day a field fell through the gap - `stakes` was never validated at all, and a draft whose value
  * was "high" passed every check and then failed the build.
  */
-import { TEXT_LIMITS, ENUMS, REQUIRED, violationsOf, limitsForPrompt } from "../src/lib/schema-rules.ts";
+import { TEXT_LIMITS, ENUMS, REQUIRED, violationsOf, limitsForPrompt } from "../src/lib/schema-rules.mjs";
 
 const ROOT = process.cwd();
 const BLOG = join(ROOT, "src", "content", "blog");

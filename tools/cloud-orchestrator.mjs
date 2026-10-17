@@ -280,6 +280,33 @@ if (CHECK_ONLY) {
  *   that makes things worse cannot ship over a draft that was closer.
  */
 
+/**
+ * The line of a failed child's output that actually says what went wrong.
+ *
+ * This used to be `output.trim().split("\n").pop()`, the last line. That is right for a tool printing
+ * one summary line and wrong for anything that prints a stack trace, where the last line is often
+ * nothing at all - on 2026-10-17 the report said `exit 1: no output` for a writer that had failed with
+ * ERR_MODULE_NOT_FOUND, because the last line of its stack was blank. The run cost seven minutes and the
+ * notification carried none of the reason.
+ *
+ * Prefers a line naming an Error, then a line beginning with a common failure word, then the first line
+ * that is neither blank nor a bare "node:internal" frame. The whole output still goes to the report; this
+ * is only what fits on a notification.
+ */
+function whyItFailed(output) {
+  const lines = String(output)
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter(Boolean);
+  if (!lines.length) return "no output at all";
+  const errorLine = lines.find((l) => /Error\b|error:/.test(l) && !/^\s*at /.test(l));
+  if (errorLine) return errorLine.replace(/^Error\s*\[[^\]]+\]:\s*/, "").slice(0, 180);
+  const keyword = lines.find((l) => /^(FAILED|REFUSED|cannot|Cannot|ENOENT|EACCES|missing|Missing|usage)/.test(l));
+  if (keyword) return keyword.slice(0, 180);
+  const substantive = lines.find((l) => !/^node:internal/.test(l) && !/^\^/.test(l) && !/^\s*at /.test(l));
+  return (substantive ?? lines[0]).slice(0, 180);
+}
+
 const MAX_ATTEMPTS = 3;
 const slug = String(directive.slug ?? "untitled").replace(/[^a-z0-9-]/g, "");
 const draftPath = join(ROOT, "data", "drafts", `${slug}.md`);
@@ -355,7 +382,7 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
       ? `draft at ${draftPath.replace(ROOT, "")}`
       : writeCode === 4
         ? `refused: the draft violates the content schema and would fail the whole build`
-        : `exit ${writeCode}: ${writeOut.trim().split("\n").pop()?.slice(0, 120) ?? "no output"}`,
+        : `exit ${writeCode}: ${whyItFailed(writeOut)}`,
   );
   if (!wroteIt) {
     if (writeCode === 4 && attempt < MAX_ATTEMPTS) {

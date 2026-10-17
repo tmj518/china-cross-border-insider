@@ -469,7 +469,7 @@ async function checkEnvironment() {
    * The constraint list and the content schema must agree.
    *
    * This is the check that would have caught the two failures of 2026-10-17 before they reached a runner.
-   * The writer is told its limits from src/lib/schema-rules.ts; the build enforces them from
+   * The writer is told its limits from src/lib/schema-rules.mjs; the build enforces them from
    * src/content.config.ts. When those disagree the model is being asked for something the build rejects,
    * and the failure surfaces as a validate-collection error inside a reviewer's report rather than as a
    * mismatch anyone can see.

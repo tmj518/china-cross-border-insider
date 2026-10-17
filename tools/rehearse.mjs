@@ -44,7 +44,7 @@ const SCENARIOS = [
   { name: "rejected every time", w: ["write"], q: ["reject"], verdict: "REJECTED", writerCalls: 3 },
   { name: "schema violation then repair", w: ["invalid", "write"], q: ["approve"], verdict: "PUBLISHED", writerCalls: 2 },
   { name: "schema violation every time", w: ["invalid"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 3 },
-  { name: "writer produces nothing", w: ["nothing"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 1 },
+  { name: "writer produces nothing", w: ["nothing"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 1, contains: "Cannot find module", notContains: "Node.js v24" },
   { name: "reviewer unparseable every time", w: ["write"], q: ["unparseable"], verdict: "REJECTED", writerCalls: 3 },
   { name: "revision gets worse", w: ["write"], q: ["mild", "severe", "severe"], verdict: "REJECTED", contains: "revision made the draft worse" },
   {
@@ -86,7 +86,14 @@ const mode = seq[Math.min(n, seq.length - 1)];
 const dir = join(process.cwd(), "data", "drafts");
 mkdirSync(dir, { recursive: true });
 console.log("EXECUTOR stub call=" + (n + 1) + " mode=" + mode);
-if (mode === "nothing") { console.log("  FAILED - the provider refused"); process.exit(1); }
+if (mode === "nothing") {
+  console.log("Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/repo/src/lib/schema-rules.mjs'");
+  console.log("    at finalizeResolution (node:internal/modules/esm/resolve:272:11)");
+  console.log("    at moduleResolve (node:internal/modules/esm/resolve:879:7)");
+  console.log("");
+  console.log("Node.js v24.21.0");
+  process.exit(1);
+}
 if (mode === "invalid") {
   console.log("  REFUSED - subtitle is 400 characters and the schema allows 160");
   const v = process.env.EXECUTOR_VIOLATIONS;
@@ -241,6 +248,7 @@ SCENARIOS.forEach((s, i) => {
   if (!report) problems.push("no report written - the orchestrator died before finishing");
   else if (report.verdict !== s.verdict) problems.push(`verdict ${report.verdict}, expected ${s.verdict}`);
   if (s.contains && report && !JSON.stringify(report).includes(s.contains)) problems.push(`report lacks "${s.contains}"`);
+  if (s.notContains && report && JSON.stringify(report).includes(s.notContains)) problems.push(`report contains "${s.notContains}", so the real error was lost`);
   if (s.writerCalls != null && calls.writer !== s.writerCalls) problems.push(`writer called ${calls.writer} time(s), expected ${s.writerCalls}`);
 
   if (problems.length) {

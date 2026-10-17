@@ -1,7 +1,7 @@
 /**
  * Prove that the constraint list and the content schema agree.
  *
- * `src/lib/schema-rules.ts` states the frontmatter constraints so the writer's prompt, the pre-build
+ * `src/lib/schema-rules.mjs` states the frontmatter constraints so the writer's prompt, the pre-build
  * validator and this check all read one list. A list that nothing verifies is how the last two failures
  * happened: three text limits were enforced while seventeen fields existed, and a draft whose `stakes`
  * was "high" passed every check and failed the build.
@@ -29,12 +29,12 @@ import { join } from "node:path";
 
 const ROOT = process.cwd();
 const SCHEMA = join(ROOT, "src", "content.config.ts");
-const RULES = join(ROOT, "src", "lib", "schema-rules.ts");
+const RULES = join(ROOT, "src", "lib", "schema-rules.mjs");
 
 console.log("SCHEMA PARITY\n" + "=".repeat(78));
 
 if (!existsSync(SCHEMA) || !existsSync(RULES)) {
-  console.log("RESULT: FAIL - cannot read src/content.config.ts or src/lib/schema-rules.ts");
+  console.log("RESULT: FAIL - cannot read src/content.config.ts or src/lib/schema-rules.mjs");
   process.exit(1);
 }
 
