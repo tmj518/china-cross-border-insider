@@ -127,7 +127,7 @@ What remains open is the stretch before any money moves. From 4 October 2026 to 
 
 ## So what
 
-The judgement is simple. The risk in AD760 is not the duty rate, which does not exist. The risk is the retroactive reach of a rate that will be set against an investigation period that has already closed.
+The judgement is simple. The risk in AD760 is not the duty rate, which does not exist. The risk is the retroactive reach of a rate that will be set against an investigation period that has already closed. The earlier notice in this same case is in [the AD760 initiation record](/blog/eu-anti-dumping-cellulose-ethers-ad760-registration-2026/), which is what a registration order now builds on.
 
 The arithmetic is the exposure. On a stated CIF value of 50,000 dollars for one 20-foot container at 18 tonnes and 2.78 dollars a kilogram, an ad valorem duty runs straight off the CIF value, which is the basis Regulation (EU) 2016/1036 uses.
 
@@ -202,4 +202,4 @@ Gap to earliest provisional  = 24 April 2027 - 4 October 2026 = 190 days
 
 ## The point
 
-The duty in AD760 does not exist yet, and that is exactly what makes it expensive. A rate that is set in April 2027 and collected on volume registered from a date in 2026 is a cost that arrives after the sale, on goods priced without it. The number to hold is 190 days — the stretch in which registration can be ordered with nothing payable — and the range to reserve against is 0 to 25,000 dollars on a 50,000-dollar container. Buyers who plan around the provisional date plan around the wrong date. The registration order is the one that starts the clock.
+Two other cases on this site show what the rate looks like once it exists: [the Vietnam yarn sunset review](/blog/vietnam-polyester-yarn-sunset-review-2026/) published its rates by producer, and [the Eurasian oil well pipe case](/blog/eaeu-anti-dumping-oil-well-pipe-2026/) runs from 12.23% to 31% with one list deciding which. AD760 is the stage before either of them. The duty in AD760 does not exist yet, and that is exactly what makes it expensive. A rate that is set in April 2027 and collected on volume registered from a date in 2026 is a cost that arrives after the sale, on goods priced without it. The number to hold is 190 days — the stretch in which registration can be ordered with nothing payable — and the range to reserve against is 0 to 25,000 dollars on a 50,000-dollar container. Buyers who plan around the provisional date plan around the wrong date. The registration order is the one that starts the clock.

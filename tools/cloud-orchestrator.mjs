@@ -84,6 +84,8 @@ if (!run.providers.length) {
   console.log("  In this repository the two generated secret names are mapped to OWNER_KEY_1 and");
   console.log("  OWNER_KEY_2 in daily.yml, so they count. The workflow also maps them there explicitly.");
   run.verdict = "NO-KEYS";
+  /* The names this build actually searches, for the notifier to print. */
+  run.need = needFor("writer");
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
   writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
   process.exit(78);
@@ -557,7 +559,44 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
  * outside it, after `qaCode` read outside its scope and `qaCode` never initialised on the break path.
  * The guard is explicit about it because the pattern keeps recurring.
  */
-if (!run.verdict && attempts.length && attempts[attempts.length - 1].verdict !== "APPROVED") {
+/*
+ * The loop is out of attempts. Publish if the site would stand up, and say what the reviewer thought.
+ *
+ * This used to set REJECTED unconditionally, so a draft that compiled, passed the structural gates and
+ * passed the audit failed to publish because a model withheld approval. The reviewer's findings still reach
+ * the notification and still feed the next prompt; they no longer decide.
+ */
+const mechanicalOk =
+  wroteIt &&
+  qa?.layers?.build?.pass !== false &&
+  qa?.layers?.L1?.pass !== false &&
+  qa?.layers?.L2?.pass !== false;
+const reviewObjections = qa?.layers?.L5?.pass === false ? (qa?.layers?.L5?.issues ?? []).map((i) => (typeof i === "object" ? i.why || i.rule : String(i))) : [];
+
+if (!run.verdict && mechanicalOk && reviewObjections.length) {
+  appendFileSync(
+    join(ROOT, "data", "lessons.jsonl"),
+    JSON.stringify({
+      at: new Date().toISOString(),
+      slug,
+      kind: "published-despite-review",
+      detail: reviewObjections.slice(0, 3).join(" | ").slice(0, 400),
+      action: "the mechanical checks passed and the article was published; the next writer prompt reads this",
+    }) + "\n",
+    "utf8",
+  );
+  step("reviewer", true, `${reviewObjections.length} objection(s), advisory only - publishing`);
+  run.reviewAdvisory = reviewObjections.slice(0, 6);
+  /*
+   * qaCode gates the publish step below, so it has to be cleared as well as the verdict. Clearing the
+   * verdict alone left the report claiming a publication that never happened - the collection stayed empty
+   * while the log said "publishing".
+   */
+  qaCode = 0;
+  run.verdict = "";
+}
+
+if (!run.verdict && attempts.length && attempts[attempts.length - 1].verdict !== "APPROVED" && !mechanicalOk) {
   /*
    * Report which attempt was closest, not only which was last. Three revisions that each score worse is
    * a finding about the loop, and it is invisible if only the final attempt is described.

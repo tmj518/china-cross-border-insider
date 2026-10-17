@@ -79,6 +79,17 @@ if (!report) {
   if (u.calls !== undefined) lines.push(`Usage: ${u.calls} call(s), ${u.failed ?? 0} failed, ~$${u.usd ?? 0}`);
   if (report.seconds !== undefined) lines.push(`Took: ${report.seconds}s`);
 
+  /*
+   * A publication the reviewer objected to is not the same as one it approved, and the card has to say
+   * which happened. Otherwise "PUBLISHED" reads as a clean pass when the second opinion was against it.
+   */
+  if (report.reviewAdvisory?.length) {
+    lines.push("");
+    lines.push("Published with the reviewer's objections recorded:");
+    for (const o of report.reviewAdvisory.slice(0, 4)) lines.push(`  · ${String(o).slice(0, 180)}`);
+    lines.push("  They are in data/lessons.jsonl and feed the next article's prompt.");
+  }
+
   if (report.reasons?.length) {
     lines.push("");
     lines.push("Needs a decision or a fix:");
@@ -113,8 +124,20 @@ if (!report) {
   if (report.verdict === "NO-KEYS") {
     lines.push("");
     lines.push("Nothing can run until these exist as repository secrets:");
-    lines.push("  • DEEPSEEK_API_KEY");
-    lines.push("  • OPENAI_API_KEY (optional; without it the review is not independent)");
+    /*
+   * The names come from the report, which builds them from the provider tables. This file used to carry
+   * its own list - DEEPSEEK_API_KEY and OPENAI_API_KEY - and neither is read by this build: OpenAI was
+   * removed from the provider list, and the DeepSeek credentials here are mapped to OWNER_KEY_2.
+   *
+   * The operator set exactly what that list asked for and the pipeline reported NO-KEYS again. A message
+   * that looks like instruction and names the wrong variables is worse than no message.
+   */
+  const need = report.need ?? [];
+  if (need.length) {
+    for (const n of need.slice(0, 10)) lines.push(`  • ${n}`);
+  } else {
+    lines.push("  • run node tools/cloud-orchestrator.mjs locally to see which names this build reads");
+  }
   }
   if (report.verdict === "NO-DIRECTIVE") {
     lines.push("");

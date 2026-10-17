@@ -433,8 +433,21 @@ function check(file) {
 
   const faqBlocks = [...body.matchAll(/^###\s+(.+)$/gm)];
   const faqSection = /##\s*FAQ\s*\n([\s\S]*?)(?=\n##\s|$)/.exec(body)?.[1] ?? "";
-  const faqQs = (faqSection.match(/^###\s+/gm) || []).length;
-  const faqAnswers = faqSection.split(/^###\s+/m).slice(1).map(wordCount);
+  /*
+   * A question is either a heading or a bold line ending in a question mark.
+   *
+   * The first version counted only headings, so an article that wrote its questions as
+   * "**Is there a duty right now?**" scored zero and failed - a complete FAQ refused because of which
+   * markdown spelling the writer chose. The question mark is required for the bold form, because a bold
+   * line in prose is usually emphasis and letting that through would accept a FAQ with no questions in it.
+   */
+  const faqQuestionRes = [/^###\s+.+$/gm, /^\*\*[^*\n]+\?\*\*\s*$/gm];
+  const faqQs = faqQuestionRes.reduce((n, re) => n + (faqSection.match(re) || []).length, 0);
+  /* Answers are the text after each question, whichever spelling was used. */
+  const faqAnswers = faqSection
+    .split(/^###\s+|^\*\*[^*\n]+\?\*\*\s*$/m)
+    .slice(1)
+    .map(wordCount);
   const badAnswers = faqAnswers.filter((w) => w < 80 || w > 150).length;
   if (faqQs >= 3 && faqQs <= 5 && badAnswers === 0)
     add("pass", "FAQ 3-5 questions, 80-150 word answers", `${faqQs} questions`);

@@ -41,7 +41,13 @@ const SANDBOX = join(ROOT, "data", "tmp", "rehearse");
 const SCENARIOS = [
   { name: "happy path", w: ["write"], q: ["approve"], verdict: "PUBLISHED", writerCalls: 1 },
   { name: "rejected once, revision approved", w: ["write"], q: ["reject", "approve"], verdict: "PUBLISHED", writerCalls: 2 },
-  { name: "rejected every time", w: ["write"], q: ["reject"], verdict: "REJECTED", writerCalls: 3 },
+    /*
+   * Three rejections now publish, with the objections recorded. The mechanical layers passed, and the
+   * operator's instruction was that a second opinion must not stop the first opinion existing. The
+   * rehearsal asserts the advisory record rather than the verdict alone - "published with objections" and
+   * "published clean" are different facts and the card distinguishes them.
+   */
+  { name: "rejected every time publishes with objections", w: ["write"], q: ["reject"], verdict: "PUBLISHED", writerCalls: 3, contains: "advisory" },
   { name: "schema violation then repair", w: ["invalid", "write"], q: ["approve"], verdict: "PUBLISHED", writerCalls: 2 },
   { name: "schema violation every time", w: ["invalid"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 3 },
   { name: "writer produces nothing", w: ["nothing"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 1, contains: "Cannot find module", notContains: "Node.js v24" },
@@ -61,7 +67,7 @@ const SCENARIOS = [
     writerCalls: 1,
     contains: "recorded as a lesson",
   },
-  { name: "revision gets worse", w: ["write"], q: ["mild", "severe", "severe"], verdict: "REJECTED", contains: "revision made the draft worse" },
+    { name: "revision gets worse still publishes", w: ["write"], q: ["mild", "severe", "severe"], verdict: "PUBLISHED", writerCalls: 3, contains: "advisory" },
   {
     name: "reviewer asks for research",
     w: ["write"],

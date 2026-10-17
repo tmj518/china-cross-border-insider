@@ -235,7 +235,9 @@ Body sections, in this order and with these exact headings:
                         The headings must be those words. Anything else fails the gate.
   ## For you            three or more bullet points, each starting with a bolded audience segment
   ## The data point     one sentence, then a <div class="callout"> containing it
-  ## FAQ                exactly 3 questions, each answer between 80 and 150 words
+  ## FAQ                exactly 3 questions, each answer between 80 and 150 words.
+                        Write each question as a bold line ending in a question mark, on its own
+                        line, then the answer as a paragraph. A ### heading also works.
   ## How we calculated this   the arithmetic in a fenced code block
   ## The point          one paragraph
 
@@ -293,6 +295,45 @@ function parseDirective() {
   };
 }
 
+
+/**
+ * The published articles, as something the writer can link to.
+ *
+ * Read from src/content/blog at call time rather than kept in a list, so it cannot go stale. Only the
+ * fields needed to choose a link are included: a number, a category, the slug and the title. Drafts are
+ * excluded, because a link to a page that does not exist is a broken link.
+ *
+ * The list is capped. A writer given ninety options picks worse than one given thirty, and the newest are
+ * the most likely to be related to today's subject.
+ */
+function linkableArticles(limit = 40) {
+  const dir = join(ROOT, "src", "content", "blog");
+  if (!existsSync(dir)) return null;
+  const rows = [];
+  for (const f of readdirSync(dir).filter((x) => x.endsWith(".md"))) {
+    const src = readFileSync(join(dir, f), "utf8");
+    if (/^draft:\s*true/m.test(src)) continue;
+    const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(src)?.[1] ?? "";
+    const g = (k) => new RegExp("^" + k + ":\\s*\"?(.*?)\"?\\s*$", "m").exec(fm)?.[1] ?? "";
+    const slug = f.replace(/\.md$/, "");
+    const title = g("title");
+    if (!title) continue;
+    rows.push({ n: Number(g("articleNumber")) || 0, cat: g("category"), slug, title, date: g("publishDate") });
+  }
+  if (!rows.length) return null;
+  rows.sort((a, b) => (b.date > a.date ? 1 : b.date < a.date ? -1 : 0));
+  const list = rows.slice(0, limit).map((r) => `  #${r.n || "?"}  [${r.cat || "uncategorised"}]  /blog/${r.slug}/  — ${r.title.slice(0, 90)}`);
+  return [
+    "ARTICLES YOU MAY LINK TO",
+    "",
+    "Your article must carry at least three links to other articles on this site, in the form",
+    "[anchor text](/blog/<slug>/), using slugs from this list. Your article is new, so choose the ones a",
+    "reader of this piece would actually want next - a link nobody would follow is worse than none.",
+    "",
+    ...list,
+  ].join("\n");
+}
+
 function exemplars(n = 2) {
   const out = [];
   for (const f of readdirSync(BLOG).filter((x) => x.endsWith(".md"))) {
@@ -342,7 +383,7 @@ ${STRUCTURE}
 
 ${RULES}
 
-${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
+${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
 ${JSON.stringify(sourced, null, 2)}
 
 THE BIBLIOGRAPHY - cite these, and only these, in the sources field:
@@ -486,7 +527,7 @@ ${STRUCTURE}
 
 ${RULES}
 
-${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}THE FIGURES - the only numbers permitted:
+${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - the only numbers permitted:
 ${JSON.stringify(sourced, null, 2)}
 
 THE BIBLIOGRAPHY:
