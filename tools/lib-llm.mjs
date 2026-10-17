@@ -512,6 +512,32 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
       await sleep(2000 * (attempt + 1));
     }
   }
+  /*
+   * A provider that cannot be reached is not a failure of the pipeline.
+   *
+   * Every attempt above went to one provider, because providerFor() answers once. That is right for an API error -
+   * a 400 will be a 400 on the next call too - and wrong for a network error, which is a property of the route
+   * rather than of the request. On 2026-10-17 a run died with "ETIMEDOUT: fetch failed" against the Ark endpoint
+   * while a second provider sat there with a valid key, unused.
+   *
+   * So after exhausting the attempts on one provider, if the last thing that happened was a network error, the
+   * other provider gets one attempt. The marker in the comment below is what a test looks for.
+   */
+  const networkFailure = /ETIMEDOUT|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN|UND_ERR|fetch failed|network/i.test(lastError);
+  const another = providerFor(role, providerName);
+  if (networkFailure && another && another !== providerName) {
+    meter({
+      at: new Date().toISOString(),
+      role,
+      provider: providerName,
+      ok: false,
+      error: `${lastError} - falling back to ${another}`,
+      fallbackTo: another,
+    });
+    return ask({ role, messages, system, temperature, maxTokens, avoidProvider: providerName, retries: 1, tools, toolChoice });
+  }
+
+  /* NETWORK_FALLBACK: the branch above is the one that keeps a dead route from ending a run. */
   return { ok: false, provider: providerName, keyName: cred.name, error: lastError };
 }
 
