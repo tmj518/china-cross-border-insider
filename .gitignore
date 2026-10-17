@@ -121,6 +121,13 @@ crop.py
 # QA reports are generated per run; data/qa has its own ignore.
 
 # Unattended run transcripts. Useful on disk, not useful in git.
+# Archived source bodies. The manifest keeps url, label, bytes and sha256, which is the provenance a figure
+# needs; the page itself is re-fetchable and verifiable against that hash. One day of these is 1.5 MB and a year
+# is about 550 MB, which is the only thing here that grows without bound.
+#
+# The small .txt archives stay - a EUR-Lex notice is 40 KB of readable text and cheap to keep.
+data/sources/**/*.html
+
 logs/
 
 # Gate results cache. Keyed by input hash, so it is correct to regenerate and never

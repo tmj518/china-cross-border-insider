@@ -19,7 +19,16 @@ on:
   schedule:
     # 23:20 UTC = 07:20 Beijing. GitHub's scheduler can lag by several minutes under load, and it can
     # skip a run entirely when the queue is busy, so this is the primary trigger and not the only one.
-    - cron: '20 23 * * *'
+    # Two runs a day, two routes.
+    #
+    # 07:20 Beijing is the script route: a fixed sequence, about a minute, the same machine every day.
+    # 20:20 Beijing is the agent route: a model reads the directive, decides, and writes - about three minutes
+    # when it behaves.
+    #
+    # One workflow rather than two. Two copies of fourteen steps drift apart, and both routes write the same
+    # report and the same card, so the failure domain is the same either way.
+    - cron: '20 23 * * *'   # 07:20 Beijing - script
+    - cron: '20 12 * * *'   # 20:20 Beijing - agent
   workflow_dispatch:
     inputs:
       directive_file:
@@ -313,7 +322,17 @@ jobs:
           fi
           ROUTE="${{ github.event.inputs.route }}"
           if [ -z "$ROUTE" ]; then ROUTE="${{ github.event.client_payload.route }}"; fi
-          if [ -z "$ROUTE" ]; then ROUTE="script"; fi
+          /*
+           * The clock picks the route when nothing else does.
+           *
+           * schedule events carry no inputs, so a scheduled run has an empty ROUTE. The evening run is the agent -
+           * 12:20 UTC and later - and the morning run is the script. A manual dispatch still wins, because
+           * github.event.inputs is populated there and the branch above has already decided.
+           */
+          if [ -z "$ROUTE" ]; then
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" -ge "12" ]; then ROUTE="agent"; else ROUTE="script"; fi
+          fi
           echo "route: $ROUTE"
           if [ "$ROUTE" = "agent" ]; then
             node tools/agent-run.mjs

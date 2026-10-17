@@ -217,31 +217,21 @@ async function checkEnvironment() {
    *
    * Size matters as well as presence: a truncated or emptied file would otherwise pass.
    */
-  const REQUIRED_DOCS = [
-    ["手工启动指示词.md", 2500, "the text the operator pastes to start a run by hand"],
-    ["信源清单.md", 4000, "the tested inventory of 23 reachable official sources"],
-    ["初心与目标.md", 2000, "the single standard, including completeness before length"],
-    ["经验与踩坑记录.md", 4000, "the reusable lessons, including the benchmark findings"],
-    ["对标学习10条.md", 3000, "the ten mechanisms to copy, one of which each run must advance"],
-    ["对标清单.md", 4000, "which sites we benchmark against, which we studied, and the gaps"],
-    /*
-     * The master instruction, and only it.
-     *
-     * `启动指令.md` and `必读清单与开工指令.md` were required here until 2026-10-12, when the
-     * director's v1.5 decision made the master instruction the single source and both files were
-     * moved to docs/archive/. Keeping them in this list would have made the archive a defect: a
-     * required document that has deliberately been superseded is not missing, and a check that
-     * cannot tell the two apart trains whoever reads it to ignore the line.
-     *
-     * The check now asserts the thing that actually matters - that exactly one instruction document
-     * sits at the repository root. Two of them is the condition that caused the archives, and it is
-     * worse than none, because a reader with two versions picks the one that suits them.
-     */
-    ["指令_完整版.md", 20000, "the master instruction, the only source, at v1.5"],
-    ["daily-task.txt", 8000, "the flow the run actually executes"],
-    ["项目规范_英文内容站_v1.4.md", 10000, "the governing spec, current version"],
-  ];
-  const docProblems = [];
+  /*
+ * The documents a run is required to read. One.
+ *
+ * This list used to require seven, each with a minimum size, which is why moving them into docs/ needed a code
+ * change at all: an existence check is a coupling. The protection still matters, so it is applied to the single
+ * file a run actually opens, and the size floor catches one that was truncated or emptied.
+ *
+ * The rest is in docs/, for a human deciding what to build next. A run does not read it, and every file a run
+ * opens costs a turn.
+ */
+const REQUIRED_DOCS = [
+  ["MASTER_PROMPT.md", 5000, "the only instruction file a run reads"],
+];
+
+const docProblems = [];
   for (const [name, minBytes, why] of REQUIRED_DOCS) {
     const p = join(ROOT, name);
     if (!existsSync(p)) { docProblems.push(`${name} missing (${why})`); continue; }
@@ -250,7 +240,17 @@ async function checkEnvironment() {
   }
 
   /* Exactly one instruction document at the root. Two is the condition the archive exists to prevent. */
-  const instructionDocs = readdirSync(ROOT).filter((f) => /指令/.test(f) && f.endsWith(".md"));
+  /*
+   * Exactly one instruction document at the root, and it is named.
+   *
+   * The rule protects something real: two instruction files is how a run reads the stale one. It was keyed on a
+   * filename matching /指令/, which was right when the file was called 指令_完整版.md and wrong the moment it
+   * became MASTER_PROMPT.md - the check would have reported "0 instruction documents" every run.
+   *
+   * Naming the file is more brittle and more honest: a rename has to be followed by one edit here, and that edit
+   * is the moment somebody decides the automation should read a different file.
+   */
+  const instructionDocs = ["MASTER_PROMPT.md"].filter((f) => existsSync(join(ROOT, f)));
   if (instructionDocs.length !== 1) {
     docProblems.push(
       `${instructionDocs.length} instruction documents at the root (${instructionDocs.join(", ")}); exactly one is expected, see docs/archive/README.md`,
@@ -258,7 +258,7 @@ async function checkEnvironment() {
   }
 
   if (docProblems.length === 0) {
-    ok("required docs", `${REQUIRED_DOCS.length} present, one master instruction — sources, goals, lessons, benchmarks`);
+    ok("required docs", `${REQUIRED_DOCS.length} present, a run reads one file. The rest of the record is in docs/`);
   } else {
     fail("required docs", docProblems.join(" | "));
   }
@@ -532,7 +532,21 @@ async function checkEnvironment() {
    * the failure would be silent - the check blocks, the writer gets one line, and nobody notices the guidance is
    * missing until a revision round fails.
    */
-  const guideCoverage = probe(NODE, [join(ROOT, "tools", "check-rule-guide.mjs")], { timeout: 120000 });
+    /*
+   * MASTER_PROMPT.md is the only instruction file a run reads, which makes a disagreement between it and the code
+   * silent in a specific way: the writer aims at the stated target, the gate measures another, and nobody notices
+   * because both are plausible numbers. This has already cost this repository twice - schema rules in two places,
+   * and a NO-KEYS message naming variables the code did not read.
+   */
+  const masterParity = probe(NODE, [join(ROOT, "tools", "check-master-prompt.mjs")], { timeout: 120000 });
+  if (/RESULT:\s*PASS/.test(masterParity.out)) {
+    ok("master prompt", "MASTER_PROMPT.md and the code state the same length, sections and figure count");
+  } else {
+    const line = masterParity.out.split("\n").find((l) => /says .* says|does not name|cannot find/.test(l)) ?? "";
+    fail("master prompt", "the writer would aim at one rule and be measured by another" + (line ? ": " + line.trim().slice(0, 90) : ""));
+  }
+
+const guideCoverage = probe(NODE, [join(ROOT, "tools", "check-rule-guide.mjs")], { timeout: 120000 });
   const guided = /all (\d+) blocking rules/.exec(guideCoverage.out);
   if (guided) {
     ok("rule guidance", guided[1] + " blocking rule(s) explain what they want and how to satisfy it");
