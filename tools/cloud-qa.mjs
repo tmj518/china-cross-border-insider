@@ -417,7 +417,8 @@ if (report.verdict === "REJECTED") {
     ["QA REJECTED", `article : ${slug}`, `time    : ${new Date().toISOString()}`, "", ...report.reasons.map((r) => "  " + r), "", "The draft is in data/drafts/ and was not staged for publish."].join("\r\n"),
     "utf8",
   );
-  console.log(`\n  alert written: ${p}`);
+  const say = AS_JSON ? console.error : console.log;
+  say(`\n  alert written: ${p}`);
 }
 
 process.exit(report.verdict === "APPROVED" ? 0 : 1);
