@@ -69,7 +69,17 @@ const MAX_TURNS = Number(flag("max-turns", 40));
  * Chosen as a share of the budget rather than a constant, so --max-turns=12 does not leave a reading
  * allowance larger than the whole run.
  */
-const PREP_TURNS = Math.max(3, Math.floor(MAX_TURNS / 4));
+/*
+ * Four turns of preparation, not a quarter of the budget.
+ *
+ * The share-based rule gave ten of forty turns to reading, and the job is smaller than that: read the directive,
+ * run research once if it names nothing, then write. A model with ten turns of reading allowed uses ten - that is
+ * what the 06:16 run did, and it is the operator's own description of the problem: "开始前阅读太多".
+ *
+ * Four is enough for the directive, a research call, a look at the draft and one correction. Everything past that
+ * is refused, and the refusal says to write.
+ */
+const PREP_TURNS = 4;
 const DRY = args.includes("--dry-run");
 const REPORT = join(ROOT, "data", "tmp", "agent-report.json");
 const TRANSCRIPT = join(ROOT, "data", "tmp", "agent-transcript.jsonl");
@@ -292,6 +302,57 @@ function runTool(name, input) {
       } catch {
         /* a trim that fails leaves the draft as it was, and the checks below will say what is wrong */
       }
+      /*
+       * Structure first, and its failures are returned with their guidance.
+       *
+       * This is the loop the operator asked for: a block says what it wants, how to satisfy it, and what passing
+       * looks like. Returning "the build failed" and stopping is the behaviour that produced revision rounds that
+       * each fixed one thing.
+       */
+      let structure = null;
+      try {
+        const raw = execFileSync(process.execPath, [join(ROOT, "tools", "qa-check.mjs"), p, "--json"], {
+          encoding: "utf8",
+          cwd: ROOT,
+          timeout: 120000,
+          maxBuffer: 32 * 1024 * 1024,
+        });
+        structure = JSON.parse(raw);
+      } catch (e) {
+        /* A non-zero exit still carries the JSON on stdout; only a parse failure means we learned nothing. */
+        try {
+          structure = JSON.parse(String(e.stdout ?? ""));
+        } catch {
+          structure = null;
+        }
+      }
+
+      if (structure?.blocked) {
+        const blocking = (structure.results ?? []).filter((r) => r.level === "block" && !r.isDraft);
+        const lines = [];
+        lines.push(`STRUCTURE CHECK: ${blocking.length} rule(s) block this draft.`);
+        lines.push("");
+        lines.push("Each entry tells you what the rule wants, the edits that satisfy it, and a fragment that would pass.");
+        lines.push("Work through them in this order. Do not rewrite the whole article; make these edits and run");
+        lines.push("check_draft again.");
+        lines.push("");
+        for (const r of blocking) {
+          lines.push(`✗ ${r.rule} — ${r.detail}`);
+          if (r.want) lines.push(`   wants: ${r.want}`);
+          if (r.how) for (const step of r.how) lines.push(`   fix:   ${step}`);
+          if (r.example) {
+            lines.push("   looks like:");
+            for (const line of String(r.example).split("\n")) lines.push(`     ${line}`);
+          }
+          if (r.unguided) lines.push("   (no guidance written for this rule yet - report it)");
+          lines.push("");
+        }
+        if (structure.unguided?.length) {
+          lines.push(`Rules with no guidance, which means the check is incomplete: ${structure.unguided.join(", ")}`);
+        }
+        return done(`${trimNote}${lines.join("\n")}`);
+      }
+
       try {
         const out = execFileSync(process.execPath, [join(ROOT, "tools", "cloud-qa.mjs"), `--draft=${p}`, "--json"], {
           encoding: "utf8",

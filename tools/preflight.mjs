@@ -524,7 +524,24 @@ async function checkEnvironment() {
    * A loop that has never been closed is not a loop; this closes it against a scratch directory so the real
    * one stays clean.
    */
-  const readership = probe(NODE, [join(ROOT, "tools", "check-readership.mjs")], { timeout: 180000 });
+  /*
+   * Every blocking rule must explain what it wants and how to satisfy it.
+   *
+   * The operator's requirement was that a BLOCK tells the creator why, what structure it checks, and how to change
+   * the draft to pass. Twenty-two rules satisfy that today; the first rule added after this commit would not, and
+   * the failure would be silent - the check blocks, the writer gets one line, and nobody notices the guidance is
+   * missing until a revision round fails.
+   */
+  const guideCoverage = probe(NODE, [join(ROOT, "tools", "check-rule-guide.mjs")], { timeout: 120000 });
+  const guided = /all (\d+) blocking rules/.exec(guideCoverage.out);
+  if (guided) {
+    ok("rule guidance", guided[1] + " blocking rule(s) explain what they want and how to satisfy it");
+  } else {
+    const bare = (guideCoverage.out.match(/^ {2}[a-z].*$/gm) ?? []).slice(0, 3).join("; ");
+    fail("rule guidance", "a blocking rule reports a failure without saying how to fix it" + (bare ? ": " + bare : ""));
+  }
+
+const readership = probe(NODE, [join(ROOT, "tools", "check-readership.mjs")], { timeout: 180000 });
   if (/RESULT:\s*PASS/.test(readership.out)) {
     ok("readership loop", "a snapshot becomes a brief with real numbers, and nothing leaks into data/analytics");
   } else {

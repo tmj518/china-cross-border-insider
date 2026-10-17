@@ -13,6 +13,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { proseWords, WORD_TARGET, hasCostTable } from "../src/lib/prose.mjs";
+import { guideFor } from "../src/lib/rule-guide.mjs";
 
 const BANNED_VAGUE = [
   "may", "might", "possibly", "perhaps", "could", "reportedly", "allegedly",
@@ -67,8 +68,18 @@ function check(file) {
   const raw = readFileSync(file, "utf8");
   const { fm, body } = parseFrontmatter(raw);
   const results = [];
-  const add = (level, rule, detail) =>
-    results.push({ level, rule, detail });
+  /*
+   * Every result carries the guidance for its rule, when there is any.
+   *
+   * Attached here rather than at each call site: twenty-one blocking rules spread across eight hundred lines, and
+   * a guidance object passed at every one of them would be a second thing to keep in sync with the check. One
+   * table keyed on the rule name means a rule that gains guidance is one diff, and a rule that has none is
+   * reported as unguided rather than silently passing.
+   */
+  const add = (level, rule, detail) => {
+    const g = level === "block" ? guideFor(rule) : null;
+    results.push({ level, rule, detail, want: g?.want, how: g?.how, example: g?.example, unguided: level === "block" && !g });
+  };
 
   const fmLine = (key) => new RegExp(`^${key}:\\s*(.+)$`, "m").exec(fm)?.[1]?.trim();
 
@@ -688,6 +699,15 @@ for (const f of files) {
   }
 }
 
+/*
+ * --json emits the same results as data. The orchestrator passes failures back to the writer as a revision order,
+ * and parsing prose out of a report to build one is how the guidance gets lost between the check and the fix.
+ */
+const AS_JSON = process.argv.includes("--json");
+const blockTotals = { count: 0, guided: 0 };
+const allResults = [];
+const fileBlockCounts = [];
+
 let anyBlocking = false;
 for (const file of files) {  const raw = readFileSync(file, "utf8");
   const isDraft = /^draft:\s*true/m.test(raw);
@@ -699,12 +719,36 @@ for (const file of files) {  const raw = readFileSync(file, "utf8");
   const warns = results.filter((r) => r.level === "warn");
   const passes = results.filter((r) => r.level === "pass");
 
-  console.log(`\n${file}${isDraft ? "  [draft]" : ""}`);
+  if (AS_JSON) {
+        /*
+         * Collected rather than printed. Every result keeps the guidance attached, so a caller gets want/how/example
+         * for the rules that failed without having to know how the report is formatted.
+         */
+        for (const r of results) allResults.push({ file, isDraft, ...r });
+        continue;
+      }
+
+console.log(`\n${file}${isDraft ? "  [draft]" : ""}`);
   console.log(`  ${passes.length} pass · ${warns.length + (isDraft ? blocks.length : 0)} warn · ${isDraft ? 0 : blocks.length} BLOCK`);
   if (isDraft) {
     console.log(`  –        draft: ${blocks.length} blocking rule(s) not yet met, excluded from the gate`);
   } else {
-    for (const r of blocks) console.log(`  ✗ BLOCK  ${r.rule.padEnd(38)} ${r.detail}`);
+    /*
+ * Each block prints the verdict, then the structure it was measured against, then the edit that clears it.
+ *
+ * Indented one level deeper than the verdict so a list of ten rules is still scannable, and the example is
+ * fenced so a multi-line fragment does not run into the next rule.
+ */
+    for (const r of blocks) {
+      console.log(`  ✗ BLOCK  ${r.rule.padEnd(38)} ${r.detail}`);
+      if (r.want) console.log(`           wants:  ${r.want}`);
+      if (r.how) for (const step of r.how) console.log(`           fix:    ${step}`);
+      if (r.example) {
+        console.log("           looks like:");
+        for (const line of String(r.example).split("\n")) console.log(`             ${line}`);
+      }
+      if (r.unguided) console.log("           (no guidance written for this rule yet - report it)");
+    }
   }
   for (const r of warns) console.log(`  ! warn   ${r.rule.padEnd(38)} ${r.detail}`);
 
@@ -716,7 +760,7 @@ for (const file of files) {  const raw = readFileSync(file, "utf8");
     for (const r of passes) console.log(`  · pass   ${r.rule.padEnd(38)} ${r.detail}`);
   }
 
-  if (!isDraft && blocks.length) anyBlocking = true;
+  if (!isDraft && blocks.length) { anyBlocking = true; fileBlockCounts.push(blocks.length); }
 }
 
 // Only in library mode: these are claims about the whole set, and running them
@@ -730,5 +774,39 @@ if (args[0] === "--all") {
   void claimResult.total;
 }
 
-console.log(anyBlocking ? "\nRESULT: BLOCKED — fix the blocking rules above.\n" : "\nRESULT: PASS — every blocking rule cleared.\n");
+if (!AS_JSON) {
+if (anyBlocking) {
+  /*
+   * Name the count and the first thing to fix. A list of ten failures is a list to work through in order, and
+   * order matters: fixing the sections before the word count avoids counting twice.
+   */
+  /*
+   * The count comes from the per-file block lists already computed, not from a second tally that could disagree
+   * with them.
+   */
+  const total = fileBlockCounts.reduce((a, b) => a + b, 0);
+  console.log("");
+  console.log(`RESULT: BLOCKED — ${total} blocking rule(s). Fix them in the order listed; each one names the`);
+  console.log("structure it checks and the edit that clears it.");
+  console.log("");
+} else {
+  console.log("\nRESULT: PASS — every blocking rule cleared.\n");
+}
+}
+if (AS_JSON) {
+    const blocking = allResults.filter((r) => r.level === "block" && !r.isDraft);
+    console.log(
+      JSON.stringify(
+        {
+          blocked: blocking.length > 0,
+          blockingCount: blocking.length,
+          unguided: blocking.filter((r) => r.unguided).map((r) => r.rule),
+          results: allResults,
+        },
+        null,
+        2,
+      ),
+    );
+  }
+
 process.exit(anyBlocking ? 1 : 0);

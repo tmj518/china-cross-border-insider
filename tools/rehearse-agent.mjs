@@ -223,6 +223,8 @@ export function usageToday() { return { calls: 1, failed: 0, usd: 0 }; }
 `;
 
 /** The stub checker approves, so the publish path can be exercised. */
+/** The structure check reports nothing blocked, so the publish path can be exercised against a fixture. */
+const QA_CHECK_STUB = 'console.log(JSON.stringify({ blocked: false, blockingCount: 0, unguided: [], results: [] }));';
 const QA_STUB = `console.log(JSON.stringify({ verdict: "APPROVED", layers: { L1: { pass: true }, L5: { pass: true } }, reasons: [] }));
 process.exit(0);
 `;
@@ -248,6 +250,7 @@ function buildWorkdir(s, index) {
   /* The model, the reviewer and the registry rebuild are the three things the loop talks to. */
   writeFileSync(join(work, "tools", "lib-llm.mjs"), LLM_STUB, "utf8");
   writeFileSync(join(work, "tools", "cloud-qa.mjs"), QA_STUB, "utf8");
+  writeFileSync(join(work, "tools", "qa-check.mjs"), QA_CHECK_STUB, "utf8");
   writeFileSync(join(work, "tools", "build-instruments.mjs"), BUILD_STUB, "utf8");
 
   writeFileSync(join(work, "src", "data", "instruments.json"), JSON.stringify({ instruments: [] }), "utf8");
