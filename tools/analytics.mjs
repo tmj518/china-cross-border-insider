@@ -54,7 +54,7 @@ const DIR = (process.env.ANALYTICS_DIR ?? "").trim() || join(ROOT, "data", "anal
 const LEDGER = join(ROOT, "data", "ledger.jsonl");
 
 const args = process.argv.slice(2);
-const MODE = args.includes("--fetch") ? "fetch" : args.includes("--brief") ? "brief" : "report";
+const MODE = args.includes("--probe") ? "probe" : args.includes("--fetch") ? "fetch" : args.includes("--brief") ? "brief" : "report";
 
 /*
  * The account id is not a secret.
@@ -68,7 +68,19 @@ const MODE = args.includes("--fetch") ? "fetch" : args.includes("--brief") ? "br
 const ACCOUNT = ((process.env.CF_ACCOUNT_ID ?? "").trim() || "0f3ce61ae14d143b53fdfdba8d868df4").trim();
 const TOKEN = (process.env.CF_API_TOKEN ?? "").trim();
 /* The beacon token, named so the error message can explain why it is not enough. */
-const BEACON = (process.env.CF_ANALYTICS_TOKEN ?? "").trim();
+/*
+ * The beacon token is not a secret.
+ *
+ * It is rendered into every page's HTML by the Web Analytics snippet - the same string is in src/consts.ts as
+ * the client default, and anyone who views source on the site can read it. Requiring it as an environment
+ * variable meant that with CF_API_TOKEN set and this unset, the query ran with an empty siteTag and returned
+ * zero rows: a working integration that reports a site nobody reads, which is the most expensive kind of wrong
+ * because it looks like an answer.
+ *
+ * Defaulted here for the same reason as the account id: it grants nothing, it identifies the site, and the
+ * alternative is a silent zero.
+ */
+const BEACON = ((process.env.CF_ANALYTICS_TOKEN ?? "").trim() || "be1864c080cf47f88bd1c126a8571ede").trim();
 const SITE_HOST = "landedmath.com";
 
 /** Paths are what the ledger keys on; Cloudflare reports full URLs. */
@@ -310,6 +322,99 @@ function brief() {
 
 if (MODE === "fetch") {
   await fetchSnapshot(Number(args.find((a) => a.startsWith("--days="))?.slice(7) ?? 30));
+} else if (MODE === "probe") {
+  /*
+   * Four questions, smallest first. The first failure is the answer, and each one names what to fix.
+   *
+   * Cloudflare authenticates before it parses, so without a working token there is no way to check whether the
+   * query shape is right. This is how the first real run stops being the only test.
+   */
+  console.log("ANALYTICS PROBE\n" + "=".repeat(76));
+  console.log(`  account : ${ACCOUNT}`);
+  console.log(`  beacon  : ${BEACON || "(CF_ANALYTICS_TOKEN not set)"}`);
+  console.log("");
+
+  if (!TOKEN) {
+    console.log("  1  token          NOT SET - CF_API_TOKEN is required");
+    console.log("");
+    console.log("  Cloudflare dashboard -> My Profile -> API Tokens -> Create Token");
+    console.log("  -> Account Analytics: Read, scoped to this account.");
+    process.exit(2);
+  }
+
+  const ask = async (query) => {
+    const r = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+      method: "POST",
+      signal: AbortSignal.timeout(45000),
+      headers: { "content-type": "application/json", authorization: `Bearer ${TOKEN}` },
+      body: JSON.stringify({ query }),
+    });
+    const j = await r.json().catch(() => ({}));
+    return { status: r.status, ok: r.ok && !j.errors, errors: j.errors ?? [], data: j.data };
+  };
+  const explain = (e) => {
+    const msg = String(e.message ?? "");
+    if (/Authentication|10000|9106/i.test(msg)) return "the token is not accepted - wrong value, revoked, or not an API token";
+    if (/401|403/i.test(msg)) return "the token lacks Account Analytics: Read, or is scoped to another account";
+    if (/rumPageloadEventsAdaptiveGroups|unknown field/i.test(msg)) return "this account or plan does not expose the RUM dataset";
+    if (/siteTag/i.test(msg)) return "siteTag is not a filter on this dataset";
+    return msg.slice(0, 140);
+  };
+
+  /* 1 - is the token valid and does it see the account */
+  const a = await ask(`{ viewer { accounts(filter: { accountTag: "${ACCOUNT}" }) { accountTag } } }`);
+  if (!a.ok) {
+    console.log("  1  token          FAILED");
+    console.log("     " + explain(a.errors[0] ?? { message: `HTTP ${a.status}` }));
+    process.exit(1);
+  }
+  const seen = a.data?.viewer?.accounts ?? [];
+  console.log(`  1  token          ok - sees ${seen.length} account(s)`);
+
+  /* 2 - is the dataset reachable at all */
+  const b = await ask(`{ viewer { accounts(filter: { accountTag: "${ACCOUNT}" }) { rumPageloadEventsAdaptiveGroups(limit: 1) { count dimensions { requestPath } } } } }`);
+  if (!b.ok) {
+    console.log("  2  RUM dataset    FAILED");
+    console.log("     " + explain(b.errors[0] ?? { message: `HTTP ${b.status}` }));
+    process.exit(1);
+  }
+  const anyRows = (b.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups ?? []).length;
+  console.log(`  2  RUM dataset    ok - ${anyRows} row(s) with no filter`);
+
+  /* 3 - does the beacon match anything, ever */
+  if (!BEACON) {
+    console.log("  3  beacon         SKIPPED - CF_ANALYTICS_TOKEN (the beacon token) is not set");
+    console.log("     Without it the query cannot be scoped to this site, so no pageviews can be attributed.");
+    process.exit(2);
+  }
+  const c = await ask(`{ viewer { accounts(filter: { accountTag: "${ACCOUNT}" }) { rumPageloadEventsAdaptiveGroups(limit: 1 filter: { siteTag: "${BEACON}" }) { count } } } }`);
+  if (!c.ok) {
+    console.log("  3  beacon         FAILED");
+    console.log("     " + explain(c.errors[0] ?? { message: `HTTP ${c.status}` }));
+    process.exit(1);
+  }
+  const beaconRows = (c.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups ?? []).length;
+  console.log(`  3  beacon         ${beaconRows ? "ok - traffic found for this site" : "no traffic for this beacon, ever"}`);
+
+  /* 4 - is there traffic inside the window the writer is told about */
+  const days = Number(/--days=(\d+)/.exec(args.join(" "))?.[1] ?? 7);
+  const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+  const d = await ask(`{ viewer { accounts(filter: { accountTag: "${ACCOUNT}" }) { rumPageloadEventsAdaptiveGroups(limit: 1 filter: { date_geq: "${since}", siteTag: "${BEACON}" }) { count } } } }`);
+  const windowRows = d.ok ? (d.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups ?? []).length : 0;
+  console.log(`  4  last ${days} day(s)     ${windowRows ? "ok - traffic inside the window" : "no traffic since " + since}`);
+  console.log("");
+
+  if (windowRows) {
+    console.log("RESULT: PASS - the token, the dataset and the beacon all work. Run --fetch.");
+    process.exit(0);
+  }
+  if (beaconRows) {
+    console.log("RESULT: QUIET - the beacon has traffic, just not in this window. Widen it with --days=30.");
+    process.exit(3);
+  }
+  console.log("RESULT: NO-DATA - everything works but this site has never been seen by RUM.");
+  console.log("        The beacon script may not be on the live pages; check for cloudflareinsights in the HTML.");
+  process.exit(4);
 } else if (MODE === "brief") {
   console.log(brief());
 } else {

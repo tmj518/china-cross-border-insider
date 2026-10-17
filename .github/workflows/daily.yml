@@ -230,6 +230,10 @@ jobs:
           CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
         run: |
           set +e
+          # Probe first. Cloudflare authenticates before it parses a query, so a wrong field and a wrong token
+          # both come back as 9106 - the only way to tell them apart is to ask a smaller question first. The
+          # probe names which of the four links is broken; --fetch then either works or is explained.
+          node tools/analytics.mjs --probe 2>&1 | tee /tmp/analytics-probe.txt
           node tools/analytics.mjs --fetch --days=7 2>&1 | tee /tmp/analytics.txt
           CODE=${PIPESTATUS[0]}
           mkdir -p data/tmp
