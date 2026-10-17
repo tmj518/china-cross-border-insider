@@ -301,6 +301,8 @@ let qa = null;
  * that reason, and the two are easy to pull back inside when the loop body grows.
  */
 let qaCode = 1;
+let lastBlockerRule = "";
+let sameRuleHits = 0;
 let writeOut = "";
 let writeCode = 0;
 
@@ -410,6 +412,61 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
 
   if (qaCode === 0) break;
 
+  /*
+   * Two circuit breakers, and both exist because the previous version could only count attempts.
+   *
+   * ## 1. A research gap cannot be rewritten away
+   *
+   * The reviewer labels each issue with a fix_type, and "research" means the article needs a real
+   * document it does not have - a missing figure, or a claim needing a second source. Rewriting cannot
+   * conjure a document. Asking the writer to try anyway produces a fluent sentence with a number in it,
+   * which is exactly the failure mode this pipeline is built to prevent: an invented figure inside a
+   * real-looking citation. So the loop stops and the run escalates, naming what has to be fetched.
+   *
+   * This is the one place where stopping early is the safer choice rather than the cheaper one.
+   *
+   * ## 2. The same rule failing twice is a prompt bug, not a draft bug
+   *
+   * If the writer is told the same rule twice and breaks it twice, the instruction is not reaching it.
+   * A third attempt costs a full article and is unlikely to differ. Reporting the rule and the quoted
+   * text is what lets the prompt be fixed, which is the actual remedy - and it is invisible if the run
+   * only reports "three attempts failed".
+   */
+  const blocker = qa?.layers?.L5?.issues?.[0] ?? null;
+  const blockerRule = blocker && typeof blocker === "object" ? blocker.rule || blocker.check || "" : "";
+  const blockerFix = blocker && typeof blocker === "object" ? blocker.fix_type : "rewrite";
+
+  if (blockerFix === "research") {
+    run.verdict = "REQUIRES-RESEARCH";
+    run.reasons.push(
+      `the review asks for a document nobody fetched: ${blockerRule || blocker?.why || "no rule named"}`,
+    );
+    if (blocker?.snippet) run.reasons.push(`the draft text it points at: "${String(blocker.snippet).slice(0, 200)}"`);
+    run.reasons.push(
+      "rewriting cannot supply a real figure, and a writer asked to try will produce one that looks real, so the loop stops here",
+    );
+    run.escalation = { layer: blocker?.check ?? "L5", rule: blockerRule, snippet: blocker?.snippet ?? "", fix_type: "research" };
+    run.qa = qa ? { verdict: qa.verdict, layers: Object.fromEntries(Object.entries(qa.layers).map(([k, l]) => [k, { pass: l.pass, detail: l.detail }])) } : null;
+    break;
+  }
+
+  if (blockerRule && blockerRule === lastBlockerRule) {
+    sameRuleHits += 1;
+  } else if (blockerRule) {
+    sameRuleHits = 1;
+    lastBlockerRule = blockerRule;
+  }
+  if (sameRuleHits >= 2) {
+    run.verdict = "WRITE-FAILED";
+    run.reasons.push(
+      `the same rule failed twice in a row - "${blockerRule}" - so the instruction is not reaching the writer and a third attempt would repeat it`,
+    );
+    if (blocker?.snippet) run.reasons.push(`the draft text it keeps pointing at: "${String(blocker.snippet).slice(0, 200)}"`);
+    run.reasons.push("the remedy is to fix the writer's prompt for this rule, not to rewrite the article again");
+    run.qa = qa ? { verdict: qa.verdict, layers: Object.fromEntries(Object.entries(qa.layers).map(([k, l]) => [k, { pass: l.pass, detail: l.detail }])) } : null;
+    break;
+  }
+
   if (attempt < MAX_ATTEMPTS) {
     /*
      * Pass the reviewer's own sentences to the writer, as a file rather than as arguments: the text is
@@ -418,10 +475,23 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
      */
     writeFileSync(join(revisionDir, `issues-${attempt}.json`), JSON.stringify(qa ?? { reasons: ["the reviewer did not approve and gave no itemised reason"] }, null, 2), "utf8");
     console.log(`  revising            : attempt ${attempt + 1} of ${MAX_ATTEMPTS}, ${(qa?.layers?.L5?.issues ?? []).length} objection(s) passed back to the writer`);
+    if (blockerRule) console.log(`  blocker             : ${blockerFix} · ${blockerRule}`);
   }
 }
 
-if (attempts.length && attempts[attempts.length - 1].verdict !== "APPROVED") {
+/*
+ * The summary of a failed loop, and it must not overwrite a verdict the loop already decided.
+ *
+ * Both circuit breakers set `run.verdict` inside the loop - REQUIRES-RESEARCH and WRITE-FAILED - and
+ * this block then assigned REJECTED unconditionally, because its condition only asked whether the last
+ * attempt was approved. The circuit breaker fired, the loop stopped, and the report said "rejected" with
+ * none of the reasoning that had just been written.
+ *
+ * That is the third instance of one mistake in this file: state set inside the loop and clobbered
+ * outside it, after `qaCode` read outside its scope and `qaCode` never initialised on the break path.
+ * The guard is explicit about it because the pattern keeps recurring.
+ */
+if (!run.verdict && attempts.length && attempts[attempts.length - 1].verdict !== "APPROVED") {
   /*
    * Report which attempt was closest, not only which was last. Three revisions that each score worse is
    * a finding about the loop, and it is invisible if only the final attempt is described.

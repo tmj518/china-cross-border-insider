@@ -47,6 +47,22 @@ const SCENARIOS = [
   { name: "writer produces nothing", w: ["nothing"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 1 },
   { name: "reviewer unparseable every time", w: ["write"], q: ["unparseable"], verdict: "REJECTED", writerCalls: 3 },
   { name: "revision gets worse", w: ["write"], q: ["mild", "severe", "severe"], verdict: "REJECTED", contains: "revision made the draft worse" },
+  {
+    name: "reviewer asks for research",
+    w: ["write"],
+    q: ["research"],
+    verdict: "REQUIRES-RESEARCH",
+    writerCalls: 1,
+    contains: "rewriting cannot supply a real figure",
+  },
+  {
+    name: "the same rule fails twice",
+    w: ["write"],
+    q: ["same-rule", "same-rule", "same-rule"],
+    verdict: "WRITE-FAILED",
+    writerCalls: 2,
+    contains: "the same rule failed twice in a row",
+  },
   { name: "weekly ceiling reached", ceiling: true, verdict: "CEILING", writerCalls: 0 },
   { name: "no credentials", keys: false, verdict: "NO-KEYS", writerCalls: 0 },
   { name: "too few figures in the directive", figures: 2, verdict: "THIN-DIRECTIVE", writerCalls: 0 },
@@ -97,9 +113,11 @@ if (which === "approve") layers = { L1: L(true), L2: L(true), L5: L(true, { clai
 else if (which === "reject") layers = { L1: L(true), L5: L(false, { claims_follow_from_figures: false, arithmetic_is_correct: false }, ["The arithmetic does not follow.", "The confidence section overstates."]) };
 else if (which === "mild") layers = { L1: L(true), L5: L(false, { claims_follow_from_figures: false }, ["One objection."]) };
 else if (which === "severe") layers = { L1: L(true), L5: L(false, { claims_follow_from_figures: false, arithmetic_is_correct: false, risk_line_clear: false }, ["A.", "B.", "C.", "D."]) };
+else if (which === "research") layers = { L1: L(true), L5: L(false, { claims_follow_from_figures: true, arithmetic_is_correct: false }, [{ check: "arithmetic_is_correct", rule: "every figure must cite a real instrument", snippet: "Duty drops by 12% after the April waiver.", why: "The 12% figure appears in no directive figure record.", fix_type: "research" }]) };
+else if (which === "same-rule") layers = { L1: L(true), L5: L(false, { confidence_section_is_honest: false }, [{ check: "confidence_section_is_honest", rule: "single-source claim must be disclosed", snippet: "**Inferred.** The waiver will be renewed.", why: "Single-source claim with no disclosure.", fix_type: "add_sentence" }]) };
 else layers = { L5: { pass: false, detail: "reviewer did not return JSON - the response ran to the 8192-token ceiling", checks: {}, issues: [] } };
 const verdict = Object.values(layers).every((l) => l.pass) ? "APPROVED" : "REJECTED";
-console.log(JSON.stringify({ slug: "rehearse-subject", layers, verdict, reasons: verdict === "APPROVED" ? [] : (layers.L5.issues || ["the reviewer did not approve"]).map((i) => "L5: " + i) }, null, 2));
+console.log(JSON.stringify({ slug: "rehearse-subject", layers, verdict, reasons: verdict === "APPROVED" ? [] : (layers.L5.issues || ["the reviewer did not approve"]).map((i) => "L5: " + (i && typeof i === "object" ? (i.rule || i.why || "issue") : i)) }, null, 2));
 process.exit(verdict === "APPROVED" ? 0 : 1);
 `;
 

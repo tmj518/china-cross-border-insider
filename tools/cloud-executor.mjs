@@ -327,7 +327,27 @@ code fence and do not add commentary before or after it.`;
             const parsed = JSON.parse(readFileSync(revisionIssues, "utf8"));
             const l5 = parsed?.layers?.L5 ?? parsed?.qa?.layers?.L5 ?? null;
             const list = l5?.issues ?? parsed?.qa?.layers?.L5?.issues ?? [];
-            if (list.length) return list.map(String);
+            if (list.length) {
+              /*
+               * The reviewer returns objects now - check, rule, snippet, why, fix_type - and `String()`
+               * on one produces "[object Object]", which is worse than useless because it looks like an
+               * objection. Format each so the writer sees which rule, the exact text, and what kind of
+               * repair is expected.
+               *
+               * A bare string is still accepted: a model asked for objects sometimes returns sentences,
+               * and a rejection is too valuable to drop over its packaging.
+               */
+              return list.map((i) => {
+                if (!i || typeof i !== "object") return String(i);
+                const bits = [];
+                if (i.rule) bits.push(`RULE: ${i.rule}`);
+                if (i.check) bits.push(`CHECK: ${i.check}`);
+                if (i.snippet) bits.push(`DRAFT TEXT: "${String(i.snippet).slice(0, 240)}"`);
+                if (i.why) bits.push(`WHY: ${i.why}`);
+                if (i.fix_type) bits.push(`FIX BY: ${i.fix_type}`);
+                return bits.join("\n     ");
+              });
+            }
             return (parsed?.reasons ?? []).map(String);
           } catch {
             return [String(revisionIssues)];
@@ -351,8 +371,21 @@ ${(() => { try { return JSON.parse(readFileSync(revisionIssues, "utf8"))?.qa?.la
 
 HOW TO REVISE
 
-  - Address every objection above. If one is unclear, remove the sentence it refers to rather than
-    guessing at a fix.
+  Each objection above carries a FIX BY line naming the kind of repair. Apply each one as its kind
+  says, and do not do a blind full rewrite of the article:
+
+    FIX BY: rewrite        the wording or structure is wrong. Fix the rule it names, in place.
+    FIX BY: add_sentence   one sentence is missing, usually the single-source disclosure. Add that
+                           sentence and change nothing else in the paragraph.
+    FIX BY: delete         something must go. Remove the invented item entirely rather than softening it.
+    FIX BY: new_decision   a judgement call. Change only the specific claim named, and do not extend it.
+    FIX BY: research       the draft needs a real document nobody has. You cannot fix it by writing,
+                           because a number you do not have is a number you would have to invent. If you
+                           are given this, say so in the notes rather than supplying a figure.
+
+  The remaining rules still apply to every revision:
+
+  - Address every objection. If one is unclear, remove the sentence it refers to rather than guessing.
   - Do not add a number. Every figure must already appear in the bundle below, with the same value,
     unit, period, source and retrieval date. A revision is the single most likely place for an invented
     number to enter, because the instruction to improve something invites filling gaps.

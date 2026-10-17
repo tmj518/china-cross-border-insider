@@ -191,7 +191,44 @@ if (!mechanicallyClear) {
       "given; you are NOT shown the source documents, so you cannot confirm that a cited figure is " +
       "real - judge only what the draft itself asserts and whether it is internally sound. Be hostile " +
       "to unsupported claims, invented experience, and any drift into political, religious, military " +
-      "or reputation commentary. Return only JSON.",
+      "or reputation commentary. Return only JSON.\n\n" +
+      /*
+       * The verdict has to be actionable, not just negative.
+       *
+       * A bare `pass: false` was the whole problem: the writer was told it had failed and nothing else,
+       * so its next attempt was a fresh guess at the same task and hit the same wall. Every field below
+       * exists because something needs it:
+       *
+       *   snippet    the writer can find the offending text instead of re-reading 1,800 words
+       *   check      which of the six checks failed, so the fix is scoped
+       *   rule       a stable key, so the orchestrator can notice the same rule failing twice in a row
+       *   fix_type   routes the repair. "research" means the article needs a document nobody fetched,
+       *              and no amount of rewriting invents a real number - the loop must stop instead.
+       */
+      "Your verdict must be machine-parseable and actionable. If pass is false, every issue MUST carry " +
+      "all five fields:\n" +
+      "{\n" +
+      '  "check":     one of the check names below, whichever failed,\n' +
+      '  "rule":      a short stable label for the rule broken, e.g. "AI summary 60-100 words",\n' +
+      '               "stakes enum", "FAQ 3 questions", "single-source not disclosed"\n' +
+      '  "snippet":   the EXACT text from the draft that fails, quoted, at most 200 characters,\n' +
+      '  "why":       one concrete sentence saying what is wrong with it,\n' +
+      '  "fix_type":  one of: "rewrite" | "research" | "add_sentence" | "delete" | "new_decision"\n' +
+      "}\n\n" +
+      "fix_type means:\n" +
+      '  "rewrite"       the wording or structure is wrong and rewriting it can fix it\n' +
+      '  "research"      the draft needs a real document it does not have. A figure is missing, or a\n' +
+      "                  claim needs a second source. This CANNOT be repaired by rewriting - say so\n" +
+      '  "add_sentence"  one disclosure sentence is missing (usually the single-source note)\n' +
+      '  "delete"        something invented must be removed\n' +
+      '  "new_decision"  a judgement call no rule covers\n\n' +
+      "Hard rules:\n" +
+      "  1. Never return a bare pass=false. Always cite at least one issue with a snippet.\n" +
+      "  2. Order issues most severe first. issues[0] is the blocker.\n" +
+      "  3. Quote the draft exactly. A snippet that does not appear in the draft is useless.\n" +
+      "  4. Do NOT flag a fact merely because you cannot confirm it. You cannot see the source\n" +
+      "     documents. Flag only: internal inconsistency, arithmetic not derivable from the figures\n" +
+      "     given, a dishonest confidence section, invented experience, or the risk line being crossed.",
     messages: [
       {
         role: "user",
@@ -206,10 +243,12 @@ if (!mechanicallyClear) {
     "no_unsupported_superlative_about_any_country": true/false,
     "risk_line_clear": true/false
   },
-  "issues": [ "each issue in one sentence, most serious first" ],
+  "issues": [
+    { "check": "...", "rule": "...", "snippet": "...", "why": "...", "fix_type": "..." }
+  ],
   "summary": "one sentence"
 }
-Set pass to false if any check is false.`,
+Set pass to false if any check is false. Every issue needs all five fields.`,
       },
     ],
     /*
@@ -243,16 +282,59 @@ Set pass to false if any check is false.`,
     report.reasons.push(`L5: reviewer output unparseable - ${r.parseError ?? "unknown reason"}`);
   } else {
     review = r.json;
+    /*
+     * Two shapes are accepted, because a model that has been asked for objects sometimes returns strings
+     * and a rejection is too valuable to discard over its packaging.
+     *
+     *   { check, rule, snippet, why, fix_type }   what the prompt asks for
+     *   "one sentence"                            what the previous version asked for, and what a
+     *                                             model falls back to when it is in a hurry
+     *
+     * `normaliseIssue` keeps the structure where it exists and wraps a bare string so every downstream
+     * reader sees the same shape. The `fix_type` default is "rewrite": it is the only type that assumes
+     * nothing, and treating an unlabelled objection as a research gap would stop the loop for a reason
+     * that may not exist.
+     */
+    const normaliseIssue = (i) => {
+      if (i && typeof i === "object") {
+        return {
+          check: String(i.check ?? "").slice(0, 60),
+          rule: String(i.rule ?? "").slice(0, 120),
+          snippet: String(i.snippet ?? "").slice(0, 300),
+          why: String(i.why ?? "").slice(0, 400),
+          fix_type: ["rewrite", "research", "add_sentence", "delete", "new_decision"].includes(i.fix_type) ? i.fix_type : "rewrite",
+        };
+      }
+      return { check: "", rule: "", snippet: "", why: String(i ?? "").slice(0, 400), fix_type: "rewrite" };
+    };
+    const issues = (Array.isArray(r.json.issues) ? r.json.issues : []).map(normaliseIssue);
+    const structured = issues.filter((i) => i.snippet || i.rule).length;
+
     report.layers.L5 = {
       pass: r.json.pass === true,
-      detail: r.json.pass === true ? "approved by the second model" : `${(r.json.issues ?? []).length} issue(s)`,
+      detail: r.json.pass === true ? "approved by the second model" : `${issues.length} issue(s), ${structured} with a citation`,
       checks: r.json.checks ?? {},
-      issues: r.json.issues ?? [],
+      issues,
       summary: r.json.summary ?? "",
       reviewer: `${r.provider}/${r.model}`,
       independent: r.provider !== (flag("writer-provider", null) ?? r.provider),
     };
-    if (r.json.pass !== true) report.reasons.push(...(r.json.issues ?? ["reviewer withheld approval"]).map((i) => `L5: ${i}`));
+    if (r.json.pass !== true) {
+      for (const i of issues) {
+        const where = i.rule ? `${i.rule}: ` : "";
+        const what = i.why || i.snippet || "(no reason given)";
+        report.reasons.push(`L5: ${where}${what}`);
+      }
+      if (!issues.length) report.reasons.push("L5: the reviewer withheld approval without naming an issue");
+      /*
+       * A rejection with no citation cannot be repaired. The writer would be rewriting blind, which is
+       * what the first version of this loop did. Saying so here means the failure is attributed to the
+       * reviewer rather than quietly producing another guess.
+       */
+      if (issues.length && !structured) {
+        report.reasons.push("L5: no issue carried a rule or a quoted snippet, so a revision would be guesswork");
+      }
+    }
     if (!report.layers.L5.independent) {
       report.reasons.push(`L5: the review used ${r.provider}, the same provider as the writer, so it is not an independent check`);
     }
