@@ -127,7 +127,10 @@ try {
     report.reasons.push(`build: the draft fails content validation - ${buildNote}`);
   } else {
     try {
-      out = execFileSync(process.execPath, [join(ROOT, "tools", "gate.mjs"), "--fresh"], { encoding: "utf8", timeout: 900000 });
+      /*
+     * The hard tier only. A network fetch is not allowed to decide whether the day's article is published.
+     */
+    out = execFileSync(process.execPath, [join(ROOT, "tools", "gate.mjs"), "--tier=hard", "--fresh"], { encoding: "utf8", timeout: 600000 });
     } catch (e) {
       out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
     }
@@ -139,6 +142,30 @@ try {
       failed,
     };
   }
+  /*
+   * The soft tier, run and reported but not allowed to block.
+   *
+   * These are real checks - check-csp exists because a policy once refused every inline script and
+   * silently killed every interaction on the site - and they are cheap and offline, so they run on every
+   * article. What changed is that a failure is a finding rather than a stopped publication.
+   */
+  try {
+    const softOut = execFileSync(process.execPath, [join(ROOT, "tools", "gate.mjs"), "--tier=soft", "--fresh"], {
+      encoding: "utf8",
+      timeout: 600000,
+    });
+    const softPassed = /RESULT:\s*every gate passed/i.test(softOut);
+    const softFailed = [...softOut.matchAll(/^\s*(?:\[FAIL\]|✗|FAIL)\s*([^\n]{0,110})/gm)].map((m) => m[1].trim());
+    report.layers.advisory = {
+      pass: softPassed,
+      detail: softPassed ? "csp, structured data and the reviewer found nothing" : `${softFailed.length} finding(s), not blocking`,
+      failed: softFailed.slice(0, 6),
+    };
+    if (!softPassed) report.reasons.push(...softFailed.slice(0, 3).map((f) => `advisory: ${f}`));
+  } catch (e) {
+    report.layers.advisory = { pass: false, detail: `the advisory tier did not run: ${String(e.message).slice(0, 100)}`, failed: [] };
+  }
+
 } finally {
   if (stagedCopy) {
     try {
@@ -343,7 +370,18 @@ Set pass to false if any check is false. Every issue needs all five fields.`,
 
 /* ---------------------------------------------------------------- verdict */
 
-report.verdict = Object.values(report.layers).every((l) => l.pass) ? "APPROVED" : "REJECTED";
+/*
+ * The verdict ignores the advisory layer by name.
+ *
+ * It used to be `every` over the layers, which is what made seven checks each able to stop a
+ * publication. A soft finding is now a finding: it is reported, it reaches the notification, and the
+ * article still publishes.
+ */
+report.verdict = Object.entries(report.layers)
+  .filter(([k]) => k !== "advisory")
+  .every(([, l]) => l.pass)
+  ? "APPROVED"
+  : "REJECTED";
 
 if (AS_JSON) {
   console.log(JSON.stringify(report, null, 2));

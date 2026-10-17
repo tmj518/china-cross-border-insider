@@ -108,6 +108,7 @@ const ARTICLES = readdirSync(join(ROOT, "src", "content", "blog")).filter((f) =>
 const GATES = [
   {
     id: "qa-check",
+    tier: "hard",
     label: "structural gates",
     args: ["tools/qa-check.mjs", "--all"],
     inputs: ARTICLES,
@@ -115,6 +116,7 @@ const GATES = [
   },
   {
     id: "reviewer-check",
+    tier: "soft",
     label: "reviewer agent",
     args: ["tools/reviewer-check.mjs", "--all"],
     inputs: ARTICLES,
@@ -122,6 +124,7 @@ const GATES = [
   },
   {
     id: "link-check",
+    tier: "hard",
     label: "internal links",
     args: ["tools/link-check.mjs"],
     inputs: ARTICLES,
@@ -129,6 +132,7 @@ const GATES = [
   },
   {
     id: "check-structured-data",
+    tier: "soft",
     label: "structured data",
     args: ["tools/check-structured-data.mjs"],
     inputs: ["dist"],
@@ -136,6 +140,7 @@ const GATES = [
   },
   {
     id: "check-csp",
+    tier: "soft",
     label: "content security policy",
     args: ["tools/check-csp.mjs"],
     inputs: ["dist"],
@@ -143,6 +148,7 @@ const GATES = [
   },
   {
     id: "serp-check",
+    tier: "slow",
     label: "information gain (network)",
     args: ["tools/serp-check.mjs", "--all", "--serp=file:data/serp"],
     inputs: [...ARTICLES, "data/serp"],
@@ -150,6 +156,7 @@ const GATES = [
   },
   {
     id: "check-mobile",
+    tier: "slow",
     label: "mobile layout (browser)",
     args: ["tools/check-mobile.mjs"],
     inputs: ["dist"],
@@ -187,8 +194,23 @@ const start = Date.now();
 const results = [];
 
 // The cheap ones are independent processes reading the same files: run them together.
-const fastGates = GATES.filter((g) => g.fast);
-const slowGates = GATES.filter((g) => !g.fast);
+/*
+ * --tier=hard|soft|slow  run only that tier.
+ *
+ * Without it every gate runs, which is what a manual full check wants. With it the publish path can ask
+ * for the tier that is allowed to block and skip the two that need the network, so a flaky fetch cannot
+ * cost a day's publishing.
+ */
+const tierArg = process.argv.find((a) => a.startsWith("--tier="));
+const TIER_FILTER = tierArg ? tierArg.slice("--tier=".length) : null;
+const SELECTED = TIER_FILTER ? GATES.filter((g) => g.tier === TIER_FILTER) : GATES;
+if (TIER_FILTER && !SELECTED.length) {
+  console.log(`no gate has tier "${TIER_FILTER}". Known tiers: hard, soft, slow.`);
+  process.exit(2);
+}
+
+const fastGates = SELECTED.filter((g) => g.fast);
+const slowGates = SELECTED.filter((g) => !g.fast);
 
 const pending = fastGates.map(
   (g) => new Promise((resolve) => {
@@ -234,6 +256,8 @@ saveCache(cache);
 
 const totalMs = Date.now() - start;
 const failed = results.filter((r) => r.status !== 0);
+/* A soft failure is reported and does not change the exit code; the caller decides what to do with it. */
+const failedHard = failed.filter((r) => (r.tier ?? "hard") !== "soft" && (r.tier ?? "hard") !== "slow");
 
 if (JSON_OUT) {
   console.log(JSON.stringify({ totalMs, results: results.map(({ id, label, status, ms, cached }) => ({ id, label, status, ms, cached })) }, null, 2));

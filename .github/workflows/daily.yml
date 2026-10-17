@@ -201,21 +201,9 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install Chromium for the mobile gate
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq chromium-browser || sudo apt-get install -y -qq chromium
-          FOUND=""
-          for p in /usr/bin/chromium-browser /usr/bin/chromium /usr/bin/google-chrome /snap/bin/chromium; do
-            if [ -x "$p" ]; then FOUND="$p"; break; fi
-          done
-          if [ -z "$FOUND" ]; then
-            echo "::error::no Chromium binary found, so the mobile layout gate cannot run"
-            exit 1
-          fi
-          echo "CHROME_PATH=$FOUND" >> "$GITHUB_ENV"
-          "$FOUND" --version
-
+      # No Chromium install, and no browser. The mobile measurement needs one, and it runs in
+      # .github/workflows/deep-checks.yml. On this path there is nothing to measure with a browser: the
+      # gates that run here are --tier=hard and --tier=soft, and both are file readers.
       - name: Install dependencies
         run: |
           corepack enable
