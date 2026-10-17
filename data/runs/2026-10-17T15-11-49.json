@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-17T15:10:48.805Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "2 previous run(s), last 2026-10-17T06:11:37.501Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "4 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": false,
+      "detail": "4 of 5 sections have none yet: sourcing, logistics, supply-chain, platforms"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 1)"
+    }
+  ],
+  "verdict": "NO-SUBJECT",
+  "reasons": [],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "sourcing": 0,
+    "logistics": 0,
+    "supply-chain": 0,
+    "trade-policy": 4,
+    "platforms": 0
+  },
+  "uncoveredSections": [
+    "sourcing",
+    "logistics",
+    "supply-chain",
+    "platforms"
+  ],
+  "researchLog": [
+    "RESEARCH  2026-10-17T15:10:48.848Z",
+    "====================================================================================",
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20251220175517-rjpsc",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  skip  trade-remedy-cases              0B  not usable (recorded anyway)",
+    "  skip  tariff-commission             604B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    statistics-bureau           72989B  archived",
+    "  skip  tax-administration              0B  not usable (recorded anyway)",
+    "  skip  customs                      2003B  not usable (recorded anyway)",
+    "  ok    trade-council               87725B  archived",
+    "  ok    ministry-of-finance-article    34071B  article archived",
+    "  ok    ministry-of-finance-article    19579B  article archived",
+    "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   320441B  article archived",
+    "  ok    statistics-bureau-article   245756B  article archived",
+    "  ok    trade-council-article        6618B  article archived",
+    "  ok    trade-council-article        6331B  article archived",
+    "  articles : 7 followed from the listings",
+    "  ledger: 31 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  FAILED - ETIMEDOUT: fetch failed",
+    "  spent   : ~0.0000"
+  ]
+}
