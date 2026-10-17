@@ -1,21 +1,7 @@
 # Landed Math
 
 > **2026-10-01 改名**：项目原名 "China Cross-border Insider"（暂定名），域名 `crossborderinsider.com` 已被占用，
-> 正式定名为 **Landed Math**（域名 `landedmath.com`）。改名同时避开了与 Business Insider 的商标临近风险。
-> 仓库名与 Cloudflare Pages 项目名仍是历史名 `china-cross-border-insider`，不影响使用。
-
-跨境英文内容站。技术栈：**Astro 7 + GitHub + Cloudflare Pages**，纯静态、无服务器、无数据库。
-
-本仓库的内容分层：
-
-| 位置 | 作用 |
-| --- | --- |
-| **`项目规范_英文内容站_v1.4.md`** | ⭐ **生效规范**（2026-10-02 定稿）：定位与受众、技术架构、frontmatter 标准、V6.1 模板、两道质检闸门、成本模型库、数据回流闭环、KPI、红线 |
-| `docs/archive/项目规范_v1.2_已废弃.md` / `_v1.0.md` | 历史版本，仅作沿革参考 |
-| `docs/archive/规范修订建议清单_已并入v1.3.md` | v1.2 → v1.3 的修订过程记录（含依据与出处） |
-| `docs/archive/英文站首页_2026-10-01.html` | 视觉原型（单文件预览），**不参与构建**，只作视觉基准 |
-| `src/` `public/` `tools/` | 站点与流水线：Astro 站点、5 个成本模型、2 道质检闸门 |
-
+> 正式定名为 **Landed Math**（域名 `landedmath.com`）
 ---
 
 ## 一、目录结构
