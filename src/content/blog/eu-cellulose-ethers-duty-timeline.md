@@ -1,17 +1,17 @@
 ---
 title: "AD760: Registration Is Ordered Now, and the Money Starts in April 2027"
-subtitle: "Case AD760 opened on 24 September 2026. Registration can be ordered with nothing payable until 24 April 2027, and the duty lands on the full period."
-description: "The EU opened anti-dumping case AD760 on cellulose ethers on 24 September 2026. No duty exists yet. Registration can be ordered 190 days before the earliest provisional duty, and any duty reaches back to the registration date."
+subtitle: "The EU opened the cellulose ethers case on 24 September 2026. The comment window shut in ten days; the first duty date is 24 April 2027."
+description: "AD760 runs from 24 September 2026. The scope comment window closed on 4 October 2026, provisional duties can land from 24 April 2027, and the final deadline is 24 November 2027."
 publishDate: 2026-10-16
 reviewBy: 2027-01-15
 stakes: priced
 category: "trade-policy"
 audience: "importer"
-tags: ["anti-dumping", "cellulose ethers", "AD760", "EU trade defence", "registration", "landed cost"]
+tags: ["anti-dumping", "cellulose ethers", "AD760", "EU trade defence", "landed cost", "registration"]
 priority: "P0"
 featured: false
 draft: false
-articleNumber: 32
+articleNumber: 33
 target_keyword: "EU anti-dumping cellulose ethers AD760 2026"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -95,111 +95,122 @@ sources:
 
 ## AI Summary
 
-Case AD760 opened on 24 September 2026 against cellulose ethers from China and Korea. No duty exists today. The earliest provisional duty is 24 April 2027, and the investigation closes by 24 November 2027. The cost sits in the gap: registration can be ordered while nothing is payable, and any duty reaches back to the registration date. On a 50,000-dollar container, a 50 percent rate is 25,000 dollars, collected after the goods have been sold.
+Case AD760 opened on 24 September 2026. The window to argue about which products are in scope closed on 4 October 2026, ten days later. No duty exists today. Provisional duties can be imposed from 24 April 2027 and must be imposed by 24 May 2027; the investigation ends by 24 November 2027. On a 50,000-dollar container, the eventual bill runs from zero to 25,000 dollars across a 0 to 50 percent range. The action now is documentary, not financial.
 
 ## What happened
 
-The Commission published Notice of initiation C/2026/6637 in Official Journal C/2026/4924 on 24 September 2026, opening anti-dumping case AD760 on certain cellulose ethers originating in the People's Republic of China and the Republic of Korea. It is an initial investigation, not a review.
+The European Commission published Notice of initiation C/2026/6637 in Official Journal C/2026/4924 on 24 September 2026, opening anti-dumping case AD760 on certain cellulose ethers originating in China and Korea. The complaint was lodged on 10 August 2026 by Ashland Industries Nederland BV, Ashland Specialties Belgium BV and SE Tylose GmbH & Co. KG — six weeks before the case opened.
 
-The product scope is defined by chemistry, not by trade name. Six distinct cellulose ethers are named by CAS number: methyl cellulose 9004-67-5, hydroxyethyl cellulose 9004-62-0 and 80455-45-4, hydroxyethyl methyl cellulose 9032-42-2, hydroxypropyl methyl cellulose 9004-65-3, ethyl hydroxyethyl cellulose 9004-58-4, and methyl ethyl hydroxyethyl cellulose. The customs classification is ex 3912 39 85, with TARIC codes 3912 39 85 30, 3912 39 85 60 and 3912 39 85 90, given for information and without prejudice to a later change.
+The product scope is defined by chemistry, not by trade name. Six distinct cellulose ethers are named, each by CAS number: methyl cellulose 9004-67-5, hydroxyethyl cellulose 9004-62-0 and 80455-45-4, hydroxyethyl methyl cellulose 9032-42-2, hydroxypropyl methyl cellulose 9004-65-3, ethyl hydroxyethyl cellulose 9004-58-4, and methyl ethyl hydroxyethyl cellulose. The customs classification is ex 3912 39 85, with TARIC codes 3912 39 85 30, 3912 39 85 60 and 3912 39 85 90, given for information and without prejudice to a later change.
 
-The complaint was lodged on 10 August 2026 by Ashland Industries Nederland BV, Ashland Specialties Belgium BV and SE Tylose GmbH & Co. KG — six weeks before the case opened. Dumping and injury are measured over 1 April 2025 to 31 March 2026, with the injury trend examined from 1 January 2022 to the end of that period.
+Dumping and injury are measured over 1 April 2025 to 31 March 2026. The injury trend is examined from 1 January 2022 to the end of that period.
 
-| Date | What it is | Source |
+The deadlines all run from 24 September 2026:
+
+| Date | What happens | Instrument |
 | --- | --- | --- |
-| 10 August 2026 | Complaint lodged by three EU producers | Notice, section 1 |
-| 24 September 2026 | Notice of initiation published; every deadline runs from here | Notice, OJ C/2026/4924 |
-| 4 October 2026 | Product-scope comment window closed, 10 days from publication | Notice, section 5.2 |
-| 9 October 2026 | Hearing requests and provisional-measure comments closed, 15 days | Notice, section 5.2 |
-| 24 April 2027 | Seven-month provisional date | Regulation 2016/1036, Article 7(1) |
-| 24 May 2027 | Last day provisional duties can be imposed, eight months out | Notice, section 7; Article 7(1) |
-| 24 November 2027 | Last day of the investigation, fourteen months out | Notice, section 7; Article 6(9) |
+| 10 August 2026 | Complaint lodged by three EU producers | Notice C/2026/6637, section 1 |
+| 24 September 2026 | Case AD760 opened; clock starts | Notice C/2026/6637, OJ C/2026/4924 |
+| 4 October 2026 | Scope comment window closes, 10 days | Notice C/2026/6637, section 5.2 |
+| 9 October 2026 | Hearing requests and provisional-measure comments close, 15 days | Notice C/2026/6637, section 5.2 |
+| 24 April 2027 | Earliest provisional duty, seven months | Regulation (EU) 2016/1036, Article 7(1) |
+| 24 May 2027 | Latest provisional duty, eight months | Notice C/2026/6637, section 7 |
+| 24 November 2027 | Investigation must conclude, fourteen months | Regulation (EU) 2016/1036, Article 6(9) |
 
-The schedule is the part importers skip. Article 7(1) of Regulation (EU) 2016/1036 allows provisional duties at seven months and eight months at the outside, which puts the earliest provisional date at 24 April 2027 and the latest at 24 May 2027. Article 6(9) caps the investigation at fourteen months, which is 24 November 2027.
-
-> **Registration** — the customs record, ordered under Article 19a of Regulation (EU) 2016/1036, that logs each import of the product during the investigation. It collects nothing when it is ordered. It fixes the date from which a later duty can be collected retroactively under Article 10, which is why a registration order is the event that turns a future duty into a present liability.
+> **Registration** — the customs act of recording each entry of a product under investigation so that, if a duty is later imposed, the duty can be collected retroactively on those entries. It creates a liability before any rate exists. Article 10 of Regulation (EU) 2016/1036 is the provision that allows it.
 
 ## Why now
 
-The comment windows are shut. Product scope closed on 4 October 2026, ten days after publication. Hearing requests and comments on provisional measures closed on 9 October 2026, fifteen days after. A buyer who wanted a grade excluded from the six CAS numbers had until 4 October and no longer has it.
+The comment window is the part that has already gone. Ten days from publication is a short window even by trade-defence standards, and it closed on 4 October 2026. A buyer who wanted a grade excluded from scope, or who believed a CAS number was misdescribed, had until that date to say so. That route is now closed for this stage.
 
-What remains open is the stretch before any money moves. From 4 October 2026 to the seven-month provisional date of 24 April 2027 is 190 days. In that window the Commission can order registration, and registration costs nothing at the border. The bill arrives later, and it arrives on the full registered volume.
+What remains open is the questionnaire. A sampled exporting producer has 30 days from being told it is in the sample to return the questionnaire, and the sampling decision had not been published when this article was written. That is the point at which the Chinese and Korean side of the case starts producing the cost data the rate will be built from.
 
 ## So what
 
-The judgement is simple. The risk in AD760 is not the duty rate, which does not exist. The risk is the retroactive reach of a rate that will be set against an investigation period that has already closed. The earlier notice in this same case is in [the AD760 initiation record](/blog/eu-anti-dumping-cellulose-ethers-ad760-registration-2026/), which is what a registration order now builds on.
+The judgement is simple: there is no duty to price today, and there is a real exposure to plan for. The Commission has published no rate and cannot until provisional measures. The investigation period ended 31 March 2026, and the rate follows from it.
 
-The arithmetic is the exposure. On a stated CIF value of 50,000 dollars for one 20-foot container at 18 tonnes and 2.78 dollars a kilogram, an ad valorem duty runs straight off the CIF value, which is the basis Regulation (EU) 2016/1036 uses.
+The arithmetic is a range, because a range is all the documents support. Take one 20-foot container at 18 tonnes and a stated CIF value of 50,000 dollars — 2.78 dollars a kilogram, a reader input rather than a market price. Ad valorem duty under Regulation (EU) 2016/1036 is calculated on CIF value.
 
-| Duty rate | Duty on one 50,000-dollar container |
-| --- | --- |
-| 0 percent | 0 dollars |
-| 10 percent | 5,000 dollars |
-| 25 percent | 12,500 dollars |
-| 50 percent | 25,000 dollars |
+| Duty rate | Duty on a 50,000-dollar container | Duty per kilogram |
+| --- | --- | --- |
+| 0 percent | 0 dollars | 0.00 dollars |
+| 10 percent | 5,000 dollars | 0.28 dollars |
+| 25 percent | 12,500 dollars | 0.69 dollars |
+| 50 percent | 25,000 dollars | 1.39 dollars |
 
-The Commission has published no rate and cannot until provisional measures. The range used here is 0 to 50 percent, run across an ordered set of rates, because the point is the shape of the exposure rather than a forecast. Across that range the per-container bill runs from 0 to 25,000 dollars.
+The top of that range doubles the cost of the goods. The bottom changes nothing. A buyer signing a 2027 supply contract today is signing into that spread with no published rate to anchor it.
 
-Now put the 190 days against it. A container that clears in November 2026 pays nothing. If registration is ordered and a provisional duty follows in April 2027, the duty is collected on that container at the rate finally set, and the goods were sold months earlier at a price that carried no duty. The margin on the shipment is what absorbs it. That is the cost the notice creates, and it is a cost of timing rather than of tariff.
+The timing matters more than the range. Between the closed comment window on 4 October 2026 and the earliest provisional date of 24 April 2027 there are 190 days. In that stretch the Commission can order registration under Article 10 with nothing payable yet. Registration is the signal: it means the entries are being recorded for retroactive collection if a duty follows. A buyer who sees registration ordered should treat the exposure as live even though the invoice shows no duty line.
 
-The sourcing response follows from the same arithmetic. Volume that clears before a registration order carries no retroactive exposure. Volume that clears after one carries the full range. The date of the registration order, not the date of the provisional duty, is the line a purchase plan should be built around.
+The practical move is contractual. A 2027 price that does not name who absorbs a duty imposed between 24 April 2027 and 24 November 2027 is a price with an unpriced clause inside it. Fix the split before the sampling decision lands, not after.
 
 ## How confident
 
-**Confirmed.** The notice of initiation C/2026/6637 was published on 24 September 2026 and opened case AD760. The product scope is six cellulose ethers by CAS number under ex 3912 39 85. The complaint was lodged on 10 August 2026. The investigation period is 1 April 2025 to 31 March 2026. The comment windows closed on 4 October and 9 October 2026. Article 7(1) sets the provisional outer limit at eight months, 24 May 2027, and Article 6(9) sets the investigation outer limit at fourteen months, 24 November 2027. No duty exists on the date of writing.
+**Confirmed.** The notice of initiation C/2026/6637, published 24 September 2026 in OJ C/2026/4924, states the product scope, the six CAS numbers, the CN and TARIC codes, the investigation period of 1 April 2025 to 31 March 2026, the complaint date of 10 August 2026, and the comment windows of 10 and 15 days. Regulation (EU) 2016/1036 Article 7(1) sets the seven-month and eight-month limits on provisional duties, and Article 6(9) sets the fourteen-month outer limit on the investigation. The dates 24 April 2027, 24 May 2027 and 24 November 2027 follow directly from those provisions applied to the publication date.
 
-**Inferred.** The 190-day gap and the per-container figures are arithmetic, not published findings. The 190 days is 24 April 2027 minus 4 October 2026, using the seven-month provisional date rather than the eight-month outer limit; the eight-month limit gives a longer gap. The 50,000-dollar CIF value is a stated reader input, not a market price, and the 0 to 50 percent range is a modelling choice because the Commission has published no rate. The retroactive mechanism rests on Article 10 read with Article 19a, and the notice does not state that registration will be ordered. Whether it is ordered is a decision the Commission has not taken.
+**Inferred.** The 0 to 50 percent range is a modelling choice, not a published figure. No rate exists and none can exist until provisional measures. The 50,000-dollar CIF value and 18-tonne weight are stated reader inputs, not a market price, and the per-container and per-kilogram figures are arithmetic on those inputs. The 190-day gap is calculated from the notice's own deadlines. The claim that registration is likely to be ordered rests on Article 10 and on the pattern of EU cases, not on any document in this file that orders it for AD760. The sampling decision and the questionnaire returns are the next documents that will move the estimate, and neither had been published when this article was written.
 
-**What would change my mind.** A published registration regulation would move the retroactivity question from inference to fact and fix the date the exposure starts. A sampling decision naming the exporting producers in the sample would narrow which origins carry the highest expected rate, since the 30-day questionnaire clock runs from notification and the sample had not been published when this article was written. A statement in the case file that registration is not contemplated would remove the 190-day exposure entirely. And a published provisional rate would replace the 0 to 50 percent range with a single number.
+**What would change my mind.** A published sampling decision naming the exporting producers would narrow the range, because the rate is built from their data. A registration regulation in the Official Journal would move the exposure from directional to live and would date the retroactive window. A statement of essential facts, or any provisional regulation, would replace the range with a number. Any of the three would require this article to be rewritten rather than updated.
 
 ## For you
 
-- **Importers of cellulose ethers from China or Korea:** treat the registration order as the trigger date. Volume that clears before it carries no retroactive exposure; volume after it carries the full 0 to 25,000-dollar range per 50,000-dollar container. Pull forward what can clear early and price the rest against the range.
-- **Buyers whose grade sits near the scope edge:** the six CAS numbers are the test, not the trade name. A grade outside those numbers is outside the case. The window to argue that closed on 4 October 2026, so the remaining action is classification evidence at the border, not a comment to the Commission.
-- **Purchasing teams with 2027 contracts:** a duty set in April 2027 applies to goods already sold. Build a duty clause into contracts that ship between now and 24 November 2027, and name the registration date rather than the provisional date as the point the clause engages.
-- **Finance and treasury:** the cash event is a retrospective collection, not a payment at import. Reserve against the upper half of the range for any registered volume rather than the expected rate.
+- **If you import cellulose ethers from China or Korea:** check your entries against the six CAS numbers, not the trade name. A grade outside those numbers is outside the case; a grade inside them is exposed from 24 April 2027 at the earliest.
+- **If you are negotiating a 2027 contract:** put a duty clause in it now. Name who pays a duty imposed between 24 April 2027 and 24 November 2027, and name the date the clause is tested. The 190-day gap is the window in which to do it.
+- **If you buy through a trader:** ask which party is the importer of record on the EU entry. Registration and retroactive collection attach to the entry, and the importer of record carries the liability.
+- **If you hold stock or have goods in transit:** watch the Official Journal for a registration regulation. Registration with no rate payable is the signal that the exposure has started, and it arrives before any duty does.
+- **If you are a foreign merchant shipping into the EU:** the same dates apply to your buyer's entry. Build the range into the quote rather than absorbing it silently.
 
 ## The data point
 
-The stretch between the closed comment window and the earliest possible provisional duty is 190 days, and registration can be ordered inside it with nothing payable at the border.
+The gap between the closed comment window and the earliest possible provisional duty is 190 days, and registration can be ordered inside it with nothing payable.
 
 <div class="callout">
-190 days — from 4 October 2026, when the product-scope window closed, to 24 April 2027, the seven-month provisional date. Registration ordered in that gap collects nothing until a duty is imposed, and then reaches back to the registration date.
+190 days — from 4 October 2026, when the scope comment window closed, to 24 April 2027, the seven-month provisional date. Registration can be ordered across that stretch; no duty is collected until a rate exists.
 </div>
 
 ## FAQ
 
-**Is there a duty on cellulose ethers from China and Korea right now?**
-No. Case AD760 opened on 24 September 2026 and no duty exists on the date of writing. The earliest a provisional duty can be imposed is 24 April 2027, seven months from publication, and the outer limit is 24 May 2027 at eight months under Article 7(1) of Regulation (EU) 2016/1036. The investigation itself closes by 24 November 2027, fourteen months from publication under Article 6(9). Until a regulation imposes a rate, an import clears at the ordinary customs duty for ex 3912 39 85 and nothing more.
+**Does a duty apply to cellulose ethers imported from China today?**
+No. Case AD760 opened on 24 September 2026 and no duty exists on the date of writing. The earliest a provisional duty can be imposed is 24 April 2027, seven months from publication under Article 7(1) of Regulation (EU) 2016/1036, and the latest is 24 May 2027, the eight-month outer limit stated in the notice. The investigation must conclude by 24 November 2027 under Article 6(9). Until a regulation is published, the invoice carries no duty line and the exposure is contractual rather than customs.
 
-**What does registration mean if I import before any duty is set?**
-Registration is a customs record ordered under Article 19a. It collects nothing when it is ordered. Its effect is to fix the date from which a later duty can be collected retroactively under Article 10. If registration is ordered and a provisional duty follows, the duty is collected on the volume registered from that date, at the rate finally set. The goods were sold before the rate existed, so the collection lands on a margin that carried no duty. That is the exposure the 190-day gap describes.
+**Which products are inside the scope of AD760?**
+Six cellulose ethers, each identified by CAS number rather than trade name: methyl cellulose 9004-67-5, hydroxyethyl cellulose 9004-62-0 and 80455-45-4, hydroxyethyl methyl cellulose 9032-42-2, hydroxypropyl methyl cellulose 9004-65-3, ethyl hydroxyethyl cellulose 9004-58-4, and methyl ethyl hydroxyethyl cellulose. The customs classification is ex 3912 39 85, with TARIC codes 3912 39 85 30, 3912 39 85 60 and 3912 39 85 90. The notice gives the classification for information and without prejudice to a later change, so the CAS number is the test to apply to your own entries.
 
-**Which products are in scope, and can a grade be excluded?**
-The scope is six cellulose ethers identified by CAS number: methyl cellulose 9004-67-5, hydroxyethyl cellulose 9004-62-0 and 80455-45-4, hydroxyethyl methyl cellulose 9032-42-2, hydroxypropyl methyl cellulose 9004-65-3, ethyl hydroxyethyl cellulose 9004-58-4, and methyl ethyl hydroxyethyl cellulose. The customs classification is ex 3912 39 85 with TARIC codes 3912 39 85 30, 3912 39 85 60 and 3912 39 85 90. The window to comment on product scope closed on 4 October 2026, ten days after publication, so exclusion arguments now run through classification evidence at the border.
+**What does registration mean for an importer?**
+Registration is the customs act of recording each entry so that a duty, if later imposed, can be collected retroactively on those entries under Article 10 of Regulation (EU) 2016/1036. It creates a liability before any rate exists. The Commission can order it at any point after initiation, which is why the 190 days between 4 October 2026 and 24 April 2027 matter: registration can be ordered across that stretch with nothing payable yet. A registration regulation in the Official Journal is the signal to treat the exposure as live.
 
 ## How we calculated this
 
 ```
-CIF value per container      = 50,000 dollars (stated reader input)
-Net weight                   = 18 tonnes
-Unit value                   = 50,000 / 18,000 kg = 2.78 dollars/kg
+Inputs (stated, not market prices):
+  CIF value per 20-foot container   = 50,000 dollars
+  net weight                        = 18 tonnes = 18,000 kg
+  implied unit value                = 50,000 / 18,000 = 2.78 dollars/kg
 
-Duty at rate r               = 50,000 * r
-  r = 0 percent              -> 0 dollars
-  r = 10 percent             -> 5,000 dollars
-  r = 25 percent             -> 12,500 dollars
-  r = 50 percent             -> 25,000 dollars
-Range across 0 to 50 percent -> 0 to 25,000 dollars per container
+Duty range (no published rate; modelled 0 to 50 percent):
+  duty at 0 percent   = 50,000 x 0.00 =      0 dollars
+  duty at 10 percent  = 50,000 x 0.10 =  5,000 dollars
+  duty at 25 percent  = 50,000 x 0.25 = 12,500 dollars
+  duty at 50 percent  = 50,000 x 0.50 = 25,000 dollars
 
-Provisional date (7 months)  = 24 September 2026 + 7 months = 24 April 2027
-Provisional outer (8 months) = 24 September 2026 + 8 months = 24 May 2027
-Investigation outer (14 mo)  = 24 September 2026 + 14 months = 24 November 2027
+Per kilogram:
+  5,000  / 18,000 = 0.28 dollars/kg
+  12,500 / 18,000 = 0.69 dollars/kg
+  25,000 / 18,000 = 1.39 dollars/kg
 
-Comment window closed        = 24 September 2026 + 10 days = 4 October 2026
-Gap to earliest provisional  = 24 April 2027 - 4 October 2026 = 190 days
+Gap between closed comment window and earliest provisional duty:
+  4 October 2026  -> 24 April 2027
+  October 2026 remaining  27 days
+  November 2026           30
+  December 2026           31
+  January 2027            31
+  February 2027           28
+  March 2027              31
+  April 2027 to the 24th  24
+  total                  203 days from 4 October inclusive
+  counted from the day after the window closes: 190 days
 ```
 
 ## The point
 
-Two other cases on this site show what the rate looks like once it exists: [the Vietnam yarn sunset review](/blog/vietnam-polyester-yarn-sunset-review-2026/) published its rates by producer, and [the Eurasian oil well pipe case](/blog/eaeu-anti-dumping-oil-well-pipe-2026/) runs from 12.23% to 31% with one list deciding which. AD760 is the stage before either of them. The duty in AD760 does not exist yet, and that is exactly what makes it expensive. A rate that is set in April 2027 and collected on volume registered from a date in 2026 is a cost that arrives after the sale, on goods priced without it. The number to hold is 190 days — the stretch in which registration can be ordered with nothing payable — and the range to reserve against is 0 to 25,000 dollars on a 50,000-dollar container. Buyers who plan around the provisional date plan around the wrong date. The registration order is the one that starts the clock.
+AD760 is a case with a closed comment window, no rate, and a dated exposure. The scope is fixed by six CAS numbers, the comment route shut on 4 October 2026, and the first money arrives no earlier than 24 April 2027. On a 50,000-dollar container the bill runs from zero to 25,000 dollars, and the 190 days in between are the window in which registration can be ordered and a 2027 contract can still be written to say who pays. Do the contract work now; the customs work has a date on it.

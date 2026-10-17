@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-17T03:04:58.764Z",
+  "lastRun": "2026-10-17T06:11:37.501Z",
   "lastVerdict": "PUBLISHED",
   "lastArticle": "eu-cellulose-ethers-duty-timeline",
-  "runs": 1,
-  "published": 1,
+  "runs": 2,
+  "published": 2,
   "lastUsage": {
     "calls": 1,
     "failed": 0,
-    "usd": 0.0074,
-    "promptTokens": 7369,
-    "completionTokens": 4933
+    "usd": 0.0079,
+    "promptTokens": 9077,
+    "completionTokens": 4967
   }
 }
