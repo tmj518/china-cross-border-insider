@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-17T16:00:42.509Z",
+  "route": "agent",
+  "verdict": "MODEL-FAILED",
+  "summary": "no provider key present",
+  "turns": 0,
+  "repeatedCalls": 0,
+  "published": [],
+  "usage": {
+    "calls": 146,
+    "failed": 146,
+    "usd": 0,
+    "promptTokens": 0,
+    "completionTokens": 0
+  },
+  "checkOnly": false,
+  "reasons": [
+    "no provider key present"
+  ],
+  "lastTurns": []
+}

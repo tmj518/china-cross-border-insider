@@ -40,7 +40,7 @@
  *   node tools/agent-run.mjs --max-turns=8          # bound the loop
  *   node tools/agent-run.mjs --dry-run              # plan only, run no commands
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, rmSync } from "node:fs";
 import { join, relative } from "node:path";
 import { execFileSync } from "node:child_process";
 import { ask, summary as providerSummary, usageToday } from "./lib-llm.mjs";
@@ -683,6 +683,24 @@ const report = {
   reasons: finished ? [] : [err ?? "the agent did not call finish, so there is no verdict for the day"],
 };
 writeFileSync(REPORT, JSON.stringify(report, null, 2), "utf8");
+
+/*
+ * The same rotated journal the script route writes.
+ *
+ * The agent's report lived in data/tmp, which git ignores, so a run that took twenty minutes and published nothing
+ * could only be examined in the Actions web log - the relay this project is trying to stop being. data/runs is
+ * tracked and rotated, so the last turns are readable from the repository.
+ */
+try {
+  const runDir = join(ROOT, "data", "runs");
+  mkdirSync(runDir, { recursive: true });
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  writeFileSync(join(runDir, `agent-${stamp}.json`), JSON.stringify({ ...report, lastTurns: transcript.slice(-40) }, null, 2), "utf8");
+  const all = readdirSync(runDir).filter((f) => f.endsWith(".json")).sort();
+  for (const old of all.slice(0, Math.max(0, all.length - 10))) rmSync(join(runDir, old), { force: true });
+} catch {
+  /* a journal that cannot be written is not a reason to fail the run */
+}
 writeFileSync(TRANSCRIPT, transcript.map((t) => JSON.stringify(t)).join("\n") + "\n", "utf8");
 
 console.log("");
