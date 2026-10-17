@@ -29,15 +29,16 @@ on:
     # report and the same card, so the failure domain is the same either way.
     - cron: '20 23 * * *'   # 07:20 Beijing - script
     - cron: '20 12 * * *'   # 20:20 Beijing - agent
-  /*
-   * A push to data/trigger/ is a run.
-   *
-   * The scheduled crons are the promise; this is how a person - or an agent working in the repository - starts one
-   * without the GitHub API, which needs a token this project does not keep on a development machine. It is scoped
-   * to one directory so a normal push never spends a run.
-   *
-   * The route comes from the commit message: "run [agent]" starts the agent route, anything else the script route.
-   */
+  # A push to data/trigger/ is a run.
+  #
+  # The scheduled crons are the promise; this is how a person - or an agent working in the repository - starts one
+  # without the GitHub API, which needs a token this project does not keep on a development machine. It is scoped
+  # to one directory so a normal push never spends a run.
+  #
+  # The route comes from the commit message: "run [agent]" starts the agent route, anything else the script route.
+  #
+  # Hash comments, not C-style. A block comment is not valid YAML at all - "Implicit keys need to be on a single
+  # line" - and the workflow is rejected whole. That is the third time these two characters have cost a run.
   push:
     paths:
       - 'data/trigger/**'

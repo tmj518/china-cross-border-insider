@@ -41,6 +41,21 @@ const KEY = /^([A-Za-z0-9_.-]+):(?:\s|$)/;
 
 for (const f of files) {
   const lines = readFileSync(join(DIR, f), "utf8").split(/\r?\n/);
+
+  /*
+   * A block comment is not YAML at all.
+   *
+   * The check this file exists for missed the mistake that motivated it. check-workflow-shell finds block comments
+   * inside run blocks; a block comment in the mapping part of the file is a different failure - "Implicit keys need
+   * to be on a single line" - and it made this workflow invalid on 2026-10-17 for the third time in one day. The key
+   * scan skipped those lines because they are not keys, so the file passed a check whose whole purpose was to catch
+   * them.
+   */
+  lines.forEach((line, i) => {
+    if (/^\s*\/\*/.test(line) || /^\s*\*\//.test(line)) {
+      problems.push(`${f}:${i + 1}  block comment NOT YAML AT ALL - use # comments`);
+    }
+  });
   /** Frames of open mappings: the indent of the keys and the keys seen so far. */
   const stack = [];
   let blockIndent = -1;
