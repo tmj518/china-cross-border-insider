@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-17T06:11:37.501Z",
+  "lastRun": "2026-10-17T15:28:07.177Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-cellulose-ethers-duty-timeline",
-  "runs": 2,
-  "published": 2,
+  "lastArticle": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+  "runs": 3,
+  "published": 3,
   "lastUsage": {
-    "calls": 1,
-    "failed": 0,
-    "usd": 0.0079,
-    "promptTokens": 9077,
-    "completionTokens": 4967
+    "calls": 15,
+    "failed": 12,
+    "usd": 0.0138,
+    "promptTokens": 29460,
+    "completionTokens": 5302
   }
 }

@@ -1,0 +1,142 @@
+{
+  "at": "2026-10-17T15:28:07.177Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "2 previous run(s), last 2026-10-17T06:11:37.501Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "4 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": false,
+      "detail": "4 of 5 sections have none yet: sourcing, logistics, supply-chain, platforms"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-p-nitrotoluene-eu-anti-dumping-investigation-2026, 6 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-p-nitrotoluene-eu-anti-dumping-investigation-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
+    }
+  ],
+  "verdict": "PUBLISHED",
+  "reasons": [],
+  "article": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+  "commit": null,
+  "usage": {
+    "calls": 15,
+    "failed": 12,
+    "usd": 0.0138,
+    "promptTokens": 29460,
+    "completionTokens": 5302
+  },
+  "route": "script",
+  "categoryActivity": {
+    "sourcing": 0,
+    "logistics": 0,
+    "supply-chain": 0,
+    "trade-policy": 4,
+    "platforms": 0
+  },
+  "uncoveredSections": [
+    "sourcing",
+    "logistics",
+    "supply-chain",
+    "platforms"
+  ],
+  "researchLog": [
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20251220175517-rjpsc",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  ok    trade-remedy-cases          62646B  archived",
+    "  skip  tariff-commission            1934B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    statistics-bureau           72989B  archived",
+    "  ok    trade-remedy-cases-article    39990B  article archived",
+    "  ok    trade-remedy-cases-article    24436B  article archived",
+    "  ok    ministry-of-finance-article    34071B  article archived",
+    "  skip  ministry-of-finance-article        0B  not usable",
+    "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   320441B  article archived",
+    "  ok    statistics-bureau-article   245756B  article archived",
+    "  articles : 6 followed from the listings",
+    "  ledger: 31 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  spent   : ~0.0052  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+    "  keyword : China anti-dumping investigation EU p-nitrotoluene 2026",
+    "  duplicate check: score 3 against china-rare-earth-export-controls-licence-regime",
+    "      shared institution(s): mofcom, october",
+    "  slug    : china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+    "  keyword : China anti-dumping investigation EU p-nitrotoluene 2026",
+    "  category: sourcing",
+    "  figures : 6",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0052",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 107
+}
