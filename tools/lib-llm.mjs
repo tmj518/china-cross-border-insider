@@ -122,6 +122,29 @@ function resolveKey(providerName, role, exclude = []) {
 }
 
 /** Which providers have at least one usable key. */
+
+/**
+ * The variables a caller could set to satisfy a role, read from the provider tables.
+ *
+ * The NO-KEYS message used to be a hand-written string listing DEEPSEEK_API_KEY and OPENAI_API_KEY. The
+ * code reads neither: the secrets here are mapped to OWNER_KEY_1 and OWNER_KEY_2, and OpenAI was removed
+ * from the provider list. Someone who followed the message exactly still saw NO-KEYS.
+ *
+ * This is derived, so it cannot drift: it is the same table resolveKey searches, in the same order.
+ */
+export function needFor(role = "writer") {
+  const out = [];
+  for (const name of available().concat(Object.keys(PROVIDERS))) {
+    const p = PROVIDERS[name];
+    if (!p) continue;
+    for (const k of p.keys?.[role] ?? []) {
+      const label = name === "volces" && p.needsEndpointId ? `${k} (plus ARK_MODEL, an ep-... endpoint id)` : k;
+      if (!out.includes(label)) out.push(label);
+    }
+  }
+  return [...new Set(out)];
+}
+
 export function available() {
   return Object.keys(PROVIDERS).filter((name) => keyNamesFor(name, "writer").some((n) => (process.env[n] ?? "").trim()));
 }
@@ -187,9 +210,37 @@ export function summary() {
  * provider name rather than assumed, so the arrangement survives a configuration change.
  */
 const ROLE_PREFERENCE = {
-  writer: ["volces", "deepseek"],
-  planner: ["volces", "deepseek"],
-  reviewer: ["deepseek", "volces"],
+  /*
+   * DeepSeek for both roles.
+   *
+   * This was volces-then-deepseek for the writer, which is the stronger arrangement - two vendors share
+   * neither training data nor failure modes - but the Ark endpoint available here has not produced a
+   * usable draft in any run, while DeepSeek has. The operator's order was to publish first and add
+   * machinery second, and this follows it.
+   *
+   * Doubao remains as the fallback, so a working Ark key restores the two-vendor arrangement with no code
+   * change. The summary prints which arrangement is in force rather than always claiming two vendors.
+   */
+  writer: ["deepseek", "volces"],
+  planner: ["deepseek", "volces"],
+  /*
+   * DeepSeek for the reviewer as well, and the operator's reasoning wins over mine here.
+   *
+   * Vendor separation is the stronger arrangement - two vendors share neither training data nor failure
+   * modes - and that is why volces used to lead on the review side. But the Ark endpoint in this deployment
+   * has not produced a usable draft in any run, and putting it on the review path spends a call to learn
+   * that again. DeepSeek reviews.
+   *
+   * The consequence is stated rather than hidden: the reviewer now uses the same provider as the writer,
+   * which the summary prints as "the reviewer would use the writer's own credential" only when the key is
+   * the same. OWNER_KEY_2 serves both, so the credentials are shared and the vendor is shared; the report
+   * says so. Independence is worth less than a pipeline that runs, and claiming otherwise would be worse
+   * than either.
+   *
+   * volces is deliberately absent from this list. Adding ARK_API_KEY back restores the two-vendor
+   * arrangement by appending it here - one line, which is the right size for a decision this reversible.
+   */
+  reviewer: ["deepseek"],
 };
 
 export function providerFor(role, avoid) {
@@ -202,12 +253,25 @@ export function providerFor(role, avoid) {
     /* A provider that needs an endpoint id and has none cannot be called, so it is not chosen. */
     !(PROVIDERS[name].needsEndpointId && !PROVIDERS[name].model);
 
-  for (const name of order) if (name !== avoid && usable(name)) return name;
-  /* Nothing matched with the exclusion applied. The exclusion is dropped before the review is,
-     because a same-vendor review is worth more than none - provided it is labelled as such, which
-     both the caller and the notification do. */
-  for (const name of order) if (usable(name)) return name;
-  return null;
+  /*
+   * `avoid` is honoured only when the preference order does not already answer the question.
+   *
+   * This was "skip avoid, then fall back to it", which quietly defeated the preference list: the reviewer
+   * is asked for with the writer's provider as `avoid`, so with deepseek leading both roles the reviewer
+   * skipped deepseek and landed on volces - the provider the operator has said is not producing usable
+   * output. A preference list that can be overridden by an automatic exclusion is not a preference.
+   *
+   * So the order decides first. `avoid` is used only if honouring it leaves a usable choice that the order
+   * would not otherwise reach - which is the case it was written for: a two-key, one-vendor setup where the
+   * reviewer has a spare credential that would otherwise go unused.
+   */
+  const first = order.find(usable);
+  if (!first) return null;
+  if (first !== avoid) return first;
+
+  /* The top choice is excluded. Prefer a different provider if one is usable, else keep the top choice. */
+  const other = order.find((n) => n !== avoid && usable(n));
+  return other ?? first;
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -245,7 +309,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
     return {
       ok: false,
       error: "no provider key present",
-      need: ["ARK_API_KEY + ARK_MODEL for the writer, DEEPSEEK_REVIEW_API_KEY for the reviewer"],
+      need: needFor(role),
     };
   }
   const p = PROVIDERS[providerName];

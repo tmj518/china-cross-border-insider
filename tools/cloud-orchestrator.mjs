@@ -31,7 +31,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
-import { available, summary as providerSummary, usageToday } from "./lib-llm.mjs";
+import { available, summary as providerSummary, usageToday, needFor } from "./lib-llm.mjs";
 
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
@@ -70,11 +70,19 @@ console.log("");
 if (!run.providers.length) {
   step("providers", false, "no key present, so nothing can be attempted");
   console.log("");
-  console.log("  The pipeline is installed and cannot run. Set these as repository secrets:");
-  console.log("    DEEPSEEK_API_KEY   the default provider for planning and writing");
-  console.log("    OPENAI_API_KEY     used when a second, different model is the point of the review");
-  console.log("  With only one of the two the pipeline runs and reports that its review was not");
-  console.log("  independent, because a silent downgrade is worse than a reported one.");
+  /*
+   * Built from the provider tables rather than written here. The hand-written version named two
+   * variables this build does not read, so an operator who followed it exactly still saw NO-KEYS - which
+   * is the worst possible message, because it looks like instruction.
+   */
+  console.log("  The pipeline is installed and cannot run. Any one of these would satisfy the writer:");
+  for (const n of needFor("writer")) console.log("    " + n);
+  console.log("");
+  console.log("  And the reviewer:");
+  for (const n of needFor("reviewer")) console.log("    " + n);
+  console.log("");
+  console.log("  In this repository the two generated secret names are mapped to OWNER_KEY_1 and");
+  console.log("  OWNER_KEY_2 in daily.yml, so they count. The workflow also maps them there explicitly.");
   run.verdict = "NO-KEYS";
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
   writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");

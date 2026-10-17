@@ -57,6 +57,32 @@ const SCENARIOS = [
     transcriptContains: "has not passed check_draft",
   },
   {
+    name: "over-long fields are trimmed, not rejected",
+    why: "194 characters against a limit of 160 is arithmetic, not judgement, and must not cost a round",
+    turns: [
+      [
+        {
+          name: "write_file",
+          args: {
+            path: "data/drafts/long.md",
+            content:
+              '---\ntitle: "A title"\nsubtitle: "' +
+              "A subtitle that runs well past one hundred and sixty characters because that is exactly what the agent produced in the failing run, and it keeps going for a while yet to be sure it is over\n".replace("\\n", "") +
+              '\ndescription: "' +
+              "A description that is also far too long. ".repeat(12) +
+              '\npublishDate: 2026-10-17\ncategory: trade-policy\nstakes: directional\naudience: importer\n---\n\n## AI Summary\n\nBody.\n"',
+          },
+        },
+      ],
+      [{ name: "check_draft", args: { path: "data/drafts/long.md" } }],
+      [{ name: "publish_draft", args: { path: "data/drafts/long.md" } }],
+      [{ name: "finish", args: { verdict: "PUBLISHED", summary: "trimmed and published" } }],
+    ],
+    verdict: "PUBLISHED",
+    published: ["long"],
+    transcriptContains: "Trimmed before checking",
+  },
+  {
     name: "writing the collection directly is refused",
     why: "the agent must not be able to bypass the checks by writing the file itself",
     turns: [
@@ -150,7 +176,15 @@ const BUILD_STUB = `process.exit(0);`;
 function buildWorkdir(s, index) {
   const work = join(SANDBOX, `work-${index}`);
   try { rmSync(work, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 }); } catch {}
-  for (const d of ["tools", "src/content/blog", "src/data", "data/drafts", "data/tmp", "docs"]) mkdirSync(join(work, d), { recursive: true });
+  for (const d of ["tools", "src/content/blog", "src/data", "src/lib", "data/drafts", "data/tmp", "docs"]) mkdirSync(join(work, d), { recursive: true });
+  /*
+   * The constraint table travels with the sandbox. check_draft shells out to trim-draft, which imports it,
+   * and a sandbox without it made the trim fail silently - the draft stayed over the limit, the scenario
+   * failed, and the failure looked like a broken guard rather than a missing file.
+   */
+  for (const f of readdirSync(join(ROOT, "src", "lib"))) {
+    if (f.endsWith(".mjs")) copyFileSync(join(ROOT, "src", "lib", f), join(work, "src", "lib", f));
+  }
 
   for (const f of readdirSync(join(ROOT, "tools"))) {
     if (f.endsWith(".mjs")) copyFileSync(join(ROOT, "tools", f), join(work, "tools", f));

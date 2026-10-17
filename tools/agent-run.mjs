@@ -254,6 +254,28 @@ function runTool(name, input) {
       if (DRY) return done("dry run: the checks were not run");
       const p = join(ROOT, input.path);
       if (!existsSync(p)) return done(`no such draft: ${input.path}`);
+
+      /*
+       * Trim over-long fields first.
+       *
+       * A subtitle at 194 characters against a limit of 160 is arithmetic, not judgement: it does not need
+       * a model turn and it must not cost a draft. trim-draft shortens the value on a word boundary and
+       * changes nothing else, and the fact that it did so is reported so nobody thinks the writer chose
+       * those words.
+       */
+      let trimNote = "";
+      try {
+        const trimOut = execFileSync(process.execPath, [join(ROOT, "tools", "trim-draft.mjs"), p, "--write"], {
+          cwd: ROOT,
+          encoding: "utf8",
+          timeout: 60000,
+        });
+        if (!/nothing to trim/.test(trimOut)) {
+          trimNote = "Trimmed before checking:\n" + trimOut.split("\n").filter((l) => l.trim() && !/dry run|written:/.test(l)).join("\n") + "\n\n";
+        }
+      } catch {
+        /* a trim that fails leaves the draft as it was, and the checks below will say what is wrong */
+      }
       try {
         const out = execFileSync(process.execPath, [join(ROOT, "tools", "cloud-qa.mjs"), `--draft=${p}`, "--json"], {
           encoding: "utf8",
@@ -263,7 +285,7 @@ function runTool(name, input) {
         });
         JSON.parse(out);
         checkedOk.add(input.path);
-        return done(`PASS. Every check cleared. The report is data/tmp/qa-last.json if you need the detail.`);
+        return done(`${trimNote}PASS. Every check cleared.`);
       } catch (e) {
         const out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
         let detail = out.slice(0, 3000);
@@ -275,7 +297,7 @@ function runTool(name, input) {
         } catch {
           /* not JSON: the raw output is the detail */
         }
-        return done(`FAIL:\n${detail}`);
+        return done(`${trimNote}FAIL:\n${detail}`);
       }
     }
 
