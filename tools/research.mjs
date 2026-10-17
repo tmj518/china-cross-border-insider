@@ -190,6 +190,18 @@ const CANDIDATES = [
   ["https://www.mofcom.gov.cn/zfxxgk/", "mofcom", "MOFCOM announcements"],
   ["https://www.stats.gov.cn/sj/zxfb/", "statistics-bureau", "National Bureau of Statistics releases: PPI, CPI, industrial profit"],
   ["https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html", "tax-administration", "export tax rebate rates"],
+  /*
+   * Customs was the omission that mattered most: the tariff schedules and clearance rules are what a per-unit
+   * cost is built from, and the list did not have it.
+   */
+  ["http://www.customs.gov.cn/customs/302249/index.html", "customs", "tariff schedules, classification and clearance rules"],
+  /*
+   * Industry chambers, listed last on purpose. An association reports what its members are hitting, which is the
+   * closest thing to a demand signal there is without a keyword tool - and a summary of a measure is coverage,
+   * not the measure. A figure may come from a chamber only when it is the chamber's own published statistic.
+   */
+  ["http://www.ccpit.org", "trade-council", "trade friction alerts and commercial certification"],
+  ["http://www.cccme.org.cn", "machinery-chamber", "machinery and electronics export data and market access"],
   ["https://policy.trade.ec.europa.eu/news_en", "eu-trade-news", "EU trade policy news, CBAM and trade defence"],
   ["https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[agencies][]=u.s.-customs-and-border-protection", "federal-register-cbp", "US CBP rules with effective dates, the best API of any source here"],
 ];
@@ -453,6 +465,44 @@ const behind = (process.env.UNCOVERED_SECTIONS ?? "")
  * material that does not carry five citable figures produces the commodity summary this site exists not to
  * publish.
  */
+/*
+ * Queries that earn impressions and no clicks.
+ *
+ * Read from the newest file in data/blue-ocean/, which tools/gsc-blue-ocean.mjs writes. Absent on a new property,
+ * on a property the service account cannot see, or on a week where nothing cleared the thresholds - all ordinary,
+ * all handled by an empty list.
+ */
+function blueOcean() {
+  const dir = join(ROOT, "data", "blue-ocean");
+  if (!existsSync(dir)) return null;
+  const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+  const latest = files[files.length - 1];
+  if (!latest) return null;
+  try {
+    const j = JSON.parse(readFileSync(join(dir, latest), "utf8"));
+    return Array.isArray(j.keywords) && j.keywords.length ? j : null;
+  } catch {
+    return null;
+  }
+}
+const blue = blueOcean();
+
+const BLUE_OCEAN_NOTE = blue
+  ? [
+      "BLUE OCEAN — QUERIES THAT ALREADY EARN IMPRESSIONS AND NO CLICKS",
+      "",
+      "These are real queries, measured on this site, with over a thousand impressions, under one percent click",
+      "rate and a ranking between 5 and 20. A reader is seeing us and not clicking, which is a title or a promise",
+      "problem on a page that can rank.",
+      "",
+      ...blue.keywords.map((k) => `  - ${k.query}   ${k.impressions} impressions, ctr ${(k.ctr * 100).toFixed(2)}%, position ${k.position}`),
+      "",
+      "If the documents below support one of these, it takes precedence over a subject nobody is searching for.",
+      "It is still a preference and not an instruction: a query with no documents behind it is a query, not a",
+      "subject, and writing it anyway is how you get a page that ranks for the wrong thing.",
+    ].join("\n")
+  : "";
+
 const PRIMARY_SECTION = behind[0] ?? "";
 const sectionBlock = behind.length
   ? `
@@ -495,7 +545,7 @@ WHAT IS REJECTED
   - a subject whose numbers are not in the documents below
   - a subject that repeats one of the listed articles, even under a different title
   - political, religious, military or reputation commentary. Trade and cost facts only.
-${sectionBlock}
+${BLUE_OCEAN_NOTE ? BLUE_OCEAN_NOTE + "\n\n" : ""}${sectionBlock}
 THE SOURCES
 
 ${corpus}

@@ -50,7 +50,11 @@ export default defineConfig({
        * page that asked to be found and was not offered. The rule above the filter already said an exclusion
        * is either a page with no search value or a page that says noindex; /contact/ is neither.
        */
-      filter: (page) => !/\/(privacy|confirmed)\/$/.test(page),
+      /*
+       * /search/ joins the list because it sets noindex. It is a tool, not a document: a result page whose query
+       * lives in the URL has nothing stable to index and would compete with the articles it points at.
+       */
+      filter: (page) => !/\/(privacy|confirmed|search)\/$/.test(page),
     }),
     /*
      * Adds a real `lastmod` to sitemap entries, derived from the content rather than from the

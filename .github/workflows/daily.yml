@@ -292,6 +292,19 @@ jobs:
           echo "The two Google values are build-time variables, not workflow secrets: the tag is put into the"
           echo "page by the build, so it has to be set where the build runs."
 
+      - name: Look for blue-ocean queries in Search Console
+        # Impressions over a thousand, click rate under one percent, position on page one or two: a page a reader
+        # sees and does not click. It is the cheapest win available and no keyword tool can see it.
+        #
+        # Never fails a run. A new property has no history, a service account may not be invited to the property,
+        # and a week may have no query that clears the thresholds - all ordinary, all written to
+        # data/blue-ocean/<date>.json with available:false, and the pipeline falls back to the official documents.
+        continue-on-error: true
+        env:
+          GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+          GSC_SITE: ${{ vars.GSC_SITE }}
+        run: node tools/gsc-blue-ocean.mjs --days=7
+
       - name: Run the pipeline
         # Two routes over one set of checks.
         #

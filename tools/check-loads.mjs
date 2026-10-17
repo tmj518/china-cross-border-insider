@@ -59,6 +59,7 @@ const TOOLS = [
   { name: "agent-run", args: ["--max-turns=1"], expect: "no provider key present", why: "the agent loop" },
   { name: "notify-feishu", args: ["--dry-run"], expect: "", why: "the notifier, which must run with no credentials at all" },
   { name: "feishu-ledger", args: [], expect: "Missing:", why: "the tool that creates the ledger base" },
+  { name: "gsc-blue-ocean", args: [], expect: "GSC_CREDENTIALS_BASE64 is not set", why: "the blue-ocean keyword reader, which must degrade rather than fail" },
   { name: "gate", args: ["--fresh"], expect: "", why: "the gate runner" },
   { name: "check-mobile", args: [], expect: "RESULT:", why: "the browser check" },
   { name: "check-csp", args: [], expect: "RESULT:", why: "the policy check" },

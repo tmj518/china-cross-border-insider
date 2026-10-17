@@ -41,6 +41,7 @@ import { readingTime } from "../lib/post";
 import type { CardData, NumberItem } from "../lib/post";
 import type { Hub } from "../lib/topics";
 import ArticleToc from "../components/ArticleToc.astro";
+import FigureChart from "../components/FigureChart.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -121,6 +122,8 @@ const bibtex =
           </figure>
         )
       }
+
+      <FigureChart figures={data.figures} />
 
       <ArticleToc />
 
