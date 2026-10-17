@@ -543,7 +543,21 @@ const docProblems = [];
    * "/bin: Is a directory", exit 126 - and nothing here could have caught it: YAML parses it, the rehearsals run the
    * tools rather than the workflow, and node --check never looks at a YAML file.
    */
-  const shellHazards = probe(NODE, [join(ROOT, "tools", "check-workflow-shell.mjs")], { timeout: 120000 });
+    /*
+   * A duplicate key or an unindented line inside a block scalar makes the whole workflow invalid - not a failed
+   * run, an invalid file. GitHub says "Map keys must be unique" and refuses to start anything, which appears in the
+   * Actions tab as a workflow error rather than as a run. Both happened here on 2026-10-17 within an hour, and
+   * neither is visible in a diff.
+   */
+  const yamlShape = probe(NODE, [join(ROOT, "tools", "check-workflow-yaml.mjs")], { timeout: 120000 });
+  if (/RESULT:\s*PASS/.test(yamlShape.out)) {
+    ok("workflow yaml", "no duplicate keys, and every block scalar stayed indented");
+  } else {
+    const line = yamlShape.out.split("\n").find((l) => /duplicate key|lost its indentation/.test(l)) ?? "";
+    fail("workflow yaml", "GitHub would reject this workflow" + (line ? ": " + line.trim().slice(0, 90) : ""));
+  }
+
+const shellHazards = probe(NODE, [join(ROOT, "tools", "check-workflow-shell.mjs")], { timeout: 120000 });
   if (/RESULT:\s*PASS/.test(shellHazards.out)) {
     ok("workflow shell", "no shell block carries a construct that means something different in YAML or in bash");
   } else {

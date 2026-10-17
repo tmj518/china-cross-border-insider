@@ -66,6 +66,7 @@ const TOOLS = [
   { name: "check-structured-data", args: [], expect: "problems:", why: "the structured-data check" },
   { name: "check-schema-parity", args: [], expect: "RESULT: PASS", why: "the constraint agreement check" },
   { name: "check-workflow-shell", args: [], expect: "RESULT: PASS", why: "the workflow shell hazard check" },
+  { name: "check-workflow-yaml", args: [], expect: "RESULT: PASS", why: "the workflow structure check" },
   { name: "rehearse", args: [], expect: "passed,", why: "the orchestrator rehearsal" },
   { name: "rehearse-agent", args: [], expect: "passed,", why: "the agent rehearsal" },
 ];

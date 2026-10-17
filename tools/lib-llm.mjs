@@ -79,19 +79,48 @@ const PROVIDERS = {
      *
      * Both fall back to ARK_MODEL, so a deployment with one endpoint behaves exactly as before.
      */
+    /*
+     * The writer and the reviewer are different endpoints, and the operator stores them under their own names:
+     * dubaotuili12345 holds the Doubao endpoint and ARK_MODEL holds the DeepSeek one.
+     *
+     * The writer's fallback order matters. A Doubao endpoint in the writer slot is what makes the pair two models -
+     * if the writer fell through to ARK_MODEL first, both roles would land on DeepSeek and the reviewer would be
+     * reading its own work. So the Doubao-specific names come before ARK_MODEL, and ARK_MODEL is the last resort
+     * rather than the first default.
+     */
     models: {
-      writer: process.env.ARK_MODEL_WRITER || process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
-      reviewer: process.env.ARK_MODEL_REVIEWER || process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
-      planner: process.env.ARK_MODEL_PLANNER || process.env.ARK_MODEL || process.env.DOUBAO_ENDPOINT || "",
+      writer:
+        process.env.ARK_MODEL_WRITER ||
+        process.env.DUBAO201628_ENDPOINT ||
+        process.env.dubaotuili12345 ||
+        process.env.DUBAO_ENDPOINT ||
+        process.env.ARK_MODEL ||
+        "",
+      reviewer:
+        process.env.ARK_MODEL_REVIEWER ||
+        process.env.ARK_MODEL ||
+        process.env.DOUBAO_ENDPOINT ||
+        "",
+      planner:
+        process.env.ARK_MODEL_PLANNER ||
+        process.env.ARK_MODEL_WRITER ||
+        process.env.dubaotuili12345 ||
+        process.env.ARK_MODEL ||
+        "",
     },
     /* Ark bills in CNY. These are the published Doubao Pro rates converted at 7.1 CNY/USD so the meter
        stays in one currency; the invoice is authoritative. */
     inPerM: 0.11,
     outPerM: 0.28,
     keys: {
-      writer: ["ARK_API_KEY", "DOUBAO_API_KEY", "VOLCES_API_KEY", "OWNER_KEY_1"],
-      reviewer: ["ARK_REVIEW_API_KEY", "ARK_API_KEY", "DOUBAO_API_KEY", "OWNER_KEY_1"],
-      planner: ["ARK_API_KEY", "DOUBAO_API_KEY", "OWNER_KEY_1"],
+      /*
+       * DUBAO201628 is the operator's own name for the Ark credential - one key serves both endpoints, since an
+       * endpoint is a deployment and the account is what is billed. Read after the canonical names and before the
+       * generated owner names, so a deployment with ARK_API_KEY set is unaffected.
+       */
+      writer: ["ARK_API_KEY", "DOUBAO_API_KEY", "VOLCES_API_KEY", "DUBAO201628", "APIKEY20261016201628", "OWNER_KEY_1"],
+      reviewer: ["ARK_REVIEW_API_KEY", "ARK_API_KEY", "DOUBAO_API_KEY", "DUBAO201628", "APIKEY20261016201628", "OWNER_KEY_1"],
+      planner: ["ARK_API_KEY", "DOUBAO_API_KEY", "DUBAO201628", "APIKEY20261016201628", "OWNER_KEY_1"],
     },
     /* Set when the model field is required to be an endpoint id, so the failure can be explained. */
     needsEndpointId: true,

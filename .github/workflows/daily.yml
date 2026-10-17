@@ -76,12 +76,14 @@ jobs:
       - id: check
         name: Verify both providers with a real one-token call
         env:
-          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 || secrets.APIKEY20261016201628 }}
+          DUBAO201628: ${{ secrets.DUBAO201628 }}
+          dubaotuili12345: ${{ secrets.dubaotuili12345 }}
           ARK_MODEL: ${{ secrets.ARK_MODEL }}
           # One endpoint per role. A reviewer running the writer's model is the same opinion with a different
           # prompt, and it misses exactly what the writer missed. Both fall back to ARK_MODEL.
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER }}
-          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER }}
+          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.dubaotuili12345 }}
+          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER || secrets.ARK_MODEL }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -179,10 +181,10 @@ jobs:
           :::
           :::   ARK_API_KEY                the Doubao writer, from the Volcano Ark console
           :::   ARK_MODEL                  the ENDPOINT ID, not the model name. Looks like ep-2026...
-:::   ARK_MODEL_WRITER           optional: the endpoint the writer calls. Falls back to ARK_MODEL.
-:::   ARK_MODEL_REVIEWER         optional: the endpoint the reviewer calls. Falls back to ARK_MODEL.
-:::                              Two different endpoints make the reviewer a second opinion rather than the
-:::                              same model with a different prompt.
+          :::   ARK_MODEL_WRITER           optional: the endpoint the writer calls. Falls back to ARK_MODEL.
+          :::   ARK_MODEL_REVIEWER         optional: the endpoint the reviewer calls. Falls back to ARK_MODEL.
+          :::                              Two different endpoints make the reviewer a second opinion rather than the
+          :::                              same model with a different prompt.
           :::                              Create it in Ark under 在线推理 -> 创建推理接入点
           :::   DEEPSEEK_REVIEW_API_KEY    the reviewer  (DEEPSEEK_API_KEY also accepted)
           :::   DEEPSEEK_WRITE_API_KEY     optional alternate writer key, used if no Ark key exists
@@ -326,12 +328,14 @@ jobs:
         # gates.
         id: run
         env:
-          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 || secrets.APIKEY20261016201628 }}
+          DUBAO201628: ${{ secrets.DUBAO201628 }}
+          dubaotuili12345: ${{ secrets.dubaotuili12345 }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
           ARK_MODEL: ${{ secrets.ARK_MODEL }}
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER }}
-          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER }}
+          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.dubaotuili12345 }}
+          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER || secrets.ARK_MODEL }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
           DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
