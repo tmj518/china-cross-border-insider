@@ -42,7 +42,15 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 
 import { join } from "node:path";
 
 const ROOT = process.cwd();
-const DIR = join(ROOT, "data", "analytics");
+/*
+ * The snapshot directory, overridable so a check can exercise the reader without writing where the writer
+ * reads.
+ *
+ * data/analytics is the loop's real input. A test that put a synthetic snapshot there - even briefly - would
+ * be a test that can teach a concurrent run about traffic that never happened. Production never sets this;
+ * tools/check-readership.mjs does, and asserts it was honoured.
+ */
+const DIR = (process.env.ANALYTICS_DIR ?? "").trim() || join(ROOT, "data", "analytics");
 const LEDGER = join(ROOT, "data", "ledger.jsonl");
 
 const args = process.argv.slice(2);

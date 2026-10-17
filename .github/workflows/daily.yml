@@ -58,7 +58,7 @@ jobs:
   # and it distinguishes "the key works" from "the key is there".
   # ---------------------------------------------------------------------------------------------
   preflight:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     outputs:
       keys_ok: ${{ steps.check.outputs.ok }}
@@ -187,17 +187,17 @@ jobs:
     # slowly and then overwrite the useful error with a generic NO-KEYS alert - but the operator still
     # needs a message, which is what the notify-keys job below is for.
     if: needs.preflight.outputs.keys_ok == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # A full history is not needed and this keeps the checkout quick.
           fetch-depth: 1
           # The push at the end needs the token that can write.
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '24'
 
@@ -228,7 +228,53 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
-        run: node tools/analytics.mjs --fetch --days=7
+        run: |
+          set +e
+          node tools/analytics.mjs --fetch --days=7 2>&1 | tee /tmp/analytics.txt
+          CODE=${PIPESTATUS[0]}
+          mkdir -p data/tmp
+          if [ "$CODE" = "0" ] && ! grep -q "cannot fetch" /tmp/analytics.txt; then
+            node -e "const {readdirSync,readFileSync,writeFileSync}=require('fs');const d='data/analytics';let f=null;try{f=readdirSync(d).filter(x=>x.endsWith('.json')).sort().pop()}catch{};const s=f?JSON.parse(readFileSync(d+'/'+f,'utf8')):null;writeFileSync('data/tmp/integrations.json',JSON.stringify({readership:{configured:true,pageviews:s?.totalPageviews??0,days:s?.windowDays??7,articles:(s?.pages??[]).filter(p=>String(p.path).startsWith('/blog/')).length}},null,2))"
+          else
+            MISSING=$(grep -oE "Missing: .*" /tmp/analytics.txt | head -1 | sed 's/Missing: //')
+            node -e "const {writeFileSync}=require('fs');writeFileSync('data/tmp/integrations.json',JSON.stringify({readership:{configured:false,missing:'${MISSING:-CF_ACCOUNT_ID, CF_API_TOKEN}'}}))"
+          fi
+          true
+
+      - name: Record whether the Google tags are present in the build
+        # The two Google integrations are build-time environment variables on the Cloudflare Pages project,
+        # not workflow secrets, so nothing in this file can see them. What can be seen is the built output:
+        # if the tag is in dist, the variable was set at build time. Checking the artefact rather than the
+        # configuration is what makes this answer trustworthy - and it is the difference between "the
+        # operator registered it" and "the site is reporting".
+        continue-on-error: true
+        run: |
+          set +e
+          GA=no; GSC=no
+          if grep -q "googletagmanager.com/gtag/js" dist/index.html 2>/dev/null; then GA=yes; fi
+          if grep -q "google-site-verification" dist/index.html 2>/dev/null; then GSC=yes; fi
+          mkdir -p data/tmp
+          node -e "
+            const {readFileSync,writeFileSync,existsSync}=require('fs');
+            let s={}; try{s=JSON.parse(readFileSync('data/tmp/integrations.json','utf8'))}catch{}
+            s.google={ga:'$GA'==='yes', searchConsole:'$GSC'==='yes'};
+            writeFileSync('data/tmp/integrations.json',JSON.stringify(s,null,2));
+          "
+          echo "google analytics in build: $GA   search console verification: $GSC"
+
+      - name: Report which credentials each integration reads
+        # The operator asked more than once whether these were connected, and the honest answer was always
+        # "I do not know". They are named here so the answer is in the log of every run, and the notification
+        # reports the same four states from data/tmp/integrations.json.
+        run: |
+          echo "Integrations and what each one reads:"
+          echo "  readership     CF_ACCOUNT_ID + CF_API_TOKEN          (repository secrets)"
+          echo "  Feishu ledger  FEISHU_APP_ID + FEISHU_APP_SECRET + FEISHU_APP_TOKEN + FEISHU_TABLE_ID"
+          echo "  Google Analytics   PUBLIC_GA_MEASUREMENT_ID          (Cloudflare Pages build variables)"
+          echo "  Search Console      PUBLIC_GOOGLE_SITE_VERIFICATION   (Cloudflare Pages build variables)"
+          echo ""
+          echo "The two Google values are build-time variables, not workflow secrets: the tag is put into the"
+          echo "page by the build, so it has to be set where the build runs."
 
       - name: Run the pipeline
         # Two routes over one set of checks.
@@ -298,7 +344,19 @@ jobs:
           FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
           FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
           FEISHU_TABLE_ID: ${{ secrets.FEISHU_TABLE_ID }}
-        run: node tools/feishu-sync.mjs
+        run: |
+          set +e
+          node tools/feishu-sync.mjs 2>&1 | tee /tmp/ledger.txt
+          CODE=${PIPESTATUS[0]}
+          mkdir -p data/tmp
+          if [ "$CODE" = "0" ]; then
+            ROWS=$(grep -oE "[0-9]+ row" /tmp/ledger.txt | head -1 | grep -oE "[0-9]+")
+            node -e "const {readFileSync,writeFileSync,existsSync}=require('fs');let s={};try{s=JSON.parse(readFileSync('data/tmp/integrations.json','utf8'))}catch{};s.ledger={configured:true,rows:${ROWS:-0}};writeFileSync('data/tmp/integrations.json',JSON.stringify(s,null,2))"
+          else
+            MISSING=$(grep -oE "Missing: .*" /tmp/ledger.txt | head -1 | sed 's/Missing: //')
+            node -e "const {readFileSync,writeFileSync,existsSync}=require('fs');let s={};try{s=JSON.parse(readFileSync('data/tmp/integrations.json','utf8'))}catch{};s.ledger={configured:false,missing:'${MISSING:-FEISHU_APP_ID, FEISHU_APP_SECRET, FEISHU_APP_TOKEN, FEISHU_TABLE_ID}'};writeFileSync('data/tmp/integrations.json',JSON.stringify(s,null,2))"
+          fi
+          true
 
       - name: Notify Feishu
         # Always runs. A run that failed is precisely the run the operator needs to hear about, and
@@ -329,7 +387,7 @@ jobs:
 
       - name: Upload run artefacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: daily-run
           path: |
@@ -350,12 +408,12 @@ jobs:
   notify-keys:
     needs: preflight
     if: needs.preflight.outputs.keys_ok != 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '24'
 

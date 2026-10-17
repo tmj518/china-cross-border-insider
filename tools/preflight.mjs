@@ -518,6 +518,20 @@ async function checkEnvironment() {
    * a cloud run failed in zero seconds. This is the check that would have caught it, and it is not a
    * static analyser - it runs each tool and looks for the crash.
    */
+  /*
+   * The readership loop, exercised. Three functions that turn a snapshot into the paragraph the writer is
+   * given, none of which had ever run because the fetch step that feeds them needs credentials nobody set.
+   * A loop that has never been closed is not a loop; this closes it against a scratch directory so the real
+   * one stays clean.
+   */
+  const readership = probe(NODE, [join(ROOT, "tools", "check-readership.mjs")], { timeout: 180000 });
+  if (/RESULT:\s*PASS/.test(readership.out)) {
+    ok("readership loop", "a snapshot becomes a brief with real numbers, and nothing leaks into data/analytics");
+  } else {
+    const line = readership.out.split("\n").find((l) => /PROBLEM|NaN|undefined|not honoured/i.test(l)) ?? "";
+    fail("readership loop", "the writer would be told something untrue" + (line ? ": " + line.trim().slice(0, 90) : ""));
+  }
+
   const loads = probe(NODE, [join(ROOT, "tools", "check-loads.mjs")], { timeout: 600000 });
   const loadsTally = /all (\d+) tools load/.exec(loads.out);
   if (loadsTally) {

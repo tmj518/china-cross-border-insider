@@ -85,7 +85,8 @@ export default defineConfig({
       algorithm: "SHA-256",
       directives: [
         "default-src 'self'",
-        "img-src 'self' data:",
+        /* Google Analytics sends measurement as an image request when sendBeacon is unavailable. */
+        "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com",
         "form-action 'self'",
         "base-uri 'self'",
         /*
@@ -94,7 +95,7 @@ export default defineConfig({
          * request is refused, so the dashboard stays empty while the page looks fine - the same silent
          * failure this whole feature already suffered once when the token was missing.
          */
-        "connect-src 'self' https://cloudflareinsights.com",
+        "connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com",
       ],
       /**
        * script-src and style-src are not settable in `directives`; Astro owns them
@@ -112,7 +113,12 @@ export default defineConfig({
        * with the inline allowance.
        */
       scriptDirective: {
-        resources: ["'self'", "https://static.cloudflareinsights.com"],
+        /*
+         * googletagmanager.com serves the gtag.js loader. The inline bootstrap that follows it is hashed by
+         * Astro like every other inline script, so the origin alone is not enough and the hash is what
+         * actually permits it - both are present in the built output and check-csp verifies that.
+         */
+        resources: ["'self'", "https://static.cloudflareinsights.com", "https://www.googletagmanager.com"],
       },
       styleDirective: {
         resources: ["'self'", "'unsafe-inline'"],

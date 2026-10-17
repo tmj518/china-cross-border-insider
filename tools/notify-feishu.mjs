@@ -121,6 +121,55 @@ if (!report) {
     }
   }
 
+  /*
+   * Whether the two integrations that fail quietly are actually connected.
+   *
+   * Readership and the Feishu ledger are both optional by design, and both were silently absent for weeks.
+   * The operator asked twice whether they were wired, and the only honest answer was "I do not know" - which
+   * is a message problem, not a credential problem. The daily workflow writes their state to
+   * data/tmp/integrations.json and this reads it.
+   *
+   * Shown on every card, not only on failure: "not configured" on a good day is exactly the information that
+   * is missing today.
+   */
+  try {
+    const ip = join(ROOT, "data", "tmp", "integrations.json");
+    if (existsSync(ip)) {
+      const s = JSON.parse(readFileSync(ip, "utf8"));
+      const r = s.readership, l = s.ledger, g = s.google;
+      lines.push("");
+      lines.push("Integrations:");
+      lines.push(
+        r?.configured
+          ? `  readership  ok - ${r.pageviews} pageview(s) over ${r.days} day(s), ${r.articles} article(s)`
+          : `  readership  NOT CONFIGURED - needs ${r?.missing ?? "CF_ACCOUNT_ID, CF_API_TOKEN"}`,
+      );
+      lines.push(
+        l?.configured
+          ? `  Feishu ledger ok - ${l.rows} row(s) synced`
+          : `  Feishu ledger NOT CONFIGURED - needs ${l?.missing ?? "FEISHU_APP_ID, FEISHU_APP_SECRET, FEISHU_APP_TOKEN, FEISHU_TABLE_ID"}`,
+      );
+      if (g) {
+        /*
+         * Read from the built artefact rather than from configuration: the tag is either in dist or it is not,
+         * and that is the difference between "registered somewhere" and "reporting".
+         */
+        lines.push(
+          g.ga
+            ? "  Google Analytics ok - tag present in the build"
+            : "  Google Analytics NOT IN THE BUILD - set PUBLIC_GA_MEASUREMENT_ID on the Cloudflare Pages project",
+        );
+        lines.push(
+          g.searchConsole
+            ? "  Search Console ok - verification tag present"
+            : "  Search Console NOT VERIFIED - set PUBLIC_GOOGLE_SITE_VERIFICATION on the Cloudflare Pages project",
+        );
+      }
+    }
+  } catch {
+    /* a missing status file is reported on the next run, not turned into an error here */
+  }
+
   if (report.verdict === "NO-KEYS") {
     lines.push("");
     lines.push("Nothing can run until these exist as repository secrets:");
