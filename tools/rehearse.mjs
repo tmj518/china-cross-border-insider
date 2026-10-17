@@ -84,6 +84,22 @@ const SCENARIOS = [
     writerCalls: 2,
     contains: "the same rule failed twice in a row",
   },
+  {
+    /*
+     * The subject is already published, so the run must stop before writing.
+     *
+     * This is the case that replaced a live article on 2026-10-17 at 06:12. It asserts the verdict and that the
+     * writer was never called - the second matters more: a guard that stops the publish but still spends a model
+     * call has saved nothing worth saving.
+     */
+    name: "an already-published subject is refused",
+    alreadyPublished: true,
+    w: ["write"],
+    q: ["approve"],
+    verdict: "DUPLICATE-SUBJECT",
+    writerCalls: 0,
+    contains: "already published",
+  },
   { name: "weekly ceiling reached", ceiling: true, verdict: "CEILING", writerCalls: 0 },
   { name: "no credentials", keys: false, verdict: "NO-KEYS", writerCalls: 0 },
   { name: "too few figures in the directive", figures: 2, verdict: "THIN-DIRECTIVE", writerCalls: 0 },
@@ -180,6 +196,19 @@ function buildWorkdir(s, index) {
     '---\ntitle: "Existing"\nsubtitle: "s"\ndescription: "d"\npublishDate: 2026-10-01\ncategory: trade-policy\narticleNumber: 1\n---\n\nBody.\n',
     "utf8",
   );
+
+  /*
+   * A scenario can ask for its subject to be already published, which is what the duplicate guard exists for.
+   * Seeding the file rather than faking the check means the guard runs against the same filesystem test a real
+   * run would: the collection is the authority.
+   */
+  if (s.alreadyPublished) {
+    writeFileSync(
+      join(work, "src", "content", "blog", "rehearse-subject.md"),
+      '---\ntitle: "Already here"\nsubtitle: "s"\ndescription: "d"\npublishDate: 2026-10-01\ncategory: trade-policy\narticleNumber: 99\n---\n\nBody.\n',
+      "utf8",
+    );
+  }
 
   writeFileSync(
     join(work, "data", "directive.json"),

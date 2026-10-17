@@ -243,6 +243,43 @@ if (!directive) {
   process.exit(0);
 }
 
+/*
+ * Refuse a subject that is already published.
+ *
+ * The 06:12 run on 2026-10-17 rewrote an article from the evening before: the slug existed, the write replaced
+ * the file, and a published URL changed under a reader. Article number 24 became 33 and the links added to it
+ * by hand were lost.
+ *
+ * That run had no directive - it had been consumed correctly - so research chose the subject. research.mjs
+ * carries a ledger of published subjects and asks the model not to repeat them, and the model chose one
+ * anyway. A rule that lives only in a prompt is a suggestion.
+ *
+ * The collection is the authority here rather than the ledger, because the ledger is rebuilt from it and can
+ * lag a run. A duplicate costs a model call and a version of a page; stopping costs a day that will be spent
+ * on a different subject, which is the correct trade.
+ *
+ * DUPLICATE-SUBJECT rather than REJECTED: REJECTED means the writing failed, this means the choosing failed,
+ * and they need different responses.
+ */
+const existingPath = join(ROOT, "src", "content", "blog", `${directive.slug}.md`);
+if (directive.slug && existsSync(existingPath)) {
+  step("duplicate subject", false, `${directive.slug} is already published - refusing to overwrite it`);
+  run.verdict = "DUPLICATE-SUBJECT";
+  run.article = directive.slug;
+  run.reasons.push(
+    `research chose "${directive.slug}", which is already in src/content/blog. The run stopped before writing rather than replacing a published article.`,
+  );
+  mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
+  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  /* Cleared so tomorrow researches again instead of refusing the same slug a second time. */
+  try {
+    writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), refused: directive.slug }, null, 2), "utf8");
+  } catch {
+    /* a directive that cannot be cleared is reported by the next run refusing again */
+  }
+  process.exit(1);
+}
+
 const figures = (directive.figures ?? []).filter((f) => f?.value && f?.source && f?.retrieved);
 if (figures.length < 5) {
   step("directive figures", false, `${figures.length} sourced, the gate requires 5`);

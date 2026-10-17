@@ -127,9 +127,9 @@ What remains open is the questionnaire. A sampled exporting producer has 30 days
 
 ## So what
 
-The judgement is simple: there is no duty to price today, and there is a real exposure to plan for. The Commission has published no rate and cannot until provisional measures. The investigation period ended 31 March 2026, and the rate follows from it.
+The judgement is simple: there is no duty to price today, and there is a real exposure to plan for. [The notice that opened AD760](/blog/eu-anti-dumping-cellulose-ethers-ad760-registration-2026/) is the document the registration order builds on, if you need the sequence. The Commission has published no rate and cannot until provisional measures. The investigation period ended 31 March 2026, and the rate follows from it.
 
-The arithmetic is a range, because a range is all the documents support. Take one 20-foot container at 18 tonnes and a stated CIF value of 50,000 dollars — 2.78 dollars a kilogram, a reader input rather than a market price. Ad valorem duty under Regulation (EU) 2016/1036 is calculated on CIF value.
+Two concluded cases on this site show what a range looks like once it is a rate: [the Vietnam polyester yarn sunset review](/blog/vietnam-polyester-yarn-sunset-review-2026/) published rates by producer, and [EU CBAM against the steel safeguard](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/) puts a per-tonne number on a measure that has none. AD760 is the stage before either. The arithmetic is a range, because a range is all the documents support. Take one 20-foot container at 18 tonnes and a stated CIF value of 50,000 dollars — 2.78 dollars a kilogram, a reader input rather than a market price. Ad valorem duty under Regulation (EU) 2016/1036 is calculated on CIF value.
 
 | Duty rate | Duty on a 50,000-dollar container | Duty per kilogram |
 | --- | --- | --- |

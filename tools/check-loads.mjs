@@ -35,7 +35,7 @@
  *   node tools/check-loads.mjs
  *   node tools/check-loads.mjs --list
  */
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 
@@ -51,7 +51,7 @@ const LIST = process.argv.includes("--list");
  * once, and the message is then correct for everyone afterwards.
  */
 const TOOLS = [
-  { name: "cloud-executor", args: ["--directive-file=data/directive.json"], expect: "no provider key present", why: "the writer, whose missing function caused a 0-second failure" },
+  { name: "cloud-executor", args: ["--directive-file=data/tmp/loadcheck-directive.json"], expect: "no provider key present", why: "the writer, and the check that catches a missing function in it" },
   { name: "cloud-qa", args: ["--draft=data/tmp/loadcheck-absent.md", "--json"], expect: "usage:", why: "the reviewer; pointed at an absent path so it never stages anything into the collection" },
   { name: "cloud-orchestrator", args: [], expect: "no key present, so nothing can be attempted", why: "the coordinator" },
   { name: "research", args: ["--sources=1"], expect: "no provider key", why: "the subject chooser" },
@@ -100,6 +100,43 @@ console.log("");
  * An absent path proves what this check is for - that the module loads and resolves its imports and
  * reaches its own usage message - and it cannot touch the collection at all.
  */
+/*
+ * The fixture the writer is pointed at.
+ *
+ * Six figures with all five parts, which is the minimum the THIN-DIRECTIVE gate accepts, so the writer gets
+ * past its own precondition and fails on the missing credential - which is what this check verifies. Reading
+ * data/directive.json instead made this check report on whatever the last real run happened to leave there.
+ */
+function writeFixture() {
+  const dir = join(ROOT, "data", "tmp");
+  mkdirSync(dir, { recursive: true });
+  const figures = Array.from({ length: 6 }, (_, i) => ({
+    value: String(i + 1),
+    unit: "percent",
+    period: "2026",
+    source: "Load check fixture, 2026",
+    retrieved: "2026-01-01",
+  }));
+  writeFileSync(
+    join(dir, "loadcheck-directive.json"),
+    JSON.stringify(
+      {
+        slug: "loadcheck-fixture",
+        keyword: "loadcheck",
+        category: "trade-policy",
+        audience: "importer",
+        stakes: "directional",
+        figures,
+        sources: ["Load check fixture, 2026"],
+      },
+      null,
+      2,
+    ),
+    "utf8",
+  );
+}
+writeFixture();
+
 const failures = [];
 for (const t of TOOLS) {
   const path = join(ROOT, "tools", `${t.name}.mjs`);

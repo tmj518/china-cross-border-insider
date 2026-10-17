@@ -170,7 +170,6 @@ The 50,000 dollars is a stated input, not a market price. The point of the table
 than the numbers: the top row and the bottom row differ by 25,000 dollars on a single container, and
 the decision between them is made inside the Commission, not in your negotiation.
 
-> Also read: [AD760: Registration Is Ordered Now, and the Money Starts in April 2027](/blog/eu-cellulose-ethers-duty-timeline/)
 
 ## For you
 

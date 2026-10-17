@@ -130,6 +130,8 @@ The funding cost alone is modest, and that is the trap. The damage is not the in
 
 **So do not plan around the legal status. Plan around the file.** Three moves follow. First, ask each supplier what documentation they need from you before they will quote at all — end use, end user, destination, and whether the material is controlled in the form you are buying. Second, get the answer in writing before the purchase order, not after. Third, hold a second qualified source for anything on the active list, and treat that as a cost of the category rather than a procurement failure.
 
+> Also read: [The Eurasian Duty on Chinese Oil Pipes Runs 12.23% to 31% — and One List Decides Which](/blog/eaeu-anti-dumping-oil-well-pipe-2026/)
+
 ## For you
 
 - **Industrial buyers of magnets and alloys:** the seven elements in Announcement No. 18 are the ones that decide magnet performance. Confirm which of the four legal buckets each part sits in — metal, oxide, alloy or finished magnet — because the licensing path differs between them even when the underlying element does not.
