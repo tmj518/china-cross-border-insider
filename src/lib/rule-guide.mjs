@@ -32,6 +32,22 @@
 
 /** `key` is the rule name as it appears in a qa-check result. Entries may be partially interpolated. */
 export const RULE_GUIDE = {
+  /*
+   * The audit's L3, not a structural rule: it runs in preflight rather than in the draft loop, but it is the one
+   * that failed a freshly published article and would have turned the next run red. It belongs here so the phrase
+   * it looks for is written down where the writer-facing guidance lives.
+   */
+  "single-source disclosure": {
+    want: "When every figure traces to one document, \"## How confident\" says so in one sentence.",
+    how: [
+      "Count the distinct documents behind the figures. If it is one, the article rests on a single reading.",
+      "Add a sentence to ## How confident naming that limit - for example: \"Every figure in this article comes from that single instrument.\"",
+      "The audit accepts: single source, sole source, single document, single notice, single instrument, one document, not cross-checked, no second source.",
+      "A second document behind at least one figure satisfies the rule without a sentence, but the sentence is the honest version.",
+    ],
+    example: "**Confirmed.** ... Every figure in this article comes from that single instrument.",
+  },
+
   "text encoding": {
     want: "A UTF-8 file whose curly quotes and em dashes are the real characters, not replacement glyphs.",
     how: [

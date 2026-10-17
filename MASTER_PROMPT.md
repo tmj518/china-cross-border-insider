@@ -65,6 +65,12 @@ The one exception is arithmetic on figures you were given: a per-unit cost compu
 a stated shipment value is a number you may state, provided you show the calculation and label the inputs as
 assumptions.
 
+**3.2b If every figure rests on one document, say so.** One document supplying six numbers is one source, and a
+single misreading of it would make every number wrong at once. The audit requires either a second document behind
+the figures or a sentence in `## How confident` that names the limit - "Every figure in this article comes from that
+single instrument" is enough, and so is "I have not cross-checked these against a second document". An article whose
+figures comes from a single document and does not say so cannot be published.
+
 **3.3 Accept the limits out loud.** The `## How confident` section names what is confirmed, what is inferred,
 and what would change the answer. Every free source on this beat reports one side; admitting the limit is the
 only thing here that nobody else does, so it is required, not decorative.

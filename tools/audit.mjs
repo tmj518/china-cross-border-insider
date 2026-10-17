@@ -282,7 +282,21 @@ function auditOne(slug) {
   for (const k of bibKeys) docKeys.add(k);
   const docCount = docKeys.size;
   const confident = /##\s*How confident\s*\n([\s\S]*?)(?=\n##\s|$)/.exec(body)?.[1] ?? "";
-  const disclosesSingle = /single source|sole source|not cross-?checked|no second source|未交叉核验|单一来源/i.test(confident + body);
+  /*
+   * The disclosure recogniser was too literal.
+   *
+   * It accepted "single source" and "sole source", and a published article wrote "Every figure in this article
+   * comes from that single instrument." That is the disclosure, in the vocabulary of the beat - a notice, an
+   * instrument, a document - and the check reported it missing, so a correct article failed the audit and the next
+   * run's preflight would have been red.
+   *
+   * The pattern is now written around the words this site actually uses, not around the phrase the first version
+   * happened to imagine.
+   */
+  const disclosesSingle =
+    /single (?:source|instrument|document|notice|regulation|release)|sole (?:source|document|instrument)|one document|not cross-?checked|no second (?:source|document)|未交叉核验|单一来源|均来自同(?:一|份)/i.test(
+      confident + body,
+    );
   result.layers.L3 = {
     /*
      * An article with no external figures is not an L3 failure.
