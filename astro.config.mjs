@@ -39,7 +39,18 @@ export default defineConfig({
        * transactional page with no search value, or a page that sets noindex on itself. When
        * a page gains noindex, it belongs in this pattern.
        */
-      filter: (page) => !/\/(privacy|contact|confirmed)\/$/.test(page),
+      /*
+       * Excluded only: pages that set noindex on themselves.
+       *
+       * /privacy/ and /confirmed/ both carry `<meta name="robots" content="noindex">`, so submitting them
+       * would be the contradiction this filter exists to prevent, and they stay out.
+       *
+       * /contact/ was here without setting noindex and is now in the sitemap. It is a page people search for
+       * by name - "Landed Math contact" - so withholding it from the one file that enumerates the site is a
+       * page that asked to be found and was not offered. The rule above the filter already said an exclusion
+       * is either a page with no search value or a page that says noindex; /contact/ is neither.
+       */
+      filter: (page) => !/\/(privacy|confirmed)\/$/.test(page),
     }),
     /*
      * Adds a real `lastmod` to sitemap entries, derived from the content rather than from the
