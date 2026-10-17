@@ -166,7 +166,27 @@ let directive = null;
 if (existsSync(directiveFile)) {
   try {
     directive = JSON.parse(readFileSync(directiveFile, "utf8"));
-    step("directive", true, `${directive.slug ?? "(no slug)"} from ${directiveFile.replace(ROOT, "")}`);
+    /*
+   * A directive is a slug and figures. Anything else in that file is a record that a previous run finished.
+   *
+   * This was tested by the file's existence, and the file is never deleted - publishing writes
+   * { consumedAt, lastArticle } over it. So after the first publication the condition was always true and
+   * research never ran again: the 06:12 run inherited the previous evening's subject and rewrote its article,
+   * and the 06:16 agent run opened by reporting that same slug as today's subject.
+   *
+   * A consumed record is now treated as no directive, which is what it is.
+   */
+  const usable = Boolean(directive?.slug) && Array.isArray(directive?.figures) && directive.figures.length > 0;
+  if (!usable) {
+    console.log(
+      `  directive   : the file exists but carries no subject (consumed ${
+        directive?.consumedAt ? "at " + String(directive.consumedAt).slice(0, 16) : "record"
+      }), so research runs`,
+    );
+    directive = null;
+  } else {
+    step("directive", true, `${directive.slug} from ${directiveFile.replace(ROOT, "")}`);
+  }
   } catch (e) {
     step("directive", false, `unreadable: ${e.message}`);
     run.reasons.push("the directive file exists but does not parse");
@@ -722,7 +742,7 @@ if (published) {
    * same piece, which is what you want when the failure was the writing rather than the subject.
    */
   try {
-    writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), article: slug }, null, 2), "utf8");
+    writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), lastArticle: slug }, null, 2), "utf8");
     console.log("");
     console.log(`  directive consumed → ${directiveFile.replace(ROOT, "")} cleared, tomorrow will research a new subject`);
   } catch (e) {

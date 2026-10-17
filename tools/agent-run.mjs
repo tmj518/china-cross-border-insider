@@ -359,6 +359,12 @@ if (!existsSync(taskPath)) {
   process.exit(2);
 }
 
+/*
+ * The task file is still read, so a missing one is still reported, but its contents no longer reach the model.
+ *
+ * It describes a sandbox where astro build and git push fail and a wrapper handles them. None of that is true
+ * here, and a model told to read eight documents before writing reads eight documents before writing.
+ */
 const instructions = readFileSync(taskPath, "utf8");
 mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
 
@@ -366,6 +372,30 @@ console.log(`AGENT RUN  ${new Date().toISOString()}`);
 console.log("=".repeat(84));
 console.log(providerSummary());
 console.log(`  task        : ${TASK_FILE} (${instructions.length} bytes)`);
+
+/*
+ * A published subject is refused before anything is said to the model.
+ *
+ * The scheduled run on 2026-10-17 read a consumed directive whose `article` field held yesterday's slug, took it
+ * as today's subject, and spent twenty-four turns preparing to rewrite a page that was already live. The
+ * orchestrator has a guard for this; the agent route did not.
+ *
+ * Checked here rather than after the model proposes something, because the cheapest refusal is the one that
+ * costs a process start instead of a day of turns.
+ */
+try {
+  const d = JSON.parse(readFileSync(join(ROOT, "data", "directive.json"), "utf8"));
+  const subject = d.slug ?? "";
+  if (subject && existsSync(join(ROOT, "src", "content", "blog", `${subject}.md`))) {
+    console.log("");
+    console.log(`  ALREADY-PUBLISHED  ${subject} is in src/content/blog, so this run will not write it.`);
+    console.log("  An agent asked to work on a published page replaces a live URL under a reader. The run stops");
+    console.log("  here; the next one researches a subject that is not already on the site.");
+    process.exit(1);
+  }
+} catch {
+  /* no directive, or one that does not parse - the prompt tells the agent to research, which is correct */
+}
 console.log(`  max turns   : ${MAX_TURNS}${DRY ? "   DRY RUN: no command will be executed" : ""}`);
 console.log("");
 
@@ -377,52 +407,58 @@ console.log("");
 const SYSTEM = `You are the daily operator for Landed Math, an English site that turns Chinese and other
 official primary documents into per-unit cost consequences for importers.
 
-You have tools: read_file, write_file, list_dir, run, check_draft, publish_draft, finish.
+Your tools: read_file, write_file, list_dir, run, check_draft, publish_draft, finish.
 
-The rules that are not negotiable, because they are the reason this site is worth reading:
+TODAY'S JOB
 
-  1. Write only from figures that are in the directive. Never add a number, a source, a quotation, a
-     person or an experience. If you do not have a figure, say so rather than supplying one.
-  2. A draft goes to data/drafts/. It reaches src/content/blog/ only through publish_draft, which refuses
-     a draft that has not passed check_draft in this run. Do not try to write the collection directly.
-  3. If the checks fail, fix the draft and run them again. Read what they say: they name the field, the
-     value and the limit.
-  4. If a failure needs a real document that nobody has fetched, stop and report that. Rewriting cannot
-     supply a real number, and an invented one that looks real is the worst outcome available to you.
-  5. When you are done, call finish with a verdict and one sentence. If you could not do the day's work,
-     say why in that sentence rather than finishing quietly.
+Produce one article and publish it. That is the whole task. The repository is already in a state where this is
+possible; nothing needs fixing before you start.
 
-HOW YOUR TURNS WORK - read this before your first tool call.
+  1. Read data/directive.json once. If it carries a slug and figures, that is your subject and your material.
+  2. If it does not - no slug, or it was consumed by a previous run - run
+     'node tools/research.mjs' once to choose a subject, then read the directive it writes.
+  3. If the slug it names is already in src/content/blog, stop and call finish with verdict
+     DUPLICATE-SUBJECT. Do not rewrite an article that is published; a live URL changing under a reader is
+     worse than a day with no article.
+  4. Write the draft to data/drafts/<slug>.md.
+  5. check_draft it. Fix what it reports and check again.
+  6. publish_draft it. This is the only route into src/content/blog and it refuses a draft that has not
+     passed check_draft in this run.
+  7. finish with verdict PUBLISHED and one sentence.
 
-You have ${MAX_TURNS} turns. The first ${PREP_TURNS} are for reading and inspecting. From turn
-${PREP_TURNS + 1} you must be writing, checking and publishing. If you are still reading at turn
-${PREP_TURNS + 1}, you will run out of turns with nothing written, which has happened once already and
-produced nothing at all.
+THE RULES THAT ARE NOT NEGOTIABLE, because they are why this site is worth reading
 
-The task file is long and it names many documents and many tools. You are not required to read all of it or
-run all of them. Read what you need to write today's article, and stop. A check that tells you what you
-already know costs a turn you will want later.
+  1. Write only from figures that are in the directive. Never add a number, a source, a quotation, a person or
+     an experience. If you do not have a figure, say so rather than supplying one.
+  2. A draft goes to data/drafts/. It reaches src/content/blog/ only through publish_draft.
+  3. If check_draft fails, read what it says - it names the field, the value and the limit - fix it, and run it
+     again. Do not argue with it and do not rewrite the whole article to change one number.
+  4. If a failure needs a real document nobody has fetched, stop and report that. An invented number that looks
+     real is the worst outcome available to you.
+  5. Call finish with a verdict and one sentence, including when you could not do the day's work.
 
-If a tool or file does not exist, that is information, not an obstacle: note it and carry on. Do not try a
-different path to the same missing thing.
+HOW YOUR TURNS WORK
 
-Do not repeat a call. If you have read a file, you have read it; if you have run a check, its answer will not
-change because you ran it again. A repeated call is refused without being executed, and you are told what it
-returned the first time.
+You have ${MAX_TURNS} turns and the first ${PREP_TURNS} are for reading. From turn ${PREP_TURNS + 1} only
+write_file, check_draft, publish_draft and finish are accepted - every other tool returns
+"PREPARATION IS OVER". This is enforced, not advised.
 
-The first thing you should do is decide what today's article is about. The directive at data/directive.json
-may already name a subject; if it does not, one research call decides it. Then write.`;
+Do not read the operator's notes. They are not here, they describe a different machine, and they are not
+needed: the job is in the section above.
+
+Do not page through output. A tool result that was too long says so in the result itself, at the point where
+it was cut, and tells you what to do instead. Running the same command again with a different 'sed' range
+returns the same thing and costs a turn.
+
+Do not repeat a call. A repeated call is answered from memory with what it returned the first time.
+`;
 
 let messages = [
   {
     role: "user",
     content: `Today is ${new Date().toISOString().slice(0, 10)}.
 
-YOUR INSTRUCTIONS
-
-${instructions}
-
-Begin. Look at the repository state first, then decide what the day needs.`,
+Begin with today's job: read data/directive.json. Do not look around the repository first - everything you need is either in that file or produced by the tools. If you find yourself reading a file that is not the directive, a draft, or a tool's output, stop and write instead.`,
   },
 ];
 
@@ -434,6 +470,19 @@ Begin. Look at the repository state first, then decide what the day needs.`,
  * suppressing any of those would break a run rather than shorten it.
  */
 const seenCalls = new Map();
+
+/*
+ * How many times each command base has been run.
+ *
+ * Keyed on the part before the first pipe or redirect, so "mjs | sed -n '36,42p'" and "mjs | sed -n '38,44p'"
+ * share a key. Sixteen turns of that pattern is what this exists to stop.
+ */
+const baseCounts = new Map();
+const commandBase = (cmd) => {
+  const s = String(cmd ?? "").trim();
+  const cut = s.search(/[|>&;]/);
+  return (cut > 0 ? s.slice(0, cut) : s).replace(/\s+/g, " ").trim();
+};
 const REPEATABLE = new Set(["read_file", "list_dir", "check_draft"]);
 const callKey = (name, args) => `${name}:${JSON.stringify(args ?? {})}`;
 let repeatCount = 0;
@@ -480,6 +529,63 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
      */
     const name = c.function?.name;
     let result;
+
+    /*
+     * From turn PREP_TURNS+1 the only tools that work are the ones that produce work.
+     *
+     * This is the change that matters most. The failing run read six documents, ran ten checks and listed the
+     * repository for twenty-four turns; nothing in the prompt stopped it and nothing in the code did either.
+     * Reading the directive and the draft stays allowed, because a draft cannot be written without them.
+     */
+    const ACTION_TOOLS = new Set(["write_file", "check_draft", "publish_draft", "finish"]);
+    const isActionRead = name === "read_file" && /directive\.json|data\/drafts\//.test(String(input.path ?? ""));
+    if (turn > PREP_TURNS && !ACTION_TOOLS.has(name) && !isActionRead) {
+      result = [
+        `PREPARATION IS OVER. This is turn ${turn} of ${MAX_TURNS}; the reading phase ended at ${PREP_TURNS}.`,
+        "",
+        `${name} is not available any more. Only write_file, check_draft, publish_draft and finish work from here,`,
+        "plus reading data/directive.json and your own draft.",
+        "",
+        "Write the draft now with what you have. check_draft reports what is missing far faster than reading does,",
+        "and it reports it about the thing you are actually being asked to produce.",
+      ].join("\n");
+      console.log(`  turn ${turn} · ${name} refused - preparation is over`);
+      record({ turn, refused: name, reason: "preparation is over" });
+      messages.push({ role: "tool", tool_call_id: c.id, content: result });
+      continue;
+    }
+
+    /*
+     * A command run for the third time is refused.
+     *
+     * Turns 25 to 40 were one command with a moving sed window, walking a range backwards through output that
+     * had already been returned in full. Keying on the base - everything before the first pipe, redirect or
+     * separator - makes paging, re-wrapping with head or tail, and adding a grep all the same command.
+     *
+     * Two are allowed: running a check before a fix and again after it is legitimate. The message says what to
+     * do instead, because a refusal without an alternative is only a stop.
+     */
+    if (name === "run") {
+      const base = commandBase(input.command);
+      const times = (baseCounts.get(base) ?? 0) + 1;
+      baseCounts.set(base, times);
+      if (times > 2) {
+        result = [
+          `You have run this command ${times} times: ${base.slice(0, 120)}`,
+          "",
+          "The answer has not changed. Running it again with a different range, a head, a tail or a grep returns the",
+          "same text and costs a turn you do not have.",
+          "",
+          "If the output was cut off, the cut is marked in the result and says how to see the rest. If you are",
+          "looking for one specific thing, grep for that word rather than paging through everything. If you are",
+          "verifying a fix, use check_draft.",
+        ].join("\n");
+        console.log(`  turn ${turn} · run refused - same command ${times} times`);
+        record({ turn, refused: name, reason: `same command ${times} times`, base: base.slice(0, 120) });
+        messages.push({ role: "tool", tool_call_id: c.id, content: result });
+        continue;
+      }
+    }
     const key = REPEATABLE.has(name) ? callKey(name, input) : null;
     if (key && seenCalls.has(key)) {
       repeatCount++;

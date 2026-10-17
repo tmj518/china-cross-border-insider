@@ -147,6 +147,37 @@ const SCENARIOS = [
     transcriptContains: "answered from memory",
   },
   {
+    /*
+     * A model that keeps reading is cut off at PREP_TURNS and told to write.
+     *
+     * The run that failed read six documents and ran ten checks for twenty-four turns. The prompt said the
+     * reading phase ended at turn ten and nothing enforced it. This asserts the refusal reaches the model - if
+     * it does not, the wall is only a paragraph.
+     */
+    name: "preparation runs out and reading is refused",
+    turns: Array.from({ length: 14 }, () => [
+      { name: "read_file", args: { path: "README.md" } },
+    ]),
+    verdict: "TURN-LIMIT",
+    published: [],
+    transcriptContains: "preparation is over",
+  },
+  {
+    /*
+     * One command, run five times with a different range each time.
+     *
+     * Turns 25 to 40 of the failing run were exactly this: the same tool paged with a moving sed window. The
+     * guard keys on the command base, so a changed range is the same command.
+     */
+    name: "one command run five times is refused",
+    turns: Array.from({ length: 5 }, (_, i) => [
+      { name: "run", args: { command: `node tools/qa-check.mjs --all 2>&1 | sed -n '${30 + i * 2},${36 + i * 2}p'` } },
+    ]),
+    verdict: "TURN-LIMIT",
+    published: [],
+    transcriptContains: "same command",
+  },
+  {
     name: "a model that only talks",
     why: "the loop must end, and it must report a verdict rather than running to the turn limit quietly",
     turns: [[], [], [], []],

@@ -10,7 +10,7 @@
  *
  * Exit code is non-zero when any blocking rule fails.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { proseWords, WORD_TARGET, hasCostTable } from "../src/lib/prose.mjs";
 
@@ -652,16 +652,40 @@ function reportLibraryClaims(files) {
   return { total: failed, blocking: cOk ? 0 : 1 };
 }
 
+/*
+ * Flags are not paths.
+ *
+ * `qa-check <file> --verbose` died with ENOENT on '--verbose', because every argument was read as a filename.
+ * An unsupported flag should say so and a missing file should name the file; conflating them costs a turn and
+ * teaches the caller the wrong thing - the transcript shows an agent concluding the article did not exist.
+ *
+ * `--all` stays a mode, not a path: it means "every published article", which is what the gate runs.
+ */
 const args = process.argv.slice(2);
+const VERBOSE = args.includes("--verbose");
+const ALL = args.includes("--all");
+const PATHS = args.filter((a) => !a.startsWith("--"));
+
 let files;
-if (args[0] === "--all") {
+if (ALL) {
   const dir = "src/content/blog";
   files = readdirSync(dir).filter((f) => f.endsWith(".md")).map((f) => join(dir, f));
-} else if (args.length) {
-  files = args;
+} else if (PATHS.length) {
+  files = PATHS;
 } else {
-  console.error("usage: node tools/qa-check.mjs <file.md> | --all");
+  console.error("usage: node tools/qa-check.mjs <article.md> [...] | --all | --verbose");
   process.exit(2);
+}
+
+if (VERBOSE) {
+  console.log("  note: --verbose adds nothing; the report is already itemised per rule.");
+}
+
+for (const f of files) {
+  if (!existsSync(f)) {
+    console.log(`  no such file: ${f}`);
+    process.exit(2);
+  }
 }
 
 let anyBlocking = false;
