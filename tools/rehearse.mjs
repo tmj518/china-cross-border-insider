@@ -45,7 +45,22 @@ const SCENARIOS = [
   { name: "schema violation then repair", w: ["invalid", "write"], q: ["approve"], verdict: "PUBLISHED", writerCalls: 2 },
   { name: "schema violation every time", w: ["invalid"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 3 },
   { name: "writer produces nothing", w: ["nothing"], q: ["approve"], verdict: "WRITE-FAILED", writerCalls: 1, contains: "Cannot find module", notContains: "Node.js v24" },
-  { name: "reviewer unparseable every time", w: ["write"], q: ["unparseable"], verdict: "REJECTED", writerCalls: 3 },
+    /*
+   * An unreadable review now publishes, and records why.
+   *
+   * This scenario expected REJECTED and the change to publish-without-a-review is deliberate: the operator's
+   * instruction was that a reviewer which fails or cannot be parsed must not stop the article, and that the
+   * fact must be carried into the next run's prompt. The assertion follows the behaviour, and the extra
+   * check makes sure the recording happened - a publish without the lesson would be the silent version.
+   */
+  {
+    name: "reviewer unparseable publishes with a lesson",
+    w: ["write"],
+    q: ["unparseable"],
+    verdict: "PUBLISHED",
+    writerCalls: 1,
+    contains: "recorded as a lesson",
+  },
   { name: "revision gets worse", w: ["write"], q: ["mild", "severe", "severe"], verdict: "REJECTED", contains: "revision made the draft worse" },
   {
     name: "reviewer asks for research",

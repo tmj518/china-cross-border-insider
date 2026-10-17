@@ -442,6 +442,37 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     : "no parseable verdict";
   step(`reviewer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`, qaCode === 0, qa ? `${qa.verdict}: ${failedDetail}` : failedDetail);
 
+  /*
+   * A review that produced nothing is a warning, not a stop.
+   *
+   * The operator's instruction: if the reviewer fails or its answer cannot be read, publish anyway and
+   * record that the review was unavailable. The article exists, it compiles and the structural checks
+   * passed; a pipeline that ships nothing because its second opinion timed out has nothing to evaluate.
+   *
+   * "Record" is the part that makes it safe. The fact goes into data/lessons.jsonl, and the writer's
+   * prompt reads that file on the next run - so an unavailable review is carried forward into the next
+   * article rather than forgotten. A warning nobody reads is the same as no warning.
+   *
+   * A review that ran and rejected the draft is a different matter: that is a judgement, and it still
+   * stops the publication.
+   */
+  const reviewUnavailable = !qa || !qa.layers?.L5 || qa.layers.L5.detail?.startsWith("reviewer did not return JSON");
+  if (reviewUnavailable && wroteIt && qa?.layers?.build?.pass !== false && qa?.layers?.L1?.pass !== false) {
+    appendFileSync(
+      join(ROOT, "data", "lessons.jsonl"),
+      JSON.stringify({
+        at: new Date().toISOString(),
+        slug,
+        kind: "review-unavailable",
+        detail: qa?.layers?.L5?.detail ?? "no QA report at all",
+        action: "published without a second opinion; the next writer prompt reads this file",
+      }) + "\n",
+      "utf8",
+    );
+    step("reviewer", true, "unavailable, recorded as a lesson, publishing anyway");
+    qaCode = 0;
+  }
+
   const score = failureScore(qa);
   attempts.push({ attempt, score, verdict: qa?.verdict ?? null, issues: qa?.layers?.L5?.issues ?? [], reasons: qa?.reasons ?? [] });
 

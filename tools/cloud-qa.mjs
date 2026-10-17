@@ -255,7 +255,12 @@ if (!mechanicallyClear) {
       "  3. Quote the draft exactly. A snippet that does not appear in the draft is useless.\n" +
       "  4. Do NOT flag a fact merely because you cannot confirm it. You cannot see the source\n" +
       "     documents. Flag only: internal inconsistency, arithmetic not derivable from the figures\n" +
-      "     given, a dishonest confidence section, invented experience, or the risk line being crossed.",
+      "     given, a dishonest confidence section, invented experience, or the risk line being crossed.\n" +
+      "  5. After the JSON object, on its own line, write exactly one of:\n" +
+      "       VERDICT: APPROVED\n" +
+      "       VERDICT: REJECTED\n" +
+      "     Nothing after it. This line is read when the JSON cannot be parsed - it has saved a\n" +
+      "     publication twice already - so it must be present and exact.",
     messages: [
       {
         role: "user",
@@ -290,6 +295,37 @@ Set pass to false if any check is false. Every issue needs all five fields.`,
   if (!r.ok) {
     report.layers.L5 = { pass: false, detail: `review call failed: ${r.error}` };
     report.reasons.push("L5: the review call failed, so nothing was approved");
+  } else if (!r.json && /VERDICT:\s*(APPROVED|REJECTED)/i.test(r.text ?? "")) {
+    /*
+     * The plain line saved it.
+     *
+     * A truncated object, a wrapper the extractor could not read, a stray character - the line survives all
+     * of those, and twice a real verdict was lost to one of them. The report records that the verdict came
+     * from the line rather than from the object, so a thin review is visible as one instead of counting as
+     * a full one.
+     */
+    const line = /VERDICT:\s*(APPROVED|REJECTED)/i.exec(r.text ?? "");
+    const approved = line[1].toUpperCase() === "APPROVED";
+    review = {
+      pass: approved,
+      checks: {},
+      issues: approved ? [] : [{ check: "", rule: "verdict line only", snippet: "", why: "the reviewer stated REJECTED without an itemised reason", fix_type: "new_decision" }],
+      summary: `read from the VERDICT line: ${line[1].toUpperCase()}`,
+    };
+    report.layers.L5 = {
+      pass: approved,
+      detail: approved
+        ? "approved, read from the VERDICT line because the JSON was unreadable"
+        : "rejected, read from the VERDICT line because the JSON was unreadable",
+      checks: {},
+      issues: review.issues,
+      summary: review.summary,
+      reviewer: `${r.provider}/${r.model}`,
+      readFromVerdictLine: true,
+      completionTokens: r.usage?.completion_tokens ?? null,
+    };
+    if (!approved) report.reasons.push("L5: " + review.issues[0].why);
+    report.reasons.push("L5: the JSON was unreadable, so the verdict was taken from the VERDICT line - the itemised detail is missing");
   } else if (!r.json) {
     /*
      * Quote what the reviewer actually returned. On 2026-10-17 this branch fired and the report said

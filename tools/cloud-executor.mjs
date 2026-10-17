@@ -172,6 +172,48 @@ function readershipBrief() {
   return lines.join("\n");
 }
 
+
+/**
+ * What went wrong in recent runs, for the writer to account for.
+ *
+ * Two kinds of entry live in data/lessons.jsonl: a review that could not be produced, and a publication
+ * that went out without one. Both mean the article's second opinion was missing, and the writer should
+ * compensate - by being more careful with its confidence section, which is the part a reviewer is most
+ * likely to catch.
+ *
+ * Only the last few are read, and only their kind and detail. A writer given a growing log becomes
+ * defensive; a writer told "the last three reviews were unavailable, be explicit about what is inferred"
+ * does something useful with it.
+ */
+function recentLessons(limit = 5) {
+  const p = join(ROOT, "data", "lessons.jsonl");
+  if (!existsSync(p)) return null;
+  let lines = [];
+  try {
+    lines = readFileSync(p, "utf8").split("\n").filter(Boolean).slice(-limit);
+  } catch {
+    return null;
+  }
+  const entries = [];
+  for (const l of lines) {
+    try {
+      const e = JSON.parse(l);
+      if (e.kind && e.detail) entries.push(`  ${e.kind}: ${String(e.detail).slice(0, 160)}`);
+    } catch {
+      /* a malformed line is the writer of that line's problem, not this one's */
+    }
+  }
+  if (!entries.length) return null;
+  return [
+    "RECENT PROBLEMS IN THIS PIPELINE",
+    ...entries,
+    "",
+    "These mean a review was missing or a publication went out without one. Compensate where it",
+    "matters: be explicit in **Inferred.** about what rests on a single document, and do not state a",
+    "number as confirmed unless the document says it.",
+  ].join("\n");
+}
+
 /** The structure, as a specification the model is asked to satisfy. */
 const STRUCTURE = `The article must have this exact shape.
 
@@ -300,7 +342,7 @@ ${STRUCTURE}
 
 ${RULES}
 
-${readershipBrief() ? readershipBrief() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
+${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
 ${JSON.stringify(sourced, null, 2)}
 
 THE BIBLIOGRAPHY - cite these, and only these, in the sources field:
@@ -444,7 +486,7 @@ ${STRUCTURE}
 
 ${RULES}
 
-${readershipBrief() ? readershipBrief() + "\n\n" : ""}THE FIGURES - the only numbers permitted:
+${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}THE FIGURES - the only numbers permitted:
 ${JSON.stringify(sourced, null, 2)}
 
 THE BIBLIOGRAPHY:
