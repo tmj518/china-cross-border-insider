@@ -49,6 +49,43 @@ const canonical = new URL(`/blog/${post.id}/`, Astro.site ?? SITE.url).href;
 // missing.
 const lastRevision = data.revisions.at(-1);
 
+
+/**
+ * The FAQ section as schema.org FAQPage, or null when the article has none.
+ *
+ * Two question spellings are accepted because the structural check accepts both, and a schema that only
+ * understood one of them would silently emit nothing for part of the archive. Answers are flattened to plain
+ * text, since markdown in a JSON-LD string is read literally.
+ */
+function faqBlock(body) {
+  const section = /##\s*FAQ\s*\n([\s\S]*?)(?=\n##\s|$)/.exec(body ?? "")?.[1];
+  if (!section) return null;
+
+  const marks = [];
+  for (const m of section.matchAll(/^###\s+(.+)$/gm)) marks.push({ at: m.index, q: m[1].trim(), len: m[0].length });
+  for (const m of section.matchAll(/^\*\*([^*\n]+\?)\*\*\s*$/gm)) marks.push({ at: m.index, q: m[1].trim(), len: m[0].length });
+  if (!marks.length) return null;
+  marks.sort((a, b) => a.at - b.at);
+
+  const plain = (s) =>
+    s
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/[*_`>#]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  const items = marks
+    .map((m, i) => {
+      const from = m.at + m.len;
+      const to = i + 1 < marks.length ? marks[i + 1].at : section.length;
+      const answer = plain(section.slice(from, to));
+      return answer.length >= 40 ? { "@type": "Question", name: m.q, acceptedAnswer: { "@type": "Answer", text: answer } } : null;
+    })
+    .filter(Boolean);
+
+  return items.length >= 2 ? { "@type": "FAQPage", mainEntity: items } : null;
+}
+
 const jsonLd = {
   "@context": "https://schema.org",
   /*
@@ -85,6 +122,16 @@ const jsonLd = {
   keywords: data.tags.join(", "),
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
 };
+
+/*/*
+ * FAQPage as a second block, and the layout takes an array for exactly this.
+ *
+ * schema.org puts the questions on the page rather than the article. A FAQPage claiming to be the NewsArticle
+ * would have the page describe itself twice, which is the mistake OWN_PAGE_TYPES exists to prevent - so the
+ * two go in as two blocks.
+ */
+const faqLd = faqBlock(post.body);
+const jsonLdBlocks = faqLd ? [jsonLd, faqLd] : jsonLd;
 ---
 
 <BaseLayout
@@ -108,7 +155,7 @@ const jsonLd = {
   image={data.heroImage}
   publishedTime={data.publishDate}
   modifiedTime={data.updatedDate}
-  jsonLd={jsonLd}
+  jsonLd={jsonLdBlocks}
   citation={{ title: data.title, date: data.publishDate }}
 >
   <ArticleLayout post={post} related={related} numbers={numbers} hubs={hubs}>

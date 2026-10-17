@@ -43,6 +43,29 @@ for (const [label, file, expectNoIndex] of PAGES) {
     continue;
   }
 
+  /*
+   * An article carries its FAQ as FAQPage, or the questions are prose.
+   *
+   * Every article has a FAQ section with three answered questions - the most quotable part of the page - and
+   * none carried the type that makes it quotable. This check verified four other blocks and never asked, which
+   * is why thirty-two articles shipped without it.
+   *
+   * Scoped to article pages: a FAQPage on a listing page would be a page claiming to answer questions it does
+   * not.
+   */
+  if (label.startsWith("/blog/")) {
+    const faq = blocks.find((b) => b["@type"] === "FAQPage");
+    if (!faq) {
+      problems.push(`${label}: no FAQPage, so the FAQ section is not machine-readable`);
+    } else {
+      const qs = faq.mainEntity ?? [];
+      if (qs.length < 2) problems.push(`${label}: FAQPage has ${qs.length} question(s), needs >= 2`);
+      for (const q of qs) {
+        if (!q.name || !q.acceptedAnswer?.text) problems.push(`${label}: a Question is missing name or acceptedAnswer.text`);
+      }
+    }
+  }
+
   if (!types.includes("Organization")) problems.push(`${label}: no Organization`);
   if (!types.includes("WebSite")) problems.push(`${label}: no WebSite`);
   if (dupes.length) problems.push(`${label}: duplicate block type(s): ${dupes.join(", ")}`);
