@@ -40,6 +40,7 @@ import {
 import { readingTime } from "../lib/post";
 import type { CardData, NumberItem } from "../lib/post";
 import type { Hub } from "../lib/topics";
+import ArticleToc from "../components/ArticleToc.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -120,6 +121,8 @@ const bibtex =
           </figure>
         )
       }
+
+      <ArticleToc />
 
       <div class="prose">
         <slot />

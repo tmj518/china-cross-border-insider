@@ -31,8 +31,19 @@
   --c-ink-2: #444444;
   --c-ink-3: #555555;
   --c-ink-4: #666666;
-  --c-ink-5: #888888;
-  --c-ink-6: #999999;
+  /*
+ * Contrast, measured rather than chosen.
+ *
+ * These were #888888 and #999999, which are 3.39 and 2.73 against --c-bg - below the 4.5 WCAG AA asks for body
+ * text. They are not decoration: .sources is where each figure's provenance is written and .disclaimer is the
+ * note about what the figures cannot tell you, which are the two paragraphs a reader consults before deciding
+ * whether to trust a number.
+ *
+ * The ladder now runs ink 16.7, ink-2 9.3, ink-3 7.1, ink-4 5.5, ink-5 5.1, ink-6 4.5 - every step legible.
+ * tools/check-contrast.mjs fails the build if a future change drops any of them below the line.
+ */
+--c-ink-5: #6b6b6b;
+  --c-ink-6: #6f6f6f;
   --c-line: #e8e6e1;
   --c-line-soft: #eeeeee;
   --c-line-faint: #f5f5f5;
@@ -48,6 +59,76 @@
   --radius: 4px;
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
   --gutter: 24px;
+}
+/*
+ * Dark mode by media query only.
+ *
+ * A toggle would need a script before first paint, and this site's CSP hashes every inline script - so a toggle
+ * costs either a hash or a flash of the wrong theme while the bundle loads. The media query costs neither: the
+ * browser knows the preference before it paints, so the first frame is already the right one.
+ *
+ * Contrast is measured, on the same rule as the light palette: every ink step reaches 4.5 on its own
+ * background. The tightest pair is --c-ink-6 on --c-surface at 4.53. Without that the theme would be a
+ * downgrade for whoever switches, which is worse than not offering it.
+ *
+ * The surfaces are warm-neutral rather than pure grey - the brand sits on navy, red and gold, and a cold grey
+ * makes the red read as an error state.
+ *
+ * Accents brighten because the light values do not reach 4.5 on a dark ground, and shadows go darker and less
+ * diffuse because the light values simply vanish.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #17181a;
+    --c-surface: #1d1f22;
+    --c-surface-alt: #212326;
+
+    --c-ink: #e8e6e1;
+    --c-ink-2: #c9c7c2;
+    --c-ink-3: #b3b1ac;
+    --c-ink-4: #9c9a95;
+    --c-ink-5: #8f8d88;
+    --c-ink-6: #8b8984;
+
+    --c-line: #2e3033;
+    --c-line-soft: #272a2d;
+    --c-line-faint: #222427;
+    --c-field-border: #3a3d41;
+
+    --c-navy: #8fb6e6;
+    --c-navy-light: #a8c8ee;
+    --c-navy-mid: #6f9ace;
+    --c-red: #ff6b7f;
+    --c-red-dark: #ff8a9a;
+    --c-red-tint: #2a1518;
+    --c-gold: #e8bb52;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 40%), 0 8px 24px rgb(0 0 0 / 30%);
+
+    color-scheme: dark;
+  }
+
+  /*
+   * Two surfaces that carry a literal colour rather than a variable: the ad placeholder's hatched black wash is
+   * invisible on a dark ground, and the modal scrim has to be darker than the page rather than a light veil.
+   */
+  .ad-slot {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgb(255 255 255 / 3%) 8px,
+      rgb(255 255 255 / 3%) 16px
+    );
+  }
+  .sub-modal__scrim {
+    background: rgb(0 0 0 / 62%);
+  }
+
+  /* Anything drawn for a light page is a little too bright against a dark one. */
+  .prose img {
+    filter: brightness(0.92);
+  }
 }
 
 /* ---------- 2. Reset & base ---------- */

@@ -140,6 +140,23 @@ const GATES = [
   },
   {
     /*
+     * Contrast, computed rather than reviewed.
+     *
+     * Two greys sat below WCAG AA for eighteen months while carrying .sources and .disclaimer - the block
+     * listing where every figure came from, and the note about what the figures cannot tell you. Nobody computes
+     * contrast by looking, so the only way to keep it fixed is to compute it on every build.
+     *
+     * It reads src/styles/global.css, not dist, so it costs microseconds and needs no build.
+     */
+    id: "check-contrast",
+    tier: "soft",
+    label: "text contrast",
+    args: ["tools/check-contrast.mjs"],
+    inputs: ["src/styles"],
+    fast: true,
+  },
+  {
+    /*
      * Titles and descriptions as a search result shows them: 60 display columns for a title, 155 for a
      * description, both unique across the site. It read 174 violations the first time it ran - the longest
      * title was 125 columns - and zero after the pages were wired to fitTitle/fitDescription.
