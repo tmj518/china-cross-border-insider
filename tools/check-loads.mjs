@@ -58,6 +58,7 @@ const TOOLS = [
   { name: "analytics", args: ["--fetch"], expect: "cannot fetch", why: "the readership reader" },
   { name: "agent-run", args: ["--max-turns=1"], expect: "no provider key present", why: "the agent loop" },
   { name: "notify-feishu", args: ["--dry-run"], expect: "", why: "the notifier, which must run with no credentials at all" },
+  { name: "feishu-ledger", args: [], expect: "Missing:", why: "the tool that creates the ledger base" },
   { name: "gate", args: ["--fresh"], expect: "", why: "the gate runner" },
   { name: "check-mobile", args: [], expect: "RESULT:", why: "the browser check" },
   { name: "check-csp", args: [], expect: "RESULT:", why: "the policy check" },

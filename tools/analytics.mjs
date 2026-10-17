@@ -56,7 +56,16 @@ const LEDGER = join(ROOT, "data", "ledger.jsonl");
 const args = process.argv.slice(2);
 const MODE = args.includes("--fetch") ? "fetch" : args.includes("--brief") ? "brief" : "report";
 
-const ACCOUNT = (process.env.CF_ACCOUNT_ID ?? "").trim();
+/*
+ * The account id is not a secret.
+ *
+ * It appears in every Cloudflare dashboard URL, it grants nothing by itself, and the API rejects a request
+ * without a token whatever account it names. Defaulting it means the operator sets one value instead of two,
+ * which is the difference between an integration that gets finished and one that sits half-configured.
+ *
+ * The API token stays a secret, stays required, and is still reported when absent.
+ */
+const ACCOUNT = ((process.env.CF_ACCOUNT_ID ?? "").trim() || "0f3ce61ae14d143b53fdfdba8d868df4").trim();
 const TOKEN = (process.env.CF_API_TOKEN ?? "").trim();
 /* The beacon token, named so the error message can explain why it is not enough. */
 const BEACON = (process.env.CF_ANALYTICS_TOKEN ?? "").trim();

@@ -57,8 +57,23 @@ const ROOT = process.cwd();
  */
 const APP_ID = (process.env.FEISHU_APP_ID ?? "").trim();
 const APP_SECRET = (process.env.FEISHU_APP_SECRET ?? "").trim();
-const APP_TOKEN = (process.env.FEISHU_APP_TOKEN ?? "").trim();
-const TABLE_ID = (process.env.FEISHU_TABLE_ID ?? "").trim();
+/*
+ * The base and table identifiers, from the environment or from what tools/feishu-ledger.mjs recorded.
+ *
+ * Those two values only exist once a base exists, so requiring them as secrets made the setup circular: to
+ * configure the ledger you needed the ledger's own identifiers. The tool creates the base and writes them to
+ * data/ledger-target.json; the environment still wins, because a deployment that names a base explicitly
+ * should not be overridden by a file.
+ */
+const recordedTarget = (() => {
+  try {
+    return JSON.parse(readFileSync(join(ROOT, "data", "ledger-target.json"), "utf8"));
+  } catch {
+    return null;
+  }
+})();
+const APP_TOKEN = ((process.env.FEISHU_APP_TOKEN ?? "").trim() || recordedTarget?.appToken || "").trim();
+const TABLE_ID = ((process.env.FEISHU_TABLE_ID ?? "").trim() || recordedTarget?.tableId || "").trim();
 const BASE = "https://open.feishu.cn/open-apis";
 const DRY = process.argv.includes("--dry-run");
 
@@ -82,8 +97,9 @@ if (MISSING.length && !DRY) {
   console.log("");
   console.log("    FEISHU_APP_ID      the app id from the Feishu open-platform console (cli_...)");
   console.log("    FEISHU_APP_SECRET  its secret");
-  console.log("    FEISHU_APP_TOKEN   the Bitable app token, from the base URL (bascn... or the older form)");
-  console.log("    FEISHU_TABLE_ID    the table id inside that base (tbl...)");
+  console.log("    FEISHU_APP_TOKEN   the Bitable app token (bascn...). Optional: run tools/feishu-ledger.mjs");
+  console.log("                       and it records this for you in data/ledger-target.json");
+  console.log("    FEISHU_TABLE_ID    the table id inside that base (tbl...). Same fallback as above.");
   console.log("");
   console.log("  The app needs the permission bitable:app, and the base has to be shared with the app.");
   console.log("  --dry-run computes the rows and prints them without needing any of this.");
