@@ -28,7 +28,7 @@
  *   1  a real failure: a step errored, or the review rejected work that had been attempted
  *   78 no provider key, so nothing could be attempted
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { available, summary as providerSummary, usageToday, needFor } from "./lib-llm.mjs";
@@ -45,6 +45,42 @@ const CHECK_ONLY = args.includes("--check");
 const STATE = join(ROOT, "data", "state.json");
 const DIRECTIVE = join(ROOT, "data", "directive.json");
 const REPORT = join(ROOT, "data", "tmp", "orchestrator-report.json");
+
+/*
+ * A copy that survives the run.
+ *
+ * REPORT lives in data/tmp, which is gitignored, so a failure could only be read in the Actions web log. The copy
+ * here is committed: small, rotated, and enough to answer "what did the last run decide" from the repository
+ * alone - which is what makes the trigger loop possible without a token.
+ */
+const RUN_LOG_DIR = join(ROOT, "data", "runs");
+const RUNS_KEPT = 10;
+
+/*
+ * One writer for both copies.
+ *
+ * REPORT is the file the pipeline reads back and lives in data/tmp, which git is told to ignore. The journal is the
+ * copy that survives, so a run can be reviewed from the repository rather than from a web page.
+ */
+function writeRunReport(report) {
+  mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
+  writeFileSync(REPORT, JSON.stringify(report, null, 2), "utf8");
+  keepRunReport(report);
+}
+
+function keepRunReport(report) {
+  try {
+    mkdirSync(RUN_LOG_DIR, { recursive: true });
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    writeFileSync(join(RUN_LOG_DIR, `${stamp}.json`), JSON.stringify(report, null, 2), "utf8");
+    const all = readdirSync(RUN_LOG_DIR).filter((f) => f.endsWith(".json")).sort();
+    for (const old of all.slice(0, Math.max(0, all.length - RUNS_KEPT))) {
+      rmSync(join(RUN_LOG_DIR, old), { force: true });
+    }
+  } catch {
+    /* A report that cannot be copied is not a reason to fail the run; data/tmp still has it. */
+  }
+}
 
 const started = Date.now();
 const run = {
@@ -91,7 +127,7 @@ if (!run.providers.length) {
   /* The names this build actually searches, for the notifier to print. */
   run.need = needFor("writer");
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  writeRunReport(run);
   process.exit(78);
 }
 step("providers", true, run.providers.join(", "));
@@ -159,7 +195,7 @@ if (weekCount >= 15) {
   console.log("  run publishes nothing and exits cleanly. That is the rule working, not a failure.");
   run.verdict = "CEILING";
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  writeRunReport(run);
   process.exit(0);
 }
 
@@ -280,7 +316,7 @@ if (!directive) {
         "Nothing was published, which is the duplicate check working.",
     );
     mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-    writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+    writeRunReport(run);
     process.exit(0);
   }
 }
@@ -292,7 +328,7 @@ if (!directive) {
   console.log("  rather than writing something it cannot support.");
   run.verdict = "NO-SUBJECT";
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  writeRunReport(run);
   process.exit(0);
 }
 
@@ -323,7 +359,7 @@ if (directive.slug && existsSync(existingPath)) {
     `research chose "${directive.slug}", which is already in src/content/blog. The run stopped before writing rather than replacing a published article.`,
   );
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  writeRunReport(run);
   /* Cleared so tomorrow researches again instead of refusing the same slug a second time. */
   try {
     writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), refused: directive.slug }, null, 2), "utf8");
@@ -339,7 +375,7 @@ if (figures.length < MIN_SUBSTANTIVE) {
   run.verdict = "THIN-DIRECTIVE";
   run.reasons.push(`the directive carries ${figures.length} sourced figure(s)`);
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  writeRunReport(run);
   process.exit(1);
 }
 step("directive figures", true, `${figures.length} sourced figure(s)`);
@@ -349,7 +385,7 @@ if (CHECK_ONLY) {
   console.log("  --check: readiness is established and the run stops here. Nothing was written.");
   run.verdict = "CHECK-ONLY";
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-  writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+  writeRunReport(run);
   process.exit(0);
 }
 
@@ -813,7 +849,7 @@ try {
 }
 
 mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
-writeFileSync(REPORT, JSON.stringify(run, null, 2), "utf8");
+writeRunReport(run);
 
 /* the run ledger, append-only, which is what the daily notification reads */
 try {

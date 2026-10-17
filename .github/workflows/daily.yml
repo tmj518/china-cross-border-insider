@@ -29,6 +29,19 @@ on:
     # report and the same card, so the failure domain is the same either way.
     - cron: '20 23 * * *'   # 07:20 Beijing - script
     - cron: '20 12 * * *'   # 20:20 Beijing - agent
+  /*
+   * A push to data/trigger/ is a run.
+   *
+   * The scheduled crons are the promise; this is how a person - or an agent working in the repository - starts one
+   * without the GitHub API, which needs a token this project does not keep on a development machine. It is scoped
+   * to one directory so a normal push never spends a run.
+   *
+   * The route comes from the commit message: "run [agent]" starts the agent route, anything else the script route.
+   */
+  push:
+    paths:
+      - 'data/trigger/**'
+
   workflow_dispatch:
     inputs:
       directive_file:
@@ -358,9 +371,16 @@ jobs:
           # Hash comments, not C-style. A C-style block comment opener inside a shell script is a glob: it
           # expands to everything in the filesystem root, and the shell then tries to execute /bin as a command -
           # "Is a directory", exit 126. That is what made run #23 fail after every step before it had succeeded.
+          # A push trigger names its route in the commit message; a scheduled run has no message and uses the hour.
           if [ -z "$ROUTE" ]; then
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" -ge "12" ]; then ROUTE="agent"; else ROUTE="script"; fi
+            if echo "${{ github.event.head_commit.message }}" | grep -qi '\[agent\]'; then
+              ROUTE="agent"
+            elif echo "${{ github.event.head_commit.message }}" | grep -qi '\[script\]'; then
+              ROUTE="script"
+            else
+              HOUR=$(date -u +%H)
+              if [ "$HOUR" -ge "12" ]; then ROUTE="agent"; else ROUTE="script"; fi
+            fi
           fi
           echo "route: $ROUTE"
           if [ "$ROUTE" = "agent" ]; then
