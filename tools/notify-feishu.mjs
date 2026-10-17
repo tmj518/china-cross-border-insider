@@ -63,11 +63,44 @@ if (existsSync(LEDGER)) {
 /* ---------------------------------------------------------------- the message */
 
 const lines = [];
+/*
+ * Which pipeline this run was, known from the workflow rather than from the report.
+ *
+ * The report carries its own route, but on this path there is no report - and this is the path that fires when
+ * something broke, so it is the one where knowing the route matters most. The workflow passes ROUTE and the failed
+ * step's name.
+ */
+const routeFromEnv = (process.env.ROUTE ?? "").trim().toLowerCase();
+const failedStep = (process.env.FAILED_STEP ?? "").trim();
+const routeTag = routeFromEnv === "agent" ? "agent" : routeFromEnv === "script" ? "script" : "unknown";
+
 if (!report) {
-  lines.push("Landed Math — no run report");
+  lines.push(`🔴 Landed Math — STOPPED BEFORE PUBLISHING   [${routeTag}]`);
   lines.push("");
-  lines.push("data/tmp/orchestrator-report.json is absent, so the orchestrator did not finish. On a");
-  lines.push("scheduled run that means the job failed before it could write anything; read the Actions log.");
+  /*
+   * What actually happened, in the order a reader needs it: where it stopped, then what to do.
+   *
+   * "data/tmp/orchestrator-report.json is absent" was true and told the operator nothing - it named an internal
+   * file instead of the step. A step before the pipeline can fail (a build, an install, a probe) and the report is
+   * only written by the pipeline, so its absence means "something earlier failed".
+   */
+  if (failedStep) {
+    lines.push(`The run failed at: ${failedStep}`);
+    lines.push("");
+    lines.push("Everything before that step succeeded. The pipeline never started, which is why there is no");
+    lines.push("article and no report - the report is written by the pipeline, not before it.");
+  } else {
+    lines.push("A step before the pipeline failed, so the pipeline never started. The report is written by the");
+    lines.push("pipeline itself, which is why there is none.");
+  }
+  lines.push("");
+  lines.push("Where to look: Actions -> the failed run -> the red step. Its last twenty lines carry the reason.");
+  if (routeTag === "agent") {
+    lines.push("");
+    lines.push("The agent route has one failure mode the script route does not: it can run out of turns. If the");
+    lines.push("step is \"Run the pipeline\" and the log ends with TURN-LIMIT, the transcript at");
+    lines.push("data/tmp/agent-transcript.jsonl has every turn it took.");
+  }
 } else {
   const verdict = report.verdict ?? "(none)";
   /*

@@ -35,10 +35,16 @@ import { askJson, summary as providerSummary } from "./lib-llm.mjs";
  * was "high" passed every check and then failed the build.
  */
 import { TEXT_LIMITS, ENUMS, REQUIRED, violationsOf, limitsForPrompt } from "../src/lib/schema-rules.mjs";
+import { MIN_SUBSTANTIVE } from "../src/lib/figure-limits.mjs";
+import { substantiveFigures } from "../src/lib/figures.mjs";
 
 const ROOT = process.cwd();
 const BLOG = join(ROOT, "src", "content", "blog");
-const MIN_FIGURES = 5;
+/*
+ * One constant, imported. It was five here and five in two other files, which is three places to disagree.
+ * Lowered to two on 2026-10-17, together with the change to what counts - see src/lib/figures.mjs.
+ */
+const MIN_FIGURES = MIN_SUBSTANTIVE;
 
 /**
  * Pull the article out of a model response, accepting two shapes.

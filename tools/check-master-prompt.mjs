@@ -95,13 +95,22 @@ if (!required.length) {
 }
 
 /* ── 3  the figure count ────────────────────────────────────────────────────────────────────────── */
-const figs = /figures\s*>=\s*(\d+)/.exec(qa)?.[1];
+/*
+ * The count lives in src/lib/figure-limits.mjs, in one place, because four things read it. Grepping qa-check for a
+ * literal five stopped working the moment the rule was expressed as a constant - which is the point of the constant.
+ */
+const limits = readFileSync(join(ROOT, "src", "lib", "figure-limits.mjs"), "utf8");
+const figs = /MIN_SUBSTANTIVE\s*=\s*(\d+)/.exec(limits)?.[1];
 if (!figs) {
-  problems.push("cannot find the figure-count rule in qa-check.mjs");
-} else if (!new RegExp(`(at least|five|${figs}).{0,40}figure`, "i").test(mp)) {
-  problems.push(`qa-check requires ${figs} figures and MASTER_PROMPT.md does not state that number`);
+  problems.push("cannot find MIN_SUBSTANTIVE in src/lib/figure-limits.mjs");
 } else {
-  console.log(`  ok   figures              ${figs} required and stated`);
+  const word = { 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six" }[figs] ?? figs;
+  const stated = new RegExp(`(at least|\\b${word}\\b|\\b${figs}\\b).{0,60}(substantive )?figure`, "i").test(mp);
+  /* And it must say what does not count, or the writer will read "two" as a lower bar for the same old records. */
+  const excludes = /does not count|not a figure|publication date|document number/i.test(mp);
+  if (!stated) problems.push(`the gate requires ${figs} substantive figures and MASTER_PROMPT.md does not state that number`);
+  if (!excludes) problems.push("MASTER_PROMPT.md does not say that dates and document numbers are not figures");
+  console.log(`  ${stated && excludes ? "ok  " : "FAIL"} figures              ${figs} required, stated, and the exclusions named`);
 }
 
 console.log("");

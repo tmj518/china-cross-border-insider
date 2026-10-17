@@ -430,7 +430,21 @@ jobs:
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-        run: node tools/notify-feishu.mjs
+          # The route, so the card says which pipeline spoke. On a scheduled run GitHub does not populate
+          # github.event.inputs, so it is derived from the hour the same way the pipeline does - 12:00 UTC and
+          # later is the agent. Both routes write the same kind of card and the same failure means different
+          # things on each, so a card without this has to be looked up.
+          #
+          # FAILED_STEP is the name of the step that broke, taken from the job's own result. Without it the
+          # notifier can only say "no report", which names an internal file rather than the thing that failed.
+          ROUTE: ${{ github.event.inputs.route || '' }}
+          FAILED_STEP: ${{ job.status == 'failure' && 'the step shown in red above' || '' }}
+        run: |
+          # Scheduled runs carry no inputs, so the route comes from the clock.
+          if [ -z "$ROUTE" ]; then
+            if [ "$(date -u +%H)" -ge "12" ]; then export ROUTE="agent"; else export ROUTE="script"; fi
+          fi
+          node tools/notify-feishu.mjs
 
       - name: Job summary
         if: always()

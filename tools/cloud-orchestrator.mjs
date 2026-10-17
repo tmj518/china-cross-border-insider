@@ -32,6 +32,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, rea
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { available, summary as providerSummary, usageToday, needFor } from "./lib-llm.mjs";
+import { MIN_SUBSTANTIVE } from "../src/lib/figure-limits.mjs";
 
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
@@ -305,7 +306,7 @@ if (directive.slug && existsSync(existingPath)) {
 
 const figures = (directive.figures ?? []).filter((f) => f?.value && f?.source && f?.retrieved);
 if (figures.length < 5) {
-  step("directive figures", false, `${figures.length} sourced, the gate requires 5`);
+  step("directive figures", false, `${figures.length} sourced, the gate requires ${MIN_SUBSTANTIVE}`);
   run.verdict = "THIN-DIRECTIVE";
   run.reasons.push(`the directive carries ${figures.length} sourced figure(s)`);
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });

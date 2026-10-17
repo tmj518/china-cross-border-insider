@@ -170,7 +170,19 @@ process.exit(verdict === "APPROVED" ? 0 : 1);
 function buildWorkdir(s, index) {
   const work = join(SANDBOX, `work-${index}`);
   rmSync(work, { recursive: true, force: true });
-  for (const d of ["tools", "src/content/blog", "src/data", "data/tmp"]) mkdirSync(join(work, d), { recursive: true });
+  for (const d of ["tools", "src/content/blog", "src/data", "src/lib", "data/tmp"]) mkdirSync(join(work, d), { recursive: true });
+
+  /*
+   * src/lib as well as the tools.
+   *
+   * The writers and gates share modules with the site - prose.mjs counts the words, schema-rules.mjs defines the
+   * fields, figure-limits.mjs holds the figure count - and a tool that imports one of them fails in the sandbox with
+   * ERR_MODULE_NOT_FOUND unless the directory is copied. The agent rehearsal has copied it for months; this one did
+   * not, because until the figure rules moved nothing on the orchestrator's path imported from src/lib.
+   */
+  for (const f of readdirSync(join(ROOT, "src", "lib"))) {
+    if (f.endsWith(".mjs")) copyFileSync(join(ROOT, "src", "lib", f), join(work, "src", "lib", f));
+  }
 
   /*
    * Copy every tool, then overwrite the two under test.

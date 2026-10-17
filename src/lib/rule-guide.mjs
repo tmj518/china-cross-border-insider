@@ -3,7 +3,7 @@
  *
  * ## Why this exists
  *
- * Every gate on this site reported what was wrong and stopped there. `figures >= 5 · only 2 figures in
+ * Every gate on this site reported what was wrong and stopped there. `substantive figures >= 2 · only 0 figures in
  * frontmatter` is accurate and useless to whoever has to fix it: it does not say what a figure record needs, it
  * does not say where the records go, and it does not say what a passing one looks like. The writer was left to
  * infer the structure from the failure text, and a model inferring a structure from an error message is how you
@@ -42,12 +42,15 @@ export const RULE_GUIDE = {
     example: "the duty is 6.5% — not \"6.5%\" with a mangled glyph",
   },
 
-  "figures >= 5": {
-    want: "At least five figure records in frontmatter, each with all five parts.",
+  "substantive figures >= 2": {
+    want: "At least two figures that name a cost: a number, and a unit that says what it measures.",
     how: [
-      "Count the figure records under `figures:` in the frontmatter. Each `- value:` line starts one.",
-      "If you have fewer than five sourced numbers, the article is not ready. Do not invent one to reach five.",
-      "Either find more numbers in the same documents, or report REQUIRES-RESEARCH rather than publishing.",
+      "A date (\"24 September 2026\"), a document number (\"C/2026/6637\") or case number is NOT a figure here.",
+      "What counts: a percentage, a rate, a duty, a tariff, an amount in a currency, a weight, a quantity, or a",
+      "duration that carries a cost - days of delay, months of retroactivity.",
+      "Check the unit, not only the value. A number whose unit reads \"September 2026\" is a date written in digits.",
+      "If the documents hold fewer than two cost figures between them, the subject is not ready: report",
+      "REQUIRES-RESEARCH. Do not reach for a date to make the count.",
     ],
     example: "figures:\n  - value: \"6.5\"\n    unit: \"percent\"\n    period: \"2026\"\n    source: \"Commission Implementing Regulation (EU) 2026/1740\"\n    retrieved: \"2026-10-17\"",
   },

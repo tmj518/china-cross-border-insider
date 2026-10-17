@@ -14,6 +14,8 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { proseWords, WORD_TARGET, hasCostTable } from "../src/lib/prose.mjs";
 import { guideFor } from "../src/lib/rule-guide.mjs";
+import { substantiveFigures, figuresShortfall } from "../src/lib/figures.mjs";
+import { MIN_SUBSTANTIVE } from "../src/lib/figure-limits.mjs";
 
 const BANNED_VAGUE = [
   "may", "might", "possibly", "perhaps", "could", "reportedly", "allegedly",
@@ -105,14 +107,31 @@ function check(file) {
   const audience = fmLine("audience");
   const isDraft = /^draft:\s*true/m.test(fm);
 
-  if (figures >= 5) add("pass", "figures >= 5", `${figures} figures recorded`);
-  else add("block", "figures >= 5", `only ${figures} figures in frontmatter`);
-
+  /*
+   * Substantive figures, not records.
+   *
+   * A record whose value is "24 September 2026" or "C/2026/6637" is real and is not data: an article whose five
+   * "figures" are three dates and two case numbers has nothing to convert into a cost. src/lib/figures.mjs defines
+   * the test - a number, and a unit that names something a buyer pays - and MIN_SUBSTANTIVE, lowered to two, is the
+   * count.
+   */
   const figureBlocks = fm.split(/^\s*- value:/m).slice(1);
   const incomplete = figureBlocks.filter(
     (b) => !/unit:/.test(b) || !/period:/.test(b) || !/source:/.test(b) || !/retrieved:/.test(b),
   ).length;
-  if (figureBlocks.length === 0) add("block", "figure five-part records", "no figures[] entries");
+
+  /*
+   * The records as objects, so the substantive test can read value and unit rather than count lines.
+   *
+   * One split per record: the block after "- value:" begins with the value and continues with the other four keys.
+   */
+  const figuresList = figureBlocks.map((b) => {
+    const first = /^\s*"?(.*?)"?\s*$/m.exec(b)?.[1] ?? "";
+    const field = (k) => new RegExp("^\\s*" + k + ":\\s*\"?([^\"\\n]*)\"?", "m").exec(b)?.[1]?.trim() ?? "";
+    return { value: first, unit: field("unit"), period: field("period"), source: field("source"), retrieved: field("retrieved") };
+  });
+
+ if (figureBlocks.length === 0) add("block", "figure five-part records", "no figures[] entries");
   else if (incomplete === 0) add("pass", "figure five-part records", `${figureBlocks.length}/${figureBlocks.length} complete`);
   else add("block", "figure five-part records", `${incomplete} entries missing unit/period/source/retrieved`);
 
@@ -341,8 +360,37 @@ function check(file) {
    * confident section and run longer than the new target, so both rules grandfather them
    * and warn instead of blocking. Defined here, before either check, because both need it.
    */
-  const V6_2_FROM = "2026-10-08";
+  /*
+ * The date the substantive-figure rule took effect.
+ *
+ * It replaced "five figure records", which any five records satisfied - dates and document numbers included. Four
+ * published articles predate it and are exempt; the exemption is a date rather than a list, so it cannot grow.
+ */
+const SUBSTANTIVE_FROM = "2026-10-18";
+
+const V6_2_FROM = "2026-10-08";
   const publishDate = /^publishDate:\s*"?([\d-]+)/m.exec(fm)?.[1] ?? "";
+
+  const substantive = substantiveFigures(figuresList);
+  const shortfall = figuresShortfall(figuresList);
+  if (!shortfall) {
+    add("pass", `substantive figures >= ${MIN_SUBSTANTIVE}`, `${substantive.length} of ${figuresList.length} record(s) count`);
+  } else if (publishDate >= SUBSTANTIVE_FROM) {
+    add("block", `substantive figures >= ${MIN_SUBSTANTIVE}`, shortfall.detail);
+  } else {
+    /*
+     * Grandfathered, on the same principle as the word band: the operator's rule is that a changed standard applies
+     * to new writing, not retroactively to a published archive.
+     *
+     * Four articles published before 2026-10-18 carry dates and document numbers as their figures - one ran on a
+     * single substantive number, three on none. Under the old rule of "five records" they passed, because five
+     * records is what they had. Exempting them is honest about what changed and when; the alternative, blocking the
+     * pipeline until four published articles are rewritten, converts a quality rule into an outage.
+     *
+     * The exemption is a date, not a list, so it cannot grow.
+     */
+    add("pass", `substantive figures >= ${MIN_SUBSTANTIVE}`, `${substantive.length} of ${figuresList.length} - published before ${SUBSTANTIVE_FROM}, exempt`);
+  }
 
   /*
    * Section presence. How confident is only required from V6_2_FROM, so older articles

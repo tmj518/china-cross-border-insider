@@ -391,7 +391,7 @@ console.log(`\n  ledger: ${ledger.length} published subject(s) to avoid repeatin
  *
  * A listing names subjects and dates. An article carries the rates, thresholds and amounts that a per-unit cost
  * needs. Saying so is not a nicety: yesterday the model received three listings, correctly reported that no
- * five citable cost figures could be drawn from them, and wrote nothing. It was right about its input, and the
+ * cost figures could be drawn from them, and wrote nothing. It was right about its input, and the
  * input was the wrong kind.
  */
 const CORPUS_NOTE = [
@@ -462,7 +462,7 @@ const behind = (process.env.UNCOVERED_SECTIONS ?? "")
  *
  * The fallback is part of the instruction, not a silent failure. If today's documents do not support a
  * subject in the primary section, the honest answer is another section - forcing an article out of
- * material that does not carry five citable figures produces the commodity summary this site exists not to
+ * material that does not carry cost figures produces the commodity summary this site exists not to
  * publish.
  */
 /*
@@ -516,14 +516,15 @@ Choose a subject in ${PRIMARY_SECTION} if the documents below genuinely support 
 the operator's rule says is furthest behind, so it takes precedence over a subject in a covered section.
 Your "category" field must be "${PRIMARY_SECTION}" if you take it.
 
-If the documents do not support a ${PRIMARY_SECTION} subject - fewer than five figures that appear
+If the documents do not support a ${PRIMARY_SECTION} subject - fewer than two cost figures (a rate, an
+amount, a percentage, a quantity - not a date and not a document number) that appear
 verbatim, or no cost consequence an importer can act on - then choose what they do support and say so in
 "angle". Forcing an article out of material that cannot carry it produces the commodity summary this site
 exists not to publish, and one week's gap in a section costs less than that.
 
 Prefer a subject in one of them when the documents below genuinely support it. A subject in a covered
 section that the documents support well is better than a subject in a behind section that they support
-thinly: an article without five citable numbers and a cost consequence is the commodity summary this
+thinly: an article without two citable cost figures and a cost consequence is the commodity summary this
 site exists not to publish, and publishing one costs more than a week's gap in a section. Say which
 section your subject belongs to in "category", and if the documents do not support the section that is
 behind, choose what they do support.
@@ -537,7 +538,8 @@ Below are source documents, fetched and archived today. Their paths are real; qu
 
 WHAT MAKES A SUBJECT WORTH WRITING
   - a change with a date: something that took effect, expires, or was announced
-  - at least five citable numbers, each of which appears verbatim in one of these documents
+  - at least two cost figures (a rate, an amount, a percentage, a quantity - not a date, not a document
+    number), each of which appears verbatim in one of these documents
   - a cost consequence an importer can act on: a duty, a fee, a deadline, a rate, a threshold
   - it is not already covered. The last forty published subjects are listed below.
 
@@ -577,7 +579,7 @@ Return ONLY a JSON object:
 }
 
 Give five to eight figures. Every one needs an evidence excerpt that literally contains the value and
-literally appears in the document it names. If the documents do not support five figures, set
+literally appears in the document it names. If the documents do not support two cost figures, set
 feasible to false and say so — that is a correct and useful answer, not a failure.`;
 
 console.log(`  proposing a subject from ${Math.min(fetched.length, 5)} archived document(s)...`);

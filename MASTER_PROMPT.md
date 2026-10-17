@@ -41,8 +41,22 @@ no number without them.
 | source | the document's own name | `Commission Implementing Regulation (EU) 2026/1740` |
 | retrieved | the day you took it | `2026-10-17` |
 
-At least **five** such figures per article. Fewer than five sourced numbers means the subject is not ready —
-stop and report `REQUIRES-RESEARCH`. Never invent one to reach five.
+**At least two substantive figures per article.** Not two records — two figures that name a cost.
+
+Substantive means both halves:
+
+| counts | does not count |
+| --- | --- |
+| a percentage, a rate, a duty, a tariff | a publication date, `24 September 2026` |
+| an amount in a currency, `1,250 USD` | a document number, `C/2026/6637` |
+| a weight, a volume, a quantity, `40 tonnes` | a case number, `AD760` |
+| a duration that carries a cost, `18 days` | a retrieval date, `2026-10-17` |
+
+A number beside a unit that reads "September 2026" is a date written in digits. Dates and document numbers are
+provenance, which every article needs and every article already carries in `sources` — they are not data.
+
+Fewer than two substantive figures means the documents do not support the subject: report `REQUIRES-RESEARCH`.
+Do not reach for a date to make the count.
 
 **3.2 Never invent.** No number, source, quotation, person, company, experience or case study that is not in
 the material you were given. If you do not have it, say you do not have it.
@@ -128,7 +142,7 @@ audience     importer | platform-seller | both
 stakes       priced | directional
 information_gain  custom-calculation | primary-source-analysis | ...
 target_keyword    the phrase a reader would search, 2-5 words, lower case
-figures      five or more five-part records
+figures      two or more five-part records, of which two name a cost
 sources      the named documents
 ```
 
