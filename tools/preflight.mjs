@@ -510,6 +510,23 @@ async function checkEnvironment() {
    * check-before-publish rule that can be skipped, is worse than no agent, because it publishes without
    * the checks while looking like it ran them.
    */
+  /*
+   * Every tool, loaded with no credentials, required to reach its own "no key" message.
+   *
+   * A function named readershipBrief was called twice and did not exist. node --check passed, the
+   * rehearsal passed because it stubs that module, and preflight passed because it never ran the writer;
+   * a cloud run failed in zero seconds. This is the check that would have caught it, and it is not a
+   * static analyser - it runs each tool and looks for the crash.
+   */
+  const loads = probe(NODE, [join(ROOT, "tools", "check-loads.mjs")], { timeout: 600000 });
+  const loadsTally = /all (\d+) tools load/.exec(loads.out);
+  if (loadsTally) {
+    ok("tools load", loadsTally[1] + " tools resolve every reference and reach their own message");
+  } else {
+    const bad = loads.out.split("\n").find((l) => /^\s{2}\S+\s{2}/.test(l) && !/^\s{2}ok/.test(l)) ?? "";
+    fail("tools load", "a tool crashed instead of reporting what it needs" + (bad ? ": " + bad.trim().slice(0, 90) : ""));
+  }
+
   const agentRehearse = probe(NODE, [join(ROOT, "tools", "rehearse-agent.mjs")], { timeout: 180000 });
   const agentTally = /(\d+) passed, (\d+) failed/.exec(agentRehearse.out);
   if (agentTally && agentTally[2] === "0") {

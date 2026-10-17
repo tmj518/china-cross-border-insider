@@ -126,6 +126,52 @@ function schemaViolations(article) {
   return violationsOf(f);
 }
 
+/**
+ * What the site's own readers have actually done, if anything is recorded.
+ *
+ * The pipeline decided what to write from the primary documents alone - what changed, what is uncovered,
+ * what the competition looks like - and nothing from whether the last thirty articles were read. The
+ * operator asked for that loop directly.
+ *
+ * Passed to the writer as context and never as an instruction to imitate, because with one month of data
+ * across thirty articles every difference is consistent with noise, and a writer told to copy a
+ * three-pageview article copies nothing in particular. The brief says so in its own words.
+ *
+ * Reads the recorded snapshots only. This does not touch the network: a writer call must not fail because
+ * an analytics endpoint was slow, and the data would be a day old either way.
+ *
+ * Restored 2026-10-17 after being deleted by accident. It had been added a few lines above the block a
+ * refactor replaced, and the refactor took it with the block - leaving two call sites and no definition.
+ * Nothing caught it: node --check passes a call to an undefined function, and the rehearsal stubs this
+ * whole module out, so the real file was never executed. Both gaps are now covered, the second by
+ * tools/check-defined.mjs.
+ */
+function readershipBrief() {
+  const dir = join(ROOT, "data", "analytics");
+  if (!existsSync(dir)) return null;
+  let latest = null;
+  for (const f of readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
+    try {
+      latest = JSON.parse(readFileSync(join(dir, f), "utf8"));
+    } catch {
+      /* a malformed snapshot is the analytics tool's problem, reported there */
+    }
+  }
+  if (!latest) return null;
+  const lines = [`READERSHIP - measured, ${latest.totalPageviews} pageview(s) over the last ${latest.windowDays} day(s)`];
+  const articles = (latest.pages ?? []).filter((p) => p.path?.startsWith("/blog/"));
+  if (!articles.length) {
+    lines.push("  No article has been read in this window. That is a fact about distribution, not about");
+    lines.push("  the subjects, so it is not a reason to avoid or prefer any topic.");
+  } else {
+    for (const p of articles.slice(0, 12)) lines.push(`  ${String(p.views).padStart(5)}  ${p.path}`);
+    lines.push(`  Across ${articles.length} article(s). This is not enough to rank subjects - do not imitate the`);
+    lines.push("  most read or avoid the least read; neither has been read by enough people for the");
+    lines.push("  difference to mean anything. Use it only to notice that a subject was read at all.");
+  }
+  return lines.join("\n");
+}
+
 /** The structure, as a specification the model is asked to satisfy. */
 const STRUCTURE = `The article must have this exact shape.
 

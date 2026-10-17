@@ -26,6 +26,12 @@ on:
         description: 'Path to a directive JSON. Leave empty to use data/directive.json.'
         required: false
         default: ''
+      route:
+        description: 'script = fixed steps, agent = a model reads daily-task.txt and decides'
+        required: false
+        default: 'script'
+        type: choice
+        options: ['script', 'agent']
   # The backup trigger. GitHub's own cron is best-effort; a Cloudflare Worker cron can call the API at
   # the same time every day and dispatch this event, which is a promise rather than a hope. Wiring the
   # Worker is optional and this listener costs nothing until it exists.
@@ -236,7 +242,17 @@ jobs:
           CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
         run: node tools/analytics.mjs --fetch --days=7
 
-      - name: Run the orchestrator
+      - name: Run the pipeline
+        # Two routes over one set of checks.
+        #
+        # script is a fixed sequence of steps. agent reads daily-task.txt - the operator's own
+        # instructions, unchanged - and decides what to do with seven tools. They exist side by side
+        # because the local pipeline that produced 29 articles was the second kind, and replacing an
+        # agent with a fixed script is a different machine: it can only do what someone wrote down.
+        #
+        # Neither route can bypass the checks. The agent's publish_draft refuses any draft that
+        # check_draft has not passed in the same run, and both routes' output is verified by the same
+        # gates.
         id: run
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
@@ -254,7 +270,13 @@ jobs:
           if [ -z "$DIRECTIVE" ] && [ -n "${{ github.event.client_payload.directive_file }}" ]; then
             DIRECTIVE="${{ github.event.client_payload.directive_file }}"
           fi
-          if [ -n "$DIRECTIVE" ]; then
+          ROUTE="${{ github.event.inputs.route }}"
+          if [ -z "$ROUTE" ]; then ROUTE="${{ github.event.client_payload.route }}"; fi
+          if [ -z "$ROUTE" ]; then ROUTE="script"; fi
+          echo "route: $ROUTE"
+          if [ "$ROUTE" = "agent" ]; then
+            node tools/agent-run.mjs
+          elif [ -n "$DIRECTIVE" ]; then
             node tools/cloud-orchestrator.mjs --directive-file="$DIRECTIVE"
           else
             node tools/cloud-orchestrator.mjs
