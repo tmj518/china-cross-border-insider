@@ -33,6 +33,14 @@ import { join } from "node:path";
 const ROOT = process.cwd();
 const DRY = process.argv.includes("--dry-run");
 const FORCE = process.argv.includes("--force");
+/*
+ * A base created by an app belongs to the app, and the operator may not see it in their Feishu drive. --share-to
+ * adds them as a full-access collaborator so the base appears in their own space instead of only behind the API.
+ *
+ * Accepts an email or an open_id. Optional: without it the URL is printed and opening it usually works, because
+ * the person who created the app can see what it created.
+ */
+const SHARE_TO = (process.argv.find((a) => a.startsWith("--share-to=")) ?? "").split("=")[1] ?? "";
 const TARGET = join(ROOT, "data", "ledger-target.json");
 
 const APP_ID = (process.env.FEISHU_APP_ID ?? "").trim();
@@ -229,6 +237,30 @@ writeFileSync(
   ),
   "utf8",
 );
+
+/*
+ * Optional: make the base visible in the operator's own Feishu drive.
+ *
+ * POST /drive/v1/permissions/{token}/members with type=bitable. A failure is reported and does not undo the
+ * base - the URL still works, and a permission grant can be repeated.
+ */
+if (SHARE_TO) {
+  try {
+    await api(`/drive/v1/permissions/${appToken}/members?type=bitable`, {
+      method: "POST",
+      token,
+      body: {
+        member_type: SHARE_TO.includes("@") ? "email" : "openid",
+        member_id: SHARE_TO,
+        perm: "full_access",
+      },
+    });
+    console.log(`  shared       : ${SHARE_TO} now has full access`);
+  } catch (e) {
+    console.log(`  shared       : FAILED - ${e.message}`);
+    console.log(`                 open the URL below instead; the base exists either way`);
+  }
+}
 
 console.log("");
 console.log("  recorded in data/ledger-target.json:");

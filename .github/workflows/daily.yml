@@ -323,6 +323,30 @@ jobs:
             node tools/cloud-orchestrator.mjs
           fi
 
+      - name: Create the Feishu ledger if it does not exist yet
+        # The setup used to be a circle: the sync needs a base token and a table id, and those only exist once a
+        # base exists. tools/feishu-ledger.mjs breaks it - given the two credentials it creates the base, adds
+        # the columns the sync writes, and records the two identifiers.
+        #
+        # Here rather than in the operator's hands, and before the commit, so data/ledger-target.json lands in
+        # the same push and the sync below can read it. Guarded on the file's absence, so it runs once.
+        if: always()
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+        run: |
+          if [ -f data/ledger-target.json ]; then
+            echo "ledger already recorded in data/ledger-target.json"
+            cat data/ledger-target.json
+            exit 0
+          fi
+          if [ -z "$FEISHU_APP_ID" ] || [ -z "$FEISHU_APP_SECRET" ]; then
+            echo "FEISHU_APP_ID or FEISHU_APP_SECRET is not set, so there is no ledger to create."
+            exit 0
+          fi
+          node tools/feishu-ledger.mjs
+
       - name: Commit and push anything that was approved
         id: commit
         run: |
