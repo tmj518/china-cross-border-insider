@@ -252,6 +252,9 @@ jobs:
           set +e
           GA=no; GSC=no
           if grep -q "googletagmanager.com/gtag/js" dist/index.html 2>/dev/null; then GA=yes; fi
+          # A Domain property (sc-domain:) is verified through DNS and never carries a meta tag. Only a
+          # URL-prefix property needs one, so "absent" is reported as a fact rather than a failure - a daily
+          # false alarm on the one channel that reaches the operator teaches them to stop reading it.
           if grep -q "google-site-verification" dist/index.html 2>/dev/null; then GSC=yes; fi
           mkdir -p data/tmp
           node -e "

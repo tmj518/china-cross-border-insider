@@ -161,8 +161,8 @@ if (!report) {
         );
         lines.push(
           g.searchConsole
-            ? "  Search Console ok - verification tag present"
-            : "  Search Console NOT VERIFIED - set PUBLIC_GOOGLE_SITE_VERIFICATION on the Cloudflare Pages project",
+            ? "  Search Console  ok - verification tag present (URL-prefix property)"
+            : "  Search Console  ok if the property is sc-domain: - a Domain property is verified by DNS and needs no tag",
         );
       }
     }
