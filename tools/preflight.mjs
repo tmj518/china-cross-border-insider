@@ -538,7 +538,20 @@ const docProblems = [];
    * because both are plausible numbers. This has already cost this repository twice - schema rules in two places,
    * and a NO-KEYS message naming variables the code did not read.
    */
-  const masterParity = probe(NODE, [join(ROOT, "tools", "check-master-prompt.mjs")], { timeout: 120000 });
+    /*
+   * A C-style comment block in a shell step is a glob in bash. Run #23 failed at step 10 of 16 because of one -
+   * "/bin: Is a directory", exit 126 - and nothing here could have caught it: YAML parses it, the rehearsals run the
+   * tools rather than the workflow, and node --check never looks at a YAML file.
+   */
+  const shellHazards = probe(NODE, [join(ROOT, "tools", "check-workflow-shell.mjs")], { timeout: 120000 });
+  if (/RESULT:\s*PASS/.test(shellHazards.out)) {
+    ok("workflow shell", "no shell block carries a construct that means something different in YAML or in bash");
+  } else {
+    const line = shellHazards.out.split("\n").find((l) => /block comment|glob|expands/.test(l)) ?? "";
+    fail("workflow shell", "a workflow step would fail on the runner" + (line ? ": " + line.trim().slice(0, 90) : ""));
+  }
+
+const masterParity = probe(NODE, [join(ROOT, "tools", "check-master-prompt.mjs")], { timeout: 120000 });
   if (/RESULT:\s*PASS/.test(masterParity.out)) {
     ok("master prompt", "MASTER_PROMPT.md and the code state the same length, sections and figure count");
   } else {
