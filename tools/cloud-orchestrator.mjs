@@ -278,6 +278,15 @@ if (!directive) {
     researchCode = e.status ?? 1;
   }
   for (const line of researchOut.split("\n")) if (line.trim()) console.log(`  | ${line}`);
+
+  /*
+   * research's own output goes into the report.
+   *
+   * Without it the journal said "no verified subject today (exit 1)" and named no cause, so the only way to find
+   * out why was the Actions web log - the relay this project is trying to stop being. A failure that can be read
+   * from the repository is a failure that can be fixed from the repository.
+   */
+  run.researchLog = researchOut.split("\n").map((l) => l.trimEnd()).filter(Boolean).slice(-40);
   console.log("");
 
   /*
