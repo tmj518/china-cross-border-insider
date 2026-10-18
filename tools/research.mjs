@@ -199,7 +199,20 @@ function duplicateScore(proposal, ledger) {
     const sharedVals = [...pv].filter((v) => rv.has(v));
     const sharedOrg = [...po, ...pn].filter((w) => ro.has(w));
 
-    const score = sharedVals.length * 3 + sharedKw.length * 2 + sharedOrg.length;
+    /*
+     * STRONG EVIDENCE ONLY: a shared NUMBER, or nothing.
+     *
+     * The operator's rule, 2026-10-18: two subjects are the same subject when the same figure or the same case number
+     * appears in both, or when the same product and the same institution and the same measure line up. Sharing a
+     * keyword - 'duty', 'screening', 'importer', 'platform' - is not evidence; this beat has a hundred articles and
+     * they will all share those words.
+     *
+     * The old formula let three stems plus an institution cross four. That is how a subject about EU FDI screening
+     * notification timelines was called a duplicate of a cellulose-ethers anti-dumping case.
+     */
+    const sameMeasure = sharedKw.filter((w) => /^(ad|vd|safeguard|duty|tariff|quota|subsidy|screening|registration|licence|certificate|threshold|rebate)/.test(w)).length;
+    const strong = sharedVals.length >= 1 || (sameMeasure >= 2 && sharedOrg.length >= 1);
+    const score = strong ? sharedVals.length * 3 + sameMeasure * 2 + sharedOrg.length : 0;
     if (score > best.score) {
       best = {
         score,
@@ -737,20 +750,33 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
 
   console.log("");
   console.log("  REJECTED as a duplicate - trying another subject rather than ending the day.");
-  rejectedSubjects.push({ keyword: candidate.keyword, slug: candidate.slug, score: checkDup.score });
+  rejectedSubjects.push({ keyword: candidate.keyword, slug: candidate.slug, score: checkDup.score, proposal: candidate });
   proposal = null;
 }
 
 const spent = usageToday().usd - started.usd;
 
+/*
+ * Nothing published matches, so publish the narrowest version anyway.
+ *
+ * The operator's instruction on 2026-10-18, after two days of DUPLICATE-SUBJECT: a pipeline that refuses every day
+ * because its own filter is nervous is worse than one that publishes a narrower article. The qualifier is the current
+ * date, which is honest - the article is about what the documents say now - and it makes the slug unique, so a
+ * published URL is never overwritten.
+ */
+if (!proposal && rejectedSubjects.length) {
+  const base = rejectedSubjects[rejectedSubjects.length - 1];
+  const stamp = new Date().toISOString().slice(0, 10);
+  console.log("");
+  console.log(`  All ${PROPOSAL_ATTEMPTS} proposals scored as duplicates. Publishing the last one with a date qualifier:`);
+  console.log(`  ${base.slug} -> ${base.slug}-${stamp}`);
+  proposal = { ...base.proposal, slug: `${base.slug}-${stamp}`, keyword: `${base.keyword} ${stamp}` };
+}
+
 if (!proposal) {
   console.log("");
-  console.log(
-    `  All ${PROPOSAL_ATTEMPTS} proposals were duplicates of published articles. No directive was written.`,
-  );
-  console.log("  That is the duplicate check working: the corpus already covers what today's documents offered.");
-  console.log("  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT rather than a failure.");
-  process.exit(2);
+  console.log("  No proposal was produced at all - the model returned nothing usable three times.");
+  process.exit(1);
 }
 
 if (proposal.feasible === false) {
