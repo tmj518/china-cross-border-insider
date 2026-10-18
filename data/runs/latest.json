@@ -1,29 +1,86 @@
 {
-  "at": "2026-10-18T04:58:35.001Z",
-  "providers": [],
+  "at": "2026-10-18T06:12:53.094Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
   "steps": [
     {
       "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "4 previous run(s), last 2026-10-18T03:23:28.555Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "7 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
       "ok": false,
-      "detail": "no key present, so nothing can be attempted"
+      "detail": "1 of 5 sections have none yet: platforms"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 0)"
     }
   ],
-  "verdict": "NO-KEYS",
+  "verdict": "NO-SUBJECT",
   "reasons": [],
   "article": null,
   "commit": null,
   "usage": null,
   "route": "script",
-  "need": [
-    "ARK_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DOUBAO_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "VOLCES_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DUBAO201628 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "APIKEY20261016201628 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "OWNER_KEY_1 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DEEPSEEK_WRITE_API_KEY",
-    "DEEPSEEK_API_KEY",
-    "DEEPSEEK_REVIEW_API_KEY",
-    "OWNER_KEY_2"
+  "categoryActivity": {
+    "logistics": 1,
+    "sourcing": 1,
+    "supply-chain": 1,
+    "trade-policy": 4,
+    "platforms": 0
+  },
+  "uncoveredSections": [
+    "platforms"
+  ],
+  "researchLog": [
+    "RESEARCH  2026-10-18T06:12:53.133Z",
+    "====================================================================================",
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20251220175517-rjpsc",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  skip  trade-remedy-cases              0B  not usable (recorded anyway)",
+    "  skip  tariff-commission             604B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  skip  statistics-bureau               0B  not usable (recorded anyway)",
+    "  skip  tax-administration              0B  not usable (recorded anyway)",
+    "  skip  customs                         0B  not usable (recorded anyway)",
+    "  ok    trade-council               87725B  archived",
+    "  ok    machinery-chamber           98779B  archived",
+    "  ok    ministry-of-finance-article    34071B  article archived",
+    "  ok    ministry-of-finance-article    19579B  article archived",
+    "  ok    mofcom-article              14343B  article archived",
+    "  skip  trade-council-article           0B  not usable",
+    "  ok    trade-council-article        6331B  article archived",
+    "  ok    machinery-chamber-article    45326B  article archived",
+    "  ok    machinery-chamber-article   104104B  article archived",
+    "  articles : 6 followed from the listings",
+    "  ledger: 35 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  spent   : ~0.0024  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: false",
+    "  reason  : None of the supplied documents supports a platforms subject: the only documents with cost figures are a school-funding circular and a home-mortgage interest-subsidy notice, neither of which concerns platforms, marketplaces, or any importer-facing platform cost, and the remaining documents (a disclosure catalogue, a staff biography, and a chamber membership guide) contain no relevant cost consequence.",
+    "  The documents do not support an article today. That is the answer, and no directive was",
+    "  written. A day without a qualifying subject is a day without an article."
   ]
 }
