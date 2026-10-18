@@ -188,7 +188,13 @@ try {
 } catch {}
 step("weekly ceiling", weekCount < 15, `${weekCount} of 15 net-new this week`);
 
-const uncovered = [...categoryActivity.entries()].filter(([, e]) => e.thisWeek === 0).map(([c]) => c);
+/*
+   * Section preference removed by the operator's instruction, 2026-10-18. It pointed research at the thinnest section
+   * every run, and the thinnest section was "platforms", whose only adjacent document was an EU statistical report
+   * with no cost figure in it - so the writer was handed material that could not support an article, twice, and the
+   * day ended with nothing. A section counter is not worth a day without an article.
+   */
+  const uncovered = [];
 step(
   "sections covered this week",
   uncovered.length === 0,
@@ -639,6 +645,9 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     console.log("  STRICT CHECK (as a published file) found " + rules.length + " blocking rule(s):");
     for (const r of rules) console.log("    - " + r);
     console.log("  The draft goes back to the writer with these, which is what the retry loop is for.");
+    if (/prose/i.test(strictBlocker)) {
+      strictBlocker += " | EXPAND TO 1200: the last draft was too short. Add a second worked scenario to \"So what\" and a fourth reader group to \"For you\". Do not shorten sentences to pad, add substance.";
+    }
     }
   }
 

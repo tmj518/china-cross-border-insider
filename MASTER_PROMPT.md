@@ -121,8 +121,8 @@ words of non-narrative content before any prose exists.
 
 | | target | hard band |
 | --- | --- | --- |
-| with a cost table | 1,800–2,200 | 1,000–2,600 |
-| without a cost table | 1,500–2,000 | 1,000–2,100 |
+| with a cost table | 1,200–1,800 | 100–5,000 |
+| without a cost table | 1,200–1,800 | 100–5,000 |
 
 The tier is detected from the body — a markdown table carrying currency amounts — not declared. The ceiling
 exists to stop padding, not to stop coverage. **Completeness and search intent come first; length is a

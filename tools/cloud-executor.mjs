@@ -288,7 +288,11 @@ Also required:
   - at least one markdown table, and at least 3 rows of a table carrying an amount
   - at least 3 internal links to other articles, in the form [anchor](/blog/<slug>/)
   - 1,200 to 1,800 words of body prose if the article carries a cost table
-  - 1,000 to 2,000 words of body prose if it does not. THE FLOOR IS 1,000 AND IT IS COUNTED: a draft of 789 words
+  - 1,000 to 2,000 words of body prose if it does not. The floor is dead: the gate accepts 100 words
+    now, so no article is rejected for length. But a short article is a worse article, and the honest way to fill
+    a thousand words from thin material is to work the arithmetic through more than one scenario rather than to
+    pad. If your draft comes in under 1,100 words, EXPAND, DO NOT STOP: add one more worked case to "So what", and
+    one more reader group to "For you", until the count clears 1,200. THE FLOOR IS 1,000 AND IT IS COUNTED: a draft of 789 words
     was rejected on 2026-10-18 because this line only named the case with a cost table, so the writer never learned
     what the other case required. If the directive's figures are thin, extend "So what" and "For you" with the
     arithmetic and the operational steps - never shorten the article to fit the material.

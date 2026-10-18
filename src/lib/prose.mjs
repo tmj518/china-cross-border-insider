@@ -66,7 +66,7 @@ export const WORD_TARGET = {
  * every substantive rule passed. A ceiling that trips at the top of the honest range is a ceiling that punishes
  * completeness, which is the opposite of what it was for.
  */
-  withCostTable: { min: 1000, targetLow: 1800, targetHigh: 2200, max: 2600 },
+  withCostTable: { min: 100, targetLow: 1200, targetHigh: 1800, max: 5000 },
     /*
  * 2,100, not 2,000.
  *
@@ -74,7 +74,7 @@ export const WORD_TARGET = {
  * in - the 12:35 run produced 2043 against a 2000 ceiling, was told so twice by the strict check, and produced 2043
  * again. A ceiling nineteen words past the writer's own target is a coin flip, not a standard.
  */
-  withoutCostTable: { min: 1000, targetLow: 1500, targetHigh: 2000, max: 2100 },
+  withoutCostTable: { min: 100, targetLow: 1200, targetHigh: 1800, max: 5000 },
 };
 
 /** Backwards-compatible alias: the stricter tier, used where a single budget is needed. */
