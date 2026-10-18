@@ -153,6 +153,8 @@ The document set is cheap. Failing it is not, and the arithmetic is worth doing 
 
 > Also read: [China's Food-Export Container Check Expires in 21 Days, and the Clock Starts Before Loading](/blog/china-container-suitability-check-frozen-food-export-2026/)
 
+> Also read: [Brazil-origin beef imports to China face 55% additional tariff starting October 1 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/)
+
 ## For you
 
 - **First shipment:** ask the supplier for the invoice and packing list in draft before production finishes. At that stage an error is a correction; after the vessel sails it is a delay.

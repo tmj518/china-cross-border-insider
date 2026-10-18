@@ -121,6 +121,8 @@ Eight dollars on a container is noise. Seventy-nine dollars on every container, 
 
 > Also read: [China's Food-Export Container Check Expires in 21 Days, and the Clock Starts Before Loading](/blog/china-container-suitability-check-frozen-food-export-2026/)
 
+> Also read: [Brazil-origin beef imports to China face 55% additional tariff starting October 1 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/)
+
 ## For you
 
 - **Importers on Asia-Europe:** the lane reading fell 2.9% in the week to 30 September while the CCFI composite was flat. If your surcharge went up on a composite-based clause, you are paying an adjustment your lane did not support. Ask for the lane series behind the number.

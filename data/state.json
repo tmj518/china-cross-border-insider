@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-17T15:28:07.177Z",
+  "lastRun": "2026-10-18T03:23:28.555Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
-  "runs": 3,
-  "published": 3,
+  "lastArticle": "brazil-beef-import-additional-55-percent-tariff-october-2026",
+  "runs": 4,
+  "published": 4,
   "lastUsage": {
-    "calls": 15,
-    "failed": 12,
-    "usd": 0.0138,
-    "promptTokens": 29460,
-    "completionTokens": 5302
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0037,
+    "promptTokens": 19874,
+    "completionTokens": 5305
   }
 }
