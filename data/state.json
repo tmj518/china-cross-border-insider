@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-18T09:27:50.884Z",
+  "lastRun": "2026-10-18T11:58:04.135Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-fdi-screening-notification-rates-2025-importer-compliance-2026",
-  "runs": 7,
-  "published": 7,
+  "lastArticle": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
+  "runs": 8,
+  "published": 8,
   "lastUsage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0034,
-    "promptTokens": 18585,
-    "completionTokens": 4993
+    "usd": 0.0038,
+    "promptTokens": 19877,
+    "completionTokens": 5740
   }
 }

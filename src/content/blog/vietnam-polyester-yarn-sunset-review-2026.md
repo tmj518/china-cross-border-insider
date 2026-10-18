@@ -214,6 +214,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [EU imposes definitive anti-dumping duties on Chinese pea protein 40.5% to 67.1% for 5 years](/blog/eu-pea-protein-anti-dumping-definitive-duties-2026/)
 
+> Also read: [2025 EU FDI screening notification volumes and processing timelines for third-country investors](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your
