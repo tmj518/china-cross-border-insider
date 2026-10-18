@@ -92,7 +92,7 @@ const SUBMIT_NOTE = "SUBMIT AT TURN TEN: if check_draft is still reporting probl
  * and spent sixty-nine cents arriving nowhere. A budget that a run cannot finish inside is not a budget. Fifteen turns,
  * and the last two are for submitting rather than editing.
  */
-const MAX_TURNS = Number(flag("max-turns", 15));
+const MAX_TURNS = Number(flag("max-turns", 12));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
@@ -442,13 +442,43 @@ function runTool(name, input) {
         } catch {
           /* not JSON: the raw output is the detail */
         }
-        return done(`${trimNote}FAIL:\n${detail}`);
+        /* A refusal without a next action is the other half of the deadlock. */
+        const fixFor = (line) => {
+          if (/word|prose|length/i.test(line)) return "Fix: expand. Add a second worked scenario to So what and a further reader group to For you until the count passes 1,200 words.";
+          if (/figure|substantive/i.test(line)) return "Fix: carry at least two figures from the directive into figures[] and into the prose with source, period and retrieved date.";
+          if (/faq/i.test(line)) return "Fix: add three to five FAQ entries, each answer 80 to 150 words.";
+          if (/table|comparison/i.test(line)) return "Fix: add a markdown table of three rows, each carrying an amount.";
+          if (/segment|audience/i.test(line)) return "Fix: write For you as three bullet lines, each beginning with '- **Label:**'.";
+          if (/link|internal/i.test(line)) return "Fix: add three links of the form [anchor](/blog/<slug>/) to existing articles.";
+          if (/hedg|sensitive/i.test(line)) return "Fix: remove the words listed after the rule name.";
+          if (/schema|frontmatter|information_gain/i.test(line)) return "Fix: correct the frontmatter field named; information_gain is one of custom-calculation, cross-source, own-data, primary-source.";
+          return "Fix: correct the rule named and call check_draft again.";
+        };
+        const fixes = detail.split("\n").filter(Boolean).slice(0, 6).map((l) => l + "\n  " + fixFor(l));
+        return done(`${trimNote}FAIL:\n${detail}\n\nWHAT TO DO NOW:\n${fixes.join("\n")}`);
       }
     }
 
     if (name === "publish_draft") {
+      /*
+       * Publishing no longer requires a green check_draft.
+       *
+       * That was the deadlock. check_draft reports every rule not satisfied, publish_draft refused unless the last
+       * check was clean, and a draft almost never came back clean - so the agent could write, check, rewrite, check
+       * and never submit. Fifteen turns, twenty-four calls, nothing published, three times in one evening.
+       *
+       * The file is still checked, and check_draft remains the way to improve it, but the check is advice now rather
+       * than a lock. What stays enforced: the file exists and is not effectively empty. The card reports the last
+       * verdict, so a thin article is visible to the operator.
+       */
+      if (!existsSync(join(ROOT, input.path))) {
+        return done(`REFUSED: ${input.path} does not exist. Write it first with write_file.`);
+      }
+      if (readFileSync(join(ROOT, input.path), "utf8").trim().length < 200) {
+        return done(`REFUSED: ${input.path} is effectively empty. Write the article first.`);
+      }
       if (!checkedOk.has(input.path)) {
-        return done(`REFUSED: ${input.path} has not passed check_draft in this run. Call check_draft on it first. An article reaches the collection only through the checks.`);
+        console.log(`  publish ${input.path}: check_draft never passed, publishing anyway by instruction`);
       }
       if (DRY) return done("dry run: not published");
       const from = join(ROOT, input.path);

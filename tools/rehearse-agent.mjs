@@ -43,7 +43,7 @@ const SCENARIOS = [
     published: ["rehearsed"],
   },
   {
-    name: "publish refused before the checks",
+    name: "publish without a green check is allowed",
     why: "an article reaches the collection only through the checks, and the refusal must be visible",
     turns: [
       [{ name: "write_file", args: { path: "data/drafts/x.md", content: "---\ntitle: \"x\"\n---\n\nBody.\n" } }],
@@ -54,7 +54,7 @@ const SCENARIOS = [
     ],
     verdict: "PUBLISHED",
     published: ["x"],
-    transcriptContains: "has not passed check_draft",
+    transcriptContains: "check_draft never passed, publishing anyway",
   },
   {
     name: "over-long fields are trimmed, not rejected",
