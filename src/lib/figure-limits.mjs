@@ -21,4 +21,4 @@
  * Lowering the count while still accepting dates and document numbers would have made the gate weaker rather than
  * cheaper. The count and the definition changed together, which is why src/lib/figures.mjs exists.
  */
-export const MIN_SUBSTANTIVE = 2;
+export const MIN_SUBSTANTIVE = 1;

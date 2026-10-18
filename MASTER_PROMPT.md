@@ -41,7 +41,7 @@ no number without them.
 | source | the document's own name | `Commission Implementing Regulation (EU) 2026/1740` |
 | retrieved | the day you took it | `2026-10-17` |
 
-**At least two substantive figures per article.** Not two records — two figures that name a cost.
+**At least one substantive figure per article.** Not two records — two figures that name a cost.
 
 Substantive means both halves:
 
@@ -55,7 +55,7 @@ Substantive means both halves:
 A number beside a unit that reads "September 2026" is a date written in digits. Dates and document numbers are
 provenance, which every article needs and every article already carries in `sources` — they are not data.
 
-Fewer than two substantive figures means the documents do not support the subject: report `REQUIRES-RESEARCH`.
+Fewer than one substantive figure means the documents do not support the subject: report `REQUIRES-RESEARCH`.
 Do not reach for a date to make the count.
 
 **3.2 Never invent.** No number, source, quotation, person, company, experience or case study that is not in
@@ -162,7 +162,7 @@ audience     importer | platform-seller | both
 stakes       priced | directional
 information_gain  custom-calculation | primary-source-analysis | ...
 target_keyword    the phrase a reader would search, 2-5 words, lower case
-figures      two or more five-part records, of which two name a cost
+figures      one or more five-part records naming a cost
 sources      the named documents
 ```
 

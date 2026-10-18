@@ -102,7 +102,7 @@ const SCENARIOS = [
   },
   { name: "weekly ceiling reached", ceiling: true, verdict: "CEILING", writerCalls: 0 },
   { name: "no credentials", keys: false, verdict: "NO-KEYS", writerCalls: 0 },
-  { name: "too few figures in the directive", figures: 1, verdict: "THIN-DIRECTIVE", writerCalls: 0 },
+  { name: "too few figures in the directive", figures: 0, verdict: "THIN-DIRECTIVE", writerCalls: 0 },
 ];
 
 if (process.argv.includes("--list")) {
