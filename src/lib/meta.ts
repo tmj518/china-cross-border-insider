@@ -88,9 +88,22 @@ function truncate(s, limit) {
  */
 export function fitTitle(name, qualifier, siteName, limit = 60) {
   const suffix = siteName ? ` — ${siteName}` : "";
-  const tail = qualifier ? ` (${qualifier})` : "";
-  const room = Math.max(18, limit - displayWidth(suffix) - displayWidth(tail));
-  return truncate(name, room) + tail;
+  const fullTail = qualifier ? ` (${qualifier})` : "";
+
+  /*
+   * The qualifier is dropped when it does not fit.
+   *
+   * This used to floor the room at eighteen columns and keep the qualifier regardless, which produced titles
+   * over the limit whenever a document carried a long period - "Producer prices... (September 2026, October 2026)
+   * - Landed Math" measured sixty-one. The floor is what to blame, not the qualifier: the name is worth more
+   * than a parenthetical nobody reads in a result snippet, and a title one column over fails the check that
+   * exists to keep it inside the snippet.
+   */
+  const roomForFull = limit - displayWidth(suffix) - displayWidth(fullTail);
+  if (roomForFull >= 18) return truncate(name, roomForFull) + fullTail;
+
+  const roomForName = limit - displayWidth(suffix);
+  return truncate(name, Math.max(18, roomForName));
 }
 
 /**
