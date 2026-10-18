@@ -270,7 +270,12 @@ Body sections, in this order and with these exact headings:
                           **Inferred.** ...
                           **What would change my mind.** ...
                         The headings must be those words. Anything else fails the gate.
-  ## For you            three or more bullet points, each starting with a bolded audience segment
+  ## For you            three or more MARKDOWN BULLET LINES. Each line begins with a hyphen, a space, two
+                     asterisks, the audience segment, a colon, two asterisks, then the instruction. Exactly:
+                     "- **Importers holding in-transit cargo:** file every declaration before the deadline."
+                     Three different situations, not three names for the same importer. A bold PARAGRAPH followed
+                     by an em dash is not a bullet line and the gate counts zero segments - that mistake was made
+                     twice on 2026-10-18 and blocked the next run both times.
   ## The data point     one sentence, then a <div class="callout"> containing it
   ## FAQ                exactly 3 questions, each answer between 80 and 150 words.
                         Write each question as a bold line ending in a question mark, on its own

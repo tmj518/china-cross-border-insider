@@ -189,6 +189,8 @@ function duplicateScore(proposal, ledger) {
 
   let best = { score: 0, against: null, why: [] };
   for (const row of ledger) {
+    /* Rows written before the split above are not published subjects and must not block one. */
+    if (row?.proposedNotYetPublished || row?.articleNumber == null) continue;
     const rk = new Set(stems(row.keyword));
     const rv = new Set((row.values ?? []).map((v) => String(v).replace(/[$,%\s]/g, "").toLowerCase()).filter(informativeValue));
     const ro = new Set((row.sourceNames ?? []).flatMap((s) => orgTokens(s)));
@@ -842,23 +844,23 @@ if (DRY) {
 
 writeFileSync(DIRECTIVE, JSON.stringify(directive, null, 2), "utf8");
 
-/* The ledger gains the approved subject immediately, so a second run today cannot repeat it. */
+/*
+ * A proposed subject is NOT a published subject, and the ledger is a list of published ones.
+ *
+ * This used to append the proposal to the ledger with articleNumber null and proposedNotYetPublished true, so that a
+ * second run the same day could not repeat it. Nothing ever removed the entry. A subject proposed once and then
+ * abandoned - because the writer was refused, or the run died - was permanently blacklisted, and on 2026-10-18 that
+ * is what produced the "duplicate" verdicts: eu-fdi-screening was still in the ledger after its article was deleted,
+ * and the ledger held 37 rows for 36 articles.
+ *
+ * The directive file already prevents a same-day repeat: it is consumed by the run that follows. The proposal goes to
+ * its own file, which is a record and not a filter.
+ */
 appendFileSync(
-  LEDGER,
-  JSON.stringify({
-    articleNumber: null,
-    slug: proposal.slug,
-    keyword: proposal.keyword,
-    category: proposal.category,
-    publishDate: day,
-    hosts: (proposal.sourceHosts ?? []).map((h) => String(h).replace(/^www\./, "")),
-    values: (proposal.figures ?? []).map((f) => f.value),
-    tags: [],
-    proposedNotYetPublished: true,
-  }) + "\n",
+  join(ROOT, "data", "proposed.jsonl"),
+  JSON.stringify({ at: new Date().toISOString(), slug: proposal.slug, keyword: proposal.keyword, publishDate: day }) + "\n",
   "utf8",
 );
-
 console.log("");
 console.log(`  wrote ${DIRECTIVE.replace(ROOT, "")}`);
 console.log(`  spend this run: ~$${(usageToday().usd - started.usd).toFixed(4)}`);
