@@ -570,6 +570,11 @@ SECTION COVERAGE — the operator's rule is one to three articles per section pe
 
 These sections have had no net-new article this week: ${behind.join(", ")}
 
+THE SECTION THIS WEEK IS THINNEST, AND THAT IS A PREFERENCE:
+  It is never a reason to report infeasible. If the only document that touches the thin section is one whose
+  figures are national aggregates, propose a subject from any other section instead. Reaching for the thin
+  section is worth something; publishing nothing to protect it is worth less than nothing.
+
 YOUR PRIMARY SECTION TODAY: ${PRIMARY_SECTION}
 
 Choose a subject in ${PRIMARY_SECTION} if the documents below genuinely support one. This is the section
@@ -601,7 +606,11 @@ WHAT MAKES A SUBJECT WORTH WRITING
   - NOT A COST CONSEQUENCE: national aggregates and ratios. A GDP share, a total national spend, an index
     level or a year-on-year percentage change in a national total is not a figure an importer can act on. Two runs on
     2026-10-18 proposed the R&D statistics bulletin and the writer correctly refused both, one after twenty-six turns.
-    If the only figures in the documents are aggregates, report infeasible.
+    Prefer a subject with a rate or an amount that attaches to a product. Do NOT report infeasible merely
+    because the figures are aggregates: if the corpus holds only aggregates, propose the subject whose cost
+    consequence is strongest and name the figure the article will rest on. A published article with one solid
+    number and an honest disclosure is worth more than a day with nothing, and the operator's instruction is that
+    the pipeline must publish every day.
   - at least two cost figures (a rate, an amount, a percentage, a quantity - not a date, not a document
     number), each of which appears verbatim in one of these documents
   - a cost consequence an importer can act on: a duty, a fee, a deadline, a rate, a threshold

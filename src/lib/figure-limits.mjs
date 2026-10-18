@@ -1,7 +1,8 @@
 /**
  * The number of substantive figures an article needs, in one place.
  *
- * It is three: lowered from five to two on 2026-10-17, then set to three that evening because two allowed an
+ * It is two, by the operator's instruction on 2026-10-18 that a day with an article beats a day without.
+ * It was three: lowered from five to two on 2026-10-17, then set to three that evening because two allowed an
  * article built on a single rate and a single quantity, which is thin for a cost analysis. Five was stopping runs on days when the official documents genuinely
  * held three or four usable numbers, and the result was not a stricter site - it was no article, and the operator's
  * instruction was to stop the pipeline striking over a threshold the material could not reach.
@@ -20,4 +21,4 @@
  * Lowering the count while still accepting dates and document numbers would have made the gate weaker rather than
  * cheaper. The count and the definition changed together, which is why src/lib/figures.mjs exists.
  */
-export const MIN_SUBSTANTIVE = 3;
+export const MIN_SUBSTANTIVE = 2;
