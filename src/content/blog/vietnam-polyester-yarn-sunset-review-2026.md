@@ -212,6 +212,8 @@ The catch-all row for producers and exporters not named in the annex carries 17.
 the highest rate in the decision. Being unlisted costs 14.09 percentage points more than the lowest
 named rate — a difference decided by paperwork rather than by price.
 
+> Also read: [EU imposes definitive anti-dumping duties on Chinese pea protein 40.5% to 67.1% for 5 years](/blog/eu-pea-protein-anti-dumping-definitive-duties-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your

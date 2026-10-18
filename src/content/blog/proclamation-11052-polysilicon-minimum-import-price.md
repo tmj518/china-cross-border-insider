@@ -131,6 +131,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [AD760: Registration Is Ordered Now, and the Money Starts in April 2027](/blog/eu-cellulose-ethers-duty-timeline/)
 
+> Also read: [EU imposes definitive anti-dumping duties on Chinese pea protein 40.5% to 67.1% for 5 years](/blog/eu-pea-protein-anti-dumping-definitive-duties-2026/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.
