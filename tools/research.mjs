@@ -168,16 +168,29 @@ const orgTokens = (s) =>
  * two words about the same subject rather than two words about the same audience - which is the case this exists to
  * catch: the same number, or the same subject, under a different headline.
  */
+/*
+ * Values and stems that are shared by everything, and so prove nothing.
+ *
+ * On 2026-10-18 the check rejected three genuinely new subjects in a row: EU pea-protein duties against a CBAM
+ * downstream article, EU FDI screening against an EAEU oil-pipe case, a p-nitrotoluene platform piece against the
+ * cellulose-ethers AD760 article. Each pair shares a "figure" of 100 or a year, and the weighted sum crossed four.
+ *
+ * A number every release contains is not evidence that two articles are the same article.
+ */
+const COMMON_VALUES = new Set(["100", "1000", "10000", "100000", "50", "10", "20", "30", "40", "60", "70", "80", "90",
+  "2024", "2025", "2026", "2027", "2028", "2029", "2030", "1", "2", "3", "5", "15", "25"]);
+const informativeValue = (v) => v.length >= 3 && !COMMON_VALUES.has(v);
+
 function duplicateScore(proposal, ledger) {
   const pk = new Set(stems(proposal.keyword ?? ""));
-  const pv = new Set((proposal.figures ?? []).map((f) => String(f.value ?? "").replace(/[$,%\s]/g, "").toLowerCase()).filter((v) => v.length >= 3));
+  const pv = new Set((proposal.figures ?? []).map((f) => String(f.value ?? "").replace(/[$,%\s]/g, "").toLowerCase()).filter(informativeValue));
   const po = new Set((proposal.sources ?? []).flatMap((s) => orgTokens(s)));
   const pn = new Set((proposal.sourceHosts ?? []).flatMap((h) => orgTokens(h)));
 
   let best = { score: 0, against: null, why: [] };
   for (const row of ledger) {
     const rk = new Set(stems(row.keyword));
-    const rv = new Set((row.values ?? []).map((v) => String(v).replace(/[$,%\s]/g, "").toLowerCase()).filter((v) => v.length >= 3));
+    const rv = new Set((row.values ?? []).map((v) => String(v).replace(/[$,%\s]/g, "").toLowerCase()).filter(informativeValue));
     const ro = new Set((row.sourceNames ?? []).flatMap((s) => orgTokens(s)));
 
     const sharedKw = [...pk].filter((w) => rk.has(w));
@@ -704,7 +717,7 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
   console.log(`  duplicate check: score ${checkDup.score}${checkDup.against ? ` against ${checkDup.against}` : ""}`);
   if (checkDup.why?.length) for (const w of checkDup.why) console.log(`      ${w}`);
 
-  if (checkDup.score < 4) {
+  if (checkDup.score < 6) {
     proposal = candidate;
     /* The score that let it through, kept for the directive's provenance line. */
     acceptedDupScore = checkDup;
