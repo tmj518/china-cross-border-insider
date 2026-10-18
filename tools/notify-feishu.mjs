@@ -41,11 +41,26 @@ const webhook = flag("webhook", process.env.FEISHU_WEBHOOK ?? "");
 const secret = (process.env.FEISHU_SECRET ?? "").trim();
 
 const REPORT = join(ROOT, "data", "tmp", "orchestrator-report.json");
+
 const LEDGER = join(ROOT, "logs", "orchestrator.jsonl");
 const DIRECTOR = join(ROOT, "总监指令.md");
 const STAFF = join(ROOT, "员工汇报.md");
 
 let report = null;
+
+/*
+ * The agent route writes its report somewhere else.
+ *
+ * Every "STOPPED BEFORE PUBLISHING [agent]" card was wrong: the agent had written data/tmp/agent-report.json and the
+ * notifier was only looking at the script route's file. It said the pipeline never started while the pipeline's own
+ * verdict sat one filename away - TURN-LIMIT, thirty turns, a hundred and fifty-five model calls.
+ *
+ * The agent's file wins when both exist, because the agent route never writes the orchestrator's.
+ */
+const AGENT_REPORT = join(ROOT, "data", "tmp", "agent-report.json");
+if (!existsSync(REPORT) && existsSync(AGENT_REPORT)) {
+  report = JSON.parse(readFileSync(AGENT_REPORT, "utf8"));
+}
 if (existsSync(REPORT)) {
   try {
     report = JSON.parse(readFileSync(REPORT, "utf8"));

@@ -586,6 +586,9 @@ Begin with today's job: read data/directive.json. Do not look around the reposit
  * suppressing any of those would break a run rather than shorten it.
  */
 const seenCalls = new Map();
+/** The last check_draft failure signature, and how many times it has repeated. */
+let lastBlockSig = "";
+let stalled = 0;
 
 /*
  * How many times each command base has been run.
@@ -727,6 +730,36 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
        * Any write clears the memo. It is a cheap optimisation and a wrong answer is worse than a repeated call.
        */
       if (name === "write_file") seenCalls.clear();
+
+      /*
+       * A draft that fails the same way twice is not going to pass.
+       *
+       * The 05:36 run spent thirty turns and a hundred and fifty-five model calls - nineteen cents, ten minutes -
+       * rewriting one draft whose blocking rules never changed. Each check_draft costs several calls because it
+       * builds and reviews, so "try again" stops being cheap long before the turn budget notices.
+       *
+       * Two identical failure signatures in a row ends the run with a verdict instead of a timeout. A REJECTED
+       * after six turns tells the operator what happened; a TURN-LIMIT after thirty does not, and costs thirty times
+       * as much.
+       */
+      if (name === "check_draft") {
+        const sig = (result.match(/^- .*BLOCK.*$/gm) ?? []).map((l) => l.trim()).sort().join("|") ||
+          (result.match(/✗ BLOCK[^\n]*/g) ?? []).map((l) => l.trim()).sort().join("|");
+        if (sig && sig === lastBlockSig) {
+          stalled++;
+          if (stalled >= 2) {
+            finished = {
+              verdict: "REJECTED",
+              summary: `the same ${(sig.match(/BLOCK/g) ?? []).length} rule(s) blocked the draft three times in a row, so this subject cannot be made to pass. Rules: ${sig.slice(0, 300)}`,
+            };
+            console.log("  stalled  : the same rules blocked three drafts, ending the run with a verdict");
+            break;
+          }
+        } else {
+          stalled = 0;
+          lastBlockSig = sig;
+        }
+      }
     }
     messages.push({ role: "tool", tool_call_id: c.id, content: result });
   }
