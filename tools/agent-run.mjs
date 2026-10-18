@@ -79,7 +79,7 @@ const TASK_FILE = flag("task", "daily-task.txt");
  * internal-links gate and a misread subsidy figure, and hit the limit one call short of publish_draft. A budget that
  * stops at the last useful turn is not a budget, it is a coin flip.
  */
-const MAX_TURNS = Number(flag("max-turns", 45));
+const MAX_TURNS = Number(flag("max-turns", 35));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.

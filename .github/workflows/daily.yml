@@ -227,7 +227,7 @@ jobs:
     # it. The script route takes about three minutes end to end; the agent route is meant to take five. Anything
     # past twelve is not slow, it is stuck - and a stuck run should die cheaply rather than burn the month.
     #
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
         with:
