@@ -102,7 +102,11 @@ const SCENARIOS = [
   },
   { name: "weekly ceiling reached", ceiling: true, verdict: "CEILING", writerCalls: 0 },
   { name: "no credentials", keys: false, verdict: "NO-KEYS", writerCalls: 0 },
-  { name: "too few figures in the directive", figures: 0, verdict: "THIN-DIRECTIVE", writerCalls: 0 },
+  /*
+   * "Too few figures" is no longer a reachable state. The floor went to one on the operator's instruction, and a
+   * directive with zero figures is not thin, it is unusable - usableDirective() rejects it and research runs. The
+   * scenario was proving a branch that can no longer be entered, and it started calling the real API to get there.
+   */
 ];
 
 if (process.argv.includes("--list")) {
