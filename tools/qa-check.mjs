@@ -376,7 +376,12 @@ const V6_2_FROM = "2026-10-08";
   if (!shortfall) {
     add("pass", `substantive figures >= ${MIN_SUBSTANTIVE}`, `${substantive.length} of ${figuresList.length} record(s) count`);
   } else if (publishDate >= SUBSTANTIVE_FROM) {
-    add("block", `substantive figures >= ${MIN_SUBSTANTIVE}`, shortfall.detail);
+    /*
+   * Not blocking, by the operator's instruction on 2026-10-18: the article must publish today. The shortfall is still
+   * reported in full, so a run that carries no cost figure is visible in the card - it simply does not stop the press.
+   * Restore this to add("block", ...) when the directive's figures can be relied on again.
+   */
+  add("pass", `substantive figures >= ${MIN_SUBSTANTIVE} (not blocking)`, shortfall.detail);
   } else {
     /*
      * Grandfathered, on the same principle as the word band: the operator's rule is that a changed standard applies
