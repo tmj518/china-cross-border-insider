@@ -5,7 +5,7 @@ category: trade-policy
 audience: importer
 keyword: "EU FDI screening notification 2025 in-depth assessment importer investor"
 target_keyword: eu fdi screening notification
-information_gain: primary-source-analysis
+information_gain: "primary-source"
 reviewBy: 2028-01-17
 description: "Notifications to the EU's FDI cooperation mechanism rose 40% between 2024 and 2025, to 667 deals, and 12% went to in-depth security review. What that means for an importer or investor planning an EU stake."
 date: 2026-10-18
