@@ -94,7 +94,7 @@ Shipments that completed customs clearance before 1 October 2026 fall outside th
 
 ## How confident
 
-**Confirmed.** The Ministry of Commerce of China published an official execution notice on 30 September 2026 stating that Brazil's 2026 beef safeguard import quota reached 100% on 29 September 2026, and that a 55% additional ad valorem tariff takes effect at 00:00 on 1 October 2026. The 3-day interval between full quota exhaustion and the tariff activation is explicitly stated in the public notice, and the 55% rate is written directly into the text of the 2025 safeguard measure announcement.
+**Confirmed.** The Ministry of Commerce of China published an official execution notice on 30 September 2026 stating that Brazil's 2026 beef safeguard import quota reached 100% on 29 September 2026, and that a 55% additional ad valorem tariff takes effect at 00:00 on 1 October 2026. The 3-day interval between full quota exhaustion and the tariff activation is explicitly stated in the public notice, and the 55% rate is written directly into the text of the 2025 safeguard measure announcement. Every figure in this article comes from that single instrument, and I have not cross-checked them against a second document.
 
 **Inferred.** No public supplementary guidance has been released to clarify edge cases such as in-transit shipments, goods held in bonded warehouses before 1 October 2026, or partial shipments split across multiple declaration entries. All cost calculations in this article rest on the single published execution notice from the Ministry of Commerce, and no additional carve-outs or exemptions are assumed. The anti-dumping investigation timelines referenced for p-nitrotoluene are separate and unrelated to the beef tariff measure, and are included only for context on standard trade remedy process timelines from the same issuing authority.
 
@@ -102,13 +102,13 @@ Shipments that completed customs clearance before 1 October 2026 fall outside th
 
 ## For you
 
-**Brazilian beef importer holding existing in-transit cargo** — Pull every pending customs declaration for shipments that can be filed and accepted before 00:00 on 1 October 2026. Confirm all origin certificates, health certificates, and customs declaration documents are fully validated by your broker 24 hours before the deadline to avoid last-minute rejection. Any declaration accepted before the timestamp avoids the 55% extra cost entirely.
+- **Brazilian beef importer holding existing in-transit cargo:** Pull every pending customs declaration for shipments that can be filed and accepted before 00:00 on 1 October 2026. Confirm all origin certificates, health certificates, and customs declaration documents are fully validated by your broker 24 hours before the deadline to avoid last-minute rejection. Any declaration accepted before the timestamp avoids the 55% extra cost entirely.
 
-**Importer with confirmed future orders for Brazilian beef not yet loaded** — Recalculate the total landed cost of every outstanding order to include the 55% additional tariff, and share the revised pricing with your downstream customers immediately. Evaluate rerouting options to shift volumes to non-quota-exhausted origins if the revised cost structure makes the product uncompetitive in your target market.
+- **Importer with confirmed future orders for Brazilian beef not yet loaded:** Recalculate the total landed cost of every outstanding order to include the 55% additional tariff, and share the revised pricing with your downstream customers immediately. Evaluate rerouting options to shift volumes to non-quota-exhausted origins if the revised cost structure makes the product uncompetitive in your target market.
 
-**Logistics and customs clearance broker** — Prioritize all Brazilian beef declarations in your queue for immediate processing, and flag any missing documentation to importers for urgent correction. Do not schedule new clearance appointments for Brazilian beef shipments that fall after the 1 October 2026 deadline without first confirming the importer has budgeted for the full 55% additional duty.
+- **Logistics and customs clearance broker:** Prioritize all Brazilian beef declarations in your queue for immediate processing, and flag any missing documentation to importers for urgent correction. Do not schedule new clearance appointments for Brazilian beef shipments that fall after the 1 October 2026 deadline without first confirming the importer has budgeted for the full 55% additional duty.
 
-**Sourcing manager evaluating alternative beef origins** — Cross-reference the current quota status for other major beef supplying countries under the same 2026 safeguard measure to identify origins that have not yet exhausted their allocated volume. Those shipments will not be subject to the additional tariff for the remainder of the 2026 quota year.
+- **Sourcing manager evaluating alternative beef origins:** Cross-reference the current quota status for other major beef supplying countries under the same 2026 safeguard measure to identify origins that have not yet exhausted their allocated volume. Those shipments will not be subject to the additional tariff for the remainder of the 2026 quota year.
 
 ## The data point
 

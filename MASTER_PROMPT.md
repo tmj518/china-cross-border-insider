@@ -90,11 +90,25 @@ Ten sections. The headings are checked literally, so use these words.
 | 3 | `## Why now` | 100–200 | the two-to-three-year thread and the window that is open |
 | 4 | `## So what` | 250–350 | the judgement, the cost arithmetic, the counter-intuitive point |
 | 5 | `## How confident` | 100–180 | confirmed / inferred / what would change this |
-| 6 | `## For you` | 150–250 | at least three distinct reader groups, each with an action |
+| 6 | `## For you` | 150–250 | at least three distinct reader groups, each with an action — **as a bulleted list, one `- **Label:**` per group** |
 | 7 | `## The data point` | 60–100 | one number, in a callout block |
 | 8 | `## FAQ` | 240–400 | three questions, each answered in 80–150 words |
 | 9 | `## How we calculated this` | 50–120 | the formula in a fenced code block, with units |
 | 10 | `## The point` | ~100 | the closing judgement |
+
+**`## For you` is a list, not prose.** Each reader group is one line beginning with a hyphen and a bold label, and the
+action follows a colon:
+
+```
+- **Importers holding in-transit cargo:** file every declaration that can be accepted before the deadline.
+- **Importers with future orders not yet shipped:** recalculate the landed cost at the new rate before repricing.
+- **Forwarders quoting on CIF:** the duty lands on the CIF value, so a higher freight quote raises it.
+```
+
+Three groups minimum, and they are three different situations rather than three names for the same importer. A bold
+paragraph followed by an em dash is not a list item: the gate counts lines that start with a hyphen, and an article
+that writes them as paragraphs fails it. The 2026-10-18 pipeline article was published with paragraphs and then
+blocked the next run's preflight, which is the most expensive way to learn this.
 
 **A listing page is not a document.** An index, a navigation page or a portal front page gives subject names
 and dates; it cannot supply a rate. Figures come from the article body, never from a headline in a listing.
