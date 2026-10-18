@@ -778,6 +778,38 @@ if (wroteIt && qaCode === 0) {
     writeFileSync(target, readFileSync(draftPath, "utf8"), "utf8");
     published = true;
     step("publish", true, `staged at src/content/blog/${slug}.md`);
+    /*
+     * POST-PUBLISH GATE: the file is checked as a PUBLISHED article, not as a draft.
+     *
+     * qa-check exempts drafts from several rules, which is right for a scratch file and wrong for the file about to
+     * become a URL - and the comment above says so while relying on the draft having been written with draft: false.
+     * It was not enough. On 2026-10-18 twice the draft passed, the article published with information_gain set to a
+     * value the schema rejects, the next build died with "Invalid option", the page 404ed and the site stopped
+     * deploying - while the pipeline reported a clean publish.
+     *
+     * So the staged file is checked once more, on the real path, with the exemption gone. A failure removes it.
+     */
+    try {
+      execFileSync(process.execPath, [join(ROOT, "tools", "qa-check.mjs"), target], {
+        encoding: "utf8",
+        timeout: 120000,
+        maxBuffer: 16 * 1024 * 1024,
+      });
+    } catch (e) {
+      const out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+      const rules = (out.match(/✗ BLOCK\s+([^\n]{1,60})/g) ?? []).map((x) => x.replace(/✗ BLOCK\s+/, "").trim());
+      const detail = rules.length ? rules.join("; ") : out.split("\n").filter(Boolean).slice(-2).join(" ");
+      console.log("");
+      console.log("  POST-PUBLISH GATE: the staged article fails qa-check as a published file.");
+      console.log(`  blocking rules: ${detail}`);
+      console.log("  Removing it - a URL that breaks the build is worse than no article.");
+      try {
+        rmSync(target, { force: true });
+      } catch {}
+      published = false;
+      step("publish", false, `rolled back after the gate: ${detail.slice(0, 120)}`);
+      run.reasons.push(`the staged article failed qa-check as a published file: ${detail.slice(0, 200)}`);
+    }
   } catch (e) {
     step("publish", false, e.message);
     run.reasons.push(`could not stage the article: ${e.message}`);
