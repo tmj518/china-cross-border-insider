@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-18T02:19:59.412Z",
+  "at": "2026-10-18T10:41:13.522Z",
   "route": "agent",
   "verdict": "MODEL-FAILED",
   "summary": "no provider key present",
@@ -7,8 +7,8 @@
   "repeatedCalls": 0,
   "published": [],
   "usage": {
-    "calls": 10,
-    "failed": 10,
+    "calls": 26,
+    "failed": 26,
     "usd": 0,
     "promptTokens": 0,
     "completionTokens": 0
