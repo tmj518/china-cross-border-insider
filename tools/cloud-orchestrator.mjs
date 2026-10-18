@@ -73,6 +73,16 @@ function keepRunReport(report) {
     mkdirSync(RUN_LOG_DIR, { recursive: true });
     const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
     writeFileSync(join(RUN_LOG_DIR, `${stamp}.json`), JSON.stringify(report, null, 2), "utf8");
+    /*
+     * One file that is never rotated.
+     *
+     * The dated journals are rotated to ten and the git status of a rotation is deletions only - on 2026-10-18 a
+     * failed run committed four deletions and no new journal, so the reason it failed was again only in the Actions
+     * log. This one is overwritten every run and never deleted, so "what did the last run do" is always one file
+     * away, whatever the rotation did.
+     */
+    writeFileSync(join(RUN_LOG_DIR, "latest.json"), JSON.stringify(report, null, 2), "utf8");
+
     const all = readdirSync(RUN_LOG_DIR).filter((f) => f.endsWith(".json")).sort();
     for (const old of all.slice(0, Math.max(0, all.length - RUNS_KEPT))) {
       rmSync(join(RUN_LOG_DIR, old), { force: true });
