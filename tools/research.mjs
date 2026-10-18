@@ -567,6 +567,10 @@ Below are source documents, fetched and archived today. Their paths are real; qu
 
 WHAT MAKES A SUBJECT WORTH WRITING
   - a change with a date: something that took effect, expires, or was announced
+  - NOT A COST CONSEQUENCE: national aggregates and ratios. A GDP share, a total national spend, an index
+    level or a year-on-year percentage change in a national total is not a figure an importer can act on. Two runs on
+    2026-10-18 proposed the R&D statistics bulletin and the writer correctly refused both, one after twenty-six turns.
+    If the only figures in the documents are aggregates, report infeasible.
   - at least two cost figures (a rate, an amount, a percentage, a quantity - not a date, not a document
     number), each of which appears verbatim in one of these documents
   - a cost consequence an importer can act on: a duty, a fee, a deadline, a rate, a threshold
