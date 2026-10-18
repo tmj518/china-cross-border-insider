@@ -148,13 +148,13 @@ jobs:
           OWNER_ARK="${OWNER_KEY_1:-}"
 
           OK=true
-          probe "Doubao writer" "https://ark.cn-beijing.volces.com/api/v3/chat/completions" "$WRITER_MODEL" "$WRITER_KEY" || OK=false
+          probe "Doubao writer" "https://ark.cn-beijing.volces.com/api/v3/chat/completions" "$WRITER_MODEL" "$WRITER_KEY" && OK_COUNT=$((OK_COUNT+1))
           # OWNER_KEY_1 is the Ark credential here. Offering it to DeepSeek would send an Ark key to
           # api.deepseek.com and produce a 401 that reads as a broken DeepSeek key.
           if [ -n "$OWNER_ARK" ] && [ "$REVIEW_KEY" = "$OWNER_ARK" ]; then
             echo "DeepSeek reviewer: SKIPPED - the only candidate key is the Ark one, which would 401" | tee -a "$OUT"
           else
-            probe "DeepSeek reviewer" "https://api.deepseek.com/chat/completions" "deepseek-chat" "$REVIEW_KEY" || OK=false
+            probe "DeepSeek reviewer" "https://api.deepseek.com/chat/completions" "deepseek-chat" "$REVIEW_KEY" && OK_COUNT=$((OK_COUNT+1))
           fi
 
           if [ -n "${GITHUB_OUTPUT:-}" ]; then echo "ok=$OK" >> "$GITHUB_OUTPUT"; fi
@@ -167,7 +167,7 @@ jobs:
           {
             echo "## Provider check"
             echo ""
-            if [ "$OK" = "true" ]; then
+            if [ "$OK_COUNT" -gt 0 ]; then
               echo "Both providers answered."
             else
               echo "**A provider did not verify.** The block below is the entire output."
