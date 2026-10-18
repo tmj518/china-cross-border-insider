@@ -79,7 +79,20 @@ const TASK_FILE = flag("task", "daily-task.txt");
  * internal-links gate and a misread subsidy figure, and hit the limit one call short of publish_draft. A budget that
  * stops at the last useful turn is not a budget, it is a coin flip.
  */
-const MAX_TURNS = Number(flag("max-turns", 35));
+/*
+ * SUBMIT AT TURN TEN is stated to the model as well as enforced below. The words matter: a model told only that it has
+ * fifteen turns spends fifteen turns editing.
+ */
+const SUBMIT_NOTE = "SUBMIT AT TURN TEN: if check_draft is still reporting problems at turn ten, stop editing. Call publish_draft on the best draft you have. A published article that the checker disliked is worth more than a perfect draft that never shipped, and the operator reads the checker's complaint on the card either way.";
+
+/*
+ * Fifteen turns, locked.
+ *
+ * Thirty ran without converging: the agent moved between "too short" and "too long", fixed one rule and broke another,
+ * and spent sixty-nine cents arriving nowhere. A budget that a run cannot finish inside is not a budget. Fifteen turns,
+ * and the last two are for submitting rather than editing.
+ */
+const MAX_TURNS = Number(flag("max-turns", 15));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
@@ -520,7 +533,9 @@ console.log("");
  * which is the operator's own text and is passed through unchanged - the whole point is that the agent
  * gets the instructions that were tuned over 29 articles, not my paraphrase of them.
  */
-const SYSTEM = `You are the daily operator for Landed Math, an English site that turns Chinese and other
+const SYSTEM = `${SUBMIT_NOTE}
+
+You are the daily operator for Landed Math, an English site that turns Chinese and other
 official primary documents into per-unit cost consequences for importers.
 
 Your tools: read_file, write_file, list_dir, run, check_draft, publish_draft, finish.
@@ -671,6 +686,33 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
       console.log(`  turn ${turn} · ${name} refused - preparation is over`);
       record({ turn, refused: name, reason: "preparation is over" });
       messages.push({ role: "tool", tool_call_id: c.id, content: result });
+
+    /*
+     * FORCED SUBMISSION.
+     *
+     * From turn thirteen the run submits whatever it has. The alternative - which is what actually happened for thirty
+     * turns - is a model editing a document that its own checker keeps refusing, alternating between two rules and
+     * never converging. The article that exists is worth more than the article it is still trying to write, and the
+     * card reports what the last check said so the operator can judge.
+     *
+     * This is the same instruction the system prompt gives in words. The code gives it teeth.
+     */
+    if (turn >= MAX_TURNS - 2 && !finished) {
+      try {
+        const drafts = readdirSync(join(ROOT, "data", "drafts"))
+          .filter((f) => f.endsWith(".md"))
+          .map((f) => ({ f, m: statSync(join(ROOT, "data", "drafts", f)).mtimeMs }))
+          .sort((a, b) => b.m - a.m);
+        if (drafts.length) {
+          const forced = runTool("publish_draft", { path: `data/drafts/${drafts[0].f}` });
+          console.log(`  turn ${turn} · FORCED SUBMISSION ${drafts[0].f}`);
+          console.log(`  ${forced.split("\n")[0]}`);
+          record({ turn, forced: "publish_draft", draft: drafts[0].f, result: forced.slice(0, 300) });
+        }
+      } catch (e) {
+        console.log("  forced submission could not run: " + e.message);
+      }
+    }
       continue;
     }
 
