@@ -1,54 +1,22 @@
 ---
-title: "EU FDI screening notifications jumped 40% in 2025, and 12% of deals now face in-depth review"
-slug: eu-fdi-screening-notification-surge-2026
-category: trade-policy
-audience: importer
-keyword: "EU FDI screening notification 2025 in-depth assessment importer investor"
-target_keyword: eu fdi screening notification
+title: "EU screening notifications surge, and the cost lands on acquirers"
+subtitle: "What a longer review does to a cross-border acquisition"
+description: "EU FDI screening notifications rose sharply, and the added review time is a cost the acquirer carries before any deal closes."
+publishDate: 2026-10-18
+reviewBy: 2026-11-17
+stakes: priced
+category: "trade-policy"
+audience: "both"
+tags: ["foreign investment", "EU screening", "compliance"]
+priority: "P2"
+featured: false
+draft: false
+articleNumber: 42
+target_keyword: "EU FDI screening notification surge 2026"
+search_intent: "informational"
 information_gain: "primary-source"
-reviewBy: 2028-01-17
-description: "Notifications to the EU's FDI cooperation mechanism rose 40% between 2024 and 2025, to 667 deals, and 12% went to in-depth security review. What that means for an importer or investor planning an EU stake."
-date: 2026-10-18
-sources:
-  - "European Commission, Directorate-General for Trade and Economic Security — 'Screening of foreign direct investment continues to advance EU security and public order', 14 October 2026"
-  - "Sixth Annual Report on the Screening of FDI into the EU, COM(2026) 640 final (referenced in the Commission news article)"
-  - "Regulation (EU) 2026/900 on the screening of foreign investments in the Union (FISR), adopted 17 June 2026, applying from 17 January 2028"
-figures:
-  - value: "40"
-    unit: "percent"
-    period: "2024 to 2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "667"
-    unit: "investments"
-    period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "477"
-    unit: "investments"
-    period: "2024"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "88"
-    unit: "percent"
-    period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "12"
-    unit: "percent"
-    period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "53"
-    unit: "percent"
-    period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "17 January 2028"
-    unit: "date"
-    period: "from 2028"
-    source: "European Commission, Foreign Investment Screening Regulation (FISR)"
-    retrieved: "2026-10-18"
+sources: ["European Commission FDI screening report 2025"]
+figures: []
 ---
 
 ## AI Summary
