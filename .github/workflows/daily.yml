@@ -221,7 +221,13 @@ jobs:
     # needs a message, which is what the notify-keys job below is for.
     if: needs.preflight.outputs.keys_ok == 'true'
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
+    # Twelve minutes, not a hundred and twenty.
+    #
+    # A private repository gets 2000 Actions minutes a month, so one run at the old ceiling was six per cent of
+    # it. The script route takes about three minutes end to end; the agent route is meant to take five. Anything
+    # past twelve is not slow, it is stuck - and a stuck run should die cheaply rather than burn the month.
+    #
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v5
         with:

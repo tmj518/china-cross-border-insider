@@ -61,7 +61,17 @@ const TASK_FILE = flag("task", "daily-task.txt");
  * revisions and a publish. Forty leaves room for the work while the budget and the repeat guard below stop
  * the preparing from filling it.
  */
-const MAX_TURNS = Number(flag("max-turns", 40));
+/*
+ * Fourteen turns, not forty.
+ *
+ * Forty was chosen when the limit was about not looping forever. The 12:05 run on 2026-10-18 showed what it costs
+ * instead: forty turns at roughly thirty seconds each is twenty minutes of wall clock, and the goal for this route is
+ * five. The tool wall already stops reading after turn four, so the later turns are a model being asked to write
+ * without being told anything new - which is latency, not work.
+ *
+ * Fourteen turns is three of model latency at thirty seconds, which leaves room for a check, a repair and a publish.
+ */
+const MAX_TURNS = Number(flag("max-turns", 14));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
@@ -80,6 +90,7 @@ const MAX_TURNS = Number(flag("max-turns", 40));
  * is refused, and the refusal says to write.
  */
 const PREP_TURNS = 4;
+
 const DRY = args.includes("--dry-run");
 const REPORT = join(ROOT, "data", "tmp", "agent-report.json");
 const TRANSCRIPT = join(ROOT, "data", "tmp", "agent-transcript.jsonl");
@@ -258,11 +269,35 @@ function runTool(name, input) {
     }
 
     if (name === "run") {
+      /*
+       * The agent may not start another pipeline.
+       *
+       * tools/cloud-orchestrator.mjs, tools/agent-run.mjs and tools/research.mjs are the three entry points to the
+       * work this agent is supposed to be doing. An agent that shells out to one of them has handed its own job to a
+       * second process it can no longer see: no turn limit applies, the report is written by somebody else, and the
+       * job budget is spent on a run whose transcript says nothing about it.
+       */
+      const PIPELINE = /\b(cloud-orchestrator|agent-run|research)\.mjs\b/;
+      if (PIPELINE.test(input.command)) {
+        return done(
+          "REFUSED: that starts another pipeline. You are the pipeline. Read the directive, fetch what you need, " +
+            "write the article with write_file, check it with check_draft, publish it with publish_draft.",
+        );
+      }
       const verdict = commandAllowed(input.command);
       if (!verdict.ok) return done(`REFUSED: ${verdict.why}`);
       if (DRY) return done(`dry run: would run ${input.command} (${verdict.why})`);
       try {
-        const out = execFileSync(input.command, { shell: true, cwd: ROOT, encoding: "utf8", timeout: 900000, maxBuffer: 64 * 1024 * 1024 });
+        /*
+       * Two minutes, not fifteen.
+       *
+       * The repository's own tools finish in seconds - the whole script pipeline is about ninety - so a command that
+       * runs longer than two minutes is not doing the work, it is looping or it has started something that never
+       * ends. The old ceiling let one call consume a seventh of the entire job budget, and the 12:05 run on
+       * 2026-10-18 spent twenty minutes with no output.
+       */
+      const COMMAND_TIMEOUT = Number(process.env.AGENT_COMMAND_TIMEOUT_MS ?? 120000);
+      const out = execFileSync(input.command, { shell: true, cwd: ROOT, encoding: "utf8", timeout: COMMAND_TIMEOUT, maxBuffer: 64 * 1024 * 1024 });
         return done(`exit 0\n${out.slice(-6000)}`);
       } catch (e) {
         const out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
