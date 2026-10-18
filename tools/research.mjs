@@ -212,7 +212,25 @@ function duplicateScore(proposal, ledger) {
  * the next candidate is tried, because a research run that dies on one blocked site is a research run
  * that dies every day.
  */
+/*
+ * REACHABLE-FIRST ORDER.
+ *
+ * The loop below stops once MAX_SOURCES pages have been archived, and on 2026-10-18 five of the first seven
+ * candidates returned zero bytes from the runner: cacs trade remedy, tariff commission, statistics bureau, tax
+ * administration and customs. They are Chinese ministry sites, and they answer a residential address while refusing
+ * a datacenter one.
+ *
+ * The consequence was not a failed fetch, it was a failed subject: the pages that archived held policy releases and
+ * council news, none of which carries a per-unit rate, so research reported infeasible while the two candidates that
+ * publish rates for a living - the EU Official Journal and the US Federal Register API - were never reached, because
+ * the loop had already stopped.
+ *
+ * So the sources that answer from anywhere come first. The Chinese ones keep their entries and their reachability is
+ * still recorded; they simply no longer sit at the front of a queue that can close before the back.
+ */
 const CANDIDATES = [
+  ["https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[agencies][]=u.s.-customs-and-border-protection", "federal-register-cbp", "US CBP rules with effective dates, the best API of any source here"],
+  ["https://policy.trade.ec.europa.eu/news_en", "eu-trade-news", "EU trade policy news, CBAM and trade defence"],
   ["https://cacs.mofcom.gov.cn/", "trade-remedy-cases", "foreign anti-dumping and safeguard measures against Chinese exports, the highest-value source for a cost angle"],
   ["http://gss.mof.gov.cn/gzdt/", "tariff-commission", "Tariff Commission notices: rate schedules and adjustments"],
   ["https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/", "ministry-of-finance", "Ministry of Finance policy releases"],
@@ -231,8 +249,8 @@ const CANDIDATES = [
    */
   ["http://www.ccpit.org", "trade-council", "trade friction alerts and commercial certification"],
   ["http://www.cccme.org.cn", "machinery-chamber", "machinery and electronics export data and market access"],
-  ["https://policy.trade.ec.europa.eu/news_en", "eu-trade-news", "EU trade policy news, CBAM and trade defence"],
-  ["https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[agencies][]=u.s.-customs-and-border-protection", "federal-register-cbp", "US CBP rules with effective dates, the best API of any source here"],
+
+
 ];
 
 if (!available().length) {
