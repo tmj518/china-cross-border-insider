@@ -244,6 +244,13 @@ jobs:
 
       - name: Build
         # The gate reads dist/, so the site has to exist before anything is judged.
+        #
+        # The PUBLIC_ variables have to be here. This build runs in Actions and only the output is deployed, so a
+        # variable set on the Cloudflare Pages project is read by nobody - which is what "Google Analytics NOT IN
+        # THE BUILD" was reporting, run after run, while the variable was set on the wrong side of the deploy.
+        env:
+          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID || secrets.PUBLIC_GA_MEASUREMENT_ID }}
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: pnpm exec astro build
 
       - name: Refresh the subject ledger
@@ -428,7 +435,14 @@ jobs:
           fi
           git add -A
           git commit -m "daily: $(date -u +%F) — $(node -e "try{console.log(require('./data/tmp/orchestrator-report.json').verdict)}catch{console.log('run')}")"
-          git push
+          # Retry the push. Two writers push to this branch - a person and the bot - and a rejected push used to
+          # end the step, which threw away the run's report for the second time in one night.
+          for attempt in 1 2 3 4 5; do
+            if git push; then break; fi
+            echo "push rejected, rebasing and retrying (attempt $attempt)"
+            git pull --rebase --no-edit origin main || git rebase --abort
+            sleep 3
+          done
           echo "committed=true" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 

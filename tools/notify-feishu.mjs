@@ -186,11 +186,11 @@ if (!report) {
           ? `  readership  ok - ${r.pageviews} pageview(s) over ${r.days} day(s), ${r.articles} article(s)`
           : `  readership  NOT CONFIGURED - needs ${r?.missing ?? "CF_ACCOUNT_ID, CF_API_TOKEN"}`,
       );
-      lines.push(
-        l?.configured
-          ? `  Feishu ledger ok - ${l.rows} row(s) synced`
-          : `  Feishu ledger NOT CONFIGURED - needs ${l?.missing ?? "FEISHU_APP_ID, FEISHU_APP_SECRET, FEISHU_APP_TOKEN, FEISHU_TABLE_ID"}`,
-      );
+      /*
+       * The Feishu ledger line is gone by instruction. It reported a tool that is optional by design and that
+       * exits naming its own variables when they are missing; printing that on every card taught the reader to
+       * skim the card. tools/feishu-sync.mjs still exists and still runs.
+       */
       if (g) {
         /*
          * Read from the built artefact rather than from configuration: the tag is either in dist or it is not,
