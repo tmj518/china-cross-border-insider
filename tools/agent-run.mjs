@@ -837,6 +837,52 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
   }
 }
 
+/*
+ * FORCED SUBMISSION, after the loop rather than inside it.
+ *
+ * The same logic lived inside the loop guarded by `turn >= MAX_TURNS - 2`, and it never ran - three runs ended TURN-LIMIT
+ * with a complete draft on disk and nothing published, and the console showed no trace of the guard. Whatever the
+ * reason (the block sat on a path the dispatch did not take), the fix is not to debug the placement: it is to stop
+ * depending on it. After the loop there is exactly one question - did anything get published - and one answer.
+ *
+ * The newest draft in data/drafts is the agent's own work from this run. If the loop ended without submitting it, it is
+ * submitted here. The report then says PUBLISHED-WITHOUT-FINISH so the card is honest about how it got there: the
+ * article exists and the model never called finish.
+ */
+if (published.size === 0) {
+  try {
+    const draftDir = join(ROOT, "data", "drafts");
+    const newest = existsSync(draftDir)
+      ? readdirSync(draftDir)
+          .filter((f) => f.endsWith(".md"))
+          .map((f) => ({ f, m: statSync(join(draftDir, f)).mtimeMs }))
+          .sort((a, b) => b.m - a.m)[0]
+      : null;
+    if (newest) {
+      const from = join(draftDir, newest.f);
+      const body = readFileSync(from, "utf8");
+      if (body.trim().length > 200) {
+        const slug = newest.f.replace(/\.md$/, "");
+        writeFileSync(join(ROOT, "src", "content", "blog", newest.f), body, "utf8");
+        try {
+          execFileSync(process.execPath, [join(ROOT, "tools", "build-instruments.mjs")], { cwd: ROOT, timeout: 120000 });
+        } catch {}
+        published.add(slug);
+        finished = finished ?? {
+          verdict: "PUBLISHED-WITHOUT-FINISH",
+          summary: `the loop ended without submitting, so ${newest.f} was published from the drafts folder. The article exists; the model never called finish.`,
+        };
+        console.log("");
+        console.log("  FORCED SUBMISSION: the loop ended without publishing. Submitted " + newest.f);
+        console.log("  verdict is PUBLISHED-WITHOUT-FINISH so the card says how it happened.");
+      }
+    }
+  } catch (e) {
+    console.log("  forced submission failed: " + e.message);
+  }
+}
+
+/* ---------------------------------------------------------------- report */
 /* ---------------------------------------------------------------- report */
 
 const report = {
