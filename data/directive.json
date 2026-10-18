@@ -1,4 +1,137 @@
 {
-  "consumedAt": "2026-10-18T12:51:18.511Z",
-  "lastArticle": "china-home-purchase-loan-interest-subsidy-2026"
+  "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
+  "_generated": "2026-10-18T13:37:42.917Z",
+  "_research": {
+    "fetched": [
+      {
+        "url": "https://policy.trade.ec.europa.eu/news/screening-foreign-direct-investment-continues-advance-eu-security-and-public-order-2026-10-14_en",
+        "file": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html",
+        "bytes": 75770
+      },
+      {
+        "url": "https://policy.trade.ec.europa.eu/news/commission-acts-against-imports-pea-protein-china-2026-09-25_en",
+        "file": "data/sources/2026-10-18/research-eu-trade-news-article-73vwk.html",
+        "bytes": 73430
+      },
+      {
+        "url": "http://jkw.mof.gov.cn/zhengcefabu/202610/t20261014_4002838.htm",
+        "file": "data/sources/2026-10-18/research-ministry-of-finance-article-pk2jy.html",
+        "bytes": 34071
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/zfxxgk/zfxxgkzd/zdgkjbml/art/2018/art_d575b31272dc4ed89cf9726441603252.html",
+        "file": "data/sources/2026-10-18/research-mofcom-article-lc2ws.html",
+        "bytes": 14343
+      },
+      {
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261016_1965512.html",
+        "file": "data/sources/2026-10-18/research-statistics-bureau-article-fetc9.html",
+        "bytes": 320441
+      },
+      {
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261014_1965477.html",
+        "file": "data/sources/2026-10-18/research-statistics-bureau-article-acdcn.html",
+        "bytes": 245756
+      },
+      {
+        "url": "https://policy.trade.ec.europa.eu/news_en",
+        "file": "data/sources/2026-10-18/research-eu-trade-news-dyvy1.html",
+        "bytes": 96950
+      },
+      {
+        "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/",
+        "file": "data/sources/2026-10-18/research-ministry-of-finance-dq16b.html",
+        "bytes": 20830
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/zfxxgk/",
+        "file": "data/sources/2026-10-18/research-mofcom-l9d8g.html",
+        "bytes": 161774
+      },
+      {
+        "url": "https://www.stats.gov.cn/sj/zxfb/",
+        "file": "data/sources/2026-10-18/research-statistics-bureau-ren3q.html",
+        "bytes": 72989
+      }
+    ],
+    "model": "deepseek/deepseek-chat",
+    "spentUsd": 0.0094,
+    "duplicateScore": 0,
+    "duplicateAgainst": null
+  },
+  "slug": "eu-fdi-screening-notification-surge-2026",
+  "title_idea": "EU FDI screening notifications jumped 40% in 2025, and 12% of deals now face in-depth review",
+  "keyword": "EU FDI screening notification 2025 in-depth assessment importer investor",
+  "category": "trade-policy",
+  "audience": "importer",
+  "angle": "An importer or investor planning an EU acquisition or greenfield stake should budget for a 15-day notification window and a 12% chance of an in-depth security review, with the new FISR regime applying from 17 January 2028.",
+  "figures": [
+    {
+      "value": "40%",
+      "unit": "increase in notifications to the EU cooperation mechanism between 2024 and 2025",
+      "period": "2024 to 2025",
+      "source": "European Commission, sixth annual FDI screening report",
+      "retrieved": "2026-10-18",
+      "evidence": "the number of notifications to the EU’s cooperation mechanism increased by 40% between 2024 and 2025",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    },
+    {
+      "value": "667",
+      "unit": "investments notified to the Commission in 2025",
+      "period": "2025",
+      "source": "European Commission, sixth annual FDI screening report",
+      "retrieved": "2026-10-18",
+      "evidence": "In 2025, EU Member States notified 667 investments to the Commission, up from 477 notifications in 2024.",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    },
+    {
+      "value": "477",
+      "unit": "investments notified to the Commission in 2024",
+      "period": "2024",
+      "source": "European Commission, sixth annual FDI screening report",
+      "retrieved": "2026-10-18",
+      "evidence": "up from 477 notifications in 2024",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    },
+    {
+      "value": "88%",
+      "unit": "share of notified cases closed within 15 days",
+      "period": "2025",
+      "source": "European Commission, sixth annual FDI screening report",
+      "retrieved": "2026-10-18",
+      "evidence": "Of the 667 cases notified, 88% were closed within 15 days.",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    },
+    {
+      "value": "12%",
+      "unit": "share of notified investments requiring an in-depth security risk assessment",
+      "period": "2025",
+      "source": "European Commission, sixth annual FDI screening report",
+      "retrieved": "2026-10-18",
+      "evidence": "12% of the investments notified to the Commission required an in-depth security risk assessment – a 4% rise compared to last year.",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    },
+    {
+      "value": "53%",
+      "unit": "share of in-depth assessments in manufacturing",
+      "period": "2025",
+      "source": "European Commission, sixth annual FDI screening report",
+      "retrieved": "2026-10-18",
+      "evidence": "Most such cases were in manufacturing, which accounted for 53% of all transactions (up from 50% in 2024).",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    },
+    {
+      "value": "17 January 2028",
+      "unit": "date the new Foreign Investment Screening Regulation applies from",
+      "period": "from 2028",
+      "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
+      "retrieved": "2026-10-18",
+      "evidence": "The EU’s new Foreign Investment Screening Regulation (FISR) was adopted on 17 June 2026 and will apply from 17 January 2028.",
+      "evidence_from": "data/sources/2026-10-18/research-eu-trade-news-article-kz3jd.html"
+    }
+  ],
+  "sources": [
+    "European Commission, Directorate-General for Trade and Economic Security — 'Screening of foreign direct investment continues to advance EU security and public order', 14 October 2026",
+    "Sixth Annual Report on the Screening of FDI into the EU (referenced in the Commission news article)"
+  ]
 }

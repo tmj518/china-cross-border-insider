@@ -344,6 +344,73 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-sixth-annual-fdi-screening-report",
+      "source": "European Commission, sixth annual FDI screening report",
+      "figures": [
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "40",
+          "unit": "percent",
+          "period": "2024 to 2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "667",
+          "unit": "investments",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "477",
+          "unit": "investments",
+          "period": "2024",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "88",
+          "unit": "percent",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "12",
+          "unit": "percent",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "53",
+          "unit": "percent",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-18"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "eu-fdi-screening-notification-surge-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "general-administration-of-customs-of-the-prc-announcement-no-1",
       "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
       "figures": [
