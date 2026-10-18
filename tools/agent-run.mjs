@@ -930,4 +930,5 @@ console.log(`  summary : ${report.summary}`);
 console.log(`  report  : data/tmp/agent-report.json`);
 console.log(`  transcript: data/tmp/agent-transcript.jsonl`);
 
-process.exit(report.verdict === "PUBLISHED" || report.verdict === "NO-SUBJECT" ? 0 : 1);
+/* PUBLISHED-WITHOUT-FINISH is a success: an article is in the collection, and the card says how. */
+process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT"].includes(report.verdict) ? 0 : 1);
