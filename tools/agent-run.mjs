@@ -71,7 +71,7 @@ const TASK_FILE = flag("task", "daily-task.txt");
  *
  * Fourteen turns is three of model latency at thirty seconds, which leaves room for a check, a repair and a publish.
  */
-const MAX_TURNS = Number(flag("max-turns", 14));
+const MAX_TURNS = Number(flag("max-turns", 20));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
@@ -708,6 +708,17 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
     } else {
       result = runTool(name, input);
       if (key) seenCalls.set(key, result);
+      /*
+       * A write invalidates every answer about that file.
+       *
+       * The memo is keyed on the tool and its arguments, so check_draft on the same path returned the same cached
+       * verdict even after the agent had rewritten the file. On 2026-10-18 the run went write, check (cached, still
+       * failing), write again, check (cached again), and burned fourteen turns never seeing that its fix had landed:
+       * it produced v1, then v2, then v3 and hit the turn limit with a draft it had probably already fixed.
+       *
+       * Any write clears the memo. It is a cheap optimisation and a wrong answer is worse than a repeated call.
+       */
+      if (name === "write_file") seenCalls.clear();
     }
     messages.push({ role: "tool", tool_call_id: c.id, content: result });
   }
