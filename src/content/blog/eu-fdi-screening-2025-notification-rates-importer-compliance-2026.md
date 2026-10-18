@@ -103,6 +103,8 @@ The less than 2% share of cases that result in a formal Commission opinion acros
 
 **What would change my mind.** A subsequent supplementary Commission notice that revises the 2025 notification count, 15-day closure rate, or in-depth assessment share by more than 3 percentage points would adjust the timeline calculations for all sectors. A published delegated act under the new FISR that adds new mandatory notification categories for specific product or technology types would raise the expected share of cases moving to in-depth assessment above the 2025 12% baseline. Any official announcement that delays the 17 January 2028 FISR effective date by more than 90 days would extend the transition window for investor compliance planning.
 
+> Also read: [China's 1-point mortgage subsidy starts 1 October 2026: what it means for building-material and home-goods importers](/blog/china-home-purchase-loan-interest-subsidy-2026/)
+
 ## For you
 - **Third-country importers planning a small EU retail or distribution FDI:** submit your full notification package at least 20 calendar days before your planned closing date, to account for the 8% of wholesale and retail sector cases that do not close within 15 days.
 - **Third-country importers acquiring an EU-based manufacturing production facility:** complete a full pre-notification security risk assessment 30 days before filing your formal notification, and build a 90-day timeline buffer into your project plan to accommodate the 18% chance of an in-depth assessment.

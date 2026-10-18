@@ -413,6 +413,73 @@
       "modelOutput": false
     },
     {
+      "id": "ministry-of-finance-pboc-and-nfra-notice-2026-95",
+      "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+      "figures": [
+        {
+          "articleSlug": "china-home-purchase-loan-interest-subsidy-2026",
+          "articleNum": 41,
+          "value": "1个百分点",
+          "unit": "annual interest subsidy rate on loan principal",
+          "period": "loans issued during the one-year policy window, subsidy for up to 5 years",
+          "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-home-purchase-loan-interest-subsidy-2026",
+          "articleNum": 41,
+          "value": "100万元",
+          "unit": "maximum loan principal per household eligible for subsidy",
+          "period": "policy window from 1 October 2026",
+          "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-home-purchase-loan-interest-subsidy-2026",
+          "articleNum": 41,
+          "value": "120平方米",
+          "unit": "maximum floor area of eligible home",
+          "period": "policy window from 1 October 2026",
+          "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-home-purchase-loan-interest-subsidy-2026",
+          "articleNum": 41,
+          "value": "150万元",
+          "unit": "maximum purchase price of eligible home",
+          "period": "policy window from 1 October 2026",
+          "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-home-purchase-loan-interest-subsidy-2026",
+          "articleNum": 41,
+          "value": "90%",
+          "unit": "central government share of subsidy funding",
+          "period": "policy window from 1 October 2026",
+          "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-home-purchase-loan-interest-subsidy-2026",
+          "articleNum": 41,
+          "value": "10%",
+          "unit": "local government share of subsidy funding",
+          "period": "policy window from 1 October 2026",
+          "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
+          "retrieved": "2026-10-18"
+        }
+      ],
+      "articleNums": [
+        41
+      ],
+      "articleSlugs": [
+        "china-home-purchase-loan-interest-subsidy-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "mofcom-announcement-no-44-of-2026",
       "source": "MOFCOM Announcement No. 44 of 2026",
       "figures": [

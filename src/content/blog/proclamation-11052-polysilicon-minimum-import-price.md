@@ -135,6 +135,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [2025 EU FDI screening notification volumes and processing timelines for third-country investors](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
 
+> Also read: [China's 1-point mortgage subsidy starts 1 October 2026: what it means for building-material and home-goods importers](/blog/china-home-purchase-loan-interest-subsidy-2026/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

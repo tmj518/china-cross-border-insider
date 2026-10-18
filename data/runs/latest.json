@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-18T11:58:04.135Z",
+  "at": "2026-10-18T12:49:33.543Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "7 previous run(s), last 2026-10-18T09:27:50.884Z (PUBLISHED)"
+      "detail": "8 previous run(s), last 2026-10-18T11:58:04.135Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "8 of 15 net-new this week"
+      "detail": "9 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -28,7 +28,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed eu-fdi-screening-2025-notification-rates-importer-compliance-2026, 7 verified figure(s)"
+      "detail": "proposed china-home-purchase-loan-interest-subsidy-2026, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -38,7 +38,7 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/eu-fdi-screening-2025-notification-rates-importer-compliance-2026.md"
+      "detail": "draft at /data/drafts/china-home-purchase-loan-interest-subsidy-2026.md"
     },
     {
       "name": "reviewer",
@@ -53,7 +53,7 @@
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026.md"
+      "detail": "staged at src/content/blog/china-home-purchase-loan-interest-subsidy-2026.md"
     },
     {
       "name": "registry",
@@ -73,56 +73,56 @@
   ],
   "verdict": "PUBLISHED",
   "reasons": [],
-  "article": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
+  "article": "china-home-purchase-loan-interest-subsidy-2026",
   "commit": null,
   "usage": {
-    "calls": 2,
-    "failed": 0,
-    "usd": 0.0038,
-    "promptTokens": 19877,
-    "completionTokens": 5740
+    "calls": 15,
+    "failed": 12,
+    "usd": 0.0137,
+    "promptTokens": 24497,
+    "completionTokens": 6480
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 1,
     "sourcing": 1,
     "supply-chain": 1,
-    "trade-policy": 5,
+    "trade-policy": 6,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  providers usable: volces, deepseek",
-    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20251220175517-rjpsc",
-    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
-    "    roles: volces writes, deepseek reviews",
-    "    review independent: yes - volces writes, deepseek reviews",
-    "  budget   : $0.40",
-    "  fetches  : up to 4",
-    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
-    "  ok    eu-trade-news               96950B  archived",
-    "  ok    trade-remedy-cases          62646B  archived",
-    "  skip  tariff-commission             604B  not usable (recorded anyway)",
-    "  ok    ministry-of-finance         20830B  archived",
     "  ok    mofcom                     161774B  archived",
+    "  ok    statistics-bureau           72989B  archived",
     "  ok    eu-trade-news-article       75770B  article archived",
     "  ok    eu-trade-news-article       73430B  article archived",
-    "  ok    trade-remedy-cases-article    39990B  article archived",
-    "  ok    trade-remedy-cases-article    24436B  article archived",
     "  ok    ministry-of-finance-article    34071B  article archived",
     "  ok    ministry-of-finance-article    19579B  article archived",
     "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   320441B  article archived",
+    "  ok    statistics-bureau-article   245756B  article archived",
     "  articles : 7 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 5 archived document(s)...",
-    "  spent   : ~0.0015  (ceiling 0.40)",
-    "  model   : volces/ep-20251220175517-rjpsc",
+    "  spent   : ~0.0031  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
-    "  keyword : EU FDI screening 2025 notification 15-day closure rate importer compliance 2026",
+    "  slug    : eu-pea-protein-definitive-duty-cost-per-kg-2026",
+    "  keyword : EU anti-dumping duty Chinese pea protein 2026 importer cost",
+    "  duplicate check: score 20 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): 40.5, 67.1, fiveyears, 29april2026, €175m",
+    "      shared keyword stems: protein",
+    "      shared institution(s): european, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
+    "  spent   : ~0.0065  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : china-home-purchase-loan-interest-subsidy-2026",
+    "  keyword : China home purchase loan interest subsidy 2026 1 percentage point 120 square metres 1.5 million yuan",
     "  duplicate check: score 0",
-    "  slug    : eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
-    "  keyword : EU FDI screening 2025 notification 15-day closure rate importer compliance 2026",
+    "  slug    : china-home-purchase-loan-interest-subsidy-2026",
+    "  keyword : China home purchase loan interest subsidy 2026 1 percentage point 120 square metres 1.5 million yuan",
     "  category: trade-policy",
     "  figures : 7",
     "  evidence check:",
@@ -130,8 +130,8 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0015",
+    "  spend this run: ~$0.0065",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 137
+  "seconds": 105
 }
