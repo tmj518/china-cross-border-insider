@@ -71,7 +71,15 @@ const TASK_FILE = flag("task", "daily-task.txt");
  *
  * Fourteen turns is three of model latency at thirty seconds, which leaves room for a check, a repair and a publish.
  */
-const MAX_TURNS = Number(flag("max-turns", 20));
+/*
+ * Thirty turns, and the measurement is why.
+ *
+ * Twenty turns took two minutes, not ten: a turn is a model call plus one tool, and the model is answering in a few
+ * hundred tokens. The 05:19 run reached turn twenty having fixed a misspelled field, a schema shape, an
+ * internal-links gate and a misread subsidy figure, and hit the limit one call short of publish_draft. A budget that
+ * stops at the last useful turn is not a budget, it is a coin flip.
+ */
+const MAX_TURNS = Number(flag("max-turns", 30));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
