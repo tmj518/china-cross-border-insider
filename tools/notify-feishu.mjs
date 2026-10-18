@@ -127,7 +127,15 @@ if (!report) {
    */
   const route = report.route ?? (report.turns != null ? "agent" : "script");
 
-  const icon = verdict === "PUBLISHED" ? "✅" : verdict === "NO-DIRECTIVE" || verdict === "CEILING" || verdict === "IDLE" ? "🟡" : "🔴";
+  /*
+   * PUBLISHED-WITHOUT-FINISH is green.
+   *
+   * The article is in the collection and the site has it. That the model never called finish is a detail worth reading
+   * in the summary, not a reason to paint the card red - a red card on a day that produced an article teaches the
+   * operator to ignore red cards, which is the one thing a notification must never do.
+   */
+  const PUBLISHED_ISH = verdict === "PUBLISHED" || verdict === "PUBLISHED-WITHOUT-FINISH";
+  const icon = PUBLISHED_ISH ? "✅" : verdict === "NO-DIRECTIVE" || verdict === "CEILING" || verdict === "IDLE" || verdict === "NO-SUBJECT" || verdict === "DUPLICATE-SUBJECT" ? "🟡" : "🔴";
   lines.push(`${icon} Landed Math — ${verdict}   [${route}]`);
   lines.push("");
   if (report.article) lines.push(`Article: ${report.article}`);

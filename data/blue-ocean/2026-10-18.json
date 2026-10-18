@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-18T13:36:02.677Z",
+  "at": "2026-10-18T14:21:48.247Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -10,6 +10,6 @@
     "top": 3
   },
   "available": false,
-  "reason": "credentials are not valid base64 JSON",
+  "reason": "GSC_CREDENTIALS_BASE64 is not set",
   "keywords": []
 }

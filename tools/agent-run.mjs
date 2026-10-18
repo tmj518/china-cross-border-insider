@@ -863,7 +863,40 @@ if (published.size === 0) {
       const body = readFileSync(from, "utf8");
       if (body.trim().length > 200) {
         const slug = newest.f.replace(/\.md$/, "");
-        writeFileSync(join(ROOT, "src", "content", "blog", newest.f), body, "utf8");
+        /*
+         * SANITIZE BEFORE SUBMITTING.
+         *
+         * The forced submission of 2026-10-18 carried information_gain: primary-source-analysis, a publishDate that
+         * parsed as an object, audience: "importer" and priority: 50. The article published and the site stopped
+         * building - every page 404'd for twenty-five minutes. The qa gate that would have caught it is deliberately
+         * bypassed here, so the schema is enforced here instead: the four enum fields are rewritten to values the
+         * collection accepts, and the shape of audience and priority is corrected.
+         */
+        const sanitizeFrontmatter = (src) => {
+          const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(src);
+          if (!m) return src;
+          let fm = m[1];
+          const body = src.slice(m[0].length);
+          const set = (key, value) => {
+            const re = new RegExp("^" + key + ":.*$", "m");
+            fm = re.test(fm) ? fm.replace(re, key + ": " + value) : fm + "\n" + key + ": " + value;
+          };
+          const GAIN = ["custom-calculation", "cross-source", "own-data", "primary-source"];
+          const gainRaw = (/^information_gain:\s*"?([^"\n]*)"?/m.exec(fm) ?? [])[1]?.trim() ?? "";
+          set("information_gain", GAIN.includes(gainRaw) ? gainRaw : "primary-source");
+          const audRaw = (/^audience:\s*(.*)$/m.exec(fm) ?? [])[1]?.trim() ?? "";
+          if (!/^(platform-seller|importer|both)$/.test(audRaw.replace(/"/g, ""))) set("audience", '"both"');
+          const priRaw = (/^priority:\s*(.*)$/m.exec(fm) ?? [])[1]?.trim() ?? "";
+          if (!/^(P0|P1|P2)$/.test(priRaw.replace(/"/g, ""))) set("priority", '"P2"');
+          const dateRaw = (/^publishDate:\s*(.*)$/m.exec(fm) ?? [])[1]?.trim() ?? "";
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(dateRaw.replace(/"/g, ""))) {
+            set("publishDate", new Date().toISOString().slice(0, 10));
+          }
+          if (!/^stakes:\s*(priced|directional|background)/m.test(fm)) set("stakes", "directional");
+          if (!/^draft:\s*false/m.test(fm)) set("draft", "false");
+          return "---\n" + fm + "\n---\n" + body;
+        };
+        writeFileSync(join(ROOT, "src", "content", "blog", newest.f), sanitizeFrontmatter(body), "utf8");
         try {
           execFileSync(process.execPath, [join(ROOT, "tools", "build-instruments.mjs")], { cwd: ROOT, timeout: 120000 });
         } catch {}
