@@ -288,6 +288,10 @@ Also required:
   - at least one markdown table, and at least 3 rows of a table carrying an amount
   - at least 3 internal links to other articles, in the form [anchor](/blog/<slug>/)
   - 1,200 to 1,800 words of body prose if the article carries a cost table
+  - 1,000 to 2,000 words of body prose if it does not. THE FLOOR IS 1,000 AND IT IS COUNTED: a draft of 789 words
+    was rejected on 2026-10-18 because this line only named the case with a cost table, so the writer never learned
+    what the other case required. If the directive's figures are thin, extend "So what" and "For you" with the
+    arithmetic and the operational steps - never shorten the article to fit the material.
 
 Blocked words, case-insensitive, anywhere in the file: may, could.
 Note that this catches the month May as well. Write dates as "24 September 2026" and never "May 2026";
