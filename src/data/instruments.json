@@ -1,6 +1,82 @@
 {
-  "generated": "2026-10-17",
+  "generated": "2026-10-18",
   "instruments": [
+    {
+      "id": "national-bureau-of-statistics-of-china-producer-prices-for",
+      "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+      "figures": [
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "5.0",
+          "unit": "percent — year-on-year rise in China's producer price index for manufactured goods",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "20.0",
+          "unit": "percent — year-on-year rise in purchased prices of non-ferrous metals and wire",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "-0.4",
+          "unit": "percent — year-on-year change in purchased prices of ferrous metals",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "6.9",
+          "unit": "percent — year-on-year rise in purchased prices paid by Chinese industry",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "3.7",
+          "unit": "percent — month-on-month rise in purchased prices of fuel and power",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "2.4",
+          "unit": "percent — month-on-month rise in purchased prices of chemical raw materials",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "35.3",
+          "unit": "percent — year-on-year rise in prices of coal mining and washing",
+          "period": "September 2026",
+          "source": "National Bureau of Statistics of China, Producer prices for industrial products, September 2026, published 14 October 2026",
+          "retrieved": "2026-10-18"
+        }
+      ],
+      "articleNums": [
+        35
+      ],
+      "articleSlugs": [
+        "china-producer-price-split-copper-ferrous-2026"
+      ],
+      "modelOutput": false
+    },
     {
       "id": "european-commission-2026-coordinated-product-safety-sweep-re-5",
       "source": "European Commission, 2026 coordinated product safety sweep results, published 8 September 2026",
@@ -1067,6 +1143,46 @@
       ],
       "articleSlugs": [
         "china-rare-earth-export-controls-licence-regime"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-bureau-of-statistics-of-china-prices-of-important",
+      "source": "National Bureau of Statistics of China, Prices of important production materials in circulation, late September 2026, published 9 October 2026",
+      "figures": [
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "2972.5",
+          "unit": "yuan per tonne — ten-day rise in electrolytic copper (1#), to 111,742.5 yuan per tonne",
+          "period": "21 to 30 September 2026, against 11 to 20 September",
+          "source": "National Bureau of Statistics of China, Prices of important production materials in circulation, late September 2026, published 9 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "-11.8",
+          "unit": "yuan per tonne — ten-day change in hot-rolled coil (4.75-11.5mm, Q235), to 3,297.1 yuan per tonne",
+          "period": "21 to 30 September 2026, against 11 to 20 September",
+          "source": "National Bureau of Statistics of China, Prices of important production materials in circulation, late September 2026, published 9 October 2026",
+          "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "china-producer-price-split-copper-ferrous-2026",
+          "articleNum": 35,
+          "value": "434.7",
+          "unit": "yuan per tonne — ten-day rise in glacial acetic acid (99.5%), a 10.5 percent move",
+          "period": "21 to 30 September 2026, against 11 to 20 September",
+          "source": "National Bureau of Statistics of China, Prices of important production materials in circulation, late September 2026, published 9 October 2026",
+          "retrieved": "2026-10-18"
+        }
+      ],
+      "articleNums": [
+        35
+      ],
+      "articleSlugs": [
+        "china-producer-price-split-copper-ferrous-2026"
       ],
       "modelOutput": false
     },

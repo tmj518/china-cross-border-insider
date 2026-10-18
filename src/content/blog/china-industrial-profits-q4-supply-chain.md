@@ -168,6 +168,8 @@ Here is the same effect on an actual order, which is the part a budget cares abo
 
 **And the industry spread means the two effects land on different suppliers.** An electronics supplier whose profit grew by more than double has room to hold a price and to carry terms. A ferrous metal supplier down 62.4 per cent does not. The negotiation you should prepare for depends on which of those you are buying from, and the release tells you which.
 
+> Also read: [China's 5.0% Factory-Price Rise Hides a 20-Point Split](/blog/china-producer-price-split-copper-ferrous-2026/)
+
 ## For you
 
 - **Buying electronics, non-ferrous metals or coal-linked inputs:** your supplier's profit grew faster than the sector, so expect resistance to price cuts and more willingness to hold terms. The leverage is on their side and the data says so.
