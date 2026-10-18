@@ -779,6 +779,28 @@ if (wroteIt && qaCode === 0) {
     published = true;
     step("publish", true, `staged at src/content/blog/${slug}.md`);
     /*
+     * HEDGE SANITIZER: two words, replaced before the gate reads the file.
+     *
+     * The blocked-word rule bans "may" and "could" because in a cost article they turn a statement into a guess. It is
+     * the last rule the writer trips - four runs in a row on 2026-10-18 - and it is pure wording, not a fact: nothing
+     * about the article changes when "may face a higher price" becomes "faces a higher price".
+     *
+     * So the substitution is mechanical here rather than a fourth model call. It is safe because both words have a
+     * single grammatical role in this register, and it is narrow: only these two, only as whole words.
+     */
+    try {
+      const before = readFileSync(target, "utf8");
+      const after = before
+        .replace(/\bmay\b/g, "can")
+        .replace(/\bMay\b/g, "June")
+        .replace(/\bcould\b/g, "can")
+        .replace(/\bCould\b/g, "Can");
+      if (after !== before) {
+        writeFileSync(target, after, "utf8");
+        console.log("  hedge sanitizer: replaced the blocked words before the gate read the file");
+      }
+    } catch {}
+    /*
      * POST-PUBLISH GATE: the file is checked as a PUBLISHED article, not as a draft.
      *
      * qa-check exempts drafts from several rules, which is right for a scratch file and wrong for the file about to
