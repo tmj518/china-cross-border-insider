@@ -277,7 +277,19 @@ function runTool(name, input) {
        * second process it can no longer see: no turn limit applies, the report is written by somebody else, and the
        * job budget is spent on a run whose transcript says nothing about it.
        */
-      const PIPELINE = /\b(cloud-orchestrator|agent-run|research)\.mjs\b/;
+      /*
+       * Research is NOT on this list, and the difference cost a run.
+       *
+       * The first version banned all three entry points. At 04:49 on 2026-10-18 the agent did exactly the right
+       * thing - read the empty directive, ran research to pick a subject - and the guard refused it, so it finished
+       * with NO-SUBJECT after four turns. Short, fast and useless.
+       *
+       * cloud-orchestrator and agent-run are whole pipelines: they write, review, publish and commit, and an agent
+       * that starts one has handed its job to a process it cannot see. tools/research.mjs is a tool that answers one
+       * question - what subject do today's documents support - and it is the only way to answer it once the
+       * directive has been consumed.
+       */
+      const PIPELINE = /\b(cloud-orchestrator|agent-run)\.mjs\b/;
       if (PIPELINE.test(input.command)) {
         return done(
           "REFUSED: that starts another pipeline. You are the pipeline. Read the directive, fetch what you need, " +
