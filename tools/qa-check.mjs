@@ -138,7 +138,22 @@ function check(file) {
   if (sources >= 3) add("pass", "named sources >= 3", `${sources} sources`);
   else add("warn", "named sources >= 3", `${sources} sources`);
 
-  gain ? add("pass", "information_gain declared", gain) : add("block", "information_gain declared", "missing");
+  /*
+   * Declared is not enough: the value has to be one the schema accepts.
+   *
+   * The 06:29 run published an article whose information_gain was "workflow-planning". qa-check reported "declared"
+   * and passed it, the orchestrator marked the run PUBLISHED, and the next build died with "Invalid option: expected
+   * one of custom-calculation|cross-source|own-data|primary-source". The site 404'd, the sitemap did not have it, and
+   * the agent run after it failed in thirty-seven seconds on the same build error.
+   *
+   * ENUMS is the single source for these lists and src/content.config.ts is checked against it, so the gate reads the
+   * same list the build will.
+   */
+  const GAIN_ENUM = ENUMS.information_gain ?? ["custom-calculation", "cross-source", "own-data", "primary-source"];
+  if (!gain) add("block", "information_gain declared", "missing");
+  else if (!GAIN_ENUM.includes(gain))
+    add("block", "information_gain legal", `"${gain}" is not one of ${GAIN_ENUM.join(", ")} - the build rejects it`);
+  else add("pass", "information_gain declared", gain);
 
   // A claim of primary-source is only credible if the body actually names the
   // document. Check the number, not the word "announcement".
