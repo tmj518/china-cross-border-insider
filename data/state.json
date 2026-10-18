@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-18T03:23:28.555Z",
+  "lastRun": "2026-10-18T06:27:11.034Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "brazil-beef-import-additional-55-percent-tariff-october-2026",
-  "runs": 4,
-  "published": 4,
+  "lastArticle": "eu-fdi-screening-notification-rates-2025-importer-compliance",
+  "runs": 5,
+  "published": 5,
   "lastUsage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0037,
-    "promptTokens": 19874,
-    "completionTokens": 5305
+    "usd": 0.0033,
+    "promptTokens": 17450,
+    "completionTokens": 4860
   }
 }

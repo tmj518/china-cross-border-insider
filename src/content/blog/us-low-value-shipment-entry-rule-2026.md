@@ -152,6 +152,8 @@ Three things follow, and the first two are why the comment window matters more t
 
 > **Informal entry** — the simplified customs procedure for shipments valued at $2,500 or less, under 19 U.S.C. 1498(a)(1)(A). It carries a specific processing fee rather than the ad valorem fee charged on a formal entry. Entry type 11 is the non-postal form; entry type 13 is the new electronic form the proposal creates for merchandise arriving through the mail environment.
 
+> Also read: [2025 EU FDI screening notification volumes and compliance thresholds for third-country importers](/blog/eu-fdi-screening-notification-rates-2025-importer-compliance/)
+
 ## For you
 
 - **Importers with shipments between $251 and $2,500 carrying Section 232 duties:** the proposal would let you use informal entry for the first time, worth roughly $31.81 in processing fees on a $1,200 shipment. This is the one part that lowers a cost, and the part to support in a comment.
