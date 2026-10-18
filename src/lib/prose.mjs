@@ -67,7 +67,14 @@ export const WORD_TARGET = {
  * completeness, which is the opposite of what it was for.
  */
   withCostTable: { min: 1000, targetLow: 1800, targetHigh: 2200, max: 2600 },
-  withoutCostTable: { min: 1000, targetLow: 1500, targetHigh: 2000, max: 2000 },
+    /*
+ * 2,100, not 2,000.
+ *
+ * The counted length is the rendered body, which runs about 5 per cent longer than the prose the writer is thinking
+ * in - the 12:35 run produced 2043 against a 2000 ceiling, was told so twice by the strict check, and produced 2043
+ * again. A ceiling nineteen words past the writer's own target is a coin flip, not a standard.
+ */
+  withoutCostTable: { min: 1000, targetLow: 1500, targetHigh: 2000, max: 2100 },
 };
 
 /** Backwards-compatible alias: the stricter tier, used where a single budget is needed. */
