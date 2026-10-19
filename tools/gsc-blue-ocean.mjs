@@ -131,8 +131,25 @@ function decodeCredentials(raw) {
    * Both look like base64. Only one decodes to JSON as UTF-8. So the decoder tries the encodings that produce that
    * mojibake, then gzip, and reports what the first bytes actually were so the next person can see it.
    */
+  /*
+   * RAW JSON FIRST.
+   *
+   * The secret now holds the JSON document itself, pasted straight from the key file, because a UTF-16 base64 of it
+   * was unreadable and re-encoding was one more step for the operator. That is a perfectly good way to store it - GitHub
+   * encrypts the value either way - and it should be the first thing tried, not the fourth.
+   *
+   * Whitespace inside the document is left alone here. Stripping it would be fine for JSON structure and wrong for any
+   * string that contains a space, and a private key does.
+   */
+  let j = null;
+  const looksLikeJson = /^\s*\{/.test(String(raw));
+  if (looksLikeJson) {
+    j = tryJson("raw JSON", String(raw).trim());
+    if (j) log("  credentials : read as raw JSON - the secret holds the key document itself");
+  }
+
   const buf = Buffer.from(tidy, "base64");
-  let j = tryJson("utf8", buf.toString("utf8"));
+  if (!j) j = tryJson("utf8", buf.toString("utf8"));
   if (!j) j = tryJson("utf16le", buf.toString("utf16le").replace(/^\uFEFF/, ""));
   if (!j) {
     try {
