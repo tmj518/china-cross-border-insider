@@ -17,5 +17,7 @@
   },
   "checkOnly": false,
   "reasons": [],
-  "lastTurns": []
+  "lastTurns": [],
+  "noNewPage": true,
+  "note": "The fallback copied a draft over eu-fdi-screening-notification-surge-2026, a page published the evening before. Nothing new was created, so this journal must not satisfy the daily guard."
 }

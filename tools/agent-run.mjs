@@ -525,6 +525,17 @@ function alreadyPublishedToday() {
       const when = new Date(new Date(j.at).getTime() + 8 * 3600 * 1000).toISOString().slice(0, 10);
       /* Route-scoped: the agent asks whether the AGENT has published today, not whether anything has. */
       if (j.route && j.route !== "agent") continue;
+      /*
+       * NO NEW PAGE means no publication, however the verdict is spelled.
+       *
+       * The fallback used to copy a draft over a file that was already published, add that slug to published[], and
+       * write PUBLISHED-WITHOUT-FINISH. On 2026-10-19 at 01:14 it did exactly that with a page from the evening
+       * before, and the guard then believed the day already had an agent article - which it did not, and the route was
+       * blocked for fourteen hours. The fallback no longer overwrites, and this check makes the guard read the
+       * evidence rather than the label: a journal that claims a publication whose page already existed is not a
+       * publication.
+       */
+      if (j.noNewPage) continue;
       if (when === beijing && /^PUBLISHED/.test(String(j.verdict ?? ""))) {
         return { slug: j.article ?? (Array.isArray(j.published) && j.published[0]) ?? "?", at: j.at };
       }
