@@ -927,6 +927,64 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-dg-trade-and-economic-security-commissio",
+      "source": "European Commission, DG Trade and Economic Security — 'Commission acts against imports of pea protein from China'",
+      "figures": [
+        {
+          "articleSlug": "eu-pea-protein-anti-dumping-duty-per-tonne-2026-2026-10-19",
+          "articleNum": 0,
+          "value": "40.5",
+          "unit": "percent",
+          "period": "definitive duty in force for five years from 25 September 2026",
+          "source": "European Commission, DG Trade and Economic Security — 'Commission acts against imports of pea protein from China'",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-pea-protein-anti-dumping-duty-per-tonne-2026-2026-10-19",
+          "articleNum": 0,
+          "value": "67.1",
+          "unit": "percent",
+          "period": "definitive duty in force for five years from 25 September 2026",
+          "source": "European Commission, DG Trade and Economic Security — 'Commission acts against imports of pea protein from China'",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-pea-protein-anti-dumping-duty-per-tonne-2026-2026-10-19",
+          "articleNum": 0,
+          "value": "5",
+          "unit": "years",
+          "period": "from 25 September 2026",
+          "source": "European Commission, DG Trade and Economic Security — 'Commission acts against imports of pea protein from China'",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-pea-protein-anti-dumping-duty-per-tonne-2026-2026-10-19",
+          "articleNum": 0,
+          "value": "2026-04-29",
+          "unit": "date",
+          "period": "provisional duties in force from this date",
+          "source": "European Commission, DG Trade and Economic Security — 'Commission acts against imports of pea protein from China'",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-pea-protein-anti-dumping-duty-per-tonne-2026-2026-10-19",
+          "articleNum": 0,
+          "value": "175",
+          "unit": "EUR million",
+          "period": "as stated at imposition, 25 September 2026",
+          "source": "European Commission, DG Trade and Economic Security — 'Commission acts against imports of pea protein from China'",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "eu-pea-protein-anti-dumping-duty-per-tonne-2026-2026-10-19"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "national-bureau-of-statistics-of-china-industrial-producer-p-28",
       "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
       "figures": [
