@@ -57,6 +57,11 @@ on:
         default: 'script'
         type: choice
         options: ['script', 'agent']
+      force:
+        description: "Ignore the daily guard and run even if today already has an article"
+        required: false
+        default: false
+        type: boolean
   # The backup trigger. GitHub's own cron is best-effort; a Cloudflare Worker cron can call the API at
   # the same time every day and dispatch this event, which is a promise rather than a hope. Wiring the
   # Worker is optional and this listener costs nothing until it exists.
@@ -400,7 +405,7 @@ jobs:
           fi
           echo "route: $ROUTE"
           if [ "$ROUTE" = "agent" ]; then
-            node tools/agent-run.mjs
+            node tools/agent-run.mjs ${{ github.event.inputs.force == 'true' && '--force' || '' }}
           elif [ -n "$DIRECTIVE" ]; then
             node tools/cloud-orchestrator.mjs --directive-file="$DIRECTIVE"
           else

@@ -120,7 +120,31 @@ function decodeCredentials(raw) {
     }
   };
   const dec = (s) => Buffer.from(s, "base64").toString("utf8");
-  let j = tryJson("base64", dec(tidy));
+  /*
+   * The bytes are the first thing to look at, because four base64 readings all returned the same mojibake on
+   * 2026-10-19: "�^��ӷk��^". That is not a JSON document with a bad header, it is text
+   * in the wrong encoding - and the commonest way to produce it is PowerShell:
+   *
+   *   [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($json))     <- UTF-16
+   *   [Convert]::ToBase64String([IO.File]::ReadAllBytes("key.json"))          <- right
+   *
+   * Both look like base64. Only one decodes to JSON as UTF-8. So the decoder tries the encodings that produce that
+   * mojibake, then gzip, and reports what the first bytes actually were so the next person can see it.
+   */
+  const buf = Buffer.from(tidy, "base64");
+  let j = tryJson("utf8", buf.toString("utf8"));
+  if (!j) j = tryJson("utf16le", buf.toString("utf16le").replace(/^\uFEFF/, ""));
+  if (!j) {
+    try {
+      j = tryJson("gzip", require("node:zlib").gunzipSync(buf).toString("utf8"));
+    } catch {
+      attempts.push("gzip: not gzip data");
+    }
+  }
+  if (!j) {
+    attempts.push("first bytes: " + buf.subarray(0, 8).toString("hex"));
+    attempts.push("length: " + buf.length + " byte(s)");
+  }
   if (!j) {
     const once = dec(tidy);
     j = tryJson("base64 of base64", dec(once));
