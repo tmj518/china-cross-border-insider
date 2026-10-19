@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-19T01:25:57.925Z",
+  "at": "2026-10-19T01:28:41.411Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "9 previous run(s), last 2026-10-18T12:49:33.543Z (PUBLISHED)"
+      "detail": "10 previous run(s), last 2026-10-19T01:25:57.925Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "1 of 15 net-new this week"
+      "detail": "2 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -28,7 +28,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed eu-fdi-screening-notification-threshold-2026, 7 verified figure(s)"
+      "detail": "proposed eu-fdi-screening-2026-timeline-notification-rates-importer, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -38,7 +38,7 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/eu-fdi-screening-notification-threshold-2026.md"
+      "detail": "draft at /data/drafts/eu-fdi-screening-2026-timeline-notification-rates-importer.md"
     },
     {
       "name": "reviewer",
@@ -53,7 +53,7 @@
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/eu-fdi-screening-notification-threshold-2026.md"
+      "detail": "staged at src/content/blog/eu-fdi-screening-2026-timeline-notification-rates-importer.md"
     },
     {
       "name": "registry",
@@ -73,56 +73,56 @@
   ],
   "verdict": "PUBLISHED",
   "reasons": [],
-  "article": "eu-fdi-screening-notification-threshold-2026",
+  "article": "eu-fdi-screening-2026-timeline-notification-rates-importer",
   "commit": null,
   "usage": {
-    "calls": 15,
-    "failed": 12,
-    "usd": 0.017,
-    "promptTokens": 40611,
-    "completionTokens": 5466
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0039,
+    "promptTokens": 20381,
+    "completionTokens": 5747
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 1,
+    "trade-policy": 2,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20251220175517-rjpsc",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
+    "  ok    eu-trade-news               96950B  archived",
+    "  ok    trade-remedy-cases          62646B  archived",
+    "  skip  tariff-commission             604B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
     "  ok    mofcom                     161774B  archived",
-    "  ok    statistics-bureau           72989B  archived",
     "  ok    eu-trade-news-article       75770B  article archived",
     "  ok    eu-trade-news-article       73430B  article archived",
-    "  skip  ministry-of-finance-article        0B  not usable",
-    "  skip  ministry-of-finance-article        0B  not usable",
+    "  ok    trade-remedy-cases-article    39990B  article archived",
+    "  skip  trade-remedy-cases-article        0B  not usable",
+    "  ok    ministry-of-finance-article    34071B  article archived",
+    "  ok    ministry-of-finance-article    19579B  article archived",
     "  ok    mofcom-article              14343B  article archived",
-    "  ok    statistics-bureau-article   320441B  article archived",
-    "  ok    statistics-bureau-article   245756B  article archived",
-    "  articles : 5 followed from the listings",
+    "  articles : 6 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 5 archived document(s)...",
-    "  spent   : ~0.0052  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
+    "  spent   : ~0.0015  (ceiling 0.40)",
+    "  model   : volces/ep-20251220175517-rjpsc",
     "  feasible: true",
-    "  slug    : eu-pea-protein-definitive-duty-cost-per-tonne-2026",
-    "  keyword : EU anti-dumping duty Chinese pea protein 2026 cost per tonne",
-    "  duplicate check: score 20 against eu-pea-protein-anti-dumping-definitive-duties-2026",
-    "      shared figure value(s): 40.5, 67.1, fiveyears, 29april2026, €175m",
-    "      shared keyword stems: protein",
-    "      shared institution(s): european, trade, economic, security",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
-    "  spent   : ~0.0108  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : eu-fdi-screening-notification-threshold-2026",
-    "  keyword : EU foreign investment screening notification 2026 FISR",
+    "  slug    : eu-fdi-screening-2026-timeline-notification-rates-importer",
+    "  keyword : EU FDI screening 2028 application 667 notifications 15 day turnaround importer",
     "  duplicate check: score 0",
-    "  slug    : eu-fdi-screening-notification-threshold-2026",
-    "  keyword : EU foreign investment screening notification 2026 FISR",
+    "  slug    : eu-fdi-screening-2026-timeline-notification-rates-importer",
+    "  keyword : EU FDI screening 2028 application 667 notifications 15 day turnaround importer",
     "  category: trade-policy",
     "  figures : 7",
     "  evidence check:",
@@ -130,8 +130,8 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0108",
+    "  spend this run: ~$0.0015",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 102
+  "seconds": 143
 }

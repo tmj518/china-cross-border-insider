@@ -120,6 +120,8 @@ That is the mechanism an importer should price against: demand pulled toward the
 
 > Also read: [EU FDI screening: 667 notifications in 2025, 12% sent to in-depth review, new FISR applies from 17 January 2028](/blog/eu-fdi-screening-notification-threshold-2026/)
 
+> Also read: [EU FDI Screening 2026 Rules, Notification Volumes and 2028 Timelines for Importers](/blog/eu-fdi-screening-2026-timeline-notification-rates-importer/)
+
 ## For you
 
 - **Importers of standard fittings and finishes:** treat the twelve months from 1 October 2026 as the order window and place production bookings so that goods land as purchases convert to handovers, not before.

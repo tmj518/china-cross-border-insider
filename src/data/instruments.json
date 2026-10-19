@@ -69,6 +69,69 @@
           "retrieved": "2026-10-18"
         },
         {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "40%",
+          "unit": "annual percentage increase in FDI notifications to the EU cooperation mechanism",
+          "period": "2024 to 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "667",
+          "unit": "total FDI investment notifications submitted to the EU mechanism",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "88%",
+          "unit": "share of notified FDI cases closed within the standard processing window",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "27%",
+          "unit": "share of all 2025 FDI notifications belonging to the manufacturing sector",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "12%",
+          "unit": "share of notified FDI investments requiring an in-depth security risk assessment",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "less than 2%",
+          "unit": "share of notified FDI cases that received a formal opinion from the European Commission",
+          "period": "2023, 2024, 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-2026-timeline-notification-rates-importer",
+          "articleNum": 43,
+          "value": "17 January 2028",
+          "unit": "effective application date of the new EU Foreign Investment Screening Regulation",
+          "period": "onwards",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
           "articleSlug": "eu-pea-protein-anti-dumping-definitive-duties-2026",
           "articleNum": 38,
           "value": "40.5%",
@@ -116,10 +179,12 @@
       ],
       "articleNums": [
         38,
-        40
+        40,
+        43
       ],
       "articleSlugs": [
         "eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
+        "eu-fdi-screening-2026-timeline-notification-rates-importer",
         "eu-pea-protein-anti-dumping-definitive-duties-2026"
       ],
       "modelOutput": false
