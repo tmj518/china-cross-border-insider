@@ -1619,6 +1619,46 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-dg-trade-and-economic-security",
+      "source": "European Commission, DG Trade and Economic Security",
+      "figures": [
+        {
+          "articleSlug": "eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026",
+          "articleNum": 0,
+          "value": "18 September 2026",
+          "unit": "date",
+          "period": "2026",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026",
+          "articleNum": 0,
+          "value": "tariff-rate quotas",
+          "unit": "measure type",
+          "period": "2026",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026",
+          "articleNum": 0,
+          "value": "price thresholds",
+          "unit": "measure type",
+          "period": "2026",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "lanthanides-io-regulatory-tracker-dataset-dated-5-june-2026",
       "source": "lanthanides.io regulatory tracker, dataset dated 5 June 2026",
       "figures": [
