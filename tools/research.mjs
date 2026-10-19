@@ -735,7 +735,23 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
     break;
   }
 
-  const checkDup = duplicateScore(candidate, ledger);
+  /*
+   * AN EXISTING SLUG IS A DUPLICATE, and this check has to live here.
+   *
+   * The orchestrator already refuses to overwrite a published file, and it is right to. But that refusal happens after
+   * research has finished, so research never learns: on 2026-10-19 it proposed
+   * eu-fdi-screening-2025-notification-rates-importer-compliance-2026 three times, scored it zero every time because
+   * the keyword overlap was low, and the run ended DUPLICATE-SUBJECT with nothing written. The retry loop cannot help
+   * if the only thing it knows how to count is keyword overlap.
+   *
+   * The collection is the authority - a slug that exists verbatim is the strongest possible duplicate, and it costs
+   * one stat() to know.
+   */
+  const slugTaken = Boolean(candidate.slug) && existsSync(join(ROOT, "src", "content", "blog", `${candidate.slug}.md`));
+  const checkDup = slugTaken
+    ? { score: 99, why: [`the slug ${candidate.slug} is already in src/content/blog`], against: candidate.slug }
+    : duplicateScore(candidate, ledger);
+  if (slugTaken) console.log(`  slug already published: ${candidate.slug} - retrying with another subject`);
   console.log(`  slug    : ${candidate.slug}`);
   console.log(`  keyword : ${candidate.keyword}`);
   console.log(`  duplicate check: score ${checkDup.score}${checkDup.against ? ` against ${checkDup.against}` : ""}`);
