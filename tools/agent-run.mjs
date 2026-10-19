@@ -550,7 +550,52 @@ try {
     console.log(`  ALREADY-PUBLISHED  ${subject} is in src/content/blog, so this run will not write it.`);
     console.log("  An agent asked to work on a published page replaces a live URL under a reader. The run stops");
     console.log("  here; the next one researches a subject that is not already on the site.");
-    process.exit(1);
+    /*
+     * A report, and a zero exit.
+     *
+     * This exited 1 without writing data/tmp/agent-report.json, so the notifier had nothing to read and printed the
+     * message it prints when the pipeline never started - "a step before the pipeline failed" - while the pipeline had
+     * in fact run and made a correct decision. And the run went red for doing the right thing.
+     *
+     * The 15:55 scheduled run died exactly here: it read yesterday's directive, found the subject already published,
+     * declined to overwrite a live URL, and was reported as a crash. A refusal with a reason is a verdict, not a
+     * failure, so it is reported as DUPLICATE-SUBJECT and exits zero.
+     */
+    /*
+     * And the stale directive is cleared, so the next run researches instead of stopping at the same wall.
+     *
+     * Without this the agent route is green and useless: data/directive.json still names a published subject, every
+     * scheduled run declines it in ninety milliseconds, and nothing is ever written. The directive is consumed by the
+     * run that uses it, so marking it consumed is exactly the state the orchestrator already understands.
+     */
+    try {
+      writeFileSync(
+        join(ROOT, "data", "directive.json"),
+        JSON.stringify({ consumedAt: new Date().toISOString(), note: "the subject was already published; cleared so the next run researches" }, null, 2) + "\n",
+        "utf8",
+      );
+      console.log("  the directive is cleared below, so the next run researches a fresh subject instead of stopping here.");
+    } catch {}
+
+    writeFileSync(
+      REPORT,
+      JSON.stringify(
+        {
+          at: new Date().toISOString(),
+          route: "agent",
+          verdict: "DUPLICATE-SUBJECT",
+          summary: `${subject} is already in src/content/blog, so this run declined to write it. The subject ledger is stale: the next run refreshes it before proposing a subject.`,
+          turns: 0,
+          published: [],
+          usage: { calls: 0, failed: 0, usd: 0 },
+          reasons: [],
+        },
+        null,
+        2,
+      ),
+      "utf8",
+    );
+    process.exit(0);
   }
 } catch {
   /* no directive, or one that does not parse - the prompt tells the agent to research, which is correct */
