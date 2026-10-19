@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-19T05:09:21.275Z",
+  "at": "2026-10-19T08:25:30.651Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "11 previous run(s), last 2026-10-19T01:28:41.411Z (PUBLISHED)"
+      "detail": "12 previous run(s), last 2026-10-19T05:09:21.275Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "5 of 15 net-new this week"
+      "detail": "6 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -26,19 +26,19 @@
       "detail": "every section has a net-new article this week (5 sections)"
     },
     {
-      "name": "directive",
+      "name": "research",
       "ok": true,
-      "detail": "eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026 from /data/directive.json"
+      "detail": "proposed eu-fdi-screening-notification-surge-2026-2026-10-19, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "5 sourced figure(s)"
+      "detail": "7 sourced figure(s)"
     },
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-brazil-beef-safeguard-55-percent-tariff-october-2026.md"
+      "detail": "draft at /data/drafts/eu-fdi-screening-notification-surge-2026-2026-10-19.md"
     },
     {
       "name": "reviewer",
@@ -53,7 +53,7 @@
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/china-brazil-beef-safeguard-55-percent-tariff-october-2026.md"
+      "detail": "staged at src/content/blog/eu-fdi-screening-notification-surge-2026-2026-10-19.md"
     },
     {
       "name": "registry",
@@ -73,23 +73,65 @@
   ],
   "verdict": "PUBLISHED",
   "reasons": [],
-  "article": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+  "article": "eu-fdi-screening-notification-surge-2026-2026-10-19",
   "commit": null,
   "usage": {
-    "calls": 7,
-    "failed": 5,
-    "usd": 0.0059,
-    "promptTokens": 19090,
-    "completionTokens": 5474
+    "calls": 20,
+    "failed": 16,
+    "usd": 0.0162,
+    "promptTokens": 32485,
+    "completionTokens": 6753
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 5,
+    "trade-policy": 6,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
-  "seconds": 166
+  "researchLog": [
+    "  slug    : eu-pea-protein-anti-dumping-duty-per-kg-2026",
+    "  keyword : EU anti-dumping duty Chinese pea protein 2026 importer cost",
+    "  duplicate check: score 14 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): fiveyears, 29april2026, €175m",
+    "      shared keyword stems: protein",
+    "      shared institution(s): european, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
+    "  spent   : ~0.0064  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug already published: china-home-purchase-loan-interest-subsidy-2026 - retrying with another subject",
+    "  slug    : china-home-purchase-loan-interest-subsidy-2026",
+    "  keyword : China home purchase loan interest subsidy 1 percentage point 2026",
+    "  duplicate check: score 99 against china-home-purchase-loan-interest-subsidy-2026",
+    "      the slug china-home-purchase-loan-interest-subsidy-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 3 of 3)...",
+    "  spent   : ~0.0097  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug already published: eu-fdi-screening-notification-surge-2026 - retrying with another subject",
+    "  slug    : eu-fdi-screening-notification-surge-2026",
+    "  keyword : EU FDI screening notifications 2025 in-depth assessment 2026",
+    "  duplicate check: score 99 against eu-fdi-screening-notification-surge-2026",
+    "      the slug eu-fdi-screening-notification-surge-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  All 3 proposals scored as duplicates. Publishing the last one with a date qualifier:",
+    "  eu-fdi-screening-notification-surge-2026 -> eu-fdi-screening-notification-surge-2026-2026-10-19",
+    "  slug    : eu-fdi-screening-notification-surge-2026-2026-10-19",
+    "  keyword : EU FDI screening notifications 2025 in-depth assessment 2026 2026-10-19",
+    "  category: trade-policy",
+    "  figures : 7",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0097",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 122
 }

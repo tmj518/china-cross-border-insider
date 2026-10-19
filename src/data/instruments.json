@@ -194,6 +194,60 @@
       "source": "European Commission, sixth annual FDI screening report",
       "figures": [
         {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "40%",
+          "unit": "increase in notifications to the EU cooperation mechanism between 2024 and 2025",
+          "period": "2024 to 2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "667",
+          "unit": "investments notified to the Commission in 2025",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "477",
+          "unit": "investments notified to the Commission in 2024",
+          "period": "2024",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "88%",
+          "unit": "share of notified cases closed within 15 days",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "12%",
+          "unit": "share of notified investments requiring an in-depth security risk assessment",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "53%",
+          "unit": "share of in-depth assessments in manufacturing",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
           "articleSlug": "eu-fdi-screening-notification-surge-2026",
           "articleNum": 0,
           "value": "40",
@@ -304,9 +358,11 @@
       ],
       "articleNums": [
         0,
-        42
+        42,
+        45
       ],
       "articleSlugs": [
+        "eu-fdi-screening-notification-surge-2026-2026-10-19",
         "eu-fdi-screening-notification-surge-2026",
         "eu-fdi-screening-notification-threshold-2026"
       ],
@@ -2325,6 +2381,39 @@
       ],
       "articleSlugs": [
         "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-foreign-investment-screening-regulation",
+      "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
+      "figures": [
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+          "articleNum": 45,
+          "value": "17 January 2028",
+          "unit": "date the new Foreign Investment Screening Regulation applies from",
+          "period": "from 2028",
+          "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 0,
+          "value": "17 January 2028",
+          "unit": "date",
+          "period": "from 2028",
+          "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
+          "retrieved": "2026-10-18"
+        }
+      ],
+      "articleNums": [
+        0,
+        45
+      ],
+      "articleSlugs": [
+        "eu-fdi-screening-notification-surge-2026-2026-10-19",
+        "eu-fdi-screening-notification-surge-2026"
       ],
       "modelOutput": false
     },

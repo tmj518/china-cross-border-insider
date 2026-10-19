@@ -78,6 +78,8 @@ The Commission puts the EU market for pea protein at some **€175m**. That is t
 
 **What would change this.** A published per-exporter rate table would replace the band with a single number for your supplier and make the low-end assumption testable. A customs value materially different from the illustrations would move every duty figure proportionally. And if the Commission's announcement is later amended on duration or scope, the five-year window and the product coverage both change.
 
+> Also read: [EU FDI screening notifications jumped 40% in 2025, and 12% of deals now face in-depth review](/blog/eu-fdi-screening-notification-surge-2026-2026-10-19/)
+
 ## For you
 
 - **Importers already bringing in Chinese pea protein:** get your supplier's applicable rate in writing before the next entry, then multiply your customs value by it — 40.5% at the low end, 67.1% at the high end — and decide whether to absorb or re-price.

@@ -84,6 +84,8 @@ The two instruments test different things, and an importer has to test both.
 
 **What would change this.** Reading the regulation would change it, and only that. A quota volume and period, an in-quota and out-of-quota rate, and a threshold level with its basis would turn this from a description of instruments into a per-tonne number. If the regulation shows the quota is allocated by country rather than first-come-first-served, the timing risk described above drops away for an importer with a fixed origin.
 
+> Also read: [EU FDI screening notifications jumped 40% in 2025, and 12% of deals now face in-depth review](/blog/eu-fdi-screening-notification-surge-2026-2026-10-19/)
+
 ## For you
 
 - **Importers with grain-oriented electrical steel entering on or after 18 September 2026:** pull the quota period, the quota volume and both rates from the regulation before you confirm the delivery date, then price the shipment as in-quota and as out-of-quota and carry the worse number.

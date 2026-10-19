@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-19T05:09:21.275Z",
+  "lastRun": "2026-10-19T08:25:30.651Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-  "runs": 12,
-  "published": 12,
+  "lastArticle": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+  "runs": 13,
+  "published": 13,
   "lastUsage": {
-    "calls": 7,
-    "failed": 5,
-    "usd": 0.0059,
-    "promptTokens": 19090,
-    "completionTokens": 5474
+    "calls": 20,
+    "failed": 16,
+    "usd": 0.0162,
+    "promptTokens": 32485,
+    "completionTokens": 6753
   }
 }
