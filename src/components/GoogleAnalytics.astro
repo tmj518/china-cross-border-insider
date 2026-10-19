@@ -59,8 +59,27 @@ const VERIFY = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ?? "";
         if (id) {
           const w = window as unknown as { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };
           w.dataLayer = w.dataLayer || [];
-          w.gtag = function (...args: unknown[]) {
-            w.dataLayer!.push(args);
+          /*
+           * PUSH arguments, NOT AN ARRAY.
+           *
+           * This is the whole bug. gtag.js drains the queue through the same core GTM uses, and that core processes an
+           * entry by reading it as an arguments-like command: entry[0] is the verb. A rest parameter produces a real
+           * Array, and gtag.js only records a uniqueEventId for entries it accepted - which is why the console showed
+           *
+           *   ["js", ...]                                    no uniqueEventId, never ran
+           *   ["config", "G-N99G9FY6NZ", {...}]              no uniqueEventId, never ran
+           *   {"event":"gtm.dom","gtm.uniqueEventId":3}      accepted
+           *
+           * and why document.cookie had no _ga and the Network panel had no collect at all. The tag loaded 200, the
+           * queue filled correctly, and GA never initialised: the most convincing possible failure, because every
+           * individual part looked right.
+           *
+           * Google's own snippet pushes `arguments` for exactly this reason. Adapting the TS signature to keep the
+           * type checker quiet would have written the bug back in, so the function takes no declared parameters.
+           */
+          w.gtag = function () {
+            // eslint-disable-next-line prefer-rest-params
+            w.dataLayer!.push(arguments as unknown as unknown[]);
           };
           w.gtag("js", new Date());
           w.gtag("config", id, { anonymize_ip: true });
