@@ -1,29 +1,137 @@
 {
-  "at": "2026-10-19T01:14:56.097Z",
-  "providers": [],
+  "at": "2026-10-19T01:25:57.925Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
   "steps": [
     {
       "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "9 previous run(s), last 2026-10-18T12:49:33.543Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "1 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed eu-fdi-screening-notification-threshold-2026, 7 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "7 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-fdi-screening-notification-threshold-2026.md"
+    },
+    {
+      "name": "reviewer",
       "ok": false,
-      "detail": "no key present, so nothing can be attempted"
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-fdi-screening-notification-threshold-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
     }
   ],
-  "verdict": "NO-KEYS",
+  "verdict": "PUBLISHED",
   "reasons": [],
-  "article": null,
+  "article": "eu-fdi-screening-notification-threshold-2026",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 15,
+    "failed": 12,
+    "usd": 0.017,
+    "promptTokens": 40611,
+    "completionTokens": 5466
+  },
   "route": "script",
-  "need": [
-    "ARK_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DOUBAO_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "VOLCES_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DUBAO201628 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "APIKEY20261016201628 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "OWNER_KEY_1 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DEEPSEEK_WRITE_API_KEY",
-    "DEEPSEEK_API_KEY",
-    "DEEPSEEK_REVIEW_API_KEY",
-    "OWNER_KEY_2"
-  ]
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 1,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    mofcom                     161774B  archived",
+    "  ok    statistics-bureau           72989B  archived",
+    "  ok    eu-trade-news-article       75770B  article archived",
+    "  ok    eu-trade-news-article       73430B  article archived",
+    "  skip  ministry-of-finance-article        0B  not usable",
+    "  skip  ministry-of-finance-article        0B  not usable",
+    "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   320441B  article archived",
+    "  ok    statistics-bureau-article   245756B  article archived",
+    "  articles : 5 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  spent   : ~0.0052  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-pea-protein-definitive-duty-cost-per-tonne-2026",
+    "  keyword : EU anti-dumping duty Chinese pea protein 2026 cost per tonne",
+    "  duplicate check: score 20 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): 40.5, 67.1, fiveyears, 29april2026, €175m",
+    "      shared keyword stems: protein",
+    "      shared institution(s): european, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
+    "  spent   : ~0.0108  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-fdi-screening-notification-threshold-2026",
+    "  keyword : EU foreign investment screening notification 2026 FISR",
+    "  duplicate check: score 0",
+    "  slug    : eu-fdi-screening-notification-threshold-2026",
+    "  keyword : EU foreign investment screening notification 2026 FISR",
+    "  category: trade-policy",
+    "  figures : 7",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0108",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 102
 }

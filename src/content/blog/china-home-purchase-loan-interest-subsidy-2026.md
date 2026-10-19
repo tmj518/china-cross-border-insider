@@ -118,6 +118,8 @@ That is the mechanism an importer should price against: demand pulled toward the
 
 **What would change my mind.** A published figure on the number of eligible households, or on the share of home sales that fall inside the 120 square metre and 1.5 million yuan caps in the cities where Chinese building-material buyers operate, would let the demand effect be sized rather than described. A second instrument extending the term beyond one year, or raising the caps, would change the timing judgement. Absent either, the conclusion stands: a small per-home benefit, concentrated in a defined band, over a twelve-month window.
 
+> Also read: [EU FDI screening: 667 notifications in 2025, 12% sent to in-depth review, new FISR applies from 17 January 2028](/blog/eu-fdi-screening-notification-threshold-2026/)
+
 ## For you
 
 - **Importers of standard fittings and finishes:** treat the twelve months from 1 October 2026 as the order window and place production bookings so that goods land as purchases convert to handovers, not before.

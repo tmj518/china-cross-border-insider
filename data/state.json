@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-18T12:49:33.543Z",
+  "lastRun": "2026-10-19T01:25:57.925Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "china-home-purchase-loan-interest-subsidy-2026",
-  "runs": 9,
-  "published": 9,
+  "lastArticle": "eu-fdi-screening-notification-threshold-2026",
+  "runs": 10,
+  "published": 10,
   "lastUsage": {
     "calls": 15,
     "failed": 12,
-    "usd": 0.0137,
-    "promptTokens": 24497,
-    "completionTokens": 6480
+    "usd": 0.017,
+    "promptTokens": 40611,
+    "completionTokens": 5466
   }
 }
