@@ -216,6 +216,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [2025 EU FDI screening notification volumes and processing timelines for third-country investors](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
 
+> Also read: [China's beef safeguard trigger adds 55% to Brazilian beef from 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-tariff-october-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your

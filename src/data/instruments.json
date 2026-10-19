@@ -1299,6 +1299,55 @@
       "modelOutput": false
     },
     {
+      "id": "mofcom-trade-remedy-bureau-notice-2026-58",
+      "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "55%",
+          "unit": "additional tariff on top of the applicable tariff rate",
+          "period": "from 00:00 on 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "100%",
+          "unit": "share of the country-specific quota quantity reached",
+          "period": "reached on 29 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "第 3 日",
+          "unit": "day count after the 100% trigger before the surcharge starts",
+          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "2026-09-30",
+          "unit": "date the execution notice was issued",
+          "period": "notice date",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        44
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-safeguard-55-percent-tariff-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "regulation-on-the-implementation-of-the-law-of-the",
       "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
       "figures": [
