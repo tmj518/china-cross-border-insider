@@ -83,6 +83,30 @@ const TASK_FILE = flag("task", "daily-task.txt");
  * SUBMIT AT TURN TEN is stated to the model as well as enforced below. The words matter: a model told only that it has
  * fifteen turns spends fifteen turns editing.
  */
+/*
+ * THE DATA ORDER is the first thing the model reads, because the first three turns decide the article.
+ *
+ * A pipeline chooses a subject from a fixed rule. An editor chooses it from evidence, and the evidence has an order:
+ * what people search for, then what they read, then what the ministry published. On a new site the first two are empty
+ * and the third is the answer - but the model has to ask in that order to know that, and it has to be told not to
+ * invent a subject when all three are empty.
+ */
+const DATA_NOTE = `BEFORE YOU WRITE, PROBE THE DATA - in this order, one call each:
+
+  1. get_gsc_blue_ocean    What people searched for and did not find. A keyword here is the strongest subject there
+                           is, because somebody has already asked the question. If it returns keywords, write about
+                           the first one and use get_latest_official_docs to find the rate behind it.
+  2. get_ga4_trending      What people actually read. If Search Console is empty and this names a category, write in
+                           that category.
+  3. get_latest_official_docs  What the ministries published today, with the figures. This is the normal answer for a
+                           new site, and it is a good answer: it carries rates and amounts.
+
+If all three return nothing, call finish with NO-SUBJECT. Do not invent a subject, and do not write an article from
+memory. The probes cost almost nothing; a fabricated article costs the site its credibility.
+
+You have three turns for probing. From turn four those three tools stop answering and only writing tools work, so
+probe first and write second.`;
+
 const SUBMIT_NOTE = "SUBMIT AT TURN TEN: if check_draft is still reporting problems at turn ten, stop editing. Call publish_draft on the best draft you have. A published article that the checker disliked is worth more than a perfect draft that never shipped, and the operator reads the checker's complaint on the card either way.";
 
 /*
@@ -205,6 +229,33 @@ const TOOLS = [
       description:
         "Run every deterministic check against a draft: the content schema, the seven gates, the L2-L4 audit. Call this after writing a draft and before publishing it. It returns pass or the failures.",
       parameters: { type: "object", properties: { path: { type: "string" } }, required: ["path"] },
+    },
+  },
+  {
+    type: "function",
+    function: {
+      name: "get_gsc_blue_ocean",
+      description:
+        "Search Console: queries with real impressions and no clicks over the last seven days. Call this FIRST. A keyword here is a question people already ask, which makes it the strongest subject available. Returns the queries with their numbers, or says there are none.",
+      parameters: { type: "object", properties: {}, required: [] },
+    },
+  },
+  {
+    type: "function",
+    function: {
+      name: "get_ga4_trending",
+      description:
+        "Readership: which categories the site is actually read in. Call this when Search Console returns nothing. A category people read is a category worth writing in.",
+      parameters: { type: "object", properties: {}, required: [] },
+    },
+  },
+  {
+    type: "function",
+    function: {
+      name: "get_latest_official_docs",
+      description:
+        "Today's official documents and the subject research proposes from them. Call this when neither data source has anything, which is normal for a new site. The answer lists the figures, so you can see whether a cost article is possible before writing one.",
+      parameters: { type: "object", properties: {}, required: [] },
     },
   },
   {
@@ -505,6 +556,83 @@ function runTool(name, input) {
       return done(`published ${slug} to src/content/blog/. The registry was rebuilt.`);
     }
 
+    if (name === "get_gsc_blue_ocean") {
+      /*
+       * THE THREE EYES. Each is a shell to a repository tool, and the order the prompt asks for is the order of
+       * evidence: what people search for beats what people read, and what people read beats what a ministry
+       * published. A site with no traffic gets the third answer every day, which is correct and honest.
+       */
+      if (DRY) return done("dry run: would query Search Console");
+      try {
+        const out = execFileSync(process.execPath, [join(ROOT, "tools", "gsc-blue-ocean.mjs"), "--days=7"], {
+          cwd: ROOT, encoding: "utf8", timeout: 120000, maxBuffer: 16 * 1024 * 1024,
+        });
+        const m = out.match(/\{[\s\S]*"keywords"[\s\S]*\}/);
+        let kws = [];
+        try { kws = JSON.parse(m ? m[0] : "{}").keywords || []; } catch {}
+        if (!kws.length) {
+          const note = (out.split("\n").find((l) => /GSC BLUE OCEAN: Found|GSC: 0 keywords/.test(l)) || "").trim();
+          return done(
+            "no blue-ocean keywords. " + note + " A new site has little or no exposure, so fall through to get_ga4_trending.",
+          );
+        }
+        return done([
+          "Search Console has keywords for you:",
+          ...kws.slice(0, 5).map((k) => "  - \"" + k.query + "\"  " + k.impressions + " impressions, " + k.clicks + " clicks, position " + k.position),
+          "",
+          "Write about the first one, and use get_latest_official_docs to find the rate behind it.",
+        ].join("\n"));
+      } catch (e) {
+        return done("Search Console could not be read: " + String(e.stdout || e.stderr || e.message).slice(-400) + ". Fall through to get_ga4_trending.");
+      }
+    }
+
+    if (name === "get_ga4_trending") {
+      if (DRY) return done("dry run: would read analytics");
+      try {
+        const out = execFileSync(process.execPath, [join(ROOT, "tools", "analytics.mjs"), "--json"], {
+          cwd: ROOT, encoding: "utf8", timeout: 120000, maxBuffer: 16 * 1024 * 1024,
+        });
+        const m = out.match(/\{[\s\S]*\}/);
+        const j = JSON.parse(m ? m[0] : "{}");
+        const byCat = j.byCategory || j.categories || null;
+        if (!byCat || !Object.keys(byCat).length) {
+          return done("no readership data yet - the site has almost no traffic. Fall through to get_latest_official_docs.");
+        }
+        const ranked = Object.entries(byCat).sort((a, b) => Number(b[1]) - Number(a[1])).slice(0, 5);
+        return done(["Readership by category:", ...ranked.map((r) => "  - " + r[0] + ": " + r[1]), "", "Write in the first category if the documents support it."].join("\n"));
+      } catch (e) {
+        return done("readership could not be read: " + String(e.stdout || e.stderr || e.message).slice(-300) + ". Fall through to get_latest_official_docs.");
+      }
+    }
+
+    if (name === "get_latest_official_docs") {
+      if (DRY) return done("dry run: would fetch the official documents");
+      try {
+        execFileSync(process.execPath, [join(ROOT, "tools", "research.mjs")], {
+          cwd: ROOT, encoding: "utf8", timeout: 300000, maxBuffer: 32 * 1024 * 1024,
+        });
+      } catch (e) {
+        return done("the research tool failed: " + String(e.stdout || e.stderr || e.message).slice(-600));
+      }
+      try {
+        const d = JSON.parse(readFileSync(join(ROOT, "data", "directive.json"), "utf8"));
+        if (!d.slug) return done("research produced no subject from today's documents. Call finish with NO-SUBJECT - do not invent one.");
+        const figs = (d.figures || []).slice(0, 8).map((f) => "    - " + (f.value || "") + " " + (f.unit || "") + " (" + (f.source || "") + ")");
+        return done([
+          "The official documents support this subject:",
+          "  slug    : " + d.slug,
+          "  keyword : " + (d.target_keyword || d.keyword || ""),
+          "  figures : " + (d.figures || []).length,
+          ...figs,
+          "",
+          "Write the article at data/drafts/" + d.slug + ".md from exactly these figures.",
+        ].join("\n"));
+      } catch (e) {
+        return done("the directive could not be read: " + e.message);
+      }
+    }
+
     if (name === "relaunch") {
       /*
        * RELAUNCH: one change of subject per run, and the reason is the turn budget.
@@ -726,7 +854,9 @@ console.log("");
  * which is the operator's own text and is passed through unchanged - the whole point is that the agent
  * gets the instructions that were tuned over 29 articles, not my paraphrase of them.
  */
-const SYSTEM = `${SUBMIT_NOTE}
+const SYSTEM = `${DATA_NOTE}
+
+${SUBMIT_NOTE}
 
 You are the daily operator for Landed Math, an English site that turns Chinese and other
 official primary documents into per-unit cost consequences for importers.
@@ -870,7 +1000,7 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
       result = [
         `PREPARATION IS OVER. This is turn ${turn} of ${MAX_TURNS}; the reading phase ended at ${PREP_TURNS}.`,
         "",
-        `${name} is not available any more. Only write_file, check_draft, publish_draft and finish work from here,`,
+        `${name} is not available any more. The data probes (get_gsc_blue_ocean, get_ga4_trending, get_latest_official_docs) closed at turn 4. Only write_file, check_draft, publish_draft and finish work from here,`,
         "plus reading data/directive.json and your own draft.",
         "",
         "Write the draft now with what you have. check_draft reports what is missing far faster than reading does,",
