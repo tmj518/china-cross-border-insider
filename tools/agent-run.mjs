@@ -101,6 +101,10 @@ const DATA_NOTE = `BEFORE YOU WRITE, PROBE THE DATA - in this order, one call ea
   3. get_latest_official_docs  What the ministries published today, with the figures. This is the normal answer for a
                            new site, and it is a good answer: it carries rates and amounts.
 
+If the subject research proposes is already published - check src/content/blog for the slug, or for an article carrying
+the same figures - call relaunch ONCE to get a different subject. That is what the tool is for: a published subject is
+not a verdict on the day, it is one subject out of many.
+
 If all three return nothing, call finish with NO-SUBJECT. Do not invent a subject, and do not write an article from
 memory. The probes cost almost nothing; a fabricated article costs the site its credibility.
 
@@ -1270,4 +1274,4 @@ console.log(`  report  : data/tmp/agent-report.json`);
 console.log(`  transcript: data/tmp/agent-transcript.jsonl`);
 
 /* PUBLISHED-WITHOUT-FINISH is a success: an article is in the collection, and the card says how. */
-process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT"].includes(report.verdict) ? 0 : 1);
+process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT", "DUPLICATE-SUBJECT"].includes(report.verdict) ? 0 : 1);
