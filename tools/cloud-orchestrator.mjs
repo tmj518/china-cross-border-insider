@@ -93,6 +93,50 @@ function keepRunReport(report) {
 }
 
 const started = Date.now();
+/*
+ * ALREADY PUBLISHED TODAY - the idempotency guard, and the reason a backup cron is safe.
+ *
+ * GitHub's scheduler is best-effort: the 07:20 run on 2026-10-19 never fired, and the only evidence was that nothing
+ * happened. The fix is a second cron twenty minutes later, and the thing that makes a second cron safe is this check -
+ * if today already has an article, the second run stops in a second instead of publishing again.
+ *
+ * "Today" is the Beijing date, because that is the operator's day. The journals are written in UTC, so the comparison
+ * shifts by eight hours rather than slicing the ISO string.
+ */
+function alreadyPublishedToday() {
+  const beijing = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+  const dir = join(ROOT, "data", "runs");
+  if (!existsSync(dir)) return null;
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".json") || f === "latest.json") continue;
+    try {
+      const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
+      const when = new Date(new Date(j.at).getTime() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+      /*
+       * Route-scoped. The guard asks "has THIS route published today", not "has anything published today", because
+       * the two routes are supposed to produce two articles. A global check would mean the agent never runs on any day
+       * the script succeeded - which is every day the system works, and therefore always.
+       */
+      if (j.route && j.route !== "script") continue;
+      if (when === beijing && /^PUBLISHED/.test(String(j.verdict ?? ""))) {
+        return { slug: j.article ?? j.slug ?? "?", at: j.at };
+      }
+    } catch {}
+  }
+  return null;
+}
+
+const already = alreadyPublishedToday();
+if (already && !process.argv.includes("--force")) {
+  console.log("ALREADY PUBLISHED TODAY");
+  console.log("  article : " + already.slug);
+  console.log("  at      : " + already.at);
+  console.log("");
+  console.log("  The backup cron fired after the primary one had already done the work.");
+  console.log("  Exiting 0 so the run is green and costs nothing. --force overrides this.");
+  process.exit(0);
+}
+
 const run = {
   at: new Date().toISOString(),
   providers: available(),

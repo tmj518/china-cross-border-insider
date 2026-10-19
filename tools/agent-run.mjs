@@ -508,6 +508,58 @@ function runTool(name, input) {
   }
 }
 
+/*
+ * ALREADY PUBLISHED TODAY, the same guard the script route has.
+ *
+ * The 21:20 backup cron exists because GitHub's scheduler skipped 07:20 on 2026-10-19 without a trace. What makes a
+ * second cron safe is this: if the day already has an article, the second run stops before spending a token.
+ */
+function alreadyPublishedToday() {
+  const beijing = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+  const dir = join(ROOT, "data", "runs");
+  if (!existsSync(dir)) return null;
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".json") || f === "latest.json") continue;
+    try {
+      const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
+      const when = new Date(new Date(j.at).getTime() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+      /* Route-scoped: the agent asks whether the AGENT has published today, not whether anything has. */
+      if (j.route && j.route !== "agent") continue;
+      if (when === beijing && /^PUBLISHED/.test(String(j.verdict ?? ""))) {
+        return { slug: j.article ?? (Array.isArray(j.published) && j.published[0]) ?? "?", at: j.at };
+      }
+    } catch {}
+  }
+  return null;
+}
+
+const alreadyToday = alreadyPublishedToday();
+if (alreadyToday && !args.includes("--force")) {
+  console.log("ALREADY PUBLISHED TODAY");
+  console.log("  article : " + alreadyToday.slug);
+  console.log("  at      : " + alreadyToday.at);
+  console.log("  Exiting 0 - the day already has an article and this run would only burn tokens.");
+  writeFileSync(
+    REPORT,
+    JSON.stringify(
+      {
+        at: new Date().toISOString(),
+        route: "agent",
+        verdict: "IDLE",
+        summary: `${alreadyToday.slug} was published today at ${alreadyToday.at}, so this run exited without spending a token.`,
+        turns: 0,
+        published: [],
+        usage: { calls: 0, failed: 0, usd: 0 },
+        reasons: [],
+      },
+      null,
+      2,
+    ),
+    "utf8",
+  );
+  process.exit(0);
+}
+
 /* ---------------------------------------------------------------- the loop */
 
 const taskPath = join(ROOT, TASK_FILE);
@@ -906,7 +958,20 @@ if (published.size === 0) {
     if (newest) {
       const from = join(draftDir, newest.f);
       const body = readFileSync(from, "utf8");
-      if (body.trim().length > 200) {
+      /*
+       * DO NOT OVERWRITE A LIVE URL, even from the fallback.
+       *
+       * On 2026-10-19 at 01:14 the fallback copied a draft over eu-fdi-screening-notification-surge-2026, a page that
+       * had been published the previous evening. The content happened to be the same, so nothing broke - but the
+       * journal then recorded a publication for today, the idempotency guard believed it, and the agent route was
+       * blocked for the rest of the day by a run that published nothing new.
+       *
+       * The orchestrator refuses this for the script route. The fallback is not a licence to do it here.
+       */
+      const target = join(ROOT, "src", "content", "blog", newest.f);
+      if (existsSync(target)) {
+        console.log("  forced submission: " + newest.f + " is already published, not overwriting it");
+      } else if (body.trim().length > 200) {
         const slug = newest.f.replace(/\.md$/, "");
         /*
          * SANITIZE BEFORE SUBMITTING.
@@ -941,7 +1006,7 @@ if (published.size === 0) {
           if (!/^draft:\s*false/m.test(fm)) set("draft", "false");
           return "---\n" + fm + "\n---\n" + body;
         };
-        writeFileSync(join(ROOT, "src", "content", "blog", newest.f), sanitizeFrontmatter(body), "utf8");
+        writeFileSync(target, sanitizeFrontmatter(body), "utf8");
         try {
           execFileSync(process.execPath, [join(ROOT, "tools", "build-instruments.mjs")], { cwd: ROOT, timeout: 120000 });
         } catch {}

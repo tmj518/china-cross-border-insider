@@ -28,7 +28,9 @@ on:
     # One workflow rather than two. Two copies of fourteen steps drift apart, and both routes write the same
     # report and the same card, so the failure domain is the same either way.
     - cron: '20 23 * * *'   # 07:20 Beijing - script
+    - cron: '20 1 * * *'    # 09:20 Beijing - script BACKUP, in case the first is skipped
     - cron: '20 12 * * *'   # 20:20 Beijing - agent
+    - cron: '20 13 * * *'   # 21:20 Beijing - agent BACKUP
   # A push to data/trigger/ is a run.
   #
   # The scheduled crons are the promise; this is how a person - or an agent working in the repository - starts one
