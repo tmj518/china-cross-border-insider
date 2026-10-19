@@ -165,7 +165,15 @@ if (!creds) {
   log("  credentials : GSC_CREDENTIALS_BASE64 does not decode to JSON. Attempts:");
   for (const a of decoded.attempts) log("    " + a);
   log("");
-  log("  Fix: re-export the service-account key and paste the base64 of the JSON file with no line breaks.");
+  log("");
+  log("  WARNING, not a failure. This run continues without Search Console and researches the official");
+  log("  documents instead, which is what it did before this existed. The site has no exposure yet, so");
+  log("  nothing is lost by skipping it today.");
+  log("");
+  log("  To fix it: node tools/reencode-gsc-key.mjs <path to the key.json>");
+  log("  That prints clean base64 and names the encoding it found. Paste the output over");
+  log("  GSC_CREDENTIALS_BASE64. It exists because PowerShell's Unicode encoder produces UTF-16,");
+  log("  which is valid base64 of text no JSON parser will read.");
   finish({ available: false, reason: "credentials are not valid base64 JSON", keywords: [] }, 0);
 }
 

@@ -140,6 +140,17 @@ const MAX_TURNS = Number(flag("max-turns", 12));
  */
 const PREP_TURNS = 4;
 
+/*
+ * A HARD DOLLAR CEILING, because turns are not money.
+ *
+ * The 2026-10-19 runs measured it: the agent route spent $0.0469 in seventy calls, fifty-six of which were retries after
+ * Ark timed out in a long context. A turn budget cannot see that - turn nine of a retry storm looks exactly like turn
+ * nine of a clean run. The ceiling is checked after every tool call, and reaching it ends the loop the same way the
+ * turn limit does: the newest draft is submitted and the verdict says how.
+ */
+const USD_LIMIT = Number(process.env.AGENT_USD_LIMIT ?? 0.06);
+let spentUsd = 0;
+
 const DRY = args.includes("--dry-run");
 const REPORT = join(ROOT, "data", "tmp", "agent-report.json");
 const TRANSCRIPT = join(ROOT, "data", "tmp", "agent-transcript.jsonl");
@@ -1024,6 +1035,18 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
      *
      * This is the same instruction the system prompt gives in words. The code gives it teeth.
      */
+    /*
+     * The ceiling is checked here rather than in the loop condition, so it runs after the tool call has been billed.
+     */
+    try {
+      spentUsd = usageToday().usd;
+    } catch {}
+    if (spentUsd >= USD_LIMIT) {
+      console.log("  budget  : $" + spentUsd.toFixed(4) + " has reached the $" + USD_LIMIT + " ceiling, ending the run");
+      record({ turn, budget: true, spentUsd, limit: USD_LIMIT });
+      break;
+    }
+
     if (turn >= MAX_TURNS - 2 && !finished) {
       try {
         const drafts = readdirSync(join(ROOT, "data", "drafts"))
