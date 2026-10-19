@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-19T08:25:30.585Z",
+  "at": "2026-10-19T18:45:43.298Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -9,45 +9,7 @@
     "maxPosition": 20,
     "top": 3
   },
-  "available": true,
-  "empty": true,
-  "reason": "no query met the impression, ctr and position thresholds",
-  "keywords": [],
-  "topSeen": [
-    {
-      "query": "\"periodical no. 1 of 2026\" suez canal",
-      "impressions": 2,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 5.5
-    },
-    {
-      "query": "-site:facebook.com -site:fb.me -site:youtube.com -site:youtu.be -site:youtube.be -site:twitter.com -site:instagram.com -site:tiktok.com -site:vm.tiktok.com -site:t.co -site:x.com -site:reddit.com -site:linkedin.com \"people's bank of china\"",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 47
-    },
-    {
-      "query": "landed cost calculator",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 89
-    },
-    {
-      "query": "landed pricing",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 95
-    },
-    {
-      "query": "scfi",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 65
-    }
-  ]
+  "available": false,
+  "reason": "GSC_CREDENTIALS_BASE64 is not set",
+  "keywords": []
 }
