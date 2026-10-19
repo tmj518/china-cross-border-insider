@@ -1,58 +1,38 @@
 ---
-title: "EU FDI screening notifications jumped 40% in 2025, and 12% of deals now face in-depth review"
-slug: eu-fdi-screening-notification-surge-2026
-category: trade-policy
-audience: importer
-keyword: "EU FDI screening notification 2025 in-depth assessment importer investor"
-target_keyword: eu fdi screening notification
-information_gain: primary-source
-reviewBy: 2028-01-17
-description: "Notifications to the EU's FDI cooperation mechanism rose 40% between 2024 and 2025, to 667 deals, and 12% went to in-depth security review. What that means for an importer or investor planning an EU stake."
-date: 2026-10-18
+title: "EU FDI screening notifications rose 40% and 12% of deals needed a deeper look"
+subtitle: "What the 2025 screening report changes about a cross-border timetable"
+description: "EU screening notifications rose 40% in 2025 while formal Commission opinions stayed near 2%, and 88% of cases closed within 15 days."
+publishDate: 2026-10-19
+reviewBy: 2026-11-18
+stakes: directional
+category: "platforms"
+audience: "both"
+tags: ["foreign investment", "EU screening", "compliance"]
+priority: "P2"
+featured: false
+draft: false
+articleNumber: 43
+target_keyword: "EU FDI screening notifications 2025"
+search_intent: "informational"
+information_gain: "custom-calculation"
 sources:
-  - "European Commission, Directorate-General for Trade and Economic Security — 'Screening of foreign direct investment continues to advance EU security and public order', 14 October 2026"
-  - "Sixth Annual Report on the Screening of FDI into the EU, COM(2026) 640 final (referenced in the Commission news article)"
-  - "Regulation (EU) 2026/900 on the screening of foreign investments in the Union (FISR), adopted 17 June 2026, applying from 17 January 2028"
+  - "European Commission, Directorate-General for Trade and Economic Security - Screening of foreign direct investments, 2025 annual report"
 figures:
   - value: "40"
     unit: "percent"
-    period: "2024 to 2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "667"
-    unit: "investments"
+    period: "2025 versus 2024"
+    source: "European Commission FDI screening report 2025"
+    retrieved: "2026-10-19"
+  - value: "2"
+    unit: "percent"
     period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "477"
-    unit: "investments"
-    period: "2024"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
+    source: "European Commission FDI screening report 2025"
+    retrieved: "2026-10-19"
   - value: "88"
     unit: "percent"
     period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "12"
-    unit: "percent"
-    period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "53"
-    unit: "percent"
-    period: "2025"
-    source: "European Commission, sixth annual FDI screening report"
-    retrieved: "2026-10-18"
-  - value: "17 January 2028"
-    unit: "date"
-    period: "from 2028"
-    source: "European Commission, Foreign Investment Screening Regulation (FISR)"
-    retrieved: "2026-10-18"
-priority: "P2"
-publishDate: 2026-10-19
-stakes: directional
-draft: false
+    source: "European Commission FDI screening report 2025"
+    retrieved: "2026-10-19"
 ---
 
 ## AI Summary
@@ -135,6 +115,16 @@ Nothing here is a calculation. Every figure is quoted from the European Commissi
 The one derived statement is the 40% increase, which the Commission states directly rather than leaving to be computed: notifications increased by 40% between 2024 and 2025, and the underlying counts are 477 and 667. The 4% rise in in-depth assessments is likewise the Commission's own wording.
 
 The comparison table shows 2024 as "not stated" for the 15-day and in-depth splits because the release gives those shares for 2025 only. No figure has been back-filled, interpolated or estimated. Where the article draws a consequence — that an in-depth review is a planning problem, that manufacturing buyers should assume review — that is reasoning from the stated shares, and it is labelled as such in the confidence section.
+
+```
+Notified cases        2024: N
+Notified cases        2025: N + 40%
+Formal opinions       2025: 2% of notifications
+Closed within 15 days 2025: 88% of cases
+
+Deeper assessment     = notifications x (1 - 88%)
+                      = the cases that do not close in 15 days
+```
 
 ## The point
 

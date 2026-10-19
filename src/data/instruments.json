@@ -190,185 +190,6 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-sixth-annual-fdi-screening-report",
-      "source": "European Commission, sixth annual FDI screening report",
-      "figures": [
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "40%",
-          "unit": "increase in notifications to the EU cooperation mechanism between 2024 and 2025",
-          "period": "2024 to 2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "667",
-          "unit": "investments notified to the Commission in 2025",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "477",
-          "unit": "investments notified to the Commission in 2024",
-          "period": "2024",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "88%",
-          "unit": "share of notified cases closed within 15 days",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "12%",
-          "unit": "share of notified investments requiring an in-depth security risk assessment",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "53%",
-          "unit": "share of in-depth assessments in manufacturing",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "40",
-          "unit": "percent",
-          "period": "2024 to 2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-18"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "667",
-          "unit": "investments",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-18"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "477",
-          "unit": "investments",
-          "period": "2024",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-18"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "88",
-          "unit": "percent",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-18"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "12",
-          "unit": "percent",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-18"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "53",
-          "unit": "percent",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-18"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "667",
-          "unit": "investments notified to the Commission in 2025",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "477",
-          "unit": "notifications in 2024",
-          "period": "2024",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "40%",
-          "unit": "increase in notifications between 2024 and 2025",
-          "period": "2024-2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "88%",
-          "unit": "share of notified cases closed within 15 days",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "12%",
-          "unit": "share of notified investments requiring in-depth security risk assessment",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "53%",
-          "unit": "share of in-depth assessments in manufacturing",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        }
-      ],
-      "articleNums": [
-        0,
-        42,
-        45
-      ],
-      "articleSlugs": [
-        "eu-fdi-screening-notification-surge-2026-2026-10-19",
-        "eu-fdi-screening-notification-surge-2026",
-        "eu-fdi-screening-notification-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "ministry-of-commerce-of-china",
       "source": "Ministry of Commerce of China",
       "figures": [
@@ -584,6 +405,73 @@
       ],
       "articleSlugs": [
         "eu-gpsr-sweep-2026-marketplace-listings"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-sixth-annual-fdi-screening-report",
+      "source": "European Commission, sixth annual FDI screening report",
+      "figures": [
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "667",
+          "unit": "investments notified to the Commission in 2025",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "477",
+          "unit": "notifications in 2024",
+          "period": "2024",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "40%",
+          "unit": "increase in notifications between 2024 and 2025",
+          "period": "2024-2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "88%",
+          "unit": "share of notified cases closed within 15 days",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "12%",
+          "unit": "share of notified investments requiring in-depth security risk assessment",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "53%",
+          "unit": "share of in-depth assessments in manufacturing",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        42
+      ],
+      "articleSlugs": [
+        "eu-fdi-screening-notification-threshold-2026"
       ],
       "modelOutput": false
     },
@@ -1157,6 +1045,55 @@
       "modelOutput": false
     },
     {
+      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "2652/QD-BCT",
+          "unit": "the number of the Vietnamese decision that concluded the sunset review",
+          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "16 October 2026",
+          "unit": "the date the continued measure takes effect",
+          "period": "five-year term, so it runs to 2029 unless reviewed again",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "54.90%",
+          "unit": "the duty on the same product from India under the same decision, for comparison",
+          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "5402.33.10",
+          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
+          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "counted-from-the-annex-to-announcement-no-5-of",
       "source": "Counted from the annex to Announcement No. 5 of 2026",
       "figures": [
@@ -1555,55 +1492,6 @@
       "modelOutput": false
     },
     {
-      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "2652/QD-BCT",
-          "unit": "the number of the Vietnamese decision that concluded the sunset review",
-          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "16 October 2026",
-          "unit": "the date the continued measure takes effect",
-          "period": "five-year term, so it runs to 2029 unless reviewed again",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "54.90%",
-          "unit": "the duty on the same product from India under the same decision, for comparison",
-          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "5402.33.10",
-          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
-          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "cbp-interim-final-rule-91-fr-37801",
       "source": "CBP interim final rule, 91 FR 37801",
       "figures": [
@@ -1680,6 +1568,46 @@
       ],
       "articleSlugs": [
         "china-2026-export-duty-wrought-metals"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-fdi-screening-report-2025",
+      "source": "European Commission FDI screening report 2025",
+      "figures": [
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 43,
+          "value": "40",
+          "unit": "percent",
+          "period": "2025 versus 2024",
+          "source": "European Commission FDI screening report 2025",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 43,
+          "value": "2",
+          "unit": "percent",
+          "period": "2025",
+          "source": "European Commission FDI screening report 2025",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-surge-2026",
+          "articleNum": 43,
+          "value": "88",
+          "unit": "percent",
+          "period": "2025",
+          "source": "European Commission FDI screening report 2025",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        43
+      ],
+      "articleSlugs": [
+        "eu-fdi-screening-notification-surge-2026"
       ],
       "modelOutput": false
     },
@@ -2164,6 +2092,37 @@
       "modelOutput": false
     },
     {
+      "id": "2026-10-15-producer-annex-to-quy-t-nh",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "3.36%",
+          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "17.45%",
+          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "calculated-24-april-2027-minus-4-october-2026-using",
       "source": "Calculated: 24 April 2027 minus 4 October 2026, using the deadlines in Notice C/2026/6637",
       "figures": [
@@ -2381,39 +2340,6 @@
       ],
       "articleSlugs": [
         "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-foreign-investment-screening-regulation",
-      "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
-      "figures": [
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "17 January 2028",
-          "unit": "date the new Foreign Investment Screening Regulation applies from",
-          "period": "from 2028",
-          "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026",
-          "articleNum": 0,
-          "value": "17 January 2028",
-          "unit": "date",
-          "period": "from 2028",
-          "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
-          "retrieved": "2026-10-18"
-        }
-      ],
-      "articleNums": [
-        0,
-        45
-      ],
-      "articleSlugs": [
-        "eu-fdi-screening-notification-surge-2026-2026-10-19",
-        "eu-fdi-screening-notification-surge-2026"
       ],
       "modelOutput": false
     },
@@ -2969,37 +2895,6 @@
       ],
       "articleSlugs": [
         "indonesia-tarpaulin-safeguard-duty-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "2026-10-15-producer-annex-to-quy-t-nh",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "3.36%",
-          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "17.45%",
-          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     }

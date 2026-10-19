@@ -780,13 +780,26 @@ const spent = usageToday().usd - started.usd;
  * date, which is honest - the article is about what the documents say now - and it makes the slug unique, so a
  * published URL is never overwritten.
  */
+/*
+ * ALL SUBJECTS DUPLICATE means no article today, and that is the correct answer.
+ *
+ * This block used to append today's date to the slug and publish the last rejected proposal anyway. On 2026-10-20 it
+ * produced eu-fdi-screening-notification-surge-2026-2026-10-19 - the same title, the same subject, a second URL for a
+ * page that already existed. Two URLs competing for one keyword is self-competition in search, and the operator's rule
+ * is the one that was already written down: a day without an article beats a duplicate.
+ *
+ * A date in the slug is only honest when the date is what changed - a new announcement, a new rate. research cannot
+ * know that, so it does not get to pretend.
+ */
 if (!proposal && rejectedSubjects.length) {
-  const base = rejectedSubjects[rejectedSubjects.length - 1];
-  const stamp = new Date().toISOString().slice(0, 10);
   console.log("");
-  console.log(`  All ${PROPOSAL_ATTEMPTS} proposals scored as duplicates. Publishing the last one with a date qualifier:`);
-  console.log(`  ${base.slug} -> ${base.slug}-${stamp}`);
-  proposal = { ...base.proposal, slug: `${base.slug}-${stamp}`, keyword: `${base.keyword} ${stamp}` };
+  console.log(`  ALL_SUBJECTS_DUPLICATE - all ${PROPOSAL_ATTEMPTS} proposals are already published.`);
+  for (const r of rejectedSubjects) console.log(`    - ${r.slug} (score ${r.score})`);
+  console.log("");
+  console.log("  No directive was written. Publishing a near-duplicate under a new slug would compete with");
+  console.log("  the existing article for the same keyword, which is worse for the site than a quiet day.");
+  console.log("  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure.");
+  process.exit(2);
 }
 
 if (!proposal) {
