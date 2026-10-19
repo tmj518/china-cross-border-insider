@@ -210,6 +210,15 @@ const TOOLS = [
   {
     type: "function",
     function: {
+      name: "relaunch",
+      description:
+        "Abandon the current draft and ask research for a different subject. Use this when the material cannot support a cost article - no rate, no amount, nothing an importer can act on - because rewriting that draft only burns turns. One use per run. It returns the new subject and its figures; write a fresh draft from them.",
+      parameters: { type: "object", properties: {}, required: [] },
+    },
+  },
+  {
+    type: "function",
+    function: {
       name: "publish_draft",
       description:
         "Move a checked draft into src/content/blog/ so the next build includes it, and rebuild the instrument registry. Refuses if the draft has not passed check_draft in this run.",
@@ -240,6 +249,8 @@ const transcript = [];
 const published = new Set();
 const checkedOk = new Set();
 let finished = null;
+/** A relaunch is allowed once per run; a second one is a refusal. */
+let relaunched = false;
 
 function record(entry) {
   transcript.push({ at: new Date().toISOString(), ...entry });
@@ -492,6 +503,50 @@ function runTool(name, input) {
       }
       published.add(slug);
       return done(`published ${slug} to src/content/blog/. The registry was rebuilt.`);
+    }
+
+    if (name === "relaunch") {
+      /*
+       * RELAUNCH: one change of subject per run, and the reason is the turn budget.
+       *
+       * On 2026-10-19 the agent spent seventy-five calls and twelve turns polishing a draft whose source documents held
+       * notification counts rather than prices. It could not know that until it had tried, and once it had tried the only
+       * way out was to keep rewriting. One relaunch, mid-run, is worth more than four extra turns of the same paragraph.
+       *
+       * It runs research, which is the repository's own tool for exactly this question - what subject do today's
+       * documents support - and returns the subject it chose. The draft is left where it is; a new one is written under
+       * the new slug, and the fallback submits the newest file.
+       */
+      if (relaunched) {
+        return done("REFUSED: relaunch has already been used in this run. Write the article from what you have and call publish_draft.");
+      }
+      relaunched = true;
+      if (DRY) return done("dry run: would relaunch");
+      try {
+        execFileSync(process.execPath, [join(ROOT, "tools", "research.mjs")], {
+          cwd: ROOT,
+          encoding: "utf8",
+          timeout: 240000,
+          maxBuffer: 32 * 1024 * 1024,
+        });
+      } catch (e) {
+        return done(`relaunch failed: the research tool exited ${e.status ?? 1}. ${String(e.stdout ?? e.stderr ?? e.message).slice(-600)}`);
+      }
+      try {
+        const d = JSON.parse(readFileSync(join(ROOT, "data", "directive.json"), "utf8"));
+        const fig = (d.figures ?? []).slice(0, 8).map((f) => `${f.value ?? ""} ${f.unit ?? ""} - ${f.source ?? ""}`.trim());
+        return done([
+          "relaunched. The new subject is:",
+          `  slug    : ${d.slug}`,
+          `  keyword : ${d.target_keyword ?? d.keyword ?? ""}`,
+          `  figures : ${(d.figures ?? []).length}`,
+          ...fig.map((x) => "    - " + x),
+          "",
+          `Write the article at data/drafts/${d.slug}.md from these figures. Do not reuse the old draft.`,
+        ].join("\n"));
+      } catch (e) {
+        return done(`relaunch ran but the directive could not be read: ${e.message}`);
+      }
     }
 
     if (name === "finish") {

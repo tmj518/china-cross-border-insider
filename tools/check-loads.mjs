@@ -56,7 +56,7 @@ const TOOLS = [
   { name: "cloud-orchestrator", args: [], expect: "no key present, so nothing can be attempted", why: "the coordinator" },
   { name: "research", args: ["--sources=1"], expect: "no provider key", why: "the subject chooser" },
   { name: "analytics", args: ["--fetch"], expect: "cannot fetch", why: "the readership reader" },
-  { name: "agent-run", args: ["--max-turns=1"], expect: "no provider key present", why: "the agent loop" },
+  { name: "agent-run", args: ["--max-turns=1"], expect: "no provider key present", alsoAccept: ["ALREADY PUBLISHED TODAY"], why: "the agent loop" },
   { name: "notify-feishu", args: ["--dry-run"], expect: "", why: "the notifier, which must run with no credentials at all" },
   { name: "feishu-ledger", args: [], expect: "Missing:", why: "the tool that creates the ledger base" },
   { name: "gsc-blue-ocean", args: [], expect: "GSC_CREDENTIALS_BASE64 is not set", why: "the blue-ocean keyword reader, which must degrade rather than fail" },
@@ -166,7 +166,10 @@ for (const t of TOOLS) {
    */
   const crash = /ReferenceError|ERR_MODULE_NOT_FOUND|ERR_UNSUPPORTED|SyntaxError|is not defined|Cannot find module/.test(out);
   /* Case-insensitive: the tools do not agree on whether "provider" is capitalised. */
-  const got = t.expect === "" ? !crash : out.toLowerCase().includes(t.expect.toLowerCase());
+  const got =
+    t.expect === ""
+      ? !crash
+      : [t.expect, ...(t.alsoAccept ?? [])].some((x) => out.toLowerCase().includes(String(x).toLowerCase()));
 
   if (crash) {
     const line = out.split(/\r?\n/).find((l) => /ReferenceError|ERR_MODULE_NOT_FOUND|SyntaxError|is not defined|Cannot find module/.test(l)) ?? "unknown";

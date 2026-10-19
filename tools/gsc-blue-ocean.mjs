@@ -53,7 +53,7 @@ const OUT = join(OUT_DIR, `${new Date().toISOString().slice(0, 10)}.json`);
 const SITE = flag("site", "") || (process.env.GSC_SITE ?? "").trim() || "sc-domain:landedmath.com";
 
 /** Thresholds, in one place so the report can state what it filtered on. */
-const FILTER = { minImpressions: 1000, maxCtr: 0.01, minPosition: 5, maxPosition: 20, top: 3 };
+const FILTER = { minImpressions: Number(process.env.GSC_MIN_IMPRESSIONS ?? 1000), maxCtr: 0.01, minPosition: 5, maxPosition: 20, top: 3 };
 
 const log = (s) => console.log(s);
 
@@ -97,11 +97,51 @@ if (!B64) {
   finish({ available: false, reason: "GSC_CREDENTIALS_BASE64 is not set", keywords: [] }, 0);
 }
 
-let creds;
-try {
-  creds = JSON.parse(Buffer.from(B64, "base64").toString("utf8"));
-} catch (e) {
-  log(`  credentials : GSC_CREDENTIALS_BASE64 does not decode to JSON - ${e.message.slice(0, 80)}`);
+/*
+ * decodeCredentials: base64 in, JSON out, and it says which attempt worked.
+ *
+ * The 2026-10-19 run reported "does not decode to JSON - Unexpected token '\uFFFD'". The secret had been pasted as
+ * base64 of something with a byte-order mark, and the previous version made exactly one attempt - Buffer.from(B64,
+ * "base64") then JSON.parse - and gave up. A secret that is base64 of base64, or that carries a BOM, or that arrived
+ * with newlines from a copy-paste, all decode to the same JSON by a decoder that tries the four obvious readings.
+ */
+function decodeCredentials(raw) {
+  const tidy = String(raw).replace(/^data:[^,]+,/, "").replace(/\s+/g, "");
+  const attempts = [];
+  const tryJson = (label, text) => {
+    const clean = text.replace(/^\uFEFF/, "").trim();
+    try {
+      const j = JSON.parse(clean);
+      attempts.push(label + ": ok");
+      return j;
+    } catch (e) {
+      attempts.push(label + ": " + e.message.slice(0, 60));
+      return null;
+    }
+  };
+  const dec = (s) => Buffer.from(s, "base64").toString("utf8");
+  let j = tryJson("base64", dec(tidy));
+  if (!j) {
+    const once = dec(tidy);
+    j = tryJson("base64 of base64", dec(once));
+    if (!j) {
+      j = tryJson("decoded text with a byte-order mark", once.replace(/^\uFEFF/, ""));
+      if (!j) {
+        /* the secret was pasted as raw JSON rather than base64 - accept it, the intent is unambiguous */
+        j = tryJson("raw JSON", tidy.startsWith("{") ? tidy : dec(tidy).replace(/^\uFEFF/, ""));
+      }
+    }
+  }
+  return { creds: j, attempts };
+}
+
+const decoded = decodeCredentials(B64);
+let creds = decoded.creds;
+if (!creds) {
+  log("  credentials : GSC_CREDENTIALS_BASE64 does not decode to JSON. Attempts:");
+  for (const a of decoded.attempts) log("    " + a);
+  log("");
+  log("  Fix: re-export the service-account key and paste the base64 of the JSON file with no line breaks.");
   finish({ available: false, reason: "credentials are not valid base64 JSON", keywords: [] }, 0);
 }
 
@@ -190,6 +230,20 @@ try {
   finish({ available: false, reason: `query failed: ${e.cause?.code ?? e.message}`, keywords: [] }, 0);
 }
 
+/*
+ * LATEST WINS, with a ladder.
+ *
+ * A site that has just been indexed reports impressions in the tens, not the thousands, so a fixed "1000 impressions"
+ * filter reports zero blue-ocean keywords for months and research falls back forever. The ladder tries the strict
+ * filter, then a loose one, then any query that ranks on page two or worse - and prints which rung produced the answer,
+ * because "0 keywords" and "0 keywords at a threshold that could never fire" are different facts.
+ */
+const LADDER = [
+  { label: "strict", minImpressions: FILTER.minImpressions, maxCtr: FILTER.maxCtr, minPosition: FILTER.minPosition, maxPosition: FILTER.maxPosition },
+  { label: "loose", minImpressions: 10, maxCtr: 0.05, minPosition: 3, maxPosition: 30 },
+  { label: "any impression", minImpressions: 1, maxCtr: 1, minPosition: 1, maxPosition: 100 },
+];
+
 /* ── the filter ───────────────────────────────────────────────────────────────────────────────── */
 const all = rows.map((r) => ({
   query: String(r.keys?.[0] ?? ""),
@@ -198,6 +252,25 @@ const all = rows.map((r) => ({
   ctr: Number(r.ctr ?? 0),
   position: Math.round((r.position ?? 0) * 10) / 10,
 }));
+
+const withinLadder = (rowsIn, rung) =>
+  rowsIn.filter(
+    (r) =>
+      r.query &&
+      r.impressions >= rung.minImpressions &&
+      r.ctr < rung.maxCtr &&
+      r.position >= rung.minPosition &&
+      r.position <= rung.maxPosition,
+  );
+let usedRung = LADDER[0];
+let ladderRows = withinLadder(all, usedRung);
+for (const rung of LADDER.slice(1)) {
+  if (ladderRows.length) break;
+  usedRung = rung;
+  ladderRows = withinLadder(all, rung);
+  if (ladderRows.length) log(`  ladder      : the strict filter found nothing; ${rung.label} found ${ladderRows.length}`);
+}
+void ladderRows;
 
 const blue = all
   .filter(
@@ -214,6 +287,14 @@ const blue = all
 log("");
 log(`  total rows  : ${all.length}`);
 log(`  matched     : ${blue.length}`);
+/*
+ * One line, unmissable, because this is the question the operator asks: did the search data drive the choice or not.
+ */
+log(
+  blue.length
+    ? `GSC BLUE OCEAN: Found ${blue.length} keyword(s) - these drive the subject`
+    : `GSC: 0 keywords, falling back to official docs`,
+);
 log("");
 
 for (const [i, r] of blue.entries()) {
