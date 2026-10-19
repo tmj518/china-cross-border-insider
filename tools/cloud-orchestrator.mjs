@@ -419,23 +419,59 @@ if (!directive) {
  * DUPLICATE-SUBJECT rather than REJECTED: REJECTED means the writing failed, this means the choosing failed,
  * and they need different responses.
  */
-const existingPath = join(ROOT, "src", "content", "blog", `${directive.slug}.md`);
-if (directive.slug && existsSync(existingPath)) {
-  step("duplicate subject", false, `${directive.slug} is already published - refusing to overwrite it`);
+/*
+ * A SUBJECT THAT IS ALREADY PUBLISHED SENDS RESEARCH BACK, up to TRIES times.
+ *
+ * The refusal is the right rule - overwriting a live page replaces a URL under a reader, and the version on the site
+ * is the version that was reviewed. The wrong part was stopping: on 2026-10-20 this route read yesterday's
+ * electrical-steel directive, refused it, and ended the day while dozens of other fetched documents sat unused.
+ *
+ * research already knows how to pick again - it scores candidates against the ledger and escalates through three
+ * proposals - so the guard asks it, and only gives up when every attempt comes back to something published.
+ */
+const DUPLICATE_TRIES = Number(process.env.DUPLICATE_TRIES ?? 3);
+let duplicateTries = 0;
+while (directive.slug && existsSync(join(ROOT, "src", "content", "blog", `${directive.slug}.md`))) {
+  duplicateTries++;
+  console.log("");
+  console.log(`  duplicate   : ${directive.slug} is already in src/content/blog (attempt ${duplicateTries} of ${DUPLICATE_TRIES})`);
+  if (duplicateTries >= DUPLICATE_TRIES) break;
+  /* Cleared first: research reads the ledger, and a stale directive would hand back the same subject. */
+  try {
+    writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), refused: directive.slug }, null, 2), "utf8");
+  } catch {}
+  console.log("  researching : asking for a subject that is not already published");
+  try {
+    execFileSync(process.execPath, [join(ROOT, "tools", "research.mjs")], {
+      cwd: ROOT,
+      encoding: "utf8",
+      stdio: "inherit",
+      timeout: 900000,
+    });
+  } catch (e) {
+    console.log(`  researching : the tool exited ${e.status ?? 1}`);
+    break;
+  }
+  try {
+    directive = JSON.parse(readFileSync(directiveFile, "utf8"));
+  } catch {
+    break;
+  }
+}
+
+if (directive.slug && existsSync(join(ROOT, "src", "content", "blog", `${directive.slug}.md`))) {
+  step("duplicate subject", false, `${directive.slug} is already published after ${duplicateTries} attempt(s) - ALL_SUBJECTS_DUPLICATE`);
   run.verdict = "DUPLICATE-SUBJECT";
   run.article = directive.slug;
   run.reasons.push(
-    `research chose "${directive.slug}", which is already in src/content/blog. The run stopped before writing rather than replacing a published article.`,
+    `every subject research proposed is already in src/content/blog (${duplicateTries} attempt(s), last was "${directive.slug}"). Nothing was overwritten.`,
   );
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
   writeRunReport(run);
-  /* Cleared so tomorrow researches again instead of refusing the same slug a second time. */
   try {
     writeFileSync(directiveFile, JSON.stringify({ consumedAt: new Date().toISOString(), refused: directive.slug }, null, 2), "utf8");
-  } catch {
-    /* a directive that cannot be cleared is reported by the next run refusing again */
-  }
-  process.exit(1);
+  } catch {}
+  process.exit(0);
 }
 
 const figures = (directive.figures ?? []).filter((f) => f?.value && f?.source && f?.retrieved);
