@@ -1225,6 +1225,15 @@ if (published.size === 0) {
           if (!/^\d{4}-\d{2}-\d{2}$/.test(dateRaw.replace(/"/g, ""))) {
             set("publishDate", new Date().toISOString().slice(0, 10));
           }
+          /*
+           * category is part of the same repair and was missed the first time. On 2026-10-19 a forced submission
+           * carried no category at all, Astro refused the entry, and the next build failed - which is the one thing a
+           * broken frontmatter does that nothing else notices: qa-check validates structure, and only the build
+           * validates the collection schema.
+           */
+          const CATS = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
+          const catRaw = (/^category:\s*"?([^"\n]*)"?/m.exec(fm) ?? [])[1]?.trim() ?? "";
+          if (!CATS.includes(catRaw)) set("category", '"trade-policy"');
           if (!/^stakes:\s*(priced|directional|background)/m.test(fm)) set("stakes", "directional");
           if (!/^draft:\s*false/m.test(fm)) set("draft", "false");
           return "---\n" + fm + "\n---\n" + body;

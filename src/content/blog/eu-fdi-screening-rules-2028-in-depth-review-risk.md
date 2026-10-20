@@ -56,6 +56,7 @@ audience: "both"
 priority: "P2"
 publishDate: 2026-10-19
 stakes: directional
+category: "trade-policy"
 draft: false
 ---
 

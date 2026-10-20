@@ -139,6 +139,13 @@ function check(file) {
   else add("warn", "named sources >= 3", `${sources} sources`);
 
   gain ? add("pass", "information_gain declared", gain) : add("block", "information_gain declared", "missing");
+  const CATEGORY_ENUM = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
+  const catLine = fmLine("category");
+  add(
+    catLine && CATEGORY_ENUM.includes(String(catLine).replace(/"/g, "")) ? "pass" : "block",
+    "category legal",
+    catLine ? `"${catLine}" is not one of ${CATEGORY_ENUM.join(", ")}` : "missing - the build rejects the entry",
+  );
 
   // A claim of primary-source is only credible if the body actually names the
   // document. Check the number, not the word "announcement".
