@@ -1209,7 +1209,24 @@ if (published.size === 0) {
        */
       const target = join(ROOT, "src", "content", "blog", newest.f);
       if (existsSync(target)) {
+        /*
+         * A DUPLICATE DRAFT IS A VERDICT, NOT A TURN-LIMIT.
+         *
+         * The 2026-10-20 run spent ten turns writing a draft whose subject was already published, the fallback refused
+         * to overwrite a live URL - correctly - and the run then reported TURN-LIMIT, which says "the model ran out of
+         * turns" when what actually happened is "the subject was taken". The operator read a red card and reasonably
+         * concluded the agent was broken.
+         *
+         * The refusal stays. The verdict changes: DUPLICATE-SUBJECT is yellow, it is accurate, and it is the same
+         * verdict the script route reports when research hands it a published subject.
+         */
         console.log("  forced submission: " + newest.f + " is already published, not overwriting it");
+        if (!finished) {
+          finished = {
+            verdict: "DUPLICATE-SUBJECT",
+            summary: `the only draft this run produced was ${newest.f}, and that subject is already published. Nothing was overwritten, and the day has no new article because research kept proposing a taken subject.`,
+          };
+        }
       } else if (body.trim().length > 200) {
         const slug = newest.f.replace(/\.md$/, "");
         /*
