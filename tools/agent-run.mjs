@@ -46,6 +46,22 @@ import { execFileSync } from "node:child_process";
 import { ask, summary as providerSummary, usageToday } from "./lib-llm.mjs";
 
 const ROOT = process.cwd();
+/*
+ * THE AGENT ROUTE WRITES WITH THE LITE ENDPOINT, and the script route keeps the Pro one.
+ *
+ * The two routes are for different jobs. The script route has to produce a finished article from a directive, so it gets
+ * the slower, stronger model - 592 seconds and two calls on 2026-10-20. The agent route's job is to probe three data
+ * sources, decide whether a subject exists at all, and stop early if it does not; that is many short calls, and it was
+ * measured at 70 calls for one article. Spending Pro latency on seventy short calls is wrong twice over.
+ *
+ * So the writer model is chosen per route, not per repository. ARK_MODEL_WRITER stays the Pro endpoint for the script
+ * route; the agent sets the lite endpoint here, before any call is made.
+ */
+if (!process.env.AGENT_WRITER_ENDPOINT) {
+  process.env.AGENT_WRITER_ENDPOINT = "ep-20251220175517-rjpsc";
+}
+process.env.ARK_MODEL_WRITER = process.env.AGENT_WRITER_ENDPOINT;
+
 const args = process.argv.slice(2);
 const flag = (name, dflt) => {
   const hit = args.find((a) => a.startsWith(`--${name}=`));
