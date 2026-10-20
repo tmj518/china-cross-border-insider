@@ -459,6 +459,47 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
       try {
         json = JSON.parse(text);
       } catch {
+        /*
+         * SSE WITHOUT BEING ASKED.
+         *
+         * Some Ark endpoints - and every reasoning endpoint I have seen from a Chinese vendor - answer a buffered
+         * request with a text/event-stream anyway: a run of `data: {"choices":[{"delta":{...}}]}` lines followed by
+         * `data: [DONE]`. JSON.parse throws on that, the reply reads as empty, and the caller reports "the writer did
+         * not produce the file" - a message that names the symptom and hides the cause entirely.
+         *
+         * So the body is parsed as a stream when it looks like one: every delta's content, and every delta's
+         * reasoning_content, concatenated in order. A buffered JSON answer never reaches this branch.
+         */
+        const trimmed = text.trimStart();
+        if (trimmed.startsWith("data:") || /\ndata:\s*\{/.test(trimmed.slice(0, 2000))) {
+          const parts = [];
+          let usageSeen = null;
+          for (const rawLine of trimmed.split("\n")) {
+            const line = rawLine.trim();
+            if (!line.startsWith("data:")) continue;
+            const payload = line.slice(5).trim();
+            if (!payload || payload === "[DONE]") continue;
+            try {
+              const j = JSON.parse(payload);
+              const ch = j?.choices?.[0];
+              const d = ch?.delta ?? ch?.message;
+              if (d?.content) parts.push(d.content);
+              else if (d?.reasoning_content) parts.push(d.reasoning_content);
+              if (j?.usage) usageSeen = j.usage;
+            } catch {
+              /* a keep-alive or a comment line inside the stream */
+            }
+          }
+          if (parts.length) {
+            json = {
+              choices: [{ message: { content: parts.join("") }, finish_reason: "stop" }],
+              usage: usageSeen ?? {},
+            };
+            console.log(`  stream      : the endpoint answered as SSE, ${parts.length} delta(s) joined`);
+          }
+        }
+      }
+      if (false) {
         /* An HTML error page from a proxy is a real outcome and is reported as one below. */
       }
       const ms = Date.now() - started;
