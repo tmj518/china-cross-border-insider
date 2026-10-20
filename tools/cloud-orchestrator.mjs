@@ -689,6 +689,47 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
    * revisions in a row, on the word "may" alone. The 01:12 run on 2026-10-19 died exactly there with a complete draft.
    * The draft is the thing being judged, so the draft is what gets cleaned.
    */
+  /*
+   * ENUM REPAIR ON THE DRAFT, for the same reason the hedges are repaired there.
+   *
+   * The strict check below reads the draft as a published file, and the writer keeps producing free text where an enum
+   * belongs: "timing-risk arithmetic" for information_gain, "aggregate-to-transaction timing analysis", and once a
+   * missing category entirely. Each of those costs a full revision cycle - 691 seconds on 2026-10-20 - and the article
+   * was otherwise finished.
+   *
+   * Repairing the four enum fields here is the same trade as the hedge replacement: a value the schema does not accept
+   * is a formatting fact, not a judgement, and the nearest legal value is always available. The repair is logged so the
+   * writer's habit stays visible instead of being silently papered over.
+   */
+  try {
+    const pre = readFileSync(draftPath, "utf8");
+    const fmEnd = pre.indexOf("\n---", 4);
+    if (fmEnd > 0) {
+      let fm = pre.slice(0, fmEnd);
+      const rest = pre.slice(fmEnd);
+      const repairs = [];
+      const setEnum = (key, value, allowed) => {
+        const re = new RegExp("^" + key + ":.*$", "m");
+        const cur = (re.exec(fm) ?? [""])[0].replace(new RegExp("^" + key + ":\\s*"), "").replace(/"/g, "").trim();
+        if (allowed.includes(cur)) return;
+        const line = key + ': "' + value + '"';
+        if (re.test(fm)) fm = fm.replace(re, line);
+        else fm = fm + "\n" + line;
+        repairs.push(key + "='" + cur + "' -> '" + value + "'");
+      };
+      setEnum("information_gain", "custom-calculation", ["custom-calculation", "cross-source", "own-data", "primary-source"]);
+      setEnum("category", "trade-policy", ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"]);
+      setEnum("audience", "both", ["platform-seller", "importer", "both"]);
+      setEnum("priority", "P2", ["P0", "P1", "P2"]);
+      if (repairs.length) {
+        writeFileSync(draftPath, fm + rest, "utf8");
+        console.log("  enum repair : " + repairs.join("; "));
+      }
+    }
+  } catch (e) {
+    console.log("  enum repair skipped: " + e.message);
+  }
+
   try {
     const draftBefore = readFileSync(draftPath, "utf8");
     const draftAfter = draftBefore
