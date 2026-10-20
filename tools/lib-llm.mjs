@@ -411,7 +411,7 @@ function meter(entry) {
  *
  * The existing callers pass no tools and read only `text`, so adding the field changes nothing for them.
  */
-export async function ask({ role = "writer", messages, system, temperature = 0.2, maxTokens = 8192, avoidProvider = null, retries = 2, tools = null, toolChoice = null }) {
+export async function ask({ role = "writer", model: modelOverride = "", messages, system, temperature = 0.2, maxTokens = 8192, avoidProvider = null, retries = 2, tools = null, toolChoice = null }) {
   const providerName = providerFor(role, avoidProvider);
   if (!providerName) {
     meter({ at: new Date().toISOString(), role, ok: false, error: "no provider key present", providers: available() });
@@ -519,7 +519,7 @@ export async function ask({ role = "writer", messages, system, temperature = 0.2
         role,
         provider: providerName,
         keyName: cred.name,
-        model: modelFor(p, role),
+        model: modelOverride || modelFor(p, role),
         ok: true,
         ms,
         promptTokens: usage.prompt_tokens ?? 0,
@@ -631,7 +631,8 @@ function balancedJsonSpan(s) {
 }
 
 export async function askJson(opts) {
-  const r = await ask({ ...opts, temperature: opts.temperature ?? 0 });
+  /* askJson goes through the chain too, so the writer fails over instead of failing. */
+  const r = await askChain({ ...opts, temperature: opts.temperature ?? 0 });
   if (!r.ok) return { ...r, json: null };
   const raw = r.text ?? "";
 
@@ -695,4 +696,100 @@ export function usageToday() {
   } catch {
     return { calls: 0, failed: 0, usd: 0, promptTokens: 0, completionTokens: 0 };
   }
+}
+
+/**
+ * The endpoints a role may use, in order of preference.
+ *
+ * Built from the same variables modelFor() reads, but as a list rather than the first truthy one. The first entry is the
+ * one the operator asked for; the rest are the fallbacks that let a bad endpoint be a bad endpoint instead of a bad day.
+ */
+export function modelChain(role) {
+  const p = providerFor(role);
+  if (!p) return [];
+  if (p.name !== "volces") return [p.model].filter(Boolean);
+  /* Ark is the provider with per-role endpoints, so it is the one that has a chain. */
+  const order = [
+    process.env.ARK_MODEL_WRITER,
+    process.env.DUBAO201628_ENDPOINT,
+    process.env.dubaotuili12345,
+    process.env.DUBAO_ENDPOINT,
+    process.env.ARK_MODEL,
+  ];
+  const seen = new Set();
+  return order.filter((x) => x && !seen.has(x) && seen.add(x));
+}
+
+const HEALTH_FILE = new URL("../data/provider-health.json", import.meta.url);
+
+/**
+ * The health memory: two empty replies in a row and an endpoint is skipped until someone clears it.
+ *
+ * Without this, every run pays one failed call per broken endpoint before falling through - cheap, but it also hides the
+ * breakage. With it, the failure is remembered and reported, so a model that is retired announces itself instead of
+ * quietly costing a call every day.
+ */
+function readHealth() {
+  try {
+    return JSON.parse(readFileSync(HEALTH_FILE, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function writeHealth(h) {
+  try {
+    mkdirSync(new URL("../data/", import.meta.url), { recursive: true });
+    writeFileSync(HEALTH_FILE, JSON.stringify(h, null, 2) + "\n", "utf8");
+  } catch {
+    /* a health file that cannot be written must not stop a run */
+  }
+}
+
+export function noteEmpty(ep) {
+  const h = readHealth();
+  const row = h[ep] ?? { empty: 0 };
+  row.empty += 1;
+  row.lastAt = new Date().toISOString();
+  h[ep] = row;
+  writeHealth(h);
+  if (row.empty === 2) console.log(`  health      : ${ep} returned nothing twice - it will be skipped from now on`);
+}
+
+export function noteOk(ep) {
+  const h = readHealth();
+  if (h[ep] && h[ep].empty) {
+    delete h[ep];
+    writeHealth(h);
+    console.log(`  health      : ${ep} is answering again, reinstated`);
+  }
+}
+
+/**
+ * ask, with the chain.
+ *
+ * Returns the first reply that actually contains text. Every endpoint that answers with nothing is recorded and skipped
+ * on the next run, so a retired model costs one call on the day it retires rather than one call per day forever.
+ */
+export async function askChain(opts) {
+  const chain = modelChain(opts.role ?? "writer");
+  if (!chain.length) return ask(opts);
+  const health = readHealth();
+  const usable = chain.filter((ep) => !(health[ep]?.empty >= 2));
+  const skipped = chain.filter((ep) => health[ep]?.empty >= 2);
+  for (const ep of skipped) console.log(`  endpoint    : ${ep} skipped, it returned nothing twice`);
+
+  let last = null;
+  for (const ep of usable.length ? usable : chain) {
+    last = await ask({ ...opts, model: ep });
+    const text = (last?.text ?? "").trim();
+    if (text) {
+      noteOk(ep);
+      if (ep !== usable[0]) console.log(`  fallback    : ${usable[0]} produced nothing, ${ep} wrote the reply`);
+      return last;
+    }
+    noteEmpty(ep);
+    console.log(`  endpoint    : ${ep} returned an empty reply, trying the next one`);
+  }
+  return last ?? { ok: false, error: "every endpoint in the chain returned nothing", text: "" };
 }
