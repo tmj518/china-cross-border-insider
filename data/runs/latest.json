@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-19T08:25:30.651Z",
+  "at": "2026-10-20T03:36:16.186Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "12 previous run(s), last 2026-10-19T05:09:21.275Z (PUBLISHED)"
+      "detail": "13 previous run(s), last 2026-10-19T08:25:30.651Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "6 of 15 net-new this week"
+      "detail": "7 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -27,80 +27,50 @@
     },
     {
       "name": "research",
-      "ok": true,
-      "detail": "proposed eu-fdi-screening-notification-surge-2026-2026-10-19, 7 verified figure(s)"
-    },
-    {
-      "name": "directive figures",
-      "ok": true,
-      "detail": "7 sourced figure(s)"
-    },
-    {
-      "name": "writer",
-      "ok": true,
-      "detail": "draft at /data/drafts/eu-fdi-screening-notification-surge-2026-2026-10-19.md"
-    },
-    {
-      "name": "reviewer",
       "ok": false,
-      "detail": "no parseable verdict"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "unavailable, recorded as a lesson, publishing anyway"
-    },
-    {
-      "name": "publish",
-      "ok": true,
-      "detail": "staged at src/content/blog/eu-fdi-screening-notification-surge-2026-2026-10-19.md"
-    },
-    {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "2 older article(s) now link here"
-    },
-    {
-      "name": "state written",
-      "ok": true,
-      "detail": "verdict PUBLISHED"
+      "detail": "no verified subject today (exit 0)"
     }
   ],
-  "verdict": "PUBLISHED",
+  "verdict": "NO-SUBJECT",
   "reasons": [],
-  "article": "eu-fdi-screening-notification-surge-2026-2026-10-19",
+  "article": null,
   "commit": null,
-  "usage": {
-    "calls": 20,
-    "failed": 16,
-    "usd": 0.0162,
-    "promptTokens": 32485,
-    "completionTokens": 6753
-  },
+  "usage": null,
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
     "trade-policy": 6,
     "supply-chain": 0,
-    "platforms": 0
+    "platforms": 1
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  slug    : eu-pea-protein-anti-dumping-duty-per-kg-2026",
-    "  keyword : EU anti-dumping duty Chinese pea protein 2026 importer cost",
-    "  duplicate check: score 14 against eu-pea-protein-anti-dumping-definitive-duties-2026",
-    "      shared figure value(s): fiveyears, 29april2026, €175m",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    statistics-bureau           72872B  archived",
+    "  ok    eu-trade-news-article       75770B  article archived",
+    "  ok    eu-trade-news-article       73430B  article archived",
+    "  ok    ministry-of-finance-article    34071B  article archived",
+    "  ok    ministry-of-finance-article    19579B  article archived",
+    "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   267616B  article archived",
+    "  skip  statistics-bureau-article        0B  not usable",
+    "  articles : 6 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  spent   : ~0.0031  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-pea-protein-definitive-duties-40-5-67-1-percent-2026",
+    "  keyword : EU anti-dumping duty Chinese pea protein 40.5% 67.1% 2026 importer cost",
+    "  duplicate check: score 20 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): 40.5, 67.1, fiveyears, 29april2026, €175m",
     "      shared keyword stems: protein",
     "      shared institution(s): european, trade, economic, security",
     "  REJECTED as a duplicate - trying another subject rather than ending the day.",
     "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
-    "  spent   : ~0.0064  (ceiling 0.40)",
+    "  spent   : ~0.0065  (ceiling 0.40)",
     "  model   : deepseek/deepseek-chat",
     "  feasible: true",
     "  slug already published: china-home-purchase-loan-interest-subsidy-2026 - retrying with another subject",
@@ -110,28 +80,11 @@
     "      the slug china-home-purchase-loan-interest-subsidy-2026 is already in src/content/blog",
     "  REJECTED as a duplicate - trying another subject rather than ending the day.",
     "  proposing a subject from 5 archived document(s) (attempt 3 of 3)...",
-    "  spent   : ~0.0097  (ceiling 0.40)",
+    "  spent   : ~0.0087  (ceiling 0.40)",
     "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug already published: eu-fdi-screening-notification-surge-2026 - retrying with another subject",
-    "  slug    : eu-fdi-screening-notification-surge-2026",
-    "  keyword : EU FDI screening notifications 2025 in-depth assessment 2026",
-    "  duplicate check: score 99 against eu-fdi-screening-notification-surge-2026",
-    "      the slug eu-fdi-screening-notification-surge-2026 is already in src/content/blog",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  All 3 proposals scored as duplicates. Publishing the last one with a date qualifier:",
-    "  eu-fdi-screening-notification-surge-2026 -> eu-fdi-screening-notification-surge-2026-2026-10-19",
-    "  slug    : eu-fdi-screening-notification-surge-2026-2026-10-19",
-    "  keyword : EU FDI screening notifications 2025 in-depth assessment 2026 2026-10-19",
-    "  category: trade-policy",
-    "  figures : 7",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0097",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "seconds": 122
+    "  feasible: false",
+    "  reason  : The only remaining candidate with a dated change, the EU FDI screening report, contains national aggregate counts and percentages (667 notifications, 40% rise, 88% closed in 15 days) that attach to no product, rate, duty or fee an importer can act on, and the other documents are either already-rejected subjects or unrelated to import cost.",
+    "  The documents do not support an article today. That is the answer, and no directive was",
+    "  written. A day without a qualifying subject is a day without an article."
+  ]
 }
