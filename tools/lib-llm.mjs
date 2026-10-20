@@ -490,6 +490,7 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
         const trimmed = text.trimStart();
         if (trimmed.startsWith("data:") || /\ndata:\s*\{/.test(trimmed.slice(0, 2000))) {
           const parts = [];
+          let reasoningDeltas = 0;
           let usageSeen = null;
           for (const rawLine of trimmed.split("\n")) {
             const line = rawLine.trim();
@@ -500,8 +501,17 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
               const j = JSON.parse(payload);
               const ch = j?.choices?.[0];
               const d = ch?.delta ?? ch?.message;
+              /*
+               * ONLY content. The reasoning deltas are the model thinking out loud, and joining them to the answer
+               * put a page of deliberation in front of the frontmatter - so the writer's parser saw prose where it
+               * expected "---" and reported that the model had produced nothing, while 2,434 deltas of perfectly good
+               * article sat in the same string.
+               *
+               * They are counted rather than discarded silently: a reply that is all reasoning and no content is a
+               * different failure from an empty one, and the log should say which happened.
+               */
               if (d?.content) parts.push(d.content);
-              else if (d?.reasoning_content) parts.push(d.reasoning_content);
+              else if (d?.reasoning_content) reasoningDeltas += 1;
               if (j?.usage) usageSeen = j.usage;
             } catch {
               /* a keep-alive or a comment line inside the stream */
@@ -800,13 +810,28 @@ export async function askChain(opts) {
   for (const ep of usable.length ? usable : chain) {
     last = await ask({ ...opts, model: ep });
     const text = (last?.text ?? "").trim();
-    if (text) {
+    /*
+     * USABLE MEANS IT LOOKS LIKE A DOCUMENT.
+     *
+     * "Non-empty" is not the test. A model that thinks before answering returns a wall of reasoning that is non-empty
+     * and useless, and the chain believed it: on 2026-10-20 a run received 2,434 deltas, classified the reply as a
+     * success, never fell through to the lite endpoint, and reported WRITE-FAILED. Three calls were spent on an
+     * endpoint that had already told us it could not answer.
+     *
+     * Frontmatter or a markdown heading is the cheapest honest test of "this is a draft".
+     */
+    const usable = text && (/^---/m.test(text) || /^#\s/m.test(text));
+    if (usable) {
       noteOk(ep);
       if (ep !== usable[0]) console.log(`  fallback    : ${usable[0]} produced nothing, ${ep} wrote the reply`);
       return last;
     }
     noteEmpty(ep);
-    console.log(`  endpoint    : ${ep} returned an empty reply, trying the next one`);
+    console.log(
+      text
+        ? `  endpoint    : ${ep} replied with ${text.length} characters but no document structure, trying the next one`
+        : `  endpoint    : ${ep} returned an empty reply, trying the next one`,
+    );
   }
   return last ?? { ok: false, error: "every endpoint in the chain returned nothing", text: "" };
 }
