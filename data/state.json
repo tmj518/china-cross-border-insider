@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-19T08:25:30.651Z",
+  "lastRun": "2026-10-20T04:04:04.747Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-  "runs": 13,
-  "published": 13,
+  "lastArticle": "eu-fdi-screening-2028-regime-timing-risk",
+  "runs": 14,
+  "published": 14,
   "lastUsage": {
-    "calls": 20,
-    "failed": 16,
-    "usd": 0.0162,
-    "promptTokens": 32485,
-    "completionTokens": 6753
+    "calls": 4,
+    "failed": 2,
+    "usd": 0.0072,
+    "promptTokens": 18666,
+    "completionTokens": 18228
   }
 }

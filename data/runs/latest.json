@@ -1,29 +1,137 @@
 {
-  "at": "2026-10-20T03:59:03.081Z",
-  "providers": [],
+  "at": "2026-10-20T04:04:04.747Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
   "steps": [
     {
       "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "13 previous run(s), last 2026-10-19T08:25:30.651Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "7 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed eu-fdi-screening-2028-regime-timing-risk, 7 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "7 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-fdi-screening-2028-regime-timing-risk.md"
+    },
+    {
+      "name": "reviewer",
       "ok": false,
-      "detail": "no key present, so nothing can be attempted"
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-fdi-screening-2028-regime-timing-risk.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
     }
   ],
-  "verdict": "NO-KEYS",
+  "verdict": "PUBLISHED",
   "reasons": [],
-  "article": null,
+  "article": "eu-fdi-screening-2028-regime-timing-risk",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 4,
+    "failed": 2,
+    "usd": 0.0072,
+    "promptTokens": 18666,
+    "completionTokens": 18228
+  },
   "route": "script",
-  "need": [
-    "ARK_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DOUBAO_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "VOLCES_API_KEY (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DUBAO201628 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "APIKEY20261016201628 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "OWNER_KEY_1 (plus ARK_MODEL, or ARK_MODEL_WRITER and ARK_MODEL_REVIEWER - ep-... endpoint ids, not model names)",
-    "DEEPSEEK_WRITE_API_KEY",
-    "DEEPSEEK_API_KEY",
-    "DEEPSEEK_REVIEW_API_KEY",
-    "OWNER_KEY_2"
-  ]
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 6,
+    "supply-chain": 0,
+    "platforms": 1
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20261019161601-9k6dn",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
+    "  ok    eu-trade-news               96951B  archived",
+    "  ok    trade-remedy-cases          62582B  archived",
+    "  skip  tariff-commission            1931B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    eu-trade-news-article       75770B  article archived",
+    "  ok    eu-trade-news-article       73430B  article archived",
+    "  ok    trade-remedy-cases-article    39990B  article archived",
+    "  ok    trade-remedy-cases-article    24436B  article archived",
+    "  skip  ministry-of-finance-article        0B  not usable",
+    "  ok    ministry-of-finance-article    19579B  article archived",
+    "  ok    mofcom-article              14343B  article archived",
+    "  articles : 6 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  spent   : ~0.0025  (ceiling 0.40)",
+    "  model   : volces/ep-20261019161601-9k6dn",
+    "  feasible: true",
+    "  slug    : eu-fdi-screening-2028-regime-timing-risk",
+    "  keyword : EU FDI screening new regulation 2028 15 day closure",
+    "  duplicate check: score 0",
+    "  slug    : eu-fdi-screening-2028-regime-timing-risk",
+    "  keyword : EU FDI screening new regulation 2028 15 day closure",
+    "  category: trade-policy",
+    "  figures : 7",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0025",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 1092
 }

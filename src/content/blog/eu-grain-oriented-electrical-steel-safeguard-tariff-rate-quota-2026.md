@@ -86,6 +86,8 @@ The two instruments test different things, and an importer has to test both.
 
 > Also read: [EU FDI screening notifications jumped 40% in 2025, and 12% of deals now face in-depth review](/blog/eu-fdi-screening-notification-surge-2026-2026-10-19/)
 
+> Also read: [EU FDI screening will move to a new 2028 regime after a 40% rise in notified cases](/blog/eu-fdi-screening-2028-regime-timing-risk/)
+
 ## For you
 
 - **Importers with grain-oriented electrical steel entering on or after 18 September 2026:** pull the quota period, the quota volume and both rates from the regulation before you confirm the delivery date, then price the shipment as in-quota and as out-of-quota and carry the worse number.
