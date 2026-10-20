@@ -82,6 +82,8 @@ The Commission puts the EU market for pea protein at some **€175m**. That is t
 
 > Also read: [EU FDI screening will move to a new 2028 regime after a 40% rise in notified cases](/blog/eu-fdi-screening-2028-regime-timing-risk/)
 
+> Also read: [EU FDI screening closed 88% of 2025 cases within 15 days before the new 2028 regime](/blog/eu-fdi-screening-case-timing-fisr-2028/)
+
 ## For you
 
 - **Importers already bringing in Chinese pea protein:** get your supplier's applicable rate in writing before the next entry, then multiply your customs value by it — 40.5% at the low end, 67.1% at the high end — and decide whether to absorb or re-price.

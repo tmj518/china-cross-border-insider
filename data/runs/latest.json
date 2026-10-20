@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T05:43:38.337Z",
+  "at": "2026-10-20T08:28:46.425Z",
   "providers": [
     "volces",
     "deepseek"
@@ -27,15 +27,61 @@
     },
     {
       "name": "research",
+      "ok": true,
+      "detail": "proposed eu-fdi-screening-case-timing-fisr-2028, 7 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "7 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-fdi-screening-case-timing-fisr-2028.md"
+    },
+    {
+      "name": "reviewer",
       "ok": false,
-      "detail": "no verified subject today (exit 0)"
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-fdi-screening-case-timing-fisr-2028.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
     }
   ],
-  "verdict": "NO-SUBJECT",
+  "verdict": "PUBLISHED",
   "reasons": [],
-  "article": null,
+  "article": "eu-fdi-screening-case-timing-fisr-2028",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.008,
+    "promptTokens": 18683,
+    "completionTokens": 21225
+  },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
@@ -46,9 +92,6 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "RESEARCH  2026-10-20T05:43:38.374Z",
-    "====================================================================================",
-    "  providers usable: volces, deepseek",
     "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20261019161601-9k6dn",
     "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
     "    roles: volces writes, deepseek reviews",
@@ -56,9 +99,9 @@
     "  budget   : $0.40",
     "  fetches  : up to 4",
     "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
-    "  ok    eu-trade-news               96951B  archived",
-    "  ok    trade-remedy-cases          62582B  archived",
-    "  skip  tariff-commission            1930B  not usable (recorded anyway)",
+    "  ok    eu-trade-news               96949B  archived",
+    "  ok    trade-remedy-cases          62586B  archived",
+    "  skip  tariff-commission            1932B  not usable (recorded anyway)",
     "  ok    ministry-of-finance         20830B  archived",
     "  ok    mofcom                     161774B  archived",
     "  ok    eu-trade-news-article       75770B  article archived",
@@ -66,17 +109,29 @@
     "  ok    trade-remedy-cases-article    39990B  article archived",
     "  ok    trade-remedy-cases-article    24436B  article archived",
     "  skip  ministry-of-finance-article        0B  not usable",
-    "  skip  ministry-of-finance-article        0B  not usable",
+    "  ok    ministry-of-finance-article    19579B  article archived",
     "  ok    mofcom-article              14343B  article archived",
-    "  articles : 5 followed from the listings",
+    "  articles : 6 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 5 archived document(s)...",
-    "  stream      : the endpoint answered as SSE, 149 delta(s) joined",
-    "  spent   : ~0.0017  (ceiling 0.40)",
+    "  stream      : the endpoint answered as SSE, 1347 delta(s) joined",
+    "  spent   : ~0.0022  (ceiling 0.40)",
     "  model   : volces/ep-20261019161601-9k6dn",
-    "  feasible: false",
-    "  reason  : The unreported EU FDI document supplies only aggregate screening caseload ratios and a future application date, not two importer cost figures, while the product-specific pea protein, p-nitrotoluene, and Brazil-beef measures duplicate articles #38, #34, and #36.",
-    "  The documents do not support an article today. That is the answer, and no directive was",
-    "  written. A day without a qualifying subject is a day without an article."
-  ]
+    "  feasible: true",
+    "  slug    : eu-fdi-screening-case-timing-fisr-2028",
+    "  keyword : EU FDI screening foreign investment review timeline 2028",
+    "  duplicate check: score 0",
+    "  slug    : eu-fdi-screening-case-timing-fisr-2028",
+    "  keyword : EU FDI screening foreign investment review timeline 2028",
+    "  category: trade-policy",
+    "  figures : 7",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0022",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 592
 }

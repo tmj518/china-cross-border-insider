@@ -195,6 +195,69 @@
           "retrieved": "2026-10-20"
         },
         {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "40%",
+          "unit": "increase in notifications to the EU FDI cooperation mechanism",
+          "period": "between 2024 and 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "667",
+          "unit": "investments notified to the Commission by EU Member States",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "477",
+          "unit": "notifications to the Commission by EU Member States",
+          "period": "2024",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "88%",
+          "unit": "notified cases closed",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "15",
+          "unit": "days within which 88% of notified cases were closed",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "12%",
+          "unit": "notified investments requiring an in-depth security risk assessment",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-case-timing-fisr-2028",
+          "articleNum": 47,
+          "value": "less than 2%",
+          "unit": "cases in which the Commission issued opinions",
+          "period": "2025, consistent with 2024 and 2023",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-20"
+        },
+        {
           "articleSlug": "eu-fdi-screening-rules-2028-in-depth-review-risk",
           "articleNum": 0,
           "value": "40",
@@ -317,12 +380,14 @@
         38,
         40,
         43,
-        46
+        46,
+        47
       ],
       "articleSlugs": [
         "eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
         "eu-fdi-screening-2026-timeline-notification-rates-importer",
         "eu-fdi-screening-2028-regime-timing-risk",
+        "eu-fdi-screening-case-timing-fisr-2028",
         "eu-fdi-screening-rules-2028-in-depth-review-risk",
         "eu-pea-protein-anti-dumping-definitive-duties-2026"
       ],
@@ -1184,55 +1249,6 @@
       "modelOutput": false
     },
     {
-      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "2652/QD-BCT",
-          "unit": "the number of the Vietnamese decision that concluded the sunset review",
-          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "16 October 2026",
-          "unit": "the date the continued measure takes effect",
-          "period": "five-year term, so it runs to 2029 unless reviewed again",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "54.90%",
-          "unit": "the duty on the same product from India under the same decision, for comparison",
-          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "5402.33.10",
-          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
-          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "counted-from-the-annex-to-announcement-no-5-of",
       "source": "Counted from the annex to Announcement No. 5 of 2026",
       "figures": [
@@ -1627,6 +1643,55 @@
       ],
       "articleSlugs": [
         "section-301-exclusions-expire-november-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "2652/QD-BCT",
+          "unit": "the number of the Vietnamese decision that concluded the sunset review",
+          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "16 October 2026",
+          "unit": "the date the continued measure takes effect",
+          "period": "five-year term, so it runs to 2029 unless reviewed again",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "54.90%",
+          "unit": "the duty on the same product from India under the same decision, for comparison",
+          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "5402.33.10",
+          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
+          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     },
@@ -2227,37 +2292,6 @@
       ],
       "articleSlugs": [
         "china-export-rebate-vs-export-duty-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "2026-10-15-producer-annex-to-quy-t-nh",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "3.36%",
-          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "17.45%",
-          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     },
@@ -3034,6 +3068,37 @@
       ],
       "articleSlugs": [
         "indonesia-tarpaulin-safeguard-duty-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "2026-10-15-producer-annex-to-quy-t-nh",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "3.36%",
+          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "17.45%",
+          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     }
