@@ -136,7 +136,7 @@ const SUBMIT_NOTE = "SUBMIT AT TURN TEN: if check_draft is still reporting probl
  * and spent sixty-nine cents arriving nowhere. A budget that a run cannot finish inside is not a budget. Fifteen turns,
  * and the last two are for submitting rather than editing.
  */
-const MAX_TURNS = Number(flag("max-turns", 12));
+const MAX_TURNS = Number(flag("max-turns", 10));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.

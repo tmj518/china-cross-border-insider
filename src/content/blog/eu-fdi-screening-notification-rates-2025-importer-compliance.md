@@ -14,7 +14,7 @@ draft: false
 articleNumber: 37
 target_keyword: "EU FDI screening 2025 notification rates importer compliance 2028 FISR"
 search_intent: "informational"
-information_gain: primary-source
+information_gain: "custom-calculation"
 sources:
   - "European Commission Directorate-General for Trade and Economic Security, 14 October 2026: Screening of foreign direct investment continues to advance EU security and public order"
 figures:
@@ -97,13 +97,13 @@ For a typical third-country importer planning a EUR 2 million acquisition of a s
 
 ## For you
 
-**Third-country importers acquiring small EU e-commerce platforms** — schedule your notification submission a full 20 days before your planned deal closing date, to account for the 15-day standard processing window plus 5 extra days for administrative checks at the relevant national authority. This eliminates 99% of risk of delayed closing for low-risk transactions.
+- **Third-country importers acquiring small EU e-commerce platforms:** schedule your notification submission a full 20 days before your planned deal closing date, to account for the 15-day standard processing window plus 5 extra days for administrative checks at the relevant national authority. This eliminates 99% of risk of delayed closing for low-risk transactions.
 
-**Importers investing in EU ICT or data hosting infrastructure** — flag your transaction for pre-submission consultation with the national screening authority 30 days in advance, to confirm whether your case falls into the 12% share that requires in-depth assessment. This lets you adjust your integration timeline before you sign the final purchase agreement.
+- **Importers investing in EU ICT or data hosting infrastructure:** flag your transaction for pre-submission consultation with the national screening authority 30 days in advance, to confirm whether your case falls into the 12% share that requires in-depth assessment. This lets you adjust your integration timeline before you sign the final purchase agreement.
 
-**Importers with cross-border platform operations across 3 or more EU Member States** — map all planned 2027 and 2028 investments against the upcoming FISR unified notification framework, to avoid duplicate filings across different national authorities when the new rules take effect. This cuts total administrative work by an estimated 40% once the 2028 system goes live.
+- **Importers with cross-border platform operations across 3 or more EU Member States:** map all planned 2027 and 2028 investments against the upcoming FISR unified notification framework, to avoid duplicate filings across different national authorities when the new rules take effect. This cuts total administrative work by an estimated 40% once the 2028 system goes live.
 
-**Importers that previously filed no FDI notifications for EU platform investments** — conduct a full threshold review of all existing EU subsidiary holdings before the end of 2026, to confirm no past transactions require retroactive notification under expanded national rules introduced in 2025. This avoids unexpected post-closing enforcement action that can freeze platform operations for up to 6 months.
+- **Importers that previously filed no FDI notifications for EU platform investments:** conduct a full threshold review of all existing EU subsidiary holdings before the end of 2026, to confirm no past transactions require retroactive notification under expanded national rules introduced in 2025. This avoids unexpected post-closing enforcement action that can freeze platform operations for up to 6 months.
 
 ## The data point
 

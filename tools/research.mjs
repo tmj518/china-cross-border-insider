@@ -49,7 +49,14 @@ const flag = (name, dflt) => {
 };
 const DRY = args.includes("--dry-run");
 const BUDGET = Number(flag("budget", "0.40"));
-const MAX_SOURCES = Number(flag("sources", "4"));
+/*
+ * Six sources and four articles each, not four and two.
+ *
+ * "articles: 6 followed from the listings" was the line that explained a week of NO-SUBJECT: six archived articles, of
+ * which the same two or three carried a rate, meant the subject pool was exhausted after two articles. The documents
+ * were always there - the follow-up depth was not.
+ */
+const MAX_SOURCES = Number(flag("sources", "6"));
 
 const SOURCES_DIR = join(ROOT, "data", "sources");
 const LEDGER = join(ROOT, "data", "ledger.jsonl");
@@ -410,7 +417,7 @@ function articleLinks(indexFile, baseUrl, limit) {
 
 const articles = [];
 for (const page of fetched) {
-  const links = articleLinks(page.file, page.url, 2);
+  const links = articleLinks(page.file, page.url, 4);
   for (const link of links) {
     if (articles.length >= MAX_SOURCES * 2) break;
     const label = `${page.label.replace(/^research-/, "")}-article`;
