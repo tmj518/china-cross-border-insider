@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T08:28:46.425Z",
+  "at": "2026-10-20T09:04:10.940Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "14 previous run(s), last 2026-10-20T04:04:04.747Z (PUBLISHED)"
+      "detail": "15 previous run(s), last 2026-10-20T08:28:46.425Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "8 of 15 net-new this week"
+      "detail": "9 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -27,71 +27,28 @@
     },
     {
       "name": "research",
-      "ok": true,
-      "detail": "proposed eu-fdi-screening-case-timing-fisr-2028, 7 verified figure(s)"
-    },
-    {
-      "name": "directive figures",
-      "ok": true,
-      "detail": "7 sourced figure(s)"
-    },
-    {
-      "name": "writer",
-      "ok": true,
-      "detail": "draft at /data/drafts/eu-fdi-screening-case-timing-fisr-2028.md"
-    },
-    {
-      "name": "reviewer",
       "ok": false,
-      "detail": "no parseable verdict"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "unavailable, recorded as a lesson, publishing anyway"
-    },
-    {
-      "name": "publish",
-      "ok": true,
-      "detail": "staged at src/content/blog/eu-fdi-screening-case-timing-fisr-2028.md"
-    },
-    {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "2 older article(s) now link here"
-    },
-    {
-      "name": "state written",
-      "ok": true,
-      "detail": "verdict PUBLISHED"
+      "detail": "no verified subject today (exit 0)"
     }
   ],
-  "verdict": "PUBLISHED",
+  "verdict": "NO-SUBJECT",
   "reasons": [],
-  "article": "eu-fdi-screening-case-timing-fisr-2028",
+  "article": null,
   "commit": null,
-  "usage": {
-    "calls": 2,
-    "failed": 0,
-    "usd": 0.008,
-    "promptTokens": 18683,
-    "completionTokens": 21225
-  },
+  "usage": null,
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 7,
+    "trade-policy": 8,
     "supply-chain": 0,
     "platforms": 1
   },
   "uncoveredSections": [],
   "researchLog": [
+    "RESEARCH  2026-10-20T09:04:10.978Z",
+    "====================================================================================",
+    "  providers usable: volces, deepseek",
     "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20261019161601-9k6dn",
     "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
     "    roles: volces writes, deepseek reviews",
@@ -99,39 +56,28 @@
     "  budget   : $0.40",
     "  fetches  : up to 4",
     "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
-    "  ok    eu-trade-news               96949B  archived",
+    "  ok    eu-trade-news               96951B  archived",
     "  ok    trade-remedy-cases          62586B  archived",
-    "  skip  tariff-commission            1932B  not usable (recorded anyway)",
+    "  skip  tariff-commission            1929B  not usable (recorded anyway)",
     "  ok    ministry-of-finance         20830B  archived",
     "  ok    mofcom                     161774B  archived",
     "  ok    eu-trade-news-article       75770B  article archived",
     "  ok    eu-trade-news-article       73430B  article archived",
+    "  ok    eu-trade-news-article       77099B  article archived",
+    "  ok    eu-trade-news-article       76016B  article archived",
     "  ok    trade-remedy-cases-article    39990B  article archived",
     "  ok    trade-remedy-cases-article    24436B  article archived",
-    "  skip  ministry-of-finance-article        0B  not usable",
-    "  ok    ministry-of-finance-article    19579B  article archived",
-    "  ok    mofcom-article              14343B  article archived",
-    "  articles : 6 followed from the listings",
+    "  ok    trade-remedy-cases-article    19137B  article archived",
+    "  ok    trade-remedy-cases-article    19128B  article archived",
+    "  articles : 8 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 5 archived document(s)...",
-    "  stream      : the endpoint answered as SSE, 1347 delta(s) joined",
-    "  spent   : ~0.0022  (ceiling 0.40)",
+    "  stream      : the endpoint answered as SSE, 134 delta(s) joined",
+    "  spent   : ~0.0017  (ceiling 0.40)",
     "  model   : volces/ep-20261019161601-9k6dn",
-    "  feasible: true",
-    "  slug    : eu-fdi-screening-case-timing-fisr-2028",
-    "  keyword : EU FDI screening foreign investment review timeline 2028",
-    "  duplicate check: score 0",
-    "  slug    : eu-fdi-screening-case-timing-fisr-2028",
-    "  keyword : EU FDI screening foreign investment review timeline 2028",
-    "  category: trade-policy",
-    "  figures : 7",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0022",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "seconds": 592
+    "  feasible: false",
+    "  reason  : The uncovered GOES safeguard source gives only procedural time limits and a voting threshold but no numerical quota, price threshold, duty, or fee amount, while the other uncovered sources contain aggregate statistics, and the pea-protein and p-nitrotoluene articles are already covered.",
+    "  The documents do not support an article today. That is the answer, and no directive was",
+    "  written. A day without a qualifying subject is a day without an article."
+  ]
 }
