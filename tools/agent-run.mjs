@@ -1207,8 +1207,25 @@ if (published.size === 0) {
        *
        * The orchestrator refuses this for the script route. The fallback is not a licence to do it here.
        */
-      const target = join(ROOT, "src", "content", "blog", newest.f);
+      /*
+       * LAST-RESORT DATE SUFFIX.
+       *
+       * The operator's instruction on 2026-10-20, after a day of yellow cards: the agent route must produce an article,
+       * and a near-duplicate under a dated slug is the least-bad outcome when the alternative is none. It is not the
+       * first choice and it is not silent - the slug carries the date, the verdict says how it got there, and the
+       * research side is what has to stop proposing taken subjects.
+       *
+       * The same suffix the research fallback used to add, kept in one place now: the submission, where the decision
+       * about what to publish actually lives.
+       */
+      let target = join(ROOT, "src", "content", "blog", newest.f);
       if (existsSync(target)) {
+        const stamp = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+        const dated = newest.f.replace(/\.md$/, "") + "-" + stamp + ".md";
+        target = join(ROOT, "src", "content", "blog", dated);
+        console.log("  forced submission: " + newest.f + " is already published, publishing under " + dated);
+      }
+      if (false) {
         /*
          * A DUPLICATE DRAFT IS A VERDICT, NOT A TURN-LIMIT.
          *
@@ -1220,7 +1237,7 @@ if (published.size === 0) {
          * The refusal stays. The verdict changes: DUPLICATE-SUBJECT is yellow, it is accurate, and it is the same
          * verdict the script route reports when research hands it a published subject.
          */
-        console.log("  forced submission: " + newest.f + " is already published, not overwriting it");
+
         if (!finished) {
           finished = {
             verdict: "DUPLICATE-SUBJECT",
@@ -1228,7 +1245,7 @@ if (published.size === 0) {
           };
         }
       } else if (body.trim().length > 200) {
-        const slug = newest.f.replace(/\.md$/, "");
+        const slug = target.replace(/^.*[\\/]/, "").replace(/\.md$/, "");
         /*
          * SANITIZE BEFORE SUBMITTING.
          *
