@@ -14,7 +14,7 @@ draft: false
 articleNumber: 46
 target_keyword: "EU FDI screening new regulation 2028 15 day closure"
 search_intent: "informational"
-information_gain: "aggregate-to-transaction timing arithmetic"
+information_gain: "custom-calculation"
 sources:
   - "European Commission, Directorate-General for Trade and Economic Security, “Screening of foreign direct investment continues to advance EU security and public order,” 14 October 2026"
 figures:

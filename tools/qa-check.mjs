@@ -103,6 +103,37 @@ function check(file) {
   const figures = (fm.match(/^\s*- value:/gm) || []).length;
   const sources = (fm.match(/^\s{2}- "/gm) || []).length;
   const gain = fmLine("information_gain");
+
+  /*
+   * ENUM VALUES, CHECKED HERE AND NOT ONLY BY THE BUILD - with a date gate.
+   *
+   * These two rules were added, removed and re-added today, and the reason is worth writing down. The build validates
+   * the collection schema and rejects a bad value - but it rejects it for the WHOLE SITE, after publication, which took
+   * the site down three times in two days. The gate never checked values, only whether a field was declared.
+   *
+   * The first attempt to add the check blocked 38 published articles, because their older frontmatter predates these
+   * enums. That is not a reason to skip the check, it is a reason to gate it: anything published before ENUM_FROM is
+   * grandfathered, and anything from that date on is checked. Same shape as the substantive-figure and V6.2 gates
+   * already in this file.
+   */
+  const ENUM_FROM = "2026-10-19";
+  const thisDate = (fmLine("publishDate") ?? "").replace(/"/g, "");
+  if (thisDate >= ENUM_FROM) {
+    const GAIN_ENUM = ["custom-calculation", "cross-source", "own-data", "primary-source"];
+    const CATEGORY_ENUM = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
+    const gainValue = String(gain ?? "").replace(/^information_gain:\s*/, "").replace(/"/g, "").trim();
+    const catValue = String(fmLine("category") ?? "").replace(/"/g, "").trim();
+    add(
+      GAIN_ENUM.includes(gainValue) ? "pass" : "block",
+      "information_gain legal",
+      GAIN_ENUM.includes(gainValue) ? gainValue : `"${gainValue || "(missing)"}" is not one of ${GAIN_ENUM.join(", ")} - the build rejects it`,
+    );
+    add(
+      CATEGORY_ENUM.includes(catValue) ? "pass" : "block",
+      "category legal",
+      CATEGORY_ENUM.includes(catValue) ? catValue : `"${catValue || "(missing)"}" is not one of ${CATEGORY_ENUM.join(", ")} - the build rejects it`,
+    );
+  }
   const keyword = fmLine("target_keyword");
   const audience = fmLine("audience");
   const isDraft = /^draft:\s*true/m.test(fm);
