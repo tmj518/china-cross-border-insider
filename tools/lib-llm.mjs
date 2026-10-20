@@ -450,9 +450,26 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
     try {
       const r = await fetch(p.url, {
         method: "POST",
-        signal: AbortSignal.timeout(300000),
+        /*
+         * STREAM, AND A LONGER CEILING.
+         *
+         * The probe run inside the runner on 2026-10-20 answered the question the whole day was spent guessing at:
+         *
+         *   request never completed: ETIMEDOUT: fetch failed
+         *
+         * Doubao-Seed-2.1-pro did not return a malformed body, an empty content, or a streamed event. It did not return
+         * at all inside 180 seconds for a 638-character structural prompt. A one-token ping answers in a second, which
+         * is why the endpoint looked healthy - the model is simply slow enough that a buffered request for 1500 words
+         * exceeds any client timeout worth having.
+         *
+         * Streaming is the fix, not a workaround: the response begins immediately and the connection is held open by
+         * data rather than by silence, so a slow model finishes instead of being abandoned. The SSE parser below reads
+         * the deltas. The ceiling goes to ten minutes for the same reason - a large model writing a long article is not
+         * a hung request.
+         */
+        signal: AbortSignal.timeout(600000),
         headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
-        body: JSON.stringify(body),
+        body: JSON.stringify({ ...body, stream: true }),
       });
       const text = await r.text();
       let json = null;
