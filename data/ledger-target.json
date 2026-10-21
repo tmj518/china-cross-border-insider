@@ -1,6 +1,6 @@
 {
-  "appToken": "C670bKbxdanRS9s36xucdqbWnUd",
-  "note": "The Multidimensional Table the operator pointed at: https://my.feishu.cn/wiki/XzN1wYLs7iyPvck2wrCca02KnWd . tools/feishu-run-ledger.mjs verifies this token before using it and creates a base of its own if the token is not readable.",
+  "appToken": "Z1cQbMqqbabWMRsZnTrcBcZXnKf",
+  "runTableId": "tblyetGDonoMXsm2",
   "runTableName": "运行台账",
-  "at": "2026-10-21T15:55:00.000Z"
+  "at": "2026-10-21T07:56:22.095Z"
 }

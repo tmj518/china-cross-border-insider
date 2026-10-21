@@ -28,6 +28,14 @@ const BASE = "https://open.feishu.cn/open-apis";
 const TABLE_NAME = "运行台账";
 
 /*
+ * The primary field is the one column Bitable requires and the one the grid sorts by, so it holds a
+ * readable key rather than being the "多行文本" that a table created over the API comes with. The
+ * timestamp inside it duplicates 运行日期 on purpose: the key has to be self-describing in a row that
+ * is read alone.
+ */
+const KEY_FIELD = "运行编号";
+
+/*
  * Eight columns, all text.
  *
  * Type 1 (text) for every one of them, including the numbers. A column typed as number refuses ""
@@ -118,16 +126,21 @@ function failure(j) {
   return "";
 }
 
-const rows = runFiles().map((j) => ({
-  运行日期: stamp(j.at),
-  路线: String(j.route ?? "未记录"),
-  判决: String(j.verdict ?? "未记录"),
-  耗时秒: j.seconds != null ? String(j.seconds) : "",
-  花费美元: j.usage?.usd != null ? Number(j.usage.usd).toFixed(4) : "",
-  选题: subject(j),
-  写手_审核: roles(j),
-  失败原因: failure(j),
-}));
+const rows = runFiles().map((j) => {
+  const at = stamp(j.at);
+  const route = String(j.route ?? "未记录");
+  return {
+    [KEY_FIELD]: `${at} · ${route}`,
+    运行日期: at,
+    路线: route,
+    判决: String(j.verdict ?? "未记录"),
+    耗时秒: j.seconds != null ? String(j.seconds) : "",
+    花费美元: j.usage?.usd != null ? Number(j.usage.usd).toFixed(4) : "",
+    选题: subject(j),
+    写手_审核: roles(j),
+    失败原因: failure(j),
+  };
+});
 
 /* The Feishu column is named 写手/审核; a slash in a JS key is legal, so keep one name everywhere. */
 for (const r of rows) {
@@ -262,7 +275,12 @@ async function findTable() {
   const made = await api(`/bitable/v1/apps/${APP_TOKEN}/tables`, {
     method: "POST",
     token,
-    body: { table: { name: TABLE_NAME, default_view_name: "全部运行" } },
+    /*
+     * Name only. `default_view_name` reads like it belongs here and is rejected with 1254001
+     * WrongRequestBody - the whole request, not just the extra field. A table created this way gets a
+     * default grid view, which is what the ledger wants anyway.
+     */
+    body: { table: { name: TABLE_NAME } },
   });
   return { id: made.table_id, created: true };
 }
@@ -276,6 +294,26 @@ try {
   process.exit(1);
 }
 
+/*
+ * A table made over the API arrives with one primary column called 多行文本. Rename it, because it is
+ * the column a reader sees first and the one the grid sorts by, and a ledger whose leading column says
+ * "long text" teaches nobody anything.
+ */
+try {
+  const f0 = await api(`/bitable/v1/apps/${APP_TOKEN}/tables/${table.id}/fields?page_size=100`, { token });
+  const primary = (f0.items ?? []).find((x) => x.is_primary);
+  if (primary && primary.field_name !== KEY_FIELD) {
+    await api(`/bitable/v1/apps/${APP_TOKEN}/tables/${table.id}/fields/${primary.field_id}`, {
+      method: "PUT",
+      token,
+      body: { field_name: KEY_FIELD, type: 1 },
+    });
+    console.log(`  field : primary column "${primary.field_name}" renamed to ${KEY_FIELD}`);
+  }
+} catch (e) {
+  console.log(`  field : could not rename the primary column - ${e.message}`);
+}
+
 /* Record what was created, so the next run reuses it instead of making a second base. */
 try {
   mkdirSync(join(ROOT, "data"), { recursive: true });
@@ -284,8 +322,7 @@ try {
     JSON.stringify({ appToken: APP_TOKEN, runTableId: table.id, runTableName: TABLE_NAME, at: new Date().toISOString() }, null, 2),
     "utf8",
   );
-  console.log("  record: data/ledger-target.json written (commit it; it is what the next run reads)");
-} catch (e) {
+  console.log("  record: data/ledger-target.json written (commit it; it is what the next run reads)");} catch (e) {
   console.log("  record: could not write data/ledger-target.json - " + e.message);
 }
 
