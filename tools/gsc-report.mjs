@@ -74,7 +74,15 @@ const stats = { retries: 0, gscCalls: 0, started: Date.now() };
 
 function log(msg) {
   const line = `[${new Date().toISOString().slice(11, 19)}] ${msg}`;
-  console.log(line);
+  /*
+   * --json goes to stderr, so stdout is the document and nothing else.
+   *
+   * These lines used to go to stdout in every mode, which left three timestamped lines in front of the
+   * JSON. A reader that slices from the first '{' (tools/optimize-titles.mjs) survives that, but
+   * `node tools/gsc-report.mjs --json > payload.json` does not: the file is not JSON, and it took a
+   * failed parse in the audit workflow to notice. A flag called --json should be pipeable.
+   */
+  (args.json ? console.error : console.log)(line);
   appendFileSync(LOG, line + "\n", "utf8");
 }
 
