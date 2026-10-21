@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-21T07:02:43.198Z",
+  "at": "2026-10-21T17:18:13.869Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -34,6 +34,13 @@
       "clicks": 0,
       "ctr": 0,
       "position": 65
+    },
+    {
+      "query": "section 301 tariff ustr exclusion -site:facebook.com -site:instagram.com -site:linkedin.com -site:x.com -site:twitter.com -site:youtube.com -site:tiktok.com -site:pinterest.com -site:reddit.com -site:threads.com effective or increase or list or electronics or review",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 20
     },
     {
       "query": "stuffing inspection china",
