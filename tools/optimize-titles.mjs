@@ -51,8 +51,11 @@ const ALL = argv.includes("--all");
  */
 const DAYS = arg("days", 90);
 
+/* Whether this run may change a file. Read here, above the banner, so the banner cannot lie about it. */
+const WILL_WRITE = argv.includes("--rewrite") || argv.some((a) => a.startsWith("--apply="));
+
 console.log("");
-console.log("TITLE OPTIMISER  -  read only, nothing is written");
+console.log(`TITLE OPTIMISER  -  ${WILL_WRITE ? "writes the title line, behind qa-check" : "read only, nothing is written"}`);
 console.log("=".repeat(94));
 console.log(`  filter : ${DAYS}d   impressions > ${MIN_IMP}   position < ${MAX_POS}   ctr < ${(MAX_CTR * 100).toFixed(1)}%`);
 console.log("");
@@ -177,7 +180,31 @@ const STYLES = {
 };
 
 const MAX_TITLE = 60;
-const REWRITE = argv.includes("--rewrite");
+/*
+ * --apply=<file> writes titles a human has already read, and does not ask the model again.
+ *
+ * --rewrite re-generates the proposal at temperature 0.6, which is right for exploring and wrong for
+ * applying: the operator approves four specific strings, and a second sampling can return four different
+ * ones. Writing those would mean shipping titles nobody reviewed, under an approval given for other words.
+ *
+ * The file is a flat JSON object, slug -> title. Everything downstream is unchanged: the 60-character
+ * check, the .bak backup, qa-check, and the rollback.
+ */
+const APPLY = ((argv.find((a) => a.startsWith("--apply=")) ?? "").slice("--apply=".length) || "").trim();
+const REWRITE = WILL_WRITE;
+const approved = (() => {
+  if (!APPLY) return null;
+  if (!existsSync(APPLY)) {
+    console.log(`  --apply file does not exist: ${APPLY}`);
+    process.exit(1);
+  }
+  const map = JSON.parse(readFileSync(APPLY, "utf8"));
+  if (!map || typeof map !== "object" || Array.isArray(map)) {
+    console.log(`  --apply file must be a JSON object of slug -> title: ${APPLY}`);
+    process.exit(1);
+  }
+  return map;
+})();
 const MODEL = ((argv.find((a) => a.startsWith("--model=")) ?? "").slice("--model=".length) || process.env.TITLE_MODEL || "").trim();
 
 /* The .env is the local mirror of the workflow's secrets; lib-llm reads process.env. */
@@ -298,11 +325,21 @@ for (const row of shown) {
   const article = { ...fmOf(file), file };
 
   let result;
-  try {
-    result = await propose(row, article);
-  } catch (e) {
-    console.log(`    FAILED : ${e.message.slice(0, 240)}`);
-    continue;
+  if (approved) {
+    /* A reviewed title is applied as given. No sampling, no second opinion. */
+    const t = String(approved[row.slug] ?? "").trim();
+    if (!t) {
+      console.log("    skip   : no approved title for this slug in the apply file");
+      continue;
+    }
+    result = { json: { style: "(approved)", why: "from the apply file", candidates: [{ title: t, score: "-" }] }, best: t };
+  } else {
+    try {
+      result = await propose(row, article);
+    } catch (e) {
+      console.log(`    FAILED : ${e.message.slice(0, 240)}`);
+      continue;
+    }
   }
 
   const { json, best } = result;
