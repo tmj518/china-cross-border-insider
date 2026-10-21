@@ -42,14 +42,17 @@ jobs:
         run: node tools/gsc-report.mjs --sites --days=90
 
       #
-      # The payload verbatim, because the rewriter prompt is the part that needs iterating and this is
-      # the only machine that can fetch it. Take the block between PAYLOAD and END from the log and
-      # `node tools/optimize-titles.mjs --from=<file>` reproduces the audit with no credential at all.
+      # The payload as one line of base64, because the log masker eats any line that is only a brace:
+      # the first attempt at this printed the pretty JSON and every "{" and "}" came back as "***",
+      # which turns a valid document into something no parser will read. base64 has no braces in it.
+      #
+      #   gh run view <id> --log | grep -o 'PAYLOAD-BASE64.*' ... | tail -1 | base64 -d > out/gsc-90.json
       #
       - name: The rows themselves, as the rewriter consumes them
         run: |
-          echo "PAYLOAD"
-          node tools/gsc-report.mjs --json --days=90
+          echo "PAYLOAD-BASE64"
+          node tools/gsc-report.mjs --json --days=90 | base64 -w 0
+          echo ""
           echo "END"
 
       - name: Which pages are ranked but not clicked
