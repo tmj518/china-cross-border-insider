@@ -504,6 +504,25 @@ jobs:
           FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
         run: node tools/feishu-run-ledger.mjs
 
+      #
+      # The base token only exists after the first run, and the runner is thrown away afterwards. Without
+      # this the tool would create a new base every morning and the operator would own seven of them by
+      # Sunday. The file is the memory; committing it is what makes the bootstrap a one-time event.
+      #
+      - name: Keep the base the run ledger created
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ -z "$(git status --porcelain data/ledger-target.json)" ]; then
+            echo "nothing to record - the base token is already committed or was not created"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ledger-target.json
+          git commit -m "ledger: record the base the run ledger created"
+          git push
+
       - name: Notify Feishu
         # Always runs. A run that failed is precisely the run the operator needs to hear about, and
         # this is the only channel that reaches them when the computer is off.

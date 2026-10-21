@@ -27,6 +27,7 @@ import {
   openSync,
   closeSync,
   rmSync,
+  appendFileSync,
 } from "node:fs";
 import { join } from "node:path";
 import { ask as askModel } from "./lib-llm.mjs";
@@ -313,6 +314,88 @@ console.log("=".repeat(94));
 console.log(`  rewriter : ${REWRITE ? "WRITES the markdown" : "proposes only - nothing is written"}${MODEL ? `   model ${MODEL}` : ""}`);
 console.log("=".repeat(94));
 
+/* ------------------------------------------------------------------ backtest */
+
+/*
+ * Every title change is recorded before it happens, with the numbers that justified it.
+ *
+ * Without this line the only evidence that a rewrite worked is a feeling, because Search Console
+ * keeps no history of a title - it reports the page's position today, not what it was when the
+ * promise on the page was a different sentence. data/backtest.jsonl is that history: a baseline at
+ * the moment of the change, and a measurement whenever someone asks again.
+ *
+ * Append-only JSON lines, because two machines can record here without agreeing on a schema version.
+ */
+const BACKTEST = join(ROOT, "data", "backtest.jsonl");
+
+function appendBacktest(entry) {
+  try {
+    mkdirSync(join(ROOT, "data"), { recursive: true });
+    appendFileSync(BACKTEST, JSON.stringify(entry) + "\n", "utf8");
+  } catch (e) {
+    console.log(`    backtest: could not append - ${e.message}`);
+  }
+}
+
+const nums = (r) => ({
+  impressions: Math.round(r?.impressions ?? 0),
+  clicks: Math.round(r?.clicks ?? 0),
+  ctr: Number(r?.ctr ?? 0),
+  position: Math.round((r?.position ?? 0) * 10) / 10,
+});
+
+/**
+ * Read the log back: for each slug's latest baseline, the newest measurement, and the difference.
+ *
+ * It reports and does not conclude. A position that moved two places over five days on forty
+ * impressions is not evidence of anything, and a tool that prints a green arrow would teach the
+ * operator to trust it anyway. The sample size is printed next to the delta for that reason.
+ */
+function backtestReport() {
+  if (!existsSync(BACKTEST)) {
+    console.log("\n  no data/backtest.jsonl yet - nothing has been changed with this tool version.");
+    return;
+  }
+  const entries = readFileSync(BACKTEST, "utf8").split("\n").filter(Boolean).map((l) => {
+    try { return JSON.parse(l); } catch { return null; }
+  }).filter(Boolean);
+
+  const base = new Map();
+  const measure = new Map();
+  for (const e of entries) {
+    if (e.type === "baseline" && e.slug) base.set(e.slug, e);
+    if (e.type === "measure" && e.slug) measure.set(e.slug, e);
+  }
+  if (!base.size) {
+    console.log("\n  backtest log has no baseline yet.");
+    return;
+  }
+
+  console.log("\n" + "=".repeat(94));
+  console.log("  BACKTEST — title changes with the numbers before and after");
+  console.log("=".repeat(94));
+  for (const [slug, b] of base) {
+    const m = measure.get(slug);
+    const before = b.before ?? {};
+    console.log(`  ${slug}`);
+    console.log(`    ${b.at.slice(0, 10)}  "${String(b.to).slice(0, 66)}"`);
+    if (!m) {
+      console.log(`    before : ${before.impressions} imp / ${before.clicks} clk / ${(before.ctr * 100).toFixed(2)}% / pos ${before.position}`);
+      console.log("    after  : not measured yet");
+      continue;
+    }
+    const a = m.after ?? {};
+    const dPos = (before.position ?? 0) - (a.position ?? 0);
+    const dCtr = (a.ctr ?? 0) - (before.ctr ?? 0);
+    console.log(`    before : ${before.impressions} imp / ${before.clicks} clk / ${(before.ctr * 100).toFixed(2)}% / pos ${before.position}`);
+    console.log(`    after  : ${a.impressions} imp / ${a.clicks} clk / ${(a.ctr * 100).toFixed(2)}% / pos ${a.position}   (${m.at.slice(0, 10)}, ${m.windowDays}d window)`);
+    console.log(`    delta  : position ${dPos >= 0 ? "+" : ""}${dPos.toFixed(1)}   CTR ${dCtr >= 0 ? "+" : ""}${(dCtr * 100).toFixed(2)}pt   on ${a.impressions} impressions`);
+  }
+  console.log("");
+  console.log("  A delta on a handful of impressions is noise. Wait for the window to refill before reading it.");
+}
+
+
 for (const row of shown) {
   const file = join(dir, `${row.slug}.md`);
   console.log("");
@@ -323,7 +406,6 @@ for (const row of shown) {
     continue;
   }
   const article = { ...fmOf(file), file };
-
   let result;
   if (approved) {
     /* A reviewed title is applied as given. No sampling, no second opinion. */
@@ -362,6 +444,24 @@ for (const row of shown) {
 
   if (!REWRITE) continue;
 
+  /*
+   * The baseline is written BEFORE the file is touched.
+   *
+   * If it were written after, a rollback would leave a record of a change that never happened, and the
+   * only cheap way to tell the two apart afterwards is a note that the change succeeded - which is the
+   * thing the gate might be about to say it did not.
+   */
+  appendBacktest({
+    type: "baseline",
+    at: new Date().toISOString(),
+    slug: row.slug,
+    from: article.title,
+    to: best,
+    of: best.length,
+    windowDays: payload?.days ?? DAYS,
+    before: nums(row),
+  });
+
   /* Back up, write, gate, and roll back on failure - in that order, never skipping one. */
   const bak = `${file}.bak`;
   copyFileSync(file, bak);
@@ -383,3 +483,36 @@ console.log("");
 console.log(REWRITE
   ? "  Done. Article bodies were not touched - only the title line, checked by qa-check."
   : "  Nothing was written. Re-run with --rewrite to apply a title, or edit one by hand.");
+
+/*
+ * --backtest fills in the after-numbers from this run's payload and prints the comparison.
+ *
+ * A measurement is appended at most once a day per slug. The log is append-only, so a cron that runs
+ * it every morning would otherwise bury the one baseline under thirty identical measurements.
+ */
+if (argv.includes("--backtest")) {
+  const lastMeasure = new Map();
+  const baseSlugs = new Set();
+  if (existsSync(BACKTEST)) {
+    for (const line of readFileSync(BACKTEST, "utf8").split("\n").filter(Boolean)) {
+      let e;
+      try { e = JSON.parse(line); } catch { continue; }
+      if (e.type === "baseline" && e.slug) baseSlugs.add(e.slug);
+      if (e.type === "measure" && e.slug) lastMeasure.set(e.slug, e.at);
+    }
+  }
+  const fresh = [];
+  for (const slug of baseSlugs) {
+    const page = rows.find((r) => String(r.page).includes(`/blog/${slug}/`));
+    if (!page) continue;
+    const last = lastMeasure.get(slug);
+    if (last && Date.now() - new Date(last).getTime() < 20 * 3600 * 1000) continue;
+    appendBacktest({ type: "measure", at: new Date().toISOString(), slug, windowDays: payload?.days ?? DAYS, after: nums(page) });
+    fresh.push(slug);
+  }
+  if (fresh.length) {
+    console.log("");
+    console.log(`  measured ${fresh.length} page(s) against this payload: ${fresh.join(", ")}`);
+  }
+  backtestReport();
+}

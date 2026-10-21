@@ -10,6 +10,10 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Needed for the one step that writes back: the backtest log only becomes evidence if it survives
+    # the runner, and measurements live in the repository, not in a log that scrolls away.
+    permissions:
+      contents: write
     env:
       #
       # The property string is a repository variable, not a literal, because getting it wrong is
@@ -57,3 +61,33 @@ jobs:
 
       - name: Which pages are ranked but not clicked
         run: node tools/optimize-titles.mjs --min-imp=20 --max-pos=12 --max-ctr=0.02
+
+      #
+      # The other half of the loop: the queries Google already shows us for, and whether we have a page
+      # of our own for them. Same base64 treatment, because the JSON has braces on their own lines.
+      #
+      - name: Queries we rank for and have no page for
+        run: |
+          echo "GAPS-BASE64"
+          node tools/query-gap.mjs --json --days=90 | base64 -w 0
+          echo ""
+          echo "END"
+
+      #
+      # Measure the titles that have already been changed, and keep the measurements. This step writes
+      # data/backtest.jsonl, so it must be committed or the evidence dies with the runner.
+      #
+      - name: Backtest the titles changed so far
+        run: node tools/optimize-titles.mjs --min-imp=20 --max-pos=12 --max-ctr=0.02 --backtest
+
+      - name: Keep the backtest log
+        run: |
+          if [ -z "$(git status --porcelain data/backtest.jsonl)" ]; then
+            echo "no new measurement"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/backtest.jsonl
+          git commit -m "backtest: measured $(date -u +%F) against a ninety-day window"
+          git push

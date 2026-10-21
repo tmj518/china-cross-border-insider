@@ -16,7 +16,7 @@
  *   node tools/feishu-run-ledger.mjs --limit=50     # more history than the default 20
  *   node tools/feishu-run-ledger.mjs                # upsert into the 运行台账 table
  */
-import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
@@ -160,28 +160,30 @@ if (DRY) {
 const APP_ID = (process.env.FEISHU_APP_ID ?? "").trim();
 const APP_SECRET = (process.env.FEISHU_APP_SECRET ?? "").trim();
 /*
- * The base token, from the environment or from what tools/feishu-ledger.mjs recorded.
+ * The base token: the environment, then what this tool recorded last time, then - if neither - a base
+ * this run creates.
  *
- * Requiring it as a secret made the setup circular in the same way it did for the article ledger: the
- * token only exists once a base exists. The environment still wins, so a deployment that names a base
- * explicitly is not overridden by a file.
+ * Requiring it as a secret made the setup circular: the token only exists once a base exists, and the
+ * thing that creates the base needs the token. A deployment that names a base explicitly still wins;
+ * a deployment that has only the app id and secret bootstraps itself and records the result in
+ * data/ledger-target.json, which is committed, so the next run finds it.
  */
-const recordedTarget = (() => {
+let recordedTarget = (() => {
   try {
     return JSON.parse(readFileSync(join(ROOT, "data", "ledger-target.json"), "utf8"));
   } catch {
     return null;
   }
 })();
-const APP_TOKEN = ((process.env.FEISHU_APP_TOKEN ?? "").trim() || recordedTarget?.appToken || "").trim();
+let APP_TOKEN = ((process.env.FEISHU_APP_TOKEN ?? "").trim() || recordedTarget?.appToken || "").trim();
 
-const MISSING = [["FEISHU_APP_ID", APP_ID], ["FEISHU_APP_SECRET", APP_SECRET], ["FEISHU_APP_TOKEN", APP_TOKEN]]
+const MISSING = [["FEISHU_APP_ID", APP_ID], ["FEISHU_APP_SECRET", APP_SECRET]]
   .filter(([, v]) => !v)
   .map(([k]) => k);
 if (MISSING.length) {
   console.log("\n  cannot write: missing " + MISSING.join(", "));
-  console.log("  FEISHU_APP_TOKEN is read from the environment, or from data/ledger-target.json");
-  console.log("  after one run of tools/feishu-ledger.mjs. --dry-run needs none of them.");
+  console.log("  The app's id and secret are the only two things that cannot be created here.");
+  console.log("  --dry-run needs none of them.");
   process.exit(2);
 }
 
@@ -206,6 +208,31 @@ const tok = await api("/auth/v3/tenant_access_token/internal", {
 const token = tok.tenant_access_token;
 
 /*
+ * Bootstrap: no base token means no base yet, so make one.
+ *
+ * The app id and secret are the only credentials a person has to create, and they already exist. A
+ * base is a container this tool can create for itself; asking the operator to create one by hand and
+ * then paste its token back in is the step that has kept this ledger empty all week.
+ */
+if (!APP_TOKEN) {
+  try {
+    const made = await api("/bitable/v1/apps", {
+      method: "POST",
+      token,
+      body: { name: "Landed Math 数据中控台" },
+    });
+    APP_TOKEN = made.app?.app_token ?? "";
+    console.log(`\n  base  : created "Landed Math 数据中控台" (${APP_TOKEN})`);
+  } catch (e) {
+    console.log("  base  : FAILED to create - " + e.message);
+    console.log("          the app needs the bitable:app permission, and drive space to hold a base.");
+    process.exit(1);
+  }
+} else {
+  console.log(`\n  base  : reusing ${APP_TOKEN}`);
+}
+
+/*
  * The table is found by name, not by an id in a secret.
  *
  * An id would make the first run circular - the table does not exist until something creates it,
@@ -227,10 +254,23 @@ async function findTable() {
 let table;
 try {
   table = await findTable();
-  console.log(`\n  table : ${TABLE_NAME} ${table.created ? "created" : "found"} (${table.id})`);
+  console.log(`  table : ${TABLE_NAME} ${table.created ? "created" : "found"} (${table.id})`);
 } catch (e) {
   console.log("  table : FAILED - " + e.message);
   process.exit(1);
+}
+
+/* Record what was created, so the next run reuses it instead of making a second base. */
+try {
+  mkdirSync(join(ROOT, "data"), { recursive: true });
+  writeFileSync(
+    join(ROOT, "data", "ledger-target.json"),
+    JSON.stringify({ appToken: APP_TOKEN, runTableId: table.id, runTableName: TABLE_NAME, at: new Date().toISOString() }, null, 2),
+    "utf8",
+  );
+  console.log("  record: data/ledger-target.json written (commit it; it is what the next run reads)");
+} catch (e) {
+  console.log("  record: could not write data/ledger-target.json - " + e.message);
 }
 
 /* Missing columns are added rather than reported, so the first run on a fresh table is the last run. */
