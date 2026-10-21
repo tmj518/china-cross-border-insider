@@ -33,7 +33,7 @@
 
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, appendFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { gscSearchAnalytics, isoDaysAgo, loadEnv, today } from "./lib/gsc.mjs";
+import { gscAccessToken, gscSearchAnalytics, httpCurl, isoDaysAgo, loadEnv, today } from "./lib/gsc.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const OUT_DIR = join(ROOT, "data", "gsc");
@@ -54,6 +54,12 @@ for (const a of process.argv.slice(2)) {
    * there.
    */
   else if (a === "--json") args.json = true;
+  /*
+   * --sites asks the question this project spent a day answering by guesswork:
+   * which properties can this credential actually read, and which of them holds
+   * the rows. See the block below for why an empty answer is ambiguous.
+   */
+  else if (a === "--sites") args.sites = true;
   else { console.error(`unknown argument: ${a}`); process.exit(2); }
 }
 
@@ -99,7 +105,7 @@ function bail(reason) {
 
 log(`gsc report start  window=${args.days}d  dryRun=${args.dryRun}`);
 
-if (existsSync(join(OUT_DIR, `report_${DATE}.md`)) && !args.force && !args.dryRun) {
+if (existsSync(join(OUT_DIR, `report_${DATE}.md`)) && !args.force && !args.dryRun && !args.json && !args.sites) {
   log("today's report already exists — no-op. Use --force to override.");
   process.exit(0);
 }
@@ -144,6 +150,77 @@ if (!env.GSC_CREDENTIALS || !env.GSC_SITE_URL) {
 const window = { startDate: isoDaysAgo(args.days), endDate: ISO };
 log(`  window ${window.startDate} .. ${window.endDate}`);
 
+/*
+ * --sites: price every property, not just the configured one.
+ *
+ * One host can carry several GSC properties at once - a Domain property,
+ * sc-domain:landedmath.com, plus a URL-prefix property per scheme and subdomain -
+ * and each is a separate dataset behind a separate permission. The API answers
+ * whichever string is in the URL. So an empty result from the wrong property and
+ * an empty result from the right one look identical, which is how "0 rows" turns
+ * into a theory about traffic.
+ *
+ *   node tools/gsc-report.mjs --sites --days=90
+ *
+ * Prints what the credential can read, whether the configured string is in that
+ * list, and how many page rows and impressions the window holds behind each one.
+ * A property that is configured but absent from the list means every query against
+ * it is answered with nothing, forever, and no amount of widening the window helps.
+ */
+if (args.sites) {
+  const token = gscAccessToken(env, stats);
+  if (!token) bail("GSC is configured but produced no access token; nothing can be queried.");
+
+  const list = JSON.parse(httpCurl([
+    "-4", "-sS", "--max-time", "30",
+    "-H", `Authorization: Bearer ${token}`,
+    "https://searchconsole.googleapis.com/webmasters/v3/sites",
+  ]));
+  if (list.error) bail(`sites.list failed: ${list.error.message}`);
+
+  const sites = list.siteEntry ?? [];
+  const want = env.GSC_SITE_URL;
+  const encode = (s) => encodeURIComponent(s);
+
+  log("");
+  log(`  GSC_SITE_URL        ${want}`);
+  log(`  properties readable ${sites.length}`);
+  for (const s of sites) {
+    log(`    ${String(s.permissionLevel ?? "?").padEnd(16)} ${s.siteUrl}${s.siteUrl === want ? "   <- configured" : ""}`);
+  }
+  if (!sites.some((s) => s.siteUrl === want)) {
+    log(`    CONFIGURED PROPERTY IS NOT IN THAT LIST — every query against it answers empty.`);
+  }
+
+  log("");
+  log(`  page rows behind each property, ${window.startDate} .. ${window.endDate}:`);
+  const body = JSON.stringify({ ...window, dimensions: ["page"], rowLimit: 25000 });
+  for (const s of sites) {
+    try {
+      const r = JSON.parse(httpCurl([
+        "-4", "-sS", "--max-time", "90", "-X", "POST",
+        "-H", `Authorization: Bearer ${token}`,
+        "-H", "Content-Type: application/json",
+        "-d", body,
+        `https://searchconsole.googleapis.com/webmasters/v3/sites/${encode(s.siteUrl)}/searchAnalytics/query`,
+      ]));
+      if (r.error) {
+        log(`    ${"error".padEnd(16)} ${s.siteUrl}   ${r.error.message}`);
+        continue;
+      }
+      const rows = r.rows ?? [];
+      const impressions = rows.reduce((n, x) => n + (x.impressions ?? 0), 0);
+      const clicks = rows.reduce((n, x) => n + (x.clicks ?? 0), 0);
+      log(`    ${`${rows.length} rows`.padEnd(16)} ${s.siteUrl}   ${impressions} impressions, ${clicks} clicks`);
+    } catch (e) {
+      log(`    ${"failed".padEnd(16)} ${s.siteUrl}   ${e.message}`);
+    }
+  }
+  log("");
+  log("  nothing written — this mode only reads");
+  process.exit(0);
+}
+
 function fetchBy(dimension) {
   try {
     const r = gscSearchAnalytics(env, {
@@ -168,7 +245,7 @@ if (args.json) {
     ctr: Number(r.ctr ?? 0),
     position: Math.round((r.position ?? 0) * 10) / 10,
   }));
-  console.log(JSON.stringify({ days: args.days, site: env.site, pages: rows }, null, 2));
+  console.log(JSON.stringify({ days: args.days, site: env.GSC_SITE_URL, pages: rows }, null, 2));
   process.exit(0);
 }
 log(`  ${pageRows.length} pages, ${queryRows.length} queries with impressions`);
