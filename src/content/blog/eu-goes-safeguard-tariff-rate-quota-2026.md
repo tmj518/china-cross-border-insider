@@ -160,3 +160,4 @@ Worked structure (illustrative customs value, no rate asserted)
 ## The point
 
 The provisional safeguard of 18 September 2026 changes the shape of the cost before it changes the size of it. An importer of grain-oriented steel, laminations, cores or transformers now clears against a volume allowance and a price test at once, and the definitive vote that decides whether that structure stands needs 15 member states holding 65% of EU population. Price the structure first; the rates follow from the quota line.
+The provisional measures this quota sits on top of are explained in [the TRQ and price-threshold announcement](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/).

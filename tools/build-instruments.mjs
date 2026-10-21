@@ -155,6 +155,24 @@ console.log("PARSE RESULT\n" + "=".repeat(80));
 console.log(`  articles parsed (published): ${articles.length}`);
 console.log(`  figure records             : ${figures.length}`);
 
+/*
+ * "X news article" and "X" are one document, not two.
+ *
+ * The registry carried both strings for the European Commission's DG Trade page, so slugify() produced
+ * two ids and the site published two instrument pages whose titles are identical once truncated - the
+ * metadata gate's only remaining complaint on 2026-10-21, and a duplicate page for a reader.
+ *
+ * Narrow on purpose: a source is merged ONLY when the bare form is also present. Three sources end in
+ * "news article"; stripping unconditionally would change the slug - and therefore the URL - of the two
+ * that have no twin.
+ */
+const sources = new Set(figures.map((f) => String(f.source ?? "").trim()));
+for (const f of figures) {
+  const s = String(f.source ?? "").trim();
+  const bare = s.replace(/\s*news article$/i, "").trim();
+  if (bare !== s && sources.has(bare)) f.source = bare;
+}
+
 const missing = figures.filter((f) => !f.value || !f.unit || !f.period || !f.source || !f.retrieved);
 console.log(`  records missing any of the five fields: ${missing.length}`);
 for (const f of missing.slice(0, 8)) {

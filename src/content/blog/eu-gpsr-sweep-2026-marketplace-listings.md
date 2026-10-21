@@ -124,7 +124,7 @@ Two things follow from that table.
 
 > Also read: [The Same Parcel Costs Three Times More in America Than in Europe](/blog/us-vs-eu-low-value-parcel-charges-2026/)
 
-> Also read: [2025 EU FDI screening notification volumes and 15-day closure rates for 2026 importer compliance](/blog/eu-fdi-screening-notification-rates-2025-importer-compliance/)
+> Also read: [2025 EU FDI screening notification volumes and 15-day closure rates for 2026 importer compliance](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
 
 ## For you
 

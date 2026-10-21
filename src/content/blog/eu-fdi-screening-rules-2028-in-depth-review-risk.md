@@ -168,3 +168,5 @@ fewer than 14 cases < 667 notifications × 2 percent
 ## The point
 
 Before the rules apply on **17 January 2028**, the numbers point to a clear planning rule: expect most EU FDI notifications to close within **15 calendar days**, but reserve time and resources for the **12%** that enter in-depth review. Manufacturing transactions deserve particular attention because they represent **53%** of that higher-risk group.
+
+The notification volumes behind this forecast are in [2025 EU FDI screening notification volumes and 15-day closure rates](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/) and in [the 40 percent jump in notifications](/blog/eu-fdi-screening-notification-surge-2026/).

@@ -129,3 +129,5 @@ Deeper assessment     = notifications x (1 - 88%)
 ## The point
 
 The EU screened 667 notified investments in 2025, 40% more than the year before, and sent 12% of them into in-depth security review. Most of that review landed in manufacturing, which is now 53% of all transactions. The 15-day clearance that 88% of deals enjoy is real, but it is a base case, not a promise, and the report gives no duration for the track the other 12% are on. If you are buying into Europe, the number to carry into your timetable is the 12%, and the date to carry into your calendar is 17 January 2028.
+
+The [15-day closure rate and how it is measured](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/) is the number this volume is pushing against.

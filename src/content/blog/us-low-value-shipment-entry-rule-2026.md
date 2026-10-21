@@ -152,7 +152,7 @@ Three things follow, and the first two are why the comment window matters more t
 
 > **Informal entry** — the simplified customs procedure for shipments valued at $2,500 or less, under 19 U.S.C. 1498(a)(1)(A). It carries a specific processing fee rather than the ad valorem fee charged on a formal entry. Entry type 11 is the non-postal form; entry type 13 is the new electronic form the proposal creates for merchandise arriving through the mail environment.
 
-> Also read: [2025 EU FDI screening notification volumes and compliance thresholds for third-country importers](/blog/eu-fdi-screening-notification-rates-2025-importer-compliance/)
+> Also read: [2025 EU FDI screening notification volumes and compliance thresholds for third-country importers](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
 
 ## For you
 
