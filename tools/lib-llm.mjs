@@ -81,7 +81,11 @@ const PROVIDERS = {
      */
     /*
      * The writer and the reviewer are different endpoints, and the operator stores them under their own names:
-     * dubaotuili12345 holds the Doubao endpoint and ARK_MODEL holds the DeepSeek one.
+     * DUBAOTUILI12345 holds the Doubao endpoint and ARK_MODEL holds the DeepSeek one.
+     *
+     * The name is uppercase because it is a secret name, and secret names are uppercase everywhere else in these
+     * workflows. The lowercase version it replaced worked only because the workflow happened to export a lowercase
+     * key; on Linux that is a different variable, not a different spelling.
      *
      * The writer's fallback order matters. A Doubao endpoint in the writer slot is what makes the pair two models -
      * if the writer fell through to ARK_MODEL first, both roles would land on DeepSeek and the reviewer would be
@@ -92,7 +96,7 @@ const PROVIDERS = {
       writer:
         process.env.ARK_MODEL_WRITER ||
         process.env.DUBAO201628_ENDPOINT ||
-        process.env.dubaotuili12345 ||
+        process.env.DUBAOTUILI12345 ||
         process.env.DUBAO_ENDPOINT ||
         process.env.ARK_MODEL ||
         "",
@@ -101,10 +105,15 @@ const PROVIDERS = {
         process.env.ARK_MODEL ||
         process.env.DOUBAO_ENDPOINT ||
         "",
+      /*
+       * The planner is what tools/research.mjs calls to choose the subject, so the slot stays. What went
+       * away is ARK_MODEL_PLANNER, which sat at the head of this chain and configured nothing: no workflow
+       * ever set it, so it fell through to the writer endpoint every time. A variable that cannot change
+       * behaviour reads as a knob, which is worse than not having one.
+       */
       planner:
-        process.env.ARK_MODEL_PLANNER ||
         process.env.ARK_MODEL_WRITER ||
-        process.env.dubaotuili12345 ||
+        process.env.DUBAOTUILI12345 ||
         process.env.ARK_MODEL ||
         "",
     },
@@ -732,14 +741,24 @@ export function usageToday() {
  * one the operator asked for; the rest are the fallbacks that let a bad endpoint be a bad endpoint instead of a bad day.
  */
 export function modelChain(role) {
-  const p = providerFor(role);
-  if (!p) return [];
-  if (p.name !== "volces") return [p.model].filter(Boolean);
+  /*
+   * providerFor returns the provider's NAME, not its table. This read `p.name` and `p.model` off that string,
+   * so `p.name !== "volces"` was always true, `[p.model]` was `[undefined]`, and the function returned an
+   * empty array every time.
+   *
+   * askChain() treats an empty chain as "no chain" and makes a single call with the default model - so it
+   * worked, and the failover this function exists for never ran. One retired endpoint meant a failed writer
+   * instead of a fallback, while FINAL_REPORT.md section 3.1 described the chain as a moat. A list that is
+   * always empty is not a fallback list, it is a comment.
+   */
+  const name = providerFor(role);
+  if (!name) return [];
+  if (name !== "volces") return [PROVIDERS[name]?.model].filter(Boolean);
   /* Ark is the provider with per-role endpoints, so it is the one that has a chain. */
   const order = [
     process.env.ARK_MODEL_WRITER,
     process.env.DUBAO201628_ENDPOINT,
-    process.env.dubaotuili12345,
+    process.env.DUBAOTUILI12345,
     process.env.DUBAO_ENDPOINT,
     process.env.ARK_MODEL,
   ];
