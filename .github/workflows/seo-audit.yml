@@ -1,9 +1,22 @@
 # A read-only SEO audit: which pages does Google already rank, and which of them nobody clicks.
 #
-# It runs in the runner because the Search Console key is a repository secret. It writes nothing and publishes nothing.
+# It runs in the runner because the Search Console key is a repository secret. It changes no article body
+# and publishes nothing; the one thing it writes is the backtest log, which is the evidence that a title
+# change did anything at all.
 name: SEO audit
 
 on:
+  #
+  # Weekly, Monday 08:07 Beijing (00:07 UTC).
+  #
+  # Without this the whole data loop was manual: the shortlist, the gap list and the backtest measurement
+  # all sat behind a button, so "data-driven" meant "when someone remembers". Weekly rather than daily
+  # because the window is ninety days - a day moves the numbers by less than their own noise, and a title
+  # change needs a week before it can be read. The minute is off the daily crons (23:20, 01:20, 12:20,
+  # 13:20) so the two workflows never contend for the same runner minute.
+  #
+  schedule:
+    - cron: '7 0 * * 1'
   workflow_dispatch:
 
 jobs:
@@ -80,14 +93,19 @@ jobs:
       - name: Backtest the titles changed so far
         run: node tools/optimize-titles.mjs --min-imp=20 --max-pos=12 --max-ctr=0.02 --backtest
 
-      - name: Keep the backtest log
+      #
+      # Two artefacts are worth surviving the runner: the backtest measurements, and the gap list. The
+      # gap list is the input to next week's subject choice - if it stays in the log, "the queries we
+      # rank for and have no page for" is a thing somebody has to remember to go and read.
+      #
+      - name: Keep the backtest log and the gap list
         run: |
-          if [ -z "$(git status --porcelain data/backtest.jsonl)" ]; then
-            echo "no new measurement"
+          if [ -z "$(git status --porcelain data/backtest.jsonl data/gsc/gaps_*.json)" ]; then
+            echo "nothing new to keep"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/backtest.jsonl
-          git commit -m "backtest: measured $(date -u +%F) against a ninety-day window"
+          git add data/backtest.jsonl data/gsc/gaps_*.json
+          git commit -m "audit: titles measured and queries without a page, $(date -u +%F)"
           git push
