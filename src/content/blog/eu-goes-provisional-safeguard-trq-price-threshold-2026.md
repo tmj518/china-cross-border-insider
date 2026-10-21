@@ -23,37 +23,37 @@ figures:
     unit: "normal period within which a safeguard investigation must be completed"
     period: "Investigation launched in March 2026; provisional measures announced 18 September 2026"
     source: "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
   - value: "11 months"
     unit: "maximum safeguard investigation period in exceptional circumstances"
     period: "Applicable to the safeguard investigation launched in March 2026"
     source: "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
   - value: "15"
     unit: "minimum EU Member States required to vote in favour of definitive measures"
     period: "When the Commission proposes definitive safeguard measures"
     source: "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
   - value: "65%"
     unit: "minimum share of the EU population represented by Member States voting in favour"
     period: "When the Commission proposes definitive safeguard measures"
     source: "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
   - value: "26"
     unit: "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate"
     period: "2025"
     source: "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
   - value: "232"
     unit: "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate"
     period: "End of 2025"
     source: "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
   - value: "three"
     unit: "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate"
     period: "2025"
     source: "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article"
-    retrieved: 2026-10-21
+    retrieved: "2026-10-21"
 ---
 
 ## AI Summary
