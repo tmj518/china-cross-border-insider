@@ -132,11 +132,24 @@ const arts = articles();
 const isArticle = (page) => /\/blog\/[^/]+\/$/.test(String(page ?? ""));
 
 const gaps = [];
+/* Every query, with its verdict. A site this young has more queries below the floor than above it,
+   and "sixteen queries under three impressions" is a finding, not an empty report. */
+const allQueries = [];
 let covered = 0;
 for (const q of byQuery.values()) {
-  if (q.impressions < args.minImp) continue;
   const best = [...q.pages.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "";
   const cov = coverage(q.query, arts);
+  allQueries.push({
+    query: q.query,
+    impressions: Math.round(q.impressions),
+    clicks: q.clicks,
+    position: Math.round(q.position * 10) / 10,
+    covered: cov.covered,
+    how: cov.how,
+    slug: cov.slug ?? "",
+    bestPage: best,
+  });
+  if (q.impressions < args.minImp) continue;
   if (cov.covered) {
     covered++;
     continue;
@@ -156,6 +169,7 @@ for (const q of byQuery.values()) {
   });
 }
 gaps.sort((a, b) => b.impressions - a.impressions);
+allQueries.sort((a, b) => b.impressions - a.impressions);
 
 const payload = {
   at: new Date().toISOString(),
@@ -165,6 +179,7 @@ const payload = {
   totals: { last14: sum(totals14), overWindow: sum(totals90) },
   counts: { queries: byQuery.size, covered, gaps: gaps.length, articles: arts.length },
   gaps,
+  allQueries,
 };
 
 if (!args.json) {
@@ -183,6 +198,12 @@ if (!args.json) {
       const best = String(g.bestPage).replace(/^https?:\/\/[^/]+/, "").slice(0, 44);
       log(`  ${g.query.slice(0, 56).padEnd(58)}${String(g.impressions).padStart(6)}  ${"?"}  ${g.kind.padEnd(14)} ${best}`);
     }
+  }
+  log("");
+  log("  every query, including the ones below the floor:");
+  for (const q of allQueries.slice(0, 25)) {
+    const tag = q.covered ? `covered ${q.how}` : "NO PAGE";
+    log(`    ${String(q.impressions).padStart(4)} imp  ${String(q.position).padStart(5)}  ${tag.padEnd(18)} ${q.query.slice(0, 60)}`);
   }
 
   mkdirSync(OUT_DIR, { recursive: true });
@@ -206,6 +227,12 @@ if (!args.json) {
       "| 查询 | 曝光 | 点击 | 承接页 | 类型 |",
       "| --- | --- | --- | --- | --- |",
       ...gaps.slice(0, 200).map((g) => `| ${g.query} | ${g.impressions} | ${g.clicks} | ${String(g.bestPage).replace(/^https?:\/\/[^/]+/, "")} | ${g.kind} |`),
+      "",
+      "## 全部查询（含低于门槛的）",
+      "",
+      "| 查询 | 曝光 | 点击 | 平均排名 | 有对应页 |",
+      "| --- | --- | --- | --- | --- |",
+      ...allQueries.slice(0, 300).map((q) => `| ${q.query} | ${q.impressions} | ${q.clicks} | ${q.position} | ${q.covered ? q.how : "**没有**"} |`),
       "",
       "_只读：这份报告不回写任何站点文件。_",
       "",

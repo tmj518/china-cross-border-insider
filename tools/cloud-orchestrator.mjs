@@ -28,7 +28,7 @@
  *   1  a real failure: a step errored, or the review rejected work that had been attempted
  *   78 no provider key, so nothing could be attempted
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync, rmSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { available, summary as providerSummary, usageToday, needFor } from "./lib-llm.mjs";
@@ -83,9 +83,21 @@ function keepRunReport(report) {
      */
     writeFileSync(join(RUN_LOG_DIR, "latest.json"), JSON.stringify(report, null, 2), "utf8");
 
-    const all = readdirSync(RUN_LOG_DIR).filter((f) => f.endsWith(".json")).sort();
+    /*
+     * Rotate by age, not by filename.
+     *
+     * The sort was lexical, and the two routes name their files differently: the script route writes
+     * 2026-10-21T06-22-15.json and the agent route writes agent-2026-10-21T00-51-48.json. "2" sorts
+     * before "a", so every script-route journal was at the front of the list and was the first thing
+     * deleted - which is why data/runs held ten agent runs and not one script run, why the cost of the
+     * 07:20 route was missing from the fourteen-day total, and why the run ledger had no history there.
+     */
+    const all = readdirSync(RUN_LOG_DIR)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => ({ f, m: statSync(join(RUN_LOG_DIR, f)).mtimeMs }))
+      .sort((a, b) => a.m - b.m);
     for (const old of all.slice(0, Math.max(0, all.length - RUNS_KEPT))) {
-      rmSync(join(RUN_LOG_DIR, old), { force: true });
+      rmSync(join(RUN_LOG_DIR, old.f), { force: true });
     }
   } catch {
     /* A report that cannot be copied is not a reason to fail the run; data/tmp still has it. */
