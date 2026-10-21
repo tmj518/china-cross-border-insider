@@ -142,7 +142,7 @@ Two numbers decide whether this measure changes your landed cost, and neither is
 
 > Also read: [2025 EU FDI screening notification volumes and compliance thresholds for third-country importers](/blog/eu-fdi-screening-notification-rates-2025-importer-compliance/)
 
-> Also read: [2025 EU FDI screening notification volumes and 15-day closure rates for 2026 importer compliance](/blog/eu-fdi-screening-notification-rates-2025-importer-compliance-2026/)
+> Also read: [2025 EU FDI screening notification volumes and 15-day closure rates for 2026 importer compliance](/blog/eu-fdi-screening-notification-rates-2025-importer-compliance/)
 
 ## For you
 
