@@ -218,6 +218,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [China's beef safeguard trigger adds 55% to Brazilian beef from 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-tariff-october-2026/)
 
+> Also read: [EU safeguard tariff-rate quotas hit grain-oriented electrical steel from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your

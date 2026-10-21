@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-21T01:41:47.004Z",
+  "at": "2026-10-21T06:22:15.467Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "15 previous run(s), last 2026-10-20T08:28:46.425Z (PUBLISHED)"
+      "detail": "16 previous run(s), last 2026-10-21T01:41:47.004Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "11 of 15 net-new this week"
+      "detail": "12 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -28,17 +28,17 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed eu-goes-provisional-safeguard-trq-price-threshold-2026, 7 verified figure(s)"
+      "detail": "proposed eu-goes-safeguard-tariff-rate-quota-2026, 6 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "7 sourced figure(s)"
+      "detail": "6 sourced figure(s)"
     },
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/eu-goes-provisional-safeguard-trq-price-threshold-2026.md"
+      "detail": "draft at /data/drafts/eu-goes-safeguard-tariff-rate-quota-2026.md"
     },
     {
       "name": "reviewer",
@@ -53,7 +53,7 @@
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026.md"
+      "detail": "staged at src/content/blog/eu-goes-safeguard-tariff-rate-quota-2026.md"
     },
     {
       "name": "registry",
@@ -73,65 +73,65 @@
   ],
   "verdict": "PUBLISHED",
   "reasons": [],
-  "article": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+  "article": "eu-goes-safeguard-tariff-rate-quota-2026",
   "commit": null,
   "usage": {
-    "calls": 2,
-    "failed": 0,
-    "usd": 0.0112,
-    "promptTokens": 18437,
-    "completionTokens": 32882
+    "calls": 35,
+    "failed": 28,
+    "usd": 0.0254,
+    "promptTokens": 55309,
+    "completionTokens": 9518
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 10,
+    "trade-policy": 11,
     "supply-chain": 0,
     "platforms": 1
   },
   "uncoveredSections": [],
   "researchLog": [
-    "    roles: volces writes, deepseek reviews",
-    "    review independent: yes - volces writes, deepseek reviews",
-    "  budget   : $0.40",
-    "  fetches  : up to 4",
-    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
-    "  ok    eu-trade-news               96951B  archived",
-    "  ok    trade-remedy-cases          62586B  archived",
-    "  skip  tariff-commission             604B  not usable (recorded anyway)",
-    "  ok    ministry-of-finance         20830B  archived",
-    "  ok    mofcom                     161774B  archived",
-    "  ok    eu-trade-news-article       75770B  article archived",
-    "  ok    eu-trade-news-article       73430B  article archived",
-    "  ok    eu-trade-news-article       77099B  article archived",
-    "  ok    eu-trade-news-article       76016B  article archived",
-    "  ok    trade-remedy-cases-article    39990B  article archived",
-    "  ok    trade-remedy-cases-article    24436B  article archived",
-    "  ok    trade-remedy-cases-article    19137B  article archived",
-    "  skip  trade-remedy-cases-article        0B  not usable",
-    "  ok    ministry-of-finance-article    34071B  article archived",
-    "  articles : 8 followed from the listings",
-    "  ledger: 36 published subject(s) to avoid repeating",
-    "  proposing a subject from 5 archived document(s)...",
-    "  stream      : the endpoint answered as SSE, 1501 delta(s) joined",
-    "  spent   : ~0.0049  (ceiling 0.40)",
-    "  model   : volces/ep-20261019161601-9k6dn",
+    "  stream      : the endpoint answered as SSE, 898 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3130 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 924 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3305 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1220 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4435 characters but no document structure, trying the next one",
+    "  spent   : ~0.0096  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : eu-goes-provisional-safeguard-trq-price-threshold-2026",
-    "  keyword : EU grain-oriented electrical steel provisional safeguard TRQ price threshold 2026",
+    "  slug    : eu-pea-protein-definitive-anti-dumping-duty-cost-2026",
+    "  keyword : EU anti-dumping duty Chinese pea protein 40.5% 67.1% importer cost 2026",
+    "  duplicate check: score 14 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): fiveyears, 29april2026, €175m",
+    "      shared keyword stems: protein",
+    "      shared institution(s): european, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
+    "  stream      : the endpoint answered as SSE, 1000 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4123 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1012 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4170 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1006 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4165 characters but no document structure, trying the next one",
+    "  spent   : ~0.0192  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-goes-safeguard-tariff-rate-quota-2026",
+    "  keyword : EU safeguard tariff-rate quota grain-oriented electrical steel 2026",
     "  duplicate check: score 0",
-    "  slug    : eu-goes-provisional-safeguard-trq-price-threshold-2026",
-    "  keyword : EU grain-oriented electrical steel provisional safeguard TRQ price threshold 2026",
+    "  slug    : eu-goes-safeguard-tariff-rate-quota-2026",
+    "  keyword : EU safeguard tariff-rate quota grain-oriented electrical steel 2026",
     "  category: trade-policy",
-    "  figures : 7",
+    "  figures : 6",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0049",
+    "  spend this run: ~$0.0192",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 851
+  "seconds": 174
 }

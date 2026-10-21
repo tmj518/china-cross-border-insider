@@ -856,6 +856,73 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-dg-trade-and-economic-security-news-arti",
+      "source": "European Commission, DG Trade and Economic Security news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "18 September 2026",
+          "unit": "date provisional safeguard measures imposed",
+          "period": "from 18 September 2026",
+          "source": "European Commission, DG Trade and Economic Security news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "nine months",
+          "unit": "normal deadline to complete a safeguard investigation",
+          "period": "from investigation launch in March 2026",
+          "source": "European Commission, DG Trade and Economic Security news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "11 months",
+          "unit": "extended deadline for a safeguard investigation",
+          "period": "exceptional circumstances",
+          "source": "European Commission, DG Trade and Economic Security news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "15 EU Member States",
+          "unit": "minimum number of member states needed for qualified majority",
+          "period": "vote on definitive measures",
+          "source": "European Commission, DG Trade and Economic Security news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "65%",
+          "unit": "share of EU population required for qualified majority",
+          "period": "vote on definitive measures",
+          "source": "European Commission, DG Trade and Economic Security news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "March 2026",
+          "unit": "month the safeguard investigation was launched",
+          "period": "investigation start",
+          "source": "European Commission, DG Trade and Economic Security news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        49
+      ],
+      "articleSlugs": [
+        "eu-goes-safeguard-tariff-rate-quota-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "general-administration-of-customs-of-the-prc-announcement-no-1",
       "source": "General Administration of Customs of the PRC, Announcement No. 74 of 2026",
       "figures": [
