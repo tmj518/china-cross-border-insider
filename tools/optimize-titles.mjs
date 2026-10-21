@@ -28,16 +28,24 @@ const MIN_IMP = arg("min-imp", 50);
 const MAX_POS = arg("max-pos", 10);
 const MAX_CTR = arg("max-ctr", 0.02);
 const ALL = argv.includes("--all");
+/*
+ * Ninety days, not the default twenty-eight.
+ *
+ * The first run of this audit asked Search Console for a month and got nothing back, because the site's 718
+ * impressions are spread over three months and almost none of them fall in the last four weeks. A window narrower
+ * than the traffic is a filter that reports "no work to do" while the work sits there.
+ */
+const DAYS = arg("days", 90);
 
 console.log("");
 console.log("TITLE OPTIMISER  -  read only, nothing is written");
 console.log("=".repeat(94));
-console.log(`  filter : impressions > ${MIN_IMP}   position < ${MAX_POS}   ctr < ${(MAX_CTR * 100).toFixed(1)}%`);
+console.log(`  filter : ${DAYS}d   impressions > ${MIN_IMP}   position < ${MAX_POS}   ctr < ${(MAX_CTR * 100).toFixed(1)}%`);
 console.log("");
 
 let payload;
 try {
-  const out = execSync(`${process.execPath} tools/gsc-report.mjs --json`, {
+  const out = execSync(`${process.execPath} tools/gsc-report.mjs --json --days=${DAYS}`, {
     cwd: ROOT,
     encoding: "utf8",
     maxBuffer: 64 * 1024 * 1024,
