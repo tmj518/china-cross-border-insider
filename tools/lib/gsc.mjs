@@ -2,9 +2,11 @@
  * Shared plumbing for the data scripts: curl-backed HTTP, and Search Console
  * access with a service account.
  *
- * Everything goes through curl.exe rather than node fetch. curl reads
- * %USERPROFILE%\.curlrc, which carries the local proxy and ssl-no-revoke; node
- * fetch honours neither, and this machine cannot reach Google without both.
+ * Everything goes through curl rather than node fetch. On this workstation curl reads
+ * %USERPROFILE%\.curlrc, which carries the local proxy and ssl-no-revoke; node fetch
+ * honours neither, and this machine cannot reach Google without both. On a GitHub
+ * runner there is no .curlrc and no proxy, and the same call connects directly - which
+ * is why the binary is resolved by platform in httpCurl rather than named as curl.exe.
  */
 
 import { execFileSync } from "node:child_process";
@@ -32,8 +34,22 @@ export function loadEnv(path) {
   return env;
 }
 
+/**
+ * curl under the name this platform gives it.
+ *
+ * It is curl.exe on Windows and curl everywhere else. The literal string used to be
+ * "curl.exe", which is why this module had never once reached Google from a GitHub
+ * runner: on ubuntu-latest the spawn fails with ENOENT before any request is made.
+ *
+ * That defect stayed invisible for as long as it did because gscAccessToken returned
+ * null on a credential it could not read *before* it got this far. The ENOENT only
+ * appeared once the credential was read correctly - on 2026-10-21, as a stack trace
+ * in the place where a "0 rows" report had been.
+ */
+const CURL = process.platform === "win32" ? "curl.exe" : "curl";
+
 export function httpCurl(args, { maxBuffer = 32 * 1024 * 1024 } = {}) {
-  return execFileSync("curl.exe", args, {
+  return execFileSync(CURL, args, {
     encoding: "utf8",
     maxBuffer,
     stdio: ["ignore", "pipe", "pipe"],
