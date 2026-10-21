@@ -214,6 +214,24 @@ const token = tok.tenant_access_token;
  * base is a container this tool can create for itself; asking the operator to create one by hand and
  * then paste its token back in is the step that has kept this ledger empty all week.
  */
+/*
+ * A recorded base is verified before it is trusted.
+ *
+ * The operator hands over a Multidimensional Table link, and the token behind that link is recorded in
+ * data/ledger-target.json. A stale or wrong token must not be a dead end: if the base cannot be read,
+ * this falls back to creating one, which is the only action that always works with a valid credential.
+ */
+if (APP_TOKEN) {
+  try {
+    await api(`/bitable/v1/apps/${APP_TOKEN}/tables?page_size=100`, { token });
+    console.log(`\n  base  : reusing ${APP_TOKEN}`);
+  } catch (e) {
+    console.log(`\n  base  : recorded token ${APP_TOKEN} is not readable - ${e.message}`);
+    console.log("          creating a base of this project's own instead");
+    APP_TOKEN = "";
+  }
+}
+
 if (!APP_TOKEN) {
   try {
     const made = await api("/bitable/v1/apps", {
@@ -222,14 +240,12 @@ if (!APP_TOKEN) {
       body: { name: "Landed Math 数据中控台" },
     });
     APP_TOKEN = made.app?.app_token ?? "";
-    console.log(`\n  base  : created "Landed Math 数据中控台" (${APP_TOKEN})`);
+    console.log(`  base  : created "Landed Math 数据中控台" (${APP_TOKEN})`);
   } catch (e) {
     console.log("  base  : FAILED to create - " + e.message);
     console.log("          the app needs the bitable:app permission, and drive space to hold a base.");
     process.exit(1);
   }
-} else {
-  console.log(`\n  base  : reusing ${APP_TOKEN}`);
 }
 
 /*
