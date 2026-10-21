@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-21T00:51:48.846Z",
+  "at": "2026-10-21T01:41:46.929Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -9,7 +9,38 @@
     "maxPosition": 20,
     "top": 3
   },
-  "available": false,
-  "reason": "GSC_CREDENTIALS_BASE64 is not set",
-  "keywords": []
+  "available": true,
+  "empty": true,
+  "reason": "no query met the impression, ctr and position thresholds",
+  "keywords": [],
+  "topSeen": [
+    {
+      "query": "\"periodical no. 1 of 2026\" suez canal",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 5.5
+    },
+    {
+      "query": "landed cost calculator",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 89
+    },
+    {
+      "query": "scfi",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "stuffing inspection china",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 88
+    }
+  ]
 }

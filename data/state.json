@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-20T08:28:46.425Z",
+  "lastRun": "2026-10-21T01:41:47.004Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-fdi-screening-case-timing-fisr-2028",
-  "runs": 15,
-  "published": 15,
+  "lastArticle": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+  "runs": 16,
+  "published": 16,
   "lastUsage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.008,
-    "promptTokens": 18683,
-    "completionTokens": 21225
+    "usd": 0.0112,
+    "promptTokens": 18437,
+    "completionTokens": 32882
   }
 }

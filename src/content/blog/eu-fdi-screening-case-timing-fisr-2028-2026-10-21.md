@@ -104,6 +104,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 
 **What would change my mind.** A corrected Commission release, a later annual report, FISR implementing measures with fixed review periods, or Member State-level duration data would change the planning model. A different 2025 closure or escalation share would change the arithmetic. Published data showing a reliable end date for in-depth assessments would also support a firmer monetary estimate than the formula used here.
 
+> Also read: [EU imposes provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.
