@@ -46,6 +46,14 @@ for (const a of process.argv.slice(2)) {
   else if (a === "--force") args.force = true;
   else if (a === "--allow-missing-credentials") args.allowMissingCredentials = true;
   else if (a.startsWith("--days=")) args.days = parseInt(a.slice(7), 10);
+  /*
+   * --json prints the page rows as JSON instead of drawing the report.
+   *
+   * tools/optimize-titles.mjs needs the numbers per page and nothing else, and re-implementing the JWT signing and the
+   * searchAnalytics call there would be a second copy of the part most likely to break. One flag here, one reader
+   * there.
+   */
+  else if (a === "--json") args.json = true;
   else { console.error(`unknown argument: ${a}`); process.exit(2); }
 }
 
@@ -150,7 +158,19 @@ function fetchBy(dimension) {
 }
 
 const pageRows = fetchBy("page");
-const queryRows = fetchBy("query");
+const queryRows = args.json ? [] : fetchBy("query");
+
+if (args.json) {
+  const rows = pageRows.map((r) => ({
+    page: r.keys?.[0] ?? "",
+    impressions: Math.round(r.impressions ?? 0),
+    clicks: Math.round(r.clicks ?? 0),
+    ctr: Number(r.ctr ?? 0),
+    position: Math.round((r.position ?? 0) * 10) / 10,
+  }));
+  console.log(JSON.stringify({ days: args.days, site: env.site, pages: rows }, null, 2));
+  process.exit(0);
+}
 log(`  ${pageRows.length} pages, ${queryRows.length} queries with impressions`);
 
 if (pageRows.length === 0) {
