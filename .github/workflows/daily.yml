@@ -489,6 +489,21 @@ jobs:
           fi
           true
 
+      #
+      # The run ledger: one row per run, eight columns, its own table. Separate from the article
+      # ledger above, which answers "what is published" and cannot answer "what happened on Tuesday".
+      # Optional in exactly the same way: no credentials means exit 2 and a named reason, never a
+      # failed run over a reporting channel.
+      #
+      - name: Record the run in the run ledger
+        if: always()
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
+        run: node tools/feishu-run-ledger.mjs
+
       - name: Notify Feishu
         # Always runs. A run that failed is precisely the run the operator needs to hear about, and
         # this is the only channel that reaches them when the computer is off.
