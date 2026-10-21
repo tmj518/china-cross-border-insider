@@ -99,11 +99,15 @@ jobs:
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 || secrets.APIKEY20261016201628 }}
           DUBAO201628: ${{ secrets.DUBAO201628 }}
-          dubaotuili12345: ${{ secrets.dubaotuili12345 }}
+          # Uppercase, like every other secret-derived name here. The lowercase spelling only worked
+          # because this file exported a lowercase key; on a Linux runner that is a different variable,
+          # and tools/lib-llm.mjs read exactly one of the two. Secret names are case-insensitive, so the
+          # secret itself did not have to be renamed.
+          DUBAOTUILI12345: ${{ secrets.DUBAOTUILI12345 }}
           ARK_MODEL: ${{ secrets.ARK_MODEL }}
           # One endpoint per role. A reviewer running the writer's model is the same opinion with a different
           # prompt, and it misses exactly what the writer missed. Both fall back to ARK_MODEL.
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.dubaotuili12345 }}
+          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.DUBAOTUILI12345 }}
           ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER || secrets.ARK_MODEL }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
@@ -364,11 +368,11 @@ jobs:
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 || secrets.APIKEY20261016201628 }}
           DUBAO201628: ${{ secrets.DUBAO201628 }}
-          dubaotuili12345: ${{ secrets.dubaotuili12345 }}
+          DUBAOTUILI12345: ${{ secrets.DUBAOTUILI12345 }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
           ARK_MODEL: ${{ secrets.ARK_MODEL }}
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.dubaotuili12345 }}
+          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.DUBAOTUILI12345 }}
           ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER || secrets.ARK_MODEL }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
@@ -538,6 +542,39 @@ jobs:
             data/drafts/
           if-no-files-found: warn
           retention-days: 30
+
+  # ---------------------------------------------------------------------------------------------
+  # The ledger on a day the pipeline did not run.
+  #
+  # "Sync the ledger to Feishu" above already carries if: always(), but a step cannot run inside a job
+  # that never started. When preflight fails, the daily job is skipped and the table goes a day without
+  # an update - which is exactly the day the operator is most likely to be looking at it.
+  #
+  # This job fills that hole and only that hole. On a normal day needs.daily.result is success or
+  # failure and it does nothing, so the sync never runs twice and no row is written twice.
+  # ---------------------------------------------------------------------------------------------
+  ledger-when-skipped:
+    needs: [preflight, daily]
+    if: always() && needs.daily.result == 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Sync the ledger to Feishu
+        # Optional, like the step it mirrors: without the four app credentials feishu-sync exits 2
+        # naming what is missing, and a reporting channel that is not configured must not fail a run.
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
+          FEISHU_TABLE_ID: ${{ secrets.FEISHU_TABLE_ID }}
+        run: node tools/feishu-sync.mjs
 
   # ---------------------------------------------------------------------------------------------
   # The message when the keys did not verify.
