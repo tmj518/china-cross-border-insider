@@ -77,14 +77,81 @@ const b64url = (input) =>
   Buffer.from(input).toString("base64").replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
 
 /**
+ * Resolve GSC_CREDENTIALS into the service-account JSON, whichever of its three
+ * real shapes arrived.
+ *
+ * The variable is one name with three honest values: the path to the key file
+ * (the local .env.keywords mode, which is what .env.keywords.example documents),
+ * the key document itself, or base64 of it (the mode .github/workflows/seo-audit.yml
+ * uses, because a secret is a string and cannot be a file).
+ *
+ * All three used to be read as a path. existsSync() answers false for a blob of
+ * base64 rather than throwing, so a workflow that put the document in this
+ * variable was told "no credentials" - and gscAccessToken returned null, which
+ * gscSearchAnalytics returned, which the caller rendered as *zero rows*. On
+ * 2026-10-21 the ninety-day audit therefore reported an empty property while the
+ * UI showed 718 impressions, and the empty result was read as "traffic is spread
+ * over three months".
+ *
+ * Only an empty value is an absence. A value that cannot be read is a
+ * configuration error and says so.
+ */
+export function gscCredentials(env) {
+  const raw = String(env.GSC_CREDENTIALS ?? "").trim();
+  if (!raw) return null;
+
+  const attempts = [];
+  const parse = (shape, text) => {
+    const clean = String(text).replace(/^\uFEFF/, "").trim();
+    if (!clean.startsWith("{")) {
+      attempts.push(`${shape}: not a JSON document`);
+      return null;
+    }
+    try {
+      return { creds: JSON.parse(clean), shape };
+    } catch (e) {
+      attempts.push(`${shape}: ${e.message.slice(0, 80)}`);
+      return null;
+    }
+  };
+
+  /* A base64 secret is kilobytes long and carries no braces; a path is short and
+     carries none either, but it is short. The test only avoids a pointless stat
+     on a blob that could never be a filename. */
+  const looksLikePath = raw.length <= 1024 && !/[{}]/.test(raw);
+  if (looksLikePath && existsSync(raw)) {
+    const fromFile = parse(`file ${raw}`, readFileSync(raw, "utf8"));
+    if (fromFile) return fromFile;
+    throw new Error(`GSC_CREDENTIALS names the file ${raw}, but that file is not a JSON document: ${attempts.at(-1)}.`);
+  }
+  if (looksLikePath) attempts.unshift(`file: ${raw} does not exist`);
+
+  const inline = parse("inline JSON", raw);
+  if (inline) return inline;
+  const decoded = parse("base64 of the JSON", Buffer.from(raw, "base64").toString("utf8"));
+  if (decoded) return decoded;
+
+  throw new Error(
+    "GSC_CREDENTIALS is set but holds no readable service-account key: " +
+    `it names no existing file and parses neither as inline JSON nor as base64 of it. Tried - ${attempts.join("; ")}. ` +
+    `Value begins with ${JSON.stringify(raw.slice(0, 8))} and is ${raw.length} character(s) long.`,
+  );
+}
+
+/**
  * Service-account auth without the googleapis dependency: sign a JWT with the
  * key from the JSON file and exchange it for an access token. node:crypto does
  * RS256 natively, and googleapis would add tens of megabytes for two calls.
  */
 export function gscAccessToken(env, stats) {
-  const path = env.GSC_CREDENTIALS;
-  if (!path || !existsSync(path)) return null;
-  const creds = JSON.parse(readFileSync(path, "utf8"));
+  const resolved = gscCredentials(env);
+  if (!resolved) return null;
+  const creds = resolved.creds;
+  if (!creds?.client_email || !creds?.private_key) {
+    throw new Error(
+      `GSC_CREDENTIALS (${resolved.shape}) has no client_email or private_key - is this a service-account key?`,
+    );
+  }
   const iat = Math.floor(Date.now() / 1000);
   const header = b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
   const claims = b64url(
