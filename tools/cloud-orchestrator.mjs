@@ -108,7 +108,19 @@ function alreadyPublishedToday() {
   const dir = join(ROOT, "data", "runs");
   if (!existsSync(dir)) return null;
   for (const f of readdirSync(dir)) {
-    if (!f.endsWith(".json") || f === "latest.json") continue;
+    /*
+     * latest.json IS INCLUDED. Excluding it made this guard blind to the only route it was written for.
+     *
+     * Only the agent route writes a dated file; a script-route run records itself in latest.json and
+     * nowhere else. Skipping that file meant no script publication was ever found, so the 09:20 backup
+     * cron published a second article on every day both crons fired - and the duplicate-subject work in
+     * section 5 of FINAL_REPORT.md was chasing research proposals when the mechanism was here.
+     *
+     * 2026-10-21 proves it: 01:41Z published eu-goes-provisional-safeguard-trq-price-threshold-2026,
+     * 06:22Z published eu-goes-safeguard-tariff-rate-quota-2026 forty minutes later, same route, same
+     * topic. A duplicate run of latest.json is harmless - it carries the same verdict as the dated copy.
+     */
+    if (!f.endsWith(".json")) continue;
     try {
       const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
       const when = new Date(new Date(j.at).getTime() + 8 * 3600 * 1000).toISOString().slice(0, 10);

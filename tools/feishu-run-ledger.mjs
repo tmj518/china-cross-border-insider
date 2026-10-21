@@ -159,14 +159,29 @@ if (DRY) {
 
 const APP_ID = (process.env.FEISHU_APP_ID ?? "").trim();
 const APP_SECRET = (process.env.FEISHU_APP_SECRET ?? "").trim();
-const APP_TOKEN = (process.env.FEISHU_APP_TOKEN ?? "").trim();
+/*
+ * The base token, from the environment or from what tools/feishu-ledger.mjs recorded.
+ *
+ * Requiring it as a secret made the setup circular in the same way it did for the article ledger: the
+ * token only exists once a base exists. The environment still wins, so a deployment that names a base
+ * explicitly is not overridden by a file.
+ */
+const recordedTarget = (() => {
+  try {
+    return JSON.parse(readFileSync(join(ROOT, "data", "ledger-target.json"), "utf8"));
+  } catch {
+    return null;
+  }
+})();
+const APP_TOKEN = ((process.env.FEISHU_APP_TOKEN ?? "").trim() || recordedTarget?.appToken || "").trim();
 
 const MISSING = [["FEISHU_APP_ID", APP_ID], ["FEISHU_APP_SECRET", APP_SECRET], ["FEISHU_APP_TOKEN", APP_TOKEN]]
   .filter(([, v]) => !v)
   .map(([k]) => k);
 if (MISSING.length) {
   console.log("\n  cannot write: missing " + MISSING.join(", "));
-  console.log("  --dry-run needs none of them.");
+  console.log("  FEISHU_APP_TOKEN is read from the environment, or from data/ledger-target.json");
+  console.log("  after one run of tools/feishu-ledger.mjs. --dry-run needs none of them.");
   process.exit(2);
 }
 
