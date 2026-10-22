@@ -71,32 +71,35 @@ const canon = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
     </dl>
 
     <h2 class="section-title">What it costs</h2>
-    <table class="guide-costs">
-      <thead>
-        <tr>
-          <th scope="col">Item</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Period</th>
-          <th scope="col">Source</th>
-          <th scope="col">Checked</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          data.figures.map((f) => (
-            <tr>
-              <td>{f.value}{f.unit ? ` ${f.unit}` : ""}</td>
-              <td>{f.value}</td>
-              <td>{f.period}</td>
-              <td>{f.source}</td>
-              <td>
-                <time datetime={f.retrieved}>{f.retrieved}</time>
-              </td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
+    <div class="guide-table-wrap">
+      <table class="guide-costs">
+        <thead>
+          <tr>
+            <th scope="col">Figure</th>
+            <th scope="col">Period</th>
+            <th scope="col">Source</th>
+            <th scope="col">Checked</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.figures.map((f) => (
+              <tr>
+                <td>
+                  {f.value}
+                  {f.unit ? ` ${f.unit}` : ""}
+                </td>
+                <td>{f.period}</td>
+                <td>{f.source}</td>
+                <td>
+                  <time datetime={f.retrieved}>{f.retrieved}</time>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
 
     <h2 class="section-title">In order</h2>
     <ol class="guide-steps">
@@ -165,11 +168,21 @@ const canon = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
     margin: 0.15rem 0 0;
     font-weight: 700;
   }
+  /*
+   * A five-column table does not fit a phone. The wrapper scrolls sideways instead of the page doing
+   * it: body-level horizontal overflow is what the mobile gate measures, and a table that widens the
+   * document fails it on every guide page.
+   */
+  .guide-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+  }
   .guide-costs {
     width: 100%;
+    min-width: 34rem;
     border-collapse: collapse;
     font-size: 0.92rem;
-    margin-bottom: 2rem;
   }
   .guide-costs th,
   .guide-costs td {
