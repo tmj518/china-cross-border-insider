@@ -114,6 +114,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 
 **What would change my mind.** A later Commission report showing the in-depth share falling back toward the prior year's level would undercut the tail-risk framing. A published duration for in-depth assessments would replace the open-ended delay in "So what" with a number. A split of the 667 notifications into acquisitions and greenfield would confirm or kill the greenfield case. And the FISR's own text, once it applies from 17 January 2028, would show whether the 2025 pattern carries into the new regime or resets.
 
+> Also read: [EU imposes provisional safeguard measures on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -330,6 +330,60 @@
           "retrieved": "2026-10-19"
         },
         {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+          "articleNum": 50,
+          "value": "18 September 2026",
+          "unit": "provisional safeguard imposition and publication date",
+          "period": "from 18 September 2026",
+          "source": "European Commission, Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-22"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+          "articleNum": 50,
+          "value": "March 2026",
+          "unit": "safeguard investigation launch date",
+          "period": "investigation launched March 2026",
+          "source": "European Commission, Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-22"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+          "articleNum": 50,
+          "value": "nine months",
+          "unit": "normal safeguard investigation completion period",
+          "period": "from investigation launch",
+          "source": "European Commission, Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-22"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+          "articleNum": 50,
+          "value": "11 months",
+          "unit": "exceptional extended investigation completion period",
+          "period": "from investigation launch in exceptional circumstances",
+          "source": "European Commission, Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-22"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+          "articleNum": 50,
+          "value": "15",
+          "unit": "Member States needed for a qualified majority in the Safeguard Committee",
+          "period": "vote on definitive measures",
+          "source": "European Commission, Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-22"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+          "articleNum": 50,
+          "value": "65%",
+          "unit": "EU population representation needed for a qualified majority",
+          "period": "vote on definitive measures",
+          "source": "European Commission, Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-22"
+        },
+        {
           "articleSlug": "eu-pea-protein-anti-dumping-definitive-duties-2026",
           "articleNum": 38,
           "value": "40.5%",
@@ -381,7 +435,8 @@
         40,
         43,
         46,
-        47
+        47,
+        50
       ],
       "articleSlugs": [
         "eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
@@ -389,6 +444,7 @@
         "eu-fdi-screening-2028-regime-timing-risk",
         "eu-fdi-screening-case-timing-fisr-2028",
         "eu-fdi-screening-rules-2028-in-depth-review-risk",
+        "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
         "eu-pea-protein-anti-dumping-definitive-duties-2026"
       ],
       "modelOutput": false
