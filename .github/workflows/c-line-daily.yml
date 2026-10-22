@@ -75,7 +75,10 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A src/content data/guide-queue.json data/runs data/cleanup.log
+          git add -A src/content data/guide-queue.json data/runs
+          # Only exists once the cleaner has actually deleted something; `git add` on a missing path is a
+          # fatal, which failed this step on the first run that found no duplicates.
+          [ -f data/cleanup.log ] && git add data/cleanup.log || true
           git commit -m "c-line: $(date -u +%F) guide run"
           git pull --rebase --autostash origin main || true
           git push
