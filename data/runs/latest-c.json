@@ -1,19 +1,21 @@
 {
-  "at": "2026-10-22T11:34:02.187Z",
+  "at": "2026-10-22T12:16:58.228Z",
   "route": "c",
   "verdict": "NO-SUBJECT",
   "article": null,
-  "seconds": 6,
+  "seconds": 33,
   "usage": {
-    "calls": 1,
-    "failed": 0,
-    "usd": 0.0005999999999999998
+    "calls": 2,
+    "failed": 2,
+    "usd": 0
   },
   "providers": [
     "volces"
   ],
   "reasons": [
-    "china-tax-residency-183-days: no figure survived the quote check"
+    "china-tax-residency-183-days: no figure survived the quote check (every source failed or returned under 400 characters of text)",
+    "foreigner-social-insurance: no figure survived the quote check (ETIMEDOUT: fetch failed)",
+    "convert-foreign-driving-licence: no figure survived the quote check (ETIMEDOUT: fetch failed)"
   ],
   "steps": [
     {
@@ -24,12 +26,22 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "10 candidate(s)"
     },
     {
       "name": "skipped china-tax-residency-183-days",
       "ok": false,
-      "detail": "no figure survived the quote check"
+      "detail": "no figure survived the quote check (every source failed or returned under 400 characters of text)"
+    },
+    {
+      "name": "skipped foreigner-social-insurance",
+      "ok": false,
+      "detail": "no figure survived the quote check (ETIMEDOUT: fetch failed)"
+    },
+    {
+      "name": "skipped convert-foreign-driving-licence",
+      "ok": false,
+      "detail": "no figure survived the quote check (ETIMEDOUT: fetch failed)"
     }
   ],
   "researchLog": [
