@@ -269,8 +269,8 @@ async function ground(topic) {
   }
 
   const corpus = usable
-    .slice(0, 5)
-    .map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 18000)}`)
+    .slice(0, 3)
+    .map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 9000)}`)
     .join("\n\n");
 
   const extracted = await ask({
