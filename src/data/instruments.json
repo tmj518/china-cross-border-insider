@@ -669,6 +669,92 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-directorate-general-for-trade-and-econom-48",
+      "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "nine months",
+          "unit": "normal period within which a safeguard investigation must be completed",
+          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "11 months",
+          "unit": "maximum safeguard investigation period in exceptional circumstances",
+          "period": "Applicable to the safeguard investigation launched in March 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "15",
+          "unit": "minimum EU Member States required to vote in favour of definitive measures",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "65%",
+          "unit": "minimum share of the EU population represented by Member States voting in favour",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "nine months",
+          "unit": "normal period within which a safeguard investigation must be completed",
+          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "11 months",
+          "unit": "maximum safeguard investigation period in exceptional circumstances",
+          "period": "Applicable to the safeguard investigation launched in March 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "15",
+          "unit": "minimum EU Member States required to vote in favour of definitive measures",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "65%",
+          "unit": "minimum share of the EU population represented by Member States voting in favour",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        48
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "mofcom-trade-remedy-bureau-notice-2026-58",
       "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
       "figures": [
@@ -903,6 +989,74 @@
       ],
       "articleSlugs": [
         "china-producer-price-split-copper-ferrous-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-directorate-general-for-trade-and-econom-48",
+      "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "26",
+          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "232",
+          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "End of 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+          "articleNum": 48,
+          "value": "three",
+          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "26",
+          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "232",
+          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "End of 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "three",
+          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        48
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
       ],
       "modelOutput": false
     },
@@ -1583,55 +1737,6 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-directorate-general-for-trade-and-econom-48",
-      "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-      "figures": [
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "nine months",
-          "unit": "normal period within which a safeguard investigation must be completed",
-          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "11 months",
-          "unit": "maximum safeguard investigation period in exceptional circumstances",
-          "period": "Applicable to the safeguard investigation launched in March 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "15",
-          "unit": "minimum EU Member States required to vote in favour of definitive measures",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "65%",
-          "unit": "minimum share of the EU population represented by Member States voting in favour",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        }
-      ],
-      "articleNums": [
-        48
-      ],
-      "articleSlugs": [
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
       "figures": [
@@ -2008,46 +2113,6 @@
       ],
       "articleSlugs": [
         "china-2026-export-duty-wrought-metals"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-directorate-general-for-trade-and-econom-48",
-      "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-      "figures": [
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "26",
-          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "232",
-          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "End of 2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "three",
-          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
-          "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        }
-      ],
-      "articleNums": [
-        48
-      ],
-      "articleSlugs": [
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
       ],
       "modelOutput": false
     },
