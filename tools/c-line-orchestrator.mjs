@@ -6,28 +6,33 @@
  *
  * A third publishing route that shares this repository but not its content collection. `/blog/` is
  * written by the trade pipeline and answers "what does this policy cost per unit". `/guide/` answers
- * "what does this cost me, what does it take, and when was that checked" - a month, an application, a
- * move. Same standard, different unit.
+ * "what does this cost me, what does it take, and when was that checked".
  *
- *   node tools/c-line-orchestrator.mjs              # one guide, or a reason why not
+ *   node tools/c-line-orchestrator.mjs              # try every queued topic until one publishes
  *   node tools/c-line-orchestrator.mjs --dry-run    # propose and print, touch nothing
- *   node tools/c-line-orchestrator.mjs --slug=<s>   # a specific queued topic
+ *   node tools/c-line-orchestrator.mjs --slug=<s>   # one specific topic
  *
- * ## Three rules this file is built around
+ * ## It does not strike, and it does not invent
  *
- * 1. IT MUST NOT BREAK THE SITE. The one shared failure mode between this line and the trade line is
- *    `astro build`: one invalid entry fails the whole build and freezes every page. So nothing is
- *    written into src/content/guide/ until it has passed its own gates AND the site has built with it
- *    in place. A failure there removes the file and leaves the repository exactly as it was found.
+ * The first version refused to write a topic without a hand-authored fact sheet. That is a queue that
+ * stops after one article. This version fetches the sources itself and extracts the figures from them,
+ * but it accepts a figure ONLY when the model returns a verbatim quote that is found in the fetched
+ * text. A number with no quote in the page is dropped, not softened.
  *
- * 2. THE MODEL DOES NOT INVENT NUMBERS. The queue carries a fact sheet - value, unit, period, named
- *    source - and the prompt is allowed to use those figures and nothing else. Every digit in the
- *    finished prose is checked against the sheet before anything is written. A guide whose numbers do
- *    not trace back to the sheet is rejected, not softened.
+ * That is the difference between "go and read it yourself" and "make something up". The first is
+ * automation; the second is how a content site loses the only thing it has.
  *
- * 3. THE MODEL DOES NOT FORMAT FRONTMATTER. It returns a JSON body; this file assembles the markdown
- *    and writes every field itself with JSON.stringify. That is why a guide cannot reproduce the
- *    2026-10-21 outage, where an unquoted date in a model-written header failed the whole build.
+ * ## Three properties it must keep
+ *
+ * 1. IT MUST NOT BREAK THE SITE. The one shared failure mode with the trade line is `astro build`: one
+ *    invalid entry fails the whole build. So a guide is written outside the collection, copied in, and
+ *    the site is built with it in place. A failure removes the file before anything is committed.
+ *
+ * 2. THE MODEL DOES NOT FORMAT FRONTMATTER. It returns JSON; this file assembles the markdown and
+ *    writes every field through JSON.stringify, so a guide cannot reproduce the 2026-10-21 outage where
+ *    an unquoted date in a model-written header froze the build.
+ *
+ * 3. EVERY DIGIT IN THE PROSE TRACES TO THE FACT SHEET. Checked before a file is written.
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, rmSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -45,11 +50,12 @@ const SOURCE_DIR = join(ROOT, "data", "sources");
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry-run");
 const WANT = (args.find((a) => a.startsWith("--slug=")) ?? "").slice("--slug=".length).trim();
+const MAX_TOPICS = Number((args.find((a) => a.startsWith("--max=")) ?? "").slice(6)) || 3;
 
 const STARTED = Date.now();
 const log = (s) => console.log(s);
 
-/* ── the run record, written whatever happens ──────────────────────────────────────────────────── */
+/* ── the run record ────────────────────────────────────────────────────────────────────────────── */
 
 const steps = [];
 const step = (name, ok, detail = "") => {
@@ -57,12 +63,14 @@ const step = (name, ok, detail = "") => {
   log(`  ${ok ? "ok  " : "FAIL"} ${name}${detail ? "  " + detail : ""}`);
 };
 
+const usage = { calls: 0, failed: 0, usd: 0 };
+let spentBefore = { usd: 0 };
 let verdict = "NO-SUBJECT";
 let article = "";
-let reasons = [];
-const usage = { calls: 0, failed: 0, usd: 0 };
+const reasons = [];
 
 function finish(code = 0) {
+  usage.usd = Math.max(0, Number((usageAfter().usd ?? 0) - (spentBefore.usd ?? 0)));
   const report = {
     at: new Date().toISOString(),
     route: "c",
@@ -75,8 +83,6 @@ function finish(code = 0) {
     steps,
     researchLog: [`model : volces/${process.env.ARK_MODEL_WRITER ?? "unset"}`],
   };
-  /* data/runs is what tools/feishu-run-ledger.mjs reads; a run that wrote no row would be a run the
-     operator cannot see. The file name carries the route so the ledger and the guard can tell them apart. */
   try {
     mkdirSync(RUN_DIR, { recursive: true });
     const stamp = report.at.replace(/[:.]/g, "-").slice(0, 19);
@@ -96,163 +102,307 @@ for (const [k, v] of Object.entries(env)) if (!process.env[k]) process.env[k] = 
 
 const ARK_KEY = (process.env.ARK_API_KEY ?? "").trim();
 const MODEL = (process.env.ARK_MODEL_WRITER ?? process.env.DUBAOTUILI12345 ?? "").trim();
+const DAY = today();
 
 log(`C LINE  ${new Date().toISOString()}${DRY ? "  (dry run)" : ""}`);
 log("=".repeat(84));
 
-if (!ARK_KEY) {
+if (!ARK_KEY || !MODEL) {
   verdict = "NO-KEYS";
-  reasons.push("ARK_API_KEY is not set, so no guide can be written.");
-  step("credentials", false, "ARK_API_KEY missing");
-  finish(78);
-}
-if (!MODEL) {
-  verdict = "NO-KEYS";
-  reasons.push("No endpoint id: set ARK_MODEL_WRITER (or DUBAOTUILI12345) to the ep-... id.");
-  step("credentials", false, "endpoint id missing");
+  reasons.push(!ARK_KEY ? "ARK_API_KEY is not set" : "no endpoint id: set ARK_MODEL_WRITER");
+  step("credentials", false, reasons[0]);
   finish(78);
 }
 step("credentials", true, `${ARK_KEY.length} key chars, model ${MODEL}`);
 
-/* ── pick a topic ─────────────────────────────────────────────────────────────────────────────── */
+const { ask, usageToday } = await import("./lib-llm.mjs");
+const usageAfter = usageToday;
+spentBefore = usageToday();
+
+/* ── the queue ────────────────────────────────────────────────────────────────────────────────── */
 
 const queue = JSON.parse(readFileSync(QUEUE_FILE, "utf8"));
 const topics = Array.isArray(queue.topics) ? queue.topics : [];
-const taken = new Set(
-  (existsSync(GUIDE_DIR) ? readdirSync(GUIDE_DIR) : [])
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => f.replace(/\.md$/, "")),
+const published = new Set(
+  (existsSync(GUIDE_DIR) ? readdirSync(GUIDE_DIR) : []).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, "")),
 );
 
-const candidates = topics.filter((t) => !taken.has(t.slug) && t.status !== "done");
-const picked = WANT ? candidates.find((t) => t.slug === WANT) : candidates.find((t) => t.ready === true);
+let candidates = topics.filter((t) => !published.has(t.slug) && t.status !== "done");
+if (WANT) candidates = candidates.filter((t) => t.slug === WANT);
 
-if (WANT && !picked) {
+if (!candidates.length) {
   verdict = "NO-SUBJECT";
-  reasons.push(`--slug=${WANT} is not in the queue, already published, or already done.`);
-  finish(1);
-}
-if (!picked) {
-  /*
-   * No ready topic. This is the normal state once the seeded fact sheets are used up, and it is a
-   * design choice rather than a failure: a guide without an authored fact sheet is a guide whose
-   * numbers came from the model, which is the one thing this line will not publish.
-   */
-  const waiting = candidates.filter((t) => t.ready !== true).length;
-  verdict = "NO-SUBJECT";
-  reasons.push(
-    `No queued topic has an authored fact sheet (${waiting} waiting). The C line does not write numbers it was not given.`,
-  );
-  step("queue", true, "nothing ready");
+  reasons.push("Every queued topic is published or marked done. Add a topic to data/guide-queue.json.");
+  step("queue", true, "empty");
   finish(0);
 }
+step("queue", true, `${candidates.length} candidate(s)`);
 
-const topic = picked;
-log(`  topic  : ${topic.slug}  (${topic.topic})`);
-step("topic", true, topic.slug);
+/* ── fetching ─────────────────────────────────────────────────────────────────────────────────── */
 
-/* ── fetch and archive the sources ───────────────────────────────────────────────────────────── */
+const UA = {
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
+  accept: "text/html,application/xhtml+xml",
+};
 
-const day = today();
-mkdirSync(join(SOURCE_DIR, day), { recursive: true });
-const fetched = [];
-for (const url of topic.sources ?? []) {
+function textOf(html) {
+  return String(html)
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#\d+;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Same-site links whose anchor text mentions one of the keywords. One level deep is enough. */
+function linksFor(html, base, keywords, limit = 6) {
+  const out = [];
+  const seen = new Set();
+  for (const m of String(html).matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]{0,160}?)<\/a>/gi)) {
+    const anchor = textOf(m[2]);
+    if (!anchor || !keywords.some((k) => anchor.includes(k))) continue;
+    let abs;
+    try {
+      abs = new URL(m[1], base).href;
+    } catch {
+      continue;
+    }
+    if (!/^https?:/.test(abs) || seen.has(abs)) continue;
+    seen.add(abs);
+    out.push(abs);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+/**
+ * Article-shaped links on a ministry page.
+ *
+ * A Chinese ministry homepage is a navigation shell: 64 KB of markup and a few headlines, no prose. The
+ * page that states a threshold sits two clicks down, under a list page, with a headline for an anchor.
+ * Keyword matching on the anchor never finds it - the headline says "国家税务总局公告2019年第35号", not
+ * "183". So this takes headline-shaped links whose href carries a document id, and lets the extraction
+ * step decide whether the page says anything.
+ */
+function articleLinks(html, base, limit = 5) {
+  const out = [];
+  const seen = new Set();
+  for (const m of String(html).matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]{0,200}?)<\/a>/gi)) {
+    const anchor = textOf(m[2]);
+    if (anchor.length < 8 || anchor.length > 90) continue;
+    let abs;
+    try {
+      abs = new URL(m[1], base);
+    } catch {
+      continue;
+    }
+    if (abs.host !== new URL(base).host) continue;
+    if (!/\.s?html?$/.test(abs.pathname)) continue;
+    if (!/\d{4,}/.test(abs.pathname)) continue; /* ministry articles carry an id in the path */
+    if (seen.has(abs.href)) continue;
+    seen.add(abs.href);
+    out.push(abs.href);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+async function grab(url) {
   try {
     const r = getWithRetry(url, { accept: "text/html", retries: 2 });
-    fetched.push({ url, status: r.status, bytes: r.body.length });
-    writeFileSync(join(SOURCE_DIR, day, `c-${topic.slug}-${fetched.length}.html`), r.body, "utf8");
+    const text = textOf(r.body);
+    return { url, status: r.status, html: r.body, text };
   } catch (e) {
-    fetched.push({ url, status: 0, bytes: 0, error: String(e.message).slice(0, 80) });
+    return { url, status: 0, html: "", text: "", error: String(e.message).slice(0, 100) };
   }
 }
-const okFetches = fetched.filter((f) => f.bytes > 0).length;
-step("sources", okFetches > 0, `${okFetches}/${fetched.length} fetched`);
 
-/* A guide grounded in nothing is a guide written from the model's memory, which is exactly what the
-   fact sheet exists to prevent. If no source loaded, stop before the model is called. */
-if (okFetches === 0 && (topic.facts ?? []).length === 0) {
-  verdict = "NO-SOURCE";
-  reasons.push("Every source failed and the topic has no fact sheet, so there is nothing to write from.");
-  step("grounding", false, "no source, no facts");
-  finish(1);
+/**
+ * Find the page that states the rule, instead of guessing.
+ *
+ * Crawling a ministry site from its homepage reaches press releases, not regulations: on 2026-10-22 the
+ * first five article links under chinatax.gov.cn were four Party-education pieces and one meeting
+ * report, and none of them contained "183". The document that matters lives in the regulation database
+ * and is reachable by search, so the tool searches.
+ *
+ * DuckDuckGo's lite endpoint returns static HTML with no JavaScript, which is the only kind of search
+ * result a runner can read without a browser.
+ */
+async function searchUrls(query, limit = 4) {
+  try {
+    /* fetch, not the curl helper: lite.duckduckgo.com answers 301 and the curl call does not follow
+       redirects, so the helper returns a 3xx and the search silently looks empty. */
+    const res = await fetch(`https://lite.duckduckgo.com/lite/?q=${encodeURIComponent(query)}`, {
+      headers: UA,
+      redirect: "follow",
+      signal: AbortSignal.timeout(25000),
+    });
+    const html = await res.text();
+    const out = [];
+    for (const m of html.matchAll(/uddg=([^"&]+)/g)) {
+      const u = decodeURIComponent(m[1]);
+      if (/^https?:/.test(u) && !out.includes(u)) out.push(u);
+      if (out.length >= limit) break;
+    }
+    return out;
+  } catch (e) {
+    log(`  search    : failed - ${String(e.message).slice(0, 80)}`);
+    return [];
+  }
 }
 
-/* ── the model ───────────────────────────────────────────────────────────────────────────────── */
+/* ── grounding: figures the pages actually state ──────────────────────────────────────────────── */
 
-const { ask, usageToday } = await import("./lib-llm.mjs");
-const spentBefore = usageToday();
+const norm = (s) => String(s).replace(/\s+/g, " ").trim();
 
-const SYSTEM = [
-  "You are a long-term foreign resident of China writing for people who have just arrived or are about to.",
-  "You write plain, concrete English for someone making a decision that costs them money or time.",
-  "",
-  "HARD RULES:",
-  "1. Use ONLY the figures in the supplied fact sheet. Do not invent, round, estimate or recall any",
-  "   other number. If a section would need a figure you were not given, write the section without one.",
-  "2. Never call this legal, tax or immigration advice.",
-  "3. No marketing language. No exclamation marks. No 'in today's fast-paced world'.",
-  "4. British spelling is fine; be consistent.",
-  "5. Every step is an action the reader performs, in the order they perform it.",
-].join("\n");
+async function ground(topic) {
+  const seeds = topic.sources ?? [];
+  const pages = [];
+  for (const u of seeds) pages.push(await grab(u));
 
-const factsForPrompt = (topic.facts ?? []).map((f) => ({
-  value: f.value,
-  unit: f.unit,
-  period: f.period,
-  source: f.source,
-  note: f.note ?? "",
-}));
+  /* Follow one level of same-site links when the seeds are navigation shells. Chinese ministry
+     homepages are exactly that: 64 KB of markup and 6 KB of headlines. */
+  const kw = topic.fetchKeywords ?? [];
+  for (const p of pages.filter((x) => x.text)) {
+    for (const link of linksFor(p.html, p.url, kw)) {
+      if (pages.length >= 8) break;
+      pages.push(await grab(link));
+    }
+  }
 
-const USER = [
-  `Guide slug: ${topic.slug}`,
-  `Topic: ${topic.title}`,
-  `Reader: ${(topic.audience ?? []).join(", ")}`,
-  `Unit this guide prices: ${topic.unit}`,
-  "",
-  "FACT SHEET (the only numbers you may use):",
-  JSON.stringify(factsForPrompt, null, 2),
-  "",
-  "You MUST make these points:",
-  ...(topic.mustSay ?? []).map((m) => `- ${m}`),
-  "",
-  "You MUST NOT:",
-  ...(topic.avoid ?? []).map((m) => `- ${m}`),
-  "",
-  `Today's date is ${day}. Write as of that date.`,
-  "",
-  "Return ONE JSON object and nothing else:",
-  "{",
-  '  "title": "under 45 characters, names the thing and the consequence",',
-  '  "description": "under 150 characters, what the reader gets",',
-  '  "intro": "2-3 sentences, no heading",',
-  '  "sections": [{"h2": "heading", "paragraphs": ["...", "..."]}],',
-  '  "steps": [{"action": "short imperative", "detail": "one sentence"}]',
-  "}",
-  "Three to five sections. Five to eight steps.",
-].join("\n");
+  /* If none of that produced prose, take the article-shaped links off the richest page. A list page
+     under 政策法规 is one click from the document that states the rule. */
+  const richest = pages.filter((p) => p.text).sort((a, b) => b.text.length - a.text.length)[0];
+  if (richest && richest.text.length < 20000) {
+    const deeper = articleLinks(richest.html, richest.url, 5);
+    log(`  following : ${deeper.length} article link(s) from ${richest.url}`);
+    for (const u of deeper) pages.push(await grab(u));
+  }
 
-function digitsIn(s) {
-  return new Set(String(s).match(/\d+/g) ?? []);
+  /* Before extracting, make sure the corpus actually contains the rule. A search restricted to the
+     source host finds the regulation page that a homepage crawl never reaches. */
+  const host = seeds[0] ? new URL(seeds[0]).host : "";
+  const query = `site:${host} ${(topic.fetchKeywords ?? []).slice(0, 3).join(" ")}`;
+  const found = await searchUrls(query, 4);
+  if (found.length) {
+    log(`  search    : "${query.slice(0, 60)}" -> ${found.length} result(s)`);
+    for (const u of found) pages.push(await grab(u));
+  }
+
+  const usable = pages.filter((p) => p.text.length > 400);
+  log(`  fetched   : ${pages.length} page(s), ${usable.length} with usable text`);
+  if (!usable.length) return { facts: [], pages };
+
+  const corpus = usable.map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 6000)}`).join("\n\n");
+
+  const ask2 = await ask({
+    role: "writer",
+    temperature: 0,
+    maxTokens: 2000,
+    system: [
+      "You extract facts from supplied web pages. You never use outside knowledge.",
+      "A fact is a fee, a time limit, a duration, a count of countries or ports, or a processing time",
+      "that is written explicitly in the text.",
+      "",
+      "For each fact return the exact sentence or clause that states it, copied character for character",
+      "from the page. If you cannot copy a verbatim quote, do not return the fact.",
+      "Return an empty array when the pages contain nothing usable.",
+    ].join("\n"),
+    messages: [
+      {
+        role: "user",
+        content: [
+          `Topic: ${topic.title}`,
+          `Looking for: ${(topic.fetchKeywords ?? []).join(", ")}`,
+          "",
+          "PAGES:",
+          corpus,
+          "",
+          'Return JSON only: {"facts":[{"value":"144","unit":"hours","period":"maximum stay","quote":"verbatim text from the page","source":1}]}',
+          "`source` is the [number] of the page the quote came from. At most 8 facts.",
+        ].join("\n"),
+      },
+    ],
+  });
+  usage.calls += 1;
+  if (!ask2?.ok) {
+    usage.failed += 1;
+    return { facts: [], pages, error: String(ask2?.error ?? "no reply").slice(0, 120) };
+  }
+
+  const raw = String(ask2.text ?? "");
+  const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(raw)?.[1];
+  let parsed = null;
+  for (const c of [fenced, raw.slice(raw.indexOf("{"), raw.lastIndexOf("}") + 1)]) {
+    if (!c) continue;
+    try {
+      const o = JSON.parse(c);
+      if (o && Array.isArray(o.facts)) {
+        parsed = o;
+        break;
+      }
+    } catch { /* next */ }
+  }
+  if (!parsed) return { facts: [], pages, error: "no JSON in the extraction reply" };
+
+  /*
+   * The quote check is the whole point. A fact survives only if the text it claims to quote is really
+   * on the page - whitespace-normalised, because the model copies a line the browser would have
+   * collapsed. Anything else is dropped, and the run says how many were dropped.
+   */
+  const kept = [];
+  let dropped = 0;
+  for (const f of parsed.facts.slice(0, 8)) {
+    const idx = Number(f.source) - 1;
+    const page = usable[idx];
+    if (!page) {
+      dropped++;
+      continue;
+    }
+    const q = norm(f.quote ?? "");
+    if (q.length < 8 || !norm(page.text).includes(q)) {
+      dropped++;
+      continue;
+    }
+    if (!/^[\x20-\x7E¥$€£0-9.,%\- ]+$/.test(String(f.value ?? "").trim())) {
+      dropped++;
+      continue;
+    }
+    kept.push({
+      value: String(f.value).trim(),
+      unit: String(f.unit ?? "").trim(),
+      period: String(f.period ?? "").trim() || q.slice(0, 120),
+      source: `${new URL(page.url).host} — ${q.slice(0, 90)}`,
+      url: page.url,
+      quote: q,
+    });
+  }
+  log(`  extracted : ${kept.length} kept, ${dropped} dropped on the quote check`);
+  return { facts: kept, pages, dropped };
 }
 
-let reply;
-try {
-  reply = await ask({ role: "writer", system: SYSTEM, messages: [{ role: "user", content: USER }], temperature: 0.3, maxTokens: 4000 });
-} catch (e) {
-  reply = { ok: false, error: e.message };
-}
-usage.calls += 1;
-if (!reply?.ok) {
-  usage.failed += 1;
-  verdict = "WRITE-FAILED";
-  reasons.push(`model call failed: ${String(reply?.error ?? "unknown").slice(0, 200)}`);
-  step("model", false, String(reply?.error ?? "").slice(0, 120));
-  finish(1);
-}
-usage.usd = Math.max(0, Number((usageToday().usd ?? 0) - (spentBefore.usd ?? 0)));
-step("model", true, `${String(reply.text ?? "").length} chars`);
+/* ── one attempt at one topic ────────────────────────────────────────────────────────────────── */
 
-/* ── parse and validate the reply ─────────────────────────────────────────────────────────────── */
+const ASTRO_BIN = [
+  join(ROOT, "node_modules", "astro", "bin", "astro.mjs"),
+  join(ROOT, "node_modules", "astro", "astro.js"),
+].find((p) => existsSync(p));
+
+function buildSite() {
+  if (!ASTRO_BIN) return { status: 1, stderr: "astro CLI not found" };
+  return spawnSync(process.execPath, [ASTRO_BIN, "build"], { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+}
+
+const pad = (n) => String(n).padStart(2, "0");
+const plusDays = (iso, n) => {
+  const d = new Date(iso + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + n);
+  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+};
+const digitsIn = (s) => new Set(String(s).match(/\d+/g) ?? []);
 
 function pickJson(text) {
   const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(text)?.[1];
@@ -261,174 +411,200 @@ function pickJson(text) {
     try {
       const o = JSON.parse(c);
       if (o && typeof o === "object") return o;
-    } catch { /* next shape */ }
+    } catch { /* next */ }
   }
   return null;
 }
 
-const body = pickJson(reply.text ?? "");
-if (!body) {
-  verdict = "WRITE-FAILED";
-  reasons.push("the model returned no JSON object");
-  step("parse", false, "no JSON");
-  finish(1);
-}
-step("parse", true);
+async function attempt(topic) {
+  log("");
+  log(`  ── ${topic.slug}`);
 
-const fail = (why) => {
-  verdict = "REJECTED";
-  reasons.push(why);
-  step("gates", false, why);
-  if (DRY) {
-    log("\n  the reply, so the gate can be debugged:");
-    log(JSON.stringify(body, null, 2));
+  /* 1. grounding */
+  let facts = topic.facts ?? [];
+  if (!facts.length) {
+    const g = await ground(topic);
+    facts = g.facts;
+    if (!facts.length) {
+      topic.status = "no-grounding";
+      return { ok: false, why: `no figure survived the quote check${g.error ? ` (${g.error})` : ""}` };
+    }
   }
-  finish(1);
-};
 
-/* G1 - structure */
-if (typeof body.title !== "string" || !body.title.trim()) fail("no title");
-if (body.title.length > 45) fail(`title is ${body.title.length} chars, over the 45 that fit in a <title> once the site name is appended`);
-if (typeof body.description !== "string" || body.description.length > 150) fail("description missing or over 150 chars");
-if (!Array.isArray(body.steps) || body.steps.length < 5) fail(`needs at least 5 steps, got ${body.steps?.length ?? 0}`);
-if (!Array.isArray(body.sections) || body.sections.length < 3) fail(`needs at least 3 sections, got ${body.sections?.length ?? 0}`);
+  /*
+   * Market prices are a different claim from a published fee, and they are allowed to be published only
+   * as what they are: an estimate across at least three independent sources, dated.
+   */
+  let factSheet = facts;
+  if (topic.marketPrice) {
+    const hosts = new Set(facts.map((f) => (f.url ? new URL(f.url).host : f.source)).filter(Boolean));
+    if (hosts.size < 3) {
+      return { ok: false, why: `market topic needs 3 independent sources, found ${hosts.size}` };
+    }
+    factSheet = facts.slice(0, 6).map((f) => ({
+      ...f,
+      source: `Market estimate based on ${hosts.size} sources as of ${DAY.slice(0, 7)}`,
+    }));
+  }
 
-/* G2 - every digit in the prose must trace to the fact sheet */
-const allowed = new Set();
-for (const f of topic.facts ?? []) for (const d of digitsIn(f.value)) allowed.add(d);
-/*
- * The date is not a factual claim about the policy, so its digits are allowed. Without this the gate
- * rejects "as of 22 October 2026" - which is the one date the guide is required to state.
- */
-for (const d of digitsIn(day)) allowed.add(d);
-const proseText = [
-  body.title, body.description, body.intro,
-  ...(body.sections ?? []).flatMap((s) => [s.h2, ...(s.paragraphs ?? [])]),
-  ...(body.steps ?? []).flatMap((s) => [s.action, s.detail]),
-].join(" ");
-const stray = [...digitsIn(proseText)].filter((d) => !allowed.has(d));
-if (stray.length) {
-  const where = stray.map((d) => {
-    const i = proseText.indexOf(d);
-    return `${d} in "...${proseText.slice(Math.max(0, i - 45), i + 25).trim()}..."`;
-  });
-  fail(`the prose contains numbers that are not in the fact sheet: ${where.join(" | ")}`);
+  step(`grounding ${topic.slug}`, true, `${factSheet.length} figure(s)`);
+
+  /* 2. the guide itself */
+  const SYSTEM = [
+    "You are a long-term foreign resident of China writing for people who have just arrived or are about to.",
+    "You write plain, concrete English for someone making a decision that costs them money or time.",
+    "",
+    "HARD RULES:",
+    "1. Use ONLY the figures in the supplied fact sheet. Do not invent, round, estimate or recall any",
+    "   other number. If a section would need a figure you were not given, write it without one.",
+    "2. Never call this legal, tax or immigration advice.",
+    "3. No marketing language. No exclamation marks.",
+    "4. Every step is an action the reader performs, in the order they perform it.",
+  ].join("\n");
+
+  const USER = [
+    `Guide slug: ${topic.slug}`,
+    `Topic: ${topic.title}`,
+    `Reader: ${(topic.audience ?? []).join(", ")}`,
+    `Unit this guide prices: ${topic.unit}`,
+    "",
+    "FACT SHEET (the only numbers you may use):",
+    JSON.stringify(factSheet.map((f) => ({ value: f.value, unit: f.unit, period: f.period, source: f.source })), null, 2),
+    "",
+    "You MUST make these points:",
+    ...(topic.mustSay ?? []).map((m) => `- ${m}`),
+    "",
+    "You MUST NOT:",
+    ...(topic.avoid ?? []).map((m) => `- ${m}`),
+    "",
+    `Today's date is ${DAY}.`,
+    "",
+    "Return ONE JSON object and nothing else:",
+    "{",
+    '  "title": "under 45 characters, names the thing and the consequence",',
+    '  "description": "under 150 characters, what the reader gets",',
+    '  "intro": "2-3 sentences, no heading",',
+    '  "sections": [{"h2": "heading", "paragraphs": ["..."]}],',
+    '  "steps": [{"action": "short imperative", "detail": "one sentence"}]',
+    "}",
+    "Three to five sections. Five to eight steps.",
+  ].join("\n");
+
+  const reply = await ask({ role: "writer", system: SYSTEM, messages: [{ role: "user", content: USER }], temperature: 0.3, maxTokens: 4000 });
+  usage.calls += 1;
+  if (!reply?.ok) {
+    usage.failed += 1;
+    return { ok: false, why: `model failed: ${String(reply?.error ?? "").slice(0, 120)}` };
+  }
+
+  const body = pickJson(reply.text ?? "");
+  if (!body) return { ok: false, why: "the model returned no JSON object" };
+
+  if (typeof body.title !== "string" || !body.title.trim()) return { ok: false, why: "no title" };
+  if (body.title.length > 45) return { ok: false, why: `title is ${body.title.length} chars, over 45` };
+  if (typeof body.description !== "string" || body.description.length > 150) return { ok: false, why: "description over 150 chars" };
+  if (!Array.isArray(body.steps) || body.steps.length < 5) return { ok: false, why: `needs 5 steps, got ${body.steps?.length ?? 0}` };
+  if (!Array.isArray(body.sections) || body.sections.length < 3) return { ok: false, why: `needs 3 sections, got ${body.sections?.length ?? 0}` };
+
+  const allowed = new Set();
+  for (const f of factSheet) for (const d of digitsIn(f.value)) allowed.add(d);
+  for (const d of digitsIn(DAY)) allowed.add(d); /* the verification date is not a policy claim */
+
+  const prose = [
+    body.title, body.description, body.intro,
+    ...(body.sections ?? []).flatMap((s) => [s.h2, ...(s.paragraphs ?? [])]),
+    ...(body.steps ?? []).flatMap((s) => [s.action, s.detail]),
+  ].join(" ");
+  const stray = [...digitsIn(prose)].filter((d) => !allowed.has(d));
+  if (stray.length) return { ok: false, why: `prose uses numbers not in the fact sheet: ${stray.join(", ")}` };
+
+  step(`gates ${topic.slug}`, true, "structure and every number traces to a quote");
+
+  /* 3. assemble — the model never writes frontmatter */
+  const fm = [
+    "---",
+    `title: ${JSON.stringify(body.title.trim())}`,
+    `description: ${JSON.stringify(body.description.trim())}`,
+    `topic: ${JSON.stringify(topic.topic)}`,
+    `audience: [${(topic.audience ?? []).map((a) => JSON.stringify(a)).join(", ")}]`,
+    `unit: ${JSON.stringify(topic.unit)}`,
+    `lastVerified: ${JSON.stringify(DAY)}`,
+    `reviewBy: ${JSON.stringify(plusDays(DAY, 180))}`,
+    "figures:",
+    ...factSheet.flatMap((f) => [
+      `  - value: ${JSON.stringify(String(f.value))}`,
+      `    unit: ${JSON.stringify(String(f.unit ?? ""))}`,
+      `    period: ${JSON.stringify(String(f.period ?? ""))}`,
+      `    source: ${JSON.stringify(String(f.source ?? ""))}`,
+      `    retrieved: ${JSON.stringify(DAY)}`,
+    ]),
+    "steps:",
+    ...(body.steps ?? []).flatMap((s) => [
+      `  - action: ${JSON.stringify(String(s.action ?? "").trim())}`,
+      `    detail: ${JSON.stringify(String(s.detail ?? "").trim())}`,
+    ]),
+    'persona: "old-china-hand"',
+    "---",
+    "",
+  ].join("\n");
+
+  const markdown = fm + [
+    String(body.intro ?? "").trim(),
+    "",
+    ...(body.sections ?? []).flatMap((s) => [`## ${String(s.h2 ?? "").trim()}`, "", ...(s.paragraphs ?? []).map((p) => String(p).trim()).filter(Boolean), ""]),
+    "## Confirm before you act",
+    "",
+    `Fees and processing times change. This page was checked on ${DAY}; confirm the current rule with the authority named in each source above before you rely on a deadline.`,
+    "",
+  ].join("\n");
+
+  if (DRY) {
+    log("\n" + "-".repeat(84));
+    log(markdown);
+    return { ok: true, dry: true, slug: topic.slug };
+  }
+
+  mkdirSync(DRAFT_DIR, { recursive: true });
+  writeFileSync(join(DRAFT_DIR, `${topic.slug}.md`), markdown, "utf8");
+
+  mkdirSync(GUIDE_DIR, { recursive: true });
+  const target = join(GUIDE_DIR, `${topic.slug}.md`);
+  writeFileSync(target, markdown, "utf8");
+
+  const b = buildSite();
+  if (b.status !== 0) {
+    rmSync(target, { force: true });
+    const tail = String(b.stderr ?? b.stdout ?? "").trim().split("\n").slice(-5).join(" | ");
+    return { ok: false, why: `astro build failed with the guide in place, removed: ${tail.slice(0, 200)}` };
+  }
+  step(`build ${topic.slug}`, true, "site builds with the guide in place");
+
+  topic.status = "done";
+  topic.doneAt = DAY;
+  writeFileSync(QUEUE_FILE, JSON.stringify(queue, null, 2) + "\n", "utf8");
+  return { ok: true, slug: topic.slug };
 }
-step("gates", true, "structure and every number traces to the fact sheet");
 
-/* ── assemble the markdown ───────────────────────────────────────────────────────────────────── */
+/* ── try topics until one publishes ──────────────────────────────────────────────────────────── */
 
-const pad = (n) => String(n).padStart(2, "0");
-const plusDays = (iso, n) => {
-  const d = new Date(iso + "T00:00:00Z");
-  d.setUTCDate(d.getUTCDate() + n);
-  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
-};
+let succeeded = null;
+for (const topic of candidates.slice(0, MAX_TOPICS)) {
+  const r = await attempt(topic);
+  if (r.ok) {
+    succeeded = r;
+    break;
+  }
+  reasons.push(`${topic.slug}: ${r.why}`);
+  step(`skipped ${topic.slug}`, false, r.why.slice(0, 140));
+}
 
-/* Written by this file, never by the model, and every string goes through JSON.stringify so a quote
-   can never produce an unquoted YAML scalar. */
-const fm = [
-  "---",
-  `title: ${JSON.stringify(body.title.trim())}`,
-  `description: ${JSON.stringify(body.description.trim())}`,
-  `topic: ${JSON.stringify(topic.topic)}`,
-  `audience: [${(topic.audience ?? []).map((a) => JSON.stringify(a)).join(", ")}]`,
-  `unit: ${JSON.stringify(topic.unit)}`,
-  `lastVerified: ${JSON.stringify(day)}`,
-  `reviewBy: ${JSON.stringify(plusDays(day, 180))}`,
-  "figures:",
-  ...(topic.facts ?? []).flatMap((f) => [
-    `  - value: ${JSON.stringify(String(f.value))}`,
-    `    unit: ${JSON.stringify(String(f.unit ?? ""))}`,
-    `    period: ${JSON.stringify(String(f.period ?? ""))}`,
-    `    source: ${JSON.stringify(String(f.source ?? ""))}`,
-    `    retrieved: ${JSON.stringify(day)}`,
-  ]),
-  "steps:",
-  ...(body.steps ?? []).flatMap((s) => [
-    `  - action: ${JSON.stringify(String(s.action ?? "").trim())}`,
-    `    detail: ${JSON.stringify(String(s.detail ?? "").trim())}`,
-  ]),
-  'persona: "old-china-hand"',
-  "---",
-  "",
-].join("\n");
-
-const prose = [
-  String(body.intro ?? "").trim(),
-  "",
-  ...(body.sections ?? []).flatMap((s) => [
-    `## ${String(s.h2 ?? "").trim()}`,
-    "",
-    ...(s.paragraphs ?? []).map((p) => String(p).trim()).filter(Boolean),
-    "",
-  ]),
-  "## Confirm before you act",
-  "",
-  `Fees, eligible ports and processing times change. This page was checked on ${day}; confirm the current rule with the authority named in each source above before you rely on a deadline.`,
-  "",
-].join("\n");
-
-const markdown = fm + prose;
-
-if (DRY) {
-  log("\n" + "-".repeat(84));
-  log(markdown);
-  verdict = "DRY-RUN";
-  step("dry-run", true, `${markdown.length} chars, nothing written`);
+if (!succeeded) {
+  verdict = "NO-SUBJECT";
+  if (!reasons.length) reasons.push("no candidate was attempted");
   finish(0);
 }
 
-/* ── gate 3: land outside the collection, then prove the site still builds ────────────────────── */
-
-mkdirSync(DRAFT_DIR, { recursive: true });
-const draftPath = join(DRAFT_DIR, `${topic.slug}.md`);
-writeFileSync(draftPath, markdown, "utf8");
-step("draft", true, draftPath.replace(ROOT, "").replace(/\\/g, "/"));
-
-mkdirSync(GUIDE_DIR, { recursive: true });
-const target = join(GUIDE_DIR, `${topic.slug}.md`);
-writeFileSync(target, markdown, "utf8");
-
-/* Astro's CLI moved from astro.js to bin/astro.mjs; resolve which one this install has rather than
-   assuming, because the failure mode is a MODULE_NOT_FOUND that reads like a content error. */
-const ASTRO_BIN = [
-  join(ROOT, "node_modules", "astro", "bin", "astro.mjs"),
-  join(ROOT, "node_modules", "astro", "astro.js"),
-].find((p) => existsSync(p));
-
-if (!ASTRO_BIN) {
-  verdict = "REJECTED";
-  reasons.push("could not find the astro CLI, so the guide cannot be verified against a real build");
-  rmSync(target, { force: true });
-  step("build", false, "astro CLI not found");
-  finish(1);
-}
-
-const build = spawnSync(process.execPath, [ASTRO_BIN, "build"], {
-  cwd: ROOT,
-  encoding: "utf8",
-  maxBuffer: 64 * 1024 * 1024,
-});
-
-if (build.status !== 0) {
-  /*
-   * Remove the file and leave the tree exactly as it was. The site keeps building; tomorrow's run of
-   * any line is unaffected. This is the whole reason the C line exists as a separate entry point.
-   */
-  rmSync(target, { force: true });
-  const tail = String(build.stderr ?? build.stdout ?? "").trim().split("\n").slice(-6).join(" | ");
-  verdict = "REJECTED";
-  reasons.push(`astro build failed with the guide in place, file removed: ${tail.slice(0, 300)}`);
-  step("build", false, tail.slice(0, 160));
-  finish(1);
-}
-step("build", true, "site builds with the guide in place");
-
-article = topic.slug;
-topic.status = "done";
-topic.doneAt = day;
-writeFileSync(QUEUE_FILE, JSON.stringify(queue, null, 2) + "\n", "utf8");
-verdict = "PUBLISHED";
-step("published", true, `/guide/${topic.slug}/`);
+article = succeeded.slug;
+verdict = succeeded.dry ? "DRY-RUN" : "PUBLISHED";
+step("published", true, `/guide/${succeeded.slug}/`);
 finish(0);

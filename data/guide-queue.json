@@ -1,179 +1,158 @@
 {
-  "version": 1,
-  "note": "The C line's subject queue. One entry per guide. `ready:false` means the fact sheet is not authored yet and the orchestrator must skip it rather than let a model invent numbers.",
+  "version": 2,
+  "note": "The C line's subject queue. `facts` is optional: when it is empty the orchestrator fetches `sources`, follows same-site links matching `fetchKeywords`, and keeps only figures that come back with a verbatim quote found in the fetched text. `marketPrice: true` requires at least three independent hosts and relabels the source as an estimate.",
   "topics": [
     {
       "slug": "144-hour-visa-free-transit",
       "topic": "transit",
-      "audience": [
-        "visitor"
-      ],
+      "audience": ["visitor"],
       "unit": "one transit",
       "title": "144-Hour Visa-Free Transit in China: Who Qualifies",
       "query": "144 hour visa free transit china",
-      "ready": true,
       "status": "done",
-      "sources": [
-        "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/"
-      ],
-      "facts": [
-        {
-          "value": "144",
-          "unit": "hours",
-          "period": "maximum stay under the visa-free transit policy",
-          "source": "National Immigration Administration, visa-free transit policy (过境免签政策)",
-          "note": "the stay window, not a fee. 144 hours is six days."
-        },
-        {
-          "value": "6",
-          "unit": "days",
-          "period": "the same window expressed in days",
-          "source": "National Immigration Administration, visa-free transit policy (过境免签政策)",
-          "note": "144 hours divided by 24"
-        },
-        {
-          "value": "third",
-          "unit": "country or region",
-          "period": "the onward destination the traveller must already hold a ticket for",
-          "source": "National Immigration Administration, visa-free transit policy",
-          "note": "the traveller cannot return to the country they came from; the itinerary must be A -> China -> C"
-        }
-      ],
-      "mustSay": [
-        "This is a transit policy, not a tourist visa: the traveller must be passing through to a third country.",
-        "The stay is limited to the region covered by the entry port, not to China as a whole.",
-        "It cannot be extended and it is not a work or study permission.",
-        "Travellers should confirm the current eligible ports and nationalities with the National Immigration Administration before booking, because both lists change."
-      ],
-      "avoid": [
-        "Do not state an eligible-country count, a port count, or any fee.",
-        "Do not describe it as a visa.",
-        "Do not give a list of ports from memory."
-      ],
-      "doneAt": "2026-10-22"
+      "doneAt": "2026-10-22",
+      "sources": ["https://www.nia.gov.cn/", "https://en.nia.gov.cn/"],
+      "fetchKeywords": ["144", "过境", "免签", "transit"],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
     },
     {
       "slug": "china-tax-residency-183-days",
       "topic": "tax",
-      "audience": [
-        "employee",
-        "employer"
-      ],
+      "audience": ["employee", "employer"],
       "unit": "one tax year",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "The 183-day threshold is safe to state, but the six-year rule and the treaty tie-breakers need the exact wording of the announcement before a number goes on the page.",
-      "sources": [
-        "https://www.chinatax.gov.cn/"
-      ],
+      "title": "China Tax Residency: The 183-Day Threshold",
+      "query": "china tax residency 183 days",
+      "status": "queued",
+      "sources": ["https://www.chinatax.gov.cn/", "http://www.chinatax.gov.cn/chinatax/n810341/index.html"],
+      "fetchKeywords": ["183", "居民", "非居民", "个人所得税", "tax"],
       "facts": [],
-      "mustSay": [],
-      "avoid": []
-    },
-    {
-      "slug": "z-visa-vs-m-visa",
-      "topic": "work-visa",
-      "audience": [
-        "employee",
-        "employer"
+      "mustSay": [
+        "The 183-day threshold is what separates a resident from a non-resident for tax purposes.",
+        "Days are counted within a calendar year, not across a rolling twelve months.",
+        "A resident is taxed on worldwide income; a non-resident on China-source income.",
+        "Treaty tie-breakers and the six-year rule can change the answer; a professional should confirm."
       ],
-      "unit": "one application",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "Visa fees are set per nationality by reciprocity. Without the current schedule for each nationality this page would have to publish a fee it cannot cite.",
-      "sources": [
-        "https://www.nia.gov.cn/"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": []
+      "avoid": [
+        "Do not state a tax rate, a deduction, or a bracket.",
+        "Do not describe the six-year rule in numbers unless the fact sheet contains them."
+      ]
     },
     {
       "slug": "residence-permit-renewal",
       "topic": "residence",
-      "audience": [
-        "employee",
-        "student"
-      ],
+      "audience": ["employee", "student"],
       "unit": "one renewal",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "The overstay penalty is a specific article of the Exit and Entry Administration Law and must be quoted from the text, not paraphrased.",
-      "sources": [
-        "https://www.nia.gov.cn/"
-      ],
+      "title": "China Residence Permit: Renewal and Overstay",
+      "query": "china residence permit renewal",
+      "status": "queued",
+      "sources": ["https://www.nia.gov.cn/"],
+      "fetchKeywords": ["居留许可", "居留", "residence permit", "停居留"],
       "facts": [],
-      "mustSay": [],
-      "avoid": []
+      "mustSay": [
+        "A residence permit has an expiry date and must be extended before it passes.",
+        "Overstaying is penalised per day, and the penalty has a ceiling.",
+        "The renewal is filed before expiry at the exit-entry authority that issued the permit.",
+        "Working on a permit that does not authorise work is a separate offence from overstaying."
+      ],
+      "avoid": ["Do not state a fee or a processing time unless the fact sheet contains it."]
     },
     {
       "slug": "foreigner-social-insurance",
       "topic": "social-insurance",
-      "audience": [
-        "employer",
-        "employee"
-      ],
+      "audience": ["employer", "employee"],
       "unit": "one month",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "Contribution rates differ by city and by year. A monthly figure without a city and a contribution year would be wrong somewhere.",
-      "sources": [
-        "http://www.mohrss.gov.cn/"
-      ],
+      "title": "Social Insurance for Foreign Employees in China",
+      "query": "foreigner social insurance china",
+      "status": "queued",
+      "sources": ["http://www.mohrss.gov.cn/", "https://www.gov.cn/"],
+      "fetchKeywords": ["社会保险", "社保", "social insurance", "外国人"],
       "facts": [],
-      "mustSay": [],
-      "avoid": []
-    },
-    {
-      "slug": "cost-to-hire-foreign-employee",
-      "topic": "employment",
-      "audience": [
-        "employer"
+      "mustSay": [
+        "Foreign employees working in China are covered by the social insurance scheme.",
+        "The scheme has several branches, and the employer pays a share of each.",
+        "Rates differ by city; a national figure does not exist.",
+        "Bilateral agreements can exempt some nationals from part of the contribution."
       ],
-      "unit": "one employee per month",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "The anchor piece. It composes the visa, tax, social-insurance and housing figures, so it cannot be written before those four exist.",
-      "sources": [],
-      "facts": [],
-      "mustSay": [],
-      "avoid": []
-    },
-    {
-      "slug": "relocation-cost-per-cubic-metre",
-      "topic": "relocation",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one cubic metre",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "No authority publishes this price. It needs three forwarder quotations taken on the same day, labelled as market quotations rather than official rates.",
-      "sources": [
-        "http://www.customs.gov.cn/"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": []
+      "avoid": ["Do not state a contribution rate unless the fact sheet contains one for a named city."]
     },
     {
       "slug": "convert-foreign-driving-licence",
       "topic": "driving",
-      "audience": [
-        "employee",
-        "relocating"
-      ],
+      "audience": ["employee", "relocating"],
       "unit": "one conversion",
-      "status": "needs-facts",
-      "ready": false,
-      "why": "The residence-duration requirement and the test exemptions depend on the issuing country's agreement, which has to be checked per nationality.",
-      "sources": [
-        "https://gab.122.gov.cn/"
-      ],
+      "title": "Converting a Foreign Driving Licence in China",
+      "query": "convert foreign driving license china",
+      "status": "queued",
+      "sources": ["https://gab.122.gov.cn/", "https://www.gov.cn/"],
+      "fetchKeywords": ["驾驶证", "驾照", "driving licence", "机动车"],
       "facts": [],
-      "mustSay": [],
-      "avoid": []
+      "mustSay": [
+        "A foreign licence is converted, not exchanged automatically: there is an application and usually a test.",
+        "The applicant needs a valid residence status of a minimum duration.",
+        "The theory test is the common requirement; the road test depends on the issuing country.",
+        "The foreign licence must be valid and translated."
+      ],
+      "avoid": ["Do not state a fee or a test length unless the fact sheet contains it."]
+    },
+    {
+      "slug": "relocation-cost-per-cubic-metre",
+      "topic": "relocation",
+      "audience": ["relocating"],
+      "unit": "one cubic metre",
+      "title": "Shipping Household Goods to China: Cost per m³",
+      "query": "shipping household goods to china cost",
+      "status": "queued",
+      "marketPrice": true,
+      "sources": ["http://www.customs.gov.cn/", "https://www.gov.cn/"],
+      "fetchKeywords": ["搬家", "海运", "shipping", "moving", "行李"],
+      "facts": [],
+      "mustSay": [
+        "Unaccompanied baggage is a customs category with its own declaration.",
+        "The price is quoted per cubic metre, and the volume is measured, not estimated by weight.",
+        "Door-to-door and port-to-door are different products with different prices.",
+        "This is a market estimate, not a published tariff."
+      ],
+      "avoid": ["Do not present a market estimate as an official rate."]
+    },
+    {
+      "slug": "z-visa-vs-m-visa",
+      "topic": "work-visa",
+      "audience": ["employee", "employer"],
+      "unit": "one application",
+      "title": "Z Visa or M Visa: Which China Visa You Need",
+      "query": "china z visa vs m visa",
+      "status": "queued",
+      "sources": ["https://www.nia.gov.cn/", "https://en.nia.gov.cn/"],
+      "fetchKeywords": ["签证", "工作许可", "visa", "work permit", "Z字"],
+      "facts": [],
+      "mustSay": [
+        "The Z visa is for employment and is converted into a residence permit after arrival.",
+        "The M visa is for commercial and trade visits, not for working.",
+        "A work permit notification is required before a Z visa is issued.",
+        "The fee is set per nationality by reciprocity, so it is not one number."
+      ],
+      "avoid": ["Do not state a visa fee unless the fact sheet contains one for a named nationality."]
+    },
+    {
+      "slug": "cost-to-hire-foreign-employee",
+      "topic": "employment",
+      "audience": ["employer"],
+      "unit": "one employee per month",
+      "title": "What It Costs to Employ a Foreigner in China",
+      "query": "cost to hire foreign employee china",
+      "status": "queued",
+      "sources": ["http://www.mohrss.gov.cn/", "https://www.chinatax.gov.cn/"],
+      "fetchKeywords": ["社会保险", "个人所得税", "外国人来华工作许可", "工资"],
+      "facts": [],
+      "mustSay": [
+        "The monthly cost of an expatriate has three parts: salary, employer social insurance, and the amortised cost of the permit.",
+        "Employer contributions are a percentage of a declared salary base that is capped per city.",
+        "The permit and its renewals are a recurring cost, not a one-off.",
+        "This is an estimate and must be recalculated per city."
+      ],
+      "avoid": ["Do not state a salary figure: it is the employer's decision, not a published rate."]
     }
   ]
 }

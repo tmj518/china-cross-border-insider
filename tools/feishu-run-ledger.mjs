@@ -211,11 +211,41 @@ async function api(path, { method = "GET", token, body } = {}) {
   return j.data ?? j;
 }
 
-const tok = await api("/auth/v3/tenant_access_token/internal", {
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Three attempts, five seconds apart.
+ *
+ * Feishu answers 21001 "access denied due to platform policy" when the same app exchanges tokens too
+ * often in a short window - seen on 2026-10-22, when a debugging session made a dozen token requests in
+ * an hour and the endpoint then refused the credentials that had worked minutes earlier. A scheduled run
+ * makes one request a day and should never hit it, but a retry is free and turns a red morning into a
+ * green one when the limit has already cleared.
+ *
+ * Only the transport is retried, never a write that may have landed: the record calls are safe because
+ * they are upserts keyed by 运行日期, so a repeated PUT changes nothing.
+ */
+async function apiRetry(path, opts, attempts = 3) {
+  let last;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      return await api(path, opts);
+    } catch (e) {
+      last = e;
+      const policy = /21001/.test(String(e.message));
+      console.log(`  attempt ${i}/${attempts} failed${policy ? " (platform policy)" : ""}: ${String(e.message).slice(0, 90)}`);
+      if (i < attempts) await sleep(5000);
+    }
+  }
+  throw last;
+}
+
+const tok = await apiRetry("/auth/v3/tenant_access_token/internal", {
   method: "POST",
   body: { app_id: APP_ID, app_secret: APP_SECRET },
 }).catch((e) => {
-  console.log("  token: FAILED - " + e.message);
+  console.log("  token: FAILED after retries - " + String(e.message).slice(0, 120));
+  console.log("  The table is not updated this run; nothing else is affected.");
   process.exit(1);
 });
 const token = tok.tenant_access_token;

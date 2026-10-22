@@ -54,19 +54,28 @@ jobs:
         run: node tools/c-line-orchestrator.mjs
 
       #
-      # Commit only if the guide actually landed. The orchestrator already removed any guide whose build
+      # Remove the date-suffixed near-duplicates the trade line leaves behind. It reports by default and
+      # deletes only when the title is byte-identical to the surviving file, so a real article whose slug
+      # happens to carry a date is never touched.
+      #
+      - name: Remove date-suffixed duplicates
+        if: always()
+        run: node tools/cleanup-duplicates.mjs --apply
+
+      #
+      # Commit only if something actually changed. The orchestrator already removed any guide whose build
       # failed, so what is on disk here has been verified against a real build.
       #
       - name: Commit the guide
         if: always()
         run: |
-          if [ -z "$(git status --porcelain src/content/guide data/guide-queue.json data/runs data/sources)" ]; then
-            echo "nothing to commit - no guide was published this run"
+          if [ -z "$(git status --porcelain src/content data/guide-queue.json data/runs)" ]; then
+            echo "nothing to commit - no guide was published and no duplicate was found"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/content/guide data/guide-queue.json data/runs data/sources
+          git add -A src/content data/guide-queue.json data/runs data/cleanup.log
           git commit -m "c-line: $(date -u +%F) guide run"
           git pull --rebase --autostash origin main || true
           git push
