@@ -1,19 +1,21 @@
 {
-  "at": "2026-10-22T10:36:56.414Z",
+  "at": "2026-10-22T11:09:42.370Z",
   "route": "c",
   "verdict": "NO-SUBJECT",
   "article": null,
-  "seconds": 0,
+  "seconds": 48,
   "usage": {
-    "calls": 0,
+    "calls": 3,
     "failed": 0,
-    "usd": 0
+    "usd": 0.0038
   },
   "providers": [
     "volces"
   ],
   "reasons": [
-    "No queued topic has an authored fact sheet (7 waiting). The C line does not write numbers it was not given."
+    "china-tax-residency-183-days: no figure survived the quote check",
+    "residence-permit-renewal: no figure survived the quote check",
+    "foreigner-social-insurance: no figure survived the quote check"
   ],
   "steps": [
     {
@@ -24,7 +26,22 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "nothing ready"
+      "detail": "7 candidate(s)"
+    },
+    {
+      "name": "skipped china-tax-residency-183-days",
+      "ok": false,
+      "detail": "no figure survived the quote check"
+    },
+    {
+      "name": "skipped residence-permit-renewal",
+      "ok": false,
+      "detail": "no figure survived the quote check"
+    },
+    {
+      "name": "skipped foreigner-social-insurance",
+      "ok": false,
+      "detail": "no figure survived the quote check"
     }
   ],
   "researchLog": [
