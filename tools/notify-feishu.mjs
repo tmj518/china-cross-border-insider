@@ -87,7 +87,12 @@ const lines = [];
  */
 const routeFromEnv = (process.env.ROUTE ?? "").trim().toLowerCase();
 const failedStep = (process.env.FAILED_STEP ?? "").trim();
-const routeTag = routeFromEnv === "agent" ? "agent" : routeFromEnv === "script" ? "script" : "unknown";
+/*
+ * "c" is the guide line. It is a third route with its own report file and its own workflow, and without
+ * its own tag every guide card would arrive labelled [unknown] - which reads as "something broke in a
+ * way nobody predicted" rather than "the guide line did not find a figure today".
+ */
+const routeTag = ["agent", "script", "c"].includes(routeFromEnv) ? routeFromEnv : "unknown";
 
 if (!report) {
   lines.push(`🔴 Landed Math — STOPPED BEFORE PUBLISHING   [${routeTag}]`);

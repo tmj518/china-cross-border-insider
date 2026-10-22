@@ -53,7 +53,8 @@ const LIST = process.argv.includes("--list");
 const TOOLS = [
   { name: "cloud-executor", args: ["--directive-file=data/tmp/loadcheck-directive.json"], expect: "no provider key present", why: "the writer, and the check that catches a missing function in it" },
   { name: "cloud-qa", args: ["--draft=data/tmp/loadcheck-absent.md", "--json"], expect: "usage:", why: "the reviewer; pointed at an absent path so it never stages anything into the collection" },
-  { name: "cloud-orchestrator", args: [], expect: "no key present, so nothing can be attempted", why: "the coordinator" },
+  /* The guard now runs before the key check, so on a day that already published this stops earlier. Both are correct early exits and both prove the module loaded. */
+  { name: "cloud-orchestrator", args: [], expect: "no key present, so nothing can be attempted|ALREADY PUBLISHED TODAY", why: "the coordinator" },
   { name: "research", args: ["--sources=1"], expect: "no provider key", why: "the subject chooser" },
   { name: "analytics", args: ["--fetch"], expect: "cannot fetch", why: "the readership reader" },
   { name: "agent-run", args: ["--max-turns=1"], expect: "no provider key present", alsoAccept: ["ALREADY PUBLISHED TODAY"], why: "the agent loop" },

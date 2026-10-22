@@ -146,7 +146,22 @@ export const blog = defineCollection({
           unit: z.string().default(""),
           period: z.string(),
           source: z.string(),
-          retrieved: z.string(),
+          /*
+           * A date, either way it arrives.
+           *
+           * On 2026-10-21 a writer emitted `retrieved: 2026-10-21` without quotes. YAML reads that as a
+           * date object, `z.string()` rejected it, and the whole site stopped building - 49 articles
+           * frozen because of one missing pair of quotes in one header.
+           *
+           * The guide collection got this treatment first. The blog needs it more: the blog is written
+           * every day by a model, and this is the failure that has actually happened. Accepting both
+           * shapes and normalising cannot make a currently-valid article invalid; it only removes a way
+           * for a valid one to arrive broken.
+           */
+          retrieved: z
+            .union([z.string(), z.date()])
+            .transform((v) => (v instanceof Date ? v.toISOString().slice(0, 10) : v))
+            .pipe(z.string()),
         }),
       )
       .default([]),

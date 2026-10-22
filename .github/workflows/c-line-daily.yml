@@ -108,3 +108,22 @@ jobs:
             PUBLISHED|NO-SUBJECT|DRY-RUN|NO-KEYS) exit 0 ;;
             *) exit 1 ;;
           esac
+
+      #
+      # The card, through the one channel that does not need the app token.
+      #
+      # The Feishu ledger writes through the open API, which answers 21001 when the app is restricted;
+      # the webhook is a different mechanism and keeps working. For three months of no supervision this
+      # is the difference between "quiet because nothing happened" and "quiet because nobody can see".
+      #
+      - name: Tell the phone
+        if: always()
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+          ROUTE: c
+        run: |
+          mkdir -p data/tmp
+          node -e "const fs=require('fs');try{fs.writeFileSync('data/tmp/orchestrator-report.json',fs.readFileSync('data/runs/latest-c.json'))}catch{fs.writeFileSync('data/tmp/orchestrator-report.json','{\"verdict\":\"NO-RECORD\",\"reasons\":[\"the run wrote no record\"]}')}"
+          node tools/notify-feishu.mjs
