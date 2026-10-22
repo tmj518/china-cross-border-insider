@@ -171,4 +171,92 @@ export const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+/**
+ * The guide collection: the same site, a second promise.
+ *
+ * `/blog/` answers "what does this policy cost per unit". It is written by the trade pipeline, its
+ * figures all carry a retrieval date, and every claim is a number with a source. That promise is the
+ * site's only real asset and this file does not touch it - the `blog` schema above is unchanged.
+ *
+ * `/guide/` answers a different question for a different reader: "I am moving to, working in or
+ * visiting China - what does it cost me, what does it take, and when was that checked". The unit
+ * changes (a month, an application, a move) and so does the evidence (a fee schedule, a port list, a
+ * processing time), but the standard does not: no claim without a source, no guide without a date it
+ * was last checked.
+ *
+ * WHY THIS IS A SEPARATE COLLECTION AND NOT A CATEGORY
+ *
+ * A `guide` inside `blog` would inherit `figures`, `revisions`, `priority`, `featured`, `tags` and the
+ * article QA gates - a structure built for policy analysis and wrong for a how-to. More importantly it
+ * would enter every count the homepage prints ("51 analyses, 438 sourced figures"), so one guide would
+ * silently dilute a promise that took 51 articles to earn. Separate collections keep two promises
+ * instead of averaging them.
+ */
+const guideDate = z
+  .union([z.string(), z.date()])
+  /*
+   * An unquoted `2026-10-21` is a YAML date, not a string, and demanding a string is exactly how the
+   * whole site failed to build on 2026-10-21: `retrieved` arrived as an object and Astro rejected the
+   * entry. A guide is written by a model and a model forgets quotes, so the schema accepts either and
+   * normalises to YYYY-MM-DD rather than turning a formatting lapse into a failed deploy.
+   */
+  .transform((v) => (v instanceof Date ? v.toISOString().slice(0, 10) : v))
+  .pipe(z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "expected YYYY-MM-DD"));
+
+export const guide = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/guide" }),
+  schema: z.object({
+    title: z.string().max(120),
+    description: z.string().max(300),
+
+    /** Which cluster the guide belongs to. Also the /guide/ index grouping. */
+    topic: z.enum([
+      "work-visa",
+      "residence",
+      "tax",
+      "social-insurance",
+      "relocation",
+      "transit",
+      "driving",
+      "employment",
+    ]),
+
+    /** Who is asking. One guide can serve several, but the answer differs by unit. */
+    audience: z.array(z.enum(["employer", "employee", "student", "visitor", "relocating"])).min(1),
+
+    /**
+     * The unit the costs are expressed in - "one month", "one application", "one move".
+     *
+     * This is the field that keeps the two halves of the site coherent: blog prices a container or a
+     * tonne, a guide prices a month or an application, and both answer "per your unit".
+     */
+    unit: z.string().max(80),
+
+    /** The date every figure in this guide was last checked. Required, by design. */
+    lastVerified: guideDate,
+    /** When it must be re-checked: lastVerified + 180 days. Computed by the writer tool. */
+    reviewBy: guideDate.optional(),
+
+    figures: z
+      .array(
+        z.object({
+          value: z.string(),
+          unit: z.string().default(""),
+          period: z.string(),
+          source: z.string(),
+          retrieved: guideDate,
+        }),
+      )
+      .min(1, "a guide with no verifiable figure does not get published"),
+
+    /** Ordered actions, at least five. A guide is a procedure, not an essay. */
+    steps: z
+      .array(z.object({ action: z.string(), detail: z.string().default("") }))
+      .min(5, "a guide needs at least five ordered steps"),
+
+    persona: z.string().default("old-china-hand"),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, guide };

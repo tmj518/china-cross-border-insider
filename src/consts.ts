@@ -113,6 +113,15 @@ export const NAV_LINKS = [
   { label: "Supply Chain", href: "/category/supply-chain/" },
   { label: "Sourcing", href: "/category/sourcing/" },
   { label: "Logistics", href: "/category/logistics/" },
+  /*
+   * The sixth section, and the only one that is not a blog category.
+   *
+   * /guide/ answers a different question for a different reader - what it costs to move to, work in
+   * or visit China, per month or per application rather than per container. It sits after the five
+   * trade silos on purpose: the trade sections are the site's established business, and a nav that
+   * leads with the newest thing tells every returning reader that the thing they came for moved.
+   */
+  { label: "Guides", href: "/guide/" },
   // Then the tools and the archive, which have no other route to them.
   { label: "Briefs", href: "/brief/" },
   { label: "Calculator", href: "/calculator/" },

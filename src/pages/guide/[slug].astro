@@ -1,0 +1,201 @@
+---
+/**
+ * One guide: the steps, the costs, and the date it was checked.
+ *
+ * Deliberately not ArticleLayout. That shell renders a category link, a standfirst, related reading and
+ * the analysis footer - all of which belong to a blog article and none of which a guide has. What a
+ * guide does have is its own contract, and this page is where that contract is visible: the unit, the
+ * verification date, and a cost table in which every row names where the number came from.
+ */
+import { getCollection, render } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../consts";
+import { fitTitle } from "../../lib/meta";
+
+export async function getStaticPaths() {
+  const guides = await getCollection("guide");
+  return guides
+    .filter((g) => g.data.draft !== true)
+    .map((g) => ({ params: { slug: g.id }, props: { guide: g } }));
+}
+
+const { guide } = Astro.props;
+const { data } = guide;
+const { Content } = await render(guide);
+
+const TOPIC_LABEL = {
+  "work-visa": "Work visas",
+  residence: "Residence permits",
+  tax: "Tax",
+  "social-insurance": "Social insurance",
+  relocation: "Relocating",
+  transit: "Transit and entry",
+  driving: "Driving",
+  employment: "Employing people",
+};
+
+const AUDIENCE_LABEL = {
+  employer: "Employers",
+  employee: "Employees",
+  student: "Students",
+  visitor: "Visitors",
+  relocating: "People relocating",
+};
+
+const canon = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
+---
+
+<BaseLayout title={fitTitle(data.title, "", SITE.name)} description={data.description} ogType="article">
+  <main class="wrap guide-main">
+    <p class="guide-kicker">
+      <a href="/guide/">Guides</a> · {TOPIC_LABEL[data.topic] ?? data.topic}
+    </p>
+
+    <h1 class="guide-title">{data.title}</h1>
+    <p class="guide-standfirst">{data.description}</p>
+
+    <dl class="guide-facts">
+      <div>
+        <dt>Unit</dt>
+        <dd>{data.unit}</dd>
+      </div>
+      <div>
+        <dt>Costs checked</dt>
+        <dd><time datetime={data.lastVerified}>{data.lastVerified}</time></dd>
+      </div>
+      <div>
+        <dt>For</dt>
+        <dd>{data.audience.map((a) => AUDIENCE_LABEL[a] ?? a).join(", ")}</dd>
+      </div>
+    </dl>
+
+    <h2 class="section-title">What it costs</h2>
+    <table class="guide-costs">
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Period</th>
+          <th scope="col">Source</th>
+          <th scope="col">Checked</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          data.figures.map((f) => (
+            <tr>
+              <td>{f.value}{f.unit ? ` ${f.unit}` : ""}</td>
+              <td>{f.value}</td>
+              <td>{f.period}</td>
+              <td>{f.source}</td>
+              <td>
+                <time datetime={f.retrieved}>{f.retrieved}</time>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+
+    <h2 class="section-title">In order</h2>
+    <ol class="guide-steps">
+      {
+        data.steps.map((s) => (
+          <li>
+            <strong>{s.action}</strong>
+            {s.detail ? <span> — {s.detail}</span> : null}
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="prose guide-body">
+      <Content />
+    </div>
+
+    <p class="guide-footnote">
+      Last checked {data.lastVerified}{data.reviewBy ? `, next review ${data.reviewBy}` : ""}.
+      Every figure above names its source and the date it was read. This page is a guide, not legal
+      advice — confirm with the authority before acting on a deadline.
+    </p>
+
+    <p class="guide-footnote">
+      <a href={canon}>Permalink</a> · <a href="/guide/">All guides</a>
+    </p>
+  </main>
+</BaseLayout>
+
+<style>
+  .guide-kicker {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+  }
+  .guide-title {
+    max-width: 30ch;
+    margin: 0.4rem 0 1rem;
+    line-height: 1.15;
+  }
+  .guide-standfirst {
+    max-width: 68ch;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .guide-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0 2.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .guide-facts div {
+    margin: 0;
+  }
+  .guide-facts dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+  }
+  .guide-facts dd {
+    margin: 0.15rem 0 0;
+    font-weight: 700;
+  }
+  .guide-costs {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+  .guide-costs th,
+  .guide-costs td {
+    text-align: left;
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    vertical-align: top;
+  }
+  .guide-costs th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.65;
+  }
+  .guide-steps {
+    max-width: 68ch;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+  .guide-steps li {
+    margin-bottom: 0.5rem;
+  }
+  .guide-footnote {
+    max-width: 68ch;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    line-height: 1.55;
+  }
+</style>
