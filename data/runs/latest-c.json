@@ -1,18 +1,22 @@
 {
-  "at": "2026-10-22T11:26:22.463Z",
+  "at": "2026-10-22T11:32:54.438Z",
   "route": "c",
-  "verdict": "PUBLISHED",
-  "article": "z-visa-vs-m-visa",
-  "seconds": 225,
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 52,
   "usage": {
-    "calls": 2,
-    "failed": 0,
-    "usd": 0.0028000000000000004
+    "calls": 3,
+    "failed": 3,
+    "usd": 0
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "china-tax-residency-183-days: no figure survived the quote check (ETIMEDOUT: fetch failed)",
+    "foreigner-social-insurance: no figure survived the quote check (ETIMEDOUT: fetch failed)",
+    "convert-foreign-driving-licence: no figure survived the quote check (ETIMEDOUT: fetch failed)"
+  ],
   "steps": [
     {
       "name": "credentials",
@@ -22,27 +26,22 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "1 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding z-visa-vs-m-visa",
-      "ok": true,
-      "detail": "5 figure(s)"
+      "name": "skipped china-tax-residency-183-days",
+      "ok": false,
+      "detail": "no figure survived the quote check (ETIMEDOUT: fetch failed)"
     },
     {
-      "name": "gates z-visa-vs-m-visa",
-      "ok": true,
-      "detail": "structure and every number traces to a quote"
+      "name": "skipped foreigner-social-insurance",
+      "ok": false,
+      "detail": "no figure survived the quote check (ETIMEDOUT: fetch failed)"
     },
     {
-      "name": "build z-visa-vs-m-visa",
-      "ok": true,
-      "detail": "site builds with the guide in place"
-    },
-    {
-      "name": "published",
-      "ok": true,
-      "detail": "/guide/z-visa-vs-m-visa/"
+      "name": "skipped convert-foreign-driving-licence",
+      "ok": false,
+      "detail": "no figure survived the quote check (ETIMEDOUT: fetch failed)"
     }
   ],
   "researchLog": [
