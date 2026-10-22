@@ -6,6 +6,11 @@
  * the analysis footer - all of which belong to a blog article and none of which a guide has. What a
  * guide does have is its own contract, and this page is where that contract is visible: the unit, the
  * verification date, and a cost table in which every row names where the number came from.
+ *
+ * The markup reuses the article classes (`.article-header`, `.standfirst`, `.meta`, `.tag`, `.prose`)
+ * rather than redefining them. That is what keeps the two sections looking like one site: the heading
+ * scale, the reading width, the rule under the header and the paragraph spacing all come from
+ * global.css, so a change made for the blog reaches the guides for free and the two cannot drift.
  */
 import { getCollection, render } from "astro:content";
 
@@ -36,153 +41,113 @@ const TOPIC_LABEL = {
 };
 
 const AUDIENCE_LABEL = {
-  employer: "Employers",
-  employee: "Employees",
-  student: "Students",
-  visitor: "Visitors",
-  relocating: "People relocating",
+  employer: "employers",
+  employee: "employees",
+  student: "students",
+  visitor: "visitors",
+  relocating: "people relocating",
 };
 
-const canon = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
+const canonical = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
 ---
 
 <BaseLayout title={fitTitle(data.title, "", SITE.name)} description={data.description} ogType="article">
-  <main class="wrap guide-main">
-    <p class="guide-kicker">
-      <a href="/guide/">Guides</a> · {TOPIC_LABEL[data.topic] ?? data.topic}
-    </p>
+  <main id="main" class="wrap">
+    <article>
+      <header class="article-header">
+        <a class="tag" href="/guide/">Guides · {TOPIC_LABEL[data.topic] ?? data.topic}</a>
+        <h1>{data.title}</h1>
+        <p class="standfirst">{data.description}</p>
+        <div class="meta">
+          {data.unit} · Checked <time datetime={data.lastVerified}>{data.lastVerified}</time>
+          {" · "}For {data.audience.map((a) => AUDIENCE_LABEL[a] ?? a).join(", ")}
+        </div>
+      </header>
 
-    <h1 class="guide-title">{data.title}</h1>
-    <p class="guide-standfirst">{data.description}</p>
-
-    <dl class="guide-facts">
-      <div>
-        <dt>Unit</dt>
-        <dd>{data.unit}</dd>
-      </div>
-      <div>
-        <dt>Costs checked</dt>
-        <dd><time datetime={data.lastVerified}>{data.lastVerified}</time></dd>
-      </div>
-      <div>
-        <dt>For</dt>
-        <dd>{data.audience.map((a) => AUDIENCE_LABEL[a] ?? a).join(", ")}</dd>
-      </div>
-    </dl>
-
-    <h2 class="section-title">What it costs</h2>
-    <div class="guide-table-wrap">
-      <table class="guide-costs">
-        <thead>
-          <tr>
-            <th scope="col">Figure</th>
-            <th scope="col">Period</th>
-            <th scope="col">Source</th>
-            <th scope="col">Checked</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            data.figures.map((f) => (
+      <div class="prose">
+        <h2 id="costs">What it costs</h2>
+        <div class="table-responsive" style="overflow-x: auto; width: 100%;">
+          <table class="guide-costs">
+            <thead>
               <tr>
-                <td>
-                  {f.value}
-                  {f.unit ? ` ${f.unit}` : ""}
-                </td>
-                <td>{f.period}</td>
-                <td>{f.source}</td>
-                <td>
-                  <time datetime={f.retrieved}>{f.retrieved}</time>
-                </td>
+                <th scope="col">Figure</th>
+                <th scope="col">Period</th>
+                <th scope="col">Source</th>
+                <th scope="col">Checked</th>
               </tr>
+            </thead>
+            <tbody>
+              {
+                data.figures.map((f) => (
+                  <tr>
+                    <td>
+                      {f.value}
+                      {f.unit ? ` ${f.unit}` : ""}
+                    </td>
+                    <td>{f.period}</td>
+                    <td>{f.source}</td>
+                    <td>
+                      <time datetime={f.retrieved}>{f.retrieved}</time>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="steps">In order</h2>
+        <ol class="guide-steps">
+          {
+            data.steps.map((s) => (
+              <li>
+                <strong>{s.action}</strong>
+                {s.detail ? <span> — {s.detail}</span> : null}
+              </li>
             ))
           }
-        </tbody>
-      </table>
-    </div>
+        </ol>
 
-    <h2 class="section-title">In order</h2>
-    <ol class="guide-steps">
-      {
-        data.steps.map((s) => (
-          <li>
-            <strong>{s.action}</strong>
-            {s.detail ? <span> — {s.detail}</span> : null}
-          </li>
-        ))
-      }
-    </ol>
+        <Content />
 
-    <div class="prose guide-body">
-      <Content />
-    </div>
+        <hr />
 
-    <p class="guide-footnote">
-      Last checked {data.lastVerified}{data.reviewBy ? `, next review ${data.reviewBy}` : ""}.
-      Every figure above names its source and the date it was read. This page is a guide, not legal
-      advice — confirm with the authority before acting on a deadline.
-    </p>
-
-    <p class="guide-footnote">
-      <a href={canon}>Permalink</a> · <a href="/guide/">All guides</a>
-    </p>
+        <p class="guide-footnote">
+          Last checked {data.lastVerified}{data.reviewBy ? `, next review ${data.reviewBy}` : ""}. Every
+          figure above names its source and the date it was read. This page is a guide, not legal, tax or
+          immigration advice — confirm with the authority before acting on a deadline.
+        </p>
+        <p class="guide-footnote">
+          <a href={canonical}>Permalink</a> · <a href="/guide/">All guides</a>
+        </p>
+      </div>
+    </article>
   </main>
 </BaseLayout>
 
 <style>
-  .guide-kicker {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    opacity: 0.7;
-  }
-  .guide-title {
-    max-width: 30ch;
-    margin: 0.4rem 0 1rem;
-    line-height: 1.15;
-  }
-  .guide-standfirst {
-    max-width: 68ch;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  .guide-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 1.5rem 0 2.5rem;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .guide-facts div {
-    margin: 0;
-  }
-  .guide-facts dt {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.6;
-  }
-  .guide-facts dd {
-    margin: 0.15rem 0 0;
-    font-weight: 700;
-  }
   /*
-   * A five-column table does not fit a phone. The wrapper scrolls sideways instead of the page doing
-   * it: body-level horizontal overflow is what the mobile gate measures, and a table that widens the
-   * document fails it on every guide page.
+   * Only the two things the article stylesheet has no opinion about: the ordered steps and the
+   * verification footnote. Everything else is inherited.
    */
-  .guide-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 2rem;
+  .guide-steps {
+    padding-left: 1.2rem;
+  }
+  .guide-steps li {
+    margin-bottom: 0.6rem;
+  }
+  .guide-footnote {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    line-height: 1.55;
   }
   .guide-costs {
     width: 100%;
     min-width: 34rem;
     border-collapse: collapse;
     font-size: 0.92rem;
+    /* .prose sets display:block on tables; this one stays a table inside its own scroller. */
+    display: table;
   }
   .guide-costs th,
   .guide-costs td {
@@ -196,19 +161,5 @@ const canon = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     opacity: 0.65;
-  }
-  .guide-steps {
-    max-width: 68ch;
-    line-height: 1.65;
-    margin-bottom: 2rem;
-  }
-  .guide-steps li {
-    margin-bottom: 0.5rem;
-  }
-  .guide-footnote {
-    max-width: 68ch;
-    font-size: 0.85rem;
-    opacity: 0.75;
-    line-height: 1.55;
   }
 </style>
