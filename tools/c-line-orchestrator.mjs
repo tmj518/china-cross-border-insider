@@ -36,9 +36,9 @@
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, rmSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { spawnSync, execFileSync } from "node:child_process";
 
-import { getWithRetry, loadEnv, today } from "./lib/gsc.mjs";
+import { loadEnv, today } from "./lib/gsc.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const QUEUE_FILE = join(ROOT, "data", "guide-queue.json");
@@ -138,70 +138,101 @@ if (!candidates.length) {
 }
 step("queue", true, `${candidates.length} candidate(s)`);
 
-/* ── fetching ─────────────────────────────────────────────────────────────────────────────────── */
+/* ── fetching: the same fetcher the trade line uses ──────────────────────────────────────────────
+ *
+ * tools/store-source.mjs is not reimplemented here. It is the repository's one way of getting a page
+ * onto disk: it follows redirects, retries, decodes by the charset the page declares, archives under
+ * data/sources and prints the path it wrote. The trade line has used it for every source since the
+ * beginning, and the first version of this file ignored it and fetched with curl - which is why every
+ * ministry page arrived as UTF-8-decoded GB2312 and the extraction step kept returning nothing.
+ */
 
-const UA = {
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
-  accept: "text/html,application/xhtml+xml",
-};
+const SRCFILE = join(ROOT, "tools", "store-source.mjs");
 
-function textOf(html) {
-  return String(html)
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&#\d+;/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-/** Same-site links whose anchor text mentions one of the keywords. One level deep is enough. */
-function linksFor(html, base, keywords, limit = 6) {
-  const out = [];
-  const seen = new Set();
-  for (const m of String(html).matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]{0,160}?)<\/a>/gi)) {
-    const anchor = textOf(m[2]);
-    if (!anchor || !keywords.some((k) => anchor.includes(k))) continue;
-    let abs;
+/** Decode a buffer by the charset the document declares, falling back through gb18030. */
+function decodeHtml(buf) {
+  const head = buf.subarray(0, 4096).toString("latin1");
+  const declared = (/<meta[^>]+charset\s*=\s*["']?([\w-]+)/i.exec(head)?.[1] ?? "").toLowerCase();
+  const candidates = [declared, "utf-8", "gb18030", "gbk"].filter(Boolean);
+  let best = null;
+  let bestBad = Infinity;
+  for (const enc of candidates) {
+    let text;
     try {
-      abs = new URL(m[1], base).href;
+      text = new TextDecoder(enc, { fatal: false }).decode(buf);
     } catch {
       continue;
     }
-    if (!/^https?:/.test(abs) || seen.has(abs)) continue;
-    seen.add(abs);
-    out.push(abs);
-    if (out.length >= limit) break;
+    const bad = (text.match(/\uFFFD/g) ?? []).length;
+    if (bad < bestBad) {
+      best = text;
+      bestBad = bad;
+    }
+    if (bad === 0) break;
   }
-  return out;
+  return best ?? buf.toString("latin1");
+}
+
+const stripTags = (html) =>
+  String(html)
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;|&#160;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+
+/** Fetch one URL through store-source, and read back the decoded text. Never throws. */
+function fetchSource(url, label) {
+  let out = "";
+  try {
+    out = execFileSync(process.execPath, [SRCFILE, `--url=${url}`, `--label=${label}`], {
+      encoding: "utf8",
+      timeout: 120000,
+      maxBuffer: 8 * 1024 * 1024,
+    });
+  } catch (e) {
+    out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+  }
+  const ok = /^\s+ok\s/m.test(out);
+  const file = /archived: (\S+)/.exec(out)?.[1] ?? null;
+  if (!ok || !file) return { url, ok: false, text: "", html: "" };
+  try {
+    const buf = readFileSync(join(ROOT, file));
+    const html = decodeHtml(buf);
+    return { url, ok: true, file, html, text: stripTags(html) };
+  } catch {
+    return { url, ok: false, text: "", html: "" };
+  }
 }
 
 /**
- * Article-shaped links on a ministry page.
+ * The second hop: an index page is a table of contents, not a document.
  *
- * A Chinese ministry homepage is a navigation shell: 64 KB of markup and a few headlines, no prose. The
- * page that states a threshold sits two clicks down, under a list page, with a headline for an anchor.
- * Keyword matching on the anchor never finds it - the headline says "国家税务总局公告2019年第35号", not
- * "183". So this takes headline-shaped links whose href carries a document id, and lets the extraction
- * step decide whether the page says anything.
+ * Same shape test the trade line uses - four or more consecutive digits in the path, and deeper than
+ * the index. A navigation link has neither, so this needs no per-site pattern.
  */
-function articleLinks(html, base, limit = 5) {
+function articleLinks(html, base, limit = 3) {
   const out = [];
   const seen = new Set();
+  const basePath = (() => {
+    try {
+      return new URL(base).pathname;
+    } catch {
+      return "/";
+    }
+  })();
   for (const m of String(html).matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]{0,200}?)<\/a>/gi)) {
-    const anchor = textOf(m[2]);
-    if (anchor.length < 8 || anchor.length > 90) continue;
     let abs;
     try {
       abs = new URL(m[1], base);
     } catch {
       continue;
     }
-    if (abs.host !== new URL(base).host) continue;
-    if (!/\.s?html?$/.test(abs.pathname)) continue;
-    if (!/\d{4,}/.test(abs.pathname)) continue; /* ministry articles carry an id in the path */
+    if (!/^https?:/.test(abs.href)) continue;
+    if (!/\d{4,}/.test(abs.pathname)) continue;
+    if (abs.pathname === basePath) continue;
     if (seen.has(abs.href)) continue;
     seen.add(abs.href);
     out.push(abs.href);
@@ -210,105 +241,50 @@ function articleLinks(html, base, limit = 5) {
   return out;
 }
 
-async function grab(url) {
-  try {
-    const r = getWithRetry(url, { accept: "text/html", retries: 2 });
-    const text = textOf(r.body);
-    return { url, status: r.status, html: r.body, text };
-  } catch (e) {
-    return { url, status: 0, html: "", text: "", error: String(e.message).slice(0, 100) };
-  }
-}
-
-/**
- * Find the page that states the rule, instead of guessing.
- *
- * Crawling a ministry site from its homepage reaches press releases, not regulations: on 2026-10-22 the
- * first five article links under chinatax.gov.cn were four Party-education pieces and one meeting
- * report, and none of them contained "183". The document that matters lives in the regulation database
- * and is reachable by search, so the tool searches.
- *
- * DuckDuckGo's lite endpoint returns static HTML with no JavaScript, which is the only kind of search
- * result a runner can read without a browser.
- */
-async function searchUrls(query, limit = 4) {
-  try {
-    /* fetch, not the curl helper: lite.duckduckgo.com answers 301 and the curl call does not follow
-       redirects, so the helper returns a 3xx and the search silently looks empty. */
-    const res = await fetch(`https://lite.duckduckgo.com/lite/?q=${encodeURIComponent(query)}`, {
-      headers: UA,
-      redirect: "follow",
-      signal: AbortSignal.timeout(25000),
-    });
-    const html = await res.text();
-    const out = [];
-    for (const m of html.matchAll(/uddg=([^"&]+)/g)) {
-      const u = decodeURIComponent(m[1]);
-      if (/^https?:/.test(u) && !out.includes(u)) out.push(u);
-      if (out.length >= limit) break;
-    }
-    return out;
-  } catch (e) {
-    log(`  search    : failed - ${String(e.message).slice(0, 80)}`);
-    return [];
-  }
-}
-
 /* ── grounding: figures the pages actually state ──────────────────────────────────────────────── */
-
-const norm = (s) => String(s).replace(/\s+/g, " ").trim();
 
 async function ground(topic) {
   const seeds = topic.sources ?? [];
-  const pages = [];
-  for (const u of seeds) pages.push(await grab(u));
+  const fetched = [];
+  for (const url of seeds) {
+    const r = fetchSource(url, `guide-${topic.slug}`);
+    log(`  ${r.ok ? "ok  " : "skip"} source ${url.slice(0, 62)}${r.ok ? `  ${r.text.length} chars` : ""}`);
+    if (r.ok) fetched.push(r);
+  }
 
-  /* Follow one level of same-site links when the seeds are navigation shells. Chinese ministry
-     homepages are exactly that: 64 KB of markup and 6 KB of headlines. */
-  const kw = topic.fetchKeywords ?? [];
-  for (const p of pages.filter((x) => x.text)) {
-    for (const link of linksFor(p.html, p.url, kw)) {
-      if (pages.length >= 8) break;
-      pages.push(await grab(link));
+  /* Listings are not documents. Take up to two article links per fetched listing. */
+  for (const f of [...fetched]) {
+    if (fetched.length >= 5) break;
+    for (const link of articleLinks(f.html, f.url, 2)) {
+      if (fetched.length >= 5) break;
+      const r = fetchSource(link, `guide-${topic.slug}`);
+      log(`  ${r.ok ? "ok  " : "skip"} article ${link.slice(0, 61)}${r.ok ? `  ${r.text.length} chars` : ""}`);
+      if (r.ok) fetched.push(r);
     }
   }
 
-  /* If none of that produced prose, take the article-shaped links off the richest page. A list page
-     under 政策法规 is one click from the document that states the rule. */
-  const richest = pages.filter((p) => p.text).sort((a, b) => b.text.length - a.text.length)[0];
-  if (richest && richest.text.length < 20000) {
-    const deeper = articleLinks(richest.html, richest.url, 5);
-    log(`  following : ${deeper.length} article link(s) from ${richest.url}`);
-    for (const u of deeper) pages.push(await grab(u));
+  const usable = fetched.filter((p) => p.text.length > 400);
+  if (!usable.length) {
+    return { facts: [], error: "every source failed or returned under 400 characters of text" };
   }
 
-  /* Before extracting, make sure the corpus actually contains the rule. A search restricted to the
-     source host finds the regulation page that a homepage crawl never reaches. */
-  const host = seeds[0] ? new URL(seeds[0]).host : "";
-  const query = `site:${host} ${(topic.fetchKeywords ?? []).slice(0, 3).join(" ")}`;
-  const found = await searchUrls(query, 4);
-  if (found.length) {
-    log(`  search    : "${query.slice(0, 60)}" -> ${found.length} result(s)`);
-    for (const u of found) pages.push(await grab(u));
-  }
+  const corpus = usable
+    .slice(0, 5)
+    .map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 18000)}`)
+    .join("\n\n");
 
-  const usable = pages.filter((p) => p.text.length > 400);
-  log(`  fetched   : ${pages.length} page(s), ${usable.length} with usable text`);
-  if (!usable.length) return { facts: [], pages };
-
-  const corpus = usable.map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 6000)}`).join("\n\n");
-
-  const ask2 = await ask({
+  const extracted = await ask({
     role: "writer",
     temperature: 0,
     maxTokens: 2000,
     system: [
       "You extract facts from supplied web pages. You never use outside knowledge.",
       "A fact is a fee, a time limit, a duration, a count of countries or ports, or a processing time",
-      "that is written explicitly in the text.",
+      "written explicitly in the text.",
       "",
       "For each fact return the exact sentence or clause that states it, copied character for character",
       "from the page. If you cannot copy a verbatim quote, do not return the fact.",
+      "A page that is only navigation or a list of headlines contains no facts.",
       "Return an empty array when the pages contain nothing usable.",
     ].join("\n"),
     messages: [
@@ -328,12 +304,12 @@ async function ground(topic) {
     ],
   });
   usage.calls += 1;
-  if (!ask2?.ok) {
+  if (!extracted?.ok) {
     usage.failed += 1;
-    return { facts: [], pages, error: String(ask2?.error ?? "no reply").slice(0, 120) };
+    return { facts: [], error: String(extracted?.error ?? "no reply").slice(0, 120) };
   }
 
-  const raw = String(ask2.text ?? "");
+  const raw = String(extracted.text ?? "");
   const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(raw)?.[1];
   let parsed = null;
   for (const c of [fenced, raw.slice(raw.indexOf("{"), raw.lastIndexOf("}") + 1)]) {
@@ -344,30 +320,31 @@ async function ground(topic) {
         parsed = o;
         break;
       }
-    } catch { /* next */ }
+    } catch {
+      /* next shape */
+    }
   }
-  if (!parsed) return { facts: [], pages, error: "no JSON in the extraction reply" };
+  if (!parsed) return { facts: [], error: "no JSON in the extraction reply" };
 
   /*
-   * The quote check is the whole point. A fact survives only if the text it claims to quote is really
-   * on the page - whitespace-normalised, because the model copies a line the browser would have
-   * collapsed. Anything else is dropped, and the run says how many were dropped.
+   * The quote check. A fact survives only if the text it claims to quote is really on the page -
+   * whitespace-normalised, because the model copies a line the browser would have collapsed. Anything
+   * else is dropped, and the run reports how many.
    */
   const kept = [];
   let dropped = 0;
   for (const f of parsed.facts.slice(0, 8)) {
-    const idx = Number(f.source) - 1;
-    const page = usable[idx];
+    const page = usable[Number(f.source) - 1];
     if (!page) {
       dropped++;
       continue;
     }
-    const q = norm(f.quote ?? "");
-    if (q.length < 8 || !norm(page.text).includes(q)) {
+    const q = String(f.quote ?? "").replace(/\s+/g, " ").trim();
+    if (q.length < 8 || !page.text.replace(/\s+/g, " ").includes(q)) {
       dropped++;
       continue;
     }
-    if (!/^[\x20-\x7E¥$€£0-9.,%\- ]+$/.test(String(f.value ?? "").trim())) {
+    if (!String(f.value ?? "").trim()) {
       dropped++;
       continue;
     }
@@ -381,8 +358,9 @@ async function ground(topic) {
     });
   }
   log(`  extracted : ${kept.length} kept, ${dropped} dropped on the quote check`);
-  return { facts: kept, pages, dropped };
+  return { facts: kept, dropped };
 }
+
 
 /* ── one attempt at one topic ────────────────────────────────────────────────────────────────── */
 
