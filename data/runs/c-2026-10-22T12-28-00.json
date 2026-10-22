@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-22T12:28:00.252Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "visa-extension-inside-china",
+  "seconds": 324,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.003700000000000002
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20261019161601-9k6dn"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "1 candidate(s)"
+    },
+    {
+      "name": "grounding visa-extension-inside-china",
+      "ok": true,
+      "detail": "8 figure(s)"
+    },
+    {
+      "name": "gates visa-extension-inside-china",
+      "ok": true,
+      "detail": "structure and every number traces to a quote"
+    },
+    {
+      "name": "build visa-extension-inside-china",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/visa-extension-inside-china/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20261019161601-9k6dn"
+  ]
+}

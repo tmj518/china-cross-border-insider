@@ -265,7 +265,7 @@
       "unit": "one extension",
       "title": "Extending a China Visa Without Leaving",
       "query": "extend china visa inside china",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.nia.gov.cn/",
         "https://en.nia.gov.cn/"
@@ -286,7 +286,8 @@
       ],
       "avoid": [
         "Do not state a fee or a processing time unless the fact sheet contains it."
-      ]
+      ],
+      "doneAt": "2026-10-22"
     },
     {
       "slug": "foreigner-accommodation-registration",
