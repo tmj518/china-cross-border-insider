@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "note": "The C line's subject queue. One entry per guide. `ready:false` means the fact sheet is not authored yet and the orchestrator must skip it rather than let a model invent numbers.",
+  "topics": [
+    {
+      "slug": "144-hour-visa-free-transit",
+      "topic": "transit",
+      "audience": [
+        "visitor"
+      ],
+      "unit": "one transit",
+      "title": "144-Hour Visa-Free Transit in China: Who Qualifies",
+      "query": "144 hour visa free transit china",
+      "ready": true,
+      "status": "done",
+      "sources": [
+        "https://www.nia.gov.cn/",
+        "https://en.nia.gov.cn/"
+      ],
+      "facts": [
+        {
+          "value": "144",
+          "unit": "hours",
+          "period": "maximum stay under the visa-free transit policy",
+          "source": "National Immigration Administration, visa-free transit policy (过境免签政策)",
+          "note": "the stay window, not a fee. 144 hours is six days."
+        },
+        {
+          "value": "6",
+          "unit": "days",
+          "period": "the same window expressed in days",
+          "source": "National Immigration Administration, visa-free transit policy (过境免签政策)",
+          "note": "144 hours divided by 24"
+        },
+        {
+          "value": "third",
+          "unit": "country or region",
+          "period": "the onward destination the traveller must already hold a ticket for",
+          "source": "National Immigration Administration, visa-free transit policy",
+          "note": "the traveller cannot return to the country they came from; the itinerary must be A -> China -> C"
+        }
+      ],
+      "mustSay": [
+        "This is a transit policy, not a tourist visa: the traveller must be passing through to a third country.",
+        "The stay is limited to the region covered by the entry port, not to China as a whole.",
+        "It cannot be extended and it is not a work or study permission.",
+        "Travellers should confirm the current eligible ports and nationalities with the National Immigration Administration before booking, because both lists change."
+      ],
+      "avoid": [
+        "Do not state an eligible-country count, a port count, or any fee.",
+        "Do not describe it as a visa.",
+        "Do not give a list of ports from memory."
+      ],
+      "doneAt": "2026-10-22"
+    },
+    {
+      "slug": "china-tax-residency-183-days",
+      "topic": "tax",
+      "audience": [
+        "employee",
+        "employer"
+      ],
+      "unit": "one tax year",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "The 183-day threshold is safe to state, but the six-year rule and the treaty tie-breakers need the exact wording of the announcement before a number goes on the page.",
+      "sources": [
+        "https://www.chinatax.gov.cn/"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    },
+    {
+      "slug": "z-visa-vs-m-visa",
+      "topic": "work-visa",
+      "audience": [
+        "employee",
+        "employer"
+      ],
+      "unit": "one application",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "Visa fees are set per nationality by reciprocity. Without the current schedule for each nationality this page would have to publish a fee it cannot cite.",
+      "sources": [
+        "https://www.nia.gov.cn/"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    },
+    {
+      "slug": "residence-permit-renewal",
+      "topic": "residence",
+      "audience": [
+        "employee",
+        "student"
+      ],
+      "unit": "one renewal",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "The overstay penalty is a specific article of the Exit and Entry Administration Law and must be quoted from the text, not paraphrased.",
+      "sources": [
+        "https://www.nia.gov.cn/"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    },
+    {
+      "slug": "foreigner-social-insurance",
+      "topic": "social-insurance",
+      "audience": [
+        "employer",
+        "employee"
+      ],
+      "unit": "one month",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "Contribution rates differ by city and by year. A monthly figure without a city and a contribution year would be wrong somewhere.",
+      "sources": [
+        "http://www.mohrss.gov.cn/"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    },
+    {
+      "slug": "cost-to-hire-foreign-employee",
+      "topic": "employment",
+      "audience": [
+        "employer"
+      ],
+      "unit": "one employee per month",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "The anchor piece. It composes the visa, tax, social-insurance and housing figures, so it cannot be written before those four exist.",
+      "sources": [],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    },
+    {
+      "slug": "relocation-cost-per-cubic-metre",
+      "topic": "relocation",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one cubic metre",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "No authority publishes this price. It needs three forwarder quotations taken on the same day, labelled as market quotations rather than official rates.",
+      "sources": [
+        "http://www.customs.gov.cn/"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    },
+    {
+      "slug": "convert-foreign-driving-licence",
+      "topic": "driving",
+      "audience": [
+        "employee",
+        "relocating"
+      ],
+      "unit": "one conversion",
+      "status": "needs-facts",
+      "ready": false,
+      "why": "The residence-duration requirement and the test exemptions depend on the issuing country's agreement, which has to be checked per nationality.",
+      "sources": [
+        "https://gab.122.gov.cn/"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": []
+    }
+  ]
+}
