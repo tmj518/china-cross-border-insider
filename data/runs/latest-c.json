@@ -1,18 +1,20 @@
 {
-  "at": "2026-10-22T10:33:25.740Z",
+  "at": "2026-10-22T10:36:56.414Z",
   "route": "c",
-  "verdict": "PUBLISHED",
-  "article": "144-hour-visa-free-transit",
-  "seconds": 133,
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 0,
   "usage": {
-    "calls": 1,
+    "calls": 0,
     "failed": 0,
-    "usd": 0.0012000000000000005
+    "usd": 0
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "No queued topic has an authored fact sheet (7 waiting). The C line does not write numbers it was not given."
+  ],
   "steps": [
     {
       "name": "credentials",
@@ -20,44 +22,9 @@
       "detail": "46 key chars, model ep-20261019161601-9k6dn"
     },
     {
-      "name": "topic",
+      "name": "queue",
       "ok": true,
-      "detail": "144-hour-visa-free-transit"
-    },
-    {
-      "name": "sources",
-      "ok": true,
-      "detail": "2/2 fetched"
-    },
-    {
-      "name": "model",
-      "ok": true,
-      "detail": "3378 chars"
-    },
-    {
-      "name": "parse",
-      "ok": true,
-      "detail": ""
-    },
-    {
-      "name": "gates",
-      "ok": true,
-      "detail": "structure and every number traces to the fact sheet"
-    },
-    {
-      "name": "draft",
-      "ok": true,
-      "detail": "/data/drafts-c/144-hour-visa-free-transit.md"
-    },
-    {
-      "name": "build",
-      "ok": true,
-      "detail": "site builds with the guide in place"
-    },
-    {
-      "name": "published",
-      "ok": true,
-      "detail": "/guide/144-hour-visa-free-transit/"
+      "detail": "nothing ready"
     }
   ],
   "researchLog": [
