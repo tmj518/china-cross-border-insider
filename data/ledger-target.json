@@ -1,6 +1,10 @@
 {
   "appToken": "NWvybAleDaxhMRsmJ1Cc4BuFnrc",
+  "baseUrl": "https://qcnjaw0anwcn.feishu.cn/base/NWvybAleDaxhMRsmJ1Cc4BuFnrc",
   "runTableId": "tblU4kgZu2RgFyxK",
   "runTableName": "运行台账",
+  "contentTableId": "tbl3RgFtNNIyx3yL",
+  "contentTableName": "内容台账",
+  "note": "Written by tools/feishu-run-ledger.mjs and tools/content-ledger.mjs. The base token is a file identifier, not a credential: it authorises nothing on its own, and the app secret stays in Actions secrets.",
   "at": "2026-10-23T01:44:24.020Z"
 }

@@ -97,6 +97,23 @@ jobs:
           FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
         run: node tools/feishu-run-ledger.mjs --limit=5
 
+      #
+      # The corpus, measured rather than described. Every published piece in one row: figures, internal
+      # links in and out, and whether a title or a target keyword collides with another piece.
+      #
+      # It reconciles the whole corpus each run, not just today's article, so an article the trade line
+      # published at 07:20 is picked up here at 15:20 and one published at 20:20 is picked up tomorrow.
+      # --with-gates runs qa-check per analysis; that is the only slow part and it is worth the minute.
+      #
+      - name: Record what is published in the content ledger
+        if: always()
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
+        run: node tools/content-ledger.mjs --with-gates
+
       - name: Report the verdict
         if: always()
         run: |
