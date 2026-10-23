@@ -505,6 +505,22 @@ jobs:
         run: node tools/feishu-run-ledger.mjs
 
       #
+      # The corpus ledger: one row per published piece, blog and guide together, with the figures,
+      # internal links in and out, and the duplicate test. It reconciles the whole corpus rather than
+      # today's article, so it is correct whether or not this run published anything, and it belongs in
+      # the always() path for the same reason the run ledger does - a day that changed nothing still
+      # changed the corpus if the cleaner removed a duplicate.
+      #
+      - name: Record what is published in the content ledger
+        if: always()
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
+        run: node tools/content-ledger.mjs --prune
+
+      #
       # The base token only exists after the first run, and the runner is thrown away afterwards. Without
       # this the tool would create a new base every morning and the operator would own seven of them by
       # Sunday. The file is the memory; committing it is what makes the bootstrap a one-time event.

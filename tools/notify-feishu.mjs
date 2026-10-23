@@ -156,6 +156,18 @@ if (!report) {
   }
   lines.push("");
   lines.push("Where to look: Actions -> the failed run -> the red step. Its last twenty lines carry the reason.");
+  /*
+   * The raw codes, even when the pipeline never wrote a report.
+   *
+   * This is the branch where something broke BEFORE anything could be recorded, which is exactly the case
+   * where the operator has nothing else to go on. The meter is a file, not a report, so it survives a
+   * run that died early - and it carries the status code of every failed call.
+   */
+  const failuresBeforeReport = failureBreakdown();
+  if (failuresBeforeReport) {
+    lines.push("");
+    lines.push(failuresBeforeReport);
+  }
   if (routeTag === "agent") {
     lines.push("");
     lines.push("The agent route has one failure mode the script route does not: it can run out of turns. If the");
