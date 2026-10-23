@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-23T05:07:54.296Z",
+  "at": "2026-10-23T17:09:46.531Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -15,11 +15,25 @@
   "keywords": [],
   "topSeen": [
     {
+      "query": "site.stats.gov.cn \"2026年9月份\" \"5.0%\"",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 4.5
+    },
+    {
       "query": "\"periodical no. 1 of 2026\" suez canal",
       "impressions": 1,
       "clicks": 0,
       "ctr": 0,
       "position": 6
+    },
+    {
+      "query": "china mortgage subsidy",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 99
     },
     {
       "query": "landed cost calculator",
@@ -34,13 +48,6 @@
       "clicks": 0,
       "ctr": 0,
       "position": 65
-    },
-    {
-      "query": "section 301 tariff ustr exclusion -site:facebook.com -site:instagram.com -site:linkedin.com -site:x.com -site:twitter.com -site:youtube.com -site:tiktok.com -site:pinterest.com -site:reddit.com -site:threads.com effective or increase or list or electronics or review",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 20
     }
   ]
 }
