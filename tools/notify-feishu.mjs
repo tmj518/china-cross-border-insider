@@ -43,8 +43,49 @@ const secret = (process.env.FEISHU_SECRET ?? "").trim();
 const REPORT = join(ROOT, "data", "tmp", "orchestrator-report.json");
 
 const LEDGER = join(ROOT, "logs", "orchestrator.jsonl");
+const USAGE = join(ROOT, "logs", "usage.jsonl");
 const DIRECTOR = join(ROOT, "总监指令.md");
 const STAFF = join(ROOT, "员工汇报.md");
+
+/**
+ * A short list of why the failed calls failed.
+ *
+ * The meter writes one JSON line per call with `ok`, `status` and `error`. This reads that back and
+ * folds the failures into "how many × what", because the three kinds of failure need three different
+ * responses: a 429 is a rate limit that clears, a 401 is a key that never will, and a timeout is
+ * neither. "36 failed" alone tells the operator nothing they can act on.
+ */
+function failureBreakdown(limit = 4) {
+  if (!existsSync(USAGE)) return "";
+  const counts = new Map();
+  let total = 0;
+  try {
+    for (const line of readFileSync(USAGE, "utf8").split("\n")) {
+      if (!line.trim()) continue;
+      let j;
+      try {
+        j = JSON.parse(line);
+      } catch {
+        continue;
+      }
+      if (j.ok !== false) continue;
+      total++;
+      const key = j.status
+        ? `HTTP ${j.status}`
+        : /fetch failed|ETIMEDOUT|ECONNRESET|socket hang up|undici/i.test(String(j.error ?? ""))
+          ? "network timeout"
+          : /no provider key|no key configured/i.test(String(j.error ?? ""))
+            ? "no provider key"
+            : String(j.error ?? "unknown").replace(/\s+/g, " ").slice(0, 42);
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
+  } catch {
+    return "";
+  }
+  if (!total) return "";
+  const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit);
+  return `Failed calls: ${total} — ${top.map(([k, n]) => `${n}× ${k}`).join(", ")}`;
+}
 
 let report = null;
 
@@ -147,6 +188,18 @@ if (!report) {
   if (report.qa?.verdict) lines.push(`Review: ${report.qa.verdict}`);
   const u = report.usage ?? {};
   if (u.calls !== undefined) lines.push(`Usage: ${u.calls} call(s), ${u.failed ?? 0} failed, ~$${u.usd ?? 0}`);
+  /*
+   * WHY the calls failed, next to how many.
+   *
+   * "46 calls, 36 failed" is a number an operator cannot act on: a 429 is a rate limit that clears by
+   * itself, a 401 is a key that will never work, and a timeout is neither. The meter already records the
+   * status and the message for every call; this reads that file back and counts the reasons.
+   *
+   * On a runner the file is created empty at checkout and holds only this run's calls, so the summary
+   * describes the run in the card and nothing older.
+   */
+  const failures = failureBreakdown();
+  if (failures) lines.push(failures);
   if (report.seconds !== undefined) lines.push(`Took: ${report.seconds}s`);
 
   /*

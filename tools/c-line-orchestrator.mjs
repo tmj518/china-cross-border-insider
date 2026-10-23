@@ -273,58 +273,84 @@ async function ground(topic) {
     .map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 6000)}`)
     .join("\n\n");
 
-  const extracted = await ask({
-    role: "writer",
-    temperature: 0,
-    maxTokens: 2000,
-    system: [
-      "You extract facts from supplied web pages. You never use outside knowledge.",
-      "A fact is a fee, a time limit, a duration, a count of countries or ports, or a processing time",
-      "written explicitly in the text.",
-      "",
-      "For each fact return the exact sentence or clause that states it, copied character for character",
-      "from the page. If you cannot copy a verbatim quote, do not return the fact.",
-      "A page that is only navigation or a list of headlines contains no facts.",
-      "Return an empty array when the pages contain nothing usable.",
-    ].join("\n"),
-    messages: [
-      {
-        role: "user",
-        content: [
-          `Topic: ${topic.title}`,
-          `Looking for: ${(topic.fetchKeywords ?? []).join(", ")}`,
-          "",
-          "PAGES:",
-          corpus,
-          "",
-          'Return JSON only: {"facts":[{"value":"144","unit":"hours","period":"maximum stay","quote":"verbatim text from the page","source":1}]}',
-          "`source` is the [number] of the page the quote came from. At most 8 facts.",
-        ].join("\n"),
-      },
-    ],
-  });
+  const askExtract = async (strict) =>
+    ask({
+      role: "writer",
+      temperature: 0,
+      maxTokens: strict ? 2600 : 2000,
+      system: [
+        "You extract facts from supplied web pages. You never use outside knowledge.",
+        "A fact is a fee, a time limit, a duration, a count of countries or ports, or a processing time",
+        "written explicitly in the text.",
+        "",
+        "For each fact return the exact sentence or clause that states it, copied character for character",
+        "from the page. If you cannot copy a verbatim quote, do not return the fact.",
+        "A page that is only navigation or a list of headlines contains no facts.",
+        "Return an empty array when the pages contain nothing usable.",
+        ...(strict
+          ? [
+              "",
+              "OUTPUT FORMAT IS MANDATORY: the first character of your reply must be { and the last must",
+              "be }. No preamble, no explanation, no markdown fence, no commentary after the closing brace.",
+            ]
+          : []),
+      ].join("\n"),
+      messages: [
+        {
+          role: "user",
+          content: [
+            `Topic: ${topic.title}`,
+            `Looking for: ${(topic.fetchKeywords ?? []).join(", ")}`,
+            "",
+            "PAGES:",
+            corpus,
+            "",
+            'Return JSON only: {"facts":[{"value":"144","unit":"hours","period":"maximum stay","quote":"verbatim text from the page","source":1}]}',
+            "`source` is the [number] of the page the quote came from. At most 8 facts.",
+          ].join("\n"),
+        },
+      ],
+    });
+
+  let extracted = await askExtract(false);
   usage.calls += 1;
   if (!extracted?.ok) {
     usage.failed += 1;
     return { facts: [], error: String(extracted?.error ?? "no reply").slice(0, 120) };
   }
 
-  const raw = String(extracted.text ?? "");
-  const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(raw)?.[1];
-  let parsed = null;
-  for (const c of [fenced, raw.slice(raw.indexOf("{"), raw.lastIndexOf("}") + 1)]) {
-    if (!c) continue;
-    try {
-      const o = JSON.parse(c);
-      if (o && Array.isArray(o.facts)) {
-        parsed = o;
-        break;
+  const parseFacts = (text) => {
+    const raw = String(text ?? "");
+    const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(raw)?.[1];
+    for (const c of [fenced, raw.slice(raw.indexOf("{"), raw.lastIndexOf("}") + 1)]) {
+      if (!c) continue;
+      try {
+        const o = JSON.parse(c);
+        if (o && Array.isArray(o.facts)) return o;
+      } catch {
+        /* next shape */
       }
-    } catch {
-      /* next shape */
     }
+    return null;
+  };
+
+  let parsed = parseFacts(extracted.text);
+
+  /*
+   * One strict re-ask when the reply was prose.
+   *
+   * Two of three topics on 2026-10-23 came back "no JSON in the extraction reply": the call succeeded,
+   * the model answered in sentences. `retries` on ask() cannot help with that - the transport was fine -
+   * so the retry has to be a second prompt that states the format as a requirement rather than a request.
+   */
+  if (!parsed) {
+    const strict = await askExtract(true);
+    usage.calls += 1;
+    if (strict?.ok) parsed = parseFacts(strict.text);
+    if (parsed) log("  extracted : the strict re-ask produced JSON");
   }
-  if (!parsed) return { facts: [], error: "no JSON in the extraction reply" };
+
+  if (!parsed) return { facts: [], error: "no JSON in the extraction reply, even after the strict re-ask" };
 
   /*
    * The quote check. A fact survives only if the text it claims to quote is really on the page -
