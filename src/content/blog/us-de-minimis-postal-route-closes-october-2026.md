@@ -1,9 +1,9 @@
 ---
 title: "China's $200 Postal Flat Fee Lasted 4 Days. The Route Closes"
 subtitle: "US de minimis is suspended for 2026 and the postal route for a China parcel is closing, so the duty per shipment now turns on classification"
-description: "The $80/$160/$200 per-item postal duty ran from 24 to 27 February 2026, then vanished. From 22 October 2026 Chapter 99 goods lose the postal informal route, and the arithmetic moves to classification."
+description: "The $80/$160/$200 per-item postal duty ran from 24 to 27 February 2026, then vanished. Since 22 October 2026 Chapter 99 goods have had no postal informal route."
 publishDate: 2026-10-03
-reviewBy: 2026-10-22
+reviewBy: 2027-01-21
 stakes: priced
 category: "trade-policy"
 audience: "platform-seller"
@@ -12,10 +12,12 @@ priority: "P0"
 featured: false
 draft: false
 articleNumber: 12
-updatedDate: 2026-10-07
+updatedDate: 2026-10-23
 revisions:
   - date: 2026-10-07
     note: "Two gaps closed against the rule, 91 FR 37801. The 22 October compliance date covers 19 CFR 145.12(a)(2)(v) as well as (vi), so goods subject to another agency — FDA, USDA, CPSC, FCC, EPA — also leave the postal informal route then, including lines with no Chapter 99 code. And the filer binds harder than the bond: CBP treats the worksheet as customs business because it needs 10-digit HTSUS classification, so unless the filer owns the goods the filing has to come from a licensed customs broker. CBP estimates about half the previously qualified parties are not brokers."
+  - date: 2026-10-23
+    note: "The 22 October 2026 compliance date passed. Added a dated note at the top: the mechanics are the published rule, the enforcement detail is unconfirmed because no implementation notice had been published when this line was checked. Fixed the description tense. No figure changed and no claim was added."
 target_keyword: "US de minimis suspended 2026 postal shipment duty per parcel China"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -69,6 +71,8 @@ sources:
   - "One Big Beautiful Bill Act, Pub. L. 119-21, enacted 4 July 2025"
   - "Harmonized Tariff Schedule of the United States, U.S. note 2(y)"
 ---
+
+> **Checked again on 23 October 2026.** The 22 October compliance date this page was written against has now passed. What follows is the rule as published, and the arithmetic it produces; we have not been able to verify post-implementation enforcement — whether CBP has issued implementation guidance, and how the ports are reading 19 CFR 145.12(a)(2)(v) in practice — because no such notice had been published when this line was checked. Treat the mechanics as current and the enforcement detail as unconfirmed.
 
 ## AI Summary
 
