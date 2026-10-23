@@ -169,7 +169,7 @@
       "unit": "one cubic metre",
       "title": "Shipping Household Goods to China: Cost per m³",
       "query": "shipping household goods to china cost",
-      "status": "queued",
+      "status": "done",
       "marketPrice": true,
       "sources": [
         "http://www.customs.gov.cn/",
@@ -191,7 +191,8 @@
       ],
       "avoid": [
         "Do not present a market estimate as an official rate."
-      ]
+      ],
+      "doneAt": "2026-10-23"
     },
     {
       "slug": "z-visa-vs-m-visa",

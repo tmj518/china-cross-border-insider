@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-23T04:55:28.928Z",
+  "at": "2026-10-23T12:40:27.959Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "convert-foreign-driving-licence",
-  "seconds": 76,
+  "article": "relocation-cost-per-cubic-metre",
+  "seconds": 97,
   "usage": {
     "calls": 2,
-    "failed": 1,
-    "usd": 0.0008
+    "failed": 0,
+    "usd": 0.0014
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding convert-foreign-driving-licence",
+      "name": "grounding relocation-cost-per-cubic-metre",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates convert-foreign-driving-licence",
+      "name": "gates relocation-cost-per-cubic-metre",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build convert-foreign-driving-licence",
+      "name": "build relocation-cost-per-cubic-metre",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/convert-foreign-driving-licence/"
+      "detail": "/guide/relocation-cost-per-cubic-metre/"
     }
   ],
   "researchLog": [
