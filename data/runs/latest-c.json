@@ -1,18 +1,22 @@
 {
-  "at": "2026-10-22T12:28:00.252Z",
+  "at": "2026-10-23T02:13:28.979Z",
   "route": "c",
-  "verdict": "PUBLISHED",
-  "article": "visa-extension-inside-china",
-  "seconds": 324,
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 23,
   "usage": {
-    "calls": 2,
+    "calls": 3,
     "failed": 0,
-    "usd": 0.003700000000000002
+    "usd": 0.0005
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "china-tax-residency-183-days: no figure survived the quote check",
+    "foreigner-social-insurance: no figure survived the quote check (no JSON in the extraction reply)",
+    "convert-foreign-driving-licence: no figure survived the quote check (no JSON in the extraction reply)"
+  ],
   "steps": [
     {
       "name": "credentials",
@@ -22,27 +26,22 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "1 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding visa-extension-inside-china",
-      "ok": true,
-      "detail": "8 figure(s)"
+      "name": "skipped china-tax-residency-183-days",
+      "ok": false,
+      "detail": "no figure survived the quote check"
     },
     {
-      "name": "gates visa-extension-inside-china",
-      "ok": true,
-      "detail": "structure and every number traces to a quote"
+      "name": "skipped foreigner-social-insurance",
+      "ok": false,
+      "detail": "no figure survived the quote check (no JSON in the extraction reply)"
     },
     {
-      "name": "build visa-extension-inside-china",
-      "ok": true,
-      "detail": "site builds with the guide in place"
-    },
-    {
-      "name": "published",
-      "ok": true,
-      "detail": "/guide/visa-extension-inside-china/"
+      "name": "skipped convert-foreign-driving-licence",
+      "ok": false,
+      "detail": "no figure survived the quote check (no JSON in the extraction reply)"
     }
   ],
   "researchLog": [

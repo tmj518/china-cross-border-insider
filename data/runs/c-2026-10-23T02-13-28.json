@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-23T02:13:28.979Z",
+  "route": "c",
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 23,
+  "usage": {
+    "calls": 3,
+    "failed": 0,
+    "usd": 0.0005
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [
+    "china-tax-residency-183-days: no figure survived the quote check",
+    "foreigner-social-insurance: no figure survived the quote check (no JSON in the extraction reply)",
+    "convert-foreign-driving-licence: no figure survived the quote check (no JSON in the extraction reply)"
+  ],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20261019161601-9k6dn"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "skipped china-tax-residency-183-days",
+      "ok": false,
+      "detail": "no figure survived the quote check"
+    },
+    {
+      "name": "skipped foreigner-social-insurance",
+      "ok": false,
+      "detail": "no figure survived the quote check (no JSON in the extraction reply)"
+    },
+    {
+      "name": "skipped convert-foreign-driving-licence",
+      "ok": false,
+      "detail": "no figure survived the quote check (no JSON in the extraction reply)"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20261019161601-9k6dn"
+  ]
+}
