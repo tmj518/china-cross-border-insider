@@ -37,7 +37,8 @@ export async function apiRetry(path, opts, attempts = 3, onFail = null) {
     } catch (e) {
       last = e;
       if (onFail) onFail(i, attempts, e);
-      if (i < attempts) await sleep(5000);
+      /* Exponential: 5s, 10s, 20s. A fixed five seconds hammers a limit that is measured in minutes. */
+      if (i < attempts) await sleep(5000 * 2 ** (i - 1));
     }
   }
   throw last;

@@ -426,12 +426,23 @@ async function attempt(topic) {
 
   /* 1. grounding */
   let facts = topic.facts ?? [];
+  let procedural = false;
   if (!facts.length) {
     const g = await ground(topic);
     facts = g.facts;
     if (!facts.length) {
-      topic.status = "no-grounding";
-      return { ok: false, why: `no figure survived the quote check${g.error ? ` (${g.error})` : ""}` };
+      /*
+       * No figure survived. That used to end the topic with NO-SUBJECT and a yellow card, which is the
+       * one outcome an unattended system cannot afford: "the ministry does not publish this fee" is a
+       * fact about the source, not a reason to publish nothing.
+       *
+       * A procedural guide - what to bring, in what order, where it goes wrong - is still worth a
+       * reader's time, and it can be written without a single number. What it must never contain is a
+       * number that was not verified, so the writer is told to use none at all and the digit gate below
+       * still enforces it.
+       */
+      procedural = true;
+      log(`  procedural: no quoted figure${g.error ? ` (${g.error.slice(0, 70)})` : ""} - writing the procedure only, no numbers`);
     }
   }
 
@@ -440,18 +451,21 @@ async function attempt(topic) {
    * as what they are: an estimate across at least three independent sources, dated.
    */
   let factSheet = facts;
-  if (topic.marketPrice) {
+  if (!procedural && topic.marketPrice) {
     const hosts = new Set(facts.map((f) => (f.url ? new URL(f.url).host : f.source)).filter(Boolean));
     if (hosts.size < 3) {
-      return { ok: false, why: `market topic needs 3 independent sources, found ${hosts.size}` };
+      log(`  market   : only ${hosts.size} independent host(s) - demoting to a procedural guide rather than calling it an estimate`);
+      procedural = true;
+      factSheet = [];
+    } else {
+      factSheet = facts.slice(0, 6).map((f) => ({
+        ...f,
+        source: `Market estimate based on ${hosts.size} sources as of ${DAY.slice(0, 7)}`,
+      }));
     }
-    factSheet = facts.slice(0, 6).map((f) => ({
-      ...f,
-      source: `Market estimate based on ${hosts.size} sources as of ${DAY.slice(0, 7)}`,
-    }));
   }
 
-  step(`grounding ${topic.slug}`, true, `${factSheet.length} figure(s)`);
+  step(`grounding ${topic.slug}`, true, procedural ? "procedural, no figures" : `${factSheet.length} figure(s)`);
 
   /* 2. the guide itself */
   const SYSTEM = [
@@ -472,8 +486,17 @@ async function attempt(topic) {
     `Reader: ${(topic.audience ?? []).join(", ")}`,
     `Unit this guide prices: ${topic.unit}`,
     "",
-    "FACT SHEET (the only numbers you may use):",
-    JSON.stringify(factSheet.map((f) => ({ value: f.value, unit: f.unit, period: f.period, source: f.source })), null, 2),
+    procedural
+      ? [
+          "FACT SHEET: empty. No figure in this topic could be verified against a source.",
+          "",
+          "Write the PROCEDURE ONLY, and put NO NUMBER IN THE TEXT AT ALL - not a day, not a count, not",
+          "an amount, not a year. Where a step would naturally carry a number, describe it instead",
+          '("before the permit expires", not "14 days before"). A verification date is added by the',
+          "publishing tool, so you do not need to write one.",
+        ].join("\n")
+      : "FACT SHEET (the only numbers you may use):\n" +
+        JSON.stringify(factSheet.map((f) => ({ value: f.value, unit: f.unit, period: f.period, source: f.source })), null, 2),
     "",
     "You MUST make these points:",
     ...(topic.mustSay ?? []).map((m) => `- ${m}`),
@@ -494,35 +517,97 @@ async function attempt(topic) {
     "Three to five sections. Five to eight steps.",
   ].join("\n");
 
-  const reply = await ask({ role: "writer", system: SYSTEM, messages: [{ role: "user", content: USER }], temperature: 0.3, maxTokens: 4000 });
-  usage.calls += 1;
-  if (!reply?.ok) {
-    usage.failed += 1;
-    return { ok: false, why: `model failed: ${String(reply?.error ?? "").slice(0, 120)}` };
-  }
+  const writeOnce = async (extra) => {
+    const reply = await ask({
+      role: "writer",
+      system: SYSTEM,
+      messages: [{ role: "user", content: USER + (extra ? `\n\n${extra}` : "") }],
+      temperature: 0.3,
+      maxTokens: 4000,
+    });
+    usage.calls += 1;
+    if (!reply?.ok) {
+      usage.failed += 1;
+      return { error: `model failed: ${String(reply?.error ?? "").slice(0, 120)}` };
+    }
+    return { body: pickJson(reply.text ?? "") };
+  };
 
-  const body = pickJson(reply.text ?? "");
+  let written = await writeOnce("");
+  if (written.error) return { ok: false, why: written.error };
+  let body = written.body;
   if (!body) return { ok: false, why: "the model returned no JSON object" };
 
-  if (typeof body.title !== "string" || !body.title.trim()) return { ok: false, why: "no title" };
-  if (body.title.length > 45) return { ok: false, why: `title is ${body.title.length} chars, over 45` };
-  if (typeof body.description !== "string" || body.description.length > 150) return { ok: false, why: "description over 150 chars" };
-  if (!Array.isArray(body.steps) || body.steps.length < 5) return { ok: false, why: `needs 5 steps, got ${body.steps?.length ?? 0}` };
-  if (!Array.isArray(body.sections) || body.sections.length < 3) return { ok: false, why: `needs 3 sections, got ${body.sections?.length ?? 0}` };
+  /*
+   * A field that is merely long gets trimmed; a field that is missing is a rejection.
+   *
+   * The first run of the procedural path produced a complete guide and was thrown away because the
+   * description ran to 158 characters. Losing an article over eight columns is the opposite of the
+   * instruction to keep publishing. A title or description that is too long is cut at a word boundary -
+   * the hard limits still apply, they are just enforced here instead of by refusal.
+   */
+  const clip = (s, n) => {
+    const t = String(s ?? "").replace(/\s+/g, " ").trim();
+    if (t.length <= n) return t;
+    const cut = t.slice(0, n);
+    const sp = cut.lastIndexOf(" ");
+    return (sp > n * 0.55 ? cut.slice(0, sp) : cut).replace(/[\s,;:—–-]+$/, "");
+  };
+  const normalize = (b) => {
+    b.title = clip(b.title, 45);
+    b.description = clip(b.description, 150);
+    return b;
+  };
+  body = normalize(body);
+
+  const checkShape = (b) => {
+    if (typeof b.title !== "string" || !b.title.trim()) return "no title";
+    if (b.title.length > 45) return `title is ${b.title.length} chars, over 45`;
+    if (typeof b.description !== "string" || b.description.length > 150) return "description over 150 chars";
+    if (!Array.isArray(b.steps) || b.steps.length < 5) return `needs 5 steps, got ${b.steps?.length ?? 0}`;
+    if (!Array.isArray(b.sections) || b.sections.length < 3) return `needs 3 sections, got ${b.sections?.length ?? 0}`;
+    return "";
+  };
+  const shapeProblem = checkShape(body);
+  if (shapeProblem) return { ok: false, why: shapeProblem };
 
   const allowed = new Set();
   for (const f of factSheet) for (const d of digitsIn(f.value)) allowed.add(d);
   for (const d of digitsIn(DAY)) allowed.add(d); /* the verification date is not a policy claim */
 
-  const prose = [
-    body.title, body.description, body.intro,
-    ...(body.sections ?? []).flatMap((s) => [s.h2, ...(s.paragraphs ?? [])]),
-    ...(body.steps ?? []).flatMap((s) => [s.action, s.detail]),
-  ].join(" ");
-  const stray = [...digitsIn(prose)].filter((d) => !allowed.has(d));
+  const proseOf = (b) =>
+    [
+      b.title, b.description, b.intro,
+      ...(b.sections ?? []).flatMap((s) => [s.h2, ...(s.paragraphs ?? [])]),
+      ...(b.steps ?? []).flatMap((s) => [s.action, s.detail]),
+    ].join(" ");
+
+  let stray = [...digitsIn(proseOf(body))].filter((d) => !allowed.has(d));
+
+  /*
+   * A procedural guide must contain no number at all, and a model writing "within 30 days" out of habit
+   * is the first thing to check. One correction pass - not a loop: if it cannot obey after being told,
+   * the topic is not worth publishing with numbers the source does not support.
+   */
+  if (stray.length && procedural) {
+    log(`  retry     : the procedural draft used ${stray.join(", ")} - asking again with no-number instruction`);
+    written = await writeOnce(
+      `Your previous draft contained the number(s) ${stray.join(", ")}. Rewrite it with NO digits anywhere - ` +
+        "describe timing and quantity in words only, or leave the detail out.",
+    );
+    if (written.ok === false && written.error) return { ok: false, why: written.error };
+    if (written.body) {
+      const problem = checkShape(written.body);
+      if (!problem) {
+        body = written.body;
+        stray = [...digitsIn(proseOf(body))].filter((d) => !allowed.has(d));
+      }
+    }
+  }
+
   if (stray.length) return { ok: false, why: `prose uses numbers not in the fact sheet: ${stray.join(", ")}` };
 
-  step(`gates ${topic.slug}`, true, "structure and every number traces to a quote");
+  step(`gates ${topic.slug}`, true, procedural ? "structure ok, procedural (no figures)" : "structure and every number traces to a quote");
 
   /* 3. assemble — the model never writes frontmatter */
   const fm = [
@@ -534,14 +619,19 @@ async function attempt(topic) {
     `unit: ${JSON.stringify(topic.unit)}`,
     `lastVerified: ${JSON.stringify(DAY)}`,
     `reviewBy: ${JSON.stringify(plusDays(DAY, 180))}`,
-    "figures:",
-    ...factSheet.flatMap((f) => [
-      `  - value: ${JSON.stringify(String(f.value))}`,
-      `    unit: ${JSON.stringify(String(f.unit ?? ""))}`,
-      `    period: ${JSON.stringify(String(f.period ?? ""))}`,
-      `    source: ${JSON.stringify(String(f.source ?? ""))}`,
-      `    retrieved: ${JSON.stringify(DAY)}`,
-    ]),
+    ...(factSheet.length
+      ? [
+          "figures:",
+          ...factSheet.flatMap((f) => [
+            `  - value: ${JSON.stringify(String(f.value))}`,
+            `    unit: ${JSON.stringify(String(f.unit ?? ""))}`,
+            `    period: ${JSON.stringify(String(f.period ?? ""))}`,
+            `    source: ${JSON.stringify(String(f.source ?? ""))}`,
+            `    retrieved: ${JSON.stringify(DAY)}`,
+          ]),
+        ]
+      : /* A bare `figures:` would be null, not an empty list, and the schema wants a list. */
+        ["figures: []"]),
     "steps:",
     ...(body.steps ?? []).flatMap((s) => [
       `  - action: ${JSON.stringify(String(s.action ?? "").trim())}`,

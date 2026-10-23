@@ -165,7 +165,6 @@ export const blog = defineCollection({
         }),
       )
       .default([]),
-
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
 
@@ -252,6 +251,18 @@ export const guide = defineCollection({
     /** When it must be re-checked: lastVerified + 180 days. Computed by the writer tool. */
     reviewBy: guideDate.optional(),
 
+    /**
+     * The figures, when the authority publishes any.
+     *
+     * This used to be `.min(1)`: a guide without a sourceable figure was rejected outright, which turned
+     * "the ministry has not published this fee" into "no article today". A procedural guide - what to
+     * bring, in what order, what goes wrong - is still worth publishing for a reader standing at a
+     * counter, and the alternative was a yellow card.
+     *
+     * What is NOT allowed is inventing the missing number. An empty array is an honest statement that
+     * the figure does not exist yet; the page says so in words, and the writer is still forbidden from
+     * putting any figure in the prose that is not in this array.
+     */
     figures: z
       .array(
         z.object({
@@ -262,7 +273,7 @@ export const guide = defineCollection({
           retrieved: guideDate,
         }),
       )
-      .min(1, "a guide with no verifiable figure does not get published"),
+      .default([]),
 
     /** Ordered actions, at least five. A guide is a procedure, not an essay. */
     steps: z

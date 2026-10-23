@@ -1,22 +1,18 @@
 {
-  "at": "2026-10-23T02:13:28.979Z",
+  "at": "2026-10-23T03:29:10.819Z",
   "route": "c",
-  "verdict": "NO-SUBJECT",
-  "article": null,
-  "seconds": 23,
+  "verdict": "PUBLISHED",
+  "article": "china-tax-residency-183-days",
+  "seconds": 159,
   "usage": {
-    "calls": 3,
+    "calls": 2,
     "failed": 0,
-    "usd": 0.0005
+    "usd": 0.0017000000000000001
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "china-tax-residency-183-days: no figure survived the quote check",
-    "foreigner-social-insurance: no figure survived the quote check (no JSON in the extraction reply)",
-    "convert-foreign-driving-licence: no figure survived the quote check (no JSON in the extraction reply)"
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
@@ -26,22 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "1 candidate(s)"
     },
     {
-      "name": "skipped china-tax-residency-183-days",
-      "ok": false,
-      "detail": "no figure survived the quote check"
+      "name": "grounding china-tax-residency-183-days",
+      "ok": true,
+      "detail": "procedural, no figures"
     },
     {
-      "name": "skipped foreigner-social-insurance",
-      "ok": false,
-      "detail": "no figure survived the quote check (no JSON in the extraction reply)"
+      "name": "gates china-tax-residency-183-days",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "skipped convert-foreign-driving-licence",
-      "ok": false,
-      "detail": "no figure survived the quote check (no JSON in the extraction reply)"
+      "name": "build china-tax-residency-183-days",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-tax-residency-183-days/"
     }
   ],
   "researchLog": [

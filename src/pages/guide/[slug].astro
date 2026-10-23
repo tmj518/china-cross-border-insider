@@ -65,36 +65,53 @@ const canonical = new URL(`/guide/${guide.id}/`, Astro.site ?? SITE.url).href;
       </header>
 
       <div class="prose">
-        <h2 id="costs">What it costs</h2>
-        <div class="table-responsive" style="overflow-x: auto; width: 100%;">
-          <table class="guide-costs">
-            <thead>
-              <tr>
-                <th scope="col">Figure</th>
-                <th scope="col">Period</th>
-                <th scope="col">Source</th>
-                <th scope="col">Checked</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                data.figures.map((f) => (
-                  <tr>
-                    <td>
-                      {f.value}
-                      {f.unit ? ` ${f.unit}` : ""}
-                    </td>
-                    <td>{f.period}</td>
-                    <td>{f.source}</td>
-                    <td>
-                      <time datetime={f.retrieved}>{f.retrieved}</time>
-                    </td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
+        {
+          data.figures.length > 0 ? (
+            <>
+              <h2 id="costs">What it costs</h2>
+              <div class="table-responsive" style="overflow-x: auto; width: 100%;">
+                <table class="guide-costs">
+                  <thead>
+                    <tr>
+                      <th scope="col">Figure</th>
+                      <th scope="col">Period</th>
+                      <th scope="col">Source</th>
+                      <th scope="col">Checked</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.figures.map((f) => (
+                      <tr>
+                        <td>
+                          {f.value}
+                          {f.unit ? ` ${f.unit}` : ""}
+                        </td>
+                        <td>{f.period}</td>
+                        <td>{f.source}</td>
+                        <td>
+                          <time datetime={f.retrieved}>{f.retrieved}</time>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          ) : (
+            /*
+             * A guide with no figures says so, in the place where the figures would be.
+             *
+             * The authority has not published the number, or has not published it anywhere this tool
+             * could read and quote. Either way the honest statement is about the absence - not a
+             * rounded estimate dressed as a rate, and not silence.
+             */
+            <p class="guide-nofigures">
+              <strong>No published figure yet.</strong> The authority does not publish this cost in a form
+              we could verify and quote, so this guide covers the procedure only: what to bring, in what
+              order, and where it goes wrong. We will add the figures the moment there is a source for them.
+            </p>
+          )
+        }
 
         <h2 id="steps">In order</h2>
         <ol class="guide-steps">

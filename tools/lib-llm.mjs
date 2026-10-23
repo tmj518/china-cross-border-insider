@@ -476,7 +476,7 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
          * the deltas. The ceiling goes to ten minutes for the same reason - a large model writing a long article is not
          * a hung request.
          */
-        signal: AbortSignal.timeout(600000),
+        signal: AbortSignal.timeout(180000),
         headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
         body: JSON.stringify({ ...body, stream: true }),
       });
@@ -586,23 +586,34 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
       const ms = Date.now() - started;
       lastError = `${e.cause?.code ?? e.name ?? "error"}: ${e.message}`;
       meter({ at: new Date().toISOString(), role, provider: providerName, keyName: cred.name, model: modelFor(p, role), ok: false, ms, error: lastError, attempt });
+      /*
+       * A timeout does not get a second attempt on the same provider.
+       *
+       * The 2026-10-23 run spent 731 seconds on three attempts that each ran into the ceiling, and then
+       * reported WRITE-FAILED while a second provider sat there with a valid key. Retrying a timeout on
+       * the same route is three chances to wait the same wall again; the useful next move is the other
+       * provider, which the block after this loop already does.
+       */
+      if (/TimeoutError|timed out|ETIMEDOUT|AbortError/i.test(lastError)) break;
       await sleep(2000 * (attempt + 1));
     }
   }
   /*
-   * A provider that cannot be reached is not a failure of the pipeline.
+   * A provider that cannot be reached OR is refusing work is not a failure of the pipeline.
    *
-   * Every attempt above went to one provider, because providerFor() answers once. That is right for an API error -
-   * a 400 will be a 400 on the next call too - and wrong for a network error, which is a property of the route
-   * rather than of the request. On 2026-10-17 a run died with "ETIMEDOUT: fetch failed" against the Ark endpoint
-   * while a second provider sat there with a valid key, unused.
+   * Every attempt above went to one provider, because providerFor() answers once. That is right for an
+   * API error - a 400 will be a 400 on the next call too - and wrong for a route problem or a rate
+   * limit, both of which are properties of the moment rather than of the request.
    *
-   * So after exhausting the attempts on one provider, if the last thing that happened was a network error, the
-   * other provider gets one attempt. The marker in the comment below is what a test looks for.
+   * The original test only covered network errors, so a 429 - which is the most likely failure when two
+   * pipelines share one endpoint, and the one an operator most wants covered - exhausted its retries and
+   * then gave up with a second provider unused. Rate limits, gateway errors and timeouts now switch
+   * providers too.
    */
-  const networkFailure = /ETIMEDOUT|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN|UND_ERR|fetch failed|network/i.test(lastError);
+  const switchableFailure =
+    /ETIMEDOUT|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN|UND_ERR|fetch failed|network|Timeou?tError|AbortError|timed out|HTTP (?:429|500|502|503|504)|rate limit|too many requests/i.test(lastError);
   const another = providerFor(role, providerName);
-  if (networkFailure && another && another !== providerName) {
+  if (switchableFailure && another && another !== providerName) {
     meter({
       at: new Date().toISOString(),
       role,
