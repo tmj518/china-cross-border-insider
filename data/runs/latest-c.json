@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-23T03:34:10.222Z",
+  "at": "2026-10-23T04:55:28.928Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "foreigner-social-insurance",
-  "seconds": 135,
+  "article": "convert-foreign-driving-licence",
+  "seconds": 76,
   "usage": {
-    "calls": 3,
-    "failed": 0,
-    "usd": 0.0011
+    "calls": 2,
+    "failed": 1,
+    "usd": 0.0008
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "7 candidate(s)"
     },
     {
-      "name": "grounding foreigner-social-insurance",
+      "name": "grounding convert-foreign-driving-licence",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates foreigner-social-insurance",
+      "name": "gates convert-foreign-driving-licence",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build foreigner-social-insurance",
+      "name": "build convert-foreign-driving-licence",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/foreigner-social-insurance/"
+      "detail": "/guide/convert-foreign-driving-licence/"
     }
   ],
   "researchLog": [
