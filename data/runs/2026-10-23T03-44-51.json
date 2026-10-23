@@ -1,0 +1,137 @@
+{
+  "at": "2026-10-23T03:32:04.120Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "18 previous run(s), last 2026-10-22T01:37:04.848Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "12 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed eu-trade-defence-2025-retroactive-duty-risk, 6 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-trade-defence-2025-retroactive-duty-risk.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-trade-defence-2025-retroactive-duty-risk.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
+    }
+  ],
+  "verdict": "PUBLISHED",
+  "reasons": [],
+  "article": "eu-trade-defence-2025-retroactive-duty-risk",
+  "commit": null,
+  "usage": {
+    "calls": 19,
+    "failed": 12,
+    "usd": 0.025,
+    "promptTokens": 55821,
+    "completionTokens": 14134
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 11,
+    "supply-chain": 0,
+    "platforms": 1
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  proposing a subject from 5 archived document(s)...",
+    "  stream      : the endpoint answered as SSE, 1014 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4217 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1108 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4600 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1015 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4226 characters but no document structure, trying the next one",
+    "  spent   : ~0.0097  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug already published: eu-goes-safeguard-tariff-rate-quota-2026 - retrying with another subject",
+    "  slug    : eu-goes-safeguard-tariff-rate-quota-2026",
+    "  keyword : EU safeguard grain-oriented electrical steel tariff-rate quota 2026",
+    "  duplicate check: score 99 against eu-goes-safeguard-tariff-rate-quota-2026",
+    "      the slug eu-goes-safeguard-tariff-rate-quota-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
+    "  stream      : the endpoint answered as SSE, 902 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3251 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 888 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3156 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1151 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3684 characters but no document structure, trying the next one",
+    "  spent   : ~0.0182  (ceiling 0.40)",
+    "  model   : volces/ep-20261019161601-9k6dn",
+    "  feasible: true",
+    "  slug    : eu-trade-defence-2025-retroactive-duty-risk",
+    "  keyword : EU retroactive anti-dumping duties 2025 importer exposure",
+    "  duplicate check: score 0",
+    "  slug    : eu-trade-defence-2025-retroactive-duty-risk",
+    "  keyword : EU retroactive anti-dumping duties 2025 importer exposure",
+    "  category: trade-policy",
+    "  figures : 6",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0182",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 768
+}

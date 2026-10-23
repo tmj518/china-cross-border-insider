@@ -116,6 +116,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 
 > Also read: [EU imposes provisional safeguard measures on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026/)
 
+> Also read: [EU trade defence stayed high in 2025, and three cases carried retroactive duties](/blog/eu-trade-defence-2025-retroactive-duty-risk/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.

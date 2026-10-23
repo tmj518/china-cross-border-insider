@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -669,178 +669,6 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-directorate-general-for-trade-and-econom-48",
-      "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-      "figures": [
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
-          "value": "nine months",
-          "unit": "normal period within which a safeguard investigation must be completed",
-          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
-          "value": "11 months",
-          "unit": "maximum safeguard investigation period in exceptional circumstances",
-          "period": "Applicable to the safeguard investigation launched in March 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
-          "value": "15",
-          "unit": "minimum EU Member States required to vote in favour of definitive measures",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
-          "value": "65%",
-          "unit": "minimum share of the EU population represented by Member States voting in favour",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "nine months",
-          "unit": "normal period within which a safeguard investigation must be completed",
-          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "11 months",
-          "unit": "maximum safeguard investigation period in exceptional circumstances",
-          "period": "Applicable to the safeguard investigation launched in March 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "15",
-          "unit": "minimum EU Member States required to vote in favour of definitive measures",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "65%",
-          "unit": "minimum share of the EU population represented by Member States voting in favour",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        }
-      ],
-      "articleNums": [
-        48
-      ],
-      "articleSlugs": [
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "mofcom-trade-remedy-bureau-notice-2026-58",
-      "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-      "figures": [
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-          "articleNum": 44,
-          "value": "55%",
-          "unit": "additional tariff on top of the applicable tariff rate",
-          "period": "from 00:00 on 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-          "articleNum": 44,
-          "value": "100%",
-          "unit": "share of the country-specific quota quantity reached",
-          "period": "reached on 29 September 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-          "articleNum": 44,
-          "value": "第 3 日",
-          "unit": "day count after the 100% trigger before the surcharge starts",
-          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-          "articleNum": 44,
-          "value": "2026-09-30",
-          "unit": "date the execution notice was issued",
-          "period": "notice date",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "55%",
-          "unit": "additional tariff on top of the applicable tariff rate",
-          "period": "from 00:00 on 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "100%",
-          "unit": "share of the country-specific quota quantity reached",
-          "period": "reached on 29 September 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "第 3 日",
-          "unit": "day count after the 100% trigger before the surcharge starts",
-          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "2026-09-30",
-          "unit": "date the execution notice was issued",
-          "period": "notice date",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        }
-      ],
-      "articleNums": [
-        44
-      ],
-      "articleSlugs": [
-        "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-        "china-brazil-beef-safeguard-55-percent-tariff-october-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "ministry-of-commerce-of-china",
       "source": "Ministry of Commerce of China",
       "figures": [
@@ -993,70 +821,69 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-directorate-general-for-trade-and-econom-48",
-      "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+      "id": "european-commission-2025-annual-trade-defence-report-news-re",
+      "source": "European Commission, 2025 Annual Trade Defence Report news release",
       "figures": [
         {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "32",
+          "unit": "new trade-defence investigations initiated",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
           "value": "26",
-          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
+          "unit": "definitive trade-defence measures imposed",
           "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
         },
         {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
           "value": "232",
-          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "End of 2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
+          "unit": "trade-defence measures in place",
+          "period": "end of 2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
         },
         {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-          "articleNum": 48,
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "220",
+          "unit": "definitive trade-defence measures in place",
+          "period": "end of 2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "27",
+          "unit": "anti-dumping cases in which provisional duties were imposed",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
           "value": "three",
-          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
+          "unit": "cases in which measures were applied retroactively",
           "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "26",
-          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "232",
-          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "End of 2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "three",
-          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
-          "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
         }
       ],
       "articleNums": [
-        48
+        51
       ],
       "articleSlugs": [
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-23",
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
+        "eu-trade-defence-2025-retroactive-duty-risk"
       ],
       "modelOutput": false
     },
@@ -1737,6 +1564,55 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-directorate-general-for-trade-and-econom-48",
+      "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "nine months",
+          "unit": "normal period within which a safeguard investigation must be completed",
+          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "11 months",
+          "unit": "maximum safeguard investigation period in exceptional circumstances",
+          "period": "Applicable to the safeguard investigation launched in March 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "15",
+          "unit": "minimum EU Member States required to vote in favour of definitive measures",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "65%",
+          "unit": "minimum share of the EU population represented by Member States voting in favour",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        48
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
       "figures": [
@@ -1833,6 +1709,55 @@
       ],
       "articleSlugs": [
         "china-export-tax-rebate-removal-battery-solar"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "mofcom-trade-remedy-bureau-notice-2026-58",
+      "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "55%",
+          "unit": "additional tariff on top of the applicable tariff rate",
+          "period": "from 00:00 on 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "100%",
+          "unit": "share of the country-specific quota quantity reached",
+          "period": "reached on 29 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "第 3 日",
+          "unit": "day count after the 100% trigger before the surcharge starts",
+          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "2026-09-30",
+          "unit": "date the execution notice was issued",
+          "period": "notice date",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        44
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-safeguard-55-percent-tariff-october-2026"
       ],
       "modelOutput": false
     },
@@ -2113,6 +2038,46 @@
       ],
       "articleSlugs": [
         "china-2026-export-duty-wrought-metals"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-directorate-general-for-trade-and-econom-48",
+      "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "26",
+          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "232",
+          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "End of 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "three",
+          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        48
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
       ],
       "modelOutput": false
     },
@@ -3177,38 +3142,6 @@
       "articleSlugs": [
         "china-export-rebate-vs-export-duty-2026",
         "china-export-tax-rebate-removal-battery-solar"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "mofcom-announcement-2025-no-87-cited-in-notice-2026",
-      "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
-      "figures": [
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-          "articleNum": 44,
-          "value": "2025 年第 87 号",
-          "unit": "instrument number setting the safeguard quota and surcharge rule",
-          "period": "in force for 2026 safeguard execution",
-          "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "2025 年第 87 号",
-          "unit": "instrument number setting the safeguard quota and surcharge rule",
-          "period": "in force for 2026 safeguard execution",
-          "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        }
-      ],
-      "articleNums": [
-        44
-      ],
-      "articleSlugs": [
-        "china-brazil-beef-safeguard-55-percent-tariff-october-2026-2026-10-23",
-        "china-brazil-beef-safeguard-55-percent-tariff-october-2026"
       ],
       "modelOutput": false
     },

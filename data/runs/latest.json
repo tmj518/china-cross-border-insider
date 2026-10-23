@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-22T01:37:04.848Z",
+  "at": "2026-10-23T03:32:04.120Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "17 previous run(s), last 2026-10-21T06:22:15.467Z (PUBLISHED)"
+      "detail": "18 previous run(s), last 2026-10-22T01:37:04.848Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
@@ -28,7 +28,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026, 6 verified figure(s)"
+      "detail": "proposed eu-trade-defence-2025-retroactive-duty-risk, 6 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -38,7 +38,7 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026.md"
+      "detail": "draft at /data/drafts/eu-trade-defence-2025-retroactive-duty-risk.md"
     },
     {
       "name": "reviewer",
@@ -53,7 +53,7 @@
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026.md"
+      "detail": "staged at src/content/blog/eu-trade-defence-2025-retroactive-duty-risk.md"
     },
     {
       "name": "registry",
@@ -73,14 +73,14 @@
   ],
   "verdict": "PUBLISHED",
   "reasons": [],
-  "article": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+  "article": "eu-trade-defence-2025-retroactive-duty-risk",
   "commit": null,
   "usage": {
-    "calls": 4,
-    "failed": 0,
-    "usd": 0.0143,
-    "promptTokens": 34071,
-    "completionTokens": 37735
+    "calls": 19,
+    "failed": 12,
+    "usd": 0.025,
+    "promptTokens": 55821,
+    "completionTokens": 14134
   },
   "route": "script",
   "categoryActivity": {
@@ -92,37 +92,37 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
-    "  ok    eu-trade-news               96923B  archived",
-    "  ok    trade-remedy-cases          62382B  archived",
-    "  skip  tariff-commission            1929B  not usable (recorded anyway)",
-    "  ok    ministry-of-finance         20830B  archived",
-    "  ok    mofcom                     161774B  archived",
-    "  ok    eu-trade-news-article       75770B  article archived",
-    "  ok    eu-trade-news-article       73402B  article archived",
-    "  ok    eu-trade-news-article       77099B  article archived",
-    "  ok    eu-trade-news-article       76016B  article archived",
-    "  ok    trade-remedy-cases-article    39990B  article archived",
-    "  ok    trade-remedy-cases-article    24436B  article archived",
-    "  ok    trade-remedy-cases-article    19137B  article archived",
-    "  ok    trade-remedy-cases-article    19128B  article archived",
-    "  articles : 8 followed from the listings",
-    "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 5 archived document(s)...",
-    "  stream      : the endpoint answered as SSE, 139 delta(s) joined",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 500 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 1130 delta(s) joined",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4112 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 1159 delta(s) joined",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4282 characters but no document structure, trying the next one",
-    "  spent   : ~0.0098  (ceiling 0.40)",
+    "  stream      : the endpoint answered as SSE, 1014 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4217 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1108 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4600 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1015 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4226 characters but no document structure, trying the next one",
+    "  spent   : ~0.0097  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug already published: eu-goes-safeguard-tariff-rate-quota-2026 - retrying with another subject",
+    "  slug    : eu-goes-safeguard-tariff-rate-quota-2026",
+    "  keyword : EU safeguard grain-oriented electrical steel tariff-rate quota 2026",
+    "  duplicate check: score 99 against eu-goes-safeguard-tariff-rate-quota-2026",
+    "      the slug eu-goes-safeguard-tariff-rate-quota-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
+    "  stream      : the endpoint answered as SSE, 902 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3251 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 888 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3156 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1151 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3684 characters but no document structure, trying the next one",
+    "  spent   : ~0.0182  (ceiling 0.40)",
     "  model   : volces/ep-20261019161601-9k6dn",
     "  feasible: true",
-    "  slug    : eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
-    "  keyword : EU grain-oriented electrical steel GOES safeguard tariff-rate quota price threshold 2026",
+    "  slug    : eu-trade-defence-2025-retroactive-duty-risk",
+    "  keyword : EU retroactive anti-dumping duties 2025 importer exposure",
     "  duplicate check: score 0",
-    "  slug    : eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
-    "  keyword : EU grain-oriented electrical steel GOES safeguard tariff-rate quota price threshold 2026",
+    "  slug    : eu-trade-defence-2025-retroactive-duty-risk",
+    "  keyword : EU retroactive anti-dumping duties 2025 importer exposure",
     "  category: trade-policy",
     "  figures : 6",
     "  evidence check:",
@@ -130,8 +130,8 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0098",
+    "  spend this run: ~$0.0182",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 1185
+  "seconds": 768
 }

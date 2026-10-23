@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-22T01:37:04.848Z",
+  "lastRun": "2026-10-23T03:32:04.120Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
-  "runs": 18,
-  "published": 18,
+  "lastArticle": "eu-trade-defence-2025-retroactive-duty-risk",
+  "runs": 19,
+  "published": 19,
   "lastUsage": {
-    "calls": 4,
-    "failed": 0,
-    "usd": 0.0143,
-    "promptTokens": 34071,
-    "completionTokens": 37735
+    "calls": 19,
+    "failed": 12,
+    "usd": 0.025,
+    "promptTokens": 55821,
+    "completionTokens": 14134
   }
 }
