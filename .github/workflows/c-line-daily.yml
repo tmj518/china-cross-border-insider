@@ -112,7 +112,7 @@ jobs:
           FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
           FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
           FEISHU_APP_TOKEN: ${{ secrets.FEISHU_APP_TOKEN }}
-        run: node tools/content-ledger.mjs --with-gates
+        run: node tools/content-ledger.mjs --with-gates --prune
 
       - name: Report the verdict
         if: always()

@@ -17,7 +17,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
-import { ensureTable, tenantToken, upsertRows } from "./lib/feishu.mjs";
+import { api, ensureTable, tenantToken, upsertRows } from "./lib/feishu.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const BLOG = join(ROOT, "src", "content", "blog");
@@ -196,4 +196,35 @@ if (!token) process.exit(1);
 const tableId = await ensureTable({ token, appToken: APP_TOKEN, name: TABLE, fields: COLUMNS, primaryName: "编号" });
 const res = await upsertRows({ token, appToken: APP_TOKEN, tableId, keyField: "编号", rows: records });
 console.log(`\n  created ${res.created}, updated ${res.updated}, failed ${res.failed}`);
+
+/*
+ * Prune rows whose piece no longer exists.
+ *
+ * An upsert alone leaves a row for every article that was ever published, including the ones the
+ * duplicate cleaner removes, so the ledger keeps reporting a page that returns 404. The corpus is the
+ * authority: a key that is not in it is not a published piece. Deleting by key is safe because the row
+ * is recreated if the file comes back.
+ */
+if (args.includes("--prune")) {
+  const existing = await api(`/bitable/v1/apps/${APP_TOKEN}/tables/${tableId}/records?page_size=500`, { token });
+  const live = new Set(records.map((r) => r.编号));
+  const dead = [];
+  for (const rec of existing.items ?? []) {
+    const v = rec.fields?.["编号"];
+    const key = Array.isArray(v) ? v.map((x) => x.text ?? x).join("") : String(v ?? "");
+    if (key && !live.has(key)) dead.push({ id: rec.record_id, key });
+  }
+  let removed = 0;
+  for (const d of dead) {
+    try {
+      await api(`/bitable/v1/apps/${APP_TOKEN}/tables/${tableId}/records/${d.id}`, { method: "DELETE", token });
+      removed++;
+      console.log(`  pruned ${d.key}`);
+    } catch (e) {
+      console.log(`  prune ${d.key}: FAILED - ${String(e.message).slice(0, 80)}`);
+    }
+  }
+  console.log(`  pruned ${removed} of ${dead.length} stale row(s)`);
+}
+
 process.exit(res.failed ? 1 : 0);
