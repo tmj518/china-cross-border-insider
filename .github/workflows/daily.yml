@@ -495,6 +495,17 @@ jobs:
       # Optional in exactly the same way: no credentials means exit 2 and a named reason, never a
       # failed run over a reporting channel.
       #
+    #
+    # The agent route writes data/tmp/agent-report.json and, on the fallback path, never reaches the
+    # line that copies it into data/runs - so its runs were invisible to the run ledger: nine agent
+    # runs over three weeks produced no rows. This copies the report in when one is not already there.
+    # It reads and writes files the agent route already produced; it changes none of its behaviour.
+    #
+    - name: Bridge the agent report into the run log
+      if: always()
+      continue-on-error: true
+      run: |
+        node -e "const fs=require('fs'),p=require('path');const src='data/tmp/agent-report.json';if(!fs.existsSync(src))process.exit(0);const r=JSON.parse(fs.readFileSync(src,'utf8'));if(!r||!r.at)process.exit(0);const stamp=String(r.at).replace(/[:.]/g,'-').slice(0,19);const out='data/runs/agent-'+stamp+'.json';if(fs.existsSync(out)){console.log('already recorded:',out);process.exit(0)}fs.mkdirSync('data/runs',{recursive:true});fs.writeFileSync(out,JSON.stringify({route:'agent',...r},null,2));console.log('recorded:',out)"
       - name: Record the run in the run ledger
         if: always()
         continue-on-error: true
@@ -555,6 +566,9 @@ jobs:
           # notifier can only say "no report", which names an internal file rather than the thing that failed.
           ROUTE: ${{ github.event.inputs.route || '' }}
           FAILED_STEP: ${{ job.status == 'failure' && 'the step shown in red above' || '' }}
+          # The pipeline step's own outcome. A step that succeeded and wrote no report is a no-op -
+          # today already published - not a failure, and the two must not draw the same red card.
+          PIPELINE_OUTCOME: ${{ steps.run.outcome }}
         run: |
           # Scheduled runs carry no inputs, so the route comes from the clock.
           if [ -z "$ROUTE" ]; then

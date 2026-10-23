@@ -135,7 +135,25 @@ const failedStep = (process.env.FAILED_STEP ?? "").trim();
  */
 const routeTag = ["agent", "script", "c"].includes(routeFromEnv) ? routeFromEnv : "unknown";
 
-if (!report) {
+/*
+ * A no-op is not a failure.
+ *
+ * When the backup cron fires after the primary one has already published, the pipeline stops on its
+ * idempotency guard and writes no report - so this branch used to print a red "STOPPED BEFORE
+ * PUBLISHING" card for a run that did exactly the right thing. Six red cards a week for correct
+ * behaviour is how an operator learns to ignore red cards, which is the one failure a notification
+ * channel must never have. The step's own outcome says which case this is.
+ */
+const pipelineFinishedCleanly = (process.env.PIPELINE_OUTCOME ?? "").trim().toLowerCase() === "success";
+
+if (!report && pipelineFinishedCleanly) {
+  lines.push(`🟡 Landed Math — NO-OP (already published today)   [${routeTag}]`);
+  lines.push("");
+  lines.push("The pipeline ran, found that today already has an article, and stopped. Nothing is wrong:");
+  lines.push("this is the backup cron doing its job after the primary one had already done the work.");
+  lines.push("");
+  lines.push("No article, no cost, no action.");
+} else if (!report) {
   lines.push(`🔴 Landed Math — STOPPED BEFORE PUBLISHING   [${routeTag}]`);
   lines.push("");
   /*
