@@ -450,6 +450,128 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-2025-annual-trade-defence-report-news-re",
+      "source": "European Commission, 2025 Annual Trade Defence Report news release",
+      "figures": [
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+          "articleNum": 51,
+          "value": "32",
+          "unit": "new trade-defence investigations initiated",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+          "articleNum": 51,
+          "value": "26",
+          "unit": "definitive trade-defence measures imposed",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+          "articleNum": 51,
+          "value": "232",
+          "unit": "trade-defence measures in place",
+          "period": "end of 2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+          "articleNum": 51,
+          "value": "220",
+          "unit": "definitive trade-defence measures in place",
+          "period": "end of 2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+          "articleNum": 51,
+          "value": "27",
+          "unit": "anti-dumping cases in which provisional duties were imposed",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+          "articleNum": 51,
+          "value": "three",
+          "unit": "cases in which measures were applied retroactively",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "32",
+          "unit": "new trade-defence investigations initiated",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "26",
+          "unit": "definitive trade-defence measures imposed",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "232",
+          "unit": "trade-defence measures in place",
+          "period": "end of 2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "220",
+          "unit": "definitive trade-defence measures in place",
+          "period": "end of 2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "27",
+          "unit": "anti-dumping cases in which provisional duties were imposed",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        },
+        {
+          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
+          "articleNum": 51,
+          "value": "three",
+          "unit": "cases in which measures were applied retroactively",
+          "period": "2025",
+          "source": "European Commission, 2025 Annual Trade Defence Report news release",
+          "retrieved": "2026-10-23"
+        }
+      ],
+      "articleNums": [
+        51
+      ],
+      "articleSlugs": [
+        "eu-trade-defence-2025-retroactive-duty-risk-2026-10-25",
+        "eu-trade-defence-2025-retroactive-duty-risk"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "european-commission-sixth-annual-fdi-screening-report",
       "source": "European Commission, sixth annual FDI screening report",
       "figures": [
@@ -971,73 +1093,6 @@
       "articleSlugs": [
         "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-24",
         "eu-goes-provisional-safeguard-trq-price-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-2025-annual-trade-defence-report-news-re",
-      "source": "European Commission, 2025 Annual Trade Defence Report news release",
-      "figures": [
-        {
-          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
-          "articleNum": 51,
-          "value": "32",
-          "unit": "new trade-defence investigations initiated",
-          "period": "2025",
-          "source": "European Commission, 2025 Annual Trade Defence Report news release",
-          "retrieved": "2026-10-23"
-        },
-        {
-          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
-          "articleNum": 51,
-          "value": "26",
-          "unit": "definitive trade-defence measures imposed",
-          "period": "2025",
-          "source": "European Commission, 2025 Annual Trade Defence Report news release",
-          "retrieved": "2026-10-23"
-        },
-        {
-          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
-          "articleNum": 51,
-          "value": "232",
-          "unit": "trade-defence measures in place",
-          "period": "end of 2025",
-          "source": "European Commission, 2025 Annual Trade Defence Report news release",
-          "retrieved": "2026-10-23"
-        },
-        {
-          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
-          "articleNum": 51,
-          "value": "220",
-          "unit": "definitive trade-defence measures in place",
-          "period": "end of 2025",
-          "source": "European Commission, 2025 Annual Trade Defence Report news release",
-          "retrieved": "2026-10-23"
-        },
-        {
-          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
-          "articleNum": 51,
-          "value": "27",
-          "unit": "anti-dumping cases in which provisional duties were imposed",
-          "period": "2025",
-          "source": "European Commission, 2025 Annual Trade Defence Report news release",
-          "retrieved": "2026-10-23"
-        },
-        {
-          "articleSlug": "eu-trade-defence-2025-retroactive-duty-risk",
-          "articleNum": 51,
-          "value": "three",
-          "unit": "cases in which measures were applied retroactively",
-          "period": "2025",
-          "source": "European Commission, 2025 Annual Trade Defence Report news release",
-          "retrieved": "2026-10-23"
-        }
-      ],
-      "articleNums": [
-        51
-      ],
-      "articleSlugs": [
-        "eu-trade-defence-2025-retroactive-duty-risk"
       ],
       "modelOutput": false
     },
