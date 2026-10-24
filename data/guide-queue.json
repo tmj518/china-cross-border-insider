@@ -336,7 +336,7 @@
       "unit": "one application",
       "title": "China Permanent Residence: What the Route Requires",
       "query": "china permanent residence green card requirements",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.nia.gov.cn/",
         "https://en.nia.gov.cn/"
@@ -355,7 +355,8 @@
       ],
       "avoid": [
         "Do not state an income threshold, an investment amount or a processing time unless the fact sheet contains it."
-      ]
+      ],
+      "doneAt": "2026-10-24"
     },
     {
       "slug": "work-permit-notification",

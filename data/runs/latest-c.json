@@ -1,18 +1,21 @@
 {
-  "at": "2026-10-23T12:40:27.959Z",
+  "at": "2026-10-24T12:02:46.838Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "relocation-cost-per-cubic-metre",
-  "seconds": 97,
+  "article": "permanent-residence-application",
+  "seconds": 85,
   "usage": {
-    "calls": 2,
-    "failed": 0,
-    "usd": 0.0014
+    "calls": 5,
+    "failed": 4,
+    "usd": 0.001
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "cost-to-hire-foreign-employee: model failed: ETIMEDOUT: fetch failed",
+    "foreigner-accommodation-registration: model failed: ETIMEDOUT: fetch failed"
+  ],
   "steps": [
     {
       "name": "credentials",
@@ -22,27 +25,47 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding relocation-cost-per-cubic-metre",
+      "name": "grounding cost-to-hire-foreign-employee",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates relocation-cost-per-cubic-metre",
+      "name": "skipped cost-to-hire-foreign-employee",
+      "ok": false,
+      "detail": "model failed: ETIMEDOUT: fetch failed"
+    },
+    {
+      "name": "grounding foreigner-accommodation-registration",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "skipped foreigner-accommodation-registration",
+      "ok": false,
+      "detail": "model failed: ETIMEDOUT: fetch failed"
+    },
+    {
+      "name": "grounding permanent-residence-application",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates permanent-residence-application",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build relocation-cost-per-cubic-metre",
+      "name": "build permanent-residence-application",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/relocation-cost-per-cubic-metre/"
+      "detail": "/guide/permanent-residence-application/"
     }
   ],
   "researchLog": [
