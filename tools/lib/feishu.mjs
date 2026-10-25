@@ -121,10 +121,33 @@ export async function ensureTable({ token, appToken, name, fields, primaryName }
 export async function upsertRows({ token, appToken, tableId, keyField, rows }, log = console.log) {
   const existing = await api(`/bitable/v1/apps/${appToken}/tables/${tableId}/records?page_size=500`, { token });
   const byKey = new Map();
+  const extras = [];
   for (const rec of existing.items ?? []) {
     const v = rec.fields?.[keyField];
     const key = Array.isArray(v) ? v.map((x) => x.text ?? x).join("") : String(v ?? "");
-    if (key) byKey.set(key, rec.record_id);
+    if (!key) continue;
+    /*
+     * A key that appears twice is a table that will never agree with itself.
+     *
+     * The map keeps one record per key, so the second copy is never touched by an upsert and sits there
+     * showing stale figures - 内容台账 had exactly one such pair (blog:eu-trade-defence-...) from a piece
+     * that was recorded twice. Extra copies are deleted in the same pass that upserts, which makes the
+     * table self-healing rather than merely append-safe.
+     */
+    if (byKey.has(key)) extras.push(rec.record_id);
+    else byKey.set(key, rec.record_id);
+  }
+  if (extras.length) {
+    let dropped = 0;
+    for (const id of extras) {
+      try {
+        await api(`/bitable/v1/apps/${appToken}/tables/${tableId}/records/${id}`, { method: "DELETE", token });
+        dropped++;
+      } catch (e) {
+        log(`  duplicate ${id}: could not delete - ${String(e.message).slice(0, 70)}`);
+      }
+    }
+    log(`  duplicates: removed ${dropped} of ${extras.length} extra record(s) sharing a key`);
   }
   log(`  existing: ${byKey.size}`);
 
