@@ -1,21 +1,18 @@
 {
-  "at": "2026-10-24T12:02:46.838Z",
+  "at": "2026-10-25T12:37:02.327Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "permanent-residence-application",
-  "seconds": 85,
+  "article": "cost-to-hire-foreign-employee",
+  "seconds": 102,
   "usage": {
-    "calls": 5,
-    "failed": 4,
-    "usd": 0.001
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0017
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "cost-to-hire-foreign-employee: model failed: ETIMEDOUT: fetch failed",
-    "foreigner-accommodation-registration: model failed: ETIMEDOUT: fetch failed"
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
@@ -25,7 +22,7 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "4 candidate(s)"
     },
     {
       "name": "grounding cost-to-hire-foreign-employee",
@@ -33,39 +30,19 @@
       "detail": "procedural, no figures"
     },
     {
-      "name": "skipped cost-to-hire-foreign-employee",
-      "ok": false,
-      "detail": "model failed: ETIMEDOUT: fetch failed"
-    },
-    {
-      "name": "grounding foreigner-accommodation-registration",
-      "ok": true,
-      "detail": "procedural, no figures"
-    },
-    {
-      "name": "skipped foreigner-accommodation-registration",
-      "ok": false,
-      "detail": "model failed: ETIMEDOUT: fetch failed"
-    },
-    {
-      "name": "grounding permanent-residence-application",
-      "ok": true,
-      "detail": "procedural, no figures"
-    },
-    {
-      "name": "gates permanent-residence-application",
+      "name": "gates cost-to-hire-foreign-employee",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build permanent-residence-application",
+      "name": "build cost-to-hire-foreign-employee",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/permanent-residence-application/"
+      "detail": "/guide/cost-to-hire-foreign-employee/"
     }
   ],
   "researchLog": [

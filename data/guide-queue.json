@@ -237,7 +237,7 @@
       "unit": "one employee per month",
       "title": "What It Costs to Employ a Foreigner in China",
       "query": "cost to hire foreign employee china",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "http://www.mohrss.gov.cn/",
         "https://www.chinatax.gov.cn/"
@@ -257,7 +257,8 @@
       ],
       "avoid": [
         "Do not state a salary figure: it is the employer's decision, not a published rate."
-      ]
+      ],
+      "doneAt": "2026-10-25"
     },
     {
       "slug": "visa-extension-inside-china",
