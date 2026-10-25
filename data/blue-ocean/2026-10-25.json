@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T06:12:46.357Z",
+  "at": "2026-10-25T16:22:56.277Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -15,6 +15,20 @@
   "keywords": [],
   "topSeen": [
     {
+      "query": "china housing property mortgage subsidy developers policy site:wsj.com",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "scfi",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 71.5
+    },
+    {
       "query": "site.stats.gov.cn \"2026年9月份\" \"5.0%\"",
       "impressions": 2,
       "clicks": 0,
@@ -22,25 +36,18 @@
       "position": 4.5
     },
     {
-      "query": "china mortgage subsidy",
+      "query": "ccfi",
       "impressions": 1,
       "clicks": 0,
       "ctr": 0,
-      "position": 99
+      "position": 93
     },
     {
-      "query": "landed cost calculator",
+      "query": "china housing property mortgage subsidy developers policy site:bloomberg.com",
       "impressions": 1,
       "clicks": 0,
       "ctr": 0,
-      "position": 89
-    },
-    {
-      "query": "section 301 tariff ustr exclusion -site:facebook.com -site:instagram.com -site:linkedin.com -site:x.com -site:twitter.com -site:youtube.com -site:tiktok.com -site:pinterest.com -site:reddit.com -site:threads.com effective or increase or list or electronics or review",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 20
+      "position": 1
     }
   ]
 }
