@@ -220,6 +220,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [EU safeguard tariff-rate quotas hit grain-oriented electrical steel from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/)
 
+> Also read: [China's emergency procurement rules start 1 October 2026: a filing, not an approval, and 40% prepayment](/blog/china-emergency-procurement-rules-imported-goods-october-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your
