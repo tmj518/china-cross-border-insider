@@ -147,13 +147,22 @@ const routeTag = ["agent", "script", "c"].includes(routeFromEnv) ? routeFromEnv 
 const pipelineFinishedCleanly = (process.env.PIPELINE_OUTCOME ?? "").trim().toLowerCase() === "success";
 
 if (!report && pipelineFinishedCleanly) {
-  lines.push(`🟡 Landed Math — NO-OP (already published today)   [${routeTag}]`);
-  lines.push("");
-  lines.push("The pipeline ran, found that today already has an article, and stopped. Nothing is wrong:");
-  lines.push("this is the backup cron doing its job after the primary one had already done the work.");
-  lines.push("");
-  lines.push("No article, no cost, no action.");
-} else if (!report) {
+  /*
+   * A no-op sends nothing at all.
+   *
+   * The first version drew a yellow "NO-OP (already published today)" card, which was better than the
+   * red one it replaced and still wrong: with four crons, two of them are backups, so a normal day
+   * produced up to two cards saying nothing happened. On 2026-10-26 three of them arrived in a row
+   * while the GA4 reader was being tested, which is exactly the shape of a channel an operator learns
+   * to swipe away - and a swiped channel is how a real failure goes unread for a week.
+   *
+   * The run is already recorded: the run ledger writes a row with its verdict and cost, and the job
+   * summary carries it too. A message is for things that need a person, and this needs nobody.
+   */
+  console.log("NOTIFY: no-op (already published today) - nothing to send");
+  process.exit(0);
+}
+if (!report) {
   lines.push(`🔴 Landed Math — STOPPED BEFORE PUBLISHING   [${routeTag}]`);
   lines.push("");
   /*
