@@ -91,25 +91,45 @@ try {
   process.exit(1);
 }
 
-/* ── which property can this account see? ────────────────────────────────────────────────────── */
+/* ── which property? ─────────────────────────────────────────────────────────────────────────── */
 
-const summaries = curl("https://analyticsadmin.googleapis.com/v1beta/accountSummaries?pageSize=200", { token });
-if (summaries.error) {
-  console.log(`GA4: the Admin API refused the account (${summaries.error.message.slice(0, 160)})`);
-  console.log(`     add ${email} as a Viewer on the GA4 property, and enable the Analytics Admin + Data APIs.`);
-  process.exit(1);
+/*
+ * The property id without needing the Admin API.
+ *
+ * The Admin API is a separate Google Cloud service that has to be enabled in the project, and it was
+ * not: the first cloud run answered "Google Analytics Admin API has not been used in project
+ * 910628159579". That is one more switch to flip for a number already written down - the GA4 dashboard
+ * URL carries it as `p559378568`, and the Data API takes `properties/559378568` directly.
+ *
+ * The Admin lookup stays as a discovery path for the day the id changes or a second property appears,
+ * but it is not on the critical path and its failure is no longer fatal.
+ */
+const FROM_URL = "559378568";
+const explicit = ((args.find((a) => a.startsWith("--property=")) ?? "").slice(11) || process.env.GA4_PROPERTY_ID || "").trim();
+
+let propertyId = explicit;
+let propertyName = propertyId ? `properties/${propertyId}` : "";
+let accountName = "";
+
+if (!propertyId) {
+  const summaries = curl("https://analyticsadmin.googleapis.com/v1beta/accountSummaries?pageSize=200", { token });
+  if (!summaries.error) {
+    const properties = (summaries.accountSummaries ?? []).flatMap((a) =>
+      (a.propertySummaries ?? []).map((p) => ({ account: a.displayName, name: p.property, title: p.displayName })),
+    );
+    const chosen =
+      properties.find((p) => /landed/i.test(p.title ?? "") || /landed/i.test(p.account ?? "")) ?? properties[0];
+    if (chosen) {
+      propertyName = chosen.name;
+      propertyId = String(chosen.name).replace("properties/", "");
+      accountName = chosen.account;
+    }
+  }
+  if (!propertyId) {
+    propertyId = FROM_URL;
+    propertyName = `properties/${FROM_URL}`;
+  }
 }
-const properties = (summaries.accountSummaries ?? []).flatMap((a) =>
-  (a.propertySummaries ?? []).map((p) => ({ account: a.displayName, name: p.property, title: p.displayName })),
-);
-if (!properties.length) {
-  console.log("GA4: the service account can see no properties.");
-  console.log(`     add ${email} as a Viewer on the GA4 property (Admin -> Property access management).`);
-  process.exit(1);
-}
-const chosen =
-  properties.find((p) => /landed/i.test(p.title ?? "") || /landed/i.test(p.account ?? "")) ?? properties[0];
-const propertyId = String(chosen.name).replace("properties/", "");
 
 /* ── the report ──────────────────────────────────────────────────────────────────────────────── */
 
@@ -157,12 +177,12 @@ const rows = (channels.rows ?? []).map((r) => ({
   sessions: Number(r.metricValues?.[0]?.value ?? 0),
 }));
 
-const payload = { property: chosen.name, account: chosen.account, days, totals, channels: rows, at: new Date().toISOString() };
+const payload = { property: propertyName, account: accountName, days, totals, channels: rows, at: new Date().toISOString() };
 
 if (asJson) {
   console.log(JSON.stringify(payload));
 } else {
-  console.log(`GA4 READERSHIP  property ${chosen.name} (${chosen.title ?? "?"})  window ${days} days`);
+  console.log(`GA4 READERSHIP  property ${propertyName}  window ${days} days`);
   console.log("=".repeat(78));
   console.log(`  active users : ${totals.activeUsers}`);
   console.log(`  new users    : ${totals.newUsers}`);
