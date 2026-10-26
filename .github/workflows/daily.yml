@@ -302,6 +302,22 @@ jobs:
           fi
           true
 
+
+      #
+      # GA4 readership, with the Google key the repository already holds.
+      #
+      # The Cloudflare reader below answers with zeros when its token is not accepted, and "ok - 0
+      # pageview(s)" is indistinguishable from a site nobody visits. This asks Google directly and
+      # prints the service account's address when the property has not been shared with it, because
+      # that address is the entire fix.
+      #
+      - name: Read GA4
+        if: always()
+        continue-on-error: true
+        env:
+          GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+          GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+        run: node tools/ga4-report.mjs --days=28
       - name: Record whether the Google tags are present in the build
         # The two Google integrations are build-time environment variables on the Cloudflare Pages project,
         # not workflow secrets, so nothing in this file can see them. What can be seen is the built output:
@@ -684,19 +700,4 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/notify-feishu.mjs
 
-
-      #
-      # GA4 readership, with the Google key the repository already holds.
-      #
-      # The Cloudflare reader below answers with zeros when its token is not accepted, and "ok - 0
-      # pageview(s)" is indistinguishable from a site nobody visits. This asks Google directly and
-      # prints the service account's address when the property has not been shared with it, because
-      # that address is the entire fix.
-      #
-      - name: Read GA4
-        if: always()
-        continue-on-error: true
-        env:
-          GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
-          GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
-        run: node tools/ga4-report.mjs --days=28
+
