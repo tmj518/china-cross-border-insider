@@ -34,7 +34,7 @@ sources:
 audience: "both"
 priority: "P2"
 stakes: directional
-draft: false
+draft: true
 ---
 
 ## AI Summary

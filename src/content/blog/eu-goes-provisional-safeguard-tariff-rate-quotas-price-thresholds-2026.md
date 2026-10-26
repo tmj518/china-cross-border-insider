@@ -73,7 +73,7 @@ The safeguard investigation opened in March 2026. After reviewing input from int
 
 The announcement uses the broad phrase “grain-oriented electrical steel products.” It does not supply tariff codes or a product annex. That leaves a practical boundary for importers: GOES coil or sheet sits closest to the named product, while cut laminations, assembled cores, and cores already incorporated in transformers require separate classification analysis.
 
-Importers following the developing measure can compare the announcement with [EU safeguard tariff-rate quotas hit GOES from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/) and [EU provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/). The broader framing appears in [EU Safeguard on Grain-Oriented Electrical Steel: tariff-rate quota and price thresholds](/blog/eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026/).
+Importers following the developing measure can compare the announcement with [EU safeguard tariff-rate quotas hit GOES from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/) and [EU provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/). The broader framing appears in [EU Safeguard on Grain-Oriented Electrical Steel: tariff-rate quota and price thresholds](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/).
 
 ## Why now
 

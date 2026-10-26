@@ -80,7 +80,7 @@ The table below turns the reported percentages into case-count equivalents again
 
 Because cases are whole units, the nearest whole-case equivalents are 587 closures within 15 days and 80 in-depth assessments. The opinion bound is 13.34 cases, so the whole-case count at that bound is 13 or fewer. These equivalents are arithmetic from the reported shares, not separately reported counts.
 
-For the underlying notification total and threshold context, see [EU FDI screening: 667 notifications in 2025, 12% sent to in-depth review, new FISR applies](/blog/eu-fdi-screening-notification-threshold-2026/). The broader schedule is covered in [EU FDI Screening 2026 Rules, Notification Volumes and 2028 Timelines for Importers](/blog/eu-fdi-screening-2026-timeline-notification-rates-importer/), and the volume surge is examined in [EU FDI screening notifications rose 40% and 12% of deals needed a deeper look](/blog/eu-fdi-screening-notification-surge-2026/).
+For the underlying notification total and threshold context, see [EU FDI screening: 667 notifications in 2025, 12% sent to in-depth review, new FISR applies](/blog/eu-fdi-screening-notification-threshold-2026/). The broader schedule is covered in [EU FDI Screening 2026 Rules, Notification Volumes and 2028 Timelines for Importers](/blog/eu-fdi-screening-2026-timeline-notification-rates-importer/), and the volume surge is examined in [EU FDI screening notifications rose 40% and 12% of deals needed a deeper look](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/).
 
 ## Why now
 

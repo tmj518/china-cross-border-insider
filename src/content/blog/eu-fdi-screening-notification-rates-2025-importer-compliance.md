@@ -10,7 +10,7 @@ audience: "importer"
 tags: ["EU FDI screening 2025", "2028 FISR", "third-country importer", "notification compliance", "ICT sector investment", "EU platform regulation"]
 priority: "P1"
 featured: false
-draft: false
+draft: true
 articleNumber: 37
 target_keyword: "EU FDI screening 2025 notification rates importer compliance 2028 FISR"
 search_intent: "informational"

@@ -10,7 +10,7 @@ audience: "both"
 tags: ["foreign investment", "EU screening", "compliance"]
 priority: "P2"
 featured: false
-draft: false
+draft: true
 articleNumber: 43
 target_keyword: "EU FDI screening notifications 2025"
 search_intent: "informational"

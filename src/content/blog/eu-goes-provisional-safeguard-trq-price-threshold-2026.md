@@ -78,7 +78,7 @@ The EU grain-oriented electrical steel provisional safeguard TRQ price threshold
 | Measures in place at end-2025 | 232 | Enforcement context only |
 | Retroactive cases in 2025 | three | Recordkeeping context only |
 
-A separate [EU GOES safeguard briefing](/blog/eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026/) frames the mechanism. The broader EU steel quota system is covered in [The EU Steel Quota Is Tightest Where China Has No Allocation at All](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/). The same discipline of tracing steel into assembled goods appears in [CBAM Is Moving From Goods That Are Steel to Goods That Contain It](/blog/eu-cbam-downstream-extension-material-composition-2028/). The distinction between knowable and unknowable border charges is explained in [Two EU Charges Hit the Same Tonne, and Only One of Them Is Knowable Up Front](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/).
+A separate [EU GOES safeguard briefing](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/) frames the mechanism. The broader EU steel quota system is covered in [The EU Steel Quota Is Tightest Where China Has No Allocation at All](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/). The same discipline of tracing steel into assembled goods appears in [CBAM Is Moving From Goods That Are Steel to Goods That Contain It](/blog/eu-cbam-downstream-extension-material-composition-2028/). The distinction between knowable and unknowable border charges is explained in [Two EU Charges Hit the Same Tonne, and Only One of Them Is Knowable Up Front](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/).
 
 ## Why now
 
