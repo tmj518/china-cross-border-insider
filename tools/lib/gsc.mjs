@@ -159,7 +159,7 @@ export function gscCredentials(env) {
  * key from the JSON file and exchange it for an access token. node:crypto does
  * RS256 natively, and googleapis would add tens of megabytes for two calls.
  */
-export function gscAccessToken(env, stats) {
+export function gscAccessToken(env, stats, scope = "https://www.googleapis.com/auth/webmasters.readonly") {
   const resolved = gscCredentials(env);
   if (!resolved) return null;
   const creds = resolved.creds;
@@ -173,7 +173,7 @@ export function gscAccessToken(env, stats) {
   const claims = b64url(
     JSON.stringify({
       iss: creds.client_email,
-      scope: "https://www.googleapis.com/auth/webmasters.readonly",
+      scope,
       aud: "https://oauth2.googleapis.com/token",
       exp: iat + 3600,
       iat,
