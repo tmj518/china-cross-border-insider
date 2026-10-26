@@ -103,7 +103,7 @@ const tail = commaAt > 0 ? cleaned.slice(commaAt + 1).trim() : "";
  * is recognisable on its own terms: more than twenty columns and no digits. A segment carrying "91 FR 51975"
  * has digits and is therefore never treated as a prefix.
  */
-const publisherIsShared = commaAt > 0 && !/\d/.test(head) && head.length > 20;
+const publisherIsShared = commaAt > 0 && !/\d/.test(head) && head.length > 14;
 const name = (publisherIsShared ? tail : cleaned).trim();
 
 /**

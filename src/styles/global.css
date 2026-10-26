@@ -212,6 +212,24 @@ body {
   align-items: start;
 }
 
+/*
+ * The single reading column, for pages that have no sidebar.
+ *
+ * The two guide templates have carried `class="wrap"` since they were written, and `.wrap` was never
+ * defined anywhere in this file. A class that matches no rule is not a fallback - it is nothing at all,
+ * so the guide index and every guide page rendered edge to edge with no measure and no centring, while
+ * every other page sat inside `.container`. It looked broken because it was.
+ *
+ * 760px is the reading width the blog's 8-of-12 column works out to at 1200px, so a guide and an
+ * article set text at the same size. margin:auto centres it; the gutter keeps it off the glass at
+ * 320px, where the mobile gate measures.
+ */
+.wrap {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 var(--gutter);
+}
+
 /* The two children of a content container: main text and the sidebar. */
 .container > main {
   grid-column: span 8;

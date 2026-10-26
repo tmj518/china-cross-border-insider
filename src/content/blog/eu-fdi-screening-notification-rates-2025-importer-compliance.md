@@ -1,5 +1,5 @@
 ---
-title: "2025 EU FDI screening notification volumes and compliance thresholds for third-country importers"
+title: "EU FDI screening: the 2025 notification thresholds importers must clear"
 subtitle: "40% year-on-year rise in EU FDI notifications, 667 total 2025 filings, and 2028 FISR compliance timelines for platform sector importers"
 description: "Third-country importers investing in EU platforms and related sectors get clear notification volumes, processing rates, and compliance workflows to align with 2025 rules and upcoming 2028 FISR requirements."
 publishDate: 2026-10-18
