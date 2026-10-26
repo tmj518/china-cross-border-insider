@@ -1,18 +1,22 @@
 {
-  "at": "2026-10-25T12:37:02.327Z",
+  "at": "2026-10-26T14:18:14.380Z",
   "route": "c",
-  "verdict": "PUBLISHED",
-  "article": "cost-to-hire-foreign-employee",
-  "seconds": 102,
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 17,
   "usage": {
-    "calls": 2,
-    "failed": 0,
-    "usd": 0.0017
+    "calls": 6,
+    "failed": 6,
+    "usd": 0
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "foreigner-accommodation-registration: model failed: ETIMEDOUT: fetch failed",
+    "china-tax-annual-reconciliation: model failed: ETIMEDOUT: fetch failed",
+    "china-bank-account-foreigner: model failed: ETIMEDOUT: fetch failed"
+  ],
   "steps": [
     {
       "name": "credentials",
@@ -22,27 +26,37 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "4 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding cost-to-hire-foreign-employee",
+      "name": "grounding foreigner-accommodation-registration",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates cost-to-hire-foreign-employee",
-      "ok": true,
-      "detail": "structure ok, procedural (no figures)"
+      "name": "skipped foreigner-accommodation-registration",
+      "ok": false,
+      "detail": "model failed: ETIMEDOUT: fetch failed"
     },
     {
-      "name": "build cost-to-hire-foreign-employee",
+      "name": "grounding china-tax-annual-reconciliation",
       "ok": true,
-      "detail": "site builds with the guide in place"
+      "detail": "procedural, no figures"
     },
     {
-      "name": "published",
+      "name": "skipped china-tax-annual-reconciliation",
+      "ok": false,
+      "detail": "model failed: ETIMEDOUT: fetch failed"
+    },
+    {
+      "name": "grounding china-bank-account-foreigner",
       "ok": true,
-      "detail": "/guide/cost-to-hire-foreign-employee/"
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "skipped china-bank-account-foreigner",
+      "ok": false,
+      "detail": "model failed: ETIMEDOUT: fetch failed"
     }
   ],
   "researchLog": [
