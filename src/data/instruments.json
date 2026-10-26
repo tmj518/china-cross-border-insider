@@ -562,6 +562,60 @@
           "retrieved": "2026-10-19"
         },
         {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "667",
+          "unit": "investments notified to the Commission in 2025",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "477",
+          "unit": "notifications in 2024",
+          "period": "2024",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "40%",
+          "unit": "increase in notifications between 2024 and 2025",
+          "period": "2024-2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "88%",
+          "unit": "share of notified cases closed within 15 days",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "12%",
+          "unit": "share of notified investments requiring in-depth security risk assessment",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "53%",
+          "unit": "share of in-depth assessments in manufacturing",
+          "period": "2025",
+          "source": "European Commission, sixth annual FDI screening report",
+          "retrieved": "2026-10-19"
+        },
+        {
           "articleSlug": "eu-fdi-screening-notification-threshold-2026",
           "articleNum": 42,
           "value": "667",
@@ -623,6 +677,7 @@
       "articleSlugs": [
         "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
         "eu-fdi-screening-notification-surge-2026-2026-10-19",
+        "eu-fdi-screening-notification-threshold-2026-2026-10-27",
         "eu-fdi-screening-notification-threshold-2026"
       ],
       "modelOutput": false
@@ -2765,6 +2820,38 @@
       ],
       "articleSlugs": [
         "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-fisr",
+      "source": "European Commission, FISR",
+      "figures": [
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+          "articleNum": 42,
+          "value": "17 January 2028",
+          "unit": "date the new Foreign Investment Screening Regulation applies from",
+          "period": "from 2028",
+          "source": "European Commission, FISR",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
+          "articleNum": 42,
+          "value": "17 January 2028",
+          "unit": "date the new Foreign Investment Screening Regulation applies from",
+          "period": "from 2028",
+          "source": "European Commission, FISR",
+          "retrieved": "2026-10-19"
+        }
+      ],
+      "articleNums": [
+        42
+      ],
+      "articleSlugs": [
+        "eu-fdi-screening-notification-threshold-2026-2026-10-27",
+        "eu-fdi-screening-notification-threshold-2026"
       ],
       "modelOutput": false
     },
