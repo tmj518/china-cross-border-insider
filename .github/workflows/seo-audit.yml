@@ -100,12 +100,21 @@ jobs:
       #
       - name: Keep the backtest log and the gap list
         run: |
-          if [ -z "$(git status --porcelain data/backtest.jsonl data/gsc/gaps_*.json)" ]; then
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          #
+          # `git add data/gsc/gaps_*.json` is fatal when the glob matches nothing, and it runs after the
+          # measurements have been taken - so the audit reported failure and threw away the day's
+          # backtest numbers. That is what happened twice on 2026-10-26 while the site itself was
+          # healthy. Add each artefact only when it exists, and decide from the index rather than from
+          # a pathspec that may not match.
+          #
+          [ -f data/backtest.jsonl ] && git add data/backtest.jsonl || true
+          for f in data/gsc/gaps_*.json; do [ -f "$f" ] && git add "$f" || true; done
+          if git diff --cached --quiet; then
             echo "nothing new to keep"
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/backtest.jsonl data/gsc/gaps_*.json
           git commit -m "audit: titles measured and queries without a page, $(date -u +%F)"
+          git pull --rebase --autostash origin main || true
           git push
