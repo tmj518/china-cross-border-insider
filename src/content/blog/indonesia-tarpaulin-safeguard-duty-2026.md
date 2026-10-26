@@ -146,6 +146,8 @@ Two numbers decide whether this measure changes your landed cost, and neither is
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of PE tarpaulins into Indonesia:** the duty is charged per kilogram, so your first task is the entered weight of each SKU, not its value. A 4 by 6 metre sheet at 200 grams per square metre carries $3.60 in stage one; at 150 grams it carries $2.70.

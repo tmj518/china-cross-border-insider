@@ -109,6 +109,8 @@ The less than 2% share of cases that result in a formal Commission opinion acros
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 - **Third-country importers planning a small EU retail or distribution FDI:** submit your full notification package at least 20 calendar days before your planned closing date, to account for the 8% of wholesale and retail sector cases that do not close within 15 days.
 - **Third-country importers acquiring an EU-based manufacturing production facility:** complete a full pre-notification security risk assessment 30 days before filing your formal notification, and build a 90-day timeline buffer into your project plan to accommodate the 18% chance of an in-depth assessment.

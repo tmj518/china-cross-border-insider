@@ -163,6 +163,8 @@ The habits that reduce freight cost are the ones the clock taxes. Consolidating 
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of frozen or perishable food from China:** put the container number on your checklist with its pass date and the planned declaration date. Ask before the declaration is filed, not after — after is when a rejection arrives and the vessel has sailed.

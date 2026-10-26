@@ -143,6 +143,8 @@ Four conclusions, and the first one changes a purchasing decision.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Buyers of unwrought or semi-finished metals from China:** your input is on the taxed part of the schedule. Check the provisional rate for your exact code before assuming the nominal rate applies — copper cathode's 30 percent nominal is actually 10 percent payable, and aluminium of 99.995 percent purity or above carries a zero provisional rate that lower grades do not.

@@ -139,6 +139,8 @@ The verification order below costs nothing until the last step, and the last ste
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **First-time importer:** run steps 1 to 3 on every supplier you shortlist. They cost an hour and eliminate most of the field. Do them before any deposit conversation, not as part of it.

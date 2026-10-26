@@ -150,6 +150,8 @@ The regulation fixes a percentage and never a price, so a per-tonne figure needs
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of Chinese hot-rolled coil and flat products in category 1.A:** you have no named allocation, so plan on the 50 percent duty and treat the residual pool as a bonus rather than a baseline. At CIF EUR 500 that is EUR 250 a tonne, which exceeds the CBAM carbon cost on the same tonne by 53 percent.

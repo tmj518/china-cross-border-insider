@@ -120,6 +120,8 @@ For the wider picture of how EU trade defence interacts with other border charge
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers with lines in an open investigation:** pull the Commission's case register for every product code you buy and mark which lines sit in an investigation opened in 2025 or 2026, because the 32 new cases will produce provisional duties and a provisional duty is the stage where border cost starts.

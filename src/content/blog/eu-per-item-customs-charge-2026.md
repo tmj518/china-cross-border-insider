@@ -131,6 +131,8 @@ Four conclusions, and the last one is the one that changes pricing.
 
 **So model it per item, not per parcel.** Every landed-cost model built on a parcel-level threshold now understates the charge on exactly the orders that were previously cheapest to serve. Three moves: recompute your EU landed cost with the charge applied per distinct item rather than per consignment; check your declaration route against the Article 2 condition rather than against trade-press summaries; and treat the monthly settlement as a treasury item with a guarantee implication, because that is how the regulation describes it.
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Sellers shipping low-ticket multi-item baskets into the EU:** this is the group whose unit economics changed most. A €10 three-item order that previously cleared duty-free now carries €15 in charges before VAT. The decision is whether to raise the minimum order value, bundle into a single distinct item, or absorb it — and the arithmetic favours the first two.

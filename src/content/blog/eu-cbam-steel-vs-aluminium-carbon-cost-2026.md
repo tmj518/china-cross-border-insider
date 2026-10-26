@@ -125,6 +125,8 @@ Three things follow.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importing steel into the EU:** work out which category your goods sit in before anything else, because the duty applies per category and the quota is allocated per category and origin. Then compute both charges. On hot-rolled coil the quota duty is the larger one above a CIF of EUR 327 a tonne, which is almost every real shipment.

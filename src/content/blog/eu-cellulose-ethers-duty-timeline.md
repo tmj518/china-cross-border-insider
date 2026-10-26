@@ -154,6 +154,8 @@ The practical move is contractual. A 2027 price that does not name who absorbs a
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **If you import cellulose ethers from China or Korea:** check your entries against the six CAS numbers, not the trade name. A grade outside those numbers is outside the case; a grade inside them is exposed from 24 April 2027 at the earliest.

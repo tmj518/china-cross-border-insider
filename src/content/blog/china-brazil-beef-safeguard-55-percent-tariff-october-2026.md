@@ -93,6 +93,8 @@ A second scenario applies to importers that have split a single large shipment a
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers holding in-transit Brazilian beef cargo:** calculate the exact cost difference between diverting the vessel to a nearby third port and absorbing the full 55% additional tariff, and submit a revised declaration plan to your customs broker no later than 23:59 on 30 September 2026.

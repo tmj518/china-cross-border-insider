@@ -121,6 +121,8 @@ Three things follow.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Anyone with a surcharge clause naming the CCFI composite:** check whether your cargo is one lane. If it is, the composite is a weighted mean across routes you do not ship on, and in the week to 30 September it was 8.77 points away from the Southeast Asia lane. Ask for the lane series and compare a year of both before conceding the point.

@@ -153,6 +153,8 @@ That is not an accusation. Labour, tooling, exchange rates, freight and a suppli
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of copper-bearing goods** — cable, motors, transformers, connectors, busbar, printed circuit boards. Take the copper weight of one unit from the drawing in kilograms and multiply by 2.97. That is the ten-day cost move in yuan, and at the rate you actually pay it converts to the currency on the invoice. A 2.4 kilogram unit moved 7.13 yuan. If the requested increase is larger than that, copper is not the explanation and you can say so with the source in hand.

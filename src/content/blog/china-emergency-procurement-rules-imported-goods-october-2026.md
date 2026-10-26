@@ -119,6 +119,8 @@ One more case, because the prepayment is the whole story. Take a contract of CNY
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers holding in-transit cargo:** file every declaration before the deadline, because the border procedure does not change and the emergency contract does not move your container.

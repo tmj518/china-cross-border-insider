@@ -105,6 +105,8 @@ For the wider picture of how EU steel charges stack on the same tonne, the safeg
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of grain-oriented steel coil:** read the quota line before you book, because the volume allowance and the price threshold are two separate gates and a shipment can pass one and fail the other.

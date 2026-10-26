@@ -136,6 +136,8 @@ Three observations, and the third is the important one.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Buyers of anything on the 249-line schedule:** check your own product codes against Annex 1 rather than against the headline. The list reaches nicotine products, lithium compounds, methanol, 1,4-butanediol, phosphite and phosphonate chemicals, glassware and e-cigarette devices. The rebate is already gone, so the price movement has already happened — if your 2026 quotes came in level with 2025, ask what your supplier changed elsewhere in the cost stack.

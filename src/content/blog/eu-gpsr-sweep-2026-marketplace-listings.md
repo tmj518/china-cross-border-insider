@@ -128,6 +128,8 @@ Two things follow from that table.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Sellers with an EU responsible person already named:** verify that the details on the live listing match the mandate. A responsible person who has changed address, gone out of business, or never agreed to be named for that specific product creates the same exposure as having none, with the added risk that the seller believes the box is ticked.

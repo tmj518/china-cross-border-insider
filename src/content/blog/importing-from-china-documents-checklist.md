@@ -157,6 +157,8 @@ The document set is cheap. Failing it is not, and the arithmetic is worth doing 
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **First shipment:** ask the supplier for the invoice and packing list in draft before production finishes. At that stage an error is a correction; after the vessel sails it is a delay.

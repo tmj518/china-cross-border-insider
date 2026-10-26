@@ -107,6 +107,8 @@ The source material does **not** provide a filing fee, legal-cost estimate, dail
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Manufacturing investors and owners of EU production assets:** identify whether your transaction falls within the most heavily represented in-depth-review sector and prepare supporting security and supply-chain information early.

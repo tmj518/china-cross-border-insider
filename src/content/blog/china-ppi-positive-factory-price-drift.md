@@ -126,6 +126,8 @@ Three things follow.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Buyers with an annual budget built last year:** the error is already embedded. Compare this year's actual quotes against the budget and, where they exceed it, check whether the gap is the category series rather than a supplier decision. The distinction decides whether you negotiate or re-plan.

@@ -125,6 +125,8 @@ Eight dollars on a container is noise. Seventy-nine dollars on every container, 
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Before you move: [China Move: Verify Price per Cubic Metre](/guide/relocation-cost-per-cubic-metre/)
+
 ## For you
 
 - **Importers on Asia-Europe:** the lane reading fell 2.9% in the week to 30 September while the CCFI composite was flat. If your surcharge went up on a composite-based clause, you are paying an adjustment your lane did not support. Ask for the lane series behind the number.

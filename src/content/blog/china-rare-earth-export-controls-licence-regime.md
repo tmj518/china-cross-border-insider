@@ -134,6 +134,8 @@ The funding cost alone is modest, and that is the trap. The damage is not the in
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Industrial buyers of magnets and alloys:** the seven elements in Announcement No. 18 are the ones that decide magnet performance. Confirm which of the four legal buckets each part sits in — metal, oxide, alloy or finished magnet — because the licensing path differs between them even when the underlying element does not.

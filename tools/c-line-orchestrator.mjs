@@ -129,6 +129,19 @@ const published = new Set(
 
 let candidates = topics.filter((t) => !published.has(t.slug) && t.status !== "done");
 if (WANT) candidates = candidates.filter((t) => t.slug === WANT);
+/*
+ * Data before order.
+ *
+ * Candidates used to come out in the order they were appended to the JSON file, which is a record of
+ * when somebody had an idea rather than of what anybody is searching for. tools/plan-guides.mjs now
+ * scores each queued topic - measured demand where Search Console has any, an explicit prior where it
+ * does not, multiplied by intent and by how badly we are already covering it - and writes the score
+ * onto the topic. Sorting by it makes the queue a plan instead of a pile.
+ *
+ * A topic with no score sorts last rather than first, so an unscored queue behaves exactly as it did
+ * before the planner existed.
+ */
+candidates = [...candidates].sort((a, b) => (b.priorityScore ?? 0) - (a.priorityScore ?? 0));
 
 if (!candidates.length) {
   verdict = "NO-SUBJECT";

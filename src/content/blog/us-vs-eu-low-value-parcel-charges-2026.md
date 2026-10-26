@@ -114,6 +114,8 @@ Three things follow.
 
 > Also read: [Your Parcel Is Getting Cheaper to Clear — and Harder to File](/blog/us-low-value-shipment-entry-rule-2026/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Sellers whose catalogue is low-value multi-item parcels:** Europe is now your expensive market, not America. The EUR 3 duty is per item, so a three-item parcel pays three times what a one-item parcel of the same total value pays. Consolidating SKUs into single-item listings, or moving to a single unit per parcel, is the only lever the EU design responds to.

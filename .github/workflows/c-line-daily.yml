@@ -46,6 +46,30 @@ jobs:
       # The endpoint is a secret, the model name is an endpoint id, and both are the same two names the
       # trade line already uses. Nothing new to configure.
       #
+      #
+      # The plan, before the writing.
+      #
+      # tools/plan-guides.mjs scores every queued topic against Search Console - measured demand where
+      # there is any, a stated prior where there is not, multiplied by intent and by how well we already
+      # cover it - and writes the score onto the topic. The orchestrator then sorts by it, so the queue
+      # becomes a plan rather than a pile in the order somebody had an idea.
+      #
+      # It also prints the scorecard: what each published guide is actually earning. That half is the
+      # point. On 2026-10-26 it reported ten guides, zero impressions, zero article-level inbound links,
+      # which says the bottleneck is links rather than subjects - and no amount of planning fixes that.
+      #
+      # continue-on-error: a refused Search Console read must not stop the day's guide. It falls back to
+      # priors and says so.
+      #
+      - name: Plan the queue from data
+        if: always()
+        continue-on-error: true
+        env:
+          GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+          GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL || 'sc-domain:landedmath.com' }}
+        run: node tools/plan-guides.mjs
+
       - name: Write one guide
         id: run
         env:

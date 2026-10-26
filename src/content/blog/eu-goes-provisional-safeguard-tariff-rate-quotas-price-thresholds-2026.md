@@ -123,6 +123,8 @@ A published regulation with product codes, quota volumes, threshold values, char
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers holding in-transit cargo:** establish the expected customs declaration position for each shipment and obtain written treatment for arrivals on or after 18 September 2026 before fixing resale prices.

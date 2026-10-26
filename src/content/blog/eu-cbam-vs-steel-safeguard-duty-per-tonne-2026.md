@@ -131,6 +131,8 @@ Three things follow.
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of flat steel and unwrought aluminium:** at typical CIF values the safeguard duty is your larger charge, and it is a straight percentage of what you paid. Negotiating the price down reduces it proportionally. Check first whether the category you import has a Chinese allocation, because that determines whether the duty applies at all.

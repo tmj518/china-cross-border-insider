@@ -119,6 +119,8 @@ For importers weighing a switch of origin, the same logic that governs [how to t
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **EU exporters of p-nitrotoluene:** register inside the 20 days from 3 October 2026. The questionnaire follows within 10 working days of the close, and the margin is measured on your 1 July 2025 to 30 June 2026 sales.

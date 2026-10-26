@@ -120,6 +120,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.

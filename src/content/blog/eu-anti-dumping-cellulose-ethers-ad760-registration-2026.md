@@ -173,6 +173,8 @@ the decision between them is made inside the Commission, not in your negotiation
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Buyer with a landed-cost model already:** add a line for a registered-import provision at

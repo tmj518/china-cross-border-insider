@@ -325,7 +325,18 @@
       ],
       "avoid": [
         "Do not state a number of hours or a fine unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "permanent-residence-application",
@@ -388,7 +399,18 @@
       ],
       "avoid": [
         "Do not state a fee, a validity period or a processing time unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 2.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2.8,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "entry-exit-record",
@@ -419,7 +441,18 @@
       ],
       "avoid": [
         "Do not state a fee or a processing time unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 1.08,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-tax-annual-reconciliation",
@@ -450,7 +483,18 @@
       ],
       "avoid": [
         "Do not state a threshold, a rate or a deduction unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-bank-account-foreigner",
@@ -483,7 +527,18 @@
       ],
       "avoid": [
         "Do not state a deposit minimum or a fee unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-sim-card-real-name",
@@ -516,7 +571,18 @@
       ],
       "avoid": [
         "Do not state a fee or a validity period unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-permanent-residence-marriage",
@@ -547,7 +613,18 @@
       ],
       "avoid": [
         "Do not state a number of years, an income or a fee unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-medical-insurance-foreigner",
@@ -579,7 +656,18 @@
       ],
       "avoid": [
         "Do not state a premium or a reimbursement rate unless the fact sheet contains one for a named city."
-      ]
+      ],
+      "priorityScore": 2.5,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2.5,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-renting-apartment-deposit",
@@ -611,7 +699,18 @@
       ],
       "avoid": [
         "Do not state a typical deposit multiple or a rent level unless the fact sheet contains it."
-      ]
+      ],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ]
 }

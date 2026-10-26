@@ -106,6 +106,8 @@ For importers that are structuring multiple parallel FDI projects across differe
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers planning a non-sensitive manufacturing FDI project in 2027:** submit your fully documented notification at least 16 days before your planned closing date, and prioritize filing before 17 January 2028 to avoid the new 7-day pre-submission validation step under FISR.

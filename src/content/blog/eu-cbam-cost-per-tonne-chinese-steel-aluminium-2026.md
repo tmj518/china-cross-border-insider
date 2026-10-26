@@ -144,6 +144,8 @@ Rerun the same chain across China's main CN codes and the shape of the exposure 
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers of Chinese steel who modelled off a 2025 or early-2026 guide:** re-derive the figure on the corrected Annex I. For hot-rolled and cold-rolled coil the values match, so your number survives. If your supplier ships fabricated goods, fasteners or electrical steel, check each CN code individually — that is where the default values diverge.

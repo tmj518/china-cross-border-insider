@@ -110,6 +110,8 @@ The usable arithmetic is calendar arithmetic. Importers have a normal nine-month
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers holding in-transit GOES coils:** identify the CN code and product form on transport documents and prepare a declaration packet that supports quota and price-threshold treatment.

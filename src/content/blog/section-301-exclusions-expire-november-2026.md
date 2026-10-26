@@ -135,6 +135,8 @@ The pattern to notice: a low unit price does not mean a low exposure. The wire e
 
 > Also read: [CBAM Is Moving From Goods That Are Steel to Goods That Contain It](/blog/eu-cbam-downstream-extension-material-composition-2028/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers filing under their own Importer of Record number:** pull your entry summaries from the past twelve months and search for headings 9903.88.69 and 9903.88.70. Plenty of importers discover they were relying on an exclusion their broker applied quietly and never mentioned. Get it in writing rather than from memory.

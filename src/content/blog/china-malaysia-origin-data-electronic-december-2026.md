@@ -118,6 +118,8 @@ Two habits are worth building now, while the fallback still exists. First, ask f
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **First-time importers from Malaysia:** confirm before you book freight whether your supplier issues the certificate themselves or works through a trader. If it is a trader, the origin data path has one more party in it, and that party is not the one carrying the guarantee cost. Ask for the certificate number in writing before the goods leave.

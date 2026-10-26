@@ -142,6 +142,8 @@ The base rate and the Section 301 rate are published; the parcel value, the entr
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Sellers shipping low-value parcels from China to US consumers:** the postal informal route closes for your goods on 22 October 2026 unless entry type 13 applies. Establish eligibility, or budget for formal entry per shipment. This is a deadline, not a trend.

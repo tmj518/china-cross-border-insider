@@ -120,6 +120,8 @@ The practical planning rule is to build 15 days around the ordinary closure patt
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers signing an EU target before 17 January 2028:** count 15 days backward from the planned completion date, place that reference point in the transaction timetable, and add a separate condition for any in-depth security risk assessment.

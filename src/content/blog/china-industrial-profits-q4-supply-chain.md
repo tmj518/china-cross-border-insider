@@ -172,6 +172,8 @@ Here is the same effect on an actual order, which is the part a budget cares abo
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Buying electronics, non-ferrous metals or coal-linked inputs:** your supplier's profit grew faster than the sector, so expect resistance to price cuts and more willingness to hold terms. The leverage is on their side and the data says so.

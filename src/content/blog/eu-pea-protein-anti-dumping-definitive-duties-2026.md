@@ -93,6 +93,8 @@ Importers can no longer lock in pre-duty pricing for multi-year supply contracts
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Food and beverage formulators using Chinese pea protein as a core ingredient:** recalculate your full landed cost for every open purchase order placed before 25 September 2026 to confirm the new duty amount does not push your total input cost above your pre-negotiated end product pricing. Allocate the new duty cost across your production batches immediately to avoid unplanned margin erosion.

@@ -115,6 +115,8 @@ For the notification volumes behind these rates, see [2025 EU FDI screening noti
 
 > Work it out: [the landed cost calculator](/calculator/)
 
+> Different question, same method: [the step-by-step guides](/guide/)
+
 ## For you
 
 - **Importers planning a Chinese-funded acquisition of a European supplier:** treat the 12% in-depth rate as a live cost on the closing date, and build a review contingency into the timetable before you sign.
