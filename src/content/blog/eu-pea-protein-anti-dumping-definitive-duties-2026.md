@@ -91,6 +91,8 @@ Importers can no longer lock in pre-duty pricing for multi-year supply contracts
 
 **What would change my mind.** A subsequent official European Commission notice that introduces partial exemptions for specific product grades of pea protein, reduces the applicable duty rates for a subset of importers, or shortens the five-year term before the next scheduled sunset review would adjust the cost calculations and sourcing guidance laid out in this article. A published interim review that revises the duty margins for named Chinese exporters would also change the applicable per-shipment duty cost for importers working with those specific suppliers.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Food and beverage formulators using Chinese pea protein as a core ingredient:** recalculate your full landed cost for every open purchase order placed before 25 September 2026 to confirm the new duty amount does not push your total input cost above your pre-negotiated end product pricing. Allocate the new duty cost across your production batches immediately to avoid unplanned margin erosion.

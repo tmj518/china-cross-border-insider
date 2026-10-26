@@ -126,6 +126,8 @@ Two things follow from that table.
 
 > Also read: [2025 EU FDI screening notification volumes and 15-day closure rates for 2026 importer compliance](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Sellers with an EU responsible person already named:** verify that the details on the live listing match the mandate. A responsible person who has changed address, gone out of business, or never agreed to be named for that specific product creates the same exposure as having none, with the added risk that the seller believes the box is ticked.

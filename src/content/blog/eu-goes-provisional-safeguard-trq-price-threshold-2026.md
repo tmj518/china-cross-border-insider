@@ -108,6 +108,8 @@ The usable arithmetic is calendar arithmetic. Importers have a normal nine-month
 
 **What would change my mind.** Publication of the binding regulation or annex would change the assessment by supplying CN codes, quota volume, threshold price, charge, and operative dates. A published definitive vote result also changes it: support meeting the 15-Member-State and 65% population requirement produces a definitive measure, while failure to meet those thresholds leaves the provisional process without that definitive outcome. Any such document converts this from a timing and scope guide into a per-unit cost calculation.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers holding in-transit GOES coils:** identify the CN code and product form on transport documents and prepare a declaration packet that supports quota and price-threshold treatment.

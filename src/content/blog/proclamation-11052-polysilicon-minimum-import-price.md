@@ -145,6 +145,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [China's emergency procurement rules start 1 October 2026: a filing, not an approval, and 40% prepayment](/blog/china-emergency-procurement-rules-imported-goods-october-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

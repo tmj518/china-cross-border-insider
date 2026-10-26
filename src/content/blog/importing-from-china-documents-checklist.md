@@ -155,6 +155,8 @@ The document set is cheap. Failing it is not, and the arithmetic is worth doing 
 
 > Also read: [Brazil-origin beef imports to China face 55% additional tariff starting October 1 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **First shipment:** ask the supplier for the invoice and packing list in draft before production finishes. At that stage an error is a correction; after the vessel sails it is a delay.

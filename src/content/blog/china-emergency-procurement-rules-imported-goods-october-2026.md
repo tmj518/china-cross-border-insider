@@ -117,6 +117,8 @@ One more case, because the prepayment is the whole story. Take a contract of CNY
 
 **What would change my mind.** A provincial finance department notice, or a finance-ministry interpretation, stating that imported goods in emergency procurement still require a prior approval would overturn the central claim. A circular narrowing "encouraged" to a hard obligation, or capping the prepayment below 40%, would change the cash arithmetic. A published award notice showing an imported-goods emergency contract paid on ordinary terms would show the encouragement is not being followed in practice.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers holding in-transit cargo:** file every declaration before the deadline, because the border procedure does not change and the emergency contract does not move your container.

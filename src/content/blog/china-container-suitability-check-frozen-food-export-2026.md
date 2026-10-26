@@ -161,6 +161,8 @@ The habits that reduce freight cost are the ones the clock taxes. Consolidating 
 - If the 21 days are read operationally as running from application rather than from the pass, early filing is not expensive and the advice above reverses.
 - The cost table uses your inputs. Change goods value, funding rate or storage per day and the figure moves proportionally: CNY 6,127.40 is one worked case.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of frozen or perishable food from China:** put the container number on your checklist with its pass date and the planned declaration date. Ask before the declaration is filed, not after — after is when a rejection arrives and the vessel has sailed.

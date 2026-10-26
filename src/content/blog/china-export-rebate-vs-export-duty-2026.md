@@ -111,6 +111,8 @@ Three conclusions follow.
 
 **The asymmetry that matters for negotiation:** neither charge can be negotiated away at the table, because both are remitted by the Chinese exporter to the Chinese state. What can be negotiated is who absorbs them, and the rebate gives the supplier an argument the duty does not — a withdrawn refund can be described as a cost they "already had" and never passed on, while a new duty is straightforwardly a new line.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Buyers of copper or aluminium raw material:** check the provisional annex before accepting a cost increase. The nominal rate on copper cathode is 30 per cent and the operative rate is 10 per cent, so the difference between reading the schedule and reading it fully is threefold. For ferrochrome there is no provisional rate, so 40 per cent is real.

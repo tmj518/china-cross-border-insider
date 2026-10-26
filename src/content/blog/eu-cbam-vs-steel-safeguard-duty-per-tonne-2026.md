@@ -129,6 +129,8 @@ Three things follow.
 
 **And the duty-free route is the only way to remove either charge, and it is mostly closed.** Both charges disappear inside the quota. [China holds named allocations](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/) in four of the twenty-six categories — 4.B, 3.B, 1.B and 3.A — and the largest of them is 182,996.85 tonnes. The remaining categories fall back on a residual pool of 22,256.02 tonnes in category 1.A shared by every supplier without a named allocation, against Turkey's named 642,294.94 tonnes in the same category. **An importer who finds an allocation is not exposed to either charge on that tonnage. One who does not is exposed to both.**
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of flat steel and unwrought aluminium:** at typical CIF values the safeguard duty is your larger charge, and it is a straight percentage of what you paid. Negotiating the price down reduces it proportionally. Check first whether the category you import has a Chinese allocation, because that determines whether the duty applies at all.

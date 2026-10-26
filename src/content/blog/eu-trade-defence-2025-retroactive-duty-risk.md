@@ -118,6 +118,8 @@ For the wider picture of how EU trade defence interacts with other border charge
 
 **What would change my mind.** A published case list naming the three retroactive cases, with products, origins, rates and backdated periods, would replace the audit instruction in this article with a specific exposure calculation for the named lines. A statement from the Commission that the three cases were confined to a single product family would narrow the audit to that family. And a later report showing the retroactive count at zero for a run of years would weaken the case for a standing duty-risk clause, though it would not remove the case for auditing lines against the 232 measures already in force.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers with lines in an open investigation:** pull the Commission's case register for every product code you buy and mark which lines sit in an investigation opened in 2025 or 2026, because the 32 new cases will produce provisional duties and a provisional duty is the stage where border cost starts.

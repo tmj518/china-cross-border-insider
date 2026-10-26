@@ -142,6 +142,8 @@ Rerun the same chain across China's main CN codes and the shape of the exposure 
 
 **One number in circulation does reconcile, and that is the useful test.** SMM's analysis of 18 August 2026 puts Chinese hot-rolled coil at about EUR 163 a tonne and cold-rolled at EUR 158, agreeing with the chain above to within EUR 0.35 a tonne, and it describes the CBAM factor correctly. The same piece cites no default value per CN code, names Regulation (EU) 2026/1740 nowhere, and carries no aluminium figure.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of Chinese steel who modelled off a 2025 or early-2026 guide:** re-derive the figure on the corrected Annex I. For hot-rolled and cold-rolled coil the values match, so your number survives. If your supplier ships fabricated goods, fasteners or electrical steel, check each CN code individually — that is where the default values diverge.

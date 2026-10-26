@@ -134,6 +134,8 @@ Three observations, and the third is the important one.
 
 **So do not ask for a discount. Ask for the mechanism.** Specifically, ask what the 1 January change does to their unit price, whether their quote assumes domestic or exported input VAT treatment, and whether they will hold the current price against a committed volume with a delivery date. A supplier who cannot answer the first question has not modelled it, and will model it in January, on your order. The same date rule makes the supplier's registration status worth knowing before you commit, which is what the 2026 real-name registration rule now exposes.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Buyers of anything on the 249-line schedule:** check your own product codes against Annex 1 rather than against the headline. The list reaches nicotine products, lithium compounds, methanol, 1,4-butanediol, phosphite and phosphonate chemicals, glassware and e-cigarette devices. The rebate is already gone, so the price movement has already happened — if your 2026 quotes came in level with 2025, ask what your supplier changed elsewhere in the cost stack.

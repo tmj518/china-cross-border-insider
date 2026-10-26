@@ -140,6 +140,8 @@ The undertaking list cuts deeper than the range. An exporter on it sells without
 
 > Also read: [China's Factory Profits Rose 15.7%, and Their Customers Started Paying Later](/blog/china-industrial-profits-q4-supply-chain/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Buyers of oil country tubular goods into Russia, Kazakhstan, Belarus, Armenia or Kyrgyzstan:** ask the mill for its undertaking status in writing before the order, not at the port. The question is whether the specific exporting legal entity is on the list, because the list names entities and the removal this month named one.

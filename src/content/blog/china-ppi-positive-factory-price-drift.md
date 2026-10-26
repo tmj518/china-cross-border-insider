@@ -124,6 +124,8 @@ Three things follow.
 
 **So recalibrate the default, not the individual negotiation.** Update the standing assumption in your budget from flat-or-down to the published year-to-date figure; pull your own category series rather than quoting the headline at a supplier; and where a contract runs for a year, put the drift on the agenda at signing rather than at renewal.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Buyers with an annual budget built last year:** the error is already embedded. Compare this year's actual quotes against the budget and, where they exceed it, check whether the gap is the category series rather than a supplier decision. The distinction decides whether you negotiate or re-plan.

@@ -148,6 +148,8 @@ The regulation fixes a percentage and never a price, so a per-tonne figure needs
 
 **So the work is a category-and-order-number exercise, not a rate exercise.** Confirm which of the 26 categories each SKU falls into, because that decides whether a named allocation exists at all. Identify the order number for that category and origin. Build the landed cost with the 50 percent duty as a scenario rather than a tail risk, since it is now the base case above quota. And where a Chinese-origin product has no named allocation, treat the residual pool as unavailable for planning purposes rather than as a route.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of Chinese hot-rolled coil and flat products in category 1.A:** you have no named allocation, so plan on the 50 percent duty and treat the residual pool as a bonus rather than a baseline. At CIF EUR 500 that is EUR 250 a tonne, which exceeds the CBAM carbon cost on the same tonne by 53 percent.

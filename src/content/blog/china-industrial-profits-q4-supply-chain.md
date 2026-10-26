@@ -170,6 +170,8 @@ Here is the same effect on an actual order, which is the part a budget cares abo
 
 > Also read: [China's 5.0% Factory-Price Rise Hides a 20-Point Split](/blog/china-producer-price-split-copper-ferrous-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Buying electronics, non-ferrous metals or coal-linked inputs:** your supplier's profit grew faster than the sector, so expect resistance to price cuts and more willingness to hold terms. The leverage is on their side and the data says so.

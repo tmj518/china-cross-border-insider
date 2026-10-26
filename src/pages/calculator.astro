@@ -33,20 +33,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../consts";
 import { fitTitle, fitDescription } from "../lib/meta";
 
-const title = "Import duty and landed-cost calculators";
+const title = "Landed Cost Calculator for China Imports";
 const description =
-  "Work out duty per unit and per container from your own FOB and rates, or what a low-value parcel costs per item under the EU rules that change on 1 November 2026. Every tariff layer shown separately, including the ones most calculators omit.";
+  "The landed cost calculator: put in your FOB price, freight and duty rate and see the true cost per unit and per container, with every tariff layer listed separately - including the ones most calculators leave out. Nothing you type leaves your browser.";
+
+/*
+ * This page ranked 89th for "landed cost calculator" - the name of the thing it is.
+ *
+ * Search Console, 2026-10-26: one impression, position 89. The phrase was present but split across a
+ * hyphen and a plural, and it never led the title or the h1. A result is matched on what leads it, so the
+ * title now opens with the exact words a reader types; the "for China Imports" tail is what makes it ours
+ * rather than a generic widget.
+ *
+ * The WebApplication block is new. It is the schema that tells a search engine this is a tool rather than
+ * an article, which is the difference between appearing under "calculators" and appearing under "guides".
+ */
+const webApplication = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Landed Cost Calculator",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Any",
+  url: `${SITE.url}/calculator/`,
+  description,
+  isAccessibleForFree: true,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
+};
 ---
 
-<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={description}>
+<BaseLayout title={`${fitTitle(title, "", SITE.name)} — ${SITE.name}`} description={description} jsonLd={webApplication}>
   <div class="container">
     <main id="main">
       <article>
         <header class="article-header">
           <h1>{title}</h1>
           <p class="standfirst">
-            Every figure comes from your inputs. Nothing is sent anywhere — the
-            arithmetic runs in your browser.
+            A landed cost calculator for shipments out of China: put in the FOB price, the freight and the
+            duty rate, and read the true cost per unit and per container with every layer separated.
+            Nothing you type leaves your browser.
           </p>
         </header>
 

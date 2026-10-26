@@ -137,6 +137,8 @@ The verification order below costs nothing until the last step, and the last ste
 
 > Also read: [Two EU Charges Reach Steel and Only One Reaches Aluminium, and That Reverses the Ranking](/blog/eu-cbam-steel-vs-aluminium-carbon-cost-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **First-time importer:** run steps 1 to 3 on every supplier you shortlist. They cost an hour and eliminate most of the field. Do them before any deposit conversation, not as part of it.

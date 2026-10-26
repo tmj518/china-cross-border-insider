@@ -152,6 +152,8 @@ The practical move is contractual. A 2027 price that does not name who absorbs a
 
 **What would change my mind.** A published sampling decision naming the exporting producers would narrow the range, because the rate is built from their data. A registration regulation in the Official Journal would move the exposure from directional to live and would date the retroactive window. A statement of essential facts, or any provisional regulation, would replace the range with a number. Any of the three would require this article to be rewritten rather than updated.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **If you import cellulose ethers from China or Korea:** check your entries against the six CAS numbers, not the trade name. A grade outside those numbers is outside the case; a grade inside them is exposed from 24 April 2027 at the earliest.

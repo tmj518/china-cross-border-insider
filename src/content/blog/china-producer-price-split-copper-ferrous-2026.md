@@ -151,6 +151,8 @@ That is not an accusation. Labour, tooling, exchange rates, freight and a suppli
 >
 > Also read: [China's Rare Earth Controls Are a Licence Regime, Not a Ban](/blog/china-rare-earth-export-controls-licence-regime/) — the other way an input line moves: not price, but permission.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of copper-bearing goods** — cable, motors, transformers, connectors, busbar, printed circuit boards. Take the copper weight of one unit from the drawing in kilograms and multiply by 2.97. That is the ten-day cost move in yuan, and at the rate you actually pay it converts to the currency on the invoice. A 2.4 kilogram unit moved 7.13 yuan. If the requested increase is larger than that, copper is not the explanation and you can say so with the source in hand.

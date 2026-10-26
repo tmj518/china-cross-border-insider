@@ -144,6 +144,8 @@ Two numbers decide whether this measure changes your landed cost, and neither is
 
 > Also read: [2025 EU FDI screening notification volumes and 15-day closure rates for 2026 importer compliance](/blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of PE tarpaulins into Indonesia:** the duty is charged per kilogram, so your first task is the entered weight of each SKU, not its value. A 4 by 6 metre sheet at 200 grams per square metre carries $3.60 in stage one; at 150 grams it carries $2.70.

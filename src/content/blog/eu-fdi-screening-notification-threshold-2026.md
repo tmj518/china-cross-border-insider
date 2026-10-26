@@ -113,6 +113,8 @@ For the notification volumes behind these rates, see [2025 EU FDI screening noti
 
 **What would change my mind.** A published breakdown of in-depth assessment duration by sector would replace the slippage framework with a measured number. A Commission statement that the 12% in-depth rate is concentrated in a narrower set of sectors than manufacturing as a whole would change the advice to manufacturing buyers. And the FISR text, once applied from 17 January 2028, would settle whether the current 15-day and in-depth split carries forward or is replaced.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers planning a Chinese-funded acquisition of a European supplier:** treat the 12% in-depth rate as a live cost on the closing date, and build a review contingency into the timetable before you sign.

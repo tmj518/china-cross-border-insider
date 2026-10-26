@@ -119,6 +119,8 @@ Three things follow.
 
 **And the timing of the divergence is not random.** Lanes diverge when the drivers are route-specific: canal transit costs, regional congestion, war risk on one corridor and not another. The Suez Canal Authority extended its periodical terms for six months from 1 August 2026 to 31 January 2027, which affects routing cost on Asia-Europe and not on intra-Asia trades. Route-specific causes produce route-specific moves, which is the condition under which a composite is least informative.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Anyone with a surcharge clause naming the CCFI composite:** check whether your cargo is one lane. If it is, the composite is a weighted mean across routes you do not ship on, and in the week to 30 September it was 8.77 points away from the Southeast Asia lane. Ask for the lane series and compare a year of both before conceding the point.

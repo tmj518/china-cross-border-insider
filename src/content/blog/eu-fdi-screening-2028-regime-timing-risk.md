@@ -118,6 +118,8 @@ The practical planning rule is to build 15 days around the ordinary closure patt
 
 **What would change my mind.** A final regulation text, official Commission guidance, a revised statistical dataset or published in-depth-assessment durations would change the calculation. Sector-level or Member State-level data would also change how the aggregate shares apply to a specific acquisition. Any published fee, charge or duty schedule would require a separate monetary landed-cost model. Until such material is supplied, the figures remain aggregate screening statistics rather than transaction-specific legal deadlines or costs.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers signing an EU target before 17 January 2028:** count 15 days backward from the planned completion date, place that reference point in the transaction timetable, and add a separate condition for any in-depth security risk assessment.

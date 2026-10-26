@@ -142,6 +142,8 @@ Zero is not a number a buyer can put on an invoice until it is set against the r
 
 > Also read: [The EU Registered Your Cellulose Ether Imports, and the Duty Comes Later](/blog/eu-cellulose-ethers-duty-timeline/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Exporters in the 20 listed countries shipping farm or food goods:** the concession covers chapters 01 to 22 and nothing else. If your product is outside those chapters, this instrument does not touch it, and the least-developed-country arrangement or a bilateral agreement is where to look instead. The scope is the first thing to check, before the paperwork.

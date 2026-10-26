@@ -91,6 +91,8 @@ A second scenario applies to importers that have split a single large shipment a
 
 **What would change my mind.** A subsequent official MOFCOM notice that extends the grace period for in-transit shipments by 7 or more days, or that introduces a partial exemption for contracts signed before 29 September 2026, would reduce the total extra cost for affected importers. A public correction that the 55% surcharge applies to the base duty amount rather than the full CIF value of the shipment would cut the total incremental cost by more than 80% for most importers. A separate announcement that the full quota fill was recorded for a different origin country than Brazil would remove the surcharge entirely for Brazil-origin beef shipments.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers holding in-transit Brazilian beef cargo:** calculate the exact cost difference between diverting the vessel to a nearby third port and absorbing the full 55% additional tariff, and submit a revised declaration plan to your customs broker no later than 23:59 on 30 September 2026.

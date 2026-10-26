@@ -222,6 +222,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [China's emergency procurement rules start 1 October 2026: a filing, not an approval, and 40% prepayment](/blog/china-emergency-procurement-rules-imported-goods-october-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your

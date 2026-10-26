@@ -118,6 +118,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 
 > Also read: [EU trade defence stayed high in 2025, and three cases carried retroactive duties](/blog/eu-trade-defence-2025-retroactive-duty-risk/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.

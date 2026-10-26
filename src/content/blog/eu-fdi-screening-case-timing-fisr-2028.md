@@ -108,6 +108,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 
 > Also read: [EU trade defence stayed high in 2025, and three cases carried retroactive duties](/blog/eu-trade-defence-2025-retroactive-duty-risk/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.

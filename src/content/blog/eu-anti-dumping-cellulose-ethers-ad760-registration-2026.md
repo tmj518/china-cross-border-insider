@@ -171,6 +171,8 @@ than the numbers: the top row and the bottom row differ by 25,000 dollars on a s
 the decision between them is made inside the Commission, not in your negotiation.
 
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Buyer with a landed-cost model already:** add a line for a registered-import provision at

@@ -121,6 +121,8 @@ The cost formulas and the downstream classification questions are planning struc
 
 A published regulation with product codes, quota volumes, threshold values, charge rates, exemptions, and entry-time rules would replace the symbolic model. Official Commission or Member State customs guidance on downstream goods would settle the scope boundary. A Safeguard Committee vote result would establish whether definitive measures follow the provisional action and on what terms.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers holding in-transit cargo:** establish the expected customs declaration position for each shipment and obtain written treatment for arrivals on or after 18 September 2026 before fixing resale prices.

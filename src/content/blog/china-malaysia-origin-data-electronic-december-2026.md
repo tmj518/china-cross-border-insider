@@ -116,6 +116,8 @@ The expensive failure is the certificate that never verifies. If the electronic 
 
 Two habits are worth building now, while the fallback still exists. First, ask for the certificate number as soon as it is issued, not when the goods arrive. Second, when you use a back-to-back certificate through a Malaysian trader, confirm which underlying certificate it references — the linkage is the part most likely to break, and it breaks silently. This is the same pattern as [the freight index publisher change](/blog/container-freight-index-publisher-change-2026/): a reference in a contract quietly stops pointing where it used to, and neither side notices until the invoice.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **First-time importers from Malaysia:** confirm before you book freight whether your supplier issues the certificate themselves or works through a trader. If it is a trader, the origin data path has one more party in it, and that party is not the one carrying the guarantee cost. Ask for the certificate number in writing before the goods leave.

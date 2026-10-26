@@ -130,6 +130,8 @@ Order value, deposit percentage and check cost are your inputs; the break-even i
 
 > Also read: [China Opens an Anti-Dumping Probe Into EU p-Nitrotoluene, and Registration Closes in 20 Days](/blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers onboarding a new supplier:** ask for the unified social credit code and the full Chinese legal name, then check the registration and note the date of the most recent amendment. A registration amended after 1 May 2026 has passed the real-name step; an older one has not, which is not a red flag by itself but is a reason to ask more.

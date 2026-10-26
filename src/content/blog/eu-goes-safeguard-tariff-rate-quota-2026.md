@@ -103,6 +103,8 @@ For the wider picture of how EU steel charges stack on the same tonne, the safeg
 
 **What would change my mind.** A published regulation setting the quota volumes, the two duty rates and the price threshold levels would replace the structural arithmetic here with a priced one. A Commission notice setting a date for the definitive vote, or a Council vote result, would settle the timing question the source leaves open. A published product scope that names or excludes laminations, cores or finished transformers would confirm or overturn the downstream reading. Any of those documents would move the relevant paragraph from inference to confirmation.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers of grain-oriented steel coil:** read the quota line before you book, because the volume allowance and the price threshold are two separate gates and a shipment can pass one and fail the other.

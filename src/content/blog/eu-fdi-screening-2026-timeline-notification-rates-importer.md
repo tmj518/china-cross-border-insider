@@ -104,6 +104,8 @@ For importers that are structuring multiple parallel FDI projects across differe
 
 **What would change my mind.** A subsequent official notice from the European Commission that revises the 17 January 2028 FISR implementation date, or adds new mandatory notification requirements that expand the total volume of expected 2028 filings beyond the current 40% annual growth trend, would require a full recalculation of all projected processing timelines. A published update to the 2025 case closure rate that shows a material shift in the share of cases closed within 15 days would also require adjustment of the baseline timeline planning parameters for importers.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Importers planning a non-sensitive manufacturing FDI project in 2027:** submit your fully documented notification at least 16 days before your planned closing date, and prioritize filing before 17 January 2028 to avoid the new 7-day pre-submission validation step under FISR.

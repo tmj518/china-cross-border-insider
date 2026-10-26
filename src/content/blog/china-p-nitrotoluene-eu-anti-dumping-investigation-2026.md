@@ -117,6 +117,8 @@ For importers weighing a switch of origin, the same logic that governs [how to t
 
 **What would change my mind.** A preliminary determination that imposes a provisional duty, or a published margin range, would replace the exposure arithmetic with a priced number and move this from a registration decision to a landed-cost decision. A notice that extends the registration window, or a clarification that importers register through a different channel than exporters, would change the action. And a statement from MOFCOM that the case has been withdrawn or terminated would remove the exposure entirely.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **EU exporters of p-nitrotoluene:** register inside the 20 days from 3 October 2026. The questionnaire follows within 10 working days of the close, and the margin is measured on your 1 July 2025 to 30 June 2026 sales.

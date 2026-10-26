@@ -107,6 +107,8 @@ The less than 2% share of cases that result in a formal Commission opinion acros
 
 > Also read: [EU FDI Screening 2026 Rules, Notification Volumes and 2028 Timelines for Importers](/blog/eu-fdi-screening-2026-timeline-notification-rates-importer/)
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 - **Third-country importers planning a small EU retail or distribution FDI:** submit your full notification package at least 20 calendar days before your planned closing date, to account for the 8% of wholesale and retail sector cases that do not close within 15 days.
 - **Third-country importers acquiring an EU-based manufacturing production facility:** complete a full pre-notification security risk assessment 30 days before filing your formal notification, and build a 90-day timeline buffer into your project plan to accommodate the 18% chance of an in-depth assessment.

@@ -140,6 +140,8 @@ The base rate and the Section 301 rate are published; the parcel value, the entr
 
 **So the work is administrative, and it has a date.** Three moves: confirm which HTSUS subheading each SKU classifies under and whether it carries a Chapter 99 code, because that single fact decides the route; establish entry type 13 eligibility before 22 October rather than after; and rebuild the landed cost per parcel with the duty arithmetic and the entry cost as separate lines, since the second is now larger than the first for cheap goods.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Sellers shipping low-value parcels from China to US consumers:** the postal informal route closes for your goods on 22 October 2026 unless entry type 13 applies. Establish eligibility, or budget for formal entry per shipment. This is a deadline, not a trend.

@@ -100,6 +100,8 @@ Shipments that completed customs clearance before 1 October 2026 fall outside th
 
 **What would change my mind.** A subsequent official notice from the Ministry of Commerce that introduces a grace period for in-transit cargo, a partial exemption for contracts signed before a specified date, or a phased implementation schedule for the 55% additional tariff would adjust the cost arithmetic and timeline guidance in this article. A public correction that the quota exhaustion date was recorded incorrectly, or that the 3-day window calculation uses a different starting point than the 29 September 2026 full fill date, would also revise the effective date of the additional tariff.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Brazilian beef importer holding existing in-transit cargo:** Pull every pending customs declaration for shipments that can be filed and accepted before 00:00 on 1 October 2026. Confirm all origin certificates, health certificates, and customs declaration documents are fully validated by your broker 24 hours before the deadline to avoid last-minute rejection. Any declaration accepted before the timestamp avoids the 55% extra cost entirely.

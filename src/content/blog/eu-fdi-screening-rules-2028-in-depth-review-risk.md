@@ -105,6 +105,8 @@ Manufacturing investors face the most concentrated exposure. Manufacturing repre
 
 The source material does **not** provide a filing fee, legal-cost estimate, daily delay cost, transaction-value threshold, or average duration for an in-depth assessment. Consequently, no euro-denominated cost can be calculated without inventing a rate or amount. The supported conclusion is about review probability, sector concentration, and the 15-calendar-day majority track.
 
+> Work it out: [the landed cost calculator](/calculator/)
+
 ## For you
 
 - **Manufacturing investors and owners of EU production assets:** identify whether your transaction falls within the most heavily represented in-depth-review sector and prepare supporting security and supply-chain information early.
