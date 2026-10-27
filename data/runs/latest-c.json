@@ -1,22 +1,18 @@
 {
-  "at": "2026-10-26T14:18:14.380Z",
+  "at": "2026-10-27T00:45:15.723Z",
   "route": "c",
-  "verdict": "NO-SUBJECT",
-  "article": null,
-  "seconds": 17,
+  "verdict": "PUBLISHED",
+  "article": "foreigner-accommodation-registration",
+  "seconds": 100,
   "usage": {
-    "calls": 6,
-    "failed": 6,
-    "usd": 0
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0017
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "foreigner-accommodation-registration: model failed: ETIMEDOUT: fetch failed",
-    "china-tax-annual-reconciliation: model failed: ETIMEDOUT: fetch failed",
-    "china-bank-account-foreigner: model failed: ETIMEDOUT: fetch failed"
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
@@ -34,29 +30,19 @@
       "detail": "procedural, no figures"
     },
     {
-      "name": "skipped foreigner-accommodation-registration",
-      "ok": false,
-      "detail": "model failed: ETIMEDOUT: fetch failed"
-    },
-    {
-      "name": "grounding china-tax-annual-reconciliation",
+      "name": "gates foreigner-accommodation-registration",
       "ok": true,
-      "detail": "procedural, no figures"
+      "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "skipped china-tax-annual-reconciliation",
-      "ok": false,
-      "detail": "model failed: ETIMEDOUT: fetch failed"
-    },
-    {
-      "name": "grounding china-bank-account-foreigner",
+      "name": "build foreigner-accommodation-registration",
       "ok": true,
-      "detail": "procedural, no figures"
+      "detail": "site builds with the guide in place"
     },
     {
-      "name": "skipped china-bank-account-foreigner",
-      "ok": false,
-      "detail": "model failed: ETIMEDOUT: fetch failed"
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/foreigner-accommodation-registration/"
     }
   ],
   "researchLog": [
