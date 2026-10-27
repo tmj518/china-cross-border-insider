@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-26T01:12:01.037Z",
+  "at": "2026-10-27T02:06:03.300Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "19 previous run(s), last 2026-10-23T03:32:04.120Z (PUBLISHED)"
+      "detail": "20 previous run(s), last 2026-10-26T01:12:01.037Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "0 of 15 net-new this week"
+      "detail": "1 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -27,79 +27,52 @@
     },
     {
       "name": "research",
-      "ok": true,
-      "detail": "proposed china-emergency-procurement-rules-imported-goods-october-2026, 7 verified figure(s)"
-    },
-    {
-      "name": "directive figures",
-      "ok": true,
-      "detail": "7 sourced figure(s)"
-    },
-    {
-      "name": "writer",
-      "ok": true,
-      "detail": "draft at /data/drafts/china-emergency-procurement-rules-imported-goods-october-2026.md"
-    },
-    {
-      "name": "reviewer",
       "ok": false,
-      "detail": "no parseable verdict"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "unavailable, recorded as a lesson, publishing anyway"
-    },
-    {
-      "name": "publish",
-      "ok": true,
-      "detail": "staged at src/content/blog/china-emergency-procurement-rules-imported-goods-october-2026.md"
-    },
-    {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "2 older article(s) now link here"
-    },
-    {
-      "name": "state written",
-      "ok": true,
-      "detail": "verdict PUBLISHED"
+      "detail": "no verified subject today (exit 2)"
     }
   ],
-  "verdict": "PUBLISHED",
-  "reasons": [],
-  "article": "china-emergency-procurement-rules-imported-goods-october-2026",
+  "verdict": "DUPLICATE-SUBJECT",
+  "reasons": [
+    "research proposed a subject already covered by a published article and declined to write a directive. Nothing was published, which is the duplicate check working."
+  ],
+  "article": null,
   "commit": null,
-  "usage": {
-    "calls": 39,
-    "failed": 26,
-    "usd": 0.0436,
-    "promptTokens": 98803,
-    "completionTokens": 15404
-  },
+  "usage": null,
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 0,
+    "trade-policy": 1,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
     "  proposing a subject from 5 archived document(s) (attempt 2 of 3)...",
-    "  stream      : the endpoint answered as SSE, 1010 delta(s) joined",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4191 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 951 delta(s) joined",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3870 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 983 delta(s) joined",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4028 characters but no document structure, trying the next one",
-    "  spent   : ~0.0184  (ceiling 0.40)",
+    "  stream      : the endpoint answered as SSE, 1376 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3938 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1174 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3378 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1351 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3862 characters but no document structure, trying the next one",
+    "  spent   : ~0.0177  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug already published: china-p-nitrotoluene-eu-anti-dumping-investigation-2026 - retrying with another subject",
+    "  slug    : china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+    "  keyword : China anti-dumping investigation EU p-nitrotoluene 2026",
+    "  duplicate check: score 99 against china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+    "      the slug china-p-nitrotoluene-eu-anti-dumping-investigation-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 5 archived document(s) (attempt 3 of 3)...",
+    "  stream      : the endpoint answered as SSE, 1008 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4104 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1054 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4393 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1056 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4361 characters but no document structure, trying the next one",
+    "  spent   : ~0.0271  (ceiling 0.40)",
     "  model   : deepseek/deepseek-chat",
     "  feasible: true",
     "  slug already published: eu-goes-safeguard-tariff-rate-quota-2026 - retrying with another subject",
@@ -108,30 +81,12 @@
     "  duplicate check: score 99 against eu-goes-safeguard-tariff-rate-quota-2026",
     "      the slug eu-goes-safeguard-tariff-rate-quota-2026 is already in src/content/blog",
     "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 5 archived document(s) (attempt 3 of 3)...",
-    "  stream      : the endpoint answered as SSE, 1153 delta(s) joined",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4073 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 1255 delta(s) joined",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4328 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 1327 delta(s) joined",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4486 characters but no document structure, trying the next one",
-    "  spent   : ~0.0287  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : china-emergency-procurement-rules-imported-goods-october-2026",
-    "  keyword : China emergency procurement imported products filing 2026",
-    "  duplicate check: score 0",
-    "  slug    : china-emergency-procurement-rules-imported-goods-october-2026",
-    "  keyword : China emergency procurement imported products filing 2026",
-    "  category: trade-policy",
-    "  figures : 7",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0287",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "seconds": 125
+    "  ALL_SUBJECTS_DUPLICATE - all 3 proposals are already published.",
+    "    - eu-pea-protein-definitive-duties-five-year-cost-2026 (score 20)",
+    "    - china-p-nitrotoluene-eu-anti-dumping-investigation-2026 (score 99)",
+    "    - eu-goes-safeguard-tariff-rate-quota-2026 (score 99)",
+    "  No directive was written. Publishing a near-duplicate under a new slug would compete with",
+    "  the existing article for the same keyword, which is worse for the site than a quiet day.",
+    "  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure."
+  ]
 }
