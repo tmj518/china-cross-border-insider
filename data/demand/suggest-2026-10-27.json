@@ -1,0 +1,3650 @@
+{
+  "at": "2026-10-27T08:06:45.453Z",
+  "seeds": [
+    "china import duty",
+    "china import tax",
+    "landed cost",
+    "de minimis",
+    "section 301",
+    "anti dumping china",
+    "china export rebate",
+    "china vat export",
+    "customs clearance china",
+    "china shipping cost",
+    "freight index scfi",
+    "ccfi index",
+    "rare earth export",
+    "china work permit",
+    "china z visa",
+    "china residence permit",
+    "china permanent residence",
+    "china tax foreigner",
+    "china social insurance",
+    "china driving licence",
+    "china bank account",
+    "china mm2h",
+    "moving to china cost",
+    "china tariff rate quota",
+    "china cbam"
+  ],
+  "total": 379,
+  "covered": 136,
+  "gaps": 235,
+  "rows": [
+    {
+      "query": "china import duty in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty calculator",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ],
+      "coveredBy": "blog/china-2026-export-duty-wrought-metals"
+    },
+    {
+      "query": "china import duty rates",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty by hs code",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty on indian pharma",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty on pharma from india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ],
+      "coveredBy": "blog/china-2026-export-duty-wrought-metals"
+    },
+    {
+      "query": "china import duty tax",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ],
+      "coveredBy": "blog/china-2026-export-duty-wrought-metals"
+    },
+    {
+      "query": "china import duty news",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import duty rates 2025",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026"
+    },
+    {
+      "query": "import duty from china to india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "import duty from china to uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ],
+      "coveredBy": "blog/china-2026-export-duty-wrought-metals"
+    },
+    {
+      "query": "china to india import duty calculator",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "import duty from china to malaysia",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import duty"
+      ]
+    },
+    {
+      "query": "china import tax",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax rate",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china import tax"
+      ],
+      "coveredBy": "blog/china-2026-export-duty-wrought-metals"
+    },
+    {
+      "query": "china import tax in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax to us",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax calculator",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax europe",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ],
+      "coveredBy": "blog/us-vs-eu-low-value-parcel-charges-2026"
+    },
+    {
+      "query": "china import tax in pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax from singapore",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax rate 2025",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import tax"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026"
+    },
+    {
+      "query": "china import tax of cocoa butter equivalent",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "landed cost meaning",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost formula",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost adalah",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost calculation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost odoo",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost là gì",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost netsuite",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost zoho books",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost computation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost d365",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost calculator",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost d365fo",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed costs components",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed costs management",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost factor",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "landed cost vs standard cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "landed cost"
+      ]
+    },
+    {
+      "query": "de minimis",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ],
+      "coveredBy": "blog/eu-per-item-customs-charge-2026"
+    },
+    {
+      "query": "de minimis rule",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis meaning",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis rule iras",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis non curat lex",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis exemption",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis pronunciation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis rule iras gst",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis rule singapore",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis benefits",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis rate",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis safe harbor election",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis allowance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis meaning in salary",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis amount",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "de minimis threshold",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "de minimis"
+      ]
+    },
+    {
+      "query": "section 301 tariffs",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ],
+      "coveredBy": "blog/proclamation-11052-polysilicon-minimum-import-price"
+    },
+    {
+      "query": "section 301 singapore",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 investigation",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 excess capacity",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 of the trade act of 1974",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 tariffs singapore",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 forced labor",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 tariff list pdf",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "section 301"
+      ],
+      "coveredBy": "blog/proclamation-11052-polysilicon-minimum-import-price"
+    },
+    {
+      "query": "section 301 tariffs excess capacity",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 tariff list",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ],
+      "coveredBy": "blog/proclamation-11052-polysilicon-minimum-import-price"
+    },
+    {
+      "query": "section 301 tariffs china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 duties",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 irc",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ],
+      "coveredBy": "blog/proclamation-11052-polysilicon-minimum-import-price"
+    },
+    {
+      "query": "section 301 brazil",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "section 301 exclusions",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ],
+      "coveredBy": "blog/section-301-exclusions-expire-november-2026"
+    },
+    {
+      "query": "section 301 forced labor tariff",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "section 301"
+      ]
+    },
+    {
+      "query": "anti dumping china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china steel",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping tyres china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china aluminum",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china canada",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china eu",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china us",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china plywood",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china glass",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "anti dumping china europe",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "antidumping china keramik",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ]
+    },
+    {
+      "query": "anti dumping duty china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/eaeu-anti-dumping-oil-well-pipe-2026"
+    },
+    {
+      "query": "anti dumping tariff china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "china anti dumping duty list",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/eaeu-anti-dumping-oil-well-pipe-2026"
+    },
+    {
+      "query": "china anti dumping canola",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "anti dumping china"
+      ],
+      "coveredBy": "blog/china-p-nitrotoluene-eu-anti-dumping-investigation-2026"
+    },
+    {
+      "query": "china export rebate",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china export rebate policy",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ]
+    },
+    {
+      "query": "china export rebate cut",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export rebate"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china export rebate cancellation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export rebate"
+      ]
+    },
+    {
+      "query": "china export rebate removal",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export rebate"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china export refund",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export rebate"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china export tax rebate",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china export tax rebate list",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ]
+    },
+    {
+      "query": "china export vat rebate",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china export tax rebate calculation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export rebate"
+      ]
+    },
+    {
+      "query": "china export tax rebate cancellation",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ]
+    },
+    {
+      "query": "china cancel export tax rebate",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export rebate"
+      ]
+    },
+    {
+      "query": "china vat export",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china vat export rebate",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china vat export refund policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china vat export refund",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "china vat export services",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china vat export tax",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china export vat refund rate",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china export vat rate",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/china-2026-export-duty-wrought-metals"
+    },
+    {
+      "query": "china news vat export tax refund",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china steel export vat",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+    },
+    {
+      "query": "china export vat",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china export vat refund",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/china-export-rebate-vs-export-duty-2026"
+    },
+    {
+      "query": "vat in china for exports",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/china-container-suitability-check-frozen-food-export-2026"
+    },
+    {
+      "query": "what is export vat refund in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "china vat refund for exporters",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ]
+    },
+    {
+      "query": "is china removing vat for export",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china vat export"
+      ],
+      "coveredBy": "blog/china-export-tax-rebate-removal-battery-solar"
+    },
+    {
+      "query": "customs clearance china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs clearance china to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs clearance china to us",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs declaration china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs broker china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs broker china to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs office china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "customs inspection china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "custom declaration china online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "custom declaration china pinduoduo",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "patch from china customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "dhl custom clearance office china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance china"
+      ]
+    },
+    {
+      "query": "china shipping cost",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping cost calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping cost per kg",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping cost increase",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ],
+      "coveredBy": "blog/china-input-cost-gap-supplier-price-negotiation-2027"
+    },
+    {
+      "query": "china shipping cost to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping costs to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "cosco shipping china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china freight cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china postage cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china freight cost increase",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ],
+      "coveredBy": "blog/china-input-cost-gap-supplier-price-negotiation-2027"
+    },
+    {
+      "query": "china shipping cosco",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping container lines",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping container",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping container tracking",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping container rail cars",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china shipping container lines tracking",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "china to india shipping cost per kg",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "shipping costs to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "shipping cost from china to australia",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china shipping cost"
+      ]
+    },
+    {
+      "query": "freight index scfi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "freight rates scfi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "containerized freight index scfi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "shanghai containerized freight index scfi",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "shanghai containerized freight index scfi chart",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ]
+    },
+    {
+      "query": "china containerized freight index (scfi)",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "shanghai containerized freight index (scfi) historical data",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ]
+    },
+    {
+      "query": "shanghai export containerized freight index scfi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "shanghai freight index scfi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "shanghai containerized freight index scfi north europe",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ]
+    },
+    {
+      "query": "scfi freight index",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "scfi container freight index",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "freight index scfi"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "ccfi index",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "ccfi index chart",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "ccfi index historical data",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "ccfi freight index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "scfi ccfi index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "ccfi container index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "ccfi shipping index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "ccfi composite index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/container-freight-index-publisher-change-2026"
+    },
+    {
+      "query": "what is cu index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "what is dwcpf index",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cfi index",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/china-producer-price-split-copper-ferrous-2026"
+    },
+    {
+      "query": "cci index",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/china-producer-price-split-copper-ferrous-2026"
+    },
+    {
+      "query": "cci index formula",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index calculation",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index chart",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index interpretation",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index analysis",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index calcolo",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index fred",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index meaning",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ]
+    },
+    {
+      "query": "cci index uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ccfi index"
+      ],
+      "coveredBy": "blog/china-producer-price-split-copper-ferrous-2026"
+    },
+    {
+      "query": "rare earth exports",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth export controls",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth exports by country",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ]
+    },
+    {
+      "query": "rare earth export restrictions",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth export ban",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth exports china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth export controls china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth export restrictions china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth value",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth materials by country",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rare earth export"
+      ]
+    },
+    {
+      "query": "rare earth export control",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth export restrictions one year later",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ]
+    },
+    {
+      "query": "rare earth export control china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "rare earth export license",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "rare earth export"
+      ],
+      "coveredBy": "blog/china-rare-earth-export-controls-licence-regime"
+    },
+    {
+      "query": "china work permit",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit singapore",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit age limit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit visa",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ],
+      "coveredBy": "guide/z-visa-vs-m-visa"
+    },
+    {
+      "query": "china work permit processing time",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit visa for bangladeshi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit requirements",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit for pakistani",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit card",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit for indian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit point system",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit points calculator",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit category b",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit status check",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit points",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit number",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china work permit transfer",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work permit"
+      ]
+    },
+    {
+      "query": "china z visa",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ],
+      "coveredBy": "guide/144-hour-visa-free-transit"
+    },
+    {
+      "query": "china z visa requirements",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa requirements 2026",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa application",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa application form",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa documents required",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china z visa"
+      ],
+      "coveredBy": "blog/importing-from-china-documents-checklist"
+    },
+    {
+      "query": "china z visa medical requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa fee",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china z visa"
+      ],
+      "coveredBy": "guide/144-hour-visa-free-transit"
+    },
+    {
+      "query": "china z visa process",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa medical form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa process in consulate in mumbai",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa processing time",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa application singapore",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa guidance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china z visa fee in india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china z visa"
+      ]
+    },
+    {
+      "query": "china residence permit",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit for foreigners",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit for students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit fee",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit application form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit"
+      ]
+    },
+    {
+      "query": "china residence permit processing time",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit"
+      ]
+    },
+    {
+      "query": "china residence permit for students price",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit"
+      ]
+    },
+    {
+      "query": "china residence permit requirements",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit number",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit card",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "china residence permit application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china residence permit photo size",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ]
+    },
+    {
+      "query": "china residence permit renewal",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ],
+      "coveredBy": "guide/residence-permit-renewal"
+    },
+    {
+      "query": "residence permit china visa type",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit"
+      ]
+    },
+    {
+      "query": "china permanent residence",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence requirements",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence card",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence permit",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence card requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ]
+    },
+    {
+      "query": "china permanent residence fee",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence marriage",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence by investment",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence for indian citizens",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ]
+    },
+    {
+      "query": "china permanent residence application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "china permanent residence application form",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "how to get permanent residence in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china permanent residence"
+      ],
+      "coveredBy": "guide/permanent-residence-application"
+    },
+    {
+      "query": "foreign tax china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-case-timing-fisr-2028"
+    },
+    {
+      "query": "china foreigner tax refund",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreigner tax rate",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreign tax exemption",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreigner tax calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax foreign income",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax foreign investment",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-case-timing-fisr-2028"
+    },
+    {
+      "query": "china tax non resident",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreign tax identifying number",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreign tax credit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china income tax for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax exemption for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax rate for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax calculator for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china income tax calculator for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreigner income tax calculator",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china foreigner tax benefits",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china tax refund for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tax foreigner"
+      ]
+    },
+    {
+      "query": "china social insurance system",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance for foreigners",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance law",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china's social insurance crackdown",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance and housing fund",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china social insurance"
+      ]
+    },
+    {
+      "query": "china social insurance card",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance contributions",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china social insurance certificate",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china social insurance"
+      ],
+      "coveredBy": "guide/foreigner-social-insurance"
+    },
+    {
+      "query": "china driving licence",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "china driving licence test",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "china driving licence old age age",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "china driving licence age",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "china driving licence number",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "chinese driving licence in uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "chinese driving licence in ireland",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "chinese driver's licence in australia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving permit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china international driving licence",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china driving licence"
+      ],
+      "coveredBy": "guide/convert-foreign-driving-licence"
+    },
+    {
+      "query": "china driving license",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license hong kong",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license categories",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license convert to singapore",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license test questions",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license c1",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license test",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license c1 c2",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license renewal",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china driving license convert to malaysia",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china driving licence"
+      ]
+    },
+    {
+      "query": "china bank account for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number how many digits",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number sample",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account opening",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number in atm card",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number where to find",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number format",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account opening online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number digits",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account format",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account checker",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account number length",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account type",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china bank account details",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china bank account"
+      ]
+    },
+    {
+      "query": "china mm2h",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china mm2h"
+      ]
+    },
+    {
+      "query": "bank of china mm2h",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china mm2h"
+      ]
+    },
+    {
+      "query": "mm2h visa requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china mm2h"
+      ]
+    },
+    {
+      "query": "what is mm2h visa malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china mm2h"
+      ]
+    },
+    {
+      "query": "mm2h visa processing time",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china mm2h"
+      ]
+    },
+    {
+      "query": "how long can china citizen stay in malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china mm2h"
+      ]
+    },
+    {
+      "query": "china mm 2025",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china mm2h"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-2025-notification-rates-importer-compliance-2026"
+    },
+    {
+      "query": "move to china cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ],
+      "coveredBy": "guide/relocation-cost-per-cubic-metre"
+    },
+    {
+      "query": "bank transfer to china cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "cost of moving to china from usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "how much does it cost to move to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "is it cheaper to live in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "how much does it cost to live in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "how much does it cost to live in china for a year",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "cost of moving to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "how to move to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-2028-regime-timing-risk"
+    },
+    {
+      "query": "is it easy to move to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "how to move to china permanently",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "cost to go to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ],
+      "coveredBy": "blog/brazil-beef-import-additional-55-percent-tariff-october-2026"
+    },
+    {
+      "query": "moving to china from us",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ],
+      "coveredBy": "blog/eu-cbam-downstream-extension-material-composition-2028"
+    },
+    {
+      "query": "moving from usa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ],
+      "coveredBy": "blog/eu-cbam-downstream-extension-material-composition-2028"
+    },
+    {
+      "query": "how to move to china from usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ],
+      "coveredBy": "blog/eu-fdi-screening-2028-regime-timing-risk"
+    },
+    {
+      "query": "moving city in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "moving to china as an american",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "moving companies from usa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "cost of moving across country",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "moving to china cost"
+      ]
+    },
+    {
+      "query": "china tariff rate quota",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "what is a tariff rate quota",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "what is the current china tariff rate",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ]
+    },
+    {
+      "query": "tariff rates for china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ]
+    },
+    {
+      "query": "canada china tariff quota",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "tariff rate on china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "current tariff rate for china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "what is the china tariff rate",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "what is tariff rate quota",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ],
+      "coveredBy": "blog/eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026"
+    },
+    {
+      "query": "china current tariff rates",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff rate quota"
+      ]
+    },
+    {
+      "query": "china cbam",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ],
+      "coveredBy": "blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+    },
+    {
+      "query": "china cbam wto",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ],
+      "coveredBy": "blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+    },
+    {
+      "query": "cbam china response",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "cbam china steel",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ],
+      "coveredBy": "blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+    },
+    {
+      "query": "cbam china eu",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ],
+      "coveredBy": "blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+    },
+    {
+      "query": "eu cbam china response",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "sgs china cbam",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ],
+      "coveredBy": "blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
+    },
+    {
+      "query": "what is chna",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china cba meaning",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo forest",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bambus",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo crafts",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo flooring",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo products",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo utensils",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    },
+    {
+      "query": "china bamboo furniture",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china cbam"
+      ]
+    }
+  ]
+}
