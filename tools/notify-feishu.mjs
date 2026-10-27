@@ -59,6 +59,8 @@ function failureBreakdown(limit = 4) {
   if (!existsSync(USAGE)) return "";
   const counts = new Map();
   let total = 0;
+  let recovered = 0;
+  let recoveredFrom = new Map();
   try {
     for (const line of readFileSync(USAGE, "utf8").split("\n")) {
       if (!line.trim()) continue;
@@ -70,21 +72,42 @@ function failureBreakdown(limit = 4) {
       }
       if (j.ok !== false) continue;
       total++;
+      /*
+       * A failure that a fallback answered is not a failure the operator has to act on.
+       *
+       * On 2026-10-27 the guide line reported "20 failed" while all twenty were the same write: the
+       * primary provider was unreachable from the runner, the fallback wrote the piece, and the run
+       * published. Counting the abandoned first attempt as a failure made a healthy run look broken -
+       * the meter records both halves, and the card was reading the first half only.
+       */
+      const err = String(j.error ?? "");
+      if (/falling back to/i.test(err)) {
+        recovered++;
+        const from = /(?:volces|deepseek|openai)/i.exec(err.split("- falling back")[0] ?? "")?.[0] ?? "primary";
+        recoveredFrom.set(from, (recoveredFrom.get(from) ?? 0) + 1);
+        continue;
+      }
       const key = j.status
         ? `HTTP ${j.status}`
-        : /fetch failed|ETIMEDOUT|ECONNRESET|socket hang up|undici/i.test(String(j.error ?? ""))
+        : /fetch failed|ETIMEDOUT|ECONNRESET|socket hang up|undici/i.test(err)
           ? "network timeout"
-          : /no provider key|no key configured/i.test(String(j.error ?? ""))
+          : /no provider key|no key configured/i.test(err)
             ? "no provider key"
-            : String(j.error ?? "unknown").replace(/\s+/g, " ").slice(0, 42);
+            : err.replace(/\s+/g, " ").slice(0, 42);
       counts.set(key, (counts.get(key) ?? 0) + 1);
     }
   } catch {
     return "";
   }
   if (!total) return "";
+  const parts = [];
   const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit);
-  return `Failed calls: ${total} — ${top.map(([k, n]) => `${n}× ${k}`).join(", ")}`;
+  if (top.length) parts.push(`${top.map(([k, n]) => `${n}× ${k}`).join(", ")}`);
+  if (recovered) {
+    const from = [...recoveredFrom.entries()].map(([k, n]) => `${n}× ${k}`).join(", ");
+    parts.push(`${recovered} recovered by the other provider (${from})`);
+  }
+  return `Failed calls: ${total} — ${parts.join("; ")}`;
 }
 
 let report = null;
