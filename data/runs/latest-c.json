@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-27T03:51:49.062Z",
+  "at": "2026-10-27T13:15:30.023Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-tax-annual-reconciliation",
-  "seconds": 142,
+  "article": "china-foreigner-income-tax-calculator",
+  "seconds": 118,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0019
+    "usd": 0.0021
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding china-tax-annual-reconciliation",
+      "name": "grounding china-foreigner-income-tax-calculator",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-tax-annual-reconciliation",
+      "name": "gates china-foreigner-income-tax-calculator",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-tax-annual-reconciliation",
+      "name": "build china-foreigner-income-tax-calculator",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-tax-annual-reconciliation/"
+      "detail": "/guide/china-foreigner-income-tax-calculator/"
     }
   ],
   "researchLog": [

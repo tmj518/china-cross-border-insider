@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-27T13:15:30.023Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-foreigner-income-tax-calculator",
+  "seconds": 118,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0021
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20261019161601-9k6dn"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "10 candidate(s)"
+    },
+    {
+      "name": "grounding china-foreigner-income-tax-calculator",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-foreigner-income-tax-calculator",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-foreigner-income-tax-calculator",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-foreigner-income-tax-calculator/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20261019161601-9k6dn"
+  ]
+}

@@ -1,27 +1,48 @@
 {
-  "at": "2026-10-27T03:51:49.115Z",
+  "at": "2026-10-27T13:15:30.086Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 2,
-      "at": "2026-10-27T03:51:49.062Z"
+      "count": 3,
+      "at": "2026-10-27T13:15:30.023Z"
     },
     "script": {
-      "verdict": "DUPLICATE-SUBJECT",
+      "verdict": "PUBLISHED",
       "count": 1,
-      "at": "2026-10-27T02:06:03.300Z"
+      "at": "2026-10-27T07:50:05.401Z"
+    },
+    "agent": {
+      "verdict": "PUBLISHED-WITHOUT-FINISH",
+      "count": 1,
+      "at": "2026-10-27T07:43:34.507Z"
     }
   },
   "lastRun": {
-    "at": "2026-10-27T03:51:49.062Z",
+    "at": "2026-10-27T13:15:30.023Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-tax-annual-reconciliation"
+    "article": "china-foreigner-income-tax-calculator"
   },
   "metrics": {
-    "files": 0,
-    "last": null,
-    "recoveredLast7": []
+    "files": 1,
+    "last": {
+      "at": "2026-10-27T07:43:34.743Z",
+      "route": "unknown",
+      "total": 213,
+      "recovered": 1,
+      "unrecovered": 212,
+      "byReason": {
+        "no provider key present": 205,
+        "HTTP 401": 6,
+        "network timeout": 1
+      }
+    },
+    "recoveredLast7": [
+      1
+    ]
   },
-  "warnings": []
+  "warnings": [
+    "c has ended PUBLISHED 3 runs in a row.",
+    "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
+  ]
 }

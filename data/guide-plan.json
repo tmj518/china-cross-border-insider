@@ -1,55 +1,8 @@
 {
-  "at": "2026-10-27T08:32:55.242Z",
+  "at": "2026-10-27T13:13:32.177Z",
   "days": 90,
-  "gsc": false,
+  "gsc": true,
   "plan": [
-    {
-      "slug": "china-z-visa-requirements",
-      "topic": "work-visa",
-      "audience": [
-        "employee",
-        "employer"
-      ],
-      "unit": "one application",
-      "title": "China Z Visa: Requirements and the Medical",
-      "query": "china z visa requirements",
-      "status": "queued",
-      "source": "demand",
-      "demandBreadth": 10,
-      "sources": [
-        "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "签证",
-        "工作许可",
-        "Z字",
-        "visa",
-        "work permit"
-      ],
-      "facts": [],
-      "mustSay": [
-        "The Z visa is issued for employment, and it is converted into a residence permit after arrival.",
-        "A work permit notification from the employer comes before the visa application, not after.",
-        "The medical examination is part of the application, and it has to be done at a recognised clinic.",
-        "The visa and the permit are two documents issued by two different authorities."
-      ],
-      "avoid": [
-        "Do not state a fee, a validity period or a processing time unless the fact sheet contains it."
-      ],
-      "priorityScore": 4.8,
-      "priorityWhy": {
-        "basis": "harvested",
-        "base": 4.8,
-        "demandImpressions": 0,
-        "demandBreadth": 10,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "china-foreigner-income-tax-calculator",
       "topic": "tax",
@@ -110,7 +63,9 @@
       "demandBreadth": 2,
       "sources": [
         "http://www.mohrss.gov.cn/",
-        "https://www.gov.cn/"
+        "https://www.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html",
+        "https://hzf.mofcom.gov.cn/article/ggfw/crjfw/crjfwxx/202511/1037.html"
       ],
       "fetchKeywords": [
         "工作许可",
@@ -139,7 +94,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     },
     {
       "slug": "china-bank-account-foreigner",
@@ -155,7 +111,8 @@
       "status": "queued",
       "sources": [
         "https://www.gov.cn/",
-        "https://www.pbc.gov.cn/"
+        "https://www.pbc.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html"
       ],
       "fetchKeywords": [
         "银行账户",
@@ -184,7 +141,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     },
     {
       "slug": "china-sim-card-real-name",
@@ -200,7 +158,8 @@
       "status": "queued",
       "sources": [
         "https://www.gov.cn/",
-        "https://www.miit.gov.cn/"
+        "https://www.miit.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html"
       ],
       "fetchKeywords": [
         "实名",
@@ -229,7 +188,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     },
     {
       "slug": "china-permanent-residence-marriage",
@@ -243,7 +203,8 @@
       "status": "queued",
       "sources": [
         "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/"
+        "https://en.nia.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html"
       ],
       "fetchKeywords": [
         "永久居留",
@@ -272,7 +233,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     },
     {
       "slug": "work-permit-notification",
@@ -287,7 +249,9 @@
       "status": "queued",
       "sources": [
         "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/"
+        "https://en.nia.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html",
+        "https://hzf.mofcom.gov.cn/article/ggfw/crjfw/crjfwxx/202511/1037.html"
       ],
       "fetchKeywords": [
         "工作许可",
@@ -315,7 +279,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     },
     {
       "slug": "china-medical-insurance-foreigner",
@@ -376,7 +341,8 @@
       "demandBreadth": 1,
       "sources": [
         "https://gab.122.gov.cn/",
-        "https://www.gov.cn/"
+        "https://www.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html"
       ],
       "fetchKeywords": [
         "驾驶证",
@@ -405,7 +371,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     },
     {
       "slug": "china-renting-apartment-deposit",
@@ -464,7 +431,8 @@
       "status": "queued",
       "sources": [
         "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/"
+        "https://en.nia.gov.cn/",
+        "https://www.nia.gov.cn/n741445/n741624/index.html"
       ],
       "fetchKeywords": [
         "出入境记录",
@@ -492,7 +460,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     }
   ],
   "pages": []

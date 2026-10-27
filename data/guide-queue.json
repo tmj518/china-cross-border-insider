@@ -841,7 +841,7 @@
       "unit": "one month",
       "title": "China Income Tax for Foreigners, Worked Out",
       "query": "china foreigner income tax calculator",
-      "status": "queued",
+      "status": "done",
       "source": "demand",
       "demandBreadth": 6,
       "sources": [
@@ -875,7 +875,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-10-27"
     },
     {
       "slug": "china-driving-licence-renewal",
