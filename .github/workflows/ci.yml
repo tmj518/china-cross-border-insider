@@ -97,3 +97,31 @@ jobs:
           path: dist
           retention-days: 7
           if-no-files-found: warn
+
+      # A FAILED GATE HAS TO SAY SO OUT LOUD.
+      #
+      # On 2026-10-27 the titles gate failed five consecutive runs over about two hours and nobody knew, because
+      # nothing told anyone: the site deploys from the push regardless of CI, so a red CI produced no visible
+      # symptom. The failure was found by a person looking at the Actions page by accident.
+      #
+      # The card names the commit and links the run rather than only saying that something failed, because the
+      # whole cost of that afternoon was the gap between "CI is red" and "the titles gate is red because two
+      # pages share a title".
+      #
+      # jq builds the payload so a commit message containing a quote cannot break the JSON.
+      - name: Tell Feishu that a gate failed
+        if: failure()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          COMMIT_MSG: ${{ github.event.head_commit.message || github.event.pull_request.title || 'no commit message' }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$FEISHU_WEBHOOK" ]; then
+            echo "FEISHU_WEBHOOK is not set, so no card is sent. The run is still red."
+            exit 0
+          fi
+          TEXT=$(printf '🔴 Landed Math — CI 闸门失败\n\n提交: %s\n分支: %s\n主题: %s\n\n看日志: %s' \
+            "$(git rev-parse --short HEAD)" "${GITHUB_REF_NAME}" "$COMMIT_MSG" "$RUN_URL")
+          jq -n --arg t "$TEXT" '{msg_type:"text",content:{text:$t}}' > /tmp/card.json
+          curl -sS -X POST "$FEISHU_WEBHOOK" -H 'content-type: application/json' -d @/tmp/card.json
+          echo "card sent"
