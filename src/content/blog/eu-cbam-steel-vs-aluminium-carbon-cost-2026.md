@@ -1,5 +1,5 @@
 ---
-title: "Two EU Charges Reach Steel and Only One Reaches Aluminium, and That Reverses the Ranking"
+title: "EU Steel Regulation: Cost per Tonne"
 subtitle: "CBAM costs EUR 981.88 a tonne on Chinese aluminium against EUR 163.53 on steel, but the 50 per cent steel quota duty reaches steel alone"
 description: "The EU applies a carbon charge to both metals and a 50 per cent quota duty to steel alone. On Chinese goods that reverses which material looks expensive, and the crossing point is a single CIF value you can work out."
 publishDate: 2026-10-07

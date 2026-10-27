@@ -1,5 +1,5 @@
 ---
-title: "China Rare Earth: Licence Regime, Not a Ban — Nov 2026 Risk"
+title: "China Rare Earth Export Controls: Nov 2026"
 subtitle: "China's rare earth export controls in 2026 are a licensing regime, and the November 2026 decision date is the one that moves lead times"
 description: "Five notices, twenty element symbols, fifteen active and five suspended. The constraint that stops most shipments is not the law, it is the seller's willingness to risk a licence file."
 publishDate: 2026-10-02
