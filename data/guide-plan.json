@@ -1,52 +1,8 @@
 {
-  "at": "2026-10-26T08:12:21.455Z",
+  "at": "2026-10-27T03:49:26.911Z",
   "days": 90,
-  "gsc": false,
+  "gsc": true,
   "plan": [
-    {
-      "slug": "foreigner-accommodation-registration",
-      "topic": "residence",
-      "audience": [
-        "visitor",
-        "employee",
-        "student"
-      ],
-      "unit": "one stay",
-      "title": "Registering Where You Stay as a Foreigner",
-      "query": "foreigner police registration china hotel",
-      "status": "queued",
-      "sources": [
-        "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "住宿登记",
-        "临时住宿",
-        "登记",
-        "registration"
-      ],
-      "facts": [],
-      "mustSay": [
-        "A foreigner staying somewhere other than a hotel is registered with the local public security bureau.",
-        "Hotels register their guests as part of check-in; a private address does not.",
-        "The registration is tied to an address and a period, and it is asked for at the residence-permit desk.",
-        "Failing to register is a fine, and the fine is stated in the regulation."
-      ],
-      "avoid": [
-        "Do not state a number of hours or a fine unless the fact sheet contains it."
-      ],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "china-tax-annual-reconciliation",
       "topic": "tax",

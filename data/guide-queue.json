@@ -464,7 +464,7 @@
       "unit": "one tax year",
       "title": "Reconciling Your China Income Tax as a Foreigner",
       "query": "china individual income tax annual reconciliation foreigner",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.chinatax.gov.cn/",
         "https://www.gov.cn/"
@@ -495,7 +495,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-10-27"
     },
     {
       "slug": "china-bank-account-foreigner",

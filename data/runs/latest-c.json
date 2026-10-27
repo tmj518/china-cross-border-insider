@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-27T00:45:15.723Z",
+  "at": "2026-10-27T03:51:49.062Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "foreigner-accommodation-registration",
-  "seconds": 100,
+  "article": "china-tax-annual-reconciliation",
+  "seconds": 142,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0017
+    "usd": 0.0019
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding foreigner-accommodation-registration",
+      "name": "grounding china-tax-annual-reconciliation",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates foreigner-accommodation-registration",
+      "name": "gates china-tax-annual-reconciliation",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build foreigner-accommodation-registration",
+      "name": "build china-tax-annual-reconciliation",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/foreigner-accommodation-registration/"
+      "detail": "/guide/china-tax-annual-reconciliation/"
     }
   ],
   "researchLog": [

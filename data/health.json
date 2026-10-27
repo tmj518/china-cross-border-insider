@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-27T03:43:37.061Z",
+  "at": "2026-10-27T03:51:49.115Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 1,
-      "at": "2026-10-27T00:45:15.723Z"
+      "count": 2,
+      "at": "2026-10-27T03:51:49.062Z"
     },
     "script": {
       "verdict": "DUPLICATE-SUBJECT",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-10-27T02:06:03.300Z",
-    "route": "script",
-    "verdict": "DUPLICATE-SUBJECT",
-    "article": ""
+    "at": "2026-10-27T03:51:49.062Z",
+    "route": "c",
+    "verdict": "PUBLISHED",
+    "article": "china-tax-annual-reconciliation"
   },
   "metrics": {
     "files": 0,
