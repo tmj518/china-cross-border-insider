@@ -75,6 +75,21 @@ jobs:
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 }}
           ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.DUBAOTUILI12345 }}
+          #
+          # The second vendor, which was not passed here before.
+          #
+          # On 2026-10-27 every call in this step failed with "ETIMEDOUT: fetch failed" in seventeen
+          # seconds - six calls, three topics, immediate connection failures rather than slow models.
+          # lib-llm.mjs is written to switch provider on exactly that error, and it could not: the
+          # writer's only reachable provider was the one that was unreachable, because this step passed
+          # no DeepSeek key at all. The fallback looked, found nothing, and reported the original error.
+          #
+          # Same names the trade line already passes. Nothing new to configure, and no change to the
+          # shared library - the A line keeps its own snapshot of this behaviour.
+          #
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
+          OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
         run: node tools/c-line-orchestrator.mjs
 
       #
