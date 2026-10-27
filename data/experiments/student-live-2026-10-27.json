@@ -22,7 +22,7 @@
     },
     "reading": "FAILURE means this question is asked in forums, not in search; a page on this site will not rank for it"
   },
-  "figures": 12,
+  "figures": 21,
   "sourceGap": "housing: no official city-wide median rent published for Beijing/Shanghai/Guangzhou on 2026-10-27; deliberately left blank, not estimated",
   "sources": [
     "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202504/t20250423_4072294.html",
@@ -31,5 +31,15 @@
     "https://www.stats.gov.cn/sj/zxfbhjd/202601/t20260119_1962321.html"
   ],
   "gates": "9/9 ok",
-  "buildPages": 222
+  "buildPages": 222,
+  "publishedAt": "2026-10-27",
+  "measureOn": "2026-11-24",
+  "judgedBy": "GSC 90 天窗口，该页曝光 ≥ 50 为成功线",
+  "deployed": {
+    "url": "https://www.landedmath.com/guide/china-student-monthly-cost/",
+    "httpStatus": 200,
+    "inSitemap": true,
+    "verifiedAt": "2026-10-27T14:27:33.425Z"
+  },
+  "housingSchools": 3
 }
