@@ -100,10 +100,22 @@ const tail = commaAt > 0 ? cleaned.slice(commaAt + 1).trim() : "";
  *
  * The first version compared lengths, which works when the distinguishing clause is long and fails when it
  * is short - and a short tail is exactly the case where the shared prefix is most of the title. A publisher
- * is recognisable on its own terms: more than twenty columns and no digits. A segment carrying "91 FR 51975"
+ * is recognisable on its own terms: more than fourteen columns and no digits. A segment carrying "91 FR 51975"
  * has digits and is therefore never treated as a prefix.
+ *
+ * AND THE TAIL HAS TO BE ABLE TO STAND ALONE.
+ *
+ * The fourteen-column threshold was lowered from twenty to stop two instruments from one agency sharing a
+ * title, and it immediately created a different collision: "European Commission, FISR" has a nineteen-column
+ * publisher and a four-letter tail, so the publisher was dropped and the title became "FISR" - which is
+ * exactly what the /topic/fisr/ hub is called. Two pages, one title, and the uniqueness gate caught it five
+ * CI runs later.
+ *
+ * A tail shorter than twelve columns is not a name, it is an acronym, and an acronym is the one kind of
+ * string a topic hub is very likely to own. Keeping the publisher in that case costs thirteen columns and
+ * buys uniqueness; "European Commission, FISR" is twenty-six columns and still fits.
  */
-const publisherIsShared = commaAt > 0 && !/\d/.test(head) && head.length > 14;
+const publisherIsShared = commaAt > 0 && !/\d/.test(head) && head.length > 14 && tail.length >= 12;
 const name = (publisherIsShared ? tail : cleaned).trim();
 
 /**
