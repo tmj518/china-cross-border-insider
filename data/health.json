@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-27T03:43:37.061Z",
+  "streaks": {
+    "c": {
+      "verdict": "PUBLISHED",
+      "count": 1,
+      "at": "2026-10-27T00:45:15.723Z"
+    },
+    "script": {
+      "verdict": "DUPLICATE-SUBJECT",
+      "count": 1,
+      "at": "2026-10-27T02:06:03.300Z"
+    }
+  },
+  "lastRun": {
+    "at": "2026-10-27T02:06:03.300Z",
+    "route": "script",
+    "verdict": "DUPLICATE-SUBJECT",
+    "article": ""
+  },
+  "metrics": {
+    "files": 0,
+    "last": null,
+    "recoveredLast7": []
+  },
+  "warnings": []
+}

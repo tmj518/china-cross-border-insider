@@ -110,6 +110,91 @@ function failureBreakdown(limit = 4) {
   return `Failed calls: ${total} — ${parts.join("; ")}`;
 }
 
+/**
+ * Who actually wrote the words, read back from the meter.
+ *
+ * The card used to name the arrangement the configuration asks for - "volces 写 / deepseek 审" - which
+ * on 2026-10-27 was a claim the run had not made good on. A probe from a GitHub runner reports
+ * "request never completed: TimeoutError"; the same endpoint answers in four seconds from inside China.
+ * Every write therefore fell back, and the text was written by DeepSeek and reviewed by DeepSeek, while
+ * the card said the two were different vendors.
+ *
+ * That matters beyond cosmetics: the whole argument for keeping the primary where it is, is that a
+ * second vendor gives an independent second opinion. It cannot, if the first vendor never answers.
+ * This line reports what happened rather than what was intended.
+ */
+function writerActuallyUsed() {
+  if (!existsSync(USAGE)) return "";
+  const ok = [];
+  try {
+    for (const line of readFileSync(USAGE, "utf8").split("\n")) {
+      if (!line.trim()) continue;
+      let j;
+      try {
+        j = JSON.parse(line);
+      } catch {
+        continue;
+      }
+      if (j.ok === true && (j.role ?? "writer") === "writer" && j.provider) ok.push(j.provider);
+    }
+  } catch {
+    return "";
+  }
+  if (!ok.length) return "";
+  const counts = new Map();
+  for (const p of ok) counts.set(p, (counts.get(p) ?? 0) + 1);
+  const parts = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n}× ${k}`);
+  return `Writer that actually answered: ${parts.join(", ")}`;
+}
+
+/**
+ * Persist the failure split, so a trend exists rather than a single card.
+ *
+ * recovered is a fact about the route; unrecovered is a fact about the run. Only the second one is a
+ * fault, and a series of them is the difference between a bad afternoon and a broken deployment.
+ */
+function persistFailureMetrics() {
+  if (!existsSync(USAGE)) return;
+  let total = 0;
+  let recovered = 0;
+  const byReason = new Map();
+  try {
+    for (const line of readFileSync(USAGE, "utf8").split("\n")) {
+      if (!line.trim()) continue;
+      let j;
+      try {
+        j = JSON.parse(line);
+      } catch {
+        continue;
+      }
+      if (j.ok !== false) continue;
+      total++;
+      const err = String(j.error ?? "");
+      if (/falling back to/i.test(err)) {
+        recovered++;
+        continue;
+      }
+      const key = j.status ? `HTTP ${j.status}` : /fetch failed|ETIMEDOUT|undici/i.test(err) ? "network timeout" : err.slice(0, 40);
+      byReason.set(key, (byReason.get(key) ?? 0) + 1);
+    }
+  } catch {
+    return;
+  }
+  if (!total) return;
+  try {
+    const dir = join(ROOT, "data", "metrics");
+    mkdirSync(dir, { recursive: true });
+    const day = new Date().toISOString().slice(0, 10);
+    writeFileSync(
+      join(dir, `llm-${day}-${routeTag}.json`),
+      JSON.stringify({ at: new Date().toISOString(), route: routeTag, total, recovered, unrecovered: total - recovered, byReason: Object.fromEntries(byReason) }, null, 2),
+      "utf8",
+    );
+  } catch {
+    /* a metrics file that cannot be written must not stop the card */
+  }
+}
+
 let report = null;
 
 /*
@@ -262,6 +347,9 @@ if (!report) {
    */
   const failures = failureBreakdown();
   if (failures) lines.push(failures);
+  const actual = writerActuallyUsed();
+  if (actual) lines.push(actual);
+  persistFailureMetrics();
   if (report.seconds !== undefined) lines.push(`Took: ${report.seconds}s`);
 
   /*

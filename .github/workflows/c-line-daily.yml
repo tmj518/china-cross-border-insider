@@ -93,6 +93,23 @@ jobs:
         run: node tools/c-line-orchestrator.mjs
 
       #
+      # The health read, which is the one thing a per-run card cannot do.
+      #
+      # A card describes a run. A streak describes a condition: the trade line ending DUPLICATE-SUBJECT
+      # twice is not two coincidences, it is research proposing covered ground, and the fix for that is
+      # neither in the trade pipeline nor in this one. Same for the provider: every failure recovered by
+      # the fallback means the configured two-vendor arrangement is not the one in force, and the card
+      # that says "volces writes, deepseek reviews" is describing a plan rather than a fact.
+      #
+      # It writes data/health.json and prints a sentence. It changes nothing - a monitor that acts is a
+      # monitor that can be wrong in a way nobody sees.
+      #
+      - name: Read the running health
+        if: always()
+        continue-on-error: true
+        run: node tools/run-health.mjs
+
+      #
       # Remove the date-suffixed near-duplicates the trade line leaves behind. It reports by default and
       # deletes only when the title is byte-identical to the surviving file, so a real article whose slug
       # happens to carry a date is never touched.
@@ -114,7 +131,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A src/content data/guide-queue.json data/runs
+          git add -A src/content data/guide-queue.json data/runs data/metrics data/health.json data/guide-plan.json
           # Only exists once the cleaner has actually deleted something; `git add` on a missing path is a
           # fatal, which failed this step on the first run that found no duplicates.
           [ -f data/cleanup.log ] && git add data/cleanup.log || true
