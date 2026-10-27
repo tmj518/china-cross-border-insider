@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-27T06:21:58.392Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "20 previous run(s), last 2026-10-26T01:12:01.037Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "1 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 0)"
+    }
+  ],
+  "verdict": "NO-SUBJECT",
+  "reasons": [],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 1,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "RESEARCH  2026-10-27T06:21:58.432Z",
+    "====================================================================================",
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20261019161601-9k6dn",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
+    "  ok    eu-trade-news               96951B  archived",
+    "  ok    trade-remedy-cases          62730B  archived",
+    "  skip  tariff-commission            1930B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    eu-trade-news-article       75756B  article archived",
+    "  ok    eu-trade-news-article       73416B  article archived",
+    "  ok    eu-trade-news-article       77085B  article archived",
+    "  ok    eu-trade-news-article       76002B  article archived",
+    "  ok    trade-remedy-cases-article    26832B  article archived",
+    "  ok    trade-remedy-cases-article    40492B  article archived",
+    "  ok    trade-remedy-cases-article    24436B  article archived",
+    "  ok    trade-remedy-cases-article    19137B  article archived",
+    "  articles : 8 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 5 archived document(s)...",
+    "  stream      : the endpoint answered as SSE, 1015 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4229 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 993 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4110 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 143 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 512 characters but no document structure, trying the next one",
+    "  spent   : ~0.0073  (ceiling 0.40)",
+    "  model   : volces/ep-20261019161601-9k6dn",
+    "  feasible: false",
+    "  reason  : The uncovered sources do not support an article: the FDI and trade-defence reports contain aggregate counts and ratios, the GOES article announces tariff-rate quotas and price thresholds without giving numeric rates, and the pea-protein duties and p-nitrotoluene investigation are already covered.",
+    "  The documents do not support an article today. That is the answer, and no directive was",
+    "  written. A day without a qualifying subject is a day without an article."
+  ]
+}
