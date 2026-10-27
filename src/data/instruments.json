@@ -705,6 +705,92 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-directorate-general-for-trade-and-econom-48",
+      "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "nine months",
+          "unit": "normal period within which a safeguard investigation must be completed",
+          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "11 months",
+          "unit": "maximum safeguard investigation period in exceptional circumstances",
+          "period": "Applicable to the safeguard investigation launched in March 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "15",
+          "unit": "minimum EU Member States required to vote in favour of definitive measures",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "65%",
+          "unit": "minimum share of the EU population represented by Member States voting in favour",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "nine months",
+          "unit": "normal period within which a safeguard investigation must be completed",
+          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "11 months",
+          "unit": "maximum safeguard investigation period in exceptional circumstances",
+          "period": "Applicable to the safeguard investigation launched in March 2026",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "15",
+          "unit": "minimum EU Member States required to vote in favour of definitive measures",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "65%",
+          "unit": "minimum share of the EU population represented by Member States voting in favour",
+          "period": "When the Commission proposes definitive safeguard measures",
+          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        48
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ministry-of-commerce-of-china",
       "source": "Ministry of Commerce of China",
       "figures": [
@@ -853,6 +939,74 @@
       ],
       "articleSlugs": [
         "china-producer-price-split-copper-ferrous-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-directorate-general-for-trade-and-econom-48",
+      "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "26",
+          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "232",
+          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "End of 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+          "articleNum": 48,
+          "value": "three",
+          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "26",
+          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "232",
+          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
+          "period": "End of 2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
+          "articleNum": 48,
+          "value": "three",
+          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
+          "period": "2025",
+          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        48
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026-2026-10-28",
+        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
       ],
       "modelOutput": false
     },
@@ -1502,55 +1656,6 @@
       "modelOutput": false
     },
     {
-      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "2652/QD-BCT",
-          "unit": "the number of the Vietnamese decision that concluded the sunset review",
-          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "16 October 2026",
-          "unit": "the date the continued measure takes effect",
-          "period": "five-year term, so it runs to 2029 unless reviewed again",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "54.90%",
-          "unit": "the duty on the same product from India under the same decision, for comparison",
-          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "5402.33.10",
-          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
-          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "counted-from-the-annex-to-announcement-no-5-of",
       "source": "Counted from the annex to Announcement No. 5 of 2026",
       "figures": [
@@ -1649,55 +1754,6 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-directorate-general-for-trade-and-econom-48",
-      "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-      "figures": [
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "nine months",
-          "unit": "normal period within which a safeguard investigation must be completed",
-          "period": "Investigation launched in March 2026; provisional measures announced 18 September 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "11 months",
-          "unit": "maximum safeguard investigation period in exceptional circumstances",
-          "period": "Applicable to the safeguard investigation launched in March 2026",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "15",
-          "unit": "minimum EU Member States required to vote in favour of definitive measures",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "65%",
-          "unit": "minimum share of the EU population represented by Member States voting in favour",
-          "period": "When the Commission proposes definitive safeguard measures",
-          "source": "European Commission Directorate-General for Trade and Economic Security, GOES safeguard news article",
-          "retrieved": "2026-10-21"
-        }
-      ],
-      "articleNums": [
-        48
-      ],
-      "articleSlugs": [
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "european-commission-notice-of-initiation-c-2026-6637-section-30",
       "source": "European Commission, Notice of initiation C/2026/6637, section 2, Product under investigation",
       "figures": [
@@ -1745,56 +1801,6 @@
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
         "eu-cellulose-ethers-duty-timeline"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "ministry-of-finance-ministry-of-emergency-management-cai-ku-52",
-      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
-      "figures": [
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-          "articleNum": 52,
-          "value": "十个工作日",
-          "unit": "deadline to publish the award result after the winning supplier is confirmed",
-          "period": "each emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-          "articleNum": 52,
-          "value": "五个工作日",
-          "unit": "outer deadline to publish the award result after the emergency ends, where timely publication was not possible",
-          "period": "each emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
-          "articleNum": 52,
-          "value": "十个工作日",
-          "unit": "deadline to publish the award result after the winning supplier is confirmed",
-          "period": "each emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
-          "articleNum": 52,
-          "value": "五个工作日",
-          "unit": "outer deadline to publish the award result after the emergency ends, where timely publication was not possible",
-          "period": "each emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
-          "retrieved": "2026-10-26"
-        }
-      ],
-      "articleNums": [
-        52
-      ],
-      "articleSlugs": [
-        "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-        "china-emergency-procurement-rules-imported-goods-october-2026"
       ],
       "modelOutput": false
     },
@@ -2048,6 +2054,55 @@
       "modelOutput": false
     },
     {
+      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "2652/QD-BCT",
+          "unit": "the number of the Vietnamese decision that concluded the sunset review",
+          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "16 October 2026",
+          "unit": "the date the continued measure takes effect",
+          "period": "five-year term, so it runs to 2029 unless reviewed again",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "54.90%",
+          "unit": "the duty on the same product from India under the same decision, for comparison",
+          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "5402.33.10",
+          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
+          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "cbp-interim-final-rule-91-fr-37801",
       "source": "CBP interim final rule, 91 FR 37801",
       "figures": [
@@ -2124,46 +2179,6 @@
       ],
       "articleSlugs": [
         "china-2026-export-duty-wrought-metals"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-directorate-general-for-trade-and-econom-48",
-      "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-      "figures": [
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "26",
-          "unit": "definitive trade defence measures imposed in 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "232",
-          "unit": "trade defence measures in place at the end of 2025, shown as enforcement context rather than a GOES-specific rate",
-          "period": "End of 2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-provisional-safeguard-trq-price-threshold-2026",
-          "articleNum": 48,
-          "value": "three",
-          "unit": "cases in 2025 in which measures were applied retroactively, shown as enforcement context rather than a GOES-specific rate",
-          "period": "2025",
-          "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
-          "retrieved": "2026-10-21"
-        }
-      ],
-      "articleNums": [
-        48
-      ],
-      "articleSlugs": [
-        "eu-goes-provisional-safeguard-trq-price-threshold-2026"
       ],
       "modelOutput": false
     },
@@ -2604,37 +2619,6 @@
       ],
       "articleSlugs": [
         "china-export-rebate-vs-export-duty-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "2026-10-15-producer-annex-to-quy-t-nh",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "3.36%",
-          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "17.45%",
-          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     },
@@ -3190,57 +3174,25 @@
       "modelOutput": false
     },
     {
-      "id": "ministry-of-finance-ministry-of-emergency-management-cai-ku",
-      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12",
-      "figures": [
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-          "articleNum": 52,
-          "value": "2026年10月1日",
-          "unit": "effective date of the Interim Measures for Emergency Procurement Management",
-          "period": "from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
-          "articleNum": 52,
-          "value": "2026年10月1日",
-          "unit": "effective date of the Interim Measures for Emergency Procurement Management",
-          "period": "from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12",
-          "retrieved": "2026-10-26"
-        }
-      ],
-      "articleNums": [
-        52
-      ],
-      "articleSlugs": [
-        "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-        "china-emergency-procurement-rules-imported-goods-october-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "ministry-of-finance-ministry-of-emergency-management-cai-ku-52",
-      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 11",
+      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
       "figures": [
         {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
           "articleNum": 52,
-          "value": "两家或者一家",
-          "unit": "minimum number of suppliers whose bids or responses still allow the procurement to proceed",
-          "period": "competitive emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 11",
+          "value": "十个工作日",
+          "unit": "deadline to publish the award result after the winning supplier is confirmed",
+          "period": "each emergency procurement from 1 October 2026",
+          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
           "retrieved": "2026-10-26"
         },
         {
           "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
           "articleNum": 52,
-          "value": "两家或者一家",
-          "unit": "minimum number of suppliers whose bids or responses still allow the procurement to proceed",
-          "period": "competitive emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 11",
+          "value": "五个工作日",
+          "unit": "outer deadline to publish the award result after the emergency ends, where timely publication was not possible",
+          "period": "each emergency procurement from 1 October 2026",
+          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 13",
           "retrieved": "2026-10-26"
         }
       ],
@@ -3248,103 +3200,6 @@
         52
       ],
       "articleSlugs": [
-        "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-        "china-emergency-procurement-rules-imported-goods-october-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "ministry-of-finance-ministry-of-emergency-management-cai-ku-52",
-      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 15",
-      "figures": [
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-          "articleNum": 52,
-          "value": "百分之三十",
-          "unit": "cap on add-on purchases from the original supplier as a share of the original contract amount",
-          "period": "emergency situations under the measures from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 15",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
-          "articleNum": 52,
-          "value": "百分之三十",
-          "unit": "cap on add-on purchases from the original supplier as a share of the original contract amount",
-          "period": "emergency situations under the measures from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 15",
-          "retrieved": "2026-10-26"
-        }
-      ],
-      "articleNums": [
-        52
-      ],
-      "articleSlugs": [
-        "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-        "china-emergency-procurement-rules-imported-goods-october-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "ministry-of-finance-ministry-of-emergency-management-cai-ku-52",
-      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 17",
-      "figures": [
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-          "articleNum": 52,
-          "value": "百分之四十",
-          "unit": "recommended minimum prepayment share of the contract for emergency procurement",
-          "period": "contracts under the measures from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 17",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
-          "articleNum": 52,
-          "value": "百分之四十",
-          "unit": "recommended minimum prepayment share of the contract for emergency procurement",
-          "period": "contracts under the measures from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 17",
-          "retrieved": "2026-10-26"
-        }
-      ],
-      "articleNums": [
-        52
-      ],
-      "articleSlugs": [
-        "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-        "china-emergency-procurement-rules-imported-goods-october-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "ministry-of-finance-ministry-of-emergency-management-cai-ku-52",
-      "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 18",
-      "figures": [
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
-          "articleNum": 52,
-          "value": "十五年",
-          "unit": "minimum retention period for emergency procurement files",
-          "period": "records of each emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 18",
-          "retrieved": "2026-10-26"
-        },
-        {
-          "articleSlug": "china-emergency-procurement-rules-imported-goods-october-2026",
-          "articleNum": 52,
-          "value": "十五年",
-          "unit": "minimum retention period for emergency procurement files",
-          "period": "records of each emergency procurement from 1 October 2026",
-          "source": "Ministry of Finance / Ministry of Emergency Management, Cai Ku [2026] No. 12, Article 18",
-          "retrieved": "2026-10-26"
-        }
-      ],
-      "articleNums": [
-        52
-      ],
-      "articleSlugs": [
-        "china-emergency-procurement-rules-imported-goods-october-2026-2026-10-27",
         "china-emergency-procurement-rules-imported-goods-october-2026"
       ],
       "modelOutput": false
@@ -3571,6 +3426,37 @@
       ],
       "articleSlugs": [
         "indonesia-tarpaulin-safeguard-duty-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "2026-10-15-producer-annex-to-quy-t-nh",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "3.36%",
+          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "17.45%",
+          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     }
