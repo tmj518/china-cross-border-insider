@@ -112,6 +112,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [EU FDI screening: 88% of 2025 cases closed in 15 days, new regime applies 17 January 2028](/blog/eu-fdi-screening-notification-threshold-2028/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.

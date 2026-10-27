@@ -5,9 +5,9 @@
   "totals": {
     "activeUsers": 44,
     "newUsers": 44,
-    "screenPageViews": 213,
-    "sessions": 60,
-    "eventCount": 528
+    "screenPageViews": 216,
+    "sessions": 61,
+    "eventCount": 538
   },
   "channels": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "channel": "Organic Search",
-      "sessions": 5
+      "sessions": 6
     },
     {
       "channel": "AI Assistant",
@@ -27,5 +27,5 @@
       "sessions": 1
     }
   ],
-  "at": "2026-10-27T06:21:57.867Z"
+  "at": "2026-10-27T07:50:04.008Z"
 }

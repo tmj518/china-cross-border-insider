@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26",
+  "generated": "2026-10-27",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -450,64 +450,142 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-dg-trade-and-economic-security",
+      "source": "European Commission, DG Trade and Economic Security",
+      "figures": [
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "17 January 2028",
+          "unit": "application date of the new Foreign Investment Screening Regulation",
+          "period": "from 17 January 2028",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "88%",
+          "unit": "share of notified FDI cases closed within 15 days",
+          "period": "2025 notifications",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "667",
+          "unit": "investments notified to the EU cooperation mechanism",
+          "period": "2025",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "40%",
+          "unit": "increase in notifications between 2024 and 2025",
+          "period": "2024 to 2025",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "12%",
+          "unit": "share of notified investments requiring in-depth security risk assessment",
+          "period": "2025",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "53%",
+          "unit": "share of in-depth assessments in manufacturing",
+          "period": "2025",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-fdi-screening-notification-threshold-2028",
+          "articleNum": 53,
+          "value": "less than 2%",
+          "unit": "share of cases in which the Commission issued opinions",
+          "period": "2025",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-27"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "18 September 2026",
+          "unit": "date provisional safeguard measures imposed",
+          "period": "from 18 September 2026",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "nine months",
+          "unit": "normal deadline to complete a safeguard investigation",
+          "period": "from investigation launch in March 2026",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "11 months",
+          "unit": "extended deadline for a safeguard investigation",
+          "period": "exceptional circumstances",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "15 EU Member States",
+          "unit": "minimum number of member states needed for qualified majority",
+          "period": "vote on definitive measures",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "65%",
+          "unit": "share of EU population required for qualified majority",
+          "period": "vote on definitive measures",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-21"
+        },
+        {
+          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
+          "articleNum": 49,
+          "value": "March 2026",
+          "unit": "month the safeguard investigation was launched",
+          "period": "investigation start",
+          "source": "European Commission, DG Trade and Economic Security",
+          "retrieved": "2026-10-21"
+        }
+      ],
+      "articleNums": [
+        49,
+        53
+      ],
+      "articleSlugs": [
+        "eu-fdi-screening-notification-threshold-2028",
+        "eu-goes-safeguard-tariff-rate-quota-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "european-commission-sixth-annual-fdi-screening-report",
       "source": "European Commission, sixth annual FDI screening report",
       "figures": [
         {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "40%",
-          "unit": "increase in notifications to the EU cooperation mechanism between 2024 and 2025",
-          "period": "2024 to 2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "667",
-          "unit": "investments notified to the Commission in 2025",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "477",
-          "unit": "investments notified to the Commission in 2024",
-          "period": "2024",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "88%",
-          "unit": "share of notified cases closed within 15 days",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "12%",
-          "unit": "share of notified investments requiring an in-depth security risk assessment",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "53%",
-          "unit": "share of in-depth assessments in manufacturing",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
           "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
           "articleNum": 45,
           "value": "40%",
@@ -555,60 +633,6 @@
         {
           "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
           "articleNum": 45,
-          "value": "53%",
-          "unit": "share of in-depth assessments in manufacturing",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
-          "value": "667",
-          "unit": "investments notified to the Commission in 2025",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
-          "value": "477",
-          "unit": "notifications in 2024",
-          "period": "2024",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
-          "value": "40%",
-          "unit": "increase in notifications between 2024 and 2025",
-          "period": "2024-2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
-          "value": "88%",
-          "unit": "share of notified cases closed within 15 days",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
-          "value": "12%",
-          "unit": "share of notified investments requiring in-depth security risk assessment",
-          "period": "2025",
-          "source": "European Commission, sixth annual FDI screening report",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
           "value": "53%",
           "unit": "share of in-depth assessments in manufacturing",
           "period": "2025",
@@ -675,9 +699,7 @@
         45
       ],
       "articleSlugs": [
-        "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
         "eu-fdi-screening-notification-surge-2026-2026-10-19",
-        "eu-fdi-screening-notification-threshold-2026-2026-10-27",
         "eu-fdi-screening-notification-threshold-2026"
       ],
       "modelOutput": false
@@ -965,73 +987,6 @@
       ],
       "articleSlugs": [
         "eu-gpsr-sweep-2026-marketplace-listings"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-dg-trade-and-economic-security-news-arti",
-      "source": "European Commission, DG Trade and Economic Security news article",
-      "figures": [
-        {
-          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
-          "articleNum": 49,
-          "value": "18 September 2026",
-          "unit": "date provisional safeguard measures imposed",
-          "period": "from 18 September 2026",
-          "source": "European Commission, DG Trade and Economic Security news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
-          "articleNum": 49,
-          "value": "nine months",
-          "unit": "normal deadline to complete a safeguard investigation",
-          "period": "from investigation launch in March 2026",
-          "source": "European Commission, DG Trade and Economic Security news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
-          "articleNum": 49,
-          "value": "11 months",
-          "unit": "extended deadline for a safeguard investigation",
-          "period": "exceptional circumstances",
-          "source": "European Commission, DG Trade and Economic Security news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
-          "articleNum": 49,
-          "value": "15 EU Member States",
-          "unit": "minimum number of member states needed for qualified majority",
-          "period": "vote on definitive measures",
-          "source": "European Commission, DG Trade and Economic Security news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
-          "articleNum": 49,
-          "value": "65%",
-          "unit": "share of EU population required for qualified majority",
-          "period": "vote on definitive measures",
-          "source": "European Commission, DG Trade and Economic Security news article",
-          "retrieved": "2026-10-21"
-        },
-        {
-          "articleSlug": "eu-goes-safeguard-tariff-rate-quota-2026",
-          "articleNum": 49,
-          "value": "March 2026",
-          "unit": "month the safeguard investigation was launched",
-          "period": "investigation start",
-          "source": "European Commission, DG Trade and Economic Security news article",
-          "retrieved": "2026-10-21"
-        }
-      ],
-      "articleNums": [
-        49
-      ],
-      "articleSlugs": [
-        "eu-goes-safeguard-tariff-rate-quota-2026"
       ],
       "modelOutput": false
     },
@@ -2820,70 +2775,6 @@
       ],
       "articleSlugs": [
         "eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-fisr",
-      "source": "European Commission, FISR",
-      "figures": [
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-          "articleNum": 42,
-          "value": "17 January 2028",
-          "unit": "date the new Foreign Investment Screening Regulation applies from",
-          "period": "from 2028",
-          "source": "European Commission, FISR",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-threshold-2026",
-          "articleNum": 42,
-          "value": "17 January 2028",
-          "unit": "date the new Foreign Investment Screening Regulation applies from",
-          "period": "from 2028",
-          "source": "European Commission, FISR",
-          "retrieved": "2026-10-19"
-        }
-      ],
-      "articleNums": [
-        42
-      ],
-      "articleSlugs": [
-        "eu-fdi-screening-notification-threshold-2026-2026-10-27",
-        "eu-fdi-screening-notification-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "european-commission-foreign-investment-screening-regulation",
-      "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
-      "figures": [
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-          "articleNum": 45,
-          "value": "17 January 2028",
-          "unit": "date the new Foreign Investment Screening Regulation applies from",
-          "period": "from 2028",
-          "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "eu-fdi-screening-notification-surge-2026-2026-10-19",
-          "articleNum": 45,
-          "value": "17 January 2028",
-          "unit": "date the new Foreign Investment Screening Regulation applies from",
-          "period": "from 2028",
-          "source": "European Commission, Foreign Investment Screening Regulation (FISR)",
-          "retrieved": "2026-10-19"
-        }
-      ],
-      "articleNums": [
-        45
-      ],
-      "articleSlugs": [
-        "eu-fdi-screening-notification-surge-2026-2026-10-19-2026-10-27",
-        "eu-fdi-screening-notification-surge-2026-2026-10-19"
       ],
       "modelOutput": false
     },

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-26T01:12:01.037Z",
+  "lastRun": "2026-10-27T07:50:05.401Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "china-emergency-procurement-rules-imported-goods-october-2026",
-  "runs": 20,
-  "published": 20,
+  "lastArticle": "eu-fdi-screening-notification-threshold-2028",
+  "runs": 21,
+  "published": 21,
   "lastUsage": {
-    "calls": 39,
-    "failed": 26,
-    "usd": 0.0436,
-    "promptTokens": 98803,
-    "completionTokens": 15404
+    "calls": 37,
+    "failed": 24,
+    "usd": 0.0411,
+    "promptTokens": 98066,
+    "completionTokens": 14339
   }
 }
