@@ -281,9 +281,31 @@ async function ground(topic) {
     return { facts: [], error: "every source failed or returned under 400 characters of text" };
   }
 
-  const corpus = usable
-    .slice(0, 2)
-    .map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 6000)}`)
+  /*
+   * Pick the pages by how many numbers they carry, not by the order they were listed.
+   *
+   * On 2026-10-27 the Z-visa topic fetched four pages and sent the first two to the model. The third was
+   * the National Immigration Administration's fee schedule, whose extracted text reads:
+   *
+   *   普通护照 元/本 120 国家发改委、财政部 发改价格[2019]914号
+   *
+   * which is exactly what the guide needed, and it was never in the prompt. The extraction returned zero
+   * facts and the run fell back to a procedural article with no figures - the ninth such article, blamed
+   * on the ministry publishing no numbers when in fact it publishes thousands a day and we were reading
+   * the wrong two pages.
+   *
+   * Density rather than count: a fee table is mostly digits, a homepage is mostly navigation.
+   */
+  const scored = usable
+    .map((p) => ({ ...p, digits: (p.text.match(/\d+(?:\.\d+)?/g) ?? []).length }))
+    .sort((a, b) => b.digits / b.text.length - a.digits / a.text.length);
+  const picked = scored.slice(0, 3);
+  for (const p of picked) {
+    log(`  numbers    : ${String(p.digits).padStart(4)} digits  ${((p.digits / p.text.length) * 100).toFixed(1)}%  ${p.url.slice(0, 66)}`);
+  }
+
+  const corpus = picked
+    .map((p, i) => `[${i + 1}] ${p.url}\n${p.text.slice(0, 5000)}`)
     .join("\n\n");
 
   const askExtract = async (strict) =>
@@ -373,7 +395,7 @@ async function ground(topic) {
   const kept = [];
   let dropped = 0;
   for (const f of parsed.facts.slice(0, 8)) {
-    const page = usable[Number(f.source) - 1];
+    const page = picked[Number(f.source) - 1];
     if (!page) {
       dropped++;
       continue;
