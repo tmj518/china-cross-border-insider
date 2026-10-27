@@ -440,7 +440,7 @@ for (const page of fetched) {
 
 if (articles.length) {
   /*
-   * Articles first in the corpus. The model reads the first three entries, and a listing in that position is what
+   * Articles first in the corpus. The model reads the first eight entries, and a listing in that position is what
    * produced "no figure to write from".
    */
   fetched.unshift(...articles);
@@ -490,7 +490,20 @@ const CORPUS_NOTE = [
 ].join("\n");
 
 const corpus = fetched
-  .slice(0, 5)
+  /*
+   * EIGHT DOCUMENTS, NOT FIVE.
+   *
+   * Five was the cap when the corpus was four pages and a couple of articles. It is no longer: on 2026-10-27 the
+   * run followed eight articles, fed the first five, and the proposal came back infeasible - "the FDI and
+   * trade-defence reports contain aggregate counts". The other three were never read. That is the third time
+   * the same reason has ended a day, and the cheapest explanation is that the answer was in the documents the
+   * model did not see.
+   *
+   * Each body is still cut at eighteen thousand characters, so eight documents is about forty thousand tokens,
+   * which the reviewer's provider handles. If a run starts failing on context length rather than on content,
+   * this number is the first thing to lower.
+   */
+  .slice(0, 8)
   .map((f) => {
     const p = join(ROOT, f.file);
     let body = "";
@@ -707,7 +720,7 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
     : "";
 
   console.log(
-    `  proposing a subject from ${Math.min(fetched.length, 5)} archived document(s)` +
+    `  proposing a subject from ${Math.min(fetched.length, 8)} archived document(s)` +
       (attempt > 1 ? ` (attempt ${attempt} of ${PROPOSAL_ATTEMPTS})` : "") +
       "...",
   );
