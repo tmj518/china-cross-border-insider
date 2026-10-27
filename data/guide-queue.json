@@ -406,6 +406,7 @@
         "basis": "prior",
         "base": 2.8,
         "demandImpressions": 0,
+        "demandBreadth": 0,
         "demandQuery": "",
         "intent": 1,
         "gap": 1,
@@ -448,6 +449,7 @@
         "basis": "prior",
         "base": 1.8,
         "demandImpressions": 0,
+        "demandBreadth": 0,
         "demandQuery": "",
         "intent": 0.6,
         "gap": 1,
@@ -535,6 +537,7 @@
         "basis": "prior",
         "base": 3,
         "demandImpressions": 0,
+        "demandBreadth": 0,
         "demandQuery": "",
         "intent": 1,
         "gap": 1,
@@ -579,6 +582,7 @@
         "basis": "prior",
         "base": 3,
         "demandImpressions": 0,
+        "demandBreadth": 0,
         "demandQuery": "",
         "intent": 1,
         "gap": 1,
@@ -621,6 +625,7 @@
         "basis": "prior",
         "base": 3,
         "demandImpressions": 0,
+        "demandBreadth": 0,
         "demandQuery": "",
         "intent": 1,
         "gap": 1,
@@ -664,6 +669,7 @@
         "basis": "prior",
         "base": 2.5,
         "demandImpressions": 0,
+        "demandBreadth": 0,
         "demandQuery": "",
         "intent": 1,
         "gap": 1,
@@ -707,6 +713,191 @@
         "basis": "prior",
         "base": 2,
         "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-z-visa-requirements",
+      "topic": "work-visa",
+      "audience": [
+        "employee",
+        "employer"
+      ],
+      "unit": "one application",
+      "title": "China Z Visa: Requirements and the Medical",
+      "query": "china z visa requirements",
+      "status": "queued",
+      "source": "demand",
+      "demandBreadth": 10,
+      "sources": [
+        "https://www.nia.gov.cn/",
+        "https://en.nia.gov.cn/"
+      ],
+      "fetchKeywords": [
+        "签证",
+        "工作许可",
+        "Z字",
+        "visa",
+        "work permit"
+      ],
+      "facts": [],
+      "mustSay": [
+        "The Z visa is issued for employment, and it is converted into a residence permit after arrival.",
+        "A work permit notification from the employer comes before the visa application, not after.",
+        "The medical examination is part of the application, and it has to be done at a recognised clinic.",
+        "The visa and the permit are two documents issued by two different authorities."
+      ],
+      "avoid": [
+        "Do not state a fee, a validity period or a processing time unless the fact sheet contains it."
+      ],
+      "priorityScore": 4.8,
+      "priorityWhy": {
+        "basis": "harvested",
+        "base": 4.8,
+        "demandImpressions": 0,
+        "demandBreadth": 10,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-work-permit-points",
+      "topic": "work-visa",
+      "audience": [
+        "employee",
+        "employer"
+      ],
+      "unit": "one application",
+      "title": "China Work Permit: How the Points Work",
+      "query": "china work permit points calculator",
+      "status": "queued",
+      "source": "demand",
+      "demandBreadth": 2,
+      "sources": [
+        "http://www.mohrss.gov.cn/",
+        "https://www.gov.cn/"
+      ],
+      "fetchKeywords": [
+        "工作许可",
+        "外国人来华工作",
+        "积分",
+        "work permit"
+      ],
+      "facts": [],
+      "mustSay": [
+        "Foreign workers are classified into categories, and the category decides what the employer must prove.",
+        "The classification weighs salary, education, age and work experience against each other.",
+        "A higher salary can offset a weaker qualification, and the reverse is also true.",
+        "The category is decided on the application, not negotiated with the employer."
+      ],
+      "avoid": [
+        "Do not state a score, a threshold or a salary level unless the fact sheet contains it."
+      ],
+      "priorityScore": 3.19,
+      "priorityWhy": {
+        "basis": "harvested",
+        "base": 3.19,
+        "demandImpressions": 0,
+        "demandBreadth": 2,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-foreigner-income-tax-calculator",
+      "topic": "tax",
+      "audience": [
+        "employee"
+      ],
+      "unit": "one month",
+      "title": "China Income Tax for Foreigners, Worked Out",
+      "query": "china foreigner income tax calculator",
+      "status": "queued",
+      "source": "demand",
+      "demandBreadth": 6,
+      "sources": [
+        "https://www.chinatax.gov.cn/",
+        "https://www.gov.cn/"
+      ],
+      "fetchKeywords": [
+        "个人所得税",
+        "税率表",
+        "专项附加扣除",
+        "individual income tax"
+      ],
+      "facts": [],
+      "mustSay": [
+        "The tax is progressive, so the rate on the last unit of income is not the rate on the whole salary.",
+        "Residence status decides whether worldwide income is in scope, and that status turns on days in China.",
+        "Allowances that are paid as reimbursements are treated differently from the same money paid as salary.",
+        "The employer withholds monthly; the annual reconciliation is a separate filing."
+      ],
+      "avoid": [
+        "Do not state a bracket, a threshold or a deduction unless the fact sheet contains it."
+      ],
+      "priorityScore": 4.29,
+      "priorityWhy": {
+        "basis": "harvested",
+        "base": 4.29,
+        "demandImpressions": 0,
+        "demandBreadth": 6,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-driving-licence-renewal",
+      "topic": "driving",
+      "audience": [
+        "employee",
+        "relocating"
+      ],
+      "unit": "one renewal",
+      "title": "Renewing a Chinese Driving Licence",
+      "query": "china driving license renewal",
+      "status": "queued",
+      "source": "demand",
+      "demandBreadth": 1,
+      "sources": [
+        "https://gab.122.gov.cn/",
+        "https://www.gov.cn/"
+      ],
+      "fetchKeywords": [
+        "驾驶证",
+        "换证",
+        "体检",
+        "driving licence"
+      ],
+      "facts": [],
+      "mustSay": [
+        "A Chinese licence has an expiry date, and renewal is a separate procedure from conversion.",
+        "The medical check is part of the renewal, not a separate optional step.",
+        "The renewal window opens before expiry, and a licence that has lapsed is handled differently.",
+        "A foreign licence is not a substitute once the Chinese one has been issued."
+      ],
+      "avoid": [
+        "Do not state a fee, a validity period or a window in days unless the fact sheet contains it."
+      ],
+      "priorityScore": 2.5,
+      "priorityWhy": {
+        "basis": "harvested",
+        "base": 2.5,
+        "demandImpressions": 0,
+        "demandBreadth": 1,
         "demandQuery": "",
         "intent": 1,
         "gap": 1,

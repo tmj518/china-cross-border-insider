@@ -71,7 +71,7 @@ const PRIOR = {
   employment: 2.6,
 };
 const INTENT_WORDS =
-  /\b(how|what|can|do i|does|requirements?|documents?|steps?|cost|costs|fee|fees|renew|renewal|apply|application|need|qualify|eligible|deadline|registration|permit|visa|account|card|licen[cs]e|residence|conversion|insurance|deposit|reconciliation|threshold)\b/i;
+  /\b(how|what|can|do i|does|requirements?|documents?|steps?|cost|costs|fee|fees|renew|renewal|apply|application|need|qualify|eligible|deadline|registration|permit|visa|account|card|licen[cs]e|residence|conversion|insurance|deposit|reconciliation|threshold|calculator|calculate|how much|worked out)\b/i;
 
 const norm = (s) => String(s ?? "").toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ").trim();
 const tokens = (s) => norm(s).split(" ").filter((w) => w.length >= 3);
@@ -89,6 +89,30 @@ function matchScore(topicQuery, gscQuery) {
 }
 
 /* ── signals ─────────────────────────────────────────────────────────────────────────────────── */
+
+/*
+ * The harvested demand, which is the only evidence available while Search Console still has nothing.
+ *
+ * tools/demand-to-queue.mjs writes data/demand/queue-candidates.json: phrases people actually typed,
+ * with a breadth count of how many of our seeds returned each one. For a brand-new site that is a
+ * stronger signal than a class prior, because it is a measurement of the world rather than a guess
+ * about it - and it costs nothing.
+ *
+ * It is still weaker evidence than Search Console: breadth counts how many of OUR seed phrases produced
+ * the suggestion, not how many people type it. So it sits between measured and prior, and the output
+ * says which of the three it used.
+ */
+const CANDIDATES = join(ROOT, "data", "demand", "queue-candidates.json");
+const harvested = (() => {
+  try {
+    return JSON.parse(readFileSync(CANDIDATES, "utf8"));
+  } catch {
+    return null;
+  }
+})();
+const breadthOf = new Map(
+  (harvested?.candidates ?? []).map((c) => [c.query.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(), c.breadth ?? 0]),
+);
 
 const queue = JSON.parse(readFileSync(QUEUE, "utf8"));
 const published = new Set(
@@ -137,7 +161,19 @@ for (const t of queue.topics) {
 
   const demand = best.impressions > 0 ? Math.min(5, Math.log1p(best.impressions)) : 0;
   const prior = PRIOR[t.topic] ?? 2.0;
-  const base = demand > 0 ? demand : prior;
+  const key = String(t.query ?? "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  /*
+ * The authored cluster size wins over the per-phrase count.
+ *
+ * A single suggestion phrase almost always has breadth 1 - it was produced by one of our seeds - so
+ * leading with it would score every harvested topic at the same weak 2.5 and never beat a prior. The
+ * real signal is how many phrasings collapsed into one intent: ten separate Z-visa queries mean one
+ * topic that a lot of people are trying to ask for, and that is what was written onto the topic.
+ */
+  const breadth = t.demandBreadth ?? breadthOf.get(key) ?? 0;
+  /* Breadth 1 means one of our seeds produced it: real, but weak. It lands just under a strong prior. */
+  const fromHarvest = breadth > 0 ? Math.min(5, 2.5 + Math.log1p(breadth - 1)) : 0;
+  const base = demand > 0 ? demand : fromHarvest > 0 ? fromHarvest : prior;
   const intent = INTENT_WORDS.test(t.query ?? "") ? 1.0 : 0.6;
 
   const page = pageStats.get(t.slug);
@@ -145,9 +181,10 @@ for (const t of queue.topics) {
 
   t.priorityScore = Number((base * intent * gap).toFixed(2));
   t.priorityWhy = {
-    basis: demand > 0 ? "measured" : "prior",
+    basis: demand > 0 ? "measured" : fromHarvest > 0 ? "harvested" : "prior",
     base: Number(base.toFixed(2)),
     demandImpressions: best.impressions,
+    demandBreadth: breadth,
     demandQuery: best.query,
     intent,
     gap,
@@ -216,7 +253,7 @@ if (AS_JSON) {
   for (const t of plan.slice(0, 6)) {
     const w = t.priorityWhy;
     console.log(
-      `   ${String(t.priorityScore).padStart(5)}  ${t.slug.padEnd(44)} ${w.basis === "measured" ? `measured ${w.demandImpressions} imp` : `prior ${w.base}`} x intent ${w.intent} x gap ${w.gap}`,
+      `   ${String(t.priorityScore).padStart(5)}  ${t.slug.padEnd(44)} ${w.basis === "measured" ? `measured ${w.demandImpressions} imp` : w.basis === "harvested" ? `harvest ${w.demandBreadth} phrasings` : `prior ${w.base}`} x intent ${w.intent} x gap ${w.gap}`,
     );
   }
   const cold = scorecard.filter((s) => s.impressions === 0);
