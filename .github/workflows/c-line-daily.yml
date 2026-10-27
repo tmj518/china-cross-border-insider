@@ -131,10 +131,25 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A src/content data/guide-queue.json data/runs data/metrics data/health.json data/guide-plan.json
-          # Only exists once the cleaner has actually deleted something; `git add` on a missing path is a
-          # fatal, which failed this step on the first run that found no duplicates.
-          [ -f data/cleanup.log ] && git add data/cleanup.log || true
+          #
+          # Add each path only if it exists.
+          #
+          # `git add` treats a pathspec that matches nothing as fatal, and it fails the whole step - so a
+          # run that had just written and approved a guide died here because data/metrics/ is created
+          # later in the run by the notifier. The article was on disk and not on the site until the next
+          # day's run picked it up. That is the third time this exact shape has cost a publication
+          # (cleanup.log on 2026-10-22, gaps_*.json on 2026-10-26, this on 2026-10-27), so the rule now
+          # is: never hand git a path that a previous step might not have created.
+          #
+          git add -A src/content data/runs 2>/dev/null || true
+          for p in data/guide-queue.json data/guide-plan.json data/health.json data/cleanup.log; do
+            [ -e "$p" ] && git add "$p" || true
+          done
+          [ -d data/metrics ] && git add data/metrics || true
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
           git commit -m "c-line: $(date -u +%F) guide run"
           git pull --rebase --autostash origin main || true
           git push
