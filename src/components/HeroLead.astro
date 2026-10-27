@@ -24,7 +24,7 @@
  */
 import NewsletterForm from "./NewsletterForm.astro";
 import { AUTHOR } from "../consts";
-import { AUDIENCE, CTA, CTA_NOTE, HEADLINE, SUBTITLE, WHAT_YOU_GET } from "../lib/copy";
+import { AUDIENCE, CTA, CTA_NOTE, HEADLINE, SUBTITLE } from "../lib/copy";
 
 export interface Props {
   /** Generated from the published collection, never typed by hand. */
@@ -45,12 +45,6 @@ const { analyses, figures, sources, instruments } = Astro.props;
 
     <p class="hero-sub">{SUBTITLE}</p>
     <p class="hero-audience">{AUDIENCE}</p>
-
-    <ul class="hero-gets">
-      {WHAT_YOU_GET.map((w) => (
-        <li>{w}</li>
-      ))}
-    </ul>
 
     <div class="hero-cta">
       <a class="hero-button" href="#subscribe">{CTA} →</a>
@@ -75,37 +69,19 @@ const { analyses, figures, sources, instruments } = Astro.props;
 
 <style>
   .hero-sub {
-    max-width: 46ch;
-    margin: 0 auto 8px;
+    max-width: 52ch;
+    margin: 0 auto 6px;
     font-size: 1.02rem;
     opacity: 0.92;
   }
   .hero-audience {
-    max-width: 46ch;
-    margin: 0 auto 18px;
+    max-width: 52ch;
+    margin: 0 auto 14px;
     font-size: 0.92rem;
     opacity: 0.78;
   }
-  .hero-gets {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 20px;
-    max-width: 30ch;
-    text-align: left;
-    font-size: 0.92rem;
-  }
-  .hero-gets li {
-    padding: 3px 0 3px 18px;
-    position: relative;
-  }
-  .hero-gets li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    opacity: 0.6;
-  }
   .hero-cta {
-    margin: 22px 0 18px;
+    margin: 18px 0 14px;
   }
   .hero-button {
     display: inline-block;

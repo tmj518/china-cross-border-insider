@@ -28,7 +28,7 @@ export const PROMISE =
 
 /** What the site is, in one sentence, for the hero subtitle and the meta description. */
 export const SUBTITLE =
-  "What a published change costs you per unit, per container, per tonne — with the source and the retrieval date on every figure, and a calculation you can check.";
+  "Every figure sourced and dated. What a published change costs per unit, per container, per tonne.";
 
 /** Who it is for. Named so the right reader recognises themselves. */
 export const AUDIENCE = "For importers, brands and sourcing teams.";
@@ -36,13 +36,23 @@ export const AUDIENCE = "For importers, brands and sourcing teams.";
 /**
  * The headline.
  *
- * A verb phrase plus a concrete payoff, which is the benchmark's shape. The payoff is the
- * invoice rather than a reading time, because the invoice is what the reader came for and it
- * is the one thing this product does that a summary cannot.
+ * It was "China's trade rules, converted into your landed cost" - 54 characters that wrapped onto two
+ * lines at 42px and, with every other block stacked under it, pushed the hero past a full screen before
+ * a visitor had seen anything. The phrasing was also a promise about the product rather than a move the
+ * reader can make.
+ *
+ * "Turn China's rules into your landed cost" is 41 characters, sets on one line, keeps the phrase the
+ * site is about, and starts with a verb. The specifics the old line carried - per unit, per container,
+ * per tonne - moved to the subtitle, where they read as detail instead of as more headline.
  */
-export const HEADLINE = "China's trade rules, converted into your landed cost";
+export const HEADLINE = "Turn China's rules into your landed cost";
 
-/** What the reader actually gets, as three nouns rather than an adjective. */
+/**
+ * What the reader gets.
+ *
+ * No longer rendered in the hero. Three bullets under a subtitle that already said the same thing were
+ * repetition costing ninety pixels of the first screen; the subtitle carries the claim once now.
+ */
 export const WHAT_YOU_GET = [
   "Every analysis, in full",
   "Every figure, with its source and date",

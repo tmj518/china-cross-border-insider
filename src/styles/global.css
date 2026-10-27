@@ -417,7 +417,13 @@ body {
 .hero {
   background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-light) 100%);
   color: #fff;
-  padding: 70px var(--gutter);
+    /*
+     * 70px top and bottom, over a headline, a subtitle, an audience line, a button, a note, a proof
+     * line, a byline and an email form, put the first article below the fold on a laptop. The first
+     * screen has one job: say what this is, and offer one way to act. 44px buys back the height the
+     * article needs without crowding the day statement.
+     */
+    padding: 44px var(--gutter) 40px;
 }
 
 .hero-inner {
