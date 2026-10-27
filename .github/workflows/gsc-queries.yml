@@ -1,0 +1,35 @@
+# Read-only: the queries Search Console already shows this site for, with the page that ranks for each.
+#
+# Why this is a separate dispatch and not part of the daily run: it answers a question that is asked rarely and
+# deliberately - "which words do we already rank for, and what does the page that ranks for them say in its title".
+# The weekly audit prints the same rows as base64 inside a log, which is right for a machine that rewrites titles
+# and wrong for a person trying to read them.
+#
+# It changes nothing and publishes nothing.
+name: GSC queries
+
+on:
+  workflow_dispatch:
+
+jobs:
+  queries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GSC_SITE_URL: ${{ vars.GSC_SITE || 'sc-domain:landedmath.com' }}
+      GSC_SITE: ${{ vars.GSC_SITE || 'sc-domain:landedmath.com' }}
+      GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+      GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Every query, as a table a person can read
+        run: node tools/gsc-report.mjs --days=90
+
+      # Query paired with the page that ranks for it, which is the pairing the title work needs: a query with no
+      # page means "write one", a query with a page whose title does not contain the query means "rewrite the title".
+      - name: Query to page, the table the title work reads
+        run: node tools/query-gap.mjs --days=90
