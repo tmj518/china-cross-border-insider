@@ -124,6 +124,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 
 > Also read: [EU FDI screening: 88% of 2025 cases closed in 15 days, new regime applies 17 January 2028](/blog/eu-fdi-screening-notification-threshold-2028/)
 
+> Also read: [EU imposed 26 definitive trade-defence measures and 27 provisional anti-dumping duties in 2025](/blog/eu-trade-defence-provisional-retroactive-measures-2025/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.

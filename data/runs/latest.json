@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-28T02:16:49.669Z",
+  "at": "2026-10-28T06:54:01.419Z",
   "providers": [
     "volces",
     "deepseek"
@@ -27,17 +27,61 @@
     },
     {
       "name": "research",
-      "ok": false,
-      "detail": "no verified subject today (exit 2)"
+      "ok": true,
+      "detail": "proposed eu-trade-defence-provisional-retroactive-measures-2025, 6 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-trade-defence-provisional-retroactive-measures-2025.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-trade-defence-provisional-retroactive-measures-2025.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
     }
   ],
-  "verdict": "DUPLICATE-SUBJECT",
-  "reasons": [
-    "research proposed a subject already covered by a published article and declined to write a directive. Nothing was published, which is the duplicate check working."
-  ],
-  "article": null,
+  "verdict": "PUBLISHED",
+  "reasons": [],
+  "article": "eu-trade-defence-provisional-retroactive-measures-2025",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 13,
+    "failed": 6,
+    "usd": 0.0186,
+    "promptTokens": 58307,
+    "completionTokens": 11506
+  },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
@@ -48,45 +92,46 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  proposing a subject from 8 archived document(s) (attempt 2 of 3)...",
-    "  stream      : the endpoint answered as SSE, 898 delta(s) joined",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3148 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 930 delta(s) joined",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3327 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 896 delta(s) joined",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3220 characters but no document structure, trying the next one",
-    "  spent   : ~0.0267  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
+    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
+    "  ok    eu-trade-news               96937B  archived",
+    "  ok    trade-remedy-cases          62803B  archived",
+    "  skip  tariff-commission            1929B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    eu-trade-news-article       75756B  article archived",
+    "  ok    eu-trade-news-article       73416B  article archived",
+    "  ok    eu-trade-news-article       77085B  article archived",
+    "  ok    eu-trade-news-article       76002B  article archived",
+    "  ok    trade-remedy-cases-article    26832B  article archived",
+    "  ok    trade-remedy-cases-article    40492B  article archived",
+    "  ok    trade-remedy-cases-article    24436B  article archived",
+    "  ok    trade-remedy-cases-article    19137B  article archived",
+    "  articles : 8 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : the endpoint answered as SSE, 975 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2806 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1005 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2935 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1153 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3746 characters but no document structure, trying the next one",
+    "  spent   : ~0.0105  (ceiling 0.40)",
+    "  model   : volces/ep-20261019161601-9k6dn",
     "  feasible: true",
-    "  slug    : eu-pea-protein-definitive-duty-per-tonne-2026",
-    "  keyword : EU anti-dumping duty Chinese pea protein 2026 per tonne cost",
-    "  duplicate check: score 20 against eu-pea-protein-anti-dumping-definitive-duties-2026",
-    "      shared figure value(s): 40.5, 67.1, fiveyears, 29april2026, €175m",
-    "      shared keyword stems: protein",
-    "      shared institution(s): european, trade, economic, security",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 3 of 3)...",
-    "  stream      : the endpoint answered as SSE, 1287 delta(s) joined",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3711 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 1380 delta(s) joined",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3983 characters but no document structure, trying the next one",
-    "  stream      : the endpoint answered as SSE, 1384 delta(s) joined",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4051 characters but no document structure, trying the next one",
-    "  spent   : ~0.0421  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug already published: china-p-nitrotoluene-eu-anti-dumping-investigation-2026 - retrying with another subject",
-    "  slug    : china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
-    "  keyword : China anti-dumping investigation EU p-nitrotoluene 2026",
-    "  duplicate check: score 99 against china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
-    "      the slug china-p-nitrotoluene-eu-anti-dumping-investigation-2026 is already in src/content/blog",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  ALL_SUBJECTS_DUPLICATE - all 3 proposals are already published.",
-    "    - eu-goes-safeguard-tariff-rate-quota-2026 (score 99)",
-    "    - eu-pea-protein-definitive-duty-per-tonne-2026 (score 20)",
-    "    - china-p-nitrotoluene-eu-anti-dumping-investigation-2026 (score 99)",
-    "  No directive was written. Publishing a near-duplicate under a new slug would compete with",
-    "  the existing article for the same keyword, which is worse for the site than a quiet day.",
-    "  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure."
-  ]
+    "  slug    : eu-trade-defence-provisional-retroactive-measures-2025",
+    "  keyword : EU provisional anti-dumping duties 2025 retroactive trade defence measures",
+    "  duplicate check: score 0",
+    "  slug    : eu-trade-defence-provisional-retroactive-measures-2025",
+    "  keyword : EU provisional anti-dumping duties 2025 retroactive trade defence measures",
+    "  category: trade-policy",
+    "  figures : 6",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0105",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 589
 }
