@@ -3,11 +3,11 @@
   "account": "",
   "days": 28,
   "totals": {
-    "activeUsers": 51,
-    "newUsers": 51,
-    "screenPageViews": 223,
-    "sessions": 68,
-    "eventCount": 562
+    "activeUsers": 53,
+    "newUsers": 53,
+    "screenPageViews": 237,
+    "sessions": 71,
+    "eventCount": 594
   },
   "channels": [
     {
@@ -16,7 +16,11 @@
     },
     {
       "channel": "Organic Search",
-      "sessions": 7
+      "sessions": 10
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": 2
     },
     {
       "channel": "AI Assistant",
@@ -25,11 +29,7 @@
     {
       "channel": "Referral",
       "sessions": 1
-    },
-    {
-      "channel": "Unassigned",
-      "sessions": 1
     }
   ],
-  "at": "2026-10-28T02:16:49.075Z"
+  "at": "2026-10-28T06:02:30.913Z"
 }
