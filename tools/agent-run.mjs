@@ -218,6 +218,39 @@ function commandAllowed(cmd) {
  * carries the line number and the single edit that fixes it, because 'frontmatter has a problem' costs a turn
  * and teaches nothing.
  */
+/*
+ * THE PUBLISH GATE. Nothing reaches src/content/blog with a BLOCK against it.
+ *
+ * Until now publish_draft published whatever it was handed: the code above says so out loud, and the
+ * reason was a deadlock - requiring a clean check meant nothing was ever submitted. But the opposite
+ * failure is worse. On 2026-10-28 a draft with a blocked rule and an orphan page was published, the nine
+ * gates went red, and the only reason the site survived is that a person moved the file out.
+ *
+ * So the rule is not 'a clean check or nothing'. It is: no BLOCK may pass. Warnings may, because a warning
+ * is a judgement about quality and a BLOCK is a rule the site says it will not break. A draft with blocks
+ * is not published, the cell is released, and the verdict says REJECTED with the rules named.
+ */
+function gateOf(draftPath) {
+  try {
+    const out = execFileSync(process.execPath, [join(ROOT, "tools", "qa-check.mjs"), draftPath, "--json"], {
+      cwd: ROOT,
+      encoding: "utf8",
+      timeout: 180000,
+      maxBuffer: 32 * 1024 * 1024,
+    });
+    const j = JSON.parse(out.slice(out.indexOf("{")));
+    const blocks = (j.results ?? []).filter((r) => r.level === "block" && !r.isDraft);
+    const warns = (j.results ?? []).filter((r) => r.level === "warn");
+    return { blocks, warns, ok: blocks.length === 0 };
+  } catch (e) {
+    let parsed = null;
+    try { parsed = JSON.parse(String(e.stdout ?? "").slice(String(e.stdout ?? "").indexOf("{"))); } catch {}
+    const blocks = (parsed?.results ?? []).filter((r) => r.level === "block" && !r.isDraft);
+    const warns = (parsed?.results ?? []).filter((r) => r.level === "warn");
+    return { blocks, warns, ok: blocks.length === 0, error: blocks.length ? null : String(e.message).slice(0, 120) };
+  }
+}
+
 function frontmatterFixes(raw) {
   const fixes = [];
   const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw);
@@ -389,6 +422,7 @@ const TOOLS = [
 /* ---------------------------------------------------------------- state */
 
 const transcript = [];
+let LAST_GATE_WARNINGS = 0;
 const published = new Set();
 
 /*
@@ -733,6 +767,22 @@ function runTool(name, input) {
       const from = join(ROOT, input.path);
       const slug = String(input.path).replace(/^.*\//, "").replace(/\.md$/, "");
       const to = join(ROOT, "src", "content", "blog", `${slug}.md`);
+      /* No BLOCK may reach the collection. Warnings may. */
+      const gate = gateOf(from);
+      if (!gate.ok) {
+        const named = gate.blocks.slice(0, 4).map((r) => r.rule).join(", ");
+        console.log("  publish refused: " + gate.blocks.length + " blocking rule(s) - " + named);
+        if (!finished) {
+          finished = {
+          verdict: "REJECTED",
+          summary: "the draft breaks " + gate.blocks.length + " blocking rule(s) (" + named + "), so it was not published. The site refuses to publish a page it would immediately flag.",
+          };
+        }
+        return done("REJECTED: blocking rules - " + named + ". Fix them and call check_draft again; nothing was published.");
+      }
+      const degraded = gate.warns.length > 0;
+      LAST_GATE_WARNINGS = gate.warns.length;
+      if (degraded) console.log("  publish with " + gate.warns.length + " warning(s) - the verdict will say PUBLISHED-DEGRADED");
       writeFileSync(to, readFileSync(from, "utf8"), "utf8");
       try {
         execFileSync(process.execPath, [join(ROOT, "tools", "build-instruments.mjs")], { cwd: ROOT, timeout: 600000 });
@@ -1080,6 +1130,14 @@ FRONTMATTER CONTRACT - a draft that breaks any line here cannot be published.
   - title / description / category / audience / information_gain appear once each
   - figures: every entry has value / unit / period / source / retrieved
   - Before calling finish, run check_draft and fix every line it returns.
+
+BODY RULES - the gates check these, and a BLOCK stops publication.
+  - Do not use may, could, might or possibly anywhere in the body. A verbatim quotation is the only
+    exception, and the sentence must still be quoted in full.
+  - Link to at least one existing article before publishing. A page nothing links to is an orphan, and
+    link-check blocks it.
+  - If the same Fix comes back twice, stop rewriting the whole draft. Open the file, change that one
+    line, and check again.
 
 
 TODAY'S JOB
@@ -1442,6 +1500,21 @@ if (published.size === 0) {
           console.log("  forced submission: " + newest.f + " is already published, publishing under " + dated + " (" + check.reason + ")");
         }
       }
+      /*
+       * The same gate as publish_draft. The fallback exists so a day is not empty, not so a blocked page
+       * can reach a live URL by a second route.
+       */
+      if (newest) {
+        const fallbackGate = gateOf(join(ROOT, "data", "drafts", newest.f));
+        if (!fallbackGate.ok) {
+          const named = fallbackGate.blocks.slice(0, 4).map((r) => r.rule).join(", ");
+          console.log("  forced submission refused: " + fallbackGate.blocks.length + " blocking rule(s) - " + named);
+          if (!finished) {
+            finished = { verdict: "REJECTED", summary: "the only draft this run produced breaks " + fallbackGate.blocks.length + " blocking rule(s) (" + named + "), so nothing was published." };
+          }
+          duplicateOf = { file: newest.f, reason: "blocked: " + named };
+        }
+      }
       if (duplicateOf) {
         /*
          * A DUPLICATE DRAFT IS A VERDICT, NOT A TURN-LIMIT.
@@ -1527,6 +1600,24 @@ if (published.size === 0) {
 /* ---------------------------------------------------------------- report */
 /* ---------------------------------------------------------------- report */
 
+/*
+ * A PUBLISHED PAGE IS NOT A TURN-LIMIT, whatever the loop did.
+ *
+ * On 2026-10-28 the agent cleared every blocking rule, the fallback published the article, and the
+ * report still said TURN-LIMIT - because the model never called finish, and the verdict was derived from
+ * the loop rather than from what exists. The card then reads as a failure while a page is live, which is
+ * the same class of lie as reporting success for a page that was not published.
+ */
+if (!finished && published.size > 0) {
+  finished = {
+    verdict: LAST_GATE_WARNINGS > 0 ? "PUBLISHED-DEGRADED" : "PUBLISHED-WITHOUT-FINISH",
+    summary:
+      "the article was published after the loop ended without calling finish" +
+      (LAST_GATE_WARNINGS > 0 ? ", with " + LAST_GATE_WARNINGS + " warning(s) still open - the gates pass, the warnings are listed in the run log" : "") +
+      ".",
+  };
+}
+
 const report = {
   at: new Date().toISOString(),
   /* Which pipeline wrote this report; the notification names it so the same verdict is read correctly. */
@@ -1584,4 +1675,4 @@ if (CELL && published.size === 0 && report.verdict !== "INSUFFICIENT-EVIDENCE") 
   }
 }
 
-process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT", "DUPLICATE-SUBJECT", "INSUFFICIENT-EVIDENCE"].includes(report.verdict) ? 0 : 1);
+process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "PUBLISHED-DEGRADED", "NO-SUBJECT", "DUPLICATE-SUBJECT", "INSUFFICIENT-EVIDENCE"].includes(report.verdict) ? 0 : 1);
