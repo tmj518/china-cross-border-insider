@@ -1,0 +1,92 @@
+{
+  "at": "2026-10-28T02:16:49.669Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "21 previous run(s), last 2026-10-27T07:50:05.401Z (PUBLISHED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "2 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 2)"
+    }
+  ],
+  "verdict": "DUPLICATE-SUBJECT",
+  "reasons": [
+    "research proposed a subject already covered by a published article and declined to write a directive. Nothing was published, which is the duplicate check working."
+  ],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 2,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 3)...",
+    "  stream      : the endpoint answered as SSE, 898 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3148 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 930 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3327 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 896 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3220 characters but no document structure, trying the next one",
+    "  spent   : ~0.0267  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-pea-protein-definitive-duty-per-tonne-2026",
+    "  keyword : EU anti-dumping duty Chinese pea protein 2026 per tonne cost",
+    "  duplicate check: score 20 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): 40.5, 67.1, fiveyears, 29april2026, €175m",
+    "      shared keyword stems: protein",
+    "      shared institution(s): european, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 3 of 3)...",
+    "  stream      : the endpoint answered as SSE, 1287 delta(s) joined",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3711 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1380 delta(s) joined",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3983 characters but no document structure, trying the next one",
+    "  stream      : the endpoint answered as SSE, 1384 delta(s) joined",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4051 characters but no document structure, trying the next one",
+    "  spent   : ~0.0421  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug already published: china-p-nitrotoluene-eu-anti-dumping-investigation-2026 - retrying with another subject",
+    "  slug    : china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+    "  keyword : China anti-dumping investigation EU p-nitrotoluene 2026",
+    "  duplicate check: score 99 against china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
+    "      the slug china-p-nitrotoluene-eu-anti-dumping-investigation-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  ALL_SUBJECTS_DUPLICATE - all 3 proposals are already published.",
+    "    - eu-goes-safeguard-tariff-rate-quota-2026 (score 99)",
+    "    - eu-pea-protein-definitive-duty-per-tonne-2026 (score 20)",
+    "    - china-p-nitrotoluene-eu-anti-dumping-investigation-2026 (score 99)",
+    "  No directive was written. Publishing a near-duplicate under a new slug would compete with",
+    "  the existing article for the same keyword, which is worse for the site than a quiet day.",
+    "  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure."
+  ]
+}
