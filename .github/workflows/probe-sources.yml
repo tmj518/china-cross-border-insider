@@ -16,7 +16,7 @@ on:
   schedule:
     # Weekly, Mondays 00:20 UTC. Blocking policy drifts, so the answer is re-measured rather than
     # assumed once.
-    - cron: '20 0 * * 1'
+    - cron: '20 0 1 * *' # monthly, 1st at 08:20 Beijing - sources do not change weekly
 
 permissions:
   # Write, because the result is committed back: a private repository's artifacts need a token to
