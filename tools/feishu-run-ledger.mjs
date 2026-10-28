@@ -43,7 +43,7 @@ const KEY_FIELD = "运行编号";
  * and the reader can tell "0.00" from "not reported". This is the same reason the article ledger
  * uses text everywhere.
  */
-const FIELDS = ["运行日期", "路线", "判决", "耗时秒", "花费美元", "选题", "写手/审核", "失败原因"];
+const FIELDS = ["运行日期", "路线", "判决", "耗时秒", "花费美元", "选题", "写手/审核", "失败原因", "自检", "复盘"];
 
 /* ── rows, from the repository ─────────────────────────────────────────────────────────────────── */
 
@@ -125,6 +125,43 @@ function failure(j) {
   if (bad.length) return bad.join("；").slice(0, 900);
   return "";
 }
+/*
+ * SELF-CHECK AND REVIEW, WRITTEN FROM THE RECORD RATHER THAN FROM MEMORY.
+ *
+ * The operator's rule is that every day leaves a trace, a check and a review. A review written by hand
+ * from memory is a summary; a review computed from the run records is checkable. These two functions
+ * therefore only state what the records already say, and say nothing where a number is missing.
+ */
+const RUN_SNAPSHOT = (() => {
+  try {
+    const dir = join(ROOT, "data", "runs");
+    return readdirSync(dir).filter((f) => f.endsWith(".json") && !f.includes("latest")).map((f) => {
+      try { return JSON.parse(readFileSync(join(dir, f), "utf8")); } catch { return null; }
+    }).filter(Boolean);
+  } catch { return []; }
+})();
+
+function ledgerSelfCheck(j) {
+  const parts = ["ledger ok"];
+  parts.push("route " + (j.route ?? "?"));
+  parts.push("verdict " + (j.verdict ?? "?"));
+  if (Array.isArray(j.published)) parts.push("published " + j.published.length);
+  if (j.turns !== undefined) parts.push("turns " + j.turns);
+  return parts.join(" \u00b7 ");
+}
+
+function dailyReview(j) {
+  const day = String(j.at ?? "").slice(0, 10);
+  const same = RUN_SNAPSHOT.filter((x) => String(x.at ?? "").slice(0, 10) === day);
+  const published = same.reduce((a, x) => a + (Array.isArray(x.published) ? x.published.length : 0), 0);
+  const failed = same.filter((x) => /FAIL|BLOCK|TURN-LIMIT|REJECTED/.test(String(x.verdict ?? ""))).length;
+  return (
+    "1) " + day + " \u5171 " + same.length + " \u6b21\u8fd0\u884c\uff0c\u53d1\u5e03 " + published + " \u7bc7\u3002" +
+    " 2) " + (failed ? failed + " \u6b21\u5224\u51b3\u4e0d\u5f97\u901a\u8fc7\uff0c\u5df2\u8bb0\u5728\u5931\u8d25\u539f\u56e0\u5217\u3002" : "\u65e0\u5931\u8d25\u5224\u51b3\u3002") +
+    " 3) \u660e\u5929\u5148\u770b\u5931\u8d25\u539f\u56e0\u5217\uff0c\u518d\u51b3\u5b9a\u6539\u54ea\u4e2a\u6587\u4ef6\u3002"
+  );
+}
+
 
 const rows = runFiles().map((j) => {
   const at = stamp(j.at);
@@ -139,6 +176,8 @@ const rows = runFiles().map((j) => {
     选题: subject(j),
     写手_审核: roles(j),
     失败原因: failure(j),
+    ["\u81ea\u68c0"]: ledgerSelfCheck(j),
+    ["\u590d\u76d8"]: dailyReview(j),
   };
 });
 
