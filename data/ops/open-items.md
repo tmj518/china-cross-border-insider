@@ -27,13 +27,19 @@
 ★ 没有顺手清理别的。若还有，按总监要求先报告、再决定
 ```
 
-## 4. B 线不能写作
+## 4. B 线不能自主发布（根因已查明并已修，剩余两处卡点）
 
 ```
-现象   本地与 CI 各跑一次，选中格后 10 轮零工具调用，判决 DUPLICATE-SUBJECT
-根因   不是缺代码，是"模型不调工具"：换过 volces、换过 lite 端点，两次都不调
-影响   B 线的探索产出仍然进不了内容
-修法   换模型 或 改工具协议（都不在封箱范围）
+已查明   "10 轮零工具调用"不是模型不调工具，而是 lib-llm 的 SSE 解析器
+         只累加 delta.content，把 delta.tool_calls 整段丢掉 —— 见 943baf2
+         ★ 直连非流式请求两个端点都返回 finish_reason=tool_calls，
+           说明模型会调，丢的地方在我们自己的解析里
+已修     943baf2 SSE 累加 tool_calls（按 index 合并 name/arguments）+ role:"assistant"
+         修后实测：turn 1 就出现 read_file，不再是 "no tool call"
+已修     e33e109 两条发布路径都过 gateOf()，BLOCK 不发布、warning 走 PUBLISHED-DEGRADED
+剩余卡点 ① orphan：link-check 判新页无入链 → 需它在发布前自己链进一篇已有文章
+         ② reviewer agent FAIL：原因未查（上一轮只报了现象）
+影响     这两项没修完，B 线产出进不了本站
 ```
 
 ## 5. 格子供给只有 2 格
@@ -107,4 +113,51 @@
   GitHub → Settings → Billing → Actions 用量
   设 spending limit（哪怕 $5），或等月度重置
   ★ 这不是代码问题，改代码没用
+  ★ 2026-10-28 22:0x 复核：job 被分配、runner_name 为空、3 秒结束、steps=0，
+    且 10 个工作流全部 state=active —— 与权限无关（改权限后仍如此），与代码无关
+```
+
+## 9. B 线自主发布的两处卡点（封箱时未修）
+
+```
+① orphan — link-check 要求新页被至少一个已有页面链到
+   修法   在 SYSTEM 里写成可执行步骤：
+          "Before publishing, add one sentence with a link to an existing article that the new page extends.
+           Pick it with list_dir + read_file. Do not link to the new page itself."
+   验收   link-check 0 orphan
+
+② reviewer agent FAIL — 原因未查
+   修法   先诊断：跑一次该闸门，贴完整输出，判定是"模型不可用"还是"内容被判不合格"
+   验收   一句结论 + 日志原文
+
+★ 这两项都不大，但都不在封箱范围。B 线降级为"部分完成"。
+```
+
+## 10. 裁决 B（引文豁免）未实现
+
+```
+背景   逐字引文里出现 may 是必然的（官方原文就有），而 no hedging words 是阻塞级
+裁定   引文豁免：只扫正文；豁免仅限 ① 以 > 开头的 blockquote 行
+       ② 双引号包裹且片段出现在 sources[] / figures[].source 里的文字
+现状   未实现（qa-check 里只有"按日期豁免老文章"，没有引文豁免）
+影响   引用含 may 的原文时会被 BLOCK，模型只能绕开那句话
+验收   三草稿：引文含 may 通过 / 正文含 may BLOCK / 假引文 BLOCK
+```
+
+## 11. check_draft 多违规是否按行号排序 —— 未验证
+
+```
+现状   已能一次返回多条（不再是"一次一条"），但未验证是否按行号升序
+影响   排序不影响正确性，只影响模型修改顺序
+验收   一份 4 处违规的草稿 → 一次返回 4 条且按行号升序
+```
+
+## 12. 飞书「自检 / 复盘」两列已落地（更正一条误判）
+
+```
+事实   运行台账 9 列 → 11 列；最新一行两列都有值，例如
+       自检 "ledger ok · route script · verdict PUBLISHED"
+       复盘 "1) 2026-10-28 共 0 次运行，发布 0 篇。 2) 无失败判决。 3) 明天先看失败原因列…"
+误判   执行者曾报"两列为空"——原因是它 records/search 未排序，取到了旧行
+纪律   读飞书一律带 sort: [{ field_name: "运行日期", desc: true }]
 ```
