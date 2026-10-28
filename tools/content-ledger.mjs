@@ -14,8 +14,8 @@
  * and the dedupe and link counts are measurements rather than a reviewer's impression.
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { join, resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { join, resolve, relative } from "node:path";
+import { execFileSync, spawnSync } from "node:child_process";
 
 import { api, ensureTable, tenantToken, upsertRows } from "./lib/feishu.mjs";
 
@@ -43,6 +43,10 @@ const COLUMNS = [
   "入链数",
   "查重",
   "复查到期日",
+  "时刻",
+  "画像",
+  "来源完整率",
+  "commit",
 ];
 
 /* ── read the corpus ─────────────────────────────────────────────────────────────────────────── */
@@ -90,6 +94,9 @@ function load(dir, kind, urlFor) {
       keyword: quoted(fm, "target_keyword"),
       body,
       links: outbound(body),
+      audience: quoted(fm, "audience"),
+      withSource: (fm.match(/^    source:/gm) ?? []).length,
+      filePath: relative(ROOT, join(dir, f)),
     });
   }
   return rows;
@@ -153,6 +160,10 @@ const records = rows.map((r) => ({
   入链数: String(inbound.get(r.key) ?? 0),
   查重: dupOf(r),
   复查到期日: r.reviewBy,
+  时刻: "未标注",
+  画像: String(r.audience ?? "").replace(/[\[\]"']/g, "").slice(0, 60) || "未标注",
+  来源完整率: r.figures ? Number((r.withSource / r.figures).toFixed(2)) : 0,
+  commit: (() => { try { return execFileSync("git", ["log", "-1", "--format=%h", "--", r.filePath], { cwd: ROOT, encoding: "utf8" }).trim() || "-"; } catch { return "-"; } })(),
 }));
 
 /* ── output ──────────────────────────────────────────────────────────────────────────────────── */
@@ -193,7 +204,33 @@ if (!APP_TOKEN) {
 const token = await tenantToken(APP_ID, APP_SECRET);
 if (!token) process.exit(1);
 
-const tableId = await ensureTable({ token, appToken: APP_TOKEN, name: TABLE, fields: COLUMNS, primaryName: "编号" });
+/*
+ * WHICH TABLE, IN THAT ORDER, AND NEVER BY GUESS.
+ *
+ *   env FEISHU_TABLE_ID -> data/ledger-target.json tableId -> look up by name, then persist the id
+ *
+ * The id used to live only in an environment variable. A variable missing on one machine turns "the
+ * ledger is written" into "the ledger is written somewhere else", with no error to show for it.
+ * Persisting the id after a lookup means a fresh clone has it with no variables set.
+ *
+ * The content table and the run table are different tables at different grains - one row per article,
+ * one row per run - and the run id must never be used here.
+ */
+const TARGET_TABLE_ID = ((process.env.FEISHU_TABLE_ID ?? "").trim() || (target?.tableId ?? "").trim());
+let tableId = TARGET_TABLE_ID;
+if (!tableId) {
+  tableId = await ensureTable({ token, appToken: APP_TOKEN, name: TABLE, fields: COLUMNS, primaryName: "编号" });
+  if (tableId && !DRY) {
+    try {
+      const cur = JSON.parse(readFileSync(join(ROOT, "data", "ledger-target.json"), "utf8"));
+      cur.tableId = tableId;
+      cur.tableName = TABLE;
+      cur.at = new Date().toISOString().slice(0, 10);
+      writeFileSync(join(ROOT, "data", "ledger-target.json"), JSON.stringify(cur, null, 2) + "\n", "utf8");
+      console.log("  recorded table id in data/ledger-target.json");
+    } catch {}
+  }
+}
 const res = await upsertRows({ token, appToken: APP_TOKEN, tableId, keyField: "编号", rows: records });
 console.log(`\n  created ${res.created}, updated ${res.updated}, failed ${res.failed}`);
 

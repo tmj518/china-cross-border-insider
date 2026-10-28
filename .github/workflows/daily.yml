@@ -499,7 +499,10 @@ jobs:
           FEISHU_TABLE_ID: ${{ secrets.FEISHU_TABLE_ID }}
         run: |
           set +e
-          node tools/feishu-sync.mjs 2>&1 | tee /tmp/ledger.txt
+          shell: bash
+          run: |
+            set -o pipefail
+            node tools/feishu-sync.mjs 2>&1 | tee /tmp/ledger.txt
           CODE=${PIPESTATUS[0]}
           mkdir -p data/tmp
           if [ "$CODE" = "0" ]; then

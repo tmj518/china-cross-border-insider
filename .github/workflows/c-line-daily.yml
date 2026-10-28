@@ -179,7 +179,6 @@ jobs:
       #
       - name: Record what is published in the content ledger
         if: always()
-        continue-on-error: true
         env:
           FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
           FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
