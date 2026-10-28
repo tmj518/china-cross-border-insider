@@ -70,7 +70,20 @@ let article = "";
 const reasons = [];
 
 function finish(code = 0) {
-  usage.usd = Math.max(0, Number((usageAfter().usd ?? 0) - (spentBefore.usd ?? 0)));
+  /*
+   * THE FAILURE PATH MUST NOT THROW.
+   *
+   * usageAfter() is a const declared further down, so a run that fails *before* that line - a missing endpoint id
+   * is the common one - reached here and died with "Cannot access 'usageAfter' before initialization". The operator
+   * then saw a ReferenceError instead of "no endpoint id: set ARK_MODEL_WRITER", which is the sentence that says
+   * what to fix. A crash inside the error handler hides the error.
+   */
+  try {
+    const after = usageAfter();
+    usage.usd = Math.max(0, Number((after?.usd ?? 0) - (spentBefore.usd ?? 0)));
+  } catch {
+    usage.usd = 0;
+  }
   const report = {
     at: new Date().toISOString(),
     route: "c",

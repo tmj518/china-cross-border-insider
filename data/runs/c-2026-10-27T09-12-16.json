@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-23T12:40:27.959Z",
+  "at": "2026-10-27T09:12:16.694Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "relocation-cost-per-cubic-metre",
-  "seconds": 97,
+  "article": "china-z-visa-requirements",
+  "seconds": 285,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.0031999999999999997
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "1 candidate(s)"
     },
     {
-      "name": "grounding relocation-cost-per-cubic-metre",
+      "name": "grounding china-z-visa-requirements",
       "ok": true,
-      "detail": "procedural, no figures"
+      "detail": "5 figure(s)"
     },
     {
-      "name": "gates relocation-cost-per-cubic-metre",
+      "name": "gates china-z-visa-requirements",
       "ok": true,
-      "detail": "structure ok, procedural (no figures)"
+      "detail": "structure and every number traces to a quote"
     },
     {
-      "name": "build relocation-cost-per-cubic-metre",
+      "name": "build china-z-visa-requirements",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/relocation-cost-per-cubic-metre/"
+      "detail": "/guide/china-z-visa-requirements/"
     }
   ],
   "researchLog": [

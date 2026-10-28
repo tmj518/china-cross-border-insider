@@ -1,53 +1,8 @@
 {
-  "at": "2026-10-27T13:13:32.177Z",
+  "at": "2026-10-28T14:06:42.270Z",
   "days": 90,
-  "gsc": true,
+  "gsc": false,
   "plan": [
-    {
-      "slug": "china-foreigner-income-tax-calculator",
-      "topic": "tax",
-      "audience": [
-        "employee"
-      ],
-      "unit": "one month",
-      "title": "China Income Tax for Foreigners, Worked Out",
-      "query": "china foreigner income tax calculator",
-      "status": "queued",
-      "source": "demand",
-      "demandBreadth": 6,
-      "sources": [
-        "https://www.chinatax.gov.cn/",
-        "https://www.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "个人所得税",
-        "税率表",
-        "专项附加扣除",
-        "individual income tax"
-      ],
-      "facts": [],
-      "mustSay": [
-        "The tax is progressive, so the rate on the last unit of income is not the rate on the whole salary.",
-        "Residence status decides whether worldwide income is in scope, and that status turns on days in China.",
-        "Allowances that are paid as reimbursements are treated differently from the same money paid as salary.",
-        "The employer withholds monthly; the annual reconciliation is a separate filing."
-      ],
-      "avoid": [
-        "Do not state a bracket, a threshold or a deduction unless the fact sheet contains it."
-      ],
-      "priorityScore": 4.29,
-      "priorityWhy": {
-        "basis": "harvested",
-        "base": 4.29,
-        "demandImpressions": 0,
-        "demandBreadth": 6,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "china-work-permit-points",
       "topic": "work-visa",

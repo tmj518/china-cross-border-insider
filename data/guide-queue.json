@@ -793,7 +793,7 @@
       "unit": "one application",
       "title": "China Work Permit: How the Points Work",
       "query": "china work permit points calculator",
-      "status": "queued",
+      "status": "done",
       "source": "demand",
       "demandBreadth": 2,
       "sources": [
@@ -830,7 +830,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-10-28"
     },
     {
       "slug": "china-foreigner-income-tax-calculator",
