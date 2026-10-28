@@ -501,6 +501,9 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
           const parts = [];
           let reasoningDeltas = 0;
           let usageSeen = null;
+          /* Tool calls arrive as fragments too and used to be discarded here - see the note above the rebuild. */
+          const toolAcc = new Map();
+          let finishSeen = null;
           for (const rawLine of trimmed.split("\n")) {
             const line = rawLine.trim();
             if (!line.startsWith("data:")) continue;
@@ -520,18 +523,42 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
                * different failure from an empty one, and the log should say which happened.
                */
               if (d?.content) parts.push(d.content);
+              if (Array.isArray(d?.tool_calls)) {
+                for (const tc of d.tool_calls) {
+                  const k = tc.index ?? 0;
+                  const cur = toolAcc.get(k) ?? { id: "", type: "function", function: { name: "", arguments: "" } };
+                  if (tc.id) cur.id = tc.id;
+                  if (tc.type) cur.type = tc.type;
+                  if (tc.function?.name) cur.function.name += tc.function.name;
+                  if (tc.function?.arguments) cur.function.arguments += tc.function.arguments;
+                  toolAcc.set(k, cur);
+                }
+              }
+              if (ch?.finish_reason) finishSeen = ch.finish_reason;
               else if (d?.reasoning_content) reasoningDeltas += 1;
               if (j?.usage) usageSeen = j.usage;
             } catch {
               /* a keep-alive or a comment line inside the stream */
             }
           }
-          if (parts.length) {
+          if (parts.length || toolAcc.size) {
+            const toolCalls = [...toolAcc.entries()]
+              .sort((a, b) => a[0] - b[0])
+              .map(([k, v]) => ({ id: v.id || "call_" + k, type: v.type, function: v.function }));
             json = {
-              choices: [{ message: { content: parts.join("") }, finish_reason: "stop" }],
+              choices: [
+                {
+                  message: { role: "assistant", content: parts.join(""), ...(toolCalls.length ? { tool_calls: toolCalls } : {}) },
+                  finish_reason: finishSeen ?? (toolCalls.length ? "tool_calls" : "stop"),
+                },
+              ],
               usage: usageSeen ?? {},
             };
-            console.log(`  stream      : the endpoint answered as SSE, ${parts.length} delta(s) joined`);
+            console.log(
+              "  stream      : SSE, " + parts.length + " content delta(s)" +
+                (toolCalls.length ? ", " + toolCalls.length + " tool call(s) reassembled" : "") +
+                (reasoningDeltas ? ", " + reasoningDeltas + " reasoning delta(s) dropped" : ""),
+            );
           }
         }
       }
