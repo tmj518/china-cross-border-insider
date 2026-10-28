@@ -1,0 +1,649 @@
+{
+  "at": "2026-10-28T02:44:55.969Z",
+  "date": "2026-10-28",
+  "persona": "importer",
+  "moment": "leave",
+  "seeds": [
+    "export from china procedure",
+    "shipping goods out of china",
+    "china export documentation",
+    "china customs clearance export"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 70,
+  "rows": [
+    {
+      "query": "china electric tool set export procedures",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "how to export to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "shipping procedure in export and import",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "china import and export",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "import export documents and procedure",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "export documentation and procedure",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "import and export procedure pdf",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "china export import data",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "china import and export data",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "export/import procedures and documentation",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "what is export procedure",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "steps in export procedure",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "import and export procedure",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "export procedure in india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "importing and exporting procedures",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "export import procedure and documentation pdf",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "export to the people's republic of china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "export from china procedure"
+      ]
+    },
+    {
+      "query": "shipping goods to china and tax refunds",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping goods to china and tax treaties",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping goods to china and tax deductions",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping goods to china and tax implications",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping goods to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping goods to china and tax exemptions",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "how to ship goods in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "how to ship items to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "has shipping from china stopped",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping from china cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "cargo shipping within china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "are shipments from china stopped",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "international shipping to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "how to order goods from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping freight from china customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "packing china for shipping",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "how to ship something to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "how to pack china for shipping",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "how to import goods from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "return shipping to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping costs to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "shipping issues from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "shipping goods out of china"
+      ]
+    },
+    {
+      "query": "china export documentation requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export documents",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export procedures and documentation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export list",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export products list",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china customs export declaration form pdf",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china customs export declaration",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china customs export declaration form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china export customs clearance procedure",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china export customs clearance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china import customs clearance process",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "what is export customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "import export customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "export customs clearance complete meaning",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "export customs clearance complete",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china parcel has cleared export customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "export customs clearance started",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "hk export customs clearance completed",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "what is import customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "import customs clearance completed",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "import customs clearance complete",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china customs export data",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "import documents for customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "custom clearance process for import",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "export customs clearance completed",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "export customs clearance charge",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "export customs clearance fee",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china item returned from export customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "customs clearance in process",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

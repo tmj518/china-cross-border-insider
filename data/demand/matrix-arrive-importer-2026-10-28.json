@@ -1,0 +1,439 @@
+{
+  "at": "2026-10-28T02:44:28.193Z",
+  "date": "2026-10-28",
+  "persona": "importer",
+  "moment": "arrive",
+  "seeds": [
+    "china sourcing trip",
+    "visit china factory",
+    "china trade fair",
+    "china supplier visit visa"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 46,
+  "rows": [
+    {
+      "query": "china sourcing trip",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sourcing trip"
+      ]
+    },
+    {
+      "query": "china sourcing agent fees",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sourcing trip"
+      ]
+    },
+    {
+      "query": "china tour cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sourcing trip",
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "china sourcing trading",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip"
+      ]
+    },
+    {
+      "query": "visit china factory",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "honda ceo visit china factory",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "visit byd factory china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "why china is the world's factory",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "china factory visit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "can we visit huawei factory in shenzhen china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "china trade fair 2026",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2026 dates",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2027",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair in october",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair october 2026",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2026 schedule",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair dates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair guangzhou",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2027 dates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2025",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2025 dates",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair uae",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair sydney",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair october",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2025 dubai",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china visa type of business visit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visit visa application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "visa for china service",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "travel to china visa information",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "visa for china visit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visa application services",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visitor visa application form",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "chinese tourist visa service",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "travel agency for china visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china tourist visa application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "visa for visiting china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "visa application service center china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visas and travel",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "chinese visitor visa application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visa business visit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "visitor visa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china travel service visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visa service centre",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "tourist visas for china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    },
+    {
+      "query": "china visa official site",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china supplier visit visa"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

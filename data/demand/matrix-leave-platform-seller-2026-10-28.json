@@ -1,0 +1,999 @@
+{
+  "at": "2026-10-28T02:43:58.210Z",
+  "date": "2026-10-28",
+  "persona": "platform-seller",
+  "moment": "leave",
+  "seeds": [
+    "ship inventory out of china",
+    "return goods from china",
+    "china warehouse removal fee",
+    "amazon fba removal from china",
+    "amazon removal order china",
+    "china to us freight cost per kg",
+    "return inventory to china supplier",
+    "china exit shipping cost"
+  ],
+  "status": "ok",
+  "okCalls": 16,
+  "failCalls": 0,
+  "total": 108,
+  "rows": [
+    {
+      "query": "suppliers in china who will drop ship",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "track ship from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "ship from china tracking",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "ship to store full inventory",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "how to find shippers from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "how many shipyards does china have",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "warehouse inventory services company in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "ship management companies in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "vehicle shipping companies in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "where are china's ships now",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "track shipment from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "drop shipping warehouses in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china",
+        "china warehouse removal fee"
+      ]
+    },
+    {
+      "query": "china shipbuilding industry company limited",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "china import site dropshipping",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "china shipbuilding trading co",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "ship owners in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "china shipbuilding trading company",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "china shipbuilding industry co. ltd",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "100 shippining companies in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "china ship supply company limited",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "china shipbuilding industry company",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "ship chinaports.com",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship inventory out of china"
+      ]
+    },
+    {
+      "query": "return goods to china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returning goods to china from uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returning goods to china from australia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "how to return a package to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "return shipping to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china",
+        "return inventory to china supplier"
+      ]
+    },
+    {
+      "query": "shipping goods to china and tax refunds",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "return shipping costs to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "cost to return a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "return parcel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "buy goods from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "buying goods from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "how to import goods from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "where to buy returned goods",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "return to china card",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "how to order goods from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "cost to return item to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china",
+        "return inventory to china supplier"
+      ]
+    },
+    {
+      "query": "cheapest way to return item to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "how to return goods",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "how to buy goods from china directly",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "best way to return something to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returning goods to a shop",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returning goods to the uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "china item returned from export customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "china tax refund export",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returns of goods sold",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "delete warehouse shipment in business central",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse removal fee"
+      ]
+    },
+    {
+      "query": "amazon fba removal order",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "wholesalers for amazon fba in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "wholesale suppliers for amazon fba in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "alibaba to amazon fba",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "how to amazon fba",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "sell amazon fba products",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon fba from bangladesh",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "selling on amazon fba",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon fba account suspension",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon seller central cancel fba shipment",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "sell amazon fba step by step",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon fba drop off at fulfillment center",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "sell through amazon fba",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "create removal order amazon fba",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon sell fba uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon fba shipping cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon fba removal from china"
+      ]
+    },
+    {
+      "query": "amazon cancels order from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "amazon removal order fees",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "how to remove orders amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "amazon remove order from order history",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "how to delete amazon order",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "removing orders from amazon history",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "delete amazon orders permanently",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "amazon how to delete orders",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "how to remove cancelled orders from amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "amazon archived orders permanently removed",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "how to remove orders from amazon history",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "amazon removal order fees uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "can i order from amazon in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon removal order china"
+      ]
+    },
+    {
+      "query": "china to us shipping cost per kg",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "estimate freight from china to usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "freight rates usa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "air freight cost from china to usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "shipping freight from china cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "freight from china to us",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "freight forwarder china to us cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "shipping rates china to usa per kg",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "best freight rates from china to usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "freight usa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "cheap freight from usa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "freight shipping calculator us to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "air freight rates from china to usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "freight costs usa per kg",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "cheap freight rate from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "shipping freight from china to usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "shipping freight rate china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "cheap freight shipping rates china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    },
+    {
+      "query": "return to supplier form",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return inventory to china supplier"
+      ]
+    },
+    {
+      "query": "good items return to supplier",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return inventory to china supplier"
+      ]
+    },
+    {
+      "query": "returning goods to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "return inventory to china supplier"
+      ]
+    },
+    {
+      "query": "shipping from china cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "international shipping to china cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "cost of shipping a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "cost of shipping to china from usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "china us shipping cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "shipping price to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "how much is shipping to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "shipping from china to usa price",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "cheap shipping costs from china to usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    },
+    {
+      "query": "cost to ship small package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china exit shipping cost"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

@@ -1,0 +1,770 @@
+{
+  "at": "2026-10-28T02:46:12.558Z",
+  "date": "2026-10-28",
+  "persona": "student",
+  "moment": "buy",
+  "seeds": [
+    "buy laptop in china",
+    "buy phone in china student",
+    "cheapest place to buy electronics china",
+    "student discount china"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 83,
+  "rows": [
+    {
+      "query": "buy laptop in china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy laptop in china online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy laptop in china reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy gaming laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy lenovo laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy huawei laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy used laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy cheap laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy hp laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy asus laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "best laptop to buy in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop manufacturers china cheap",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptops in china with price list",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "cost of brand-name laptop in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop computer manufacturers in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "are all laptops made in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "cost of premium laptop in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "can i use my laptop in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop manufacturers china wholesale",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop manufacturers china list",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop computers not made in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop manufacturers china reviews",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "where to buy laptop in taiwan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "best chinese brand laptop",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop manufacturers china quality",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop price in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop suppliers in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "laptop manufacturers in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "best chinese laptop brands",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy phone from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "can i use my phone in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buy cell phones from china reviews",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buy cell phones from china online",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buying cheap phone in china guide",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buy cell phones from china brands",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buying cheap phone in china tips",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buying cheap phone in china shipping",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "best places to buy smartphones in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buy cell phones from china best sites",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "cell phone in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "best cell phones to use in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buy cell phones from china direct",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "buying phone in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "using a mobile phone in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "how to order a phone from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy phone in china student"
+      ]
+    },
+    {
+      "query": "cheapest place to buy electronics in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "best place to buy electronics china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest electronic market in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest country to buy electronics",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest place to buy electronics in the world",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "electronics to buy in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "get electronics cheap from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "buy in china online electronics",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "electronics made in china cheap",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "buy electronics in bulk from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "where to buy cheap electronics",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheap chinese electronics website",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "best place to buy electronics",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "buy chinese electronics online",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "where to buy cheap electronics in singapore",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest price for electronics",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest country for electronics",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "china electronic stores near me",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "where to buy cheap electronics in shanghai",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "best place to buy electronics in shanghai",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "best place to buy electronics in beijing",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "where to buy electronics in shanghai",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "where to buy electronics beijing",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "in which country electronics are cheap",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "best chinese online electronic stores",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "student discount china airlines",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china southern",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china eastern",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china apple",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "military discount china fleet",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "military discount china peak",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "cathay student discount china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "huawei student discount china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "ipad student discount china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "china southern student discount",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "china eastern student discount",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "apple student discount china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

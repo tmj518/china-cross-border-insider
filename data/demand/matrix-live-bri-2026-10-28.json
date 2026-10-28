@@ -1,0 +1,792 @@
+{
+  "at": "2026-10-28T02:45:44.689Z",
+  "date": "2026-10-28",
+  "persona": "bri",
+  "moment": "live",
+  "seeds": [
+    "cost of living china for indian student",
+    "china apartment rent for foreigner",
+    "living cost guangzhou foreigner",
+    "china rent deposit foreigner",
+    "cost of living china for indian",
+    "china pg rent foreigner",
+    "china daily expenses foreigner",
+    "china apartment deposit foreigner"
+  ],
+  "status": "ok",
+  "okCalls": 16,
+  "failCalls": 0,
+  "total": 84,
+  "rows": [
+    {
+      "query": "cost of living in china for indian students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "living cost in china for international students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "is china expensive for indian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "living cost in beijing for student",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "cost of living in china vs india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "cost of living in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "cost of living in china per year",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "whats the cost of living in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "average cost of living in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "cost of living in china per month",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "cost of living in china vs usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "cost to live in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "average cost of college in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "cost of living in asian countries",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "how many chinese students in india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "living cost in india for students",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "living cost in uk for indian students",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "living cost in singapore for indian students",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "living cost in australia for indian students",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "indian students in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "chinese cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "can indian students study in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "rent apartment in china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "rent apartment in yiwu china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "rent apartment in zhuhai china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "can a foreigner buy an apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "how much does an apartment cost in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "how much is rent in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "how much is an apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "apartment for rent china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "apartments in china for rent",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "houses for rent in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "homes for rent in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "japan apartments for rent for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "china house for rent",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "places to rent in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "rent china near me",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "buying a house in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "china vacation rental apartments",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "japanese apartments for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "china rental near me",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "japan apartments for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "foreigner buying property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner",
+        "china pg rent foreigner",
+        "china apartment deposit foreigner"
+      ]
+    },
+    {
+      "query": "apartments for sale in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "guangzhou cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "cost of living in guangzhou china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "how many people live in guangzhou",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "is guangzhou worth visiting",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "living cost in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "how long to spend in guangzhou",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "place of interest in guangzhou",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "guangzhou apartments for rent expat",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "accommodation in guangzhou china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "jobs in guangzhou for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "how to travel in guangzhou",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "living cost guangzhou foreigner"
+      ]
+    },
+    {
+      "query": "deposit money in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china rent deposit foreigner",
+        "china apartment deposit foreigner"
+      ]
+    },
+    {
+      "query": "direct deposit in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china rent deposit foreigner",
+        "china apartment deposit foreigner"
+      ]
+    },
+    {
+      "query": "security deposit in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china rent deposit foreigner",
+        "china apartment deposit foreigner"
+      ]
+    },
+    {
+      "query": "china fixed deposit rate",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china rent deposit foreigner"
+      ]
+    },
+    {
+      "query": "china deposit interest rate",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china rent deposit foreigner"
+      ]
+    },
+    {
+      "query": "fixed deposit in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china rent deposit foreigner"
+      ]
+    },
+    {
+      "query": "cost of living in china for indian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "cost of living china vs india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "cost of living in china in indian rupees",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "is cost of living high in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "is china expensive than india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "china cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "china average cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "indian cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "india cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "average cost of living india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "current cost of living in india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "china rent a girlfriend",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china pg rent foreigner"
+      ]
+    },
+    {
+      "query": "living expenses in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "tax deduction for foreigner in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "salary in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "tax in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "china payment methods for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "what does china spend their money on",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "expenses meaning in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "daily expense for trip in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "how do foreigners pay in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "income tax in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    },
+    {
+      "query": "personal income tax for foreigners in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china daily expenses foreigner"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

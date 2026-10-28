@@ -1,0 +1,472 @@
+{
+  "at": "2026-10-28T02:43:21.344Z",
+  "date": "2026-10-28",
+  "persona": "platform-seller",
+  "moment": "arrive",
+  "seeds": [
+    "visit china supplier factory",
+    "china business trip supplier",
+    "canton fair visit",
+    "china factory tour"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 50,
+  "rows": [
+    {
+      "query": "how to get a supplier from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china supplier factory"
+      ]
+    },
+    {
+      "query": "factory in china for clothing",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china supplier factory"
+      ]
+    },
+    {
+      "query": "finding a chinese supplier",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china supplier factory"
+      ]
+    },
+    {
+      "query": "how to find chinese suppliers",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china supplier factory"
+      ]
+    },
+    {
+      "query": "how to find suppliers in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "visit china supplier factory"
+      ]
+    },
+    {
+      "query": "china business trip support",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "business trip in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "business travel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "business class trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "best tour companies for china travel",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "trips to china packages",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "tour companies in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "trip a deal china tours",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "china trip a deal",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "how can i do business with china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "tips for business travel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "best china tour companies",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "tourism companies in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "trip a deal incredible china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "china airlines manage trip",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "organized trips to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "cheap hotel supplies china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "trip.com china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "trip com comboios china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "business trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "business with china products",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "trip a deal china packages",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "group trips to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip supplier"
+      ]
+    },
+    {
+      "query": "canton fair visitor registration",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitors",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visit",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor registration online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visit from india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitors number",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor pass",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor badge",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor count",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor invitation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair 2025 online visit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "can chinese national visit canton fair",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "china factory tour",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory tours demand",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory tour guide",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory tourism",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china manufacturing tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory visit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "belleek china factory tour ireland",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china furniture factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china car factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "duchess china factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}
