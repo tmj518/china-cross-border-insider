@@ -74,7 +74,7 @@ jobs:
         id: run
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 }}
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.DUBAOTUILI12345 }}
+          ARK_MODEL_WRITER: ${{ vars.ARK_MODEL_WRITER }}
           #
           # The second vendor, which was not passed here before.
           #

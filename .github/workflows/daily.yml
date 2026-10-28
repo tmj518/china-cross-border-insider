@@ -104,11 +104,13 @@ jobs:
           # and tools/lib-llm.mjs read exactly one of the two. Secret names are case-insensitive, so the
           # secret itself did not have to be renamed.
           DUBAOTUILI12345: ${{ secrets.DUBAOTUILI12345 }}
-          ARK_MODEL: ${{ secrets.ARK_MODEL }}
+          ARK_MODEL: ${{ vars.ARK_MODEL }}
           # One endpoint per role. A reviewer running the writer's model is the same opinion with a different
           # prompt, and it misses exactly what the writer missed. Both fall back to ARK_MODEL.
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.DUBAOTUILI12345 }}
-          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER || secrets.ARK_MODEL }}
+          ARK_MODEL_WRITER: ${{ vars.ARK_MODEL_WRITER }}
+          ARK_MODELKIMI: ${{ vars.ARK_MODELKIMI }}
+          ARK_MODEL_PLANNER: ${{ vars.ARK_MODEL_PLANNER || vars.ARK_MODEL_WRITER }}
+          ARK_MODEL_REVIEWER: ${{ vars.ARK_MODEL_REVIEWER || vars.ARK_MODEL }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -387,9 +389,11 @@ jobs:
           DUBAOTUILI12345: ${{ secrets.DUBAOTUILI12345 }}
           OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
           OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
-          ARK_MODEL: ${{ secrets.ARK_MODEL }}
-          ARK_MODEL_WRITER: ${{ secrets.ARK_MODEL_WRITER || secrets.DUBAOTUILI12345 }}
-          ARK_MODEL_REVIEWER: ${{ secrets.ARK_MODEL_REVIEWER || secrets.ARK_MODEL }}
+          ARK_MODEL: ${{ vars.ARK_MODEL }}
+          ARK_MODEL_WRITER: ${{ vars.ARK_MODEL_WRITER }}
+          ARK_MODELKIMI: ${{ vars.ARK_MODELKIMI }}
+          ARK_MODEL_PLANNER: ${{ vars.ARK_MODEL_PLANNER || vars.ARK_MODEL_WRITER }}
+          ARK_MODEL_REVIEWER: ${{ vars.ARK_MODEL_REVIEWER || vars.ARK_MODEL }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
           DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}

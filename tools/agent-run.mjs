@@ -968,6 +968,21 @@ try {
   /* no directive, or one that does not parse - the prompt tells the agent to research, which is correct */
 }
 console.log(`  max turns   : ${MAX_TURNS}${DRY ? "   DRY RUN: no command will be executed" : ""}`);
+
+/*
+ * MODEL ENDPOINTS AS THE RUNNER SEES THEM.
+ *
+ * These four values were read from secrets.* in the workflow while the values actually lived in vars.*, so
+ * every run received empty strings and the provider layer silently fell back. Nothing failed loudly; the
+ * run simply used a different model than the one named on the card.
+ *
+ * Printing them means the next time that happens it shows in the first ten lines of the log instead of
+ * being inferred from a cost report three weeks later.
+ */
+for (const k of ["ARK_MODEL", "ARK_MODEL_WRITER", "ARK_MODELKIMI", "ARK_MODEL_PLANNER", "ARK_MODEL_REVIEWER"]) {
+  console.log(`  ${k.padEnd(18)}: ${process.env[k] || "★ MISSING"}`);
+}
+
 console.log("");
 
 /*
