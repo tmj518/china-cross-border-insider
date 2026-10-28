@@ -44,6 +44,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSy
 import { join, relative } from "node:path";
 import { execFileSync } from "node:child_process";
 import { ask, summary as providerSummary, usageToday } from "./lib-llm.mjs";
+import { looksDuplicate } from "./lib-duplicate.mjs";
 
 const ROOT = process.cwd();
 /*
@@ -1219,13 +1220,42 @@ if (published.size === 0) {
        * about what to publish actually lives.
        */
       let target = join(ROOT, "src", "content", "blog", newest.f);
+      let duplicateOf = null;
       if (existsSync(target)) {
-        const stamp = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
-        const dated = newest.f.replace(/\.md$/, "") + "-" + stamp + ".md";
-        target = join(ROOT, "src", "content", "blog", dated);
-        console.log("  forced submission: " + newest.f + " is already published, publishing under " + dated);
+        /*
+         * A DATE SUFFIX CHANGES THE URL, NOT THE CONTENT.
+         *
+         * On 2026-10-28 this fallback published eu-goes-provisional-safeguard-trq-price-threshold-2026 a
+         * second time under a -2026-10-28 slug: same title, same description, same body, two URLs. The
+         * meta gate caught it, which is the gate working. The writer should have caught it first.
+         *
+         * The suffix exists because on 2026-10-20 an empty day was judged worse than a near-duplicate.
+         * That is true of a near duplicate and false of the same words twice, so the comparison runs
+         * before the suffix is added: identical title, identical opening, or 0.9 body similarity means
+         * there is nothing new to publish, and the verdict says so rather than inventing a URL for a
+         * second copy of yesterday's article.
+         */
+        const publishedSrc = readFileSync(target, "utf8");
+        const check = looksDuplicate(body, publishedSrc);
+        if (check.duplicate) {
+          duplicateOf = { file: newest.f, reason: check.reason };
+          console.log("  forced submission refused: " + newest.f + " - " + check.reason);
+          if (!finished) {
+            finished = {
+              verdict: "DUPLICATE-SUBJECT",
+              summary:
+                "the draft this run produced is the article already published at " + newest.f + " (" + check.reason +
+                "). Nothing was published: a date suffix changes where an article lives, not what it says.",
+            };
+          }
+        } else {
+          const stamp = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+          const dated = newest.f.replace(/\.md$/, "") + "-" + stamp + ".md";
+          target = join(ROOT, "src", "content", "blog", dated);
+          console.log("  forced submission: " + newest.f + " is already published, publishing under " + dated + " (" + check.reason + ")");
+        }
       }
-      if (false) {
+      if (duplicateOf) {
         /*
          * A DUPLICATE DRAFT IS A VERDICT, NOT A TURN-LIMIT.
          *
@@ -1241,7 +1271,7 @@ if (published.size === 0) {
         if (!finished) {
           finished = {
             verdict: "DUPLICATE-SUBJECT",
-            summary: `the only draft this run produced was ${newest.f}, and that subject is already published. Nothing was overwritten, and the day has no new article because research kept proposing a taken subject.`,
+            summary: `the only draft this run produced was ${newest.f}, and that subject is already published (${duplicateOf ? duplicateOf.reason : "duplicate"}). Nothing was overwritten, and the day has no new article because research kept proposing a taken subject.`,
           };
         }
       } else if (body.trim().length > 200) {
