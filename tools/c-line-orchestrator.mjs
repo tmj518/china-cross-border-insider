@@ -673,6 +673,9 @@ async function attempt(topic) {
       `    detail: ${JSON.stringify(String(s.detail ?? "").trim())}`,
     ]),
     'persona: "old-china-hand"',
+    /* moment/cellPersona only when the topic came from one of the twenty-five cells. */
+    ...(topic.moment ? ['    moment: "' + topic.moment + '"'] : []),
+    ...(topic.persona ? ['    cellPersona: "' + topic.persona + '"'] : []),
     "---",
     "",
   ].join("\n");

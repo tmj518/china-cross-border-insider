@@ -95,6 +95,8 @@ function load(dir, kind, urlFor) {
       body,
       links: outbound(body),
       audience: quoted(fm, "audience"),
+    moment: quoted(fm, "moment"),
+    cellPersona: quoted(fm, "cellPersona"),
       withSource: (fm.match(/^    source:/gm) ?? []).length,
       filePath: relative(ROOT, join(dir, f)),
     });
@@ -160,8 +162,8 @@ const records = rows.map((r) => ({
   入链数: String(inbound.get(r.key) ?? 0),
   查重: dupOf(r),
   复查到期日: r.reviewBy,
-  时刻: "未标注",
-  画像: String(r.audience ?? "").replace(/[\[\]"']/g, "").slice(0, 60) || "未标注",
+  时刻: r.moment || "未标注",
+  画像: (r.cellPersona || String(r.audience ?? "").replace(/[\[\]\"']/g, "")).slice(0, 60) || "未标注",
   来源完整率: r.figures ? Number((r.withSource / r.figures).toFixed(2)) : 0,
   commit: (() => { try { return execFileSync("git", ["log", "-1", "--format=%h", "--", r.filePath], { cwd: ROOT, encoding: "utf8" }).trim() || "-"; } catch { return "-"; } })(),
 }));

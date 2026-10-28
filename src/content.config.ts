@@ -281,6 +281,16 @@ export const guide = defineCollection({
       .min(5, "a guide needs at least five ordered steps"),
 
     persona: z.string().default("old-china-hand"),
+
+    /*
+     * Which of the twenty-five cells this guide answers, when it answers one.
+     *
+     * The content ledger fills 时刻 and 画像 from these two instead of writing 未标注, and a title cannot be
+     * used to guess them: wording that looks like one moment often belongs to another. Absent means the
+     * subject did not come from a cell, which is most of them, and the ledger says so.
+     */
+    moment: z.enum(["buy", "arrive", "live", "leave", "policy"]).optional(),
+    cellPersona: z.enum(["platform-seller", "importer", "bri", "student", "expat"]).optional(),
     draft: z.boolean().default(false),
   }),
 });

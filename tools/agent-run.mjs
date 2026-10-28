@@ -98,10 +98,6 @@ const TASK_FILE = flag("task", "daily-task.txt");
  * stops at the last useful turn is not a budget, it is a coin flip.
  */
 /*
- * SUBMIT AT TURN TEN is stated to the model as well as enforced below. The words matter: a model told only that it has
- * fifteen turns spends fifteen turns editing.
- */
-/*
  * THE DATA ORDER is the first thing the model reads, because the first three turns decide the article.
  *
  * A pipeline chooses a subject from a fixed rule. An editor chooses it from evidence, and the evidence has an order:
@@ -208,6 +204,69 @@ function commandAllowed(cmd) {
   if (FORBIDDEN_IN_COMMAND.some((re) => re.test(c))) return { ok: false, why: "the command matches a forbidden pattern (history rewrite, verification skip, network fetch or install)" };
   const hit = ALLOWED_COMMANDS.find(([re]) => re.test(c));
   return hit ? { ok: true, why: hit[1] } : { ok: false, why: "not in the allowlist; ask for it in your final message instead of improvising" };
+}
+
+/*
+ * THE FRONTMATTER CONTRACT, CHECKED LINE BY LINE.
+ *
+ * qa-check reads the frontmatter with expressions, not with a parser, so a duplicated key passed quietly:
+ * the last value won and the file looked fine. It is not fine - duplicated mapping key is a YAML error, and
+ * the build refused the whole site while check_draft had already told the model the draft was good.
+ *
+ * No YAML parser is a direct dependency here, so this is a targeted scanner rather than a general parse: it
+ * looks at top-level keys and at the figures block, which is everything the contract constrains. Every finding
+ * carries the line number and the single edit that fixes it, because 'frontmatter has a problem' costs a turn
+ * and teaches nothing.
+ */
+function frontmatterFixes(raw) {
+  const fixes = [];
+  const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw);
+  if (!m) return ["Fix: the file has no frontmatter block. Open it with a line containing only three dashes and close it the same way."];
+
+  const fmLines = m[1].split(/\r?\n/);
+  const seen = new Map();
+  for (let i = 0; i < fmLines.length; i++) {
+    const mm = /^([A-Za-z_][\w-]*):/.exec(fmLines[i]);
+    if (!mm) continue;
+    const key = mm[1];
+    const fileLine = i + 2;
+    if (seen.has(key)) fixes.push(`Fix: '${key}' is duplicated at line ${fileLine}, first defined at line ${seen.get(key)}. Delete one of the two lines.`);
+    else seen.set(key, fileLine);
+  }
+
+  for (const banned of ["date", "createdAt", "publish_date", "published"]) {
+    if (seen.has(banned)) fixes.push(`Fix: '${banned}' at line ${seen.get(banned)} must be renamed to 'publishDate'.`);
+  }
+  for (const req of ["title", "description", "category", "audience", "information_gain", "publishDate"]) {
+    if (!seen.has(req)) fixes.push(`Fix: required key '${req}' is missing. Add it as a top-level key in the frontmatter.`);
+  }
+  if (seen.has("publishDate")) {
+    const line = fmLines[seen.get("publishDate") - 2] ?? "";
+    if (!/publishDate:\s*"?\d{4}-\d{2}-\d{2}"?\s*$/.test(line)) {
+      fixes.push(`Fix: 'publishDate' at line ${seen.get("publishDate")} must be a quoted date, like publishDate: "2026-10-28".`);
+    }
+  }
+
+  const figStart = fmLines.findIndex((l) => /^figures:/.test(l));
+  if (figStart >= 0) {
+    const entries = [];
+    for (let i = figStart + 1; i < fmLines.length; i++) {
+      const l = fmLines[i];
+      if (l.trim() === "") continue;
+      if (!/^\s+/.test(l)) break;
+      if (/^\s*-\s/.test(l)) entries.push({ line: i + 2, body: [l] });
+      else if (entries.length) entries[entries.length - 1].body.push(l);
+    }
+    for (const e of entries) {
+      for (const field of ["value", "unit", "period", "source", "retrieved"]) {
+        if (!e.body.some((x) => new RegExp(`^\\s*(?:-\\s*)?${field}:`).test(x))) {
+          fixes.push(`Fix: the figures entry that starts at line ${e.line} has no '${field}'.`);
+        }
+      }
+    }
+    if (!entries.length) fixes.push(`Fix: 'figures' at line ${figStart + 1} is empty. Every entry needs value / unit / period / source / retrieved.`);
+  }
+  return fixes;
 }
 
 /* ---------------------------------------------------------------- the tools */
@@ -522,6 +581,21 @@ function runTool(name, input) {
        */
       if (DRY) return done("dry run: the checks were not run");
       const p = join(ROOT, input.path);
+
+      /*
+       * The contract before the content. A draft that cannot be parsed is not a draft with weak arguments -
+       * it cannot be published at all, and the model must be told which line to delete rather than that something
+       * is wrong somewhere.
+       */
+      const contract = frontmatterFixes(readFileSync(p, "utf8"));
+      if (contract.length) {
+        console.log("  turn " + turn + " · check_draft: " + contract.length + " frontmatter fix(es)");
+        return done(
+          "FRONTMATTER CONTRACT: " + contract.length + " line(s) must change before this draft can be checked further.\n\n" +
+            contract.join("\n") +
+            "\n\nApply these edits, then call check_draft again.",
+        );
+      }
       if (!existsSync(p)) return done(`no such draft: ${input.path}`);
 
       /*
@@ -1000,6 +1074,13 @@ You are the daily operator for Landed Math, an English site that turns Chinese a
 official primary documents into per-unit cost consequences for importers.
 
 Your tools: read_file, write_file, list_dir, run, check_draft, publish_draft, finish.
+FRONTMATTER CONTRACT - a draft that breaks any line here cannot be published.
+  - publishDate: "YYYY-MM-DD"        NOT date:  and NOT createdAt:
+  - Every key appears exactly once. A duplicated key is a YAML error, not a warning.
+  - title / description / category / audience / information_gain appear once each
+  - figures: every entry has value / unit / period / source / retrieved
+  - Before calling finish, run check_draft and fix every line it returns.
+
 
 TODAY'S JOB
 
