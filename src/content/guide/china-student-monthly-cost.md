@@ -173,7 +173,7 @@ Divided by twelve, the urban figure is **846 CNY per person per month**. That is
 - it includes **tobacco and alcohol**, which many students do not buy
 - it is **national urban**, not Beijing, Shanghai or Guangzhou, where food costs more
 
-Use it as a floor for a student cooking at home, and expect your own number to be higher in all three cities.
+Use it as a floor for a student cooking at home, and expect your own number to be higher in Beijing, Shanghai and Guangzhou alike.
 
 ## 3. Housing: dormitory fees, three universities, no market average
 
@@ -184,14 +184,14 @@ Three universities publish a fee a reader can check:
 | University | City | Room | Published fee | Per month |
 |---|---|---|---|---|
 | Tsinghua University | Beijing | Double room | 40 CNY per day | 1,200 CNY |
-| Sun Yat-sen University | Guangzhou | 19 sq m per student | 5,000 CNY per academic year | 417 CNY |
+| Sun Yat-sen University (Zhongshan University, 中山大学) | Guangzhou | 19 sq m per student | 5,000 CNY per academic year | 417 CNY |
 | Zhengzhou University | Zhengzhou | Single room | 21,900 CNY per academic year | 1,825 CNY |
 
 Three things to read carefully, because they are where these numbers lie:
 
 - **The units are not the same.** Tsinghua prices by the day, the other two by the academic year. The monthly column is derived — 40 × 30, and the annual fees ÷ 12 — and the assumption is 30 days to a month with a room occupied all year.
 - **Sun Yat-sen publishes floor area per student, not room type.** 19 square metres per student is shared; 38 square metres is 10,000 CNY a year. The page does not say "single" or "double", so neither does this one.
-- **Zhengzhou is not one of the three cities on this page.** It is here because Shanghai's universities publish their accommodation fees as embedded PDFs or inside application portals that could not be read and quoted. A Zhengzhou figure with a checkable source is worth more than a Shanghai figure without one.
+**Zhengzhou is outside the three metro cities.** The metro fares above cover Beijing, Shanghai and Guangzhou. Shanghai's universities publish their accommodation fees as embedded PDFs or inside application portals that could not be read and quoted, so a Zhengzhou figure with a checkable source is here instead of a Shanghai figure without one.
 
 **No official city-wide market rent is published for these cities. These are university-published dormitory fees, which is what a student actually pays.**
 

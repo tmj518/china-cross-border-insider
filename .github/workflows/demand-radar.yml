@@ -1,0 +1,81 @@
+# The demand radar: harvest search phrasings for the twenty-five cells, once a week.
+#
+# Why a schedule and not a person: the matrix is the only source of new topics that is not a prior, and
+# a matrix that is refreshed by hand is a matrix that stops being refreshed. This job exists so that the
+# guide line and the script line still have "有需求·无页面" cells to draw from when nobody is watching.
+#
+# Monday 02:40 UTC is Monday 10:40 in Beijing. Every other cron in this repository is at :07 or :20 past
+# the hour, so this one does not queue behind them.
+#
+# It writes only data/demand. It cannot touch src/, and the script it runs has no code path that writes
+# outside that directory.
+
+name: Demand radar
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_fail:
+        description: "Fail on purpose, to prove the Feishu card arrives"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "40 2 * * 1" # Monday 10:40 Beijing
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demand-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # A deliberate failure, used once, to prove the alert below actually reaches a phone. The input
+      # defaults to false so a scheduled run can never hit this branch.
+      - name: Fail on purpose (manual test only)
+        if: ${{ inputs.force_fail }}
+        run: |
+          echo "force_fail was set, so this run is being failed on purpose."
+          exit 1
+
+      - name: Harvest the twenty-five cells
+        run: node tools/demand-radar.mjs
+
+      - name: Keep the result
+        run: |
+          git config user.name "demand-radar"
+          git config user.email "radar@landedmath.com"
+          git add data/demand
+          if git diff --cached --quiet; then
+            echo "No change in data/demand, so there is nothing to commit."
+            exit 0
+          fi
+          DATE=$(date -u +%Y-%m-%d)
+          git commit -m "demand: weekly radar ${DATE}"
+          git push
+
+      - name: Tell Feishu that the radar failed
+        if: failure()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$FEISHU_WEBHOOK" ]; then
+            echo "FEISHU_WEBHOOK is not set, so no card is sent. The run is still red."
+            exit 0
+          fi
+          TEXT=$(printf '🔴 Landed Math — 需求雷达失败\n\n分支: %s\n触发: %s\n\n看日志: %s' \
+            "${GITHUB_REF_NAME}" "${GITHUB_EVENT_NAME}" "$RUN_URL")
+          jq -n --arg t "$TEXT" '{msg_type:"text",content:{text:$t}}' > /tmp/card.json
+          curl -sS -X POST "$FEISHU_WEBHOOK" -H 'content-type: application/json' -d @/tmp/card.json
+          echo "card sent"
