@@ -1,0 +1,242 @@
+[
+  {
+    "query": "china import tax",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china import tax uk",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "what is landed cost",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "cost vs landed cost",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "tax refund in china",
+    "persona": "expat",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "china study visa fee",
+    "persona": "student",
+    "moment": "arrive",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "import duty in india",
+    "persona": "bri",
+    "moment": "buy",
+    "calc": true,
+    "pages": 4,
+    "type": "transactional"
+  },
+  {
+    "query": "import duty on china",
+    "persona": "bri",
+    "moment": "buy",
+    "calc": true,
+    "pages": 4,
+    "type": "transactional"
+  },
+  {
+    "query": "what's a landed cost",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "landed cost per unit",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "study visa china cost",
+    "persona": "student",
+    "moment": "arrive",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "china import tax rate",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china tax refund rate",
+    "persona": "expat",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "china tax refund form",
+    "persona": "expat",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "cheap parcel to india",
+    "persona": "student",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "informational"
+  },
+  {
+    "query": "import duty from china",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "import from china cost",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "import from china fees",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china import tax to uk",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china import tax to us",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "chinese cost of living",
+    "persona": "expat",
+    "moment": "live",
+    "calc": true,
+    "pages": 4,
+    "type": "transactional"
+  },
+  {
+    "query": "student cost of living",
+    "persona": "student",
+    "moment": "live",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "china import duty rates",
+    "persona": "bri",
+    "moment": "buy",
+    "calc": true,
+    "pages": 4,
+    "type": "transactional"
+  },
+  {
+    "query": "import costs from china",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china import tax europe",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china import tax to usa",
+    "persona": "importer",
+    "moment": "buy",
+    "calc": true,
+    "pages": 31,
+    "type": "transactional"
+  },
+  {
+    "query": "china import site cheap",
+    "persona": "platform-seller",
+    "moment": "buy",
+    "calc": true,
+    "pages": 0,
+    "type": "navigational"
+  },
+  {
+    "query": "china tax refund policy",
+    "persona": "expat",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "hk departure tax refund",
+    "persona": "expat",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  },
+  {
+    "query": "china cancel tax refund",
+    "persona": "expat",
+    "moment": "leave",
+    "calc": true,
+    "pages": 0,
+    "type": "transactional"
+  }
+]

@@ -1,0 +1,676 @@
+{
+  "at": "2026-10-27T11:06:18.462Z",
+  "date": "2026-10-27",
+  "persona": "importer",
+  "personaName": "进口商与企业买家",
+  "moment": "live",
+  "momentName": "住",
+  "seeds": [
+    "cost of living in china for business",
+    "china office setup cost",
+    "expat package china cost",
+    "china business trip cost per day",
+    "china factory visit cost",
+    "china sourcing trip cost",
+    "hotel cost china business travel",
+    "china interpreter cost business"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 70,
+  "rows": [
+    {
+      "query": "cost of living in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "numbeo cost of living china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "whats the cost of living in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "cost of living in china per year",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "average cost of living in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "cost of living in china per month",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "cost to live in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "chinese cost of living",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "living expenses in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "china cost of living increase",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "cost of living in china vs usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "cost of housing in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "cost of living in china for business"
+      ]
+    },
+    {
+      "query": "office set up cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china office setup cost"
+      ]
+    },
+    {
+      "query": "company setup in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china office setup cost"
+      ]
+    },
+    {
+      "query": "home office in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china office setup cost"
+      ]
+    },
+    {
+      "query": "trip to china package",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost",
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "cost to send a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "cost to ship a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "cost of sending a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "cost of shipping a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "what is expat cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "cost to ship small package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost",
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "cost to send small package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost",
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "cost to return a package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "travel package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "how much to send package to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost"
+      ]
+    },
+    {
+      "query": "cost to go to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "expat package china cost",
+        "china business trip cost per day",
+        "china factory visit cost",
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "business trip in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day",
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "cost of trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "how much is a trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day",
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "how much to travel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "how much to go to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "business travel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day",
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "china holiday tour cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "business class trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "requirements for business trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day"
+      ]
+    },
+    {
+      "query": "hotel cost in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china business trip cost per day",
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "how much do factories cost in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china factory visit cost"
+      ]
+    },
+    {
+      "query": "how much do things cost in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china factory visit cost"
+      ]
+    },
+    {
+      "query": "cost of things in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china factory visit cost"
+      ]
+    },
+    {
+      "query": "china but at what cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china factory visit cost"
+      ]
+    },
+    {
+      "query": "how much does a factory cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china factory visit cost"
+      ]
+    },
+    {
+      "query": "trip to china cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost",
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "best cost country sourcing",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "sourcing company in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "sourcing products from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "cost to ship something to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "best cost & low cost country sourcing",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "sourcing from china to india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "product sourcing from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china sourcing trip cost"
+      ]
+    },
+    {
+      "query": "hotel booking in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "china hotel booking website",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "how much is a hotel in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "hotel prices in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "china hotel booking comparison",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "business trip to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "cost to travel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "tips for business travel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "hotel cost china business travel"
+      ]
+    },
+    {
+      "query": "interpreter salary in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "cost of interpreter services",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "how much does an interpreter cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "interpreter training in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "top interpreter offering insurance in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "looking for interpreter in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "chinese english interpreter pay",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "top interpreter offering tours in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "how much is an interpreter",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "interpreter price per hour",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "interpreter near me for chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    },
+    {
+      "query": "interpreter certification near me cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china interpreter cost business"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous",
+  "previous": {
+    "seeds": [
+      "buy from china supplier",
+      "china procurement office",
+      "china sourcing agent",
+      "quality inspection china"
+    ],
+    "clean": 57,
+    "seedQuality": "ambiguous(unrecorded)"
+  }
+}

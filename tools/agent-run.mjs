@@ -45,6 +45,7 @@ import { join, relative } from "node:path";
 import { execFileSync } from "node:child_process";
 import { ask, summary as providerSummary, usageToday } from "./lib-llm.mjs";
 import { looksDuplicate } from "./lib-duplicate.mjs";
+import { loadMatrix, nextCell, markCell, intentSamples } from "./lib-cells.mjs";
 
 const ROOT = process.cwd();
 /*
@@ -330,6 +331,60 @@ const TOOLS = [
 
 const transcript = [];
 const published = new Set();
+
+/*
+ * THE CELL THIS RUN IS WRITING FOR, if any.
+ *
+ * The twenty-five cells are the only subject source on this site that is not a prior. Picking one here
+ * and putting its five phrasings into the prompt is what turns a demand map into an article: the model
+ * is no longer asked "what happened today", it is asked "these people asked this, answer it with a
+ * number".
+ *
+ * Claimed as taken at the start, not at the end - otherwise a run that dies mid-way leaves the cell
+ * available and tomorrow's run writes the same subject again, which is how five near-duplicates get
+ * published and no cell gets covered.
+ */
+const CELL = (() => {
+  if (process.env.NO_CELL) return null;
+  try {
+    const matrix = loadMatrix();
+    if (!matrix) return null;
+    const picked = nextCell(matrix);
+    if (!picked) return null;
+    markCell(matrix, picked.persona, picked.moment, "taken");
+    console.log(`  cell      : ${picked.persona} x ${picked.moment} [${picked.direction}] ${picked.reason}`);
+    return { ...picked, matrix };
+  } catch (e) {
+    console.log("  cell      : none (" + e.message + ")");
+    return null;
+  }
+})();
+
+const CELL_BRIEF = CELL
+  ? `THIS RUN HAS A DEMAND CELL
+
+The twenty-five-cell map found that people are asking the questions below and this site has no page that
+answers them. Write the article that answers them.
+
+THIS OVERRIDES TODAY'S JOB BELOW: do not run research.mjs and do not take a subject from
+data/directive.json. The subject is this cell.
+
+  cell      ${CELL.persona} x ${CELL.moment} (${CELL.direction})
+  evidence  ${CELL.reason}
+
+Questions people actually typed:
+
+${CELL.samples.map((q, i) => `  ${i + 1}. ${q}`).join("\n")}
+
+Rules for this article:
+  - Every figure must be quoted verbatim from an official page you actually fetched, with its source and
+    retrieval date. No estimate, no range, no "typically".
+  - If the official sources do not publish a number that answers these questions, do NOT write around it.
+    Call finish with verdict INSUFFICIENT-EVIDENCE and say which sources you tried and which figure was
+    missing. A missing number reported is worth more than a plausible number invented.
+  - This is a demand-driven article: it exists because those questions were typed, not because a ministry
+    published something.`
+  : "";
 const checkedOk = new Set();
 let finished = null;
 /** A relaunch is allowed once per run; a second one is a refusal. */
@@ -370,6 +425,32 @@ function runTool(name, input) {
       const refusal = writeTargetRefused(input.path);
       if (refusal) return done(`REFUSED: ${refusal}`);
       if (DRY) return done("dry run: the write was not performed");
+      /*
+       * A DEMAND CELL WITH NO FIGURE IS NOT AN ARTICLE.
+       *
+       * The cell exists because somebody asked for an amount. Publishing a page that describes the
+       * procedure instead answers a different question and then reports success - which is how eight
+       * guides ended up with an empty figures array while the card still said PUBLISHED.
+       *
+       * Refusing here is cheap: the run ends yellow, the cell stays claimed, and the next run knows the
+       * official sources do not carry this number. That is a finding, not a failure.
+       */
+      if (CELL) {
+        const draftSrc = readFileSync(join(ROOT, input.path), "utf8");
+        const figureCount = (draftSrc.match(/^  - value:/gm) ?? []).length;
+        if (figureCount === 0) {
+          if (!finished) {
+            finished = {
+              verdict: "INSUFFICIENT-EVIDENCE",
+              summary:
+                "the " + CELL.persona + " x " + CELL.moment + " cell asked " + CELL.samples.length +
+                " questions that need an amount, and no official source fetched this run carried one. Nothing was published.",
+            };
+          }
+          console.log("  refused   : the draft answers a demand cell with zero sourced figures");
+          return done("INSUFFICIENT-EVIDENCE: no sourced figure in the draft, so it was not published. Call finish with that verdict and name the sources you tried.");
+        }
+      }
       const p = join(ROOT, input.path);
       mkdirSync(join(p, ".."), { recursive: true });
       writeFileSync(p, String(input.content ?? ""), "utf8");
@@ -585,6 +666,14 @@ function runTool(name, input) {
         /* the registry rebuild is reported by preflight; the article is staged either way */
       }
       published.add(slug);
+      if (CELL) {
+        try {
+          markCell(CELL.matrix, CELL.persona, CELL.moment, "published", { slug, publishedOn: new Date().toISOString().slice(0, 10) });
+          console.log("  cell      : marked published in the matrix");
+        } catch (e) {
+          console.log("  cell      : published but not marked (" + e.message + ")");
+        }
+      }
       return done(`published ${slug} to src/content/blog/. The registry was rebuilt.`);
     }
 
@@ -889,6 +978,8 @@ console.log("");
 const SYSTEM = `${DATA_NOTE}
 
 ${SUBMIT_NOTE}
+
+${CELL_BRIEF}
 
 You are the daily operator for Landed Math, an English site that turns Chinese and other
 official primary documents into per-unit cost consequences for importers.
@@ -1386,4 +1477,4 @@ console.log(`  report  : data/tmp/agent-report.json`);
 console.log(`  transcript: data/tmp/agent-transcript.jsonl`);
 
 /* PUBLISHED-WITHOUT-FINISH is a success: an article is in the collection, and the card says how. */
-process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT", "DUPLICATE-SUBJECT"].includes(report.verdict) ? 0 : 1);
+process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT", "DUPLICATE-SUBJECT", "INSUFFICIENT-EVIDENCE"].includes(report.verdict) ? 0 : 1);

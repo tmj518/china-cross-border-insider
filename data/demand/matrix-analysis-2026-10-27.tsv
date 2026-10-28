@@ -1,0 +1,26 @@
+persona	moment	status	querys	relevant	calc_able	pages	verdict	why
+platform-seller	buy	ok	60	28	2	0	定义待验证	种子与时刻不符：仅 47% 属于「buy」
+platform-seller	arrive	ok	39	16	0	0	定义待验证	种子与时刻不符：仅 41% 属于「arrive」
+platform-seller	live	ok	57	0	0	0	定义待验证	种子与时刻不符：仅 0% 属于「live」
+platform-seller	leave	ok	38	18	2	0	定义待验证	种子与时刻不符：仅 42% 属于「leave」
+platform-seller	policy	ok	43	27	1	0	定义待验证	种子与时刻不符：仅 12% 属于「policy」
+importer	buy	ok	82	81	79	31	有需求·有页面	
+importer	arrive	ok	38	30	0	0	有需求·无页面	
+importer	live	ok	57	0	0	0	定义待验证	种子与时刻不符：仅 0% 属于「live」
+importer	leave	ok	48	30	1	3	定义待验证	种子与时刻不符：仅 21% 属于「leave」
+importer	policy	ok	62	26	10	9	定义待验证	种子与时刻不符：仅 0% 属于「policy」
+bri	buy	ok	96	83	45	4	有需求·有页面	
+bri	arrive	ok	82	82	8	0	有需求·无页面	
+bri	live	ok	61	0	0	0	定义待验证	种子与时刻不符：仅 0% 属于「live」
+bri	leave	ok	73	56	21	0	定义待验证	种子与时刻不符：仅 48% 属于「leave」
+bri	policy	ok	63	11	0	1	定义待验证	种子与时刻不符：仅 11% 属于「policy」
+student	buy	ok	63	44	18	0	有需求·无页面	
+student	arrive	ok	67	54	5	0	有需求·无页面	
+student	live	ok	64	43	18	0	定义待验证	种子与时刻不符：仅 41% 属于「live」
+student	leave	ok	73	56	8	0	有需求·无页面	
+student	policy	ok	38	15	0	0	定义待验证	种子与时刻不符：仅 13% 属于「policy」
+expat	buy	ok	63	41	1	0	有需求·无页面	
+expat	arrive	ok	95	94	0	5	有需求·有页面	
+expat	live	ok	84	78	16	4	有需求·有页面	
+expat	leave	ok	76	54	33	0	有需求·无页面	
+expat	policy	ok	54	22	0	0	定义待验证	种子与时刻不符：仅 11% 属于「policy」

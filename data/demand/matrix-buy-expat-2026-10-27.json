@@ -1,0 +1,592 @@
+{
+  "at": "2026-10-27T09:58:21.832Z",
+  "date": "2026-10-27",
+  "persona": "expat",
+  "personaName": "在华外国人",
+  "moment": "buy",
+  "momentName": "买",
+  "seeds": [
+    "buy car in china foreigner",
+    "buy apartment in china foreigner",
+    "buy property in china",
+    "car insurance china foreigner"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "failReasons": [],
+  "total": 63,
+  "rows": [
+    {
+      "query": "foreigner buy car in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigner buy car in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can you buy a car in china as a foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "how to buy a car in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigners invest in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigners buy a car in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can a foreigner buy a car in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "buy a car in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "buying a car in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "car rental for foreigners in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "buying a chinese car",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "buy a car from china online",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "used car in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "where to buy china cars",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can you buy chinese cars in america",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "should i buy a chinese car",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can an american buy a chinese car",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "buy house in china foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "buy property in china for foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner",
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "foreigner buy apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigner buy apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigners buy property in china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner",
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "are foreigners allowed to buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigner buy a house in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "foreigner buying property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "buying property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "home buying in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigners own property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "apartment for rent in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "how much is an apartment in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can americans buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "apartments in china for rent",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "cheap apartments in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "buy a house in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "apartment in china that holds 30000 people",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "buy property in china",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buy property in chinar park kolkata",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buying property in china reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buy houses in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buy a flat in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "purchasing property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "singaporean buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "americans buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "property for sale in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buy property in chicago",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can singaporean buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can american buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can i buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can you buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can a foreigner buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can us citizen buy property in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "travel insurance to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "travel insurance for chinese citizens",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "insurance coverage in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "travel insurance in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "insurance policy in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "insurance agent in chinese",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "car insurance companies in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "medical insurance in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "health insurance in china for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "china social insurance for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "auto insurance foreign car",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    },
+    {
+      "query": "auto insurance people's republic of china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "car insurance china foreigner"
+      ]
+    }
+  ]
+}

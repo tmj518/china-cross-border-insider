@@ -1,0 +1,884 @@
+{
+  "at": "2026-10-27T09:58:34.768Z",
+  "date": "2026-10-27",
+  "persona": "expat",
+  "personaName": "在华外国人",
+  "moment": "arrive",
+  "momentName": "来",
+  "seeds": [
+    "extend visa in china",
+    "china work visa process",
+    "china residence permit application",
+    "china visa on arrival",
+    "china digital nomad visa"
+  ],
+  "status": "ok",
+  "okCalls": 10,
+  "failCalls": 0,
+  "failReasons": [],
+  "total": 95,
+  "rows": [
+    {
+      "query": "extend visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "extend stay in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "renew visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "extend visa in chinese",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "extend tourist visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "extend chinese visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "extend visa while in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "can you extend visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "extend visa free china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "visa extension in chinese",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "will china extend visa free in 2027",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "will china extend 30 day visa free into 2027",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "did china extend visa free entry for 2027",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "how to extend tourist visa in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "how to extend visa in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "visa application to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "apply visa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "china stay visa extension",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "china visa free extension",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "china visa extension application form",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "china extends visa free entry",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "how to extend visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "extend visa in china"
+      ]
+    },
+    {
+      "query": "china work visa processing time",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work visa process",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work permit processing time",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china z visa processing time",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china z visa process",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work permit process",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work visa requirements",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work visa requirements for indian citizens",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work visa requirements for pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work visa requirements for south african citizens",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china visa application process",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china work visa application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "work visa in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "working visa in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "how to get a chinese work visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "work permit visa in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "visa process for china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china visa new process",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china working visa requirements",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "chinese visa for work trip",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "chinese work visa requirements",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china work visa process"
+      ]
+    },
+    {
+      "query": "china residence permit application form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china residence permit application",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china home permit application",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china residence permit form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china home return permit application",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china home return permit application hong kong",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china home visit permit application",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "residence permit application receipt china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "how to get chinese residence permit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "chinese residence permit requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china resident permit application form",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "residence permit application form china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china permanent residence permit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china residence permit number",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china residence permit requirements",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china residence permit for foreigners",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china temporary residence permit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "how to get chinese permanent residence permit",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "work permit and residence permit china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "beijing residence permit application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "residence permit china visa type",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china residence permit application"
+      ]
+    },
+    {
+      "query": "china visa on arrival",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for indonesian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for indians",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for us citizens",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for uk citizens",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival countries",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for australians",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for pakistani",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for canadians",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa on arrival for malaysian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china visa arrival card",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china on arrival visa for indian",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "visa on arrival china for indonesian",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china visa on arrival"
+      ]
+    },
+    {
+      "query": "china digital nomad visa",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "china digital nomad visa requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "china digital nomad visa reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "does china have digital nomad visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "what countries have digital nomad visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "what is a digital nomad visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "which countries offer digital nomad visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visas in asia",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "what is the digital nomad visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa explained",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa options",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "canada digital nomad visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "canadian digital nomad visa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa meaning",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa usa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa for us citizens",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa application",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    },
+    {
+      "query": "digital nomad visa uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china digital nomad visa"
+      ]
+    }
+  ]
+}

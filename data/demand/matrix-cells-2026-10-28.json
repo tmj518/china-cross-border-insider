@@ -345,7 +345,9 @@
       "why": "",
       "directionMix": {
         "within-china": 84
-      }
+      },
+      "produced": "taken",
+      "producedAt": "2026-10-28"
     },
     {
       "moment": "live",
@@ -419,7 +421,9 @@
       "why": "",
       "directionMix": {
         "within-china": 79
-      }
+      },
+      "produced": "taken",
+      "producedAt": "2026-10-28"
     },
     {
       "moment": "policy",

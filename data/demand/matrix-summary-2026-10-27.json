@@ -1,0 +1,330 @@
+{
+  "at": "2026-10-27T09:59:19.175Z",
+  "summary": [
+    {
+      "persona": "seller",
+      "moment": "buy",
+      "status": "ok",
+      "okCalls": 10,
+      "failCalls": 0,
+      "total": 60,
+      "sample": [
+        "wholesale suppliers for amazon fba in china",
+        "supplier for amazon fba",
+        "amazon fba suppliers uk"
+      ]
+    },
+    {
+      "persona": "seller",
+      "moment": "come",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 39,
+      "sample": [
+        "how to find suppliers in china",
+        "how to get a supplier from china",
+        "factory in china for clothing"
+      ]
+    },
+    {
+      "persona": "seller",
+      "moment": "stay",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 64,
+      "sample": [
+        "sell product in china online",
+        "sell china online",
+        "selling china online uk"
+      ]
+    },
+    {
+      "persona": "seller",
+      "moment": "leave",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 38,
+      "sample": [
+        "china shipbuilding trading company",
+        "ship owners in china",
+        "suppliers in china who will drop ship"
+      ]
+    },
+    {
+      "persona": "seller",
+      "moment": "policy",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 43,
+      "sample": [
+        "export control law china",
+        "china export control list",
+        "china import and export fair"
+      ]
+    },
+    {
+      "persona": "importer",
+      "moment": "buy",
+      "status": "ok",
+      "okCalls": 10,
+      "failCalls": 0,
+      "total": 82,
+      "sample": [
+        "import duty from china to india",
+        "import duty from china to uk",
+        "import duty from china"
+      ]
+    },
+    {
+      "persona": "importer",
+      "moment": "come",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 38,
+      "sample": [
+        "china sourcing trip",
+        "china sourcing tour",
+        "china sourcing agent fees"
+      ]
+    },
+    {
+      "persona": "importer",
+      "moment": "stay",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 57,
+      "sample": [
+        "buy from china suppliers",
+        "buy direct from china suppliers",
+        "buy direct from china suppliers online"
+      ]
+    },
+    {
+      "persona": "importer",
+      "moment": "leave",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 48,
+      "sample": [
+        "china electric tool set export procedures",
+        "how to export to china",
+        "what is export procedure"
+      ]
+    },
+    {
+      "persona": "importer",
+      "moment": "policy",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 62,
+      "sample": [
+        "china import export policy",
+        "china gold import export policy",
+        "china's new import export policy"
+      ]
+    },
+    {
+      "persona": "bri",
+      "moment": "buy",
+      "status": "ok",
+      "okCalls": 10,
+      "failCalls": 0,
+      "total": 96,
+      "sample": [
+        "import from china to india custom duty",
+        "machinery import from china to india duty",
+        "import from china to india import duty"
+      ]
+    },
+    {
+      "persona": "bri",
+      "moment": "come",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 82,
+      "sample": [
+        "china business visa india",
+        "china business visa indians",
+        "china work visa india"
+      ]
+    },
+    {
+      "persona": "bri",
+      "moment": "stay",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 61,
+      "sample": [
+        "buy from china agent",
+        "best agent to buy from china",
+        "how to buy from china without an agent"
+      ]
+    },
+    {
+      "persona": "bri",
+      "moment": "leave",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 73,
+      "sample": [
+        "how to send parcel to china",
+        "send parcel to china from singapore",
+        "sending parcel to china from singapore"
+      ]
+    },
+    {
+      "persona": "bri",
+      "moment": "policy",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 63,
+      "sample": [
+        "china trade in india",
+        "china business in india",
+        "china trade route in indian ocean"
+      ]
+    },
+    {
+      "persona": "student",
+      "moment": "buy",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 63,
+      "sample": [
+        "buy laptop in china",
+        "buy laptop in china online",
+        "buy laptop in china reddit"
+      ]
+    },
+    {
+      "persona": "student",
+      "moment": "come",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 67,
+      "sample": [
+        "student visa china requirements",
+        "student visa china apply",
+        "china student visa requirements for bangladeshi"
+      ]
+    },
+    {
+      "persona": "student",
+      "moment": "stay",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 64,
+      "sample": [
+        "cost of living in china for students",
+        "cost of living in china for international students",
+        "cost of living in china for indian students"
+      ]
+    },
+    {
+      "persona": "student",
+      "moment": "leave",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 73,
+      "sample": [
+        "young couple ship their belongings",
+        "ship owners in china",
+        "shipments of furniture from china"
+      ]
+    },
+    {
+      "persona": "student",
+      "moment": "policy",
+      "status": "ok",
+      "okCalls": 6,
+      "failCalls": 0,
+      "total": 38,
+      "sample": [
+        "china student visa policy",
+        "china student visa requirements",
+        "china student visa requirements for bangladeshi"
+      ]
+    },
+    {
+      "persona": "expat",
+      "moment": "buy",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 63,
+      "sample": [
+        "foreigner buy car in china",
+        "can foreigner buy car in china",
+        "can you buy a car in china as a foreigner"
+      ]
+    },
+    {
+      "persona": "expat",
+      "moment": "come",
+      "status": "ok",
+      "okCalls": 10,
+      "failCalls": 0,
+      "total": 95,
+      "sample": [
+        "extend visa in china",
+        "extend stay in china",
+        "renew visa in china"
+      ]
+    },
+    {
+      "persona": "expat",
+      "moment": "stay",
+      "status": "ok",
+      "okCalls": 10,
+      "failCalls": 0,
+      "total": 84,
+      "sample": [
+        "rent apartment in china for foreigners",
+        "rent apartment in yiwu china for foreigners",
+        "rent apartment in zhuhai china for foreigners"
+      ]
+    },
+    {
+      "persona": "expat",
+      "moment": "leave",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 76,
+      "sample": [
+        "china tax refund foreigners",
+        "china tax refund tourist",
+        "china tax refund tourist percentage"
+      ]
+    },
+    {
+      "persona": "expat",
+      "moment": "policy",
+      "status": "ok",
+      "okCalls": 8,
+      "failCalls": 0,
+      "total": 54,
+      "sample": [
+        "china visa policy change",
+        "china visa rule change",
+        "china visa requirements change"
+      ]
+    }
+  ]
+}

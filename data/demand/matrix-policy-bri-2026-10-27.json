@@ -1,0 +1,589 @@
+{
+  "at": "2026-10-27T11:06:52.355Z",
+  "date": "2026-10-27",
+  "persona": "bri",
+  "personaName": "一带一路国家的个人与企业",
+  "moment": "policy",
+  "momentName": "政策分析",
+  "seeds": [
+    "china tariff for africa countries",
+    "china export policy india",
+    "africa china trade agreement",
+    "china duty free treatment africa"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 62,
+  "rows": [
+    {
+      "query": "china zero tariff for african countries",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "china removes tariffs for african countries",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "china tariffs african countries",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "china's zero tariff policy for african countries",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "which countries have tariffs",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "tariff rates for china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "china africa zero tariff",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "china tariffs by country",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "current tariff for china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "tariff on china currently",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "tariff percentage from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "what tariffs apply to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "what are the china tariffs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "tariffs imposed on china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china tariff for africa countries"
+      ]
+    },
+    {
+      "query": "china export in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china export in india website to home delivery",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china trade in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china export products in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china export import in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china clay exporters in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china export policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china export rules",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "how much india export to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "does india export to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "export policy of india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "india national export policy",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "india export to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "india china export import",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "export import policy of india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "new import export policy of india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "india trade export policy",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "import duty from china to india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "india export to china products list",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "indian export to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "china import to india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy india"
+      ]
+    },
+    {
+      "query": "africa china trade agreement",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "africa china trade deal",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "south africa china trade agreement",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "africa china free trade agreement",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china africa trade pact",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "south africa china trade deal",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "south africa china free trade agreement",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "which countries have free trade agreements with china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "south africa and china trade agreement",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china africa trade agreement",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "africa and china trade",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china trade with africa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "trade agreement with china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china free trade agreement",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china south africa trade deal",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china south africa trade",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china africa trade news",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china and australia free trade agreement",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china and australia trade agreement",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "trade agreements in africa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "africa china trade agreement"
+      ]
+    },
+    {
+      "query": "china duty free allowance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    },
+    {
+      "query": "china duty free international",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    },
+    {
+      "query": "china duty free international limited",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    },
+    {
+      "query": "china duty free group",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    },
+    {
+      "query": "cdf china duty free",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    },
+    {
+      "query": "china duty free hk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    },
+    {
+      "query": "what is duty free treatment",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china duty free treatment africa"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous",
+  "previous": {
+    "seeds": [
+      "china trade policy india",
+      "china export rules africa",
+      "china import rules for developing countries",
+      "china duty free africa"
+    ],
+    "clean": 63,
+    "seedQuality": "ambiguous(unrecorded)"
+  }
+}
