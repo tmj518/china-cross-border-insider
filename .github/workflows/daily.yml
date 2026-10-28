@@ -17,8 +17,9 @@ name: LandedMath Daily
 
 on:
   schedule:
-  # One schedule per line. Backups removed 2026-10-28 to fit the private-repo minute budget.
-  # A skipped cron now means a missed day; the heartbeat check is meant to catch that.
+  # The script route has a backup; the agent route does not, because a second agent run costs model calls
+  # rather than twenty seconds. Both crons for the script route rely on the idempotency guard, which exits
+  # in about twenty seconds when the day already has an article.
     # 23:20 UTC = 07:20 Beijing. GitHub's scheduler can lag by several minutes under load, and it can
     # skip a run entirely when the queue is busy, so this is the primary trigger and not the only one.
     # Two runs a day, two routes.
@@ -30,6 +31,7 @@ on:
     # One workflow rather than two. Two copies of fourteen steps drift apart, and both routes write the same
     # report and the same card, so the failure domain is the same either way.
     - cron: '20 23 * * *'   # 07:20 Beijing - script
+    - cron: '20 1 * * *'    # 09:20 Beijing - script BACKUP (idempotent: exits in ~20s if already published)
     - cron: '20 12 * * *'   # 20:20 Beijing - agent
   # A push to data/trigger/ is a run.
   #
