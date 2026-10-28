@@ -1135,6 +1135,8 @@ BODY RULES - the gates check these, and a BLOCK stops publication.
   - Do not use may, could, might or possibly anywhere in the body. A verbatim quotation is the only
     exception, and the sentence must still be quoted in full.
   - Link to at least one existing article before publishing. A page nothing links to is an orphan, and
+    Before publishing, add one sentence with a link to an existing article that the new page extends.
+    Pick it with list_dir + read_file. Do not link to the new page itself.
     link-check blocks it.
   - If the same Fix comes back twice, stop rewriting the whole draft. Open the file, change that one
     line, and check again.
