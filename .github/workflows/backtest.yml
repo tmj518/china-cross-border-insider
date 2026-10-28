@@ -1,0 +1,73 @@
+# The 28-day backtest. Every day it asks whether a page that was published for a cell found any searchers,
+# and it writes the answer next to the criteria that were fixed before publication.
+#
+# It is cheap by design: with nothing due it reads the experiment folder, prints one line and stops in a
+# couple of seconds, without touching the network or sending a notification. That matters because it runs
+# every day for months, and a daily job that is noisy when idle gets muted, and a muted alert is not an
+# alert.
+#
+# 03:20 UTC is 11:20 in Beijing. The existing crons run at :07 or :20 past 00, 01, 02, 04, 07, 12, 13 and
+# 23, so this one does not queue behind any of them.
+#
+# Secret requirements are the same as seo-audit.yml: GSC_CREDENTIALS_BASE64, and GSC_SITE as a repository
+# variable (defaults to sc-domain:landedmath.com).
+
+name: Backtest
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 3 * * *" # 11:20 Beijing
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+      GSC_SITE_URL: ${{ vars.GSC_SITE || 'sc-domain:landedmath.com' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Measure what is due
+        run: node tools/backtest.mjs
+
+      - name: Keep the result
+        run: |
+          git config user.name "backtest"
+          git config user.email "backtest@landedmath.com"
+          git add data/experiments
+          if git diff --cached --quiet; then
+            echo "Nothing was due, or nothing changed. No commit."
+            exit 0
+          fi
+          SUMMARY=$(node tools/backtest.mjs --dry-run 2>/dev/null | tail -n 1 || true)
+          git commit -m "backtest: ${SUMMARY} $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Tell Feishu that the backtest failed
+        if: failure()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$FEISHU_WEBHOOK" ]; then
+            echo "FEISHU_WEBHOOK is not set, so no card is sent. The run is still red."
+            exit 0
+          fi
+          TEXT=$(printf '🔴 Landed Math — 28 天回测失败\n\n分支: %s\n\n看日志: %s' \
+            "${GITHUB_REF_NAME}" "$RUN_URL")
+          jq -n --arg t "$TEXT" '{msg_type:"text",content:{text:$t}}' > /tmp/card.json
+          curl -sS -X POST "$FEISHU_WEBHOOK" -H 'content-type: application/json' -d @/tmp/card.json
+          echo "card sent"
