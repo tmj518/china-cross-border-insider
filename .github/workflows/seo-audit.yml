@@ -120,7 +120,7 @@ jobs:
           git push
 
       # The weekly card. Every number here already exists in the repository; nothing is estimated. A
-      # figure that could not be read is written 未取到, never 0 - a card that reports zero impressions
+      # figure that could not be read is written as missing, never 0 - a card that reports zero impressions
       # because a credential was missing looks like a measurement and gets acted on as one.
       - name: Tell Feishu the week's numbers
         if: always()
