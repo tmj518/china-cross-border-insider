@@ -61,3 +61,50 @@
 判定   与本次改动无关，是平台/额度层面；本地构建、闸门、飞书均正常
 影响   周报卡片与 backtest 无法在 CI 验证，直到 Actions 恢复
 ```
+
+## 8. Actions 恢复后的 30 分钟清单
+
+> 写于 2026-10-28，Actions 停摆期间。任何人拿到仓库，照做即可，不必问我。
+
+```
+0 先判定平台是否恢复
+  手动触发 ci.yml（这个文件本轮没改过）
+  · 仍是 3 秒 / 0 步骤 → 没恢复，停。看第 6 条
+  · 有步骤在跑 → 继续
+
+1 CI 必须绿
+  gh workflow run ci.yml --ref main
+  等结束 → 结论必须 success，日志里九道闸门 9/9 ok
+  ★ 不绿就不要往下走，先修它
+
+2 A 线端点核对（这一步是本周的重点）
+  gh workflow run daily.yml --ref main -f route=script
+  在日志开头找这五行：
+    ARK_MODEL          : 期望 ep-20261019161601-9k6dn
+    ARK_MODEL_WRITER   : 期望 ep-20251220173606-gzxdg
+    ARK_MODEL_PLANNER  : 期望 ep-20251220175517-rjpsc
+    ARK_MODELKIMI      : 期望 ep-20261028184805-v56in（实测 404，知道即可）
+    ARK_MODEL_REVIEWER : 期望 ep-20261019161601-9k6dn
+  ★ 任一为 ★ MISSING 或空 → yml 的 vars 没生效，先修这个再谈别的
+  ★ writer 与 reviewer 必须是不同端点，否则独立审核是假的
+
+3 C 线跑一次
+  gh workflow run c-line-daily.yml --ref main
+  期望：verdict PUBLISHED，且新指南 figures 不为空
+  ★ 若 INSUFFICIENT-EVIDENCE：那是真结果，不是故障
+
+4 B 线定位（本轮没修，恢复后第一件事）
+  gh workflow run daily.yml --ref main -f route=agent
+  看日志：turn 1 之后是 "no tool call" 还是真的调了工具
+  ★ 已知事实：把 agent 的完整 SYSTEM（5849 字）+ 11 个工具原样发一次，
+    两个端点都返回 finish_reason=tool_calls。所以丢的地方在循环里，
+    不在模型。查 tools/agent-run.mjs 里 `const calls = r.toolCalls ?? []`
+    这一行拿到的是什么。
+
+5 把三个 run 链接与结论贴回给老板
+
+6 若 job 仍 3 秒 0 步骤 → 是额度问题
+  GitHub → Settings → Billing → Actions 用量
+  设 spending limit（哪怕 $5），或等月度重置
+  ★ 这不是代码问题，改代码没用
+```
