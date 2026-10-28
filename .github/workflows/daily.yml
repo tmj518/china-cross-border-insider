@@ -31,7 +31,6 @@ on:
     # One workflow rather than two. Two copies of fourteen steps drift apart, and both routes write the same
     # report and the same card, so the failure domain is the same either way.
     - cron: '20 23 * * *'   # 07:20 Beijing - script
-    - cron: '20 1 * * *'    # 09:20 Beijing - script BACKUP (idempotent: exits in ~20s if already published)
     - cron: '20 12 * * *'   # 20:20 Beijing - agent
   # A push to data/trigger/ is a run.
   #

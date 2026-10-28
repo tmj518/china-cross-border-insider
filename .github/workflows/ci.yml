@@ -16,6 +16,15 @@ name: CI
 
 on:
   push:
+    # Data and documentation commits do not change the site. Building and gating them cost a runner
+    # minute each and taught nobody anything: on 2026-10-28 sixty CI runs spent 155 minutes, most of them
+    # on data-only pushes made while debugging. Content changes still trigger it, because src/ is not
+    # ignored.
+    paths-ignore:
+      - "data/**"
+      - "docs/**"
+      - "out/**"
+      - "EXPERIMENT_RULES.md"
     branches: [main]
   pull_request:
     branches: [main]

@@ -15,7 +15,6 @@ on:
     # 15:20 Beijing (07:20 UTC). Clear of the trade crons at 23:20, 01:20, 12:20 and 13:20 UTC so the
     # two workflows never contend for the same runner minute.
     - cron: '20 7 * * *'
-    - cron: '50 8 * * *'   # 16:50 Beijing - guide BACKUP
   workflow_dispatch:
 
 permissions:
