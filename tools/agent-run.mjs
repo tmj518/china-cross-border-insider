@@ -1477,4 +1477,15 @@ console.log(`  report  : data/tmp/agent-report.json`);
 console.log(`  transcript: data/tmp/agent-transcript.jsonl`);
 
 /* PUBLISHED-WITHOUT-FINISH is a success: an article is in the collection, and the card says how. */
+
+/* A cell claimed by a run that produced nothing goes back, or an infrastructure failure burns it. */
+if (CELL && published.size === 0 && report.verdict !== "INSUFFICIENT-EVIDENCE") {
+  try {
+    markCell(CELL.matrix, CELL.persona, CELL.moment, "available");
+    console.log("  cell      : released back to available - the run published nothing");
+  } catch (e) {
+    console.log("  cell      : could not be released (" + e.message + ")");
+  }
+}
+
 process.exit(["PUBLISHED", "PUBLISHED-WITHOUT-FINISH", "NO-SUBJECT", "DUPLICATE-SUBJECT", "INSUFFICIENT-EVIDENCE"].includes(report.verdict) ? 0 : 1);
