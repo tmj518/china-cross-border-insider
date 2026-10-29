@@ -56,7 +56,7 @@ const BUDGET = Number(flag("budget", "0.40"));
  * which the same two or three carried a rate, meant the subject pool was exhausted after two articles. The documents
  * were always there - the follow-up depth was not.
  */
-const MAX_SOURCES = Number(flag("sources", "6"));
+const MAX_SOURCES = Number(flag("sources", "8"));
 
 const SOURCES_DIR = join(ROOT, "data", "sources");
 const LEDGER = join(ROOT, "data", "ledger.jsonl");
@@ -277,6 +277,24 @@ const CANDIDATES = [
    * cost is built from, and the list did not have it.
    */
   ["http://www.customs.gov.cn/customs/302249/index.html", "customs", "tariff schedules, classification and clearance rules"],
+
+  /*
+   * THE FIVE MOMENTS BEYOND BUY.
+   *
+   * Every source above answers what a measure costs an importer. The agent route kept landing on cells
+   * about visas, residence and student costs, where those sources have nothing to say - which is how a run
+   * ends in INSUFFICIENT-EVIDENCE with the work done and no number to show for it.
+   *
+   * These seven are the sources for arrive, live and leave. Reachability is measured from a runner, not
+   * assumed, and an unreachable source stays in the list rather than being deleted: a route can come back.
+   */
+  ["https://english.www.gov.cn/", "gov-en", "State Council policy in English: visas, taxation, customs, entry and exit - the one source that covers all five moments"],
+  ["https://www.nia.gov.cn/n741440/n741567/index.html", "immigration", "National Immigration Administration: visa categories, residence permits, entry rules"],
+  ["https://www.safe.gov.cn/safe/zcfg/index.html", "safe", "SAFE: foreign exchange, cross-border payments, repatriation of profits"],
+  ["https://www.caac.gov.cn/XXGK/XXGK/", "caac", "CAAC: aviation rules, passenger and cargo carriage"],
+  ["https://www.mot.gov.cn/", "mot", "Ministry of Transport: shipping, ports and freight rates"],
+  ["https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/", "samr", "SAMR: product standards, labelling, market access"],
+  ["http://en.moe.gov.cn/", "moe-en", "Ministry of Education in English: student costs, tuition, scholarships"],
   /*
    * Industry chambers, listed last on purpose. An association reports what its members are hitting, which is the
    * closest thing to a demand signal there is without a keyword tool - and a summary of a measure is coverage,
