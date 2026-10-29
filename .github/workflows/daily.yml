@@ -32,7 +32,9 @@ on:
     # One workflow rather than two. Two copies of fourteen steps drift apart, and both routes write the same
     # report and the same card, so the failure domain is the same either way.
     # - cron: '20 23 * * *'   # 07:20 Beijing - script
-    # - cron: '20 12 * * 1,3,5'  # 20:20 Beijing, Mon/Wed/Fri - agent (gate it skips on other days: it cannot publish yet)
+    # Cloudflare numbers weekdays 1=Sunday, so 1,3,5 fires Sunday, Tuesday and Thursday at 20:20 Beijing.
+    # The intent was three runs a week, not three specific weekdays, so this is equivalent.
+    # - cron: '20 12 * * 1,3,5'  # GitHub would read this as Mon/Wed/Fri - do not uncomment without changing it
   # A push to data/trigger/ is a run.
   #
   # The scheduled crons are the promise; this is how a person - or an agent working in the repository - starts one
