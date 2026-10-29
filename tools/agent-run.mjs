@@ -48,6 +48,8 @@ import { looksDuplicate, slugSubject } from "./lib-duplicate.mjs";
 import { loadMatrix, nextCell, markCell, intentSamples, rankedCells } from "./lib-cells.mjs";
 
 const ROOT = process.cwd();
+/* Only a draft written by THIS run may be submitted. Twenty-seven older drafts are committed. */
+const RUN_STARTED_MS = Date.now();
 /*
  * THE AGENT ROUTE WRITES WITH THE LITE ENDPOINT, and the script route keeps the Pro one.
  *
@@ -1647,7 +1649,17 @@ if (published.size === 0) {
     const draftDir = join(ROOT, "data", "drafts");
     const newest = existsSync(draftDir)
       ? readdirSync(draftDir)
-          .filter((f) => f.endsWith(".md"))
+          .filter((f) => {
+            /*
+             * ONLY WHAT THIS RUN WROTE.
+             *
+             * Twenty-seven older drafts are committed. Sorting them by mtime and taking the newest picked a Brazil
+             * piece that had already been published, so every fallback submission was a duplicate and the run was
+             * refused for it. A draft that existed before this process started is not this run's work.
+             */
+            if (!f.endsWith(".md")) return false;
+            try { return statSync(join(draftDir, f)).mtimeMs >= RUN_STARTED_MS; } catch { return false; }
+          })
           .map((f) => ({ f, m: statSync(join(draftDir, f)).mtimeMs }))
           .sort((a, b) => b.m - a.m)[0]
       : null;
