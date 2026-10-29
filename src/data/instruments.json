@@ -384,60 +384,6 @@
           "retrieved": "2026-10-22"
         },
         {
-          "articleSlug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
-          "articleNum": 0,
-          "value": "nine months",
-          "unit": "standard maximum duration of a EU safeguard investigation",
-          "period": "applicable to all ongoing EU safeguard investigations",
-          "source": "European Commission Directorate-General for Trade and Economic Security",
-          "retrieved": "2026-10-28"
-        },
-        {
-          "articleSlug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
-          "articleNum": 0,
-          "value": "11 months",
-          "unit": "maximum extended duration of a EU safeguard investigation",
-          "period": "applicable to exceptional EU safeguard investigation cases",
-          "source": "European Commission Directorate-General for Trade and Economic Security",
-          "retrieved": "2026-10-28"
-        },
-        {
-          "articleSlug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
-          "articleNum": 0,
-          "value": "15",
-          "unit": "minimum number of EU Member States required to vote in favour for definitive safeguard measures to enter into force",
-          "period": "for the upcoming GOES definitive safeguard measure vote",
-          "source": "European Commission Directorate-General for Trade and Economic Security",
-          "retrieved": "2026-10-28"
-        },
-        {
-          "articleSlug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
-          "articleNum": 0,
-          "value": "65%",
-          "unit": "minimum share of EU population represented by voting Member States required for definitive safeguard measures to enter into force",
-          "period": "for the upcoming GOES definitive safeguard measure vote",
-          "source": "European Commission Directorate-General for Trade and Economic Security",
-          "retrieved": "2026-10-28"
-        },
-        {
-          "articleSlug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
-          "articleNum": 0,
-          "value": "March 2026",
-          "unit": "launch date of the grain-oriented electrical steel safeguard investigation",
-          "period": "start of the formal investigation process",
-          "source": "European Commission Directorate-General for Trade and Economic Security",
-          "retrieved": "2026-10-28"
-        },
-        {
-          "articleSlug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
-          "articleNum": 0,
-          "value": "18 September 2026",
-          "unit": "effective date of the provisional GOES safeguard measures",
-          "period": "start of the provisional tariff-rate quota and price threshold regime",
-          "source": "European Commission Directorate-General for Trade and Economic Security",
-          "retrieved": "2026-10-28"
-        },
-        {
           "articleSlug": "eu-pea-protein-anti-dumping-definitive-duties-2026",
           "articleNum": 38,
           "value": "40.5%",
@@ -499,7 +445,6 @@
         "eu-fdi-screening-case-timing-fisr-2028",
         "eu-fdi-screening-rules-2028-in-depth-review-risk",
         "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
-        "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
         "eu-pea-protein-anti-dumping-definitive-duties-2026"
       ],
       "modelOutput": false
@@ -637,6 +582,140 @@
       "modelOutput": false
     },
     {
+      "id": "mofcom-trade-remedy-bureau-notice-2026-58",
+      "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "55%",
+          "unit": "additional tariff on top of the applicable tariff rate",
+          "period": "from 00:00 on 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "100%",
+          "unit": "share of the country-specific quota quantity reached",
+          "period": "reached on 29 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "第 3 日",
+          "unit": "day count after the 100% trigger before the surcharge starts",
+          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "2026-09-30",
+          "unit": "date the execution notice was issued",
+          "period": "notice date",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
+          "articleNum": 55,
+          "value": "100%",
+          "unit": "share of the country-specific quota quantity reached",
+          "period": "reached 29 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
+          "articleNum": 55,
+          "value": "55%",
+          "unit": "additional tariff on top of the applicable MFN rate",
+          "period": "from 00:00 on 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
+          "articleNum": 55,
+          "value": "第 3 日",
+          "unit": "day count from the 100% trigger to the surcharge start",
+          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
+          "articleNum": 55,
+          "value": "2026 年 09 月 30 日",
+          "unit": "publication date of the execution notice",
+          "period": "notice issued 30 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 0,
+          "value": "55%",
+          "unit": "additional tariff on top of the applicable MFN rate",
+          "period": "applies once the country-specific quota is filled",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 0,
+          "value": "100%",
+          "unit": "share of the country-specific quota that triggers the add-on",
+          "period": "trigger threshold",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 0,
+          "value": "第 3 日",
+          "unit": "days after the 100% trigger before the add-on applies",
+          "period": "from the date the quota is filled",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 0,
+          "value": "2026 年 9 月 29 日",
+          "unit": "date the Brazilian quota was filled",
+          "period": "2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 0,
+          "value": "2026-09-30",
+          "unit": "publication date of the notice",
+          "period": "2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        }
+      ],
+      "articleNums": [
+        0,
+        44,
+        55
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+        "china-brazil-beef-safeguard-55-percent-trigger-2026",
+        "china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "european-commission-sixth-annual-fdi-screening-report",
       "source": "European Commission, sixth annual FDI screening report",
       "figures": [
@@ -756,93 +835,6 @@
       "articleSlugs": [
         "eu-fdi-screening-notification-surge-2026-2026-10-19",
         "eu-fdi-screening-notification-threshold-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "mofcom-trade-remedy-bureau-notice-2026-58",
-      "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-      "figures": [
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "55%",
-          "unit": "additional tariff on top of the applicable tariff rate",
-          "period": "from 00:00 on 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "100%",
-          "unit": "share of the country-specific quota quantity reached",
-          "period": "reached on 29 September 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "第 3 日",
-          "unit": "day count after the 100% trigger before the surcharge starts",
-          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-          "articleNum": 44,
-          "value": "2026-09-30",
-          "unit": "date the execution notice was issued",
-          "period": "notice date",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-19"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
-          "articleNum": 55,
-          "value": "100%",
-          "unit": "share of the country-specific quota quantity reached",
-          "period": "reached 29 September 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-29"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
-          "articleNum": 55,
-          "value": "55%",
-          "unit": "additional tariff on top of the applicable MFN rate",
-          "period": "from 00:00 on 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-29"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
-          "articleNum": 55,
-          "value": "第 3 日",
-          "unit": "day count from the 100% trigger to the surcharge start",
-          "period": "trigger 29 September 2026, surcharge from 1 October 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-29"
-        },
-        {
-          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
-          "articleNum": 55,
-          "value": "2026 年 09 月 30 日",
-          "unit": "publication date of the execution notice",
-          "period": "notice issued 30 September 2026",
-          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
-          "retrieved": "2026-10-29"
-        }
-      ],
-      "articleNums": [
-        44,
-        55
-      ],
-      "articleSlugs": [
-        "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-        "china-brazil-beef-safeguard-55-percent-trigger-2026"
       ],
       "modelOutput": false
     },
@@ -1711,55 +1703,6 @@
       "modelOutput": false
     },
     {
-      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "2652/QD-BCT",
-          "unit": "the number of the Vietnamese decision that concluded the sunset review",
-          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "16 October 2026",
-          "unit": "the date the continued measure takes effect",
-          "period": "five-year term, so it runs to 2029 unless reviewed again",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "54.90%",
-          "unit": "the duty on the same product from India under the same decision, for comparison",
-          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "5402.33.10",
-          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
-          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "counted-from-the-annex-to-announcement-no-5-of",
       "source": "Counted from the annex to Announcement No. 5 of 2026",
       "figures": [
@@ -2154,6 +2097,55 @@
       ],
       "articleSlugs": [
         "section-301-exclusions-expire-november-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "2026-10-15-citing-quy-t-nh-2652-qd",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "2652/QD-BCT",
+          "unit": "the number of the Vietnamese decision that concluded the sunset review",
+          "period": "issued 13 October 2026 by the Ministry of Industry and Trade",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "16 October 2026",
+          "unit": "the date the continued measure takes effect",
+          "period": "five-year term, so it runs to 2029 unless reviewed again",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "54.90%",
+          "unit": "the duty on the same product from India under the same decision, for comparison",
+          "period": "Indonesia is at 21.94 per cent and Malaysia at 21.45 per cent under the same review",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "5402.33.10",
+          "unit": "one of six Vietnamese tariff lines the measure covers, alongside 5402.33.90, 5402.46.10, 5402.46.90, 5402.47.10 and 5402.47.90",
+          "period": "all six are synthetic filament yarn of polyester, not put up for retail sale",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, citing Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     },
@@ -2714,37 +2706,6 @@
       ],
       "articleSlugs": [
         "china-export-rebate-vs-export-duty-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "2026-10-15-producer-annex-to-quy-t-nh",
-      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-      "figures": [
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "3.36%",
-          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        },
-        {
-          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
-          "articleNum": 31,
-          "value": "17.45%",
-          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
-          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
-          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
-          "retrieved": "2026-10-16"
-        }
-      ],
-      "articleNums": [
-        31
-      ],
-      "articleSlugs": [
-        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     },
@@ -3364,6 +3325,39 @@
       "modelOutput": false
     },
     {
+      "id": "mofcom-announcement-2025-no-87-cited-in-notice-2026",
+      "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "2025 年第 87 号",
+          "unit": "instrument number setting the safeguard quota and surcharge rule",
+          "period": "in force for 2026 safeguard execution",
+          "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 0,
+          "value": "2025 年第 87 号",
+          "unit": "instrument number setting the country quota and the 55% add-on rule",
+          "period": "2025",
+          "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-29"
+        }
+      ],
+      "articleNums": [
+        0,
+        44
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+        "china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "national-bureau-of-statistics-of-china-industrial-enterprise",
       "source": "National Bureau of Statistics of China, industrial enterprise profits for January to August 2026",
       "figures": [
@@ -3552,6 +3546,37 @@
       ],
       "articleSlugs": [
         "indonesia-tarpaulin-safeguard-duty-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "2026-10-15-producer-annex-to-quy-t-nh",
+      "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+      "figures": [
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "3.36%",
+          "unit": "the lowest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to Toray Fibers (Nantong) Co., Ltd and the Toray trading entities named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        },
+        {
+          "articleSlug": "vietnam-polyester-yarn-sunset-review-2026",
+          "articleNum": 31,
+          "value": "17.45%",
+          "unit": "the highest anti-dumping duty on Chinese polyester filament yarn, as a share of CIF value",
+          "period": "applies to the catch-all category 其他生产商/出口商 — all producers and exporters not named in the annex",
+          "source": "中国贸易救济信息网（商务部）, 越南对涉华聚酯长丝纱线作出反倾销日落复审终裁, 2026-10-15, producer annex to Quyết định 2652/QD-BCT",
+          "retrieved": "2026-10-16"
+        }
+      ],
+      "articleNums": [
+        31
+      ],
+      "articleSlugs": [
+        "vietnam-polyester-yarn-sunset-review-2026"
       ],
       "modelOutput": false
     }
