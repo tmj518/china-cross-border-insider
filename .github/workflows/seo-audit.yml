@@ -15,9 +15,8 @@ on:
   # change needs a week before it can be read. The minute is off the daily crons (23:20, 01:20, 12:20,
   # 13:20) so the two workflows never contend for the same runner minute.
   #
-  schedule:
-  # Weekly: GitHub's own clock, because the Cloudflare worker only dispatches the three daily lines.
-    - cron: '7 0 * * 1'
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now. GitHub's own cron is late.
+  # - cron: '7 0 * * 1'
   workflow_dispatch:
 
 jobs:
