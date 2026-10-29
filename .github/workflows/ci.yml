@@ -83,6 +83,23 @@ jobs:
           # source a reported failure rather than a thirty-minute timeout.
           CI: 'true'
 
+      # TEMPORARY DIAGNOSTIC 2026-10-29 - remove once the silent internal-links failure is named.
+      # The gate reports exit 1 with an empty output buffer, and it captures stderr as well as stdout,
+      # so the child is dying before it writes anything. This runs it again outside the gate.
+      - name: Debug link-check
+        if: always()
+        continue-on-error: true
+        run: |
+          set +e
+          echo '--- node, cwd, file count ---'
+          node --version; pwd; ls src/content/blog | wc -l
+          echo '--- direct run ---'
+          node tools/link-check.mjs
+          echo "exit=$?"
+          echo '--- json run ---'
+          node tools/link-check.mjs --json | head -c 600
+          echo "exit=$?"
+
       - name: Summarise the gate result
         if: always()
         run: |
