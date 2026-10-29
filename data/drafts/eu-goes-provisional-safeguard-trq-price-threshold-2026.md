@@ -1,7 +1,7 @@
 ---
-title: "EU imposes provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel"
+title: "EU imposes provisional tariff-rate quotas and price"
 subtitle: "Scope runs through GOES laminations, cores and transformers; no quota volume or threshold price is published, so plan timing, not duty."
-description: "European Commission announcement of provisional safeguard tariff-rate quotas and price thresholds for grain-oriented electrical steel. Use scope and the nine-to-eleven-month decision window; no quota volume or threshold price is given for a per-unit duty calculation."
+description: "European Commission announcement of provisional safeguard tariff-rate quotas and price thresholds for grain-oriented electrical steel."
 publishDate: 2026-10-21
 reviewBy: 2027-01-21
 stakes: directional
