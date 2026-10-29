@@ -16,7 +16,7 @@ target_keyword: "EU grain-oriented electrical steel GOES safeguard tariff-rate q
 search_intent: "transactional"
 information_gain: "custom-calculation"
 sources:
-  - "European Commission, Directorate-General for Trade and Economic Security — Commission imposes provisional safeguard measures on imports of grain-oriented electrical steel (18 September 2026)"
+  - "European Commission, Directorate-General for Trade and Economic Security 鈥?Commission imposes provisional safeguard measures on imports of grain-oriented electrical steel (18 September 2026)"
 figures:
   - value: "18 September 2026"
     unit: "provisional safeguard imposition and publication date"
@@ -69,15 +69,15 @@ The safeguard investigation opened in March 2026. After reviewing input from int
 | Member States required for qualified majority | 15 |
 | Population representation required | 65% |
 
-> **Tariff-rate quota (TRQ)** — a trade measure that applies a specified set of terms to imports entering within a quota volume and a different set after that volume is exhausted. The Commission couples the GOES TRQ with a price threshold, so quota status and invoice price both matter.
+> **Tariff-rate quota (TRQ)** 鈥?a trade measure that applies a specified set of terms to imports entering within a quota volume and a different set after that volume is exhausted. The Commission couples the GOES TRQ with a price threshold, so quota status and invoice price both matter.
 
-The announcement uses the broad phrase “grain-oriented electrical steel products.” It does not supply tariff codes or a product annex. That leaves a practical boundary for importers: GOES coil or sheet sits closest to the named product, while cut laminations, assembled cores, and cores already incorporated in transformers require separate classification analysis.
+The announcement uses the broad phrase 鈥済rain-oriented electrical steel products.鈥?It does not supply tariff codes or a product annex. That leaves a practical boundary for importers: GOES coil or sheet sits closest to the named product, while cut laminations, assembled cores, and cores already incorporated in transformers require separate classification analysis.
 
-Importers following the developing measure can compare the announcement with [EU safeguard tariff-rate quotas hit GOES from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/) and [EU provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/). The broader framing appears in [EU Safeguard on Grain-Oriented Electrical Steel: tariff-rate quota and price thresholds](/blog/eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026/).
+Importers following the developing measure can compare the announcement with [EU safeguard tariff-rate quotas hit GOES from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/) and [EU provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/). The broader framing appears in EU Safeguard on Grain-Oriented Electrical Steel: tariff-rate quota and price thresholds.
 
 ## Why now
 
-The Commission acted during the investigation rather than at its conclusion. The March 2026 launch began the normal nine-month process, and the 18 September 2026 announcement placed provisional controls in force while the factual record remained open. The Commission’s stated reason was urgency after its review of party submissions.
+The Commission acted during the investigation rather than at its conclusion. The March 2026 launch began the normal nine-month process, and the 18 September 2026 announcement placed provisional controls in force while the factual record remained open. The Commission鈥檚 stated reason was urgency after its review of party submissions.
 
 The timing matters for purchasing. A provisional measure changes border treatment before the full investigation ends, and a later definitive decision can alter duration or terms. Importers therefore need current quota and threshold documents now, not after the investigation closes.
 
@@ -97,11 +97,11 @@ Use these symbols when checking a shipment:
 | Purchase position | Cost arithmetic | Number available from supplied announcement |
 | --- | --- | --- |
 | Quota open; unit price at or above `P` | Apply in-quota terms after verifying requirements | No quota volume or threshold value supplied |
-| Quota open; unit price below `P` | Threshold gap = `(P − u) × q` | `P` not supplied |
-| Quota exhausted | Out-of-quota charge = `R × v` | `R` not supplied |
+| Quota open; unit price below `P` | Threshold gap = `(P 鈭?u) 脳 q` | `P` not supplied |
+| Quota exhausted | Out-of-quota charge = `R 脳 v` | `R` not supplied |
 | Laminations, cores, or transformers in scope | Determine classification, then apply relevant row | Tariff codes not supplied |
 
-For a direct GOES purchase, the threshold gap shows the price increase needed to bring a low-priced shipment to the threshold. If a supplier’s unit price sits below `P`, multiplying the difference by the declared quantity gives the total commercial uplift. The importer then compares that uplift with the official charge imposed for below-threshold entries.
+For a direct GOES purchase, the threshold gap shows the price increase needed to bring a low-priced shipment to the threshold. If a supplier鈥檚 unit price sits below `P`, multiplying the difference by the declared quantity gives the total commercial uplift. The importer then compares that uplift with the official charge imposed for below-threshold entries.
 
 For a shipment arriving after quota exhaustion, the exposure follows the customs value and the operative out-of-quota charge. Multiplying `R` by `v` gives the charge, but the supplied announcement contains no value for `R`. Using an assumed steel duty would produce a false landed-cost number.
 
@@ -139,7 +139,7 @@ The European Commission opened the safeguard investigation in March 2026 and imp
 
 **Are steel laminations, cores, and transformers containing a GOES core covered by the provisional safeguard?**
 
-The supplied Commission announcement identifies “grain-oriented electrical steel products” but does not provide tariff codes or a product list. That omission leaves the downstream boundary unresolved. Cut laminations are processed GOES, assembled cores are further manufactured, and a transformer is a finished machine. Each form can have a different tariff classification and a different answer under the operative product scope. Treat coil or sheet, laminations, cores, and transformers containing cores as separate classification tasks. Obtain the operative regulation text or a binding customs ruling for the exact code before purchase.
+The supplied Commission announcement identifies 鈥済rain-oriented electrical steel products鈥?but does not provide tariff codes or a product list. That omission leaves the downstream boundary unresolved. Cut laminations are processed GOES, assembled cores are further manufactured, and a transformer is a finished machine. Each form can have a different tariff classification and a different answer under the operative product scope. Treat coil or sheet, laminations, cores, and transformers containing cores as separate classification tasks. Obtain the operative regulation text or a binding customs ruling for the exact code before purchase.
 
 **What quota volume and price threshold apply to each GOES product?**
 
