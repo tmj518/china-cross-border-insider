@@ -160,7 +160,20 @@ export async function upsertRows({ token, appToken, tableId, keyField, rows }, l
       ? `/bitable/v1/apps/${appToken}/tables/${tableId}/records/${id}`
       : `/bitable/v1/apps/${appToken}/tables/${tableId}/records`;
     try {
-      await api(path, { method: id ? "PUT" : "POST", token, body: { fields: r } });
+      /*
+       * ONE ROW CAN FAIL ON ITS OWN, AND IT IS USUALLY THE MOMENT RATHER THAN THE DATA.
+       *
+       * On 2026-10-29 the guide ledger wrote seventy rows: sixty-nine fine, one with a bare "1" from the
+       * API. That row had been written before and was written again afterwards, so a schema problem is the
+       * wrong explanation and a rate limit or a dropped connection is the right one. One retry after 700ms
+       * turns that red workflow green without weakening the rule that a row which will not write must fail.
+       */
+      try {
+        await api(path, { method: id ? "PUT" : "POST", token, body: { fields: r } });
+      } catch (first) {
+        await new Promise((res) => setTimeout(res, 700));
+        await api(path, { method: id ? "PUT" : "POST", token, body: { fields: r } });
+      }
       if (id) updated++;
       else created++;
     } catch (e) {
