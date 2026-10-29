@@ -765,19 +765,31 @@ function runTool(name, input) {
        * official sources do not carry this number. That is a finding, not a failure.
        */
       if (CELL) {
-        const draftSrc = readFileSync(join(ROOT, input.path), "utf8");
+        /* The content being written, not the file: on a first write the file does not exist yet. */
+        const draftSrc = String(input.content ?? "");
         const figureCount = (draftSrc.match(/^  - value:/gm) ?? []).length;
         if (figureCount === 0) {
-          if (!finished) {
-            finished = {
-              verdict: "INSUFFICIENT-EVIDENCE",
-              summary:
-                "the " + CELL.persona + " x " + CELL.moment + " cell asked " + CELL.samples.length +
-                " questions that need an amount, and no official source fetched this run carried one. Nothing was published.",
-            };
+          /*
+           * A PROCEDURAL PIECE IS ALLOWED TO CARRY NO FIGURES - AND NOTHING ELSE IS.
+           *
+           * The refusal existed because eight guides shipped an empty figures array and still reported
+           * PUBLISHED. The instruction now allows the procedure itself as a real answer, on one condition that
+           * can be checked mechanically: no number may appear in the body. A page that lists the documents and
+           * the order of the steps is honest; a page with a rate and no source is not.
+           */
+          const bodyOnly = draftSrc.replace(/^---[\s\S]*?---/, "").replace(/^>.*$/gm, "");
+          const strayNumber = /\b\d[\d,.]*\s*(%|days?|weeks?|months?|yuan|rmb|usd|dollars?|percent|tonnes?|kg)\b/i.test(bodyOnly);
+          if (strayNumber) {
+            if (!finished) {
+              finished = {
+                verdict: "REJECTED",
+                summary: "the draft has no sourced figures but its body states a number, so it was not published. Either source the figure or remove it.",
+              };
+            }
+            console.log("  refused   : a figure-free draft that still states a number");
+            return done("REJECTED: the body contains a number but figures is empty. Remove the number or add the source. Call publish_draft once it is gone.");
           }
-          console.log("  refused   : the draft answers a demand cell with zero sourced figures");
-          return done("INSUFFICIENT-EVIDENCE: no sourced figure in the draft, so it was not published. Call finish with that verdict and name the sources you tried.");
+          console.log("  procedural: no sourced figure, and no number in the body - allowed");
         }
       }
       const p = join(ROOT, input.path);
