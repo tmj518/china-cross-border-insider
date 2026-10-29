@@ -72,6 +72,42 @@ function directionsOf(matrix, persona, moment) {
 /**
  * @returns {{persona, moment, direction, computable, intents, samples, reason} | null}
  */
+/*
+ * THE CANDIDATES, RANKED, INSTEAD OF ONE THAT MUST BE PERFECT.
+ *
+ * nextCell returned a single cell and gave up if every cell failed one of three filters, which sent the
+ * run back to the directive - a subject source that had already been published, twice. The matrix holds
+ * two thousand phrasings and the answer was to look at a stale pointer.
+ *
+ * This returns the cells in order and lets the caller refuse the ones whose subject is already taken.
+ * A mixed-direction cell is ranked lower rather than dropped: it is harder to write, not unusable.
+ */
+export function rankedCells(matrix, limit = 5) {
+  const seen = new Set();
+  return (matrix.cells ?? [])
+    .filter((c) => c.verdict === "\u6709\u9700\u6c42\u00b7\u65e0\u9875\u9762")
+    .filter((c) => !c.produced || c.produced === "available")
+    .filter((c) => (c.own ?? 0) >= 5)
+    .map((c) => ({
+      persona: c.persona,
+      moment: c.moment,
+      direction: Object.keys(c.directionMix ?? {})[0] ?? "within-china",
+      computable: c.calc ?? 0,
+      intents: c.own ?? 0,
+      mixed: directionsOf(matrix, c.persona, c.moment) > 1,
+      samples: intentSamples(matrix, c.persona, c.moment, 5),
+      matrix,
+    }))
+    .sort((a, b) => Number(a.mixed) - Number(b.mixed) || b.computable - a.computable || b.intents - a.intents)
+    .filter((c) => {
+      const key = c.persona + "/" + c.moment;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, limit);
+}
+
 export function nextCell(matrix) {
   const candidates = (matrix.cells ?? [])
     .filter((c) => c.verdict === "有需求·无页面")
