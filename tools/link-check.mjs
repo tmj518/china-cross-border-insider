@@ -33,6 +33,10 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
+process.on("uncaughtException", (e) => {
+  console.log("LINK-CHECK CRASHED: " + (e && e.stack ? e.stack : e));
+  process.exit(1);
+});
 const ROOT = resolve(import.meta.dirname, "..");
 const DIR = join(ROOT, "src", "content", "blog");
 
