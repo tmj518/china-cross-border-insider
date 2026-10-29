@@ -863,6 +863,23 @@ function runTool(name, input) {
        */
       if (DRY) return done("dry run: the checks were not run");
       const p = join(ROOT, input.path);
+      /*
+       * CHECK THE DRAFT AS IT WILL BE PUBLISHED.
+       *
+       * publish and the fallback both run fitMeta and fillRequiredMeta first: title trimmed, audience filled,
+       * information_gain and reviewBy written. check_draft judged the raw draft, so it kept reporting fields the
+       * model cannot set, the model kept rewriting prose that was already fine, and the turn budget ran out
+       * before publish_draft was ever called - four write/check cycles in the 2026-10-29 run.
+       */
+      if (existsSync(p)) {
+        const raw0 = readFileSync(p, "utf8");
+        const fitted0 = fitMeta(raw0);
+        const filled0 = fillRequiredMeta(fitted0.src);
+        if (filled0.src !== raw0) {
+          writeFileSync(p, filled0.src, "utf8");
+          for (const c of [...fitted0.changed, ...filled0.changed]) console.log("  prepared   : " + c);
+        }
+      }
 
       /*
        * The contract before the content. A draft that cannot be parsed is not a draft with weak arguments -
