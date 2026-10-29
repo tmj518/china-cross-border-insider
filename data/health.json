@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-29T05:33:27.708Z",
+  "at": "2026-10-29T05:39:34.350Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 5,
-      "at": "2026-10-29T05:33:27.659Z"
+      "count": 6,
+      "at": "2026-10-29T05:39:34.296Z"
     },
     "script": {
       "verdict": "PUBLISHED",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-10-29T05:33:27.659Z",
+    "at": "2026-10-29T05:39:34.296Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-sim-card-real-name"
+    "article": "china-permanent-residence-marriage"
   },
   "metrics": {
     "files": 1,
@@ -37,7 +37,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 5 runs in a row.",
+    "c has ended PUBLISHED 6 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

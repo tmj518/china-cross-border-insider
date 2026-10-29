@@ -1,55 +1,8 @@
 {
-  "at": "2026-10-29T05:33:06.955Z",
+  "at": "2026-10-29T05:39:11.163Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-sim-card-real-name",
-      "topic": "residence",
-      "audience": [
-        "visitor",
-        "employee",
-        "student"
-      ],
-      "unit": "one line",
-      "title": "A Chinese Phone Number: Real-Name Registration",
-      "query": "china sim card real name registration passport",
-      "status": "queued",
-      "sources": [
-        "https://www.gov.cn/",
-        "https://www.miit.gov.cn/",
-        "https://www.nia.gov.cn/n741445/n741624/index.html"
-      ],
-      "fetchKeywords": [
-        "实名",
-        "电话用户",
-        "入网",
-        "手机号"
-      ],
-      "facts": [],
-      "mustSay": [
-        "A phone line is registered to a verified identity before it is activated.",
-        "A foreigner registers with a passport, and the registration is what links the number to the person.",
-        "Banking, delivery and platform accounts increasingly require a number registered to the holder.",
-        "A number registered to somebody else cannot be used as proof of identity."
-      ],
-      "avoid": [
-        "Do not state a fee or a validity period unless the fact sheet contains it."
-      ],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
-    },
     {
       "slug": "china-permanent-residence-marriage",
       "topic": "residence",

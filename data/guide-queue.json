@@ -610,7 +610,7 @@
       "unit": "one application",
       "title": "Permanent Residence Through Marriage",
       "query": "china permanent residence through marriage requirements",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.nia.gov.cn/",
         "https://en.nia.gov.cn/",
@@ -644,7 +644,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-10-29"
     },
     {
       "slug": "china-medical-insurance-foreigner",

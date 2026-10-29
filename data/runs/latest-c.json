@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-29T05:33:27.659Z",
+  "at": "2026-10-29T05:39:34.296Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-sim-card-real-name",
-  "seconds": 21,
+  "article": "china-permanent-residence-marriage",
+  "seconds": 23,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.002
+    "usd": 0.0008
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding china-sim-card-real-name",
+      "name": "grounding china-permanent-residence-marriage",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-sim-card-real-name",
+      "name": "gates china-permanent-residence-marriage",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-sim-card-real-name",
+      "name": "build china-permanent-residence-marriage",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-sim-card-real-name/"
+      "detail": "/guide/china-permanent-residence-marriage/"
     }
   ],
   "researchLog": [
