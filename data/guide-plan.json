@@ -1,53 +1,8 @@
 {
-  "at": "2026-10-29T05:39:11.163Z",
+  "at": "2026-10-29T07:20:25.553Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-permanent-residence-marriage",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Permanent Residence Through Marriage",
-      "query": "china permanent residence through marriage requirements",
-      "status": "queued",
-      "sources": [
-        "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/",
-        "https://www.nia.gov.cn/n741445/n741624/index.html"
-      ],
-      "fetchKeywords": [
-        "永久居留",
-        "夫妻团聚",
-        "婚姻",
-        "绿卡"
-      ],
-      "facts": [],
-      "mustSay": [
-        "Marriage is one of the categories for permanent residence, and it has its own conditions.",
-        "The conditions concern the duration of the marriage and the time spent living in China.",
-        "The application is decided by the immigration authority, and meeting the conditions is necessary rather than sufficient.",
-        "The permit is renewed, so the status is not permanent in the sense of never expiring."
-      ],
-      "avoid": [
-        "Do not state a number of years, an income or a fee unless the fact sheet contains it."
-      ],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
-    },
     {
       "slug": "work-permit-notification",
       "topic": "work-visa",

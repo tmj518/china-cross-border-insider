@@ -381,7 +381,7 @@
       "unit": "one application",
       "title": "The Work Permit That Comes Before the Z Visa",
       "query": "china work permit notification letter",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.nia.gov.cn/",
         "https://en.nia.gov.cn/",
@@ -415,7 +415,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-10-29"
     },
     {
       "slug": "entry-exit-record",

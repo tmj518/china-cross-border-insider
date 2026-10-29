@@ -1,9 +1,9 @@
 {
-  "at": "2026-10-29T05:39:34.296Z",
+  "at": "2026-10-29T07:20:53.487Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-permanent-residence-marriage",
-  "seconds": 23,
+  "article": "work-permit-notification",
+  "seconds": 28,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding china-permanent-residence-marriage",
+      "name": "grounding work-permit-notification",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-permanent-residence-marriage",
+      "name": "gates work-permit-notification",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-permanent-residence-marriage",
+      "name": "build work-permit-notification",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-permanent-residence-marriage/"
+      "detail": "/guide/work-permit-notification/"
     }
   ],
   "researchLog": [
