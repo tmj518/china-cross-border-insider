@@ -208,8 +208,26 @@ function runOne(gate) {
     return { ...gate, ms: 0, status: hit.status, cached: true, out: hit.out ?? "" };
   }
   const t = Date.now();
-  const r = spawnSync(NODE, gate.args, { cwd: ROOT, encoding: "utf8", maxBuffer: 128 * 1024 * 1024 });
-  const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
+  /*
+   * A GATE THAT NEVER STARTED HAS NOT FAILED.
+   *
+   * On 2026-10-29 the internal-links gate failed three runs in a row with exit 1 and an empty output
+   * buffer. The gate captures stderr as well as stdout, so the child had written nothing at all: spawn
+   * itself had failed under memory pressure on the runner, and spawnSync reports that as a null status
+   * with nothing on either stream. The next run passed without a code change - intermittent, and a red
+   * gate that no commit can turn green is worse than useless, because it teaches the operator to rerun.
+   *
+   * One retry, and the failure mode is recorded when it repeats.
+   */
+  let r = spawnSync(NODE, gate.args, { cwd: ROOT, encoding: "utf8", maxBuffer: 128 * 1024 * 1024 });
+  let spawnNote = "";
+  if (r.status === null && !r.signal) {
+    spawnNote = "\n[gate did not start: " + (r.error?.code ?? "unknown") + "; retried once]";
+    spawnSync(NODE, ["-e", "setTimeout(()=>{},1500)"], { cwd: ROOT });
+    r = spawnSync(NODE, gate.args, { cwd: ROOT, encoding: "utf8", maxBuffer: 128 * 1024 * 1024 });
+    if (r.status === null && !r.signal) spawnNote += " [second spawn also failed: " + (r.error?.code ?? "unknown") + "]";
+  }
+    const out = `${r.stdout ?? ""}${r.stderr ?? ""}` + spawnNote;
   const ms = Date.now() - t;
   /*
    * A signalled gate is not a verdict. Same reasoning as the parallel branch: caching the output of an
