@@ -19,9 +19,8 @@ on:
         description: "Fail on purpose, to prove the Feishu card arrives"
         type: boolean
         default: false
-  schedule:
-  # Weekly: GitHub's own clock, because the Cloudflare worker only dispatches the three daily lines.
-    - cron: "40 2 * * 1" # Monday 10:40 Beijing
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now. GitHub's own cron is late.
+  # - cron: "40 2 * * 1" # Monday 10:40 Beijing
 
 permissions:
   contents: write
