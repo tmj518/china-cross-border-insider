@@ -68,6 +68,58 @@ export function opening(src, n = 500) {
 /**
  * @returns {{duplicate: boolean, reason: string, score?: number}}
  */
+
+/**
+ * THE TITLE IS NOT THE EVENT.
+ *
+ * On 2026-10-29 two articles about the same Brazilian beef safeguard went live on the same day: the script
+ * line at 12:47 under china-brazil-beef-safeguard-55-percent-trigger-2026, the agent at 17:2x under
+ * ...-trigger-october-2026. The titles were worded differently, so the identical-title test passed, the
+ * opening was different, and the body similarity sat below the threshold. One event, two URLs.
+ *
+ * A title is what the writer chose; the event is what the piece is about. Two signals that do not depend on
+ * wording:
+ *
+ *   the slug fingerprint   the first six hyphen segments, which both lines derive from the subject
+ *   the figure fingerprint three shared core numbers that also carry the same date
+ *
+ * Either one matching is a duplicate. Both are cheap, neither can be paraphrased away.
+ */
+/**
+ * THE SUBJECT LIVES IN THE FILENAME, NOT IN THE TITLE.
+ *
+ * Two pieces about the same safeguard were filed as china-brazil-beef-safeguard-55-percent-trigger-2026 and
+ * ...-trigger-october-2026. The first six segments are identical, which is the subject; the titles were
+ * worded differently, which is why the title test missed it.
+ */
+export function slugSubject(slug, segments = 6) {
+  return String(slug).toLowerCase().split("-").filter(Boolean).slice(0, segments).join("-");
+}
+
+export function slugFingerprint(src, segments = 6) {
+  const slug = /^slug:\s*"?(.*?)"?\s*$/m.exec(src)?.[1] ?? "";
+  const fromTitle = (titleOf(src) ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const base = (slug || fromTitle).toLowerCase();
+  return base.split("-").filter(Boolean).slice(0, segments).join("-");
+}
+
+/** Numbers with a unit or a percent sign, and the dates, in one comparable bag. */
+export function figureFingerprint(src) {
+  const body = bodyOf(src);
+  const numbers = new Set();
+  for (const m of body.matchAll(/(\d{1,4}(?:\.\d+)?)\s*(?:%|percent|yuan|usd|dollars?|days?|months?|tonnes?|kg)/gi)) {
+    numbers.add(m[1]);
+  }
+  const dates = new Set([...body.matchAll(/\b(20\d\d-\d\d-\d\d|\d{1,2}\s+(?:january|february|march|april|may|june|july|august|september|october|november|december))/gi)].map((m) => m[0].toLowerCase()));
+  return { numbers, dates };
+}
+
+function shared(a, b) {
+  const out = [];
+  for (const x of a) if (b.has(x)) out.push(x);
+  return out;
+}
+
 export function looksDuplicate(draftSrc, publishedSrc) {
   const draftTitle = titleOf(draftSrc);
   const publishedTitle = titleOf(publishedSrc);
@@ -82,6 +134,27 @@ export function looksDuplicate(draftSrc, publishedSrc) {
   }
 
   const score = similarity(bodyOf(draftSrc), bodyOf(publishedSrc));
+
+  /* The event, not the wording. Six slug segments is the subject; anything shorter is a different article. */
+  const draftSlug = slugFingerprint(draftSrc);
+  const publishedSlug = slugFingerprint(publishedSrc);
+  if (draftSlug && publishedSlug && draftSlug === publishedSlug) {
+    return { duplicate: true, reason: `same subject by slug: ${draftSlug}`, score };
+  }
+
+  /* Three shared figures that also share a date is the same event reported twice. */
+  const a = figureFingerprint(draftSrc);
+  const b = figureFingerprint(publishedSrc);
+  const sharedNumbers = shared(a.numbers, b.numbers);
+  const sharedDates = shared(a.dates, b.dates);
+  if (sharedNumbers.length >= 3 && sharedDates.length >= 1) {
+    return {
+      duplicate: true,
+      reason: `same event by figures: ${sharedNumbers.slice(0, 3).join(", ")} on ${sharedDates[0]}`,
+      score,
+    };
+  }
+
   if (score >= 0.9) {
     return { duplicate: true, reason: `body similarity ${score.toFixed(3)}`, score };
   }
