@@ -149,6 +149,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [China's beef safeguard hits 100% for Brazil: a 55% surcharge starts 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-trigger-2026/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

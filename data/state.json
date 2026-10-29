@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-28T06:54:01.419Z",
+  "lastRun": "2026-10-29T04:47:59.918Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-trade-defence-provisional-retroactive-measures-2025",
-  "runs": 22,
-  "published": 22,
+  "lastArticle": "china-brazil-beef-safeguard-55-percent-trigger-2026",
+  "runs": 23,
+  "published": 23,
   "lastUsage": {
-    "calls": 13,
-    "failed": 6,
-    "usd": 0.0186,
-    "promptTokens": 58307,
-    "completionTokens": 11506
+    "calls": 21,
+    "failed": 14,
+    "usd": 0.0272,
+    "promptTokens": 60905,
+    "completionTokens": 9821
   }
 }

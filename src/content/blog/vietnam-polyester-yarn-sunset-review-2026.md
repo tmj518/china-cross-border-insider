@@ -226,6 +226,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [China's beef safeguard hits 100% for Brazil: a 55% surcharge starts 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-trigger-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your
