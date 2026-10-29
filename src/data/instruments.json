@@ -2263,7 +2263,7 @@
       "modelOutput": false
     },
     {
-      "id": "general-administration-of-customs-of-the-prc-announcements-i",
+      "id": "general-administration-of-customs-of-the-prc-announcements-i-0",
       "source": "General Administration of Customs of the PRC announcements index, http://www.customs.gov.cn/customs/302249/index.html — attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
       "figures": [
         {
@@ -3217,6 +3217,37 @@
       "articleSlugs": [
         "china-container-suitability-check-frozen-food-export-2026",
         "importing-from-china-documents-checklist"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "general-administration-of-customs-of-the-prc-announcements-i",
+      "source": "General Administration of Customs of the PRC announcements index, attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+      "figures": [
+        {
+          "articleSlug": "china-to-india-parcel-cost-procedure-2026",
+          "articleNum": 0,
+          "value": "the commercial invoice, the packing list and the transport document",
+          "unit": "the document spine every consignment is cleared against, tested for reconciliation on goods, quantities and parties",
+          "period": "required at the export declaration and again at the import declaration",
+          "source": "General Administration of Customs of the PRC announcements index, attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-to-india-parcel-cost-procedure-2026",
+          "articleNum": 0,
+          "value": "the declaration route chosen at the point of shipping",
+          "unit": "the decision that cannot be revisited after the goods move",
+          "period": "decided before collection, not repairable on arrival",
+          "source": "General Administration of Customs of the PRC announcements index, attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+          "retrieved": "2026-10-29"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-to-india-parcel-cost-procedure-2026"
       ],
       "modelOutput": false
     },
