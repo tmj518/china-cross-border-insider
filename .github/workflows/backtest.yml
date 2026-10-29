@@ -16,9 +16,8 @@ name: Backtest
 
 on:
   workflow_dispatch:
-  schedule:
-  # Weekly: GitHub's own clock, because the Cloudflare worker only dispatches the three daily lines.
-    - cron: "20 3 * * 1" # Monday 11:20 Beijing
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now. GitHub's own cron is late.
+  # - cron: "20 3 * * 1" # Monday 11:20 Beijing
 
 permissions:
   contents: write
