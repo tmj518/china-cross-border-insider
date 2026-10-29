@@ -34,7 +34,11 @@
       "directionMix": {
         "within-china": 84,
         "into-china": 1
-      }
+      },
+      "produced": "published",
+      "producedAt": "2026-10-29",
+      "slug": "eu-goes-safeguard-tariff-rate-quota-2026",
+      "publishedOn": "2026-10-29"
     },
     {
       "moment": "arrive",

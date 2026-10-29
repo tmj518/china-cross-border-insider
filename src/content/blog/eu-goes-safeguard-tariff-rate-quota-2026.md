@@ -1,7 +1,7 @@
 ---
-title: "EU safeguard tariff-rate quotas hit grain-oriented electrical steel from 18 September 2026"
+title: "EU safeguard tariff-rate quotas hit grain-oriented"
 subtitle: "Provisional tariff-rate quotas plus price thresholds now apply to grain-oriented electrical steel, laminations, cores and transformers entering the EU"
-description: "From 18 September 2026 EU imports of grain-oriented electrical steel face provisional safeguard tariff-rate quotas coupled with price thresholds. Definitive measures need 15 member states holding 65% of EU population."
+description: "From 18 September 2026 EU imports of grain-oriented electrical steel face provisional safeguard tariff-rate quotas coupled with price thresholds."
 publishDate: 2026-10-21
 reviewBy: 2027-01-21
 stakes: priced
@@ -93,7 +93,7 @@ Then there is the downstream case, which is where the scope bites hardest. A tra
 
 The definitive-measure risk is a separate cost. Provisional measures hold the border; definitive measures set the terms for the longer run. The vote needs 15 member states and 65% of population. An importer planning a 2027 supply contract is planning against a structure that has not yet been voted on, and the honest planning assumption is that the provisional structure persists in some form until the vote says otherwise.
 
-For the wider picture of how EU steel charges stack on the same tonne, the safeguard sits alongside the carbon border charge analysed in [Two EU Charges Hit the Same Tonne, and Only One of Them Is Knowable Up Front](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/). The quota mechanics that decide which slice of a consignment clears at which rate are worked through in [The EU Steel Quota Is Tightest Where China Has No Allocation at All](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/). And the parallel provisional instrument on the same product family is set out in [EU Safeguard on Grain-Oriented Electrical Steel: Tariff-Rate Quota and Price Thresholds From 18 September 2026](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/).
+For the wider picture of how EU steel charges stack on the same tonne, the safeguard sits alongside the carbon border charge analysed in [Two EU Charges Hit the Same Tonne, and Only One of Them Is Knowable Up Front](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/). The quota mechanics that decide which slice of a consignment clears at which rate are worked through in [The EU Steel Quota Is Tightest Where China Has No Allocation at All](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/). And the parallel provisional instrument on the same product family is set out in [EU Safeguard on Grain-Oriented Electrical Steel: Tariff-Rate Quota and Price Thresholds From 18 September 2026](/blog/eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026/).
 
 ## How confident
 
@@ -102,10 +102,6 @@ For the wider picture of how EU steel charges stack on the same tonne, the safeg
 **Inferred.** The source does not publish the quota volumes, the in-quota and out-of-quota rates, the level of the price thresholds, or the date of the definitive vote. The worked arithmetic in this article therefore describes the structure of the charge rather than a rate: it shows how a consignment splits across a quota line and how a price test sits alongside it, and it does not assert a duty figure. The reading that laminations, cores and transformers fall inside the product scope rests on the Commission's own phrase "grain-oriented electrical steel products" and on the ordinary supply chain from coil to lamination to core to transformer; it is an inference from the wording, not a published scope list. All of this rests on one document, and no second source has been cross-checked against it.
 
 **What would change my mind.** A published regulation setting the quota volumes, the two duty rates and the price threshold levels would replace the structural arithmetic here with a priced one. A Commission notice setting a date for the definitive vote, or a Council vote result, would settle the timing question the source leaves open. A published product scope that names or excludes laminations, cores or finished transformers would confirm or overturn the downstream reading. Any of those documents would move the relevant paragraph from inference to confirmation.
-
-> Work it out: [the landed cost calculator](/calculator/)
-
-> Different question, same method: [the step-by-step guides](/guide/)
 
 ## For you
 
@@ -164,4 +160,3 @@ Worked structure (illustrative customs value, no rate asserted)
 ## The point
 
 The provisional safeguard of 18 September 2026 changes the shape of the cost before it changes the size of it. An importer of grain-oriented steel, laminations, cores or transformers now clears against a volume allowance and a price test at once, and the definitive vote that decides whether that structure stands needs 15 member states holding 65% of EU population. Price the structure first; the rates follow from the quota line.
-The provisional measures this quota sits on top of are explained in [the TRQ and price-threshold announcement](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/).

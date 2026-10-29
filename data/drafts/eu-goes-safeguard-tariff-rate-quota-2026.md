@@ -1,7 +1,7 @@
 ---
-title: "EU safeguard tariff-rate quotas hit grain-oriented electrical steel from 18 September 2026"
+title: "EU safeguard tariff-rate quotas hit grain-oriented"
 subtitle: "Provisional tariff-rate quotas plus price thresholds now apply to grain-oriented electrical steel, laminations, cores and transformers entering the EU"
-description: "From 18 September 2026 EU imports of grain-oriented electrical steel face provisional safeguard tariff-rate quotas coupled with price thresholds. Definitive measures need 15 member states holding 65% of EU population."
+description: "From 18 September 2026 EU imports of grain-oriented electrical steel face provisional safeguard tariff-rate quotas coupled with price thresholds."
 publishDate: 2026-10-21
 reviewBy: 2027-01-21
 stakes: priced
