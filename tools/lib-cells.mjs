@@ -96,6 +96,7 @@ export function rankedCells(matrix, limit = 5) {
       intents: c.own ?? 0,
       mixed: directionsOf(matrix, c.persona, c.moment) > 1,
       samples: intentSamples(matrix, c.persona, c.moment, 5),
+      reason: `${c.calc ?? 0} computable, ${c.own ?? 0} intents`,
       matrix,
     }))
     .sort((a, b) => Number(a.mixed) - Number(b.mixed) || b.computable - a.computable || b.intents - a.intents)
