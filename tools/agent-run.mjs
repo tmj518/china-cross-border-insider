@@ -1706,6 +1706,20 @@ if (published.size === 0) {
           if (!finished) finished = { verdict: "DUPLICATE-SUBJECT", summary: "the draft covers the same event as " + clash.f + " (identical first six slug segments), so it was not published." };
           throw new Error("duplicate-subject");
         }
+        /*
+         * The same preprocessing the publish path does, because the fallback is the path that actually runs
+         * when the model never submits. Without it the gate judges a draft that was never fitted or filled.
+         */
+        {
+          const draftFile = join(ROOT, "data", "drafts", newest.f);
+          const raw = readFileSync(draftFile, "utf8");
+          const fitted = fitMeta(raw);
+          const filled = fillRequiredMeta(fitted.src);
+          if (filled.changed.length || fitted.changed.length) {
+            writeFileSync(draftFile, filled.src, "utf8");
+            for (const c of [...fitted.changed, ...filled.changed]) console.log("  prepared   : " + c);
+          }
+        }
         const fallbackGate = gateOf(join(ROOT, "data", "drafts", newest.f));
         if (!fallbackGate.ok) {
           const named = fallbackGate.blocks.slice(0, 4).map((r) => r.rule).join(", ");
