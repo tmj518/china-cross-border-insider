@@ -271,7 +271,9 @@
         "out-of-china": 47,
         "within-china": 40,
         "into-china": 11
-      }
+      },
+      "produced": "available",
+      "producedAt": "2026-10-29"
     },
     {
       "moment": "leave",
