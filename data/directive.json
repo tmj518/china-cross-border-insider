@@ -1,189 +1,198 @@
 {
   "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
-  "_generated": "2026-10-29T11:35:05.059Z",
+  "_generated": "2026-10-29T11:46:59.079Z",
   "_research": {
     "fetched": [
       {
         "url": "https://policy.trade.ec.europa.eu/news/screening-foreign-direct-investment-continues-advance-eu-security-and-public-order-2026-10-14_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-0ues0.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-wu5dj.html",
         "bytes": 77027
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news/commission-acts-against-imports-pea-protein-china-2026-09-25_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-ucrod.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-e19hv.html",
         "bytes": 73816
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news/demand-trade-defence-action-eu-commitment-tackle-unfair-trade-remain-strong-2025-2026-09-18_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-q6vbh.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-x63v1.html",
         "bytes": 77485
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news/commission-imposes-provisional-safeguard-measures-imports-grain-oriented-electrical-steel-2026-09-18_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-au0y6.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-k5nox.html",
         "bytes": 76402
       },
       {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189610&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-xmpju.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-ukrw9.html",
         "bytes": 26832
       },
       {
-        "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189411&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-2inx7.html",
-        "bytes": 40492
-      },
-      {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189379&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-y8tv6.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html",
         "bytes": 24436
       },
       {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189382&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-my5d4.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-xedqo.html",
         "bytes": 19137
       },
       {
-        "url": "http://jrs.mof.gov.cn/zhengcefabu/phjr/202609/t20260929_3998312.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-i7giz.html",
-        "bytes": 19579
+        "url": "http://jkw.mof.gov.cn/zhengcefabu/202610/t20261014_4002838.htm",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-udqxd.html",
+        "bytes": 34071
       },
       {
         "url": "http://gks.mof.gov.cn/guizhangzhidu/202609/t20260911_3997286.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-5crow.html",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-mxz66.html",
         "bytes": 29056
       },
       {
-        "url": "http://jrs.mof.gov.cn/zhengcefabu/phjr/202609/t20260911_3997257.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-1fqzw.html",
-        "bytes": 28758
-      },
-      {
         "url": "https://www.mofcom.gov.cn/zfxxgk/zfxxgkzd/zdgkjbml/art/2018/art_d575b31272dc4ed89cf9726441603252.html",
-        "file": "data/sources/2026-10-29/research-mofcom-article-cjkm7.html",
+        "file": "data/sources/2026-10-29/research-mofcom-article-xsvc7.html",
         "bytes": 14343
       },
       {
-        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261027_1965697.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-2q9wi.html",
-        "bytes": 496021
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%8F%C2%91%C3%A7%C2%A5%C2%A8&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-10-29/research-tax-administration-article-wlh8a.html",
+        "bytes": 106658
       },
       {
-        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261023_1965679.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-qevkz.html",
-        "bytes": 437294
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%8F%C2%91%C3%A7%C2%A5%C2%A8%C3%A6%C2%9F%C2%A5%C3%A8%C2%AF%C2%A2&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-10-29/research-tax-administration-article-xf6if.html",
+        "bytes": 106658
       },
       {
-        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261023_1965677.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-g5994.html",
-        "bytes": 321174
+        "url": "https://english.www.gov.cn/news/202610/29/content_WS6ae31e80c6d00ca5f9a0df66.html",
+        "file": "data/sources/2026-10-29/research-gov-en-article-cwta6.html",
+        "bytes": 21034
       },
       {
-        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-wuvyv.html",
-        "bytes": 267616
+        "url": "https://english.www.gov.cn/news/202610/22/content_WS6ad9b060c6d00ca5f9a0de52.html",
+        "file": "data/sources/2026-10-29/research-gov-en-article-frnnc.html",
+        "bytes": 20584
+      },
+      {
+        "url": "https://english.www.gov.cn/news/202610/16/content_WS6ad202b1c6d00ca5f9a0dbab.html",
+        "file": "data/sources/2026-10-29/research-gov-en-article-i7l42.html",
+        "bytes": 22484
+      },
+      {
+        "url": "https://english.www.gov.cn/policies/featured/202610/19/content_WS6ad6057ac6d00ca5f9a0dcd7.html",
+        "file": "data/sources/2026-10-29/research-gov-en-article-2xesn.html",
+        "bytes": 13855
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-flqir.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-x1i37.html",
         "bytes": 97418
       },
       {
         "url": "https://cacs.mofcom.gov.cn/",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-oxec5.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-i27po.html",
         "bytes": 62643
       },
       {
         "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-w6w68.html",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-t0jkm.html",
         "bytes": 20830
       },
       {
         "url": "https://www.mofcom.gov.cn/zfxxgk/",
-        "file": "data/sources/2026-10-29/research-mofcom-00ajf.html",
+        "file": "data/sources/2026-10-29/research-mofcom-d0uzh.html",
         "bytes": 161774
       },
       {
-        "url": "https://www.stats.gov.cn/sj/zxfb/",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-53k04.html",
-        "bytes": 72810
-      },
-      {
         "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html",
-        "file": "data/sources/2026-10-29/research-tax-administration-ju1t3.html",
+        "file": "data/sources/2026-10-29/research-tax-administration-sttko.html",
         "bytes": 37502
       },
       {
         "url": "https://english.www.gov.cn/",
-        "file": "data/sources/2026-10-29/research-gov-en-vsec0.html",
+        "file": "data/sources/2026-10-29/research-gov-en-byiae.html",
         "bytes": 58020
       },
       {
         "url": "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "file": "data/sources/2026-10-29/research-immigration-2jv5j.html",
+        "file": "data/sources/2026-10-29/research-immigration-59488.html",
         "bytes": 19724
+      },
+      {
+        "url": "https://www.safe.gov.cn/safe/zcfg/index.html",
+        "file": "data/sources/2026-10-29/research-safe-iarho.html",
+        "bytes": 26182
       }
     ],
     "model": "deepseek/deepseek-chat",
-    "spentUsd": 0.0078,
+    "spentUsd": 0.0166,
     "duplicateScore": 0,
     "duplicateAgainst": null
   },
   "slug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
-  "title_idea": "China's beef safeguard trigger fires: Brazilian beef now carries an extra 55% tariff from 1 October 2026",
+  "title_idea": "Brazil's beef quota hit 100% on 29 September: a 55% surcharge applies to every tonne from 1 October 2026",
   "keyword": "China Brazil beef safeguard 55% additional tariff October 2026",
   "category": "trade-policy",
   "audience": "importer",
-  "angle": "Lets an importer of Brazilian beef calculate the extra 55% duty now stacking on top of the MFN rate and decide whether to switch origin, renegotiate, or absorb the cost.",
+  "angle": "Whether to keep, reprice or reroute Brazilian beef shipments now that the safeguard trigger has been reached and the 55% surcharge applies on top of the current tariff rate from 1 October 2026.",
   "figures": [
+    {
+      "value": "100%",
+      "unit": "share of Brazil's safeguard quota consumed",
+      "period": "reached 29 September 2026",
+      "source": "MOFCOM Trade Remedy and Investigation Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号",
+      "retrieved": "2026-10-29",
+      "evidence": "牛肉保障措施项下自巴西进口的牛肉于 2026 年 9 月 29 日已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100% 。",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html"
+    },
     {
       "value": "55%",
       "unit": "additional tariff on top of the currently applicable tariff rate",
       "period": "from 00:00 on 1 October 2026",
-      "source": "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号",
+      "source": "MOFCOM Trade Remedy and Investigation Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号",
       "retrieved": "2026-10-29",
       "evidence": "在巴西牛肉进口数量达到规定数量 100% 的第 3 日起（ 10 月 1 日零点起），自该国进口牛肉将在现行适用关税税率基础上加征 55% 关税。",
-      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-y8tv6.html"
-    },
-    {
-      "value": "100%",
-      "unit": "share of the country-specific trigger quantity reached",
-      "period": "reached 29 September 2026",
-      "source": "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9)",
-      "retrieved": "2026-10-29",
-      "evidence": "牛肉保障措施项下自巴西进口的牛肉于 2026 年 9 月 29 日已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100% 。",
-      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-y8tv6.html"
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html"
     },
     {
       "value": "第 3 日",
-      "unit": "day count after the trigger before the surcharge applies",
-      "period": "trigger reached 29 September 2026; surcharge from 1 October 2026",
-      "source": "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9)",
+      "unit": "day count from the 100% trigger to the surcharge start",
+      "period": "trigger 29 September 2026, surcharge from 1 October 2026",
+      "source": "MOFCOM Trade Remedy and Investigation Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号",
       "retrieved": "2026-10-29",
-      "evidence": "在巴西牛肉进口数量达到规定数量 100% 的第 3 日起（ 10 月 1 日零点起）",
-      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-y8tv6.html"
+      "evidence": "在巴西牛肉进口数量达到规定数量 100% 的第 3 日起（ 10 月 1 日零点起），自该国进口牛肉将在现行适用关税税率基础上加征 55% 关税。",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html"
     },
     {
       "value": "2025 年第 87 号",
-      "unit": "the safeguard instrument setting the country-specific quantity",
-      "period": "in force for 2026",
-      "source": "MOFCOM Announcement No. 87 of 2025",
+      "unit": "instrument number setting the per-country quota and the surcharge rule",
+      "period": "in force for the 2026 safeguard year",
+      "source": "MOFCOM Announcement No. 87 of 2025, as cited in the implementation notice",
       "retrieved": "2026-10-29",
-      "evidence": "已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100%",
-      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-y8tv6.html"
+      "evidence": "根据商务部公告 2025 年第 87 号，在巴西牛肉进口数量达到规定数量 100% 的第 3 日起（ 10 月 1 日零点起），自该国进口牛肉将在现行适用关税税率基础上加征 55% 关税。",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html"
     },
     {
       "value": "2026-09-30",
       "unit": "date the implementation notice was issued",
-      "period": "notice date",
-      "source": "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9)",
+      "period": "one day before the surcharge took effect",
+      "source": "MOFCOM Trade Remedy and Investigation Bureau, 商救济进一函〔2026〕58号",
       "retrieved": "2026-10-29",
       "evidence": "【发文日期】 2026 年 09 月 30 日",
-      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-y8tv6.html"
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html"
+    },
+    {
+      "value": "2026-09-29",
+      "unit": "date Brazil's quota was exhausted",
+      "period": "safeguard year 2026",
+      "source": "MOFCOM Trade Remedy and Investigation Bureau, 商救济进一函〔2026〕58号",
+      "retrieved": "2026-10-29",
+      "evidence": "牛肉保障措施项下自巴西进口的牛肉于 2026 年 9 月 29 日已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100% 。",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu1wn.html"
     }
   ],
   "sources": [
-    "MOFCOM Trade Remedy Bureau — 关于2026年度牛肉保障措施执行提示信息（九）, 商救济进一函〔2026〕58号, 30 September 2026 (cacs.mofcom.gov.cn)",
-    "MOFCOM Announcement No. 87 of 2025 — beef safeguard measure referenced in the notice"
+    "MOFCOM Trade Remedy and Investigation Bureau — 关于2026年度牛肉保障措施执行提示信息（九）, 商救济进一函〔2026〕58号, issued 30 September 2026 (cacs.mofcom.gov.cn)",
+    "MOFCOM Announcement No. 87 of 2025 — the beef safeguard measure setting per-country quota volumes and the 55% surcharge rule (cited in the notice above)"
   ]
 }
