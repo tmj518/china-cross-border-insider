@@ -1131,7 +1131,7 @@
       "unit": "one health check",
       "title": "The Health Check Behind a China Residence Permit",
       "query": "china residence permit health check foreigner",
-      "status": "queued",
+      "status": "done",
       "evidence": "A required step before the permit renewal the site already documents, so it inherits an internal link",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1156,7 +1156,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-10-29"
     }
   ]
 }

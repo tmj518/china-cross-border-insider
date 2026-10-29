@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-29T23:58:15.496Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "foreigner-health-check-residence-permit",
+  "seconds": 22,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0004
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding foreigner-health-check-residence-permit",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates foreigner-health-check-residence-permit",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build foreigner-health-check-residence-permit",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-container-suitability-check-frozen-food-export-2026, china-return-shipping-refund-procedure-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/foreigner-health-check-residence-permit/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

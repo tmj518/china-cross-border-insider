@@ -1,44 +1,8 @@
 {
-  "at": "2026-10-29T23:38:03.241Z",
+  "at": "2026-10-29T23:57:53.111Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-green-card-permanent-residence",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China Permanent Residence: Who Can Apply and What It Costs",
-      "query": "china permanent residence green card requirements",
-      "status": "queued",
-      "evidence": "Same cluster as residence-permit-renewal, which is one of the site's few pages with impressions",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "永久居留",
-        "绿卡",
-        "permanent residence"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "foreigner-health-check-residence-permit",
       "topic": "residence",

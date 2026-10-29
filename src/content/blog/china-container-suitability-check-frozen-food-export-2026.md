@@ -219,3 +219,5 @@ Run the model with `node tools/suitability-clock.mjs`, or pin one case with `--v
 ## The point
 
 The rule is presented as a simplification and, on its own terms, it is one: an inspection step was replaced by a declaration. What it also did was attach an expiry date to a container and start that expiry before the goods are loaded. The fine is the visible number and the wrong one to plan around, because it is a cap that requires customs to find a breach. The number that recurs is the cost of a box that passed too early and waited, and it lands hardest on sellers who consolidate and who book ahead. The action it calls for is one question: what date did the container pass, and what date is the declaration filed.
+
+For the paperwork and the cost in one place, see [The Health Check Behind a China Residence Permit](/blog/foreigner-health-check-residence-permit/).

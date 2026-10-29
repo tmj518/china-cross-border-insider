@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-29T23:38:25.287Z",
+  "at": "2026-10-29T23:58:15.496Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-green-card-permanent-residence",
+  "article": "foreigner-health-check-residence-permit",
   "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0018
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -22,27 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "10 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding china-green-card-permanent-residence",
+      "name": "grounding foreigner-health-check-residence-permit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-green-card-permanent-residence",
+      "name": "gates foreigner-health-check-residence-permit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-green-card-permanent-residence",
+      "name": "build foreigner-health-check-residence-permit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-container-suitability-check-frozen-food-export-2026, china-return-shipping-refund-procedure-2026"
+    },
+    {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-green-card-permanent-residence/"
+      "detail": "/guide/foreigner-health-check-residence-permit/"
     }
   ],
   "researchLog": [
