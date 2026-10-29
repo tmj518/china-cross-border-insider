@@ -44,7 +44,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSy
 import { join, relative } from "node:path";
 import { execFileSync } from "node:child_process";
 import { ask, summary as providerSummary, usageToday } from "./lib-llm.mjs";
-import { looksDuplicate } from "./lib-duplicate.mjs";
+import { looksDuplicate, slugSubject } from "./lib-duplicate.mjs";
 import { loadMatrix, nextCell, markCell, intentSamples } from "./lib-cells.mjs";
 
 const ROOT = process.cwd();
@@ -1626,6 +1626,23 @@ if (published.size === 0) {
        * can reach a live URL by a second route.
        */
       if (newest) {
+        /*
+         * The same event under a different title is still the same event.
+         *
+         * On 2026-10-29 two pieces about one Brazilian beef safeguard went live on the same day, filed as
+         * ...-trigger-2026 and ...-trigger-october-2026. The titles differed, so every content test passed.
+         * The first six slug segments are identical, and that is the subject.
+         */
+        const draftSubject = slugSubject(newest.f.replace(/\.md$/, ""));
+        const clash = readdirSync(join(ROOT, "src", "content", "blog"))
+          .filter((f) => f.endsWith(".md"))
+          .map((f) => ({ f, s: slugSubject(f.replace(/\.md$/, "")) }))
+          .find((x) => x.s === draftSubject);
+        if (clash) {
+          console.log("  forced submission refused: " + newest.f + " - same subject as " + clash.f);
+          if (!finished) finished = { verdict: "DUPLICATE-SUBJECT", summary: "the draft covers the same event as " + clash.f + " (identical first six slug segments), so it was not published." };
+          throw new Error("duplicate-subject");
+        }
         const fallbackGate = gateOf(join(ROOT, "data", "drafts", newest.f));
         if (!fallbackGate.ok) {
           const named = fallbackGate.blocks.slice(0, 4).map((r) => r.rule).join(", ");
