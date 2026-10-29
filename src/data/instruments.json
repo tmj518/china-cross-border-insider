@@ -2263,6 +2263,46 @@
       "modelOutput": false
     },
     {
+      "id": "general-administration-of-customs-of-the-prc-announcements-i",
+      "source": "General Administration of Customs of the PRC announcements index, http://www.customs.gov.cn/customs/302249/index.html — attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+      "figures": [
+        {
+          "articleSlug": "china-return-shipping-refund-procedure-2026",
+          "articleNum": 0,
+          "value": "the original export customs declaration",
+          "unit": "the document the application is anchored to; without it there is no export to reverse",
+          "period": "required before any refund application is filed",
+          "source": "General Administration of Customs of the PRC announcements index, http://www.customs.gov.cn/customs/302249/index.html — attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-return-shipping-refund-procedure-2026",
+          "articleNum": 0,
+          "value": "the return import declaration referencing the original export",
+          "unit": "the document that establishes the goods re-entering are the goods that left",
+          "period": "issued at the point the returned goods clear back into China",
+          "source": "General Administration of Customs of the PRC announcements index, http://www.customs.gov.cn/customs/302249/index.html — attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+          "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-return-shipping-refund-procedure-2026",
+          "articleNum": 0,
+          "value": "declared as a return, not as an ordinary import",
+          "unit": "the customs route condition that decides whether the refund route opens at all",
+          "period": "decided before the goods move, and not repairable afterwards",
+          "source": "General Administration of Customs of the PRC announcements index, http://www.customs.gov.cn/customs/302249/index.html — attempted in this run, no page retrieved; stated here as the shape of the procedure, not as a quoted figure",
+          "retrieved": "2026-10-29"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-return-shipping-refund-procedure-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "lanthanides-io-regulatory-tracker-dataset-dated-5-june-2026",
       "source": "lanthanides.io regulatory tracker, dataset dated 5 June 2026",
       "figures": [
