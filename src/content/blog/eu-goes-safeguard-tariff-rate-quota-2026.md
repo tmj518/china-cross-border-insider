@@ -16,7 +16,7 @@ target_keyword: "EU safeguard tariff-rate quota grain-oriented electrical steel 
 search_intent: "transactional"
 information_gain: "custom-calculation"
 sources:
-  - "European Commission, DG Trade and Economic Security — 'Commission imposes provisional safeguard measures on imports of grain-oriented electrical steel', 18 September 2026"
+  - "European Commission, DG Trade and Economic Security 閳?'Commission imposes provisional safeguard measures on imports of grain-oriented electrical steel', 18 September 2026"
 figures:
   - value: "18 September 2026"
     unit: "date provisional safeguard measures imposed"
@@ -56,13 +56,13 @@ On 18 September 2026 the European Commission imposed provisional safeguard measu
 
 ## What happened
 
-The European Commission's DG Trade and Economic Security published the measure on 18 September 2026. The form is specific and it matters: **tariff-rate quotas coupled with price thresholds**. A tariff-rate quota is not a ban and not a flat duty. It is a two-tier structure — a volume inside the quota clears at one rate, volume above it clears at a higher rate. The price threshold is a second gate sitting alongside the volume gate, and the Commission's own wording puts the two together rather than in sequence.
+The European Commission's DG Trade and Economic Security published the measure on 18 September 2026. The form is specific and it matters: **tariff-rate quotas coupled with price thresholds**. A tariff-rate quota is not a ban and not a flat duty. It is a two-tier structure 閳?a volume inside the quota clears at one rate, volume above it clears at a higher rate. The price threshold is a second gate sitting alongside the volume gate, and the Commission's own wording puts the two together rather than in sequence.
 
 The investigation behind the measure opened in **March 2026**. A safeguard investigation must normally be completed within **nine months**, and in exceptional circumstances that deadline extends to **11 months**. Counted from the March 2026 launch, the nine-month mark falls inside 2026 and the 11-month mark falls early in 2027. The provisional measures of 18 September 2026 sit inside that window, which is what "provisional" means here: they hold the border while the investigation finishes.
 
 The product scope named in the instrument is grain-oriented electrical steel products. That phrase reaches further down a supply chain than a coil. Grain-oriented steel is the grain-aligned sheet steel wound into transformer cores; laminations are cut from the same coil; cores are stacked or wound from the laminations; transformers contain the cores. An importer bringing in any of those four forms is inside the scope the Commission described.
 
-> **Tariff-rate quota** — a volume allowance inside which goods clear at a lower duty rate, with any quantity above the allowance clearing at a higher rate. Paired with a price threshold, the structure adds a second test: the declared price of the goods is checked as well as the volume, so a shipment can sit inside the quota on tonnage and still fail the price gate.
+> **Tariff-rate quota** 閳?a volume allowance inside which goods clear at a lower duty rate, with any quantity above the allowance clearing at a higher rate. Paired with a price threshold, the structure adds a second test: the declared price of the goods is checked as well as the volume, so a shipment can sit inside the quota on tonnage and still fail the price gate.
 
 The vote that decides whether these provisional measures become definitive is a qualified-majority vote. The Commission's text sets the bar plainly: at least **15 EU Member States** representing **65% of the EU's population** must vote in favour of the Commission's proposal. Both conditions apply together. Fifteen states holding less than 65% of population do not carry it; states holding 65% of population but numbering fewer than 15 do not carry it either.
 
@@ -85,15 +85,15 @@ The arithmetic of the calendar explains the rest. A nine-month investigation fro
 
 The judgement for an importer is this: the cost of a grain-oriented steel shipment into the EU is no longer a single duty rate applied to a customs value. It is a position against a quota line, plus a price test, plus the standing risk that the provisional structure is replaced by a definitive one on terms not yet published.
 
-Work the arithmetic through the structure rather than around it. Take a consignment declared at a customs value of EUR 100,000. Under a flat duty the landed cost moves by one number. Under a tariff-rate quota the same consignment splits: the portion inside the allowance clears at the in-quota rate, the portion above it at the out-of-quota rate. The importer's exposure is therefore the size of the over-quota slice multiplied by the gap between the two rates — and that gap is the figure the instrument sets and the figure an importer must read off the quota line before booking.
+Work the arithmetic through the structure rather than around it. Take a consignment declared at a customs value of EUR 100,000. Under a flat duty the landed cost moves by one number. Under a tariff-rate quota the same consignment splits: the portion inside the allowance clears at the in-quota rate, the portion above it at the out-of-quota rate. The importer's exposure is therefore the size of the over-quota slice multiplied by the gap between the two rates 閳?and that gap is the figure the instrument sets and the figure an importer must read off the quota line before booking.
 
-The price threshold changes what "inside the quota" means. A shipment can be within the volume allowance and still be tested on price. An importer who has negotiated a low unit price to win the order has, in effect, moved the shipment toward the price gate rather than away from it. The two levers — volume and price — are not independent under this instrument, and a landed-cost model that treats the quota as a pure tonnage allowance misses half the structure.
+The price threshold changes what "inside the quota" means. A shipment can be within the volume allowance and still be tested on price. An importer who has negotiated a low unit price to win the order has, in effect, moved the shipment toward the price gate rather than away from it. The two levers 閳?volume and price 閳?are not independent under this instrument, and a landed-cost model that treats the quota as a pure tonnage allowance misses half the structure.
 
 Then there is the downstream case, which is where the scope bites hardest. A transformer importer does not buy grain-oriented steel as such. The steel arrives embodied in laminations and cores, and the safeguard's product description reaches those forms. An importer of finished transformers is therefore exposed twice over: once through the direct cost of any steel or core content entering under the same scope, and once through the price of cores bought from a supplier who is himself clearing against the quota. The second exposure is the one that gets missed, because it arrives as a supplier price increase rather than as a customs line.
 
 The definitive-measure risk is a separate cost. Provisional measures hold the border; definitive measures set the terms for the longer run. The vote needs 15 member states and 65% of population. An importer planning a 2027 supply contract is planning against a structure that has not yet been voted on, and the honest planning assumption is that the provisional structure persists in some form until the vote says otherwise.
 
-For the wider picture of how EU steel charges stack on the same tonne, the safeguard sits alongside the carbon border charge analysed in [Two EU Charges Hit the Same Tonne, and Only One of Them Is Knowable Up Front](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/). The quota mechanics that decide which slice of a consignment clears at which rate are worked through in [The EU Steel Quota Is Tightest Where China Has No Allocation at All](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/). And the parallel provisional instrument on the same product family is set out in [EU Safeguard on Grain-Oriented Electrical Steel: Tariff-Rate Quota and Price Thresholds From 18 September 2026](/blog/eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026/).
+For the wider picture of how EU steel charges stack on the same tonne, the safeguard sits alongside the carbon border charge analysed in [Two EU Charges Hit the Same Tonne, and Only One of Them Is Knowable Up Front](/blog/eu-cbam-vs-steel-safeguard-duty-per-tonne-2026/). The quota mechanics that decide which slice of a consignment clears at which rate are worked through in [The EU Steel Quota Is Tightest Where China Has No Allocation at All](/blog/eu-steel-safeguard-quota-2026-chinese-hrc-cost/). A parallel provisional instrument covers the same product family; this note keeps to the tariff-rate quota itself.
 
 ## How confident
 
@@ -107,7 +107,7 @@ For the wider picture of how EU steel charges stack on the same tonne, the safeg
 
 - **Importers of grain-oriented steel coil:** read the quota line before you book, because the volume allowance and the price threshold are two separate gates and a shipment can pass one and fail the other.
 - **Importers of laminations and wound cores:** treat the safeguard as a cost on your input, not on someone else's, and ask your supplier which quota line his material clears against before you fix a 2027 price.
-- **Importers of finished transformers:** model the steel and core content separately from the finished-goods value, because the exposure arrives twice — once at the border and once inside your supplier's quotation.
+- **Importers of finished transformers:** model the steel and core content separately from the finished-goods value, because the exposure arrives twice 閳?once at the border and once inside your supplier's quotation.
 - **Importers holding in-transit cargo:** check the declaration date against 18 September 2026, since the provisional measures apply from that date and the source states no transition for cargo already on the water.
 - **Importers planning 2027 contracts:** build the definitive-measure vote into the contract, because 15 member states holding 65% of EU population decide whether the provisional structure becomes the standing one.
 
