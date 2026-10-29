@@ -83,26 +83,22 @@ function directionsOf(matrix, persona, moment) {
  * A mixed-direction cell is ranked lower rather than dropped: it is harder to write, not unusable.
  */
 /*
- * WHICH CELLS THE SOURCES CAN ACTUALLY ANSWER.
+ * TWO CLASSES, BECAUSE NOT EVERY SOURCE PUBLISHES NUMBERS.
  *
- * On 2026-10-29 the ranked list put expat/policy first - "china work permit points calculator" - and the run
- * ended in INSUFFICIENT-EVIDENCE, correctly: the immigration service publishes categories, not a points
- * table. The cell was not wrong to exist, it was wrong to try first, because the sources that answer from a
- * runner are the customs, finance, tax and commerce ones, plus the four added for visas, transport and
- * tuition.
- *
- * This vocabulary is derived from those sources, not guessed: customs and the tariff commission publish
- * rates and clearance rules, the tax administration publishes rebate rates, the statistics bureau publishes
- * PPI and CPI, the immigration service publishes visa categories and residence permits, the transport
- * ministry publishes freight and ports, the education ministry publishes tuition and scholarships.
- *
- * A cell whose phrasings match none of it is still a real cell; it simply ranks last, because a run there
- * ends with nothing to cite.
+ * The first attempt counted a vocabulary match and stopped: expat/policy scored five on "china work permit
+ * points calculator" and the run ended in INSUFFICIENT-EVIDENCE, correctly - the immigration service
+ * publishes categories and conditions, not a points table. A customs tariff, a rebate rate and a PPI
+ * figure are numbers in a document; a visa page is prose that has to be read.
  */
-const SOURCEABLE_TOPICS = /\b(tariff|duty|duties|customs|clearance|import|export|rebate|vat|tax|refund|ppi|cpi|inflation|freight|shipping|port|container|visa|residence|permit|tuition|scholarship|exchange rate|remittance|payment|labour cost|wage)\b/i;
+const NUMERIC_TOPICS = /\b(tariff|duty|duties|customs|clearance|rebate|vat|tax|refund|ppi|cpi|inflation|freight|shipping|port|container|exchange rate|remittance|dumping|safeguard|subsidy)\b/i;
+const PROSE_TOPICS = /\b(visa|residence|permit|tuition|scholarship|policy|regulation|license|licence)\b/i;
 function sourceability(cell) {
-  const hits = (cell.samples ?? []).filter((s) => SOURCEABLE_TOPICS.test(String(s))).length;
-  return hits;
+  let score = 0;
+  for (const s of cell.samples ?? []) {
+    if (NUMERIC_TOPICS.test(String(s))) score += 2;
+    else if (PROSE_TOPICS.test(String(s))) score += 1;
+  }
+  return score;
 }
 
 export function rankedCells(matrix, limit = 5) {
@@ -123,6 +119,7 @@ export function rankedCells(matrix, limit = 5) {
       matrix,
     }))
     .map((c) => ({ ...c, sourceable: sourceability(c) }))
+    .sort((a, b) => b.sourceable - a.sourceable || Number(a.mixed) - Number(b.mixed) || b.computable - a.computable || b.intents - a.intents)
     .filter((c) => {
       const key = c.persona + "/" + c.moment;
       if (seen.has(key)) return false;
