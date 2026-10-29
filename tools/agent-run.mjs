@@ -1456,7 +1456,7 @@ let messages = [
     role: "user",
     content: `Today is ${new Date().toISOString().slice(0, 10)}.
 
-Begin with today's job: read data/directive.json. Do not look around the repository first - everything you need is either in that file or produced by the tools. If you find yourself reading a file that is not the directive, a draft, or a tool's output, stop and write instead.`,
+Begin with today's job: read data/directive.json - but if this run has a demand cell, the cell above IS the job: do not open the directive, do not check whether its subject is published, do not relaunch. Do not look around the repository first - everything you need is either in that file or produced by the tools. If you find yourself reading a file that is not the directive, a draft, or a tool's output, stop and write instead.`,
   },
 ];
 
