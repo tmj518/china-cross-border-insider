@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-29T09:20:48.630Z",
-  "runSeconds": 63,
+  "generated": "2026-10-29T23:15:52.434Z",
+  "runSeconds": 72,
   "egress": "reported by the caller if needed; this script does not call a geo service",
   "totals": {
-    "probed": 18,
-    "reachable": 9,
-    "blocked": 0,
+    "probed": 21,
+    "reachable": 15,
+    "blocked": 1,
     "challenged": 0,
-    "failed": 7
+    "failed": 3
   },
   "rows": [
     {
@@ -16,7 +16,7 @@
       "why": "US CBP rules with effective dates, the best API of any source here",
       "status": 400,
       "bytes": 39,
-      "ms": 229,
+      "ms": 196,
       "note": ""
     },
     {
@@ -24,8 +24,8 @@
       "url": "https://policy.trade.ec.europa.eu/news_en",
       "why": "EU trade policy news, CBAM and trade defence",
       "status": 200,
-      "bytes": 97418,
-      "ms": 533,
+      "bytes": 97547,
+      "ms": 189,
       "note": "document"
     },
     {
@@ -34,7 +34,7 @@
       "why": "foreign anti-dumping and safeguard measures against Chinese exports, the highest-value source for a cost angle",
       "status": 0,
       "bytes": 0,
-      "ms": 1726,
+      "ms": 1457,
       "note": "threw: ETIMEDOUT"
     },
     {
@@ -42,8 +42,8 @@
       "url": "http://gss.mof.gov.cn/gzdt/",
       "why": "Tariff Commission notices: rate schedules and adjustments",
       "status": 502,
-      "bytes": 1931,
-      "ms": 2786,
+      "bytes": 1928,
+      "ms": 2777,
       "note": ""
     },
     {
@@ -52,7 +52,7 @@
       "why": "Ministry of Finance policy releases",
       "status": 200,
       "bytes": 20830,
-      "ms": 3272,
+      "ms": 2094,
       "note": "document"
     },
     {
@@ -61,43 +61,43 @@
       "why": "MOFCOM announcements",
       "status": 200,
       "bytes": 161774,
-      "ms": 1695,
+      "ms": 2162,
       "note": "document"
     },
     {
       "host": "www.stats.gov.cn",
       "url": "https://www.stats.gov.cn/sj/zxfb/",
       "why": "National Bureau of Statistics releases: PPI, CPI, industrial profit",
-      "status": 0,
-      "bytes": 0,
-      "ms": 4006,
-      "note": "threw: ETIMEDOUT"
+      "status": 200,
+      "bytes": 72810,
+      "ms": 3382,
+      "note": "document"
     },
     {
       "host": "www.chinatax.gov.cn",
       "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html",
       "why": "export tax rebate rates",
-      "status": 0,
-      "bytes": 0,
-      "ms": 646,
-      "note": "threw: ETIMEDOUT"
+      "status": 200,
+      "bytes": 37502,
+      "ms": 2175,
+      "note": "document"
     },
     {
       "host": "www.customs.gov.cn",
       "url": "http://www.customs.gov.cn/customs/302249/index.html",
       "why": "tariff schedules, classification and clearance rules",
-      "status": 0,
-      "bytes": 0,
-      "ms": 1005,
-      "note": "threw: ETIMEDOUT"
+      "status": 412,
+      "bytes": 2008,
+      "ms": 1687,
+      "note": ""
     },
     {
       "host": "english.www.gov.cn",
       "url": "https://english.www.gov.cn/",
       "why": "State Council policy in English: visas, taxation, customs, entry and exit - the one source that covers all five moments",
       "status": 200,
-      "bytes": 57902,
-      "ms": 1055,
+      "bytes": 58230,
+      "ms": 1287,
       "note": "document"
     },
     {
@@ -106,7 +106,7 @@
       "why": "National Immigration Administration: visa categories, residence permits, entry rules",
       "status": 200,
       "bytes": 19724,
-      "ms": 3272,
+      "ms": 3823,
       "note": "document"
     },
     {
@@ -115,35 +115,62 @@
       "why": "SAFE: foreign exchange, cross-border payments, repatriation of profits",
       "status": 0,
       "bytes": 0,
-      "ms": 631,
+      "ms": 907,
       "note": "threw: ETIMEDOUT"
     },
     {
       "host": "www.caac.gov.cn",
       "url": "https://www.caac.gov.cn/XXGK/XXGK/",
       "why": "CAAC: aviation rules, passenger and cargo carriage",
-      "status": 0,
-      "bytes": 0,
-      "ms": 2201,
-      "note": "threw: ETIMEDOUT"
+      "status": 200,
+      "bytes": 61449,
+      "ms": 2183,
+      "note": "document"
     },
     {
       "host": "www.mot.gov.cn",
       "url": "https://www.mot.gov.cn/",
       "why": "Ministry of Transport: shipping, ports and freight rates",
       "status": 200,
-      "bytes": 92907,
-      "ms": 5127,
+      "bytes": 92834,
+      "ms": 2053,
       "note": "document"
     },
     {
       "host": "www.samr.gov.cn",
       "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/",
       "why": "SAMR: product standards, labelling, market access",
+      "status": 200,
+      "bytes": 9193,
+      "ms": 2128,
+      "note": "document"
+    },
+    {
+      "host": "www.gov.cn",
+      "url": "https://www.gov.cn/zhengce/zuixin/",
+      "why": "the State Council's latest policy releases, the one page that carries housing, tax and customs notices together",
+      "status": 200,
+      "bytes": 21484,
+      "ms": 1026,
+      "note": "document"
+    },
+    {
+      "host": "www.mohurd.gov.cn",
+      "url": "https://www.mohurd.gov.cn/",
+      "why": "Ministry of Housing: property measures, mortgage policy, developer rules",
       "status": 0,
       "bytes": 0,
-      "ms": 1980,
-      "note": "threw: ETIMEDOUT"
+      "ms": 10017,
+      "note": "threw: EAI_AGAIN"
+    },
+    {
+      "host": "www.ndrc.gov.cn",
+      "url": "https://www.ndrc.gov.cn/",
+      "why": "NDRC: macro policy, prices, investment rules",
+      "status": 200,
+      "bytes": 87874,
+      "ms": 686,
+      "note": "document"
     },
     {
       "host": "en.moe.gov.cn",
@@ -151,7 +178,7 @@
       "why": "Ministry of Education in English: student costs, tuition, scholarships",
       "status": 200,
       "bytes": 21346,
-      "ms": 5229,
+      "ms": 1597,
       "note": "document"
     },
     {
@@ -159,8 +186,8 @@
       "url": "http://www.ccpit.org",
       "why": "trade friction alerts and commercial certification",
       "status": 200,
-      "bytes": 87850,
-      "ms": 3378,
+      "bytes": 87859,
+      "ms": 2917,
       "note": "document"
     },
     {
@@ -168,8 +195,8 @@
       "url": "http://www.cccme.org.cn",
       "why": "machinery and electronics export data and market access",
       "status": 200,
-      "bytes": 98126,
-      "ms": 2491,
+      "bytes": 98089,
+      "ms": 2364,
       "note": "document"
     }
   ]
