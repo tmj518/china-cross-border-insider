@@ -723,6 +723,16 @@ async function attempt(topic) {
     return { ok: false, why: `astro build failed with the guide in place, removed: ${tail.slice(0, 200)}` };
   }
   step(`build ${topic.slug}`, true, "site builds with the guide in place");
+  /*
+   * A GUIDE WITH NO INBOUND LINK IS A PAGE NOBODY FINDS.
+   *
+   * The line's own audit says it: twenty published guides, one with any impression at all. The reason is
+   * not the topics - it is that a new guide arrives as an island. Two existing pieces get one sentence each
+   * that links to it, chosen by keyword overlap, never the other way round (a reciprocal pair fails the
+   * link gate), and never into a file that is a draft.
+   */
+  const linked = addInboundLinks(topic);
+  step("inbound links", true, linked.length ? linked.join(", ") : "no candidate - NO-INBOUND");
 
   topic.status = "done";
   topic.doneAt = DAY;
@@ -731,6 +741,63 @@ async function attempt(topic) {
 }
 
 /* ── try topics until one publishes ──────────────────────────────────────────────────────────── */
+
+/*
+ * One sentence, one link, in an article that already talks about the same thing.
+ *
+ * Inserted before the Related Reading heading, which is generated: a link inside the generated block would
+ * not count as an editorial link and the checker excludes it. Candidates are scored on shared words in the
+ * title and tags, skipping the new file, anything still marked draft, anything the new guide itself links
+ * to (that would make a reciprocal pair the gate rejects), and anything that already links here.
+ */
+function addInboundLinks(topic) {
+  const newSlug = topic.slug;
+  const newPath = join(GUIDE_DIR, `${newSlug}.md`);
+  if (!existsSync(newPath)) return [];
+  const newSrc = readFileSync(newPath, "utf8");
+  const words = new Set(
+    `${topic.title} ${topic.topic} ${(topic.fetchKeywords ?? []).join(" ")}`
+      .toLowerCase()
+      .split(/[^a-z0-9\u4e00-\u9fff]+/)
+      .filter((w) => w.length > 3),
+  );
+  /* Outbound targets of the new guide, so the added link cannot create a reciprocal pair. */
+  const outbound = new Set([...newSrc.matchAll(/\]\(\/(blog|guide)\/([a-z0-9-]+)\/?\)/g)].map((m) => m[2]));
+
+  const dirs = [join(ROOT, "src", "content", "blog"), GUIDE_DIR];
+  const scored = [];
+  for (const dir of dirs) {
+    if (!existsSync(dir)) continue;
+    for (const f of readdirSync(dir).filter((x) => x.endsWith(".md"))) {
+      const slug = f.replace(/\.md$/, "");
+      if (slug === newSlug || outbound.has(slug)) continue;
+      const src = readFileSync(join(dir, f), "utf8");
+      if (/^draft:\s*true/m.test(src)) continue;
+      if (src.includes(`/${newSlug}/`)) continue;
+      if (!/^##\s*Related Reading/im.test(src) && !src.includes("## How confident")) continue;
+      const title = (/^title:\s*"?([^"\n]+)/m.exec(src) ?? [])[1] ?? "";
+      const tags = (/^tags:\s*(\[[^\]]*\])/m.exec(src) ?? [])[1] ?? "";
+      const hay = `${slug} ${title} ${tags}`.toLowerCase();
+      let score = 0;
+      for (const w of words) if (hay.includes(w)) score++;
+      if (score > 0) scored.push({ dir, f, slug, score });
+    }
+  }
+  scored.sort((a, b) => b.score - a.score);
+  const picked = [];
+  for (const c of scored.slice(0, 2)) {
+    const p = join(c.dir, c.f);
+    let src = readFileSync(p, "utf8");
+    const kind = c.dir === GUIDE_DIR ? "guide" : "blog";
+    const sentence = `For the paperwork and the cost in one place, see [${topic.title}](/${kind}/${newSlug}/).`;
+    const cut = src.search(/^##\s*Related Reading/im);
+    if (cut >= 0) src = src.slice(0, cut) + sentence + "\n\n" + src.slice(cut);
+    else src = src.trimEnd() + "\n\n" + sentence + "\n";
+    writeFileSync(p, src, "utf8");
+    picked.push(c.slug);
+  }
+  return picked;
+}
 
 let succeeded = null;
 for (const topic of candidates.slice(0, MAX_TOPICS)) {
