@@ -459,7 +459,9 @@
       "why": "",
       "directionMix": {
         "within-china": 79
-      }
+      },
+      "produced": "taken",
+      "producedAt": "2026-10-29"
     },
     {
       "moment": "policy",
