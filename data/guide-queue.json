@@ -516,7 +516,7 @@
       "unit": "one account",
       "title": "Opening a Chinese Bank Account on a Foreign Passport",
       "query": "opening bank account china foreigner documents",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.gov.cn/",
         "https://www.pbc.gov.cn/",
@@ -550,7 +550,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-10-29"
     },
     {
       "slug": "china-sim-card-real-name",

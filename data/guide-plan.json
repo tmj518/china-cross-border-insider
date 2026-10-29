@@ -1,57 +1,8 @@
 {
-  "at": "2026-10-28T14:06:42.270Z",
+  "at": "2026-10-29T04:54:23.675Z",
   "days": 90,
-  "gsc": false,
+  "gsc": true,
   "plan": [
-    {
-      "slug": "china-work-permit-points",
-      "topic": "work-visa",
-      "audience": [
-        "employee",
-        "employer"
-      ],
-      "unit": "one application",
-      "title": "China Work Permit: How the Points Work",
-      "query": "china work permit points calculator",
-      "status": "queued",
-      "source": "demand",
-      "demandBreadth": 2,
-      "sources": [
-        "http://www.mohrss.gov.cn/",
-        "https://www.gov.cn/",
-        "https://www.nia.gov.cn/n741445/n741624/index.html",
-        "https://hzf.mofcom.gov.cn/article/ggfw/crjfw/crjfwxx/202511/1037.html"
-      ],
-      "fetchKeywords": [
-        "工作许可",
-        "外国人来华工作",
-        "积分",
-        "work permit"
-      ],
-      "facts": [],
-      "mustSay": [
-        "Foreign workers are classified into categories, and the category decides what the employer must prove.",
-        "The classification weighs salary, education, age and work experience against each other.",
-        "A higher salary can offset a weaker qualification, and the reverse is also true.",
-        "The category is decided on the application, not negotiated with the employer."
-      ],
-      "avoid": [
-        "Do not state a score, a threshold or a salary level unless the fact sheet contains it."
-      ],
-      "priorityScore": 3.19,
-      "priorityWhy": {
-        "basis": "harvested",
-        "base": 3.19,
-        "demandImpressions": 0,
-        "demandBreadth": 2,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
-    },
     {
       "slug": "china-bank-account-foreigner",
       "topic": "residence",
@@ -419,5 +370,14 @@
       "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
     }
   ],
-  "pages": []
+  "pages": [
+    [
+      "144-hour-visa-free-transit",
+      {
+        "impressions": 2,
+        "clicks": 0,
+        "position": 86
+      }
+    ]
+  ]
 }

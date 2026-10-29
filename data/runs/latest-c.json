@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-28T14:08:04.421Z",
+  "at": "2026-10-29T04:54:45.985Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-work-permit-points",
-  "seconds": 37,
+  "article": "china-bank-account-foreigner",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0008
+    "usd": 0.002
   },
   "providers": [
     "volces"
@@ -22,27 +22,27 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding china-work-permit-points",
+      "name": "grounding china-bank-account-foreigner",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-work-permit-points",
+      "name": "gates china-bank-account-foreigner",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-work-permit-points",
+      "name": "build china-bank-account-foreigner",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-work-permit-points/"
+      "detail": "/guide/china-bank-account-foreigner/"
     }
   ],
   "researchLog": [
