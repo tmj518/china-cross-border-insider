@@ -82,6 +82,29 @@ function directionsOf(matrix, persona, moment) {
  * This returns the cells in order and lets the caller refuse the ones whose subject is already taken.
  * A mixed-direction cell is ranked lower rather than dropped: it is harder to write, not unusable.
  */
+/*
+ * WHICH CELLS THE SOURCES CAN ACTUALLY ANSWER.
+ *
+ * On 2026-10-29 the ranked list put expat/policy first - "china work permit points calculator" - and the run
+ * ended in INSUFFICIENT-EVIDENCE, correctly: the immigration service publishes categories, not a points
+ * table. The cell was not wrong to exist, it was wrong to try first, because the sources that answer from a
+ * runner are the customs, finance, tax and commerce ones, plus the four added for visas, transport and
+ * tuition.
+ *
+ * This vocabulary is derived from those sources, not guessed: customs and the tariff commission publish
+ * rates and clearance rules, the tax administration publishes rebate rates, the statistics bureau publishes
+ * PPI and CPI, the immigration service publishes visa categories and residence permits, the transport
+ * ministry publishes freight and ports, the education ministry publishes tuition and scholarships.
+ *
+ * A cell whose phrasings match none of it is still a real cell; it simply ranks last, because a run there
+ * ends with nothing to cite.
+ */
+const SOURCEABLE_TOPICS = /\b(tariff|duty|duties|customs|clearance|import|export|rebate|vat|tax|refund|ppi|cpi|inflation|freight|shipping|port|container|visa|residence|permit|tuition|scholarship|exchange rate|remittance|payment|labour cost|wage)\b/i;
+function sourceability(cell) {
+  const hits = (cell.samples ?? []).filter((s) => SOURCEABLE_TOPICS.test(String(s))).length;
+  return hits;
+}
+
 export function rankedCells(matrix, limit = 5) {
   const seen = new Set();
   return (matrix.cells ?? [])
@@ -99,7 +122,7 @@ export function rankedCells(matrix, limit = 5) {
       reason: `${c.calc ?? 0} computable, ${c.own ?? 0} intents`,
       matrix,
     }))
-    .sort((a, b) => Number(a.mixed) - Number(b.mixed) || b.computable - a.computable || b.intents - a.intents)
+    .map((c) => ({ ...c, sourceable: sourceability(c) }))
     .filter((c) => {
       const key = c.persona + "/" + c.moment;
       if (seen.has(key)) return false;
