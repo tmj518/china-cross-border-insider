@@ -420,8 +420,33 @@ function meter(entry) {
  *
  * The existing callers pass no tools and read only `text`, so adding the field changes nothing for them.
  */
+/*
+ * A PROVIDER THAT TIMED OUT ONCE WILL TIME OUT AGAIN IN THE SAME RUN.
+ *
+ * From a GitHub runner the Volcengine Ark endpoint does not answer: every call waits out the ceiling and
+ * then the fallback writes the article. The fallback is right; attempting Ark first on every one of the
+ * twenty-one calls in a run is not. On 2026-10-29 that was seven timeouts and most of an 81-second run.
+ *
+ * So a provider whose call timed out is parked for the rest of the process, and the next call goes
+ * straight to the provider that answers. The park is per process, not on disk: the next run tries again,
+ * because a route problem can clear.
+ */
+const DEAD_PROVIDERS = new Map();
+const PARK_MS = 15 * 60 * 1000;
+function parked(name) {
+  const until = DEAD_PROVIDERS.get(name);
+  return until && until > Date.now();
+}
+
 export async function ask({ role = "writer", model: modelOverride = "", messages, system, temperature = 0.2, maxTokens = 8192, avoidProvider = null, retries = 2, tools = null, toolChoice = null }) {
-  const providerName = providerFor(role, avoidProvider);
+  let providerName = providerFor(role, avoidProvider);
+  if (providerName && parked(providerName)) {
+    const other = providerFor(role, providerName);
+    if (other && !parked(other)) {
+      console.log(`  provider   : ${providerName} is parked after a timeout - going straight to ${other}`);
+      providerName = other;
+    }
+  }
   if (!providerName) {
     meter({ at: new Date().toISOString(), role, ok: false, error: "no provider key present", providers: available() });
     return {
@@ -621,7 +646,13 @@ export async function ask({ role = "writer", model: modelOverride = "", messages
        * the same route is three chances to wait the same wall again; the useful next move is the other
        * provider, which the block after this loop already does.
        */
-      if (/TimeoutError|timed out|ETIMEDOUT|AbortError/i.test(lastError)) break;
+      if (/TimeoutError|timed out|ETIMEDOUT|AbortError/i.test(lastError)) {
+          if (!parked(providerName)) {
+            DEAD_PROVIDERS.set(providerName, Date.now() + PARK_MS);
+            console.log(`  provider   : ${providerName} timed out - parked for the rest of this run`);
+          }
+          break;
+        }
       await sleep(2000 * (attempt + 1));
     }
   }
