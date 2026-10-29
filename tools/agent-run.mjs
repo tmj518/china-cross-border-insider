@@ -382,6 +382,8 @@ function fillRequiredMeta(src) {
    * cost a run - the list is filled to three, and the hedge words are replaced in the body only, never
    * inside a quotation, because a quoted sentence is evidence and must stay verbatim.
    */
+  /* The ledger cannot tell an agent article from a script one by its directory, so the line names itself. */
+  if (!get("route")) { set("route", "agent"); changed.push('route = "agent"'); }
   const AUDIENCE_FILL = ["importer", "exporter", "service-provider"];
   const aud = get("audience");
   const audCount = (aud.match(/[a-z-]+/g) ?? []).filter((x) => x !== "audience").length;
