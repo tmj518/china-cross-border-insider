@@ -525,7 +525,11 @@
       "why": "",
       "directionMix": {
         "within-china": 53
-      }
+      },
+      "produced": "published",
+      "producedAt": "2026-10-29",
+      "slug": "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
+      "publishedOn": "2026-10-29"
     }
   ],
   "intents": [
