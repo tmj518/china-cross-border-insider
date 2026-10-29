@@ -45,7 +45,7 @@ import { join, relative } from "node:path";
 import { execFileSync } from "node:child_process";
 import { ask, summary as providerSummary, usageToday } from "./lib-llm.mjs";
 import { looksDuplicate, slugSubject } from "./lib-duplicate.mjs";
-import { loadMatrix, nextCell, markCell, intentSamples } from "./lib-cells.mjs";
+import { loadMatrix, nextCell, markCell, intentSamples, rankedCells } from "./lib-cells.mjs";
 
 const ROOT = process.cwd();
 /*
@@ -595,7 +595,34 @@ const CELL = (() => {
   try {
     const matrix = loadMatrix();
     if (!matrix) return null;
-    const picked = nextCell(matrix);
+    /*
+     * FIVE CANDIDATES, AND THE TAKEN ONES ARE SKIPPED WITHOUT APOLOGY.
+     *
+     * The cell list is ranked; a cell whose top phrasing already matches a published subject is refused
+     * and the next one is tried, up to five. When all five are taken the verdict is NO-SUBJECT and the log
+     * names the five, because "nothing to write" and "everything I found is already written" are different
+     * facts and only one of them means the source is too narrow.
+     */
+    const publishedSubjects = new Set(
+      ["src/content/blog", "src/content/guide"].flatMap((d) => {
+        try { return readdirSync(join(ROOT, d)).filter((f) => f.endsWith(".md")).map((f) => slugSubject(f.replace(/\.md$/, ""))); }
+        catch { return []; }
+      }),
+    );
+    const tried = [];
+    let picked = null;
+    for (const candidate of rankedCells(matrix, 5)) {
+      if (publishedSubjects.has(slugSubject(candidate.samples[0] ?? ""))) {
+        console.log("  cell " + candidate.persona + "/" + candidate.moment + " skipped: subject already published (" + candidate.samples[0] + ")");
+        tried.push(candidate.persona + "/" + candidate.moment);
+        continue;
+      }
+      picked = candidate;
+      break;
+    }
+    if (!picked && tried.length) {
+      console.log("  no usable cell after " + tried.length + " attempt(s): " + tried.join(", "));
+    }
     if (!picked) return null;
     markCell(matrix, picked.persona, picked.moment, "taken");
     console.log(`  cell      : ${picked.persona} x ${picked.moment} [${picked.direction}] ${picked.reason}`);
