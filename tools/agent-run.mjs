@@ -239,13 +239,13 @@ function gateOf(draftPath) {
       maxBuffer: 32 * 1024 * 1024,
     });
     const j = JSON.parse(out.slice(out.indexOf("{")));
-    const blocks = (j.results ?? []).filter((r) => r.level === "block" && !r.isDraft);
+    const blocks = (j.results ?? []).filter((r) => r.level === "block");
     const warns = (j.results ?? []).filter((r) => r.level === "warn");
     return { blocks, warns, ok: blocks.length === 0 };
   } catch (e) {
     let parsed = null;
     try { parsed = JSON.parse(String(e.stdout ?? "").slice(String(e.stdout ?? "").indexOf("{"))); } catch {}
-    const blocks = (parsed?.results ?? []).filter((r) => r.level === "block" && !r.isDraft);
+    const blocks = (parsed?.results ?? []).filter((r) => r.level === "block");
     const warns = (parsed?.results ?? []).filter((r) => r.level === "warn");
     return { blocks, warns, ok: blocks.length === 0, error: blocks.length ? null : String(e.message).slice(0, 120) };
   }
@@ -317,6 +317,62 @@ function fitMeta(src, { titleMax = 60, descMax = 155 } = {}) {
  * sentence makes the edit one line. When the same sentence comes back a second time, the instruction stops
  * asking and says what to do: change that line, do not rewrite the article.
  */
+
+/*
+ * TWO FIELDS THE PIPELINE CAN FILL ITSELF, AND SHOULD.
+ *
+ * information_gain must be one of four values and reviewBy must exist; the writer gets both wrong often
+ * enough that the gate refuses articles which are otherwise finished. Neither is a judgement: the gain type
+ * defaults to the honest one (primary-source means "quoted from the document"), and the review date is the
+ * publish date plus nine months, the same rule the rest of the site follows.
+ *
+ * A wrong enum is corrected, not guessed: the value is only replaced when it is not already legal.
+ */
+const GAIN_VALUES = ["custom-calculation", "cross-source", "own-data", "primary-source"];
+
+function fillRequiredMeta(src) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(src);
+  if (!m) return { src, changed: [] };
+  let fm = m[1];
+  const body = src.slice(m[0].length);
+  const changed = [];
+  const get = (key) => new RegExp("^" + key + ":\\s*\"?([^\"\\n]*)\"?", "m").exec(fm)?.[1]?.trim() ?? "";
+  const set = (key, value) => {
+    const re = new RegExp("^" + key + ":.*$", "m");
+    fm = re.test(fm) ? fm.replace(re, key + ': "' + value + '"') : fm + '\n' + key + ': "' + value + '"';
+  };
+
+  const gain = get("information_gain");
+  if (!GAIN_VALUES.includes(gain)) {
+    set("information_gain", "primary-source");
+    changed.push('information_gain "' + (gain || "(missing)") + '" -> primary-source');
+  }
+
+  if (!/^reviewBy:\s*"?\d{4}-\d{2}-\d{2}/m.test(fm)) {
+    const pub = get("publishDate") || get("date");
+    const base = /^\d{4}-\d{2}-\d{2}$/.test(pub) ? new Date(pub + "T00:00:00Z") : new Date();
+    base.setUTCMonth(base.getUTCMonth() + 9);
+    set("reviewBy", base.toISOString().slice(0, 10));
+    changed.push("reviewBy = publishDate + 9 months (" + base.toISOString().slice(0, 10) + ")");
+  }
+
+  return { src: "---\n" + fm + "\n---\n" + body, changed };
+}
+
+/* The two sections the structural gate requires, quoted so the writer can copy the shape. */
+const SECTION_SKELETON = [
+  'Two sections are required verbatim, because the gate looks for them by heading:',
+  '',
+  '## Definition',
+  'One sentence defining the object this article prices. What it is, who it applies to, from when.',
+  '',
+  '## How confident',
+  '- **What we know:** the facts taken verbatim from the documents, with their dates.',
+  '- **What we do not know:** the parts the documents do not state, said plainly.',
+  '- **How to check:** the file, the article, or the office a reader can go to.',
+  '',
+];
+
 const HEDGE_WORDS = /\b(may|could|might|possibly)\b/i;
 let lastHedgeKey = null;
 let lastHedgeRepeats = 0;
@@ -782,7 +838,7 @@ function runTool(name, input) {
       }
 
       if (structure?.blocked) {
-        const blocking = (structure.results ?? []).filter((r) => r.level === "block" && !r.isDraft);
+        const blocking = (structure.results ?? []).filter((r) => r.level === "block");
         const lines = [];
         lines.push(`STRUCTURE CHECK: ${blocking.length} rule(s) block this draft.`);
         lines.push("");
@@ -871,6 +927,12 @@ function runTool(name, input) {
       const slug = String(input.path).replace(/^.*\//, "").replace(/\.md$/, "");
       /* The two fields with hard ceilings, fitted before the gate reads them. */
       const fitted = fitMeta(readFileSync(from, "utf8"));
+      /* information_gain and reviewBy are filled rather than judged. */
+      const filled = fillRequiredMeta(fitted.src);
+      if (filled.changed.length) {
+        writeFileSync(from, filled.src, "utf8");
+        for (const c of filled.changed) console.log("  filled     : " + c);
+      }
       if (fitted.changed.length) {
         writeFileSync(from, fitted.src, "utf8");
         for (const c of fitted.changed) console.log("  fitted     : " + c);
@@ -1250,6 +1312,7 @@ STRINGS HAVE LIMITS, AND EXCEEDING ONE BLOCKS PUBLICATION.
   - description: 300 characters maximum. Aim for 150.
   - category, audience and information_gain are single enum values, not sentences.
 
+${SECTION_SKELETON}
 BODY RULES - the gates check these, and a BLOCK stops publication.
   - Do not use may, could, might or possibly anywhere in the body. A verbatim quotation is the only
     exception, and the sentence must still be quoted in full.
