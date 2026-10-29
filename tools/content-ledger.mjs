@@ -47,6 +47,7 @@ const COLUMNS = [
   "画像",
   "来源完整率",
   "commit",
+  "路线",
 ];
 
 /* ── read the corpus ─────────────────────────────────────────────────────────────────────────── */
@@ -97,6 +98,7 @@ function load(dir, kind, urlFor) {
       audience: quoted(fm, "audience"),
     moment: quoted(fm, "moment"),
     cellPersona: quoted(fm, "cellPersona"),
+    route: quoted(fm, "route"),
       withSource: (fm.match(/^    source:/gm) ?? []).length,
       filePath: relative(ROOT, join(dir, f)),
     });
@@ -148,6 +150,31 @@ function qaFor(r) {
   return m ? `${m[1]} pass / ${m[3]} block` : `qa-check exit ${res.status}`;
 }
 
+/*
+ * The run records know which route published a slug, even for articles written before the frontmatter
+ * carried it. Read once, indexed by slug. A run that published nothing contributes nothing.
+ */
+const ROUTE_BY_SLUG = (() => {
+  const map = new Map();
+  try {
+    const dir = join(ROOT, "data", "runs");
+    for (const f of readdirSync(dir).filter((x) => x.endsWith(".json"))) {
+      try {
+        const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
+        const route = j.route === "c" ? "c" : j.route === "agent" ? "agent" : j.route === "script" ? "script" : null;
+        if (!route) continue;
+        for (const p of j.published ?? []) map.set(p, route);
+        if (j.article) map.set(String(j.article), route);
+      } catch {}
+    }
+  } catch {}
+  return map;
+})();
+function routeFromRuns(key) {
+  const slug = String(key).replace(/^[a-z]+:/, "");
+  return ROUTE_BY_SLUG.get(slug) ?? null;
+}
+
 const records = rows.map((r) => ({
   编号: r.key,
   类型: r.kind === "blog" ? "analysis" : "guide",
@@ -166,6 +193,14 @@ const records = rows.map((r) => ({
   画像: (r.cellPersona || String(r.audience ?? "").replace(/[\[\]\"']/g, "")).slice(0, 60) || "未标注",
   来源完整率: r.figures ? Number((r.withSource / r.figures).toFixed(2)) : 0,
   commit: (() => { try { return execFileSync("git", ["log", "-1", "--format=%h", "--", r.filePath], { cwd: ROOT, encoding: "utf8" }).trim() || "-"; } catch { return "-"; } })(),
+  /*
+   * WHICH LINE WROTE THIS, IN THAT ORDER, AND NEVER FROM THE DIRECTORY.
+   *
+   * blog/ holds both script and agent articles, so the path cannot tell them apart and guessing would
+   * put a confident wrong value in the column. Frontmatter first, then the run record for that slug,
+   * then an explicit 未标注.
+   */
+  路线: r.route || routeFromRuns(r.key) || "未标注",
 }));
 
 /* ── output ──────────────────────────────────────────────────────────────────────────────────── */

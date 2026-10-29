@@ -1,4 +1,5 @@
 ---
+route: "c"
 title: "Work Permit Notification: Get It Before the"
 description: "How to obtain the work permit notification from the science and technology authority before applying for the Z visa."
 topic: "work-visa"

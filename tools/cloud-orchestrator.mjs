@@ -1010,6 +1010,13 @@ if (wroteIt && qaCode === 0) {
    */
   const target = join(ROOT, "src", "content", "blog", `${slug}.md`);
   try {
+    /*
+     * The ledger asks each writer to record which line produced the piece, and guessing from the
+     * directory is forbidden because blog contains script and agent articles alike. The script route
+     * therefore stamps its own name into the frontmatter on the way in, before the file is read.
+     */
+    const stagedSrc = readFileSync(draftPath, "utf8").replace(/^---\r?\n/, '---\nroute: "script"\n');
+    writeFileSync(draftPath, stagedSrc, "utf8");
     writeFileSync(target, readFileSync(draftPath, "utf8"), "utf8");
     published = true;
     step("publish", true, `staged at src/content/blog/${slug}.md`);

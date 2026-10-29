@@ -25,6 +25,7 @@
  *
  * Nothing here is a gate. It answers a question, and the answer decides the architecture.
  */
+import { CANDIDATES } from "./sources.mjs";
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -39,23 +40,11 @@ const UA =
  * The sources that matter, with what each is for. Ordered by value to the pipeline rather than
  * alphabetically, because if only some come through the order is the answer.
  */
-const TARGETS = [
-  ["cacs.mofcom.gov.cn", "https://cacs.mofcom.gov.cn/", "trade remedies: the highest-value entry, foreign anti-dumping against China"],
-  ["gss.mof.gov.cn", "http://gss.mof.gov.cn/gzdt/", "Tariff Commission: rate schedules and adjustments"],
-  ["mof.gov.cn", "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/", "Ministry of Finance: tax and subsidy notices"],
-  ["mofcom.gov.cn", "https://www.mofcom.gov.cn/zfxxgk/", "MOFCOM: trade policy and announcements"],
-  ["stats.gov.cn", "https://www.stats.gov.cn/sj/zxfb/", "NBS: PPI, CPI, industrial profit"],
-  ["chinatax.gov.cn", "https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html", "STA: export tax rebate rates"],
-  ["miit.gov.cn", "https://www.miit.gov.cn/zwgk/zcwj/index.html", "MIIT: industrial policy and access rules"],
-  ["samr.gov.cn", "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/", "SAMR: standards, certification, inspections"],
-  ["safe.gov.cn", "https://www.safe.gov.cn/safe/whxw/index.html", "SAFE: exchange rates and cross-border capital"],
-  ["customs.gov.cn", "http://www.customs.gov.cn/", "GACC Chinese: known 412 site-wide, included to confirm it stays that way"],
-  ["english.customs.gov.cn", "http://english.customs.gov.cn/Legislation/Announcement", "GACC English announcements: read but stale since 2023"],
-  ["eur-lex.europa.eu", "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:C_202604924", "EUR-Lex: 202 to a plain fetch, needs a browser"],
-  ["tron.trade.ec.europa.eu", "https://tron.trade.ec.europa.eu/investigations", "EU trade defence register: client-rendered, XML endpoint read separately"],
-  ["api.indexnow.org", "https://api.indexnow.org/indexnow", "IndexNow: the submission step, checked for reachability only"],
-  ["registry.npmjs.org", "https://registry.npmjs.org/astro", "npm registry: needed by install, so a failure here explains a failed run"],
-];
+/*
+ * THE ONE LIST, IMPORTED. Two lists drift: the probe tested fifteen hosts while the pipeline had
+ * eighteen, and the five added for visas, students and payments had never been checked at all.
+ */
+const TARGETS = CANDIDATES.map(([url, , why]) => [new URL(url).hostname, url, why]);
 
 const t0 = Date.now();
 const rows = [];

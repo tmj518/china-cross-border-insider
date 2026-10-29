@@ -1561,6 +1561,8 @@ if (published.size === 0) {
             const re = new RegExp("^" + key + ":.*$", "m");
             fm = re.test(fm) ? fm.replace(re, key + ": " + value) : fm + "\n" + key + ": " + value;
           };
+          /* The ledger reads this; the directory cannot tell an agent article from a script one. */
+          set("route", '"agent"');
           const GAIN = ["custom-calculation", "cross-source", "own-data", "primary-source"];
           const gainRaw = (/^information_gain:\s*"?([^"\n]*)"?/m.exec(fm) ?? [])[1]?.trim() ?? "";
           set("information_gain", GAIN.includes(gainRaw) ? gainRaw : "primary-source");

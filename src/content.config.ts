@@ -291,6 +291,7 @@ export const guide = defineCollection({
      */
     moment: z.enum(["buy", "arrive", "live", "leave", "policy"]).optional(),
     cellPersona: z.enum(["platform-seller", "importer", "bri", "student", "expat"]).optional(),
+    route: z.enum(["script", "agent", "c"]).optional(),
     draft: z.boolean().default(false),
   }),
 });
