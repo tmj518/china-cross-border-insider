@@ -1,4 +1,167 @@
 {
-  "consumedAt": "2026-10-29T04:49:20.433Z",
-  "lastArticle": "china-brazil-beef-safeguard-55-percent-trigger-2026"
+  "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
+  "_generated": "2026-10-29T05:00:28.944Z",
+  "_research": {
+    "fetched": [
+      {
+        "url": "https://policy.trade.ec.europa.eu/news/screening-foreign-direct-investment-continues-advance-eu-security-and-public-order-2026-10-14_en",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-m3476.html",
+        "bytes": 77027
+      },
+      {
+        "url": "https://policy.trade.ec.europa.eu/news/commission-acts-against-imports-pea-protein-china-2026-09-25_en",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-2jabw.html",
+        "bytes": 73816
+      },
+      {
+        "url": "https://policy.trade.ec.europa.eu/news/demand-trade-defence-action-eu-commitment-tackle-unfair-trade-remain-strong-2025-2026-09-18_en",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-enp7m.html",
+        "bytes": 77485
+      },
+      {
+        "url": "https://policy.trade.ec.europa.eu/news/commission-imposes-provisional-safeguard-measures-imports-grain-oriented-electrical-steel-2026-09-18_en",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html",
+        "bytes": 76402
+      },
+      {
+        "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189610&type=11",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-1et6w.html",
+        "bytes": 26832
+      },
+      {
+        "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189411&type=11",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-heyr4.html",
+        "bytes": 40492
+      },
+      {
+        "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189379&type=11",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-7uv2q.html",
+        "bytes": 24436
+      },
+      {
+        "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189382&type=11",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-36ltm.html",
+        "bytes": 19137
+      },
+      {
+        "url": "http://jkw.mof.gov.cn/zhengcefabu/202610/t20261014_4002838.htm",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-z0kq2.html",
+        "bytes": 34071
+      },
+      {
+        "url": "http://jrs.mof.gov.cn/zhengcefabu/phjr/202609/t20260929_3998312.htm",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-p6qd8.html",
+        "bytes": 19579
+      },
+      {
+        "url": "http://gks.mof.gov.cn/guizhangzhidu/202609/t20260911_3997286.htm",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-eq49w.html",
+        "bytes": 29056
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/zfxxgk/zfxxgkzd/zdgkjbml/art/2018/art_d575b31272dc4ed89cf9726441603252.html",
+        "file": "data/sources/2026-10-29/research-mofcom-article-qd9t4.html",
+        "bytes": 14343
+      },
+      {
+        "url": "https://policy.trade.ec.europa.eu/news_en",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-z6xqu.html",
+        "bytes": 97418
+      },
+      {
+        "url": "https://cacs.mofcom.gov.cn/",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-gm2oo.html",
+        "bytes": 62691
+      },
+      {
+        "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-4e5qg.html",
+        "bytes": 20830
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/zfxxgk/",
+        "file": "data/sources/2026-10-29/research-mofcom-wqh9t.html",
+        "bytes": 161774
+      },
+      {
+        "url": "https://www.stats.gov.cn/sj/zxfb/",
+        "file": "data/sources/2026-10-29/research-statistics-bureau-qttr0.html",
+        "bytes": 72810
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html",
+        "file": "data/sources/2026-10-29/research-tax-administration-lgx2v.html",
+        "bytes": 37502
+      }
+    ],
+    "model": "volces/ep-20251220175517-rjpsc",
+    "spentUsd": 0,
+    "duplicateScore": 0,
+    "duplicateAgainst": null
+  },
+  "slug": "eu-grain-oriented-electrical-steel-provisional-safeguard-measures-2026-importer-rules",
+  "title_idea": "EU imposes provisional safeguard measures on grain-oriented electrical steel imports from 18 September 2026",
+  "keyword": "EU provisional safeguard measures grain-oriented electrical steel 2026 importer cost",
+  "category": "trade-policy",
+  "audience": "importer",
+  "angle": "This article lets importers of grain-oriented electrical steel, laminations, cores and finished transformers plan their supply chains and cost calculations to comply with the new provisional EU safeguard rules that took effect 18 September 2026.",
+  "figures": [
+    {
+      "value": "nine months",
+      "unit": "standard maximum safeguard investigation duration",
+      "period": "applicable to all EU safeguard investigations",
+      "source": "European Commission Directorate-General for Trade and Economic Security",
+      "retrieved": "2026-10-29",
+      "evidence": "A safeguard investigation must normally be completed within nine months but, in exceptional circumstances, may be extended to 11 months.",
+      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html"
+    },
+    {
+      "value": "11 months",
+      "unit": "maximum extended safeguard investigation duration",
+      "period": "applicable to exceptional EU safeguard investigation cases",
+      "source": "European Commission Directorate-General for Trade and Economic Security",
+      "retrieved": "2026-10-29",
+      "evidence": "A safeguard investigation must normally be completed within nine months but, in exceptional circumstances, may be extended to 11 months.",
+      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html"
+    },
+    {
+      "value": "15",
+      "unit": "minimum number of EU Member States required to vote in favour for definitive safeguard measures to enter into force",
+      "period": "for the GOES safeguard definitive measure vote",
+      "source": "European Commission Directorate-General for Trade and Economic Security",
+      "retrieved": "2026-10-29",
+      "evidence": "This means that at least 15 EU Member States representing 65% of the EU’s population must vote in favour of the Commission's proposal.",
+      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html"
+    },
+    {
+      "value": "65%",
+      "unit": "minimum share of EU population represented by voting Member States required for definitive safeguard measures to enter into force",
+      "period": "for the GOES safeguard definitive measure vote",
+      "source": "European Commission Directorate-General for Trade and Economic Security",
+      "retrieved": "2026-10-29",
+      "evidence": "This means that at least 15 EU Member States representing 65% of the EU’s population must vote in favour of the Commission's proposal.",
+      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html"
+    },
+    {
+      "value": "March 2026",
+      "unit": "GOES safeguard investigation launch date",
+      "period": "start of the formal investigation period",
+      "source": "European Commission Directorate-General for Trade and Economic Security",
+      "retrieved": "2026-10-29",
+      "evidence": "After analysing input received from interested parties during an investigation launched in March 2026 , the Commission concluded that provisional measures were urgently needed to protect a strategic EU industry that is under threat from high import pressure – fuelled by global overcapacities and the closure of traditional export markets.",
+      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html"
+    },
+    {
+      "value": "18 September 2026",
+      "unit": "provisional GOES safeguard measures imposition date",
+      "period": "effective start date of the provisional tariff-rate quota and price threshold rules",
+      "source": "European Commission Directorate-General for Trade and Economic Security",
+      "retrieved": "2026-10-29",
+      "evidence": "Today, the European Commission imposed provisional safeguard measures on imports of grain-oriented electrical steel products, in the form of tariff-rate quotas coupled with price thresholds.",
+      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-bdh19.html"
+    }
+  ],
+  "sources": [
+    "European Commission Directorate-General for Trade and Economic Security, 18 September 2026: Commission imposes provisional safeguard measures on imports of grain-oriented electrical steel"
+  ]
 }
