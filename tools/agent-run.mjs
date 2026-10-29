@@ -154,7 +154,23 @@ const MAX_TURNS = Number(flag("max-turns", 10));
  * Four is enough for the directive, a research call, a look at the draft and one correction. Everything past that
  * is refused, and the refusal says to write.
  */
-const PREP_TURNS = 4;
+const PREP_TURNS = 7;   /* 4 was not enough: the run stopped at the index pages */
+
+/*
+ * THE SOURCES THAT MUST BE TRIED, BY MOMENT, AND A TIMEOUT IS NOT AN ANSWER.
+ *
+ * The 2026-10-29 run fetched four index pages, found no tax-refund rate, and closed its reading phase
+ * before trying the tax administration - then reported INSUFFICIENT-EVIDENCE. The reading was correct and
+ * the search was not: a source that times out is a route problem, and the next source is the answer.
+ */
+const MANDATORY_SOURCES = {
+  leave: ["https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html", "http://www.customs.gov.cn/customs/302249/index.html", "https://english.www.gov.cn/"],
+  live: ["https://www.nia.gov.cn/n741440/n741567/index.html", "http://en.moe.gov.cn/", "https://english.www.gov.cn/"],
+  buy: ["http://www.customs.gov.cn/customs/302249/index.html", "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/", "https://cacs.mofcom.gov.cn/"],
+  policy: ["https://www.mofcom.gov.cn/zfxxgk/", "https://english.www.gov.cn/"],
+  arrive: ["https://www.nia.gov.cn/n741440/n741567/index.html", "https://english.www.gov.cn/"],
+};
+function mandatoryFor(moment) { return MANDATORY_SOURCES[moment] ?? MANDATORY_SOURCES.policy; }
 
 /*
  * A HARD DOLLAR CEILING, because turns are not money.
@@ -651,6 +667,10 @@ Questions people actually typed:
 
 ${CELL.samples.map((q, i) => `  ${i + 1}. ${q}`).join("\n")}
 
+Sources to try, in this order. If one returns nothing or times out, go to the next - a dead route is not
+evidence that the number does not exist:
+${mandatoryFor(CELL.moment).map((u) => "  " + u).join("\n")}
+
 Rules for this article:
   - Every figure must be quoted verbatim from an official page you actually fetched, with its source and
     retrieval date. No estimate, no range, no "typically".
@@ -658,6 +678,11 @@ Rules for this article:
     Call finish with verdict INSUFFICIENT-EVIDENCE and say which sources you tried and which figure was
     missing. A missing number reported is worth more than a plausible number invented.
   - This is a demand-driven article: it exists because those questions were typed, not because a ministry
+     - PROCEDURAL RULE: if after trying the sources above there is still no figure with a source, do not
+       stop. Write the procedure instead - who qualifies, what documents are needed, the order of the steps,
+       what conditions block it, and the usual reasons an application is sent back. Set figures: [] and use
+       information_gain: "primary-source". NO number may appear in the body: no amount, no rate, no number of
+       days, no threshold. Describe the shape of the process, never its arithmetic.
     published something.`
   : "";
 const checkedOk = new Set();
