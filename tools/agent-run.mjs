@@ -1697,10 +1697,21 @@ if (published.size === 0) {
          * The first six slug segments are identical, and that is the subject.
          */
         const draftSubject = slugSubject(newest.f.replace(/\.md$/, ""));
+        /*
+         * NEVER COMPARE A FILE WITH ITSELF.
+         *
+         * The draft lives in data/drafts, but the same slug can already be in the collection from an earlier
+         * run, and the comparison then reports "same subject as <its own name>" - true and useless, because the
+         * run is refused for being a duplicate of itself and nothing gets written. The self entry is skipped and
+         * said so, so the log shows the skip rather than a mystery.
+         */
         const clash = readdirSync(join(ROOT, "src", "content", "blog"))
-          .filter((f) => f.endsWith(".md"))
+          .filter((f) => f.endsWith(".md") && f !== newest.f)
           .map((f) => ({ f, s: slugSubject(f.replace(/\.md$/, "")) }))
           .find((x) => x.s === draftSubject);
+        if (!clash && readdirSync(join(ROOT, "src", "content", "blog")).includes(newest.f)) {
+          console.log("  self-match ignored: " + newest.f + " is in the collection under the same name");
+        }
         if (clash) {
           console.log("  forced submission refused: " + newest.f + " - same subject as " + clash.f);
           if (!finished) finished = { verdict: "DUPLICATE-SUBJECT", summary: "the draft covers the same event as " + clash.f + " (identical first six slug segments), so it was not published." };
