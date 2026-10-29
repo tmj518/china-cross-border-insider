@@ -34,6 +34,9 @@ export const CANDIDATES = [
   ["https://www.caac.gov.cn/XXGK/XXGK/", "caac", "CAAC: aviation rules, passenger and cargo carriage"],
   ["https://www.mot.gov.cn/", "mot", "Ministry of Transport: shipping, ports and freight rates"],
   ["https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/", "samr", "SAMR: product standards, labelling, market access"],
+  ["https://www.gov.cn/zhengce/zuixin/", "state-council-policy", "the State Council's latest policy releases, the one page that carries housing, tax and customs notices together"],
+  ["https://www.mohurd.gov.cn/", "housing", "Ministry of Housing: property measures, mortgage policy, developer rules"],
+  ["https://www.ndrc.gov.cn/", "ndrc", "NDRC: macro policy, prices, investment rules"],
   ["http://en.moe.gov.cn/", "moe-en", "Ministry of Education in English: student costs, tuition, scholarships"],
   /*
    * Industry chambers, listed last on purpose. An association reports what its members are hitting, which is the
