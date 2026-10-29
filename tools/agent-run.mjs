@@ -127,7 +127,7 @@ memory. The probes cost almost nothing; a fabricated article costs the site its 
 You have three turns for probing. From turn four those three tools stop answering and only writing tools work, so
 probe first and write second.`;
 
-const SUBMIT_NOTE = "SUBMIT AT TURN TEN: if check_draft is still reporting problems at turn ten, stop editing. Call publish_draft on the best draft you have. A published article that the checker disliked is worth more than a perfect draft that never shipped, and the operator reads the checker's complaint on the card either way.";
+const SUBMIT_NOTE = "SUBMIT AT TURN FOURTEEN: if check_draft is still reporting problems at turn fourteen, stop editing. Call publish_draft on the best draft you have. A published article that the checker disliked is worth more than a perfect draft that never shipped, and the operator reads the checker's complaint on the card either way.";
 
 /*
  * Fifteen turns, locked.
@@ -136,7 +136,7 @@ const SUBMIT_NOTE = "SUBMIT AT TURN TEN: if check_draft is still reporting probl
  * and spent sixty-nine cents arriving nowhere. A budget that a run cannot finish inside is not a budget. Fifteen turns,
  * and the last two are for submitting rather than editing.
  */
-const MAX_TURNS = Number(flag("max-turns", 10));
+const MAX_TURNS = Number(flag("max-turns", 16));
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
