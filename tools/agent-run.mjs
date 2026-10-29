@@ -1773,8 +1773,21 @@ if (published.size === 0) {
           .filter((f) => f.endsWith(".md") && f !== newest.f)
           .map((f) => ({ f, s: slugSubject(f.replace(/\.md$/, "")) }))
           .find((x) => x.s === draftSubject);
-        if (!clash && readdirSync(join(ROOT, "src", "content", "blog")).includes(newest.f)) {
-          console.log("  self-match ignored: " + newest.f + " is in the collection under the same name");
+        /*
+         * A FILENAME IN THE COLLECTION IS A LIVE PAGE, NOT A SELF-MATCH.
+         *
+         * This branch used to log "self-match ignored" and continue, on the theory that the draft was being
+         * compared with itself. It was not: data/drafts is a different directory, so a name that exists in
+         * src/content/blog is a page readers can open. On 2026-10-29 the fallback wrote a new article over
+         * eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026, which had been live since
+         * 2026-10-26, and reported the run as PUBLISHED-DEGRADED.
+         *
+         * Refused. The subject is taken; the next cell is the answer, not a quieter overwrite.
+         */
+        if (readdirSync(join(ROOT, "src", "content", "blog")).includes(newest.f)) {
+          console.log("  forced submission refused: " + newest.f + " is already a live page");
+          if (!finished) finished = { verdict: "DUPLICATE-SUBJECT", summary: newest.f + " is already published at that URL, so the draft was not written over it." };
+          throw new Error("duplicate-subject");
         }
         if (clash) {
           console.log("  forced submission refused: " + newest.f + " - same subject as " + clash.f);
