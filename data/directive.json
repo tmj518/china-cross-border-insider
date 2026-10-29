@@ -1,197 +1,198 @@
 {
   "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
-  "_generated": "2026-10-29T12:22:37.950Z",
+  "_generated": "2026-10-29T12:37:02.327Z",
   "_research": {
     "fetched": [
       {
         "url": "https://policy.trade.ec.europa.eu/news/screening-foreign-direct-investment-continues-advance-eu-security-and-public-order-2026-10-14_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-d838g.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-iplsx.html",
         "bytes": 77027
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news/commission-acts-against-imports-pea-protein-china-2026-09-25_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-i4w6g.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-wmefe.html",
         "bytes": 73816
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news/demand-trade-defence-action-eu-commitment-tackle-unfair-trade-remain-strong-2025-2026-09-18_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-sgzqm.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-ireos.html",
         "bytes": 77485
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news/commission-imposes-provisional-safeguard-measures-imports-grain-oriented-electrical-steel-2026-09-18_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html",
+        "file": "data/sources/2026-10-29/research-eu-trade-news-article-s6wjk.html",
         "bytes": 76402
       },
       {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189610&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-1o3xw.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-jg2uz.html",
         "bytes": 26832
       },
       {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189411&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-dtj4o.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-x0qin.html",
         "bytes": 40492
       },
       {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189379&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-zu30w.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html",
         "bytes": 24436
       },
       {
         "url": "https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189382&type=11",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-gac8h.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-article-h5sg6.html",
         "bytes": 19137
       },
       {
         "url": "http://jkw.mof.gov.cn/zhengcefabu/202610/t20261014_4002838.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-hnrfh.html",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-ffmrl.html",
         "bytes": 34071
       },
       {
         "url": "http://jrs.mof.gov.cn/zhengcefabu/phjr/202609/t20260929_3998312.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-dk48b.html",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-ypc8l.html",
         "bytes": 19579
       },
       {
-        "url": "http://gks.mof.gov.cn/guizhangzhidu/202609/t20260911_3997286.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-92atv.html",
-        "bytes": 29056
-      },
-      {
         "url": "http://jrs.mof.gov.cn/zhengcefabu/phjr/202609/t20260911_3997257.htm",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-42t2o.html",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-article-lsjhd.html",
         "bytes": 28758
       },
       {
         "url": "https://www.mofcom.gov.cn/zfxxgk/zfxxgkzd/zdgkjbml/art/2018/art_d575b31272dc4ed89cf9726441603252.html",
-        "file": "data/sources/2026-10-29/research-mofcom-article-7ggco.html",
+        "file": "data/sources/2026-10-29/research-mofcom-article-m6ffl.html",
         "bytes": 14343
       },
       {
         "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261027_1965697.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-nh0yl.html",
+        "file": "data/sources/2026-10-29/research-statistics-bureau-article-8c86o.html",
         "bytes": 496021
       },
       {
         "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261023_1965679.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-f92t3.html",
+        "file": "data/sources/2026-10-29/research-statistics-bureau-article-njg8c.html",
         "bytes": 437294
       },
       {
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261023_1965677.html",
+        "file": "data/sources/2026-10-29/research-statistics-bureau-article-abs1g.html",
+        "bytes": 321174
+      },
+      {
         "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-article-boo20.html",
+        "file": "data/sources/2026-10-29/research-statistics-bureau-article-9x74y.html",
         "bytes": 267616
       },
       {
         "url": "https://policy.trade.ec.europa.eu/news_en",
-        "file": "data/sources/2026-10-29/research-eu-trade-news-02pyp.html",
-        "bytes": 97418
+        "file": "data/sources/2026-10-29/research-eu-trade-news-tednz.html",
+        "bytes": 97417
       },
       {
         "url": "https://cacs.mofcom.gov.cn/",
-        "file": "data/sources/2026-10-29/research-trade-remedy-cases-53plp.html",
+        "file": "data/sources/2026-10-29/research-trade-remedy-cases-ws6uf.html",
         "bytes": 62643
       },
       {
         "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/",
-        "file": "data/sources/2026-10-29/research-ministry-of-finance-wevsh.html",
+        "file": "data/sources/2026-10-29/research-ministry-of-finance-ilw6v.html",
         "bytes": 20830
       },
       {
         "url": "https://www.mofcom.gov.cn/zfxxgk/",
-        "file": "data/sources/2026-10-29/research-mofcom-p8n82.html",
+        "file": "data/sources/2026-10-29/research-mofcom-ij2sx.html",
         "bytes": 161774
       },
       {
         "url": "https://www.stats.gov.cn/sj/zxfb/",
-        "file": "data/sources/2026-10-29/research-statistics-bureau-tl7gc.html",
+        "file": "data/sources/2026-10-29/research-statistics-bureau-meid9.html",
         "bytes": 72810
       },
       {
         "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810755/index.html",
-        "file": "data/sources/2026-10-29/research-tax-administration-uh52w.html",
+        "file": "data/sources/2026-10-29/research-tax-administration-0g7my.html",
         "bytes": 37502
       },
       {
         "url": "https://english.www.gov.cn/",
-        "file": "data/sources/2026-10-29/research-gov-en-hprya.html",
+        "file": "data/sources/2026-10-29/research-gov-en-3zv3x.html",
         "bytes": 58020
       },
       {
         "url": "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "file": "data/sources/2026-10-29/research-immigration-ju1rn.html",
+        "file": "data/sources/2026-10-29/research-immigration-nizxg.html",
         "bytes": 19724
       }
     ],
     "model": "deepseek/deepseek-chat",
-    "spentUsd": 0.0155,
+    "spentUsd": 0.008,
     "duplicateScore": 0,
     "duplicateAgainst": null
   },
-  "slug": "eu-goes-safeguard-tariff-rate-quota-price-threshold-2026",
-  "title_idea": "EU imposes provisional safeguard on grain-oriented electrical steel: tariff-rate quotas plus price thresholds from 18 September 2026",
-  "keyword": "EU safeguard grain-oriented electrical steel tariff-rate quota price threshold 2026",
+  "slug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+  "title_idea": "Brazil's beef quota filled on 29 September, so from 1 October every Brazilian beef shipment into China pays an extra 55% on top of the current tariff",
+  "keyword": "China Brazil beef safeguard 55% additional tariff October 2026",
   "category": "trade-policy",
   "audience": "importer",
-  "angle": "Whether an importer of GOES, laminations, cores or transformers containing cores must plan for quota exhaustion and price-threshold triggers before the definitive vote.",
+  "angle": "Whether to keep, reprice or reroute Brazilian beef shipments that clear Chinese customs on or after 1 October 2026, given the 55% add-on and the 3-day trigger rule.",
   "figures": [
     {
-      "value": "18 September 2026",
-      "unit": "date provisional safeguard measures imposed",
-      "period": "from 18 September 2026",
-      "source": "European Commission, DG Trade and Economic Security news article",
+      "value": "55%",
+      "unit": "additional tariff on top of the current applicable tariff rate",
+      "period": "from 00:00 on 1 October 2026",
+      "source": "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号",
       "retrieved": "2026-10-29",
-      "evidence": "Today, the European Commission imposed provisional safeguard measures on imports of grain-oriented electrical steel products, in the form of tariff-rate quotas coupled with price thresholds.",
-      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html"
+      "evidence": "在巴西牛肉进口数量达到规定数量 100% 的第 3 日起（ 10 月 1 日零点起），自该国进口牛肉将在现行适用关税税率基础上加征 55% 关税。",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html"
     },
     {
-      "value": "nine months",
-      "unit": "normal maximum duration of a safeguard investigation",
-      "period": "investigation launched March 2026",
-      "source": "European Commission, DG Trade and Economic Security news article",
+      "value": "100%",
+      "unit": "share of Brazil's allocated quota volume reached",
+      "period": "reached on 29 September 2026",
+      "source": "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9)",
       "retrieved": "2026-10-29",
-      "evidence": "A safeguard investigation must normally be completed within nine months but, in exceptional circumstances, may be extended to 11 months.",
-      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html"
+      "evidence": "牛肉保障措施项下自巴西进口的牛肉于 2026 年 9 月 29 日已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100% 。",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html"
     },
     {
-      "value": "11 months",
-      "unit": "extended maximum duration of a safeguard investigation",
-      "period": "exceptional circumstances",
-      "source": "European Commission, DG Trade and Economic Security news article",
+      "value": "第 3 日",
+      "unit": "day count after the quota is hit before the add-on applies",
+      "period": "trigger rule under Announcement 2025 No. 87",
+      "source": "MOFCOM Announcement 2025 No. 87, as applied in notice No. 9",
       "retrieved": "2026-10-29",
-      "evidence": "A safeguard investigation must normally be completed within nine months but, in exceptional circumstances, may be extended to 11 months.",
-      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html"
+      "evidence": "根据商务部公告 2025 年第 87 号，在巴西牛肉进口数量达到规定数量 100% 的第 3 日起（ 10 月 1 日零点起）",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html"
     },
     {
-      "value": "15 EU Member States",
-      "unit": "minimum number of member states voting in favour for definitive measures",
-      "period": "Safeguard Committee vote",
-      "source": "European Commission, DG Trade and Economic Security news article",
+      "value": "2026 年 9 月 29 日",
+      "unit": "date the Brazil quota was exhausted",
+      "period": "2026 safeguard year",
+      "source": "MOFCOM Trade Remedy Bureau, notice No. 9",
       "retrieved": "2026-10-29",
-      "evidence": "This means that at least 15 EU Member States representing 65% of the EU’s population must vote in favour of the Commission's proposal.",
-      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html"
+      "evidence": "自巴西进口的牛肉于 2026 年 9 月 29 日已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100%",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html"
     },
     {
-      "value": "65%",
-      "unit": "share of EU population required in favour for definitive measures",
-      "period": "Safeguard Committee vote",
-      "source": "European Commission, DG Trade and Economic Security news article",
+      "value": "2026-09-30",
+      "unit": "publication date of the notice",
+      "period": "one day before the add-on starts",
+      "source": "MOFCOM Trade Remedy Bureau, notice No. 9",
       "retrieved": "2026-10-29",
-      "evidence": "This means that at least 15 EU Member States representing 65% of the EU’s population must vote in favour of the Commission's proposal.",
-      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html"
+      "evidence": "关于2026年度牛肉保障措施执行提示信息（九） 2026-09-30 09:50:51",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html"
     },
     {
-      "value": "March 2026",
-      "unit": "month the safeguard investigation was launched",
-      "period": "investigation start",
-      "source": "European Commission, DG Trade and Economic Security news article",
+      "value": "2025 年第 87 号",
+      "unit": "instrument number setting the country quota and the add-on",
+      "period": "in force for the 2026 safeguard year",
+      "source": "MOFCOM Announcement 2025 No. 87",
       "retrieved": "2026-10-29",
-      "evidence": "After analysing input received from interested parties during an investigation launched in March 2026 , the Commission concluded that provisional measures were urgently needed to protect a strategic EU industry that is under threat from high import pressure – fuelled by global overcapacities and the closure of traditional export markets.",
-      "evidence_from": "data/sources/2026-10-29/research-eu-trade-news-article-eq9pc.html"
+      "evidence": "已达到商务部公告 2025 年第 87 号明确的该国家规定数量的 100%",
+      "evidence_from": "data/sources/2026-10-29/research-trade-remedy-cases-article-0eni8.html"
     }
   ],
   "sources": [
-    "European Commission, Directorate-General for Trade and Economic Security — 'Commission imposes provisional safeguard measures on imports of grain-oriented electrical steel', 18 September 2026"
+    "MOFCOM Trade Remedy Bureau — 关于2026年度牛肉保障措施执行提示信息（九）, 商救济进一函〔2026〕58号, 30 September 2026 (cacs.mofcom.gov.cn)",
+    "MOFCOM Announcement 2025 No. 87 — beef safeguard country quota and add-on rule, cited in notice No. 9"
   ]
 }

@@ -112,7 +112,9 @@
       "directionMix": {
         "within-china": 91,
         "into-china": 3
-      }
+      },
+      "produced": "available",
+      "producedAt": "2026-10-29"
     },
     {
       "moment": "buy",
