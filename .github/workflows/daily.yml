@@ -16,7 +16,8 @@ name: LandedMath Daily
 #   is the rule, not a failure.
 
 on:
-  schedule:
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now.
+  # GitHub's own cron fired three hours late on 10-29, and every extra trigger costs a private-repo minute.
   # The script route has a backup; the agent route does not, because a second agent run costs model calls
   # rather than twenty seconds. Both crons for the script route rely on the idempotency guard, which exits
   # in about twenty seconds when the day already has an article.
@@ -30,8 +31,8 @@ on:
     #
     # One workflow rather than two. Two copies of fourteen steps drift apart, and both routes write the same
     # report and the same card, so the failure domain is the same either way.
-    - cron: '20 23 * * *'   # 07:20 Beijing - script
-    - cron: '20 12 * * 1,3,5'  # 20:20 Beijing, Mon/Wed/Fri - agent (gate it skips on other days: it cannot publish yet)
+    # - cron: '20 23 * * *'   # 07:20 Beijing - script
+    # - cron: '20 12 * * 1,3,5'  # 20:20 Beijing, Mon/Wed/Fri - agent (gate it skips on other days: it cannot publish yet)
   # A push to data/trigger/ is a run.
   #
   # The scheduled crons are the promise; this is how a person - or an agent working in the repository - starts one

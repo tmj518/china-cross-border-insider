@@ -11,10 +11,11 @@
 name: C line
 
 on:
-  schedule:
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now.
+  # GitHub's own cron fired three hours late on 10-29, and every extra trigger costs a private-repo minute.
     # 15:20 Beijing (07:20 UTC). Clear of the trade crons at 23:20, 01:20, 12:20 and 13:20 UTC so the
     # two workflows never contend for the same runner minute.
-    - cron: '20 7 * * *'
+  # - cron: '20 7 * * *'
   workflow_dispatch:
 
 permissions:

@@ -13,9 +13,10 @@
 name: Weekly deep checks
 
 on:
-  schedule:
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now.
+  # GitHub's own cron fired three hours late on 10-29, and every extra trigger costs a private-repo minute.
     # Monday 04:20 UTC, an hour ahead of the source probe so the two do not contend for a runner.
-    - cron: "20 4 * * 1"
+  # - cron: "20 4 * * 1"
   workflow_dispatch:
 
 permissions:

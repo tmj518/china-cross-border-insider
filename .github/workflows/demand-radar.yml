@@ -19,8 +19,9 @@ on:
         description: "Fail on purpose, to prove the Feishu card arrives"
         type: boolean
         default: false
-  schedule:
-    - cron: "40 2 * * 1" # Monday 10:40 Beijing
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now.
+  # GitHub's own cron fired three hours late on 10-29, and every extra trigger costs a private-repo minute.
+    # - cron: "40 2 * * 1" # Monday 10:40 Beijing
 
 permissions:
   contents: write

@@ -13,10 +13,11 @@ name: Source reachability probe
 
 on:
   workflow_dispatch:
-  schedule:
+  # schedule: DISABLED 2026-10-29 - Cloudflare Worker "landedmath-cron" is the clock now.
+  # GitHub's own cron fired three hours late on 10-29, and every extra trigger costs a private-repo minute.
     # Weekly, Mondays 00:20 UTC. Blocking policy drifts, so the answer is re-measured rather than
     # assumed once.
-    - cron: '20 0 1 * *' # monthly, 1st at 08:20 Beijing - sources do not change weekly
+  # - cron: '20 0 1 * *' # monthly, 1st at 08:20 Beijing - sources do not change weekly
 
 permissions:
   # Write, because the result is committed back: a private repository's artifacts need a token to
