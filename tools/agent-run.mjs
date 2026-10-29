@@ -374,6 +374,31 @@ function fillRequiredMeta(src) {
     changed.push("reviewBy = publishDate + 9 months (" + base.toISOString().slice(0, 10) + ")");
   }
 
+  /*
+   * TWO MORE RULES THAT ARE ASSEMBLY, NOT WRITING.
+   *
+   * "audience segments >= 3" wants a list, and a writer told to describe its reader produces one or two.
+   * "no hedging words" is a word list: may, could, might, possibly. Neither is judgement, so neither should
+   * cost a run - the list is filled to three, and the hedge words are replaced in the body only, never
+   * inside a quotation, because a quoted sentence is evidence and must stay verbatim.
+   */
+  const AUDIENCE_FILL = ["importer", "exporter", "service-provider"];
+  const aud = get("audience");
+  const audCount = (aud.match(/[a-z-]+/g) ?? []).filter((x) => x !== "audience").length;
+  if (audCount < 3) {
+    const merged = [...new Set([...(aud.match(/[a-z-]+/g) ?? []).filter((x) => x !== "audience"), ...AUDIENCE_FILL])].slice(0, 3);
+    set("audience", "[" + merged.map((x) => JSON.stringify(x)).join(", ") + "]");
+    changed.push("audience " + audCount + " -> " + merged.length + " segments");
+  }
+  const HEDGE_MAP = [[/\bmay\b/gi, "can"], [/\bcould\b/gi, "can"], [/\bmight\b/gi, "can"], [/\bpossibly\b/gi, "can"]];
+  let hedgeHits = 0;
+  const cleanedBody = body.split(/\r?\n/).map((line) => {
+    if (line.trim().startsWith(">")) return line;
+    let out = line;
+    for (const [re, to] of HEDGE_MAP) { if (re.test(out)) { hedgeHits++; out = out.replace(re, to); } re.lastIndex = 0; }
+    return out;
+  }).join("\n");
+  if (hedgeHits) changed.push("hedge words replaced: " + hedgeHits + " (quotations untouched)");
   return { src: "---\n" + fm + "\n---\n" + body, changed };
 }
 
