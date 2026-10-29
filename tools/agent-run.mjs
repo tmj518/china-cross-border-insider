@@ -701,9 +701,11 @@ ${mandatoryFor(CELL.moment).map((u) => "  " + u).join("\n")}
 Rules for this article:
   - Every figure must be quoted verbatim from an official page you actually fetched, with its source and
     retrieval date. No estimate, no range, no "typically".
-  - If the official sources do not publish a number that answers these questions, do NOT write around it.
-    Call finish with verdict INSUFFICIENT-EVIDENCE and say which sources you tried and which figure was
-    missing. A missing number reported is worth more than a plausible number invented.
+     - If the official sources do not publish a number that answers these questions, do NOT invent one and do
+       NOT write around it. Write the procedure instead, per the procedural rule below. Only when even the
+       procedure has nothing to say - no eligibility condition, no document list, no step order you can state
+       from a fetched page - call finish with verdict INSUFFICIENT-EVIDENCE and name the sources you tried.
+       A page that tells a reader which documents to bring is a real page; a number without a source is not.
   - This is a demand-driven article: it exists because those questions were typed, not because a ministry
      - PROCEDURAL RULE: if after trying the sources above there is still no figure with a source, do not
        stop. Write the procedure instead - who qualifies, what documents are needed, the order of the steps,
