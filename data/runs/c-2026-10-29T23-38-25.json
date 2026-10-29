@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-29T23:38:25.287Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-green-card-permanent-residence",
+  "seconds": 22,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0018
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "10 candidate(s)"
+    },
+    {
+      "name": "grounding china-green-card-permanent-residence",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-green-card-permanent-residence",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-green-card-permanent-residence",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-green-card-permanent-residence/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

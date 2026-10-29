@@ -957,7 +957,19 @@
       ],
       "facts": [],
       "mustSay": [],
-      "avoid": []
+      "avoid": [],
+      "priorityScore": 0.97,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.61,
+        "demandImpressions": 4,
+        "demandBreadth": 0,
+        "demandQuery": "china housing property mortgage subsidy developers policy site:reuters.com",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-240-hour-visa-free-transit",
@@ -982,7 +994,19 @@
       ],
       "facts": [],
       "mustSay": [],
-      "avoid": []
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "china 144 hour visa free transit -site:youtube.com -site:reddit.com -site:x.com -site:twitter.com -site:facebook.com -site:instagram.com -site:tiktok.com -site:linkedin.com -site:pinterest.com -site:nytimes.com -site:wsj.com -site:yelp.com -site:rottentomatoes.com",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-green-card-permanent-residence",
@@ -993,7 +1017,7 @@
       "unit": "one application",
       "title": "China Permanent Residence: Who Can Apply and What It Costs",
       "query": "china permanent residence green card requirements",
-      "status": "queued",
+      "status": "done",
       "evidence": "Same cluster as residence-permit-renewal, which is one of the site's few pages with impressions",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1006,7 +1030,20 @@
       ],
       "facts": [],
       "mustSay": [],
-      "avoid": []
+      "avoid": [],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-10-29"
     },
     {
       "slug": "alipay-wechat-pay-foreigner-china",
@@ -1033,7 +1070,19 @@
       ],
       "facts": [],
       "mustSay": [],
-      "avoid": []
+      "avoid": [],
+      "priorityScore": 1.2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "china-sim-card-phone-number-foreigner",
@@ -1059,7 +1108,19 @@
       ],
       "facts": [],
       "mustSay": [],
-      "avoid": []
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     },
     {
       "slug": "foreigner-health-check-residence-permit",
@@ -1083,7 +1144,19 @@
       ],
       "facts": [],
       "mustSay": [],
-      "avoid": []
+      "avoid": [],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ]
 }
