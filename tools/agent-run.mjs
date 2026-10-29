@@ -1131,6 +1131,11 @@ FRONTMATTER CONTRACT - a draft that breaks any line here cannot be published.
   - figures: every entry has value / unit / period / source / retrieved
   - Before calling finish, run check_draft and fix every line it returns.
 
+STRINGS HAVE LIMITS, AND EXCEEDING ONE BLOCKS PUBLICATION.
+  - title: 120 characters maximum. Aim for 55 so the site's suffix still fits the 60-column display.
+  - description: 300 characters maximum. Aim for 150.
+  - category, audience and information_gain are single enum values, not sentences.
+
 BODY RULES - the gates check these, and a BLOCK stops publication.
   - Do not use may, could, might or possibly anywhere in the body. A verbatim quotation is the only
     exception, and the sentence must still be quoted in full.
