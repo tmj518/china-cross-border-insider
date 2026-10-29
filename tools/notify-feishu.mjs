@@ -328,7 +328,29 @@ if (!report) {
    * operator to ignore red cards, which is the one thing a notification must never do.
    */
   const PUBLISHED_ISH = verdict === "PUBLISHED" || verdict === "PUBLISHED-WITHOUT-FINISH";
-  const icon = PUBLISHED_ISH ? "✅" : verdict === "NO-DIRECTIVE" || verdict === "CEILING" || verdict === "IDLE" || verdict === "NO-SUBJECT" || verdict === "DUPLICATE-SUBJECT" ? "🟡" : "🔴";
+  /*
+   * A verdict is a colour, and the colour must match what the operator has to do.
+   *
+   * INSUFFICIENT-EVIDENCE is the run doing its job: it looked, found no sourceable number, and refused to
+   * write around the gap. It was falling through to red, which says something is broken and needs
+   * attention - the one signal that must never be wrong, because a red card that means "nothing to do"
+   * teaches the operator to stop reading red cards.
+   *
+   *   published            green
+   *   published, warnings  yellow - a page is live, and something is still open
+   *   honest non-results   yellow - no subject, duplicate, insufficient evidence
+   *   anything else        red
+   */
+  const ICON_GREEN = "\u2705";
+  const ICON_YELLOW = "\uD83D\uDFE1";
+  const ICON_RED = "\uD83D\uDD34";
+  const HONEST_STOP = ["NO-DIRECTIVE", "CEILING", "IDLE", "NO-SUBJECT", "DUPLICATE-SUBJECT", "INSUFFICIENT-EVIDENCE"];
+  const icon =
+    verdict === "PUBLISHED" || verdict === "PUBLISHED-WITHOUT-FINISH"
+      ? ICON_GREEN
+      : verdict === "PUBLISHED-DEGRADED" || HONEST_STOP.includes(verdict)
+        ? ICON_YELLOW
+        : ICON_RED;
   lines.push(`${icon} Landed Math — ${verdict}   [${route}]`);
   lines.push("");
   if (report.article) lines.push(`Article: ${report.article}`);
