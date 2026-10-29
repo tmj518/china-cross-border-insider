@@ -251,6 +251,103 @@ function gateOf(draftPath) {
   }
 }
 
+/*
+ * TWO FIELDS HAVE HARD CEILINGS AND THE WRITER KEEPS EXCEEDING THEM.
+ *
+ * The gate refuses a title over sixty columns and a description over a hundred and fifty-five, and both
+ * are arithmetic rather than judgement. A model that writes a good seventy-column title should not lose
+ * the article over ten characters, so the draft is fitted before it is checked - cut at the dash, or at
+ * the last full stop - and the before and after are printed so the trim is visible rather than silent.
+ *
+ * If it still does not fit after the cut, that is a different failure: the writer is producing prose where
+ * a headline belongs, and no truncation fixes that. The caller rejects it and says so.
+ */
+function fitMeta(src, { titleMax = 60, descMax = 155 } = {}) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(src);
+  if (!m) return { src, changed: [], stillOver: [] };
+  let fm = m[1];
+  const body = src.slice(m[0].length);
+  const changed = [];
+  const stillOver = [];
+
+  const read = (key) => (/^KEY:\\s*"?(.*?)"?\\s*$/m);
+  const get = (key) => {
+    const re = new RegExp('^' + key + ':\\s*"?(.*?)"?\\s*$', 'm');
+    return re.exec(fm)?.[1] ?? '';
+  };
+  const set = (key, value) => {
+    const re = new RegExp('^' + key + ':.*$', 'm');
+    fm = re.test(fm) ? fm.replace(re, key + ': ' + JSON.stringify(value)) : fm + '\n' + key + ': ' + JSON.stringify(value);
+  };
+
+  const title = get("title");
+  if (title.length > titleMax) {
+    let short = title;
+    const dash = short.search(/\s+[\u2014\u2013-]\s+|:\s+/);
+    if (dash > 20) short = short.slice(0, dash).trim();
+    if (short.length > titleMax) {
+      const cut = short.lastIndexOf(" ", titleMax);
+      short = short.slice(0, cut > 20 ? cut : titleMax).replace(/[\s,;:.]+$/, "");
+    }
+    if (short.length <= titleMax) {
+      changed.push(`title ${title.length} -> ${short.length} columns`);
+      set("title", short);
+    } else stillOver.push(`title is ${short.length} columns after the cut, ceiling ${titleMax}`);
+  }
+
+  const desc = get("description");
+  if (desc.length > descMax) {
+    const cut = desc.slice(0, descMax);
+    const stop = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+    const short = (stop > 60 ? cut.slice(0, stop + 1) : cut.replace(/[\s,;:]+$/, "")).trim();
+    if (short.length <= descMax) {
+      changed.push(`description ${desc.length} -> ${short.length} characters`);
+      set("description", short);
+    } else stillOver.push(`description is ${short.length} characters after the cut, ceiling ${descMax}`);
+  }
+
+  return { src: `---\n${fm}\n---\n${body}`, changed, stillOver };
+}
+
+/*
+ * A HEDGE WORD IS A LINE, NOT A MOOD.
+ *
+ * The gate says 'no hedging words - may' and the writer rewrites the whole article, which loses the
+ * sentences that were fine and often reintroduces the word somewhere else. Naming the line and quoting the
+ * sentence makes the edit one line. When the same sentence comes back a second time, the instruction stops
+ * asking and says what to do: change that line, do not rewrite the article.
+ */
+const HEDGE_WORDS = /\b(may|could|might|possibly)\b/i;
+let lastHedgeKey = null;
+let lastHedgeRepeats = 0;
+function hedgeFixes(raw) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(raw);
+  const body = m ? raw.slice(m[0].length) : raw;
+  const fixes = [];
+  const linesArr = body.split(/\r?\n/);
+  let seen = 0;
+  for (let i = 0; i < linesArr.length; i++) {
+    const line = linesArr[i];
+    if (line.trim().startsWith(">")) continue;
+    const hit = HEDGE_WORDS.exec(line);
+    if (!hit) continue;
+    seen++;
+    if (seen > 4) break;
+    const word = hit[0].toLowerCase();
+    const sentence = line.trim().slice(0, 220);
+    fixes.push(`Fix: line ${i + 1} contains "${word}". Rewrite that sentence without a hedge word.`);
+    fixes.push(`  Sentence: "${sentence}"`);
+  }
+  if (fixes.length) {
+    const key = fixes.join("|");
+    if (key === lastHedgeKey) lastHedgeRepeats++; else { lastHedgeKey = key; lastHedgeRepeats = 0; }
+    if (lastHedgeRepeats >= 1) {
+      fixes.unshift("The same sentences came back unchanged. Do not rewrite the article. Change only those lines.");
+    }
+  } else { lastHedgeKey = null; lastHedgeRepeats = 0; }
+  return fixes;
+}
+
 function frontmatterFixes(raw) {
   const fixes = [];
   const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw);
@@ -622,6 +719,12 @@ function runTool(name, input) {
        * is wrong somewhere.
        */
       const contract = frontmatterFixes(readFileSync(p, "utf8"));
+      /* Hedge words by line, before the structural check, because the fix is one line each. */
+      const hedges = hedgeFixes(readFileSync(p, "utf8"));
+      if (hedges.length) {
+        console.log("  turn " + turn + " · check_draft: " + hedges.length + " hedge fix(es)");
+        return done("HEDGING: " + hedges.length + " line(s) use a hedge word.\n\n" + hedges.join("\n") + "\n\nMake these edits and call check_draft again.");
+      }
       if (contract.length) {
         console.log("  turn " + turn + " · check_draft: " + contract.length + " frontmatter fix(es)");
         return done(
@@ -766,6 +869,17 @@ function runTool(name, input) {
       if (DRY) return done("dry run: not published");
       const from = join(ROOT, input.path);
       const slug = String(input.path).replace(/^.*\//, "").replace(/\.md$/, "");
+      /* The two fields with hard ceilings, fitted before the gate reads them. */
+      const fitted = fitMeta(readFileSync(from, "utf8"));
+      if (fitted.changed.length) {
+        writeFileSync(from, fitted.src, "utf8");
+        for (const c of fitted.changed) console.log("  fitted     : " + c);
+      }
+      if (fitted.stillOver.length) {
+        for (const w of fitted.stillOver) console.log("  too long   : " + w);
+        if (!finished) finished = { verdict: "REJECTED", summary: "the meta fields are still over the ceiling after trimming: " + fitted.stillOver.join("; ") };
+        return done("REJECTED: " + fitted.stillOver.join("; ") + ". Write a shorter title and description.");
+      }
       const to = join(ROOT, "src", "content", "blog", `${slug}.md`);
       /* No BLOCK may reach the collection. Warnings may. */
       const gate = gateOf(from);
