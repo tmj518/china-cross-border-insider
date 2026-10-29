@@ -519,7 +519,9 @@
         "within-china": 50,
         "out-of-china": 12,
         "into-china": 2
-      }
+      },
+      "produced": "taken",
+      "producedAt": "2026-10-29"
     },
     {
       "moment": "policy",
