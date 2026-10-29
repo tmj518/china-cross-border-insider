@@ -972,7 +972,8 @@ function runTool(name, input) {
         if (structure.unguided?.length) {
           lines.push(`Rules with no guidance, which means the check is incomplete: ${structure.unguided.join(", ")}`);
         }
-        return done(`${trimNote}${lines.join("\n")}`);
+        /* A draft that passes the structure check has one remaining step, and the model kept missing it. */
+        return done(`${trimNote}${lines.join("\n")}\n\nTHE DRAFT PASSES THE STRUCTURE CHECK. Call publish_draft on it now. Do not read anything else, do not edit the prose again: publish_draft is the step that turns this file into a page, and the run cannot report PUBLISHED until it is called.`);
       }
 
       try {
