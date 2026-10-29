@@ -1,4 +1,5 @@
 ---
+route: "agent"
 title: "EU imposes provisional safeguard measures on grain-oriented electrical steel"
 subtitle: "Provisional tariff-rate quotas with price thresholds apply from 18 September 2026; verify scope, quota balance and threshold before purchase."
 description: "The European Commission imposed provisional safeguard tariff-rate quotas and price thresholds on grain-oriented electrical steel from 18 September 2026. Importers need operative quota, threshold and product-scope terms before pricing cargo."
