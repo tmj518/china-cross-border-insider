@@ -1,55 +1,8 @@
 {
-  "at": "2026-10-29T04:54:23.675Z",
+  "at": "2026-10-29T05:33:06.955Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-bank-account-foreigner",
-      "topic": "residence",
-      "audience": [
-        "visitor",
-        "employee",
-        "relocating"
-      ],
-      "unit": "one account",
-      "title": "Opening a Chinese Bank Account on a Foreign Passport",
-      "query": "opening bank account china foreigner documents",
-      "status": "queued",
-      "sources": [
-        "https://www.gov.cn/",
-        "https://www.pbc.gov.cn/",
-        "https://www.nia.gov.cn/n741445/n741624/index.html"
-      ],
-      "fetchKeywords": [
-        "银行账户",
-        "开户",
-        "外国人",
-        "实名"
-      ],
-      "facts": [],
-      "mustSay": [
-        "The account is opened in person, and the bank verifies identity against the passport and the visa or permit.",
-        "A proof of address is usually asked for, and a residence registration is often what satisfies it.",
-        "The name on the account must match the passport exactly, including the order of the names.",
-        "Online banking and cross-border receipt differ between account classes; the branch decides the class."
-      ],
-      "avoid": [
-        "Do not state a deposit minimum or a fee unless the fact sheet contains it."
-      ],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
-    },
     {
       "slug": "china-sim-card-real-name",
       "topic": "residence",

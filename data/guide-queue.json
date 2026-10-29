@@ -564,7 +564,7 @@
       "unit": "one line",
       "title": "A Chinese Phone Number: Real-Name Registration",
       "query": "china sim card real name registration passport",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.gov.cn/",
         "https://www.miit.gov.cn/",
@@ -598,7 +598,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-10-29"
     },
     {
       "slug": "china-permanent-residence-marriage",
