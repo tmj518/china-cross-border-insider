@@ -1,7 +1,7 @@
 ---
-title: "EU imposes provisional safeguard measures on grain-oriented"
+title: "EU imposes provisional safeguard measures on grain-oriented electrical steel"
 subtitle: "Provisional tariff-rate quotas with price thresholds apply from 18 September 2026; verify scope, quota balance and threshold before purchase."
-description: "The European Commission imposed provisional safeguard tariff-rate quotas and price thresholds on grain-oriented electrical steel from 18 September 2026."
+description: "The European Commission imposed provisional safeguard tariff-rate quotas and price thresholds on grain-oriented electrical steel from 18 September 2026. Importers need operative quota, threshold and product-scope terms before pricing cargo."
 publishDate: 2026-10-22
 reviewBy: 2027-01-22
 stakes: directional
@@ -73,7 +73,7 @@ The safeguard investigation opened in March 2026. After reviewing input from int
 
 The announcement uses the broad phrase “grain-oriented electrical steel products.” It does not supply tariff codes or a product annex. That leaves a practical boundary for importers: GOES coil or sheet sits closest to the named product, while cut laminations, assembled cores, and cores already incorporated in transformers require separate classification analysis.
 
-Importers following the developing measure can compare the announcement with [EU safeguard tariff-rate quotas hit GOES from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/) and [EU provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/). The broader framing appears in [EU Safeguard on Grain-Oriented Electrical Steel: tariff-rate quota and price thresholds](/blog/eu-grain-oriented-electrical-steel-safeguard-tariff-rate-quota-2026/).
+Importers following the developing measure can compare the announcement with [EU safeguard tariff-rate quotas hit GOES from 18 September 2026](/blog/eu-goes-safeguard-tariff-rate-quota-2026/) and [EU provisional tariff-rate quotas and price thresholds on grain-oriented electrical steel](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/). The broader framing appears in [EU Safeguard on Grain-Oriented Electrical Steel: tariff-rate quota and price thresholds](/blog/eu-goes-provisional-safeguard-trq-price-threshold-2026/).
 
 ## Why now
 
@@ -120,6 +120,10 @@ The cost formulas and the downstream classification questions are planning struc
 **What would change my mind.**
 
 A published regulation with product codes, quota volumes, threshold values, charge rates, exemptions, and entry-time rules would replace the symbolic model. Official Commission or Member State customs guidance on downstream goods would settle the scope boundary. A Safeguard Committee vote result would establish whether definitive measures follow the provisional action and on what terms.
+
+> Work it out: [the landed cost calculator](/calculator/)
+
+> Different question, same method: [the step-by-step guides](/guide/)
 
 ## For you
 
