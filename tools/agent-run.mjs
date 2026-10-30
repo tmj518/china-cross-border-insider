@@ -757,6 +757,7 @@ Rules for this article:
   : "";
 const checkedOk = new Set();
 let finished = null;
+    let proceduralOffered = false;
 /** A relaunch is allowed once per run; a second one is a refusal. */
 let relaunched = false;
 
@@ -1281,6 +1282,38 @@ function runTool(name, input) {
         return done("REFUSED: verdict says PUBLISHED but nothing was published in this run. Either publish a draft or report the real verdict.");
       }
       finished = { verdict: String(input.verdict ?? "UNKNOWN"), summary: String(input.summary ?? "") };
+    /*
+     * A PROCEDURE IS AN ARTICLE. INSUFFICIENT-EVIDENCE IS THE LAST RESORT, NOT THE FIRST.
+     *
+     * Two runs on 2026-10-30 fetched three sources each, found no amount, and finished with
+     * INSUFFICIENT-EVIDENCE while the brief said in two places that the procedure is the answer. The prompt
+     * lost to the model's instinct that a page without a number is not a page.
+     *
+     * So the tool refuses the first surrender when a demand cell is assigned and nothing has been written:
+     * it says what a procedure contains and asks for the draft. If the model comes back a second time, the
+     * verdict is accepted - an honest stop is still allowed, it just cannot be the first move.
+     */
+    if (
+      CELL &&
+      !proceduralOffered &&
+      /INSUFFICIENT/i.test(String(finished.verdict)) &&
+      !existsSync(join(ROOT, "data", "drafts", `${CELL.persona}-${CELL.moment}.md`)) &&
+      [...checkedOk.keys()].length === 0
+    ) {
+      proceduralOffered = true;
+      finished = null;
+      return done([
+        "NOT ACCEPTED YET. No draft exists, and a procedure is a published article on this site.",
+        "",
+        "Write it now with write_file, in this shape, and no number anywhere in the body:",
+        "  who may use this route / what documents are required / the order of the steps /",
+        "  which conditions stop it / the usual reasons an application is sent back",
+        "",
+        "Set figures: [] and information_gain to a legal value. Then call check_draft and publish_draft.",
+        "If after writing it you still believe the run cannot produce a page, call finish again and it will be",
+        "recorded - INSUFFICIENT-EVIDENCE is allowed, it is just not the first answer.",
+      ].join("\n"));
+    }
       return done("recorded. The run will end after this message.");
     }
 
