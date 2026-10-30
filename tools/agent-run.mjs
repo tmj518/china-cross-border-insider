@@ -1005,6 +1005,36 @@ function runTool(name, input) {
         }
       }
 
+       /*
+        * A PROCEDURAL DRAFT IS CHECKED AGAINST THE GUIDE RULES, NOT THE BLOG RULES.
+        *
+        * The blog rules require a non-empty figures array. A procedure has no figures by definition, so the
+        * check refused every procedural draft and the run ended yellow with the article written and unread.
+        * A guide needs a shape instead: at least five ordered steps under "## Steps". That is checked here, and
+        * the draft then goes to the guide collection, where that shape is the schema.
+        */
+       let proceduralHandled = false;
+       if (existsSync(p) && CELL) {
+         const rawCheck = readFileSync(p, "utf8");
+         if ((rawCheck.match(/^  - value:/gm) ?? []).length === 0) {
+           const g = toGuideDraft(rawCheck, CELL);
+           proceduralHandled = true;
+           if (g.error) {
+             console.log("  check_draft: guide shape missing - " + g.error);
+             return done("GUIDE SHAPE: " + g.error);
+           }
+           console.log("  check_draft: procedural, guide shape ok (" + g.steps + " steps) - publish it");
+           return done([
+             "This is a procedural piece: no sourced figure, no number in the body.",
+             "It is published into the guide collection, which asks for steps and a unit rather than ten sections",
+             "and a comparison table.",
+             "",
+             "The guide shape checks out (" + g.steps + " ordered steps).",
+             "Call publish_draft now. Do not add a figure you cannot source, and do not rewrite the article.",
+           ].join("\n"));
+         }
+       }
+
       /*
        * The contract before the content. A draft that cannot be parsed is not a draft with weak arguments -
        * it cannot be published at all, and the model must be told which line to delete rather than that something
