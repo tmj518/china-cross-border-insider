@@ -62,6 +62,18 @@ jobs:
       # continue-on-error: a refused Search Console read must not stop the day's guide. It falls back to
       # priors and says so.
       #
+      #
+      # THE QUEUE FILLS ITSELF FROM THE DEMAND MATRIX.
+      #
+      # Hand-written topics ran dry every few days, while the radar had already harvested 2,124 phrasings
+      # from Google and Bing autosuggest that never reached this line. This tops the queue back up to ten
+      # open topics before the planner runs, and it costs no model call.
+      #
+      - name: Top up the queue from the demand matrix
+        if: always()
+        continue-on-error: true
+        run: node tools/guide-topics.mjs --min=10
+
       - name: Plan the queue from data
         if: always()
         continue-on-error: true
