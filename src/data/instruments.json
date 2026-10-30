@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -2889,6 +2889,68 @@
       ],
       "articleSlugs": [
         "china-zero-tariff-20-african-countries-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "eu-safeguard-committee-vote",
+      "source": "EU Safeguard Committee vote",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+          "articleNum": 56,
+          "value": "15",
+          "unit": "EU Member States required for qualified majority vote",
+          "period": "for definitive measures",
+          "source": "EU Safeguard Committee vote",
+          "retrieved": "2026-10-30"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+          "articleNum": 56,
+          "value": "65%",
+          "unit": "share of EU population required for qualified majority",
+          "period": "for definitive measures",
+          "source": "EU Safeguard Committee vote",
+          "retrieved": "2026-10-30"
+        }
+      ],
+      "articleNums": [
+        56
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-tariff-rate-quotas-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "eu-safeguard-regulation",
+      "source": "EU safeguard regulation",
+      "figures": [
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+          "articleNum": 56,
+          "value": "nine months",
+          "unit": "normal investigation completion period",
+          "period": "from investigation start",
+          "source": "EU safeguard regulation",
+          "retrieved": "2026-10-30"
+        },
+        {
+          "articleSlug": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+          "articleNum": 56,
+          "value": "11 months",
+          "unit": "maximum extended investigation period",
+          "period": "exceptional circumstances",
+          "source": "EU safeguard regulation",
+          "retrieved": "2026-10-30"
+        }
+      ],
+      "articleNums": [
+        56
+      ],
+      "articleSlugs": [
+        "eu-goes-provisional-safeguard-tariff-rate-quotas-2026"
       ],
       "modelOutput": false
     },

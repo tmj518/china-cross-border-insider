@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-29T23:21:08.839Z",
+  "at": "2026-10-30T01:21:03.144Z",
   "providers": [
     "volces",
     "deepseek"
@@ -27,17 +27,61 @@
     },
     {
       "name": "research",
+      "ok": true,
+      "detail": "proposed eu-goes-provisional-safeguard-tariff-rate-quotas-2026, 5 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "5 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-goes-provisional-safeguard-tariff-rate-quotas-2026.md"
+    },
+    {
+      "name": "reviewer",
       "ok": false,
-      "detail": "no verified subject today (exit 2)"
+      "detail": "no parseable verdict"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-goes-provisional-safeguard-tariff-rate-quotas-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED"
     }
   ],
-  "verdict": "DUPLICATE-SUBJECT",
-  "reasons": [
-    "research proposed a subject already covered by a published article and declined to write a directive. Nothing was published, which is the duplicate check working."
-  ],
-  "article": null,
+  "verdict": "PUBLISHED",
+  "reasons": [],
+  "article": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 4,
+    "failed": 0,
+    "usd": 0.006,
+    "promptTokens": 39024,
+    "completionTokens": 6126
+  },
   "route": "script",
   "categoryActivity": {
     "logistics": 1,
@@ -48,45 +92,46 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4242 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1385 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4147 characters but no document structure, trying the next one",
-    "  spent   : ~0.0196  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
+    "  ok    trade-remedy-cases          62643B  archived",
+    "  skip  tariff-commission             604B  not usable (recorded anyway)",
+    "  ok    ministry-of-finance         20830B  archived",
+    "  ok    mofcom                     161774B  archived",
+    "  ok    eu-trade-news-article       77047B  article archived",
+    "  ok    eu-trade-news-article       73836B  article archived",
+    "  ok    eu-trade-news-article       77505B  article archived",
+    "  ok    eu-trade-news-article       76422B  article archived",
+    "  ok    trade-remedy-cases-article    26832B  article archived",
+    "  ok    trade-remedy-cases-article    40492B  article archived",
+    "  ok    trade-remedy-cases-article    24436B  article archived",
+    "  ok    trade-remedy-cases-article    19137B  article archived",
+    "  articles : 8 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 949 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3874 characters but no document structure, trying the next one",
+    "  stream      : SSE, 974 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4000 characters but no document structure, trying the next one",
+    "  stream      : SSE, 746 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2869 characters but no document structure, trying the next one",
+    "  spent   : ~0.0041  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : china-p-nitrotoluene-eu-questionnaire-37-day-deadline-2026",
-    "  keyword : China p-nitrotoluene anti-dumping questionnaire 37 days EU exporters 2026",
-    "  duplicate check: score 8 against china-p-nitrotoluene-eu-anti-dumping-investigation-2026",
-    "      shared figure value(s): 29042020, 2025年7月1日至2026年6月30日",
-    "      shared keyword stems: nitrotoluene",
-    "      shared institution(s): mofcom",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 3 of 3)...",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1069 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4459 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 869 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3610 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1052 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4367 characters but no document structure, trying the next one",
-    "  spent   : ~0.0311  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug already published: eu-goes-safeguard-tariff-rate-quota-2026 - retrying with another subject",
-    "  slug    : eu-goes-safeguard-tariff-rate-quota-2026",
-    "  keyword : EU safeguard grain-oriented electrical steel tariff-rate quota 2026",
-    "  duplicate check: score 99 against eu-goes-safeguard-tariff-rate-quota-2026",
-    "      the slug eu-goes-safeguard-tariff-rate-quota-2026 is already in src/content/blog",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  ALL_SUBJECTS_DUPLICATE - all 3 proposals are already published.",
-    "    - china-brazil-beef-safeguard-55-percent-trigger-2026 (score 99)",
-    "    - china-p-nitrotoluene-eu-questionnaire-37-day-deadline-2026 (score 8)",
-    "    - eu-goes-safeguard-tariff-rate-quota-2026 (score 99)",
-    "  No directive was written. Publishing a near-duplicate under a new slug would compete with",
-    "  the existing article for the same keyword, which is worse for the site than a quiet day.",
-    "  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure."
-  ]
+    "  slug    : eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+    "  keyword : EU GOES safeguard tariff rate quota 2026 importer cost",
+    "  duplicate check: score 5 against eu-steel-safeguard-quota-2026-chinese-hrc-cost",
+    "      shared keyword stems: safeguard, quota",
+    "      shared institution(s): article",
+    "  slug    : eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+    "  keyword : EU GOES safeguard tariff rate quota 2026 importer cost",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0041",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 83
 }
