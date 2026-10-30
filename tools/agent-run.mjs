@@ -116,6 +116,10 @@ const DATA_NOTE = `BEFORE YOU WRITE, PROBE THE DATA - in this order, one call ea
                            that category.
   3. get_latest_official_docs  What the ministries published today, with the figures. This is the normal answer for a
                            new site, and it is a good answer: it carries rates and amounts.
+  4. fetch_url              Fetch one official page and read it. A figure may only be quoted from a page you have
+                           actually fetched, so this is the step between a demand cell and an article with numbers.
+                           A source that times out is a route problem, not evidence: try the next one before
+                           concluding the figure does not exist.
 
 If the subject research proposes is already published - check src/content/blog for the slug, or for an article carrying
 the same figures - call relaunch ONCE to get a different subject. That is what the tool is for: a published subject is
@@ -559,6 +563,15 @@ const TOOLS = [
   {
     type: "function",
     function: {
+      name: "fetch_url",
+      description:
+        "Fetch a URL and return its readable text. This is how you get figures: a page has to be fetched before any number in it may be cited. A source that times out is a route problem - try the next one.",
+      parameters: { type: "object", properties: { url: { type: "string" } }, required: ["url"] },
+    },
+  },
+  {
+    type: "function",
+    function: {
       name: "list_dir",
       description: "List the entries of a directory.",
       parameters: { type: "object", properties: { path: { type: "string" } }, required: ["path"] },
@@ -825,6 +838,30 @@ function runTool(name, input) {
       writeFileSync(p, String(input.content ?? ""), "utf8");
       checkedOk.delete(input.path);
       return done(`wrote ${input.path} (${String(input.content ?? "").length} bytes). Call check_draft on it before publishing.`);
+    }
+
+    if (name === "fetch_url") {
+      /*
+       * THE TOOL THE AGENT KEPT LOOKING FOR.
+       *
+       * On 2026-10-30 the run spent turns three to six discovering that store-source.mjs exists, fetched one
+       * page, and closed its reading phase because there was no other way to fetch. A writer that cannot reach
+       * a document can only report that it found no figures, which is exactly what happened.
+       */
+      const url = String(input.url ?? "").trim();
+      if (!/^https?:\/\//i.test(url)) return done("REFUSED: only http(s) URLs can be fetched");
+      try {
+        const out = execFileSync(process.execPath, [join(ROOT, "tools", "store-source.mjs"), `--url=${url}`, "--label=agent-fetch"], {
+          encoding: "utf8", cwd: ROOT, timeout: 90000, maxBuffer: 32 * 1024 * 1024,
+        });
+        const m = /\/data\/sources\/[^\s]+\.(?:txt|md|json|html)/.exec(out);
+        const rel = m ? m[0].slice(1) : "";
+        if (!rel || !existsSync(join(ROOT, rel))) return done("fetched, but the archive path was not reported: " + out.split("\n").slice(-3).join(" | "));
+        const text = readFileSync(join(ROOT, rel), "utf8").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+        return done(`fetched ${url} -> ${rel}\n\n${text.slice(0, 3500)}`);
+      } catch (e) {
+        return done(`fetch failed for ${url}: ${String(e.stdout || e.message).slice(-300)}\n\nA timeout is a route problem. Try the next source on the list rather than concluding the figure does not exist.`);
+      }
     }
 
     if (name === "list_dir") {
