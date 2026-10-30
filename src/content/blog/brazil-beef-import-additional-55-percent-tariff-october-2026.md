@@ -155,3 +155,5 @@ hundred_tonne_shipment_additional_duty = 100 * per_tonne_additional_duty
 ## The point
 
 This 55% additional tariff is a hard, date-specific cliff that does not grandfather existing contracts or in-transit cargo. The only variable you control right now is the timestamp your customs declaration gets accepted. Move fast to clear every eligible shipment before 00:00 on 1 October 2026, and adjust all future Brazilian beef sourcing plans to account for the full 55% cost increase until official guidance says otherwise.
+
+For the paperwork and the cost in one place, see [Health Cover for Foreigners Working in China](/guide/china-medical-insurance-foreigner/).

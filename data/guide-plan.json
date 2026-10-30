@@ -1,44 +1,8 @@
 {
-  "at": "2026-10-29T23:57:53.111Z",
+  "at": "2026-10-30T00:34:36.571Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "foreigner-health-check-residence-permit",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one health check",
-      "title": "The Health Check Behind a China Residence Permit",
-      "query": "china residence permit health check foreigner",
-      "status": "queued",
-      "evidence": "A required step before the permit renewal the site already documents, so it inherits an internal link",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "体检",
-        "健康证明",
-        "health check"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "china-medical-insurance-foreigner",
       "topic": "social-insurance",
