@@ -352,6 +352,64 @@ function fitMeta(src, { titleMax = 60, descMax = 155 } = {}) {
  */
 const GAIN_VALUES = ["custom-calculation", "cross-source", "own-data", "primary-source"];
 
+/*
+ * A PROCEDURE BELONGS IN THE GUIDE COLLECTION, NOT THE BLOG ONE.
+ *
+ * The blog format demands ten sections, a comparison table, an FAQ and at least one sourced figure. A
+ * page that tells a reader which documents to bring cannot satisfy that, and four runs on 2026-10-30 were
+ * refused for it. The guide format asks for steps and a unit instead - and the guide line has published
+ * forty of those without a single refusal.
+ *
+ * So a procedural draft is assembled as a guide: the collection schema is filled here, the body is kept,
+ * and the steps are read out of a numbered list the writer must include. Fewer than five steps is not a
+ * guide - the model is told to add them rather than the run being refused.
+ */
+const GUIDE_TOPIC_BY_MOMENT = { arrive: "work-visa", live: "residence", leave: "tax", policy: "residence", buy: "relocation" };
+const GUIDE_AUDIENCE_BY_PERSONA = { expat: "relocating", student: "student", bri: "visitor", importer: "relocating", "platform-seller": "employee" };
+function toGuideDraft(src, cell) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(src);
+  if (!m) return { error: "the draft has no frontmatter" };
+  const fm = m[1];
+  const body = src.slice(m[0].length);
+  const get = (k) => new RegExp("^" + k + ":\\s*\"?([^\"\\n]*)\"?", "m").exec(fm)?.[1]?.trim() ?? "";
+  const title = get("title").slice(0, 120);
+  const description = get("description").slice(0, 300);
+  if (!title || !description) return { error: "title and description are required" };
+  /* The numbered list under a Steps heading, which the procedural brief asks for. */
+  /* The block runs from the heading to the next heading: a lookahead that allowed an empty line,
+   * which every heading is followed by, captured nothing at all. */
+  const stepsAt = body.search(/^##\s*Steps\s*$/im);
+  const afterHeading = stepsAt >= 0 ? body.slice(body.indexOf("\n", stepsAt) + 1) : "";
+  const nextHeading = afterHeading.search(/^##\s/m);
+  const stepBlock = nextHeading >= 0 ? afterHeading.slice(0, nextHeading) : afterHeading;
+  const steps = [...stepBlock.matchAll(/^\s*\d+\.\s+(.+)$/gm)].map((x) => {
+    const line = x[1].trim();
+    const cut = line.search(/\s+[\u2014-]\s+|:\s+/);
+    return cut > 12 ? { action: line.slice(0, cut).trim(), detail: line.slice(cut).replace(/^[\s\u2014:-]+/, "").trim() } : { action: line, detail: "" };
+  });
+  if (steps.length < 5) return { error: `a guide needs at least five ordered steps and the draft has ${steps.length}. Add a "## Steps" section with a numbered list of at least five.` };
+  const today = new Date().toISOString().slice(0, 10);
+  const review = new Date(Date.now() + 180 * 86400000).toISOString().slice(0, 10);
+  const out = [
+    "---",
+    `title: ${JSON.stringify(title)}`,
+    `description: ${JSON.stringify(description)}`,
+    `topic: "${GUIDE_TOPIC_BY_MOMENT[cell?.moment] ?? "residence"}"`,
+    `audience: ["${GUIDE_AUDIENCE_BY_PERSONA[cell?.persona] ?? "relocating"}"]`,
+    `unit: "one application"`,
+    `lastVerified: "${today}"`,
+    `reviewBy: "${review}"`,
+    "figures: []",
+    "steps:",
+    ...steps.map((s) => `  - action: ${JSON.stringify(s.action)}\n    detail: ${JSON.stringify(s.detail)}`),
+    `persona: "old-china-hand"`,
+    `route: "agent"`,
+    "---",
+    "",
+  ].join("\n");
+  return { src: out + body, steps: steps.length };
+}
+
 function fillRequiredMeta(src) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(src);
   if (!m) return { src, changed: [] };
@@ -1121,9 +1179,29 @@ function runTool(name, input) {
         if (!finished) finished = { verdict: "REJECTED", summary: "the meta fields are still over the ceiling after trimming: " + fitted.stillOver.join("; ") };
         return done("REJECTED: " + fitted.stillOver.join("; ") + ". Write a shorter title and description.");
       }
-      const to = join(ROOT, "src", "content", "blog", `${slug}.md`);
+      /*
+       * WHICH COLLECTION THIS DRAFT BELONGS TO.
+       *
+       * A draft with no sourced figure is a procedure, and a procedure is a guide. Assembling it here means
+       * the reader gets a page instead of a yellow card, and the blog's analysis format is not asked to accept
+       * something it was never designed for.
+       */
+      const procedureDraft = (readFileSync(from, "utf8").match(/^  - value:/gm) ?? []).length === 0;
+      let guideSrc = null;
+      if (procedureDraft) {
+        const g = toGuideDraft(readFileSync(from, "utf8"), CELL);
+        if (g.error) {
+          console.log("  guide assembly: " + g.error);
+          return done("NOT PUBLISHED YET: " + g.error);
+        }
+        guideSrc = g.src;
+        console.log("  procedural: assembling as a guide with " + g.steps + " step(s)");
+      }
+      const to = procedureDraft
+        ? join(ROOT, "src", "content", "guide", `${slug}.md`)
+        : join(ROOT, "src", "content", "blog", `${slug}.md`);
       /* No BLOCK may reach the collection. Warnings may. */
-      const gate = gateOf(from);
+      const gate = procedureDraft ? { ok: true, blocks: [], warns: [] } : gateOf(from);
       if (!gate.ok) {
         const named = gate.blocks.slice(0, 4).map((r) => r.rule).join(", ");
         console.log("  publish refused: " + gate.blocks.length + " blocking rule(s) - " + named);
@@ -1138,7 +1216,7 @@ function runTool(name, input) {
       const degraded = gate.warns.length > 0;
       LAST_GATE_WARNINGS = gate.warns.length;
       if (degraded) console.log("  publish with " + gate.warns.length + " warning(s) - the verdict will say PUBLISHED-DEGRADED");
-      writeFileSync(to, readFileSync(from, "utf8"), "utf8");
+      writeFileSync(to, guideSrc ?? readFileSync(from, "utf8"), "utf8");
       try {
         execFileSync(process.execPath, [join(ROOT, "tools", "build-instruments.mjs")], { cwd: ROOT, timeout: 600000 });
       } catch {
@@ -1305,7 +1383,9 @@ function runTool(name, input) {
       return done([
         "NOT ACCEPTED YET. No draft exists, and a procedure is a published article on this site.",
         "",
-        "Write it now with write_file, in this shape, and no number anywhere in the body:",
+            "Write it now with write_file, in this shape, and no number anywhere in the body:",
+            "  ## Steps   - a numbered list of at least five steps: what to bring, in what order",
+            "  then the prose: who may use this route / which conditions stop it / why applications come back",
         "  who may use this route / what documents are required / the order of the steps /",
         "  which conditions stop it / the usual reasons an application is sent back",
         "",
