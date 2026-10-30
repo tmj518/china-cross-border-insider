@@ -69,6 +69,19 @@ jobs:
       # from Google and Bing autosuggest that never reached this line. This tops the queue back up to ten
       # open topics before the planner runs, and it costs no model call.
       #
+      # THE MATRIX HAS TO STAY FRESH OR THE SUBJECT POOL FREEZES.
+      #
+      # The radar's own cron was disabled when the clock moved to the Cloudflare worker, and the worker only
+      # dispatches the three daily lines, so the matrix has not moved since 2026-10-28 while every agent run
+      # kept selecting from the same twenty-five cells. Re-running it from a line that already has a cron
+      # costs one attempt a week and nothing on the other six days.
+      #
+      - name: Keep the demand matrix fresh
+        if: always()
+        continue-on-error: true
+        run: node tools/ensure-matrix.mjs --max-age-days=7
+
+      #
       - name: Top up the queue from the demand matrix
         if: always()
         continue-on-error: true
