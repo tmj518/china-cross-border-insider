@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-30T00:39:12.626Z",
+  "at": "2026-10-30T03:06:47.981Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-driving-licence-renewal",
-  "seconds": 26,
+  "article": "china-renting-apartment-deposit",
+  "seconds": 23,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.0024
   },
   "providers": [
     "volces"
@@ -25,29 +25,29 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding china-driving-licence-renewal",
+      "name": "grounding china-renting-apartment-deposit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-driving-licence-renewal",
+      "name": "gates china-renting-apartment-deposit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-driving-licence-renewal",
+      "name": "build china-renting-apartment-deposit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-pea-protein-anti-dumping-definitive-duties-2026"
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, how-to-tell-a-factory-from-a-trading-company"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-driving-licence-renewal/"
+      "detail": "/guide/china-renting-apartment-deposit/"
     }
   ],
   "researchLog": [

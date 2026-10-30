@@ -1,56 +1,8 @@
 {
-  "at": "2026-10-30T00:38:46.770Z",
+  "at": "2026-10-30T03:06:25.201Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-driving-licence-renewal",
-      "topic": "driving",
-      "audience": [
-        "employee",
-        "relocating"
-      ],
-      "unit": "one renewal",
-      "title": "Renewing a Chinese Driving Licence",
-      "query": "china driving license renewal",
-      "status": "queued",
-      "source": "demand",
-      "demandBreadth": 1,
-      "sources": [
-        "https://gab.122.gov.cn/",
-        "https://www.gov.cn/",
-        "https://www.nia.gov.cn/n741445/n741624/index.html"
-      ],
-      "fetchKeywords": [
-        "驾驶证",
-        "换证",
-        "体检",
-        "driving licence"
-      ],
-      "facts": [],
-      "mustSay": [
-        "A Chinese licence has an expiry date, and renewal is a separate procedure from conversion.",
-        "The medical check is part of the renewal, not a separate optional step.",
-        "The renewal window opens before expiry, and a licence that has lapsed is handled differently.",
-        "A foreign licence is not a substitute once the Chinese one has been issued."
-      ],
-      "avoid": [
-        "Do not state a fee, a validity period or a window in days unless the fact sheet contains it."
-      ],
-      "priorityScore": 2.5,
-      "priorityWhy": {
-        "basis": "harvested",
-        "base": 2.5,
-        "demandImpressions": 0,
-        "demandBreadth": 1,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
-    },
     {
       "slug": "china-renting-apartment-deposit",
       "topic": "relocation",
@@ -194,6 +146,44 @@
         "from",
         "china",
         "india"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "work-permit-process",
+      "topic": "arrive",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China work permit process",
+      "query": "china work permit process",
+      "status": "queued",
+      "evidence": "demand matrix: \"china work permit process\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "work",
+        "permit",
+        "process"
       ],
       "facts": [],
       "mustSay": [],

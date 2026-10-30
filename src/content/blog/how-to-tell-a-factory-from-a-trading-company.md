@@ -209,3 +209,5 @@ Put your own deposit percentage and order value into the first line. The model i
 Supplier verification is not about finding out whether a company is honest. It is about finding out whether the entity you are paying is the entity that makes your product, because everything else in the order depends on that answer being yes.
 
 China has spent the last thirteen months making that question easier to answer — a real-name confirmation form from 1 May 2026 and an agent registry with a three-year filing ban behind it. Neither was built for foreign buyers, and both are usable by them. The free steps take an hour, and the paid step breaks even at less than one supplier in 120.
+
+For the paperwork and the cost in one place, see [Renting in China: Contract, Deposit and Registration](/guide/china-renting-apartment-deposit/).

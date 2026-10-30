@@ -703,7 +703,7 @@
       "unit": "one tenancy",
       "title": "Renting in China: Contract, Deposit and Registration",
       "query": "renting apartment china foreigner deposit contract",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.gov.cn/",
         "https://www.mohurd.gov.cn/"
@@ -735,7 +735,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-10-30"
     },
     {
       "slug": "china-z-visa-requirements",
@@ -1275,7 +1276,45 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "work-permit-process",
+      "topic": "arrive",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China work permit process",
+      "query": "china work permit process",
+      "status": "queued",
+      "evidence": "demand matrix: \"china work permit process\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "work",
+        "permit",
+        "process"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-10-30T00:38:46.139Z"
+  "updatedAt": "2026-10-30T03:06:24.680Z"
 }
