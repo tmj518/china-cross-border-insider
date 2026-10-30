@@ -401,7 +401,9 @@
         "within-china": 77,
         "into-china": 31,
         "out-of-china": 4
-      }
+      },
+      "produced": "taken",
+      "producedAt": "2026-10-30"
     },
     {
       "moment": "live",
