@@ -788,7 +788,15 @@ function addInboundLinks(topic) {
   for (const c of scored.slice(0, 2)) {
     const p = join(c.dir, c.f);
     let src = readFileSync(p, "utf8");
-    const kind = c.dir === GUIDE_DIR ? "guide" : "blog";
+    /*
+     * THE NEW PAGE IS ALWAYS A GUIDE, whatever directory the host article lives in.
+     *
+     * The first version derived this from the host's directory and shipped
+     * /blog/foreigner-health-check-residence-permit/ into two live articles - a link to a page that does not
+     * exist, which is the same defect the agent line produced on 2026-10-29 and for the same reason: the
+     * variable described the wrong object.
+     */
+    const kind = "guide";
     const sentence = `For the paperwork and the cost in one place, see [${topic.title}](/${kind}/${newSlug}/).`;
     const cut = src.search(/^##\s*Related Reading/im);
     if (cut >= 0) src = src.slice(0, cut) + sentence + "\n\n" + src.slice(cut);
