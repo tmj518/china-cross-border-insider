@@ -149,3 +149,5 @@ print(f"Maximum anti-dumping duty payable: {max_definitive_duty} EUR")
 ## The point
 
 EU importers of Chinese pea protein now face a permanent 40.5% to 67.1% duty premium on every shipment for the next five years, and there is no workaround that avoids this cost for Chinese-origin product. The exact rate you pay depends entirely on whether your supplier is named on the official low-duty list, and you can calculate the full cost impact for every shipment using the arithmetic laid out here to make fully informed sourcing decisions before you place your next bulk order.
+
+For the paperwork and the cost in one place, see [Renewing a Chinese Driving Licence](/guide/china-driving-licence-renewal/).

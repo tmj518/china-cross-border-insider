@@ -894,7 +894,7 @@
       "unit": "one renewal",
       "title": "Renewing a Chinese Driving Licence",
       "query": "china driving license renewal",
-      "status": "queued",
+      "status": "done",
       "source": "demand",
       "demandBreadth": 1,
       "sources": [
@@ -930,7 +930,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-10-30"
     },
     {
       "slug": "foreigner-buy-property-china",
@@ -1159,6 +1160,122 @@
         "pagePosition": null
       },
       "doneAt": "2026-10-29"
+    },
+    {
+      "slug": "work-permit-processing-time",
+      "topic": "arrive",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China work permit processing time",
+      "query": "china work permit processing time",
+      "status": "queued",
+      "evidence": "demand matrix: \"china work permit processing time\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "work",
+        "permit",
+        "processing",
+        "time"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "transfer-money-india-through-bank",
+      "topic": "leave",
+      "audience": [
+        "visitor"
+      ],
+      "unit": "one application",
+      "title": "How to transfer money from china to india through bank",
+      "query": "how to transfer money from china to india through bank",
+      "status": "queued",
+      "evidence": "demand matrix: \"how to transfer money from china to india through bank\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "transfer",
+        "money",
+        "from",
+        "china",
+        "india"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "tax-refund-foreigners",
+      "topic": "leave",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China tax refund foreigners",
+      "query": "china tax refund foreigners",
+      "status": "queued",
+      "evidence": "demand matrix: \"china tax refund foreigners\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "refund",
+        "foreigners"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
-  ]
+  ],
+  "updatedAt": "2026-10-30T00:38:46.139Z"
 }

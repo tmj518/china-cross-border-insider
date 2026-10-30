@@ -1,52 +1,8 @@
 {
-  "at": "2026-10-30T00:34:36.571Z",
+  "at": "2026-10-30T00:38:46.770Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-medical-insurance-foreigner",
-      "topic": "social-insurance",
-      "audience": [
-        "employee",
-        "employer"
-      ],
-      "unit": "one year",
-      "title": "Health Cover for Foreigners Working in China",
-      "query": "china medical insurance foreigner employee",
-      "status": "queued",
-      "sources": [
-        "http://www.mohrss.gov.cn/",
-        "https://www.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "医疗保险",
-        "职工医保",
-        "外国人",
-        "商业保险"
-      ],
-      "facts": [],
-      "mustSay": [
-        "There are two different things: the statutory employee scheme and a commercial policy an employer buys.",
-        "The statutory scheme is tied to social insurance registration, and it varies by city.",
-        "A commercial policy is what covers treatment outside the scheme, and the two are not substitutes.",
-        "Which one applies depends on the employment status, not on nationality alone."
-      ],
-      "avoid": [
-        "Do not state a premium or a reimbursement rate unless the fact sheet contains one for a named city."
-      ],
-      "priorityScore": 2.5,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 2.5,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "china-driving-licence-renewal",
       "topic": "driving",
@@ -178,6 +134,84 @@
       }
     },
     {
+      "slug": "work-permit-processing-time",
+      "topic": "arrive",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China work permit processing time",
+      "query": "china work permit processing time",
+      "status": "queued",
+      "evidence": "demand matrix: \"china work permit processing time\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "work",
+        "permit",
+        "processing",
+        "time"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "transfer-money-india-through-bank",
+      "topic": "leave",
+      "audience": [
+        "visitor"
+      ],
+      "unit": "one application",
+      "title": "How to transfer money from china to india through bank",
+      "query": "how to transfer money from china to india through bank",
+      "status": "queued",
+      "evidence": "demand matrix: \"how to transfer money from china to india through bank\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "transfer",
+        "money",
+        "from",
+        "china",
+        "india"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
       "slug": "alipay-wechat-pay-foreigner-china",
       "topic": "payments",
       "audience": [
@@ -199,6 +233,43 @@
         "微信",
         "payment",
         "wallet"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.2,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 2,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "tax-refund-foreigners",
+      "topic": "leave",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China tax refund foreigners",
+      "query": "china tax refund foreigners",
+      "status": "queued",
+      "evidence": "demand matrix: \"china tax refund foreigners\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "refund",
+        "foreigners"
       ],
       "facts": [],
       "mustSay": [],

@@ -209,3 +209,5 @@ Replace the CIF value with your own invoice value and the rate with the one your
 A ten-year-old rate range that did not change is not the story, and reading the headline as "nothing changed" is the mistake available to anyone who stops there. The measure covers a spread of 2.535 times, decided by which mill produced the pipe, and the same decision quietly moved one exporter off the list that removes the duty entirely.
 
 For an importer, the question is not what the duty is. It is which rate your supplier attracts, whether that supplier still holds an undertaking, and what the answer does to your landed cost before the order is placed. Ask it in writing, and ask it about the exporting entity rather than the brand.
+
+For the paperwork and the cost in one place, see [Renewing a Chinese Driving Licence](/guide/china-driving-licence-renewal/).
