@@ -392,6 +392,34 @@ function fillRequiredMeta(src) {
     set("audience", "[" + merged.map((x) => JSON.stringify(x)).join(", ") + "]");
     changed.push("audience " + audCount + " -> " + merged.length + " segments");
   }
+  /*
+   * THE BLOG SCHEMA HAS ENUM FIELDS AND A WRONG VALUE FAILS THE BUILD, NOT THE GATE.
+   *
+   * The 2026-10-29 run never published and the reason was in a build log: "stakes: Invalid option:
+   * expected one of priced|directional". The model then rewrote the whole article twice, because a schema
+   * error reads like a content error and a whole rewrite is the only move it had.
+   *
+   * Values as the collection actually declares them:
+   *   category         trade-policy | platforms | supply-chain | sourcing | logistics
+   *   audience         platform-seller | importer | both        (one value - the three-item list above
+   *                    is the guide schema, and this is the blog schema)
+   *   stakes           priced | directional
+   *   search_intent    informational | transactional | comparison
+   *   priority         P0 | P1 | P2
+   */
+  const ENUMS = {
+    category: { legal: ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"], fallback: "trade-policy" },
+    audience: { legal: ["platform-seller", "importer", "both"], fallback: "both" },
+    stakes: { legal: ["priced", "directional"], fallback: "directional" },
+    search_intent: { legal: ["informational", "transactional", "comparison"], fallback: "informational" },
+    priority: { legal: ["P0", "P1", "P2"], fallback: "P2" },
+  };
+  for (const [field, rule] of Object.entries(ENUMS)) {
+    const raw = String(get(field) ?? "").replace(/^\[|\]$/g, "").split(",")[0].replace(/["']/g, "").trim();
+    if (rule.legal.includes(raw)) { if (get(field) !== raw) { set(field, raw); changed.push(field + " reshaped to " + raw); } continue; }
+    set(field, rule.fallback);
+    changed.push(field + " -> " + rule.fallback);
+  }
   const HEDGE_MAP = [[/\bmay\b/gi, "can"], [/\bcould\b/gi, "can"], [/\bmight\b/gi, "can"], [/\bpossibly\b/gi, "can"]];
   let hedgeHits = 0;
   const cleanedBody = body.split(/\r?\n/).map((line) => {
