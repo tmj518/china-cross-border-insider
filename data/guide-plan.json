@@ -1,52 +1,8 @@
 {
-  "at": "2026-10-30T03:06:25.201Z",
+  "at": "2026-10-30T07:20:24.172Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-renting-apartment-deposit",
-      "topic": "relocation",
-      "audience": [
-        "relocating",
-        "employee"
-      ],
-      "unit": "one tenancy",
-      "title": "Renting in China: Contract, Deposit and Registration",
-      "query": "renting apartment china foreigner deposit contract",
-      "status": "queued",
-      "sources": [
-        "https://www.gov.cn/",
-        "https://www.mohurd.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "住房租赁",
-        "租赁合同",
-        "押金",
-        "登记备案"
-      ],
-      "facts": [],
-      "mustSay": [
-        "A tenancy is a written contract, and the deposit is a term of that contract rather than a custom.",
-        "The landlord's right to let the flat is evidenced by a property certificate, which the tenant can ask to see.",
-        "A foreign tenant needs the address registered for the residence permit, and the landlord is part of that.",
-        "Disputes follow the contract and the deposit terms, so what is written matters more than what was said."
-      ],
-      "avoid": [
-        "Do not state a typical deposit multiple or a rent level unless the fact sheet contains it."
-      ],
-      "priorityScore": 2,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 2,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "china-sim-card-phone-number-foreigner",
       "topic": "connectivity",
@@ -297,6 +253,44 @@
         "免签",
         "240",
         "transit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "china 144 hour visa free transit -site:youtube.com -site:reddit.com -site:x.com -site:twitter.com -site:facebook.com -site:instagram.com -site:tiktok.com -site:linkedin.com -site:pinterest.com -site:nytimes.com -site:wsj.com -site:yelp.com -site:rottentomatoes.com",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "work-permit-visa",
+      "topic": "arrive",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Work permit visa in china",
+      "query": "work permit visa in china",
+      "status": "queued",
+      "evidence": "demand matrix: \"work permit visa in china\" (bing)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "work",
+        "permit",
+        "visa",
+        "china"
       ],
       "facts": [],
       "mustSay": [],

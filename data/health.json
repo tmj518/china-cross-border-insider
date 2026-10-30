@@ -1,27 +1,22 @@
 {
-  "at": "2026-10-30T03:06:48.040Z",
+  "at": "2026-10-30T07:21:15.442Z",
   "streaks": {
     "c": {
-      "verdict": "PUBLISHED",
-      "count": 8,
-      "at": "2026-10-30T03:06:47.981Z"
+      "verdict": "NO-SUBJECT",
+      "count": 1,
+      "at": "2026-10-30T07:21:15.394Z"
     },
     "script": {
       "verdict": "PUBLISHED",
       "count": 1,
       "at": "2026-10-30T01:21:03.144Z"
-    },
-    "agent": {
-      "verdict": "INSUFFICIENT-EVIDENCE",
-      "count": 1,
-      "at": "2026-10-30T02:45:52.533Z"
     }
   },
   "lastRun": {
-    "at": "2026-10-30T03:06:47.981Z",
+    "at": "2026-10-30T07:21:15.394Z",
     "route": "c",
-    "verdict": "PUBLISHED",
-    "article": "china-renting-apartment-deposit"
+    "verdict": "NO-SUBJECT",
+    "article": ""
   },
   "metrics": {
     "files": 1,
@@ -42,7 +37,6 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 8 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
