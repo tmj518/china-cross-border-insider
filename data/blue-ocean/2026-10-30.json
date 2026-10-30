@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-30T03:14:47.752Z",
+  "at": "2026-10-30T03:22:56.231Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -9,7 +9,45 @@
     "maxPosition": 20,
     "top": 3
   },
-  "available": false,
-  "reason": "GSC_CREDENTIALS_BASE64 is not set",
-  "keywords": []
+  "available": true,
+  "empty": true,
+  "reason": "no query met the impression, ctr and position thresholds",
+  "keywords": [],
+  "topSeen": [
+    {
+      "query": "scfi",
+      "impressions": 5,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 68.6
+    },
+    {
+      "query": "china housing property mortgage subsidy developers policy site:reuters.com",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "china housing property mortgage subsidy developers policy site:wsj.com",
+      "impressions": 3,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "china 144 hour visa free transit -site:youtube.com -site:reddit.com -site:x.com -site:twitter.com -site:facebook.com -site:instagram.com -site:tiktok.com -site:linkedin.com -site:pinterest.com -site:nytimes.com -site:wsj.com -site:yelp.com -site:rottentomatoes.com",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "query": "china housing property mortgage subsidy developers policy site:bloomberg.com",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 1
+    }
+  ]
 }
