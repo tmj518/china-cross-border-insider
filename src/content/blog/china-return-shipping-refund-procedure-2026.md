@@ -130,4 +130,4 @@ The table in the section above maps each question in a return to the party who a
 
 The refund on a return to China is the supplier's, and the only thing the seller controls is how the goods are declared on the way back. Get that wrong and nothing else can be fixed; get it right and the commercial conversation with the supplier is about freight and replacement price, which is a conversation the seller can actually win.
 
-For the paperwork and the cost in one place, see [The Health Check Behind a China Residence Permit](/blog/foreigner-health-check-residence-permit/).
+For the paperwork and the cost in one place, see [The Health Check Behind a China Residence Permit](/guide/foreigner-health-check-residence-permit/).
