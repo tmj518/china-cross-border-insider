@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-31T05:05:04.893Z",
+  "at": "2026-10-31T07:20:56.485Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "transfer-money-india-through-bank",
-  "seconds": 25,
+  "article": "residence-permit-application-form",
+  "seconds": 27,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0017
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -25,29 +25,29 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding transfer-money-india-through-bank",
+      "name": "grounding residence-permit-application-form",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates transfer-money-india-through-bank",
+      "name": "gates residence-permit-application-form",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build transfer-money-india-through-bank",
+      "name": "build residence-permit-application-form",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-to-india-parcel-cost-procedure-2026, china-brazil-beef-safeguard-55-percent-tariff-october-2026"
+      "detail": "china-return-shipping-refund-procedure-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/transfer-money-india-through-bank/"
+      "detail": "/guide/residence-permit-application-form/"
     }
   ],
   "researchLog": [
