@@ -26,6 +26,13 @@ const MIN_OPEN = Number(flag("min", "10"));
 const QUEUE = join(ROOT, "data", "guide-queue.json");
 
 const GUIDE_PERSONAS = { expat: "relocating", student: "student", bri: "visitor" };
+/*
+ * The matrix moment is not the guide topic. The guide schema enumerates its own eight clusters, and
+ * writing "arrive" into topic: failed the Astro build for all ten generated topics on 2026-10-31 - every
+ * candidate was generated, written, and then removed by the build step, so the line reported NO-SUBJECT
+ * with a queue that was full.
+ */
+const GUIDE_TOPIC_OF_MOMENT = { arrive: "transit", live: "residence", leave: "tax", buy: "relocation", policy: "residence" };
 const GUIDE_MOMENTS = new Set(["arrive", "live", "leave"]);
 
 /* Words that make a query a guide question rather than a trade question. */
@@ -157,7 +164,7 @@ if (!DRY) {
   for (const c of picked) {
     queue.topics.push({
       slug: c.slug,
-      topic: c.moment,
+      topic: GUIDE_TOPIC_OF_MOMENT[c.moment] ?? "residence",
       audience: [c.audience],
       unit: "one application",
       title: titleOf(c.text),
