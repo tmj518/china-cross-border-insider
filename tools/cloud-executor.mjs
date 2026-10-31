@@ -157,6 +157,40 @@ function frontmatter(article) {
 }
 
 /** Every way this draft would fail the content schema, which fails the whole build. */
+/*
+ * THE REPAIR THAT WAS NEVER WRITTEN.
+ *
+ * cloud-executor has called repairFrontmatter since 2026-10-18 and the function never existed. Nothing
+ * noticed because no draft had ever reached this branch; on 2026-10-31 the first draft with an
+ * over-long field took it and the writer step died with "ReferenceError: repairFrontmatter is not
+ * defined", which the card reported as WRITE-FAILED and the article was lost.
+ *
+ * What it may repair is narrow on purpose: an over-long string is a typo with a number attached, and
+ * truncating it keeps the meaning. A wrong enum or a missing required field is not mechanical - guessing
+ * there would be fabricating metadata - so those stay violations and the draft is still refused.
+ */
+async function repairFrontmatter(article, violations) {
+  let out = article;
+  const repaired = [];
+  for (const v of violations) {
+    const m = /^(\w+) is (\d+) characters and the schema allows (\d+)$/.exec(String(v));
+    if (!m) continue;
+    const field = m[1];
+    const limit = Number(m[3]);
+    const re = new RegExp("^(" + field + ":\\s*\"?)([^\"\\n]+)(\"?)$", "m");
+    const hit = re.exec(out);
+    if (!hit) continue;
+    let cut = [...hit[2]].slice(0, limit).join("");
+    const space = cut.lastIndexOf(" ");
+    if (space > limit * 0.6) cut = cut.slice(0, space);
+    cut = cut.replace(/[\s,;:.]+$/, "");
+    if (!cut) continue;
+    out = out.replace(re, `$1${cut}$3`);
+    repaired.push(field);
+  }
+  return repaired.length ? { article: out, repaired } : null;
+}
+
 function schemaViolations(article) {
   const f = frontmatter(article);
   if (!f) return ["no frontmatter block: the file must open with --- on its own line and close it the same way"];
