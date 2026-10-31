@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-30T07:21:15.394Z",
+  "at": "2026-10-31T02:40:03.125Z",
   "route": "c",
   "verdict": "NO-SUBJECT",
   "article": null,
@@ -7,13 +7,13 @@
   "usage": {
     "calls": 6,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0.0051
   },
   "providers": [
     "volces"
   ],
   "reasons": [
-    "china-sim-card-phone-number-foreigner: the model returned no JSON object",
+    "china-sim-card-phone-number-foreigner: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/china-sim-card-phone-number-foreigner.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b",
     "work-permit-processing-time: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/work-permit-processing-time.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at ",
     "transfer-money-india-through-bank: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/transfer-money-india-through-bank.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m "
   ],
@@ -34,9 +34,14 @@
       "detail": "procedural, no figures"
     },
     {
+      "name": "gates china-sim-card-phone-number-foreigner",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
       "name": "skipped china-sim-card-phone-number-foreigner",
       "ok": false,
-      "detail": "the model returned no JSON object"
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
     },
     {
       "name": "grounding work-permit-processing-time",
