@@ -936,7 +936,7 @@
     },
     {
       "slug": "foreigner-buy-property-china",
-      "topic": "property",
+      "topic": "residence",
       "audience": [
         "relocating",
         "visitor"
@@ -1050,7 +1050,7 @@
     },
     {
       "slug": "alipay-wechat-pay-foreigner-china",
-      "topic": "payments",
+      "topic": "residence",
       "audience": [
         "visitor",
         "relocating"
@@ -1089,7 +1089,7 @@
     },
     {
       "slug": "china-sim-card-phone-number-foreigner",
-      "topic": "connectivity",
+      "topic": "residence",
       "audience": [
         "visitor",
         "relocating"
@@ -1164,7 +1164,7 @@
     },
     {
       "slug": "work-permit-processing-time",
-      "topic": "arrive",
+      "topic": "transit",
       "audience": [
         "relocating"
       ],
@@ -1203,7 +1203,7 @@
     },
     {
       "slug": "transfer-money-india-through-bank",
-      "topic": "leave",
+      "topic": "tax",
       "audience": [
         "visitor"
       ],
@@ -1242,7 +1242,7 @@
     },
     {
       "slug": "tax-refund-foreigners",
-      "topic": "leave",
+      "topic": "tax",
       "audience": [
         "relocating"
       ],
@@ -1279,7 +1279,7 @@
     },
     {
       "slug": "work-permit-process",
-      "topic": "arrive",
+      "topic": "transit",
       "audience": [
         "relocating"
       ],
@@ -1317,7 +1317,7 @@
     },
     {
       "slug": "work-permit-visa",
-      "topic": "arrive",
+      "topic": "transit",
       "audience": [
         "relocating"
       ],
