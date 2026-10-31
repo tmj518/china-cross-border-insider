@@ -34,6 +34,24 @@ import { execFileSync } from "node:child_process";
 import { available, summary as providerSummary, usageToday, needFor } from "./lib-llm.mjs";
 import { MIN_SUBSTANTIVE } from "../src/lib/figure-limits.mjs";
 
+/*
+ * THE REVIEWER'S ANSWER WAS BEING THROWN AWAY BY A WARNING.
+ *
+ * On the failure path qaOut was stdout and stderr concatenated, and Node writes its Undici experimental
+ * warning to stderr before any of this runs. JSON.parse then saw the warning text followed by the report,
+ * threw, and every rejected review was recorded as "no parseable verdict" - three words that name the
+ * symptom and hide the reason.
+ *
+ * The report is the outermost JSON object in the buffer. Find it and parse that.
+ */
+function parseReport(text) {
+  try { return JSON.parse(text); } catch {}
+  const a = String(text).indexOf("{");
+  const b = String(text).lastIndexOf("}");
+  if (a >= 0 && b > a) { try { return JSON.parse(String(text).slice(a, b + 1)); } catch {} }
+  return null;
+}
+
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
 const flag = (name, dflt) => {
@@ -686,7 +704,7 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     qaCode = e.status ?? 1;
   }
   try {
-    qa = JSON.parse(qaOut);
+    qa = parseReport(qaOut);
   } catch {
     qa = null;
   }
