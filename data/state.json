@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-30T01:21:03.144Z",
+  "lastRun": "2026-10-31T00:57:42.103Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
-  "runs": 24,
-  "published": 24,
+  "lastArticle": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
+  "runs": 25,
+  "published": 25,
   "lastUsage": {
-    "calls": 4,
+    "calls": 1,
     "failed": 0,
-    "usd": 0.006,
-    "promptTokens": 39024,
-    "completionTokens": 6126
+    "usd": 0.002,
+    "promptTokens": 8932,
+    "completionTokens": 3513
   }
 }

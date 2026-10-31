@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-30T01:21:03.144Z",
+  "at": "2026-10-31T00:57:42.103Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "23 previous run(s), last 2026-10-29T04:47:59.918Z (PUBLISHED)"
+      "detail": "24 previous run(s), last 2026-10-30T01:21:03.144Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "6 of 15 net-new this week"
+      "detail": "7 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -26,9 +26,9 @@
       "detail": "every section has a net-new article this week (5 sections)"
     },
     {
-      "name": "research",
+      "name": "directive",
       "ok": true,
-      "detail": "proposed eu-goes-provisional-safeguard-tariff-rate-quotas-2026, 5 verified figure(s)"
+      "detail": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026 from /data/directive.json"
     },
     {
       "name": "directive figures",
@@ -38,7 +38,7 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/eu-goes-provisional-safeguard-tariff-rate-quotas-2026.md"
+      "detail": "draft at /data/drafts/eu-provisional-safeguard-grain-oriented-electrical-steel-2026.md"
     },
     {
       "name": "reviewer",
@@ -53,7 +53,7 @@
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/eu-goes-provisional-safeguard-tariff-rate-quotas-2026.md"
+      "detail": "staged at src/content/blog/eu-provisional-safeguard-grain-oriented-electrical-steel-2026.md"
     },
     {
       "name": "registry",
@@ -73,65 +73,23 @@
   ],
   "verdict": "PUBLISHED",
   "reasons": [],
-  "article": "eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
+  "article": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
   "commit": null,
   "usage": {
-    "calls": 4,
+    "calls": 1,
     "failed": 0,
-    "usd": 0.006,
-    "promptTokens": 39024,
-    "completionTokens": 6126
+    "usd": 0.002,
+    "promptTokens": 8932,
+    "completionTokens": 3513
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 1,
     "sourcing": 1,
-    "trade-policy": 4,
+    "trade-policy": 5,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
-  "researchLog": [
-    "  ok    trade-remedy-cases          62643B  archived",
-    "  skip  tariff-commission             604B  not usable (recorded anyway)",
-    "  ok    ministry-of-finance         20830B  archived",
-    "  ok    mofcom                     161774B  archived",
-    "  ok    eu-trade-news-article       77047B  article archived",
-    "  ok    eu-trade-news-article       73836B  article archived",
-    "  ok    eu-trade-news-article       77505B  article archived",
-    "  ok    eu-trade-news-article       76422B  article archived",
-    "  ok    trade-remedy-cases-article    26832B  article archived",
-    "  ok    trade-remedy-cases-article    40492B  article archived",
-    "  ok    trade-remedy-cases-article    24436B  article archived",
-    "  ok    trade-remedy-cases-article    19137B  article archived",
-    "  articles : 8 followed from the listings",
-    "  ledger: 36 published subject(s) to avoid repeating",
-    "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 949 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3874 characters but no document structure, trying the next one",
-    "  stream      : SSE, 974 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4000 characters but no document structure, trying the next one",
-    "  stream      : SSE, 746 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 2869 characters but no document structure, trying the next one",
-    "  spent   : ~0.0041  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
-    "  keyword : EU GOES safeguard tariff rate quota 2026 importer cost",
-    "  duplicate check: score 5 against eu-steel-safeguard-quota-2026-chinese-hrc-cost",
-    "      shared keyword stems: safeguard, quota",
-    "      shared institution(s): article",
-    "  slug    : eu-goes-provisional-safeguard-tariff-rate-quotas-2026",
-    "  keyword : EU GOES safeguard tariff rate quota 2026 importer cost",
-    "  category: trade-policy",
-    "  figures : 5",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0041",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "seconds": 83
+  "seconds": 40
 }

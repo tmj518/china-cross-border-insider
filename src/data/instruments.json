@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-30",
+  "generated": "2026-10-31",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -427,6 +427,51 @@
           "period": "2026",
           "source": "European Commission Directorate-General for Trade and Economic Security",
           "retrieved": "2026-10-18"
+        },
+        {
+          "articleSlug": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
+          "articleNum": 69,
+          "value": "9 months",
+          "unit": "standard maximum duration of a safeguard investigation",
+          "period": "applicable to ongoing 2026 GOES safeguard investigation",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-30"
+        },
+        {
+          "articleSlug": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
+          "articleNum": 69,
+          "value": "11 months",
+          "unit": "maximum extended duration of a safeguard investigation",
+          "period": "applicable to ongoing 2026 GOES safeguard investigation",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-30"
+        },
+        {
+          "articleSlug": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
+          "articleNum": 69,
+          "value": "15",
+          "unit": "minimum number of EU Member States required to vote in favour for definitive safeguard measures to enter into force",
+          "period": "for upcoming GOES definitive safeguard measure vote",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-30"
+        },
+        {
+          "articleSlug": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
+          "articleNum": 69,
+          "value": "65%",
+          "unit": "minimum share of EU population represented by voting Member States required for definitive safeguard measures to enter into force",
+          "period": "for upcoming GOES definitive safeguard measure vote",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-30"
+        },
+        {
+          "articleSlug": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
+          "articleNum": 69,
+          "value": "March 2026",
+          "unit": "month the GOES safeguard investigation was launched",
+          "period": "start of the 2026 GOES safeguard investigation",
+          "source": "European Commission Directorate-General for Trade and Economic Security",
+          "retrieved": "2026-10-30"
         }
       ],
       "articleNums": [
@@ -436,7 +481,8 @@
         43,
         46,
         47,
-        50
+        50,
+        69
       ],
       "articleSlugs": [
         "eu-fdi-screening-2025-notification-rates-importer-compliance-2026",
@@ -445,7 +491,8 @@
         "eu-fdi-screening-case-timing-fisr-2028",
         "eu-fdi-screening-rules-2028-in-depth-review-risk",
         "eu-goes-provisional-safeguard-tariff-rate-quotas-price-thresholds-2026",
-        "eu-pea-protein-anti-dumping-definitive-duties-2026"
+        "eu-pea-protein-anti-dumping-definitive-duties-2026",
+        "eu-provisional-safeguard-grain-oriented-electrical-steel-2026"
       ],
       "modelOutput": false
     },
