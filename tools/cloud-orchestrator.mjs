@@ -705,6 +705,8 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
   }
   try {
     qa = parseReport(qaOut);
+    /* When the report is unreadable, say so with its tail: three words in a ledger help nobody. */
+    if (!qa) console.log("  reviewer   : the report could not be parsed - " + String(qaOut).replace(/\s+/g, " ").slice(-300));
   } catch {
     qa = null;
   }
