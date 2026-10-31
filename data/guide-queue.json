@@ -1211,7 +1211,7 @@
       "unit": "one application",
       "title": "How to transfer money from china to india through bank",
       "query": "how to transfer money from china to india through bank",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"how to transfer money from china to india through bank\" (google)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1239,7 +1239,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-10-31"
     },
     {
       "slug": "tax-refund-foreigners",
@@ -1353,7 +1354,46 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "residence-permit-application-form",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China residence permit application form",
+      "query": "china residence permit application form",
+      "status": "queued",
+      "evidence": "demand matrix: \"china residence permit application form\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "residence",
+        "permit",
+        "application",
+        "form"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 2.5,
+      "priorityWhy": {
+        "basis": "harvested",
+        "base": 2.5,
+        "demandImpressions": 0,
+        "demandBreadth": 1,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-10-30T07:20:23.816Z"
+  "updatedAt": "2026-10-31T05:04:39.140Z"
 }

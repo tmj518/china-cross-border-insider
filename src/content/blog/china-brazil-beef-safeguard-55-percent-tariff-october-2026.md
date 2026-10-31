@@ -148,3 +148,5 @@ total_landed_cost_per_tonne = cif_value_per_tonne + (total_combined_duty / shipm
 The Brazil-specific beef safeguard surcharge is not a distant policy change that you can plan for over weeks. It is a hard, immediate 55% increase to your total duty cost that activates at a precise, publicly confirmed timestamp, with no carve-outs for importers who did not see the notice in time. The only way to avoid absorbing tens of thousands of dollars in unplanned extra cost is to act on the numbers immediately, either by prioritizing clearance for cargo already in port, rerouting in-transit shipments, or renegotiating pricing with your downstream buyers before the deadline passes.
 
 For the paperwork and the cost in one place, see [Health Cover for Foreigners Working in China](/guide/china-medical-insurance-foreigner/).
+
+For the paperwork and the cost in one place, see [How to transfer money from china to india through bank](/guide/transfer-money-india-through-bank/).

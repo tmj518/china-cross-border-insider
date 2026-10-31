@@ -127,3 +127,5 @@ The order is the same and the machinery is not. A container and a parcel are cle
 
 **What should I do if the assessing office queries my declared value?**
 Produce the documents that support the value rather than restating it. The query is about whether the declared value is supported, so the answer is the invoice, the contract or order, and the payment record, reconciled with each other. A restated value without supporting documents is the reason a query becomes a hold.
+
+For the paperwork and the cost in one place, see [How to transfer money from china to india through bank](/guide/transfer-money-india-through-bank/).

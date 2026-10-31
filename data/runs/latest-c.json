@@ -1,13 +1,13 @@
 {
-  "at": "2026-10-31T02:46:07.639Z",
+  "at": "2026-10-31T05:05:04.893Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-sim-card-phone-number-foreigner",
-  "seconds": 19,
+  "article": "transfer-money-india-through-bank",
+  "seconds": 25,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0022
+    "usd": 0.0017
   },
   "providers": [
     "volces"
@@ -25,29 +25,29 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding china-sim-card-phone-number-foreigner",
+      "name": "grounding transfer-money-india-through-bank",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-sim-card-phone-number-foreigner",
+      "name": "gates transfer-money-india-through-bank",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-sim-card-phone-number-foreigner",
+      "name": "build transfer-money-india-through-bank",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-fdi-screening-rules-2028-in-depth-review-risk"
+      "detail": "china-to-india-parcel-cost-procedure-2026, china-brazil-beef-safeguard-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-sim-card-phone-number-foreigner/"
+      "detail": "/guide/transfer-money-india-through-bank/"
     }
   ],
   "researchLog": [
