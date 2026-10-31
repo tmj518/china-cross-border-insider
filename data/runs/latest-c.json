@@ -1,22 +1,18 @@
 {
-  "at": "2026-10-31T02:40:03.125Z",
+  "at": "2026-10-31T02:46:07.639Z",
   "route": "c",
-  "verdict": "NO-SUBJECT",
-  "article": null,
-  "seconds": 51,
+  "verdict": "PUBLISHED",
+  "article": "china-sim-card-phone-number-foreigner",
+  "seconds": 19,
   "usage": {
-    "calls": 6,
+    "calls": 2,
     "failed": 0,
-    "usd": 0.0051
+    "usd": 0.0022
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "china-sim-card-phone-number-foreigner: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/china-sim-card-phone-number-foreigner.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b",
-    "work-permit-processing-time: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/work-permit-processing-time.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at ",
-    "transfer-money-india-through-bank: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/transfer-money-india-through-bank.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m "
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
@@ -39,39 +35,19 @@
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "skipped china-sim-card-phone-number-foreigner",
-      "ok": false,
-      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
-    },
-    {
-      "name": "grounding work-permit-processing-time",
+      "name": "build china-sim-card-phone-number-foreigner",
       "ok": true,
-      "detail": "procedural, no figures"
+      "detail": "site builds with the guide in place"
     },
     {
-      "name": "gates work-permit-processing-time",
+      "name": "inbound links",
       "ok": true,
-      "detail": "structure ok, procedural (no figures)"
+      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-fdi-screening-rules-2028-in-depth-review-risk"
     },
     {
-      "name": "skipped work-permit-processing-time",
-      "ok": false,
-      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
-    },
-    {
-      "name": "grounding transfer-money-india-through-bank",
+      "name": "published",
       "ok": true,
-      "detail": "procedural, no figures"
-    },
-    {
-      "name": "gates transfer-money-india-through-bank",
-      "ok": true,
-      "detail": "structure ok, procedural (no figures)"
-    },
-    {
-      "name": "skipped transfer-money-india-through-bank",
-      "ok": false,
-      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
+      "detail": "/guide/china-sim-card-phone-number-foreigner/"
     }
   ],
   "researchLog": [

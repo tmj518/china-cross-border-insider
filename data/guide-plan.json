@@ -1,11 +1,11 @@
 {
-  "at": "2026-10-31T02:39:12.394Z",
+  "at": "2026-10-31T02:45:48.291Z",
   "days": 90,
   "gsc": true,
   "plan": [
     {
       "slug": "china-sim-card-phone-number-foreigner",
-      "topic": "connectivity",
+      "topic": "residence",
       "audience": [
         "visitor",
         "relocating"
@@ -28,49 +28,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 2,
+      "priorityScore": 3,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "work-permit-processing-time",
-      "topic": "arrive",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China work permit processing time",
-      "query": "china work permit processing time",
-      "status": "queued",
-      "evidence": "demand matrix: \"china work permit processing time\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "work",
-        "permit",
-        "processing",
-        "time"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 2,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -82,7 +43,7 @@
     },
     {
       "slug": "transfer-money-india-through-bank",
-      "topic": "leave",
+      "topic": "tax",
       "audience": [
         "visitor"
       ],
@@ -106,48 +67,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 2,
+      "priorityScore": 3,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "work-permit-process",
-      "topic": "arrive",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China work permit process",
-      "query": "china work permit process",
-      "status": "queued",
-      "evidence": "demand matrix: \"china work permit process\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "work",
-        "permit",
-        "process"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 2,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -159,7 +82,7 @@
     },
     {
       "slug": "alipay-wechat-pay-foreigner-china",
-      "topic": "payments",
+      "topic": "residence",
       "audience": [
         "visitor",
         "relocating"
@@ -183,10 +106,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 1.2,
+      "priorityScore": 1.8,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -197,8 +120,47 @@
       }
     },
     {
+      "slug": "work-permit-processing-time",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China work permit processing time",
+      "query": "china work permit processing time",
+      "status": "queued",
+      "evidence": "demand matrix: \"china work permit processing time\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "work",
+        "permit",
+        "processing",
+        "time"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
       "slug": "tax-refund-foreigners",
-      "topic": "leave",
+      "topic": "tax",
       "audience": [
         "relocating"
       ],
@@ -220,14 +182,52 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 1.2,
+      "priorityScore": 1.8,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
         "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "work-permit-process",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China work permit process",
+      "query": "china work permit process",
+      "status": "queued",
+      "evidence": "demand matrix: \"china work permit process\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "work",
+        "permit",
+        "process"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
@@ -272,7 +272,7 @@
     },
     {
       "slug": "work-permit-visa",
-      "topic": "arrive",
+      "topic": "transit",
       "audience": [
         "relocating"
       ],
@@ -355,7 +355,7 @@
     },
     {
       "slug": "foreigner-buy-property-china",
-      "topic": "property",
+      "topic": "residence",
       "audience": [
         "relocating",
         "visitor"

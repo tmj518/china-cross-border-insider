@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-31T02:40:03.196Z",
+  "at": "2026-10-31T02:46:07.699Z",
   "streaks": {
     "c": {
-      "verdict": "NO-SUBJECT",
-      "count": 2,
-      "at": "2026-10-31T02:40:03.125Z"
+      "verdict": "PUBLISHED",
+      "count": 1,
+      "at": "2026-10-31T02:46:07.639Z"
     },
     "script": {
       "verdict": "PUBLISHED",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-10-31T02:40:03.125Z",
+    "at": "2026-10-31T02:46:07.639Z",
     "route": "c",
-    "verdict": "NO-SUBJECT",
-    "article": ""
+    "verdict": "PUBLISHED",
+    "article": "china-sim-card-phone-number-foreigner"
   },
   "metrics": {
     "files": 1,

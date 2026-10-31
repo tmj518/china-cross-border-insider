@@ -1074,10 +1074,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 1.2,
+      "priorityScore": 1.8,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -1097,7 +1097,7 @@
       "unit": "one sim card",
       "title": "Getting a Chinese Phone Number as a Foreigner",
       "query": "china sim card foreigner passport",
-      "status": "queued",
+      "status": "done",
       "evidence": "First practical blocker after arrival; the site covers banking but not this step",
       "sources": [
         "https://english.www.gov.cn/",
@@ -1112,10 +1112,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 2,
+      "priorityScore": 3,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -1123,7 +1123,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-10-31"
     },
     {
       "slug": "foreigner-health-check-residence-permit",
@@ -1188,10 +1189,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 2,
+      "priorityScore": 1.8,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 1.8,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -1227,10 +1228,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 2,
+      "priorityScore": 3,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -1264,10 +1265,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 1.2,
+      "priorityScore": 1.8,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 3,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
@@ -1302,10 +1303,10 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 2,
+      "priorityScore": 1.8,
       "priorityWhy": {
         "basis": "prior",
-        "base": 2,
+        "base": 1.8,
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
