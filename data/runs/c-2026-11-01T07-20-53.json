@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-01T07:20:53.491Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "alipay-wechat-pay-foreigner-china",
+  "seconds": 26,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0006
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "10 candidate(s)"
+    },
+    {
+      "name": "grounding alipay-wechat-pay-foreigner-china",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates alipay-wechat-pay-foreigner-china",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build alipay-wechat-pay-foreigner-china",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-to-india-parcel-cost-procedure-2026, china-emergency-procurement-rules-imported-goods-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/alipay-wechat-pay-foreigner-china/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

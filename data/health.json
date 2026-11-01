@@ -1,22 +1,22 @@
 {
-  "at": "2026-10-31T07:20:56.547Z",
+  "at": "2026-11-01T07:20:53.544Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 3,
-      "at": "2026-10-31T07:20:56.485Z"
+      "count": 4,
+      "at": "2026-11-01T07:20:53.491Z"
     },
     "script": {
       "verdict": "PUBLISHED",
       "count": 1,
-      "at": "2026-10-31T00:57:42.103Z"
+      "at": "2026-11-01T01:20:58.565Z"
     }
   },
   "lastRun": {
-    "at": "2026-10-31T07:20:56.485Z",
+    "at": "2026-11-01T07:20:53.491Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "residence-permit-application-form"
+    "article": "alipay-wechat-pay-foreigner-china"
   },
   "metrics": {
     "files": 1,
@@ -37,7 +37,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 3 runs in a row.",
+    "c has ended PUBLISHED 4 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
