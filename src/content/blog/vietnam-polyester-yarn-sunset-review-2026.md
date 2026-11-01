@@ -232,6 +232,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [EU provisional safeguard measures on grain-oriented electrical steel: importer cost from 18 September 2026](/blog/eu-provisional-safeguard-grain-oriented-electrical-steel-2026/)
 
+> Also read: [Brazil's beef quota filled on 29 September: from 1 October every shipment pays an extra 55%](/blog/china-brazil-beef-safeguard-55-percent-trigger-october-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your

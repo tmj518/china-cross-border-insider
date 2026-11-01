@@ -1,117 +1,175 @@
 ---
-title: "Brazil's beef quota filled: the 55% add-on and how the trigger works"
-description: "Brazil's 2026 beef safeguard quota reached 100% on 29 September 2026. Here is the order of events that turns a filled quota into a 55% additional tariff, and what an importer must have on file."
-publishDate: "2026-10-29"
-reviewBy: 2027-01-31
+route: "script"
+title: "Brazil's beef quota filled on 29 September: from 1 October every shipment pays an extra 55%"
+subtitle: "The safeguard trigger has already fired. Brazilian beef cleared from 00:00 on 1 October 2026 carries a 55% additional tariff on top of the current rate."
+description: "Brazil's 2026 beef safeguard quota hit 100% on 29 September 2026. From 00:00 on 1 October 2026 every Brazilian beef shipment pays a 55% additional tariff on top of the current rate."
+publishDate: 2026-11-01
+reviewBy: 2027-02-01
+stakes: priced
 category: "trade-policy"
 audience: "importer"
-information_gain: "primary-source"
-target_keyword: "brazil beef safeguard add-on"
+tags: ["beef import", "Brazil", "safeguard", "additional tariff", "landed cost", "origin switch"]
+priority: "P0"
+featured: false
+draft: false
+articleNumber: 72
+target_keyword: "China Brazil beef safeguard 55% additional tariff October 2026"
+search_intent: "transactional"
+information_gain: "custom-calculation"
+sources:
+  - "MOFCOM Trade Remedy Bureau, 商救济进一函〔2026〕58号, 关于2026年度牛肉保障措施执行提示信息（九）, 30 September 2026 — https://cacs.mofcom.gov.cn/cacscms/article/jkdc?articleId=189379&type=11"
+  - "MOFCOM Announcement 2025 No. 87 (the beef safeguard measure, cited in the notice above)"
 figures:
   - value: "55%"
-    unit: "additional tariff on top of the current applicable tariff rate"
-    period: "from the day the add-on starts under the 2025 No. 87 rule"
-    source: "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号"
-    retrieved: "2026-10-29"
+    unit: "additional tariff on top of the currently applicable tariff rate"
+    period: "from 1 October 2026 (00:00) on Brazilian beef imports"
+    source: "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号, implementing MOFCOM Announcement 2025 No. 87"
+    retrieved: "2026-11-01"
   - value: "100%"
-    unit: "share of Brazil's allocated quota volume reached"
-    period: "reached on 2026 年 9 月 29 日"
-    source: "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号"
-    retrieved: "2026-10-29"
+    unit: "share of the country-specific quota quantity reached"
+    period: "reached on 29 September 2026"
+    source: "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号"
+    retrieved: "2026-11-01"
   - value: "第 3 日"
-    unit: "day count after the quota is hit before the add-on applies"
-    period: "as applied in notice No. 9"
-    source: "MOFCOM Announcement 2025 No. 87, as applied in notice No. 9"
-    retrieved: "2026-10-29"
+    unit: "day count after the quota is filled before the surcharge starts"
+    period: "counting from 29 September 2026"
+    source: "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号"
+    retrieved: "2026-11-01"
   - value: "2026 年 9 月 29 日"
-    unit: "date the Brazil quota was exhausted"
-    period: "quota exhaustion date"
-    source: "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号"
-    retrieved: "2026-10-29"
+    unit: "date the Brazilian quota was exhausted"
+    period: "2026"
+    source: "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号"
+    retrieved: "2026-11-01"
+  - value: "2025 年第 87 号"
+    unit: "the safeguard announcement that sets the country quota and the surcharge rule"
+    period: "in force for 2026"
+    source: "MOFCOM Announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号"
+    retrieved: "2026-11-01"
   - value: "2026-09-30"
     unit: "publication date of the notice"
-    period: "notice date"
-    source: "MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), 商救济进一函〔2026〕58号"
-    retrieved: "2026-10-29"
-  - value: "2025 年第 87 号"
-    unit: "instrument number setting the country quota and the add-on"
-    period: "in force for the 2026 safeguard"
-    source: "MOFCOM Announcement 2025 No. 87, as applied in notice No. 9"
-    retrieved: "2026-10-29"
+    period: "2026"
+    source: "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号"
+    retrieved: "2026-11-01"
 ---
 
 ## AI Summary
 
-Brazil's allocated 2026 beef safeguard quota reached 100% on 2026 年 9 月 29 日, and MOFCOM Trade Remedy Bureau recorded that in notice No. 9, 商救济进一函〔2026〕58号, published 2026-09-30. Under MOFCOM Announcement 2025 No. 87 the add-on is 55% on top of the current applicable tariff rate, starting on 第 3 日 after the quota is hit. The cost lands on the importer declaring Brazilian-origin beef, and the file that decides it is origin evidence plus the declaration date.
+Brazil's country-specific beef quota under China's safeguard measure reached 100% on 29 September 2026. Under MOFCOM Announcement 2025 No. 87, the surcharge starts on the third day counted from that fill, which is 00:00 on 1 October 2026. From that moment Brazilian beef imports carry a 55% additional tariff on top of the tariff rate that currently applies. The trigger has already fired. The decision left for an importer is whether to keep buying Brazilian beef for October arrival or move origin.
 
 ## What happened
 
-The Trade Remedy Bureau of MOFCOM published notice No. 9, 商救济进一函〔2026〕58号, on 2026-09-30. The notice records that Brazil's allocated quota volume for the 2026 beef safeguard reached 100% on 2026 年 9 月 29 日.
+The MOFCOM Trade Remedy Bureau published notice 商救济进一函〔2026〕58号 on 30 September 2026, as the ninth execution bulletin of the 2026 beef safeguard. It records two facts and one consequence.
 
-The rule that converts a filled quota into a duty sits in MOFCOM Announcement 2025 No. 87, which the notice applies. Under that instrument the add-on is 55%, charged on top of the current applicable tariff rate, and it starts on 第 3 日 after the quota is hit. The notice is the execution step: it fixes the date the quota was exhausted, and the instrument supplies the rate and the day count.
+The facts: imports of Brazilian beef under the safeguard measure reached 100% of the country-specific quantity set by MOFCOM Announcement 2025 No. 87 on 29 September 2026. The consequence: from the third day counted from that fill — 00:00 on 1 October 2026 — beef imported from Brazil carries a 55% additional tariff on top of the tariff rate currently applicable to it.
 
-> "商救济进一函〔2026〕58号" — MOFCOM Trade Remedy Bureau, 2026 beef safeguard implementation notice (No. 9), published 2026-09-30, recording that Brazil's allocated quota volume reached 100% on 2026 年 9 月 29 日.
+The instrument is a notice, not a new measure. Announcement 2025 No. 87 set the country quota and the surcharge rule for 2026. Notice 58 only reports that Brazil's quota is used up and restates the rule that follows. Nothing in the notice creates a new rate; the 55% was already written into the 2025 announcement and switched on by the volume count.
+
+> **Country-specific quota** — the volume of a product from one named country that enters under the safeguard's normal tariff treatment. Once that country's volume reaches 100%, the additional tariff in the same measure applies to further imports from that country, on top of the rate that currently applies.
+
+The notice states the fill date and the start time of the surcharge. It does not state how a specific entry is treated, and it does not address cargo already on the water, cargo under a contract signed before 29 September, or cargo held in a bonded warehouse.
+
+| Item | Value |
+| --- | --- |
+| Quota share reached | 100% |
+| Date reached | 29 September 2026 |
+| Day count before surcharge | 第 3 日 |
+| Surcharge start | 1 October 2026, 00:00 |
+| Additional tariff | 55% on top of the currently applicable rate |
+| Notice published | 30 September 2026 |
+| Instrument | 商救济进一函〔2026〕58号, under Announcement 2025 No. 87 |
 
 ## Why now
 
-The exhaustion date is the pivot. Before it, the quota absorbs Brazilian-origin volume at the applicable rate. After it, the instrument's day count runs, and the add-on begins. The notice exists precisely because that date has passed: it is the document that tells a broker which side of the line a declaration falls on.
+The quota did not run out at the end of the year. It ran out on 29 September, and the notice confirming it was published on 30 September — one day before the surcharge started. An importer reading the bulletin on the day it appeared had a single day of notice before the rate changed.
+
+The three-day count is the whole of the warning period. Announcement 2025 No. 87 fixes the count from the fill date, so the timing was arithmetic once the volume crossed 100%, not a discretionary decision taken in late September. The notice is the publication of a result, not the cause of it.
 
 ## So what
 
-Read as a sequence, the process has four stages, and each one is a document rather than a judgement call:
+The 55% is charged on top of the rate that currently applies, so the total duty on a Brazilian beef line is the current rate plus 55 percentage points of the same value. The surcharge is not 55% of the existing duty; it is 55% of the customs value, added to whatever the current rate produces.
 
-1. The annual instrument sets the country-specific quota volume and the add-on rate. For 2026 that instrument is 2025 年第 87 号.
-2. The quota fills. The Bureau tracks the fill and records the date it reaches 100%.
-3. The Bureau publishes an execution notice stating that date. Notice No. 9 is that document for Brazil, issued 2026-09-30 and recording exhaustion on 2026 年 9 月 29 日.
-4. The add-on begins on the day count the instrument specifies, counted from the exhaustion date the notice records.
+Work it through on a shipment. Take a consignment with a customs value of USD 100,000. The additional tariff is USD 55,000. If the currently applicable rate on that line is 12%, the current duty is USD 12,000 and the total becomes USD 67,000 — a duty bill 5.6 times the pre-trigger figure. If the current rate is 0%, the total is USD 55,000. The surcharge dominates the calculation at every rate, because it is measured against the value rather than against the duty.
 
-The measure is defined by origin, not by the identity of the buyer. An importer declaring beef of Brazilian origin for entry into China is inside the measure. An importer of the same product from a different country of origin is governed by that country's own allocation under the same instrument, and the notice says nothing about those allocations.
+| Customs value (USD) | Current rate | Current duty (USD) | 55% surcharge (USD) | Total duty (USD) |
+| --- | --- | --- | --- | --- |
+| 100,000 | 12% | 12,000 | 55,000 | 67,000 |
+| 100,000 | 0% | 0 | 55,000 | 55,000 |
+| 250,000 | 12% | 30,000 | 137,500 | 167,500 |
+| 250,000 | 0% | 0 | 137,500 | 137,500 |
 
-The notice does not carve out cargo that was contracted, paid for, or loaded before the exhaustion date. Nothing in the published text grandfathers a shipment by contract date, and nothing in it exempts goods already in transit. The only date the notice fixes is the exhaustion date; the only rate it applies is the one in the instrument.
+The judgement for an October arrival is straightforward. A Brazilian shipment that clears from 1 October 2026 carries the surcharge; the same cargo from an origin outside the Brazilian quota does not carry this particular 55%. The comparison is not "Brazil plus 55% versus Brazil" — it is "Brazil plus 55% versus the landed cost of the alternative origin", and the alternative wins whenever its own duty and freight difference is smaller than 55% of the Brazilian customs value.
+
+Run the comparison on the same USD 100,000 consignment at a 12% current rate. The Brazilian total duty is USD 67,000. An alternative origin that pays a 12% rate on the same value pays USD 12,000 in duty, so its duty bill is USD 55,000 lower. That USD 55,000 is the headroom the alternative origin has before its landed cost matches the Brazilian one: it can carry up to USD 55,000 more in duty and freight combined and still land at the same total. At a 0% current rate the Brazilian total is USD 55,000, and an alternative origin paying 0% has the same USD 55,000 of headroom. The headroom equals the surcharge, because the surcharge is the whole of the difference when both origins face the same current rate.
+
+Two operational points follow. First, the surcharge is measured on customs value, so the value declared on the entry is the base — a valuation dispute multiplies through the 55%. Second, the notice fixes the fill date and the surcharge start time; it does not set out how an individual entry is treated, so the treatment of a specific consignment is a question for the customs declaration and the broker filing it. The importer's task is to price the surcharge into the landed cost of any shipment that clears after the stated time.
+
+For readers tracking how China runs safeguard and quota instruments across product lines, the mechanics here match the pattern in [China's beef safeguard hits 100% for Brazil: a 55% surcharge starts 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-trigger-2026/) and the origin-level cost breakdown in [Brazil-origin beef imports to China face 55% additional tariff starting October 1 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/). Importers weighing a switch to another supplier should run the verification steps in [How to Tell a Factory From a Trading Company Before You Wire a Deposit](/blog/how-to-tell-a-factory-from-a-trading-company/) before committing a deposit to a new origin.
 
 ## How confident
 
-**Confirmed.** MOFCOM Trade Remedy Bureau notice No. 9, 商救济进一函〔2026〕58号, was published on 2026-09-30 and records that Brazil's allocated quota volume reached 100% on 2026 年 9 月 29 日. MOFCOM Announcement 2025 No. 87 sets the country quota and the add-on, which is 55% on top of the current applicable tariff rate, starting on 第 3 日 after the quota is hit.
+**Confirmed.** Notice 商救济进一函〔2026〕58号, published 30 September 2026, states that Brazil's beef imports reached 100% of the country-specific quantity on 29 September 2026, and that from the third day counted from that fill — 00:00 on 1 October 2026 — Brazilian beef carries a 55% additional tariff on top of the currently applicable rate. The notice cites Announcement 2025 No. 87 as the instrument that sets the quota and the rule. Every figure in this article comes from that notice and the announcement it cites.
 
-**Inferred.** That the add-on attaches to the declaration date rather than to the contract or shipment date is read from the structure of the two documents: the notice fixes an exhaustion date, and the instrument counts forward from it. Neither document states a grandfathering rule, so the inference is that none applies.
+**Inferred.** The notice is a single document, and the treatment of in-transit cargo, bonded warehouse stock and contracts signed before the fill date is not addressed in it. The reading that the surcharge attaches to the import from the stated time, with no grandfathering, is an inference from the absence of any carve-out in the text, not a statement the notice makes. The worked examples use a 12% current rate and a 0% current rate purely to show the arithmetic; neither is a rate the notice supplies, and the actual current rate on a given beef line must be read from the tariff schedule for that line.
 
-**What would change this.** A later MOFCOM notice granting treatment for goods in transit at the exhaustion date, or a revised instrument changing the day count or the rate, would move the answer. So would a notice recording a different exhaustion date for Brazil.
+**What would change my mind.** A supplementary MOFCOM notice or customs guidance that exempts cargo loaded or contracted before 29 September 2026, or that sets a different start time for a defined class of shipment, would change the operational advice in this article. A published clarification that the surcharge base is something other than the customs value would change the arithmetic. Absent either, the notice as written governs.
 
 ## For you
 
-- **Importers of Brazilian-origin beef declaring after the exhaustion date:** establish the applicable base rate for the product line first, then add the 55% on top of it, and price the consignment on that total.
-- **Buyers whose cargo was loaded before 2026 年 9 月 29 日 but declared after it:** do not assume transit protects the shipment; ask the broker to confirm the declaration date against the notice before the entry is lodged.
-- **Importers sourcing the same product from another country of origin:** check that country's own allocation under 2025 年第 87 号 rather than assuming the Brazilian trigger applies to your volume.
-- **Forwarders and brokers quoting landed cost:** quote the add-on as a separate line on top of the applicable rate, so a base-rate change does not silently absorb it.
+- **Importers holding in-transit cargo:** compare the declaration date against 00:00 on 1 October 2026 and price the 55% surcharge into the landed cost of any Brazilian consignment that clears after it.
+- **Importers with a Brazilian contract not yet shipped:** put the 55% against a quote from an alternative origin before the goods leave, because the surcharge is measured on customs value and dominates the duty bill at every current rate.
+- **Importers switching origin:** verify the new supplier's origin documentation before wiring a deposit, since the surcharge follows the Brazilian origin and not the supplier's paperwork.
+- **Importers holding bonded stock:** treat the 55% surcharge as applying to any Brazilian beef entry that clears from 00:00 on 1 October 2026, and price the landed cost accordingly.
 
 ## The data point
 
-| Document | What it fixes | Value |
-| --- | --- | --- |
-| MOFCOM Announcement 2025 No. 87 | The add-on rate | 55% on top of the current applicable tariff rate |
-| MOFCOM Announcement 2025 No. 87 | When the add-on starts | 第 3 日 after the quota is hit |
-| Notice No. 9, 商救济进一函〔2026〕58号 | Quota fill recorded | 100% of Brazil's allocated volume |
-| Notice No. 9, 商救济进一函〔2026〕58号 | Date the quota was exhausted | 2026 年 9 月 29 日 |
-| Notice No. 9, 商救济进一函〔2026〕58号 | Date the notice was published | 2026-09-30 |
+Brazil's beef quota reached 100% on 29 September 2026, and the surcharge starts on the third day counted from that fill.
+
+<div class="callout">
+Brazil's country-specific beef quota reached 100% on 29 September 2026. The 55% additional tariff applies from 00:00 on 1 October 2026 — the third day counted from the fill — on top of the currently applicable rate.
+</div>
 
 ## FAQ
 
-**What does the 55% apply to?**
-It is an additional tariff charged on top of the current applicable tariff rate, under MOFCOM Announcement 2025 No. 87 as applied by notice No. 9. It is not a replacement for the base rate, so the total duty on a Brazilian-origin consignment is the applicable rate for the product line plus the add-on. The notice does not state the base rate for any product line, so that figure has to be established separately for the goods being declared.
+**Does the 55% apply to cargo already on the water on 1 October 2026?**
 
-**When did the trigger happen?**
-Notice No. 9, 商救济进一函〔2026〕58号, records that Brazil's allocated quota volume reached 100% on 2026 年 9 月 29 日. The notice was published on 2026-09-30. The add-on itself starts on 第 3 日 after the quota is hit, which is the day count set in MOFCOM Announcement 2025 No. 87 rather than a date written into the notice.
+The notice sets the surcharge by time, not by the vessel's position. From 00:00 on 1 October 2026, Brazilian beef imports carry the 55% additional tariff on top of the currently applicable rate. The notice contains no exemption for cargo loaded before the fill date or for contracts signed earlier. An importer with cargo on the water should treat the declaration date as the deciding fact: a shipment that clears before the stated time sits outside the surcharge, and one that clears after it does not. The surcharge is measured on customs value and is large relative to the duty, so the arithmetic should be run for each affected consignment.
 
-**Does cargo already in transit escape the add-on?**
-Nothing in the published notice exempts goods in transit at the exhaustion date, and nothing grandfathers a shipment by contract date. The documents fix an exhaustion date and a day count; they do not describe a transit carve-out. An importer holding cargo loaded before 2026 年 9 月 29 日 should have the broker confirm the declaration date against the notice rather than assume the shipment is outside the measure.
+**Is the 55% charged on the duty or on the value of the goods?**
 
-**Which document do I show if the classification is disputed?**
-Two documents, not one. Notice No. 9, 商救济进一函〔2026〕58号, is the execution notice that records the exhaustion date. MOFCOM Announcement 2025 No. 87 is the instrument that sets the country quota and the add-on rate. A file citing only the notice is missing the rule that supplies the arithmetic, and a file citing only the instrument is missing the date the trigger fired.
+It is charged on top of the currently applicable tariff rate, which means 55 percentage points of the customs value added to whatever the current rate produces. On a consignment valued at USD 100,000, the surcharge is USD 55,000. If the current rate is 12%, the current duty is USD 12,000 and the total duty becomes USD 67,000. If the current rate is 0%, the total is USD 55,000. The surcharge is not 55% of the existing duty amount. Read the current rate for your specific beef line from the tariff schedule, then add 55 percentage points of value.
+
+**What does the notice actually change, given the 55% was already in the 2025 announcement?**
+
+The notice reports that Brazil's quota is used up and restates the rule that follows. Announcement 2025 No. 87 set the country quota and the surcharge rule for 2026. Notice 商救济进一函〔2026〕58号, published 30 September 2026, records that Brazilian beef reached 100% of the country-specific quantity on 29 September 2026 and that the surcharge starts on the third day counted from that fill. The rate did not change on 30 September; the condition that switches it on was met. That is why the notice is short and why the timing is arithmetic rather than a new decision.
 
 ## How we calculated this
 
-No arithmetic is performed in this article. Every value in the table is quoted from one of two documents: MOFCOM Trade Remedy Bureau notice No. 9, 商救济进一函〔2026〕58号, published 2026-09-30, and MOFCOM Announcement 2025 No. 87, which the notice applies. The quota volume in tonnes, the base tariff rate for any product line, and any transit treatment are not stated in those documents and are therefore not given here.
+```
+Inputs from notice 商救济进一函〔2026〕58号:
+  quota share reached            = 100%
+  date reached                   = 29 September 2026
+  day count before surcharge     = 第 3 日
+  surcharge start                = 1 October 2026, 00:00
+  additional tariff              = 55% of customs value
+
+Worked case, customs value V = 100,000 USD:
+  surcharge            = 0.55 x 100,000        = 55,000
+  current duty @ 12%   = 0.12 x 100,000        = 12,000
+  total duty           = 12,000 + 55,000       = 67,000
+  multiple of pre-trigger duty = 67,000 / 12,000 = 5.58
+
+Worked case, customs value V = 250,000 USD:
+  surcharge            = 0.55 x 250,000        = 137,500
+  current duty @ 12%   = 0.12 x 250,000        = 30,000
+  total duty           = 30,000 + 137,500      = 167,500
+
+Origin-switch headroom on the 100,000 USD consignment:
+  Brazilian total duty @ 12%   = 12,000 + 55,000 = 67,000
+  alternative origin duty @ 12% = 0.12 x 100,000 = 12,000
+  headroom = 67,000 - 12,000   = 55,000
+  (equals the surcharge, because both origins face the same current rate)
+```
 
 ## The point
 
-The add-on is not a judgement about a shipment; it is a date and an origin. The date is in the notice, the rate and the day count are in the instrument, and an importer who holds both documents and knows the declaration date knows where the consignment stands. The same logic — a dated trigger, an origin test, and a rate that sits on top of the applicable rate — is the one set out in [Importing From China: The Documents That Decide Whether the Container Moves](/blog/importing-from-china-documents-checklist), which walks through the documents that decide whether a container clears at all.
+The trigger fired on 29 September and the surcharge started on 1 October, so there is no decision left about whether Brazilian beef pays the 55% for an October arrival — it does. The decision is what to do with the next order. Price the surcharge on customs value, put that figure against a quote from another origin, and treat the rule as fixed by the notice.

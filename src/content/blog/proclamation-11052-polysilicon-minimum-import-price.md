@@ -155,6 +155,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [EU provisional safeguard measures on grain-oriented electrical steel: importer cost from 18 September 2026](/blog/eu-provisional-safeguard-grain-oriented-electrical-steel-2026/)
 
+> Also read: [Brazil's beef quota filled on 29 September: from 1 October every shipment pays an extra 55%](/blog/china-brazil-beef-safeguard-55-percent-trigger-october-2026/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

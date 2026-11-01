@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31",
+  "generated": "2026-11-01",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -826,15 +826,53 @@
           "period": "notice issued 30 September 2026",
           "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
           "retrieved": "2026-10-29"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 72,
+          "value": "100%",
+          "unit": "share of the country-specific quota quantity reached",
+          "period": "reached on 29 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 72,
+          "value": "第 3 日",
+          "unit": "day count after the quota is filled before the surcharge starts",
+          "period": "counting from 29 September 2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 72,
+          "value": "2026 年 9 月 29 日",
+          "unit": "date the Brazilian quota was exhausted",
+          "period": "2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 72,
+          "value": "2026-09-30",
+          "unit": "publication date of the notice",
+          "period": "2026",
+          "source": "MOFCOM Trade Remedy Bureau notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-01"
         }
       ],
       "articleNums": [
         44,
-        55
+        55,
+        72
       ],
       "articleSlugs": [
         "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
-        "china-brazil-beef-safeguard-55-percent-trigger-2026"
+        "china-brazil-beef-safeguard-55-percent-trigger-2026",
+        "china-brazil-beef-safeguard-55-percent-trigger-october-2026"
       ],
       "modelOutput": false
     },
@@ -3454,6 +3492,39 @@
       "articleSlugs": [
         "china-export-rebate-vs-export-duty-2026",
         "china-export-tax-rebate-removal-battery-solar"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "mofcom-announcement-2025-no-87-cited-in-notice-2026",
+      "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+          "articleNum": 44,
+          "value": "2025 年第 87 号",
+          "unit": "instrument number setting the safeguard quota and surcharge rule",
+          "period": "in force for 2026 safeguard execution",
+          "source": "MOFCOM announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-10-19"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+          "articleNum": 72,
+          "value": "2025 年第 87 号",
+          "unit": "the safeguard announcement that sets the country quota and the surcharge rule",
+          "period": "in force for 2026",
+          "source": "MOFCOM Announcement 2025 No. 87, cited in notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-01"
+        }
+      ],
+      "articleNums": [
+        44,
+        72
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
+        "china-brazil-beef-safeguard-55-percent-trigger-october-2026"
       ],
       "modelOutput": false
     },

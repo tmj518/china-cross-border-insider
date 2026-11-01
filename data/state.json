@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-10-31T00:57:42.103Z",
+  "lastRun": "2026-11-01T01:20:58.565Z",
   "lastVerdict": "PUBLISHED",
-  "lastArticle": "eu-provisional-safeguard-grain-oriented-electrical-steel-2026",
-  "runs": 25,
-  "published": 25,
+  "lastArticle": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+  "runs": 26,
+  "published": 26,
   "lastUsage": {
-    "calls": 1,
-    "failed": 0,
-    "usd": 0.002,
-    "promptTokens": 8932,
-    "completionTokens": 3513
+    "calls": 30,
+    "failed": 12,
+    "usd": 0.0607,
+    "promptTokens": 149964,
+    "completionTokens": 22500
   }
 }
