@@ -163,7 +163,7 @@ try {
     };
     if (!softPassed) report.reasons.push(...softFailed.slice(0, 3).map((f) => `advisory: ${f}`));
   } catch (e) {
-    report.layers.advisory = { pass: false, detail: `the advisory tier did not run: ${String(e.message).slice(0, 100)}`, failed: [] };
+    report.layers.advisory = { pass: false, detail: `the advisory tier failed: ${String(e.stderr || e.stdout || e.message).replace(/\s+/g, " ").slice(-260)}`, failed: [] };
   }
 
 } finally {
