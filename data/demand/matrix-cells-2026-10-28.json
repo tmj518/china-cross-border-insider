@@ -154,7 +154,11 @@
       "directionMix": {
         "within-china": 79,
         "out-of-china": 1
-      }
+      },
+      "produced": "published",
+      "producedAt": "2026-11-01",
+      "slug": "china-foreigner-buy-car-apartment-procedure-2026",
+      "publishedOn": "2026-11-01"
     },
     {
       "moment": "buy",
