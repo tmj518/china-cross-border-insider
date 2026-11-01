@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01T01:20:58.229Z",
+  "at": "2026-11-01T08:41:50.183Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -22,18 +22,18 @@
       "position": 68.6
     },
     {
+      "query": "total landed cost calculator",
+      "impressions": 5,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 52.8
+    },
+    {
       "query": "china housing property mortgage subsidy developers policy site:reuters.com",
       "impressions": 4,
       "clicks": 0,
       "ctr": 0,
       "position": 1
-    },
-    {
-      "query": "total landed cost calculator",
-      "impressions": 4,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 52.5
     },
     {
       "query": "china housing property mortgage subsidy developers policy site:wsj.com",
