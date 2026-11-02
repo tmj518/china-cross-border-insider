@@ -135,7 +135,7 @@ try {
       out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
     }
     const passed = /RESULT:\s*every gate passed/i.test(out);
-    const failed = [...out.matchAll(/^\s*(?:\[FAIL\]|✗|FAIL)\s*([^\n]{0,110})/gm)].map((m) => m[1].trim()).slice(0, 6);
+    const failed = [...out.matchAll(/^\s*FAIL\s+[\d.]+s\s+(.+)$/gm)].map((m) => m[1].trim()).slice(0, 6);
     report.layers.L1 = {
       pass: passed,
       detail: (passed ? "every gate passed" : `${failed.length} gate failure(s)`) + ` — ${buildNote}`,
