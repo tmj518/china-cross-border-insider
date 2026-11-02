@@ -162,3 +162,5 @@ print(f"30-day delay incremental cost for 10M EUR FDI: {round(incremental_cost_e
 
 ## The point
 The 2025 EU FDI screening data removes the guesswork from third-country investor timeline planning, by providing actual operational performance numbers for the notification mechanism rather than generic regulatory guidance. You do not need to over-allocate contingency budget or build unnecessary multi-month delays into your project plan, as long as you align your pre-notification due diligence with the sector-specific risk profiles and closure rates published in the official Commission report. The 19-month transition window before the new FISR rules take effect on 17 January 2028 gives you more than enough time to update your internal compliance workflows, using the 2025 baseline data as your performance benchmark.
+
+For the paperwork and the cost in one place, see [China work permit processing time](/guide/work-permit-processing-time/).

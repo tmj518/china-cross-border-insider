@@ -1,47 +1,8 @@
 {
-  "at": "2026-11-01T07:20:27.520Z",
+  "at": "2026-11-02T01:05:22.234Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "alipay-wechat-pay-foreigner-china",
-      "topic": "residence",
-      "audience": [
-        "visitor",
-        "relocating"
-      ],
-      "unit": "one wallet setup",
-      "title": "Alipay and WeChat Pay for Foreigners: What Actually Works",
-      "query": "alipay wechat pay foreigner china",
-      "status": "queued",
-      "evidence": "Same cluster as china-bank-account-foreigner, which the guide line already published",
-      "sources": [
-        "https://english.www.gov.cn/",
-        "https://www.safe.gov.cn/safe/zcfg/index.html"
-      ],
-      "fetchKeywords": [
-        "支付",
-        "支付宝",
-        "微信",
-        "payment",
-        "wallet"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "work-permit-processing-time",
       "topic": "transit",
@@ -213,6 +174,45 @@
       "fetchKeywords": [
         "china",
         "home",
+        "permit",
+        "application"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "home-return-permit-application",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China home return permit application",
+      "query": "china home return permit application",
+      "status": "queued",
+      "evidence": "demand matrix: \"china home return permit application\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "home",
+        "return",
         "permit",
         "application"
       ],

@@ -1173,7 +1173,7 @@
       "unit": "one application",
       "title": "China work permit processing time",
       "query": "china work permit processing time",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"china work permit processing time\" (google)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1201,7 +1201,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-02"
     },
     {
       "slug": "transfer-money-india-through-bank",
@@ -1471,7 +1472,46 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "home-return-permit-application",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China home return permit application",
+      "query": "china home return permit application",
+      "status": "queued",
+      "evidence": "demand matrix: \"china home return permit application\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "home",
+        "return",
+        "permit",
+        "application"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-01T07:20:27.023Z"
+  "updatedAt": "2026-11-02T01:05:21.669Z"
 }

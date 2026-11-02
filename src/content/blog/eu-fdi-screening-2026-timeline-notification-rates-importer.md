@@ -159,3 +159,5 @@ post_2028_minimum_clearance_days = minimum_clearance_days + fisr_pre_submission_
 ## The point
 
 Importers planning FDI into the EU do not need to guess at processing speeds or notification volumes to build their 2027 and early 2028 investment timelines. The 2025 dataset confirms that 88% of fully documented low-risk cases clear in 15 days, the 40% annual growth trend shows exactly how notification volumes are rising, and the 17 January 2028 FISR implementation date gives a clear cutoff to lock in faster pre-regulation processing. Aligning your notification submission to land before that cutoff eliminates unplanned delays, avoids new administrative steps, and lets you close your investment on the exact date you planned.
+
+For the paperwork and the cost in one place, see [China work permit processing time](/guide/work-permit-processing-time/).

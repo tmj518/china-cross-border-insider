@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-01T07:20:53.491Z",
+  "at": "2026-11-02T01:05:44.427Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "alipay-wechat-pay-foreigner-china",
-  "seconds": 26,
+  "article": "work-permit-processing-time",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0006
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -25,29 +25,29 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding alipay-wechat-pay-foreigner-china",
+      "name": "grounding work-permit-processing-time",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates alipay-wechat-pay-foreigner-china",
+      "name": "gates work-permit-processing-time",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build alipay-wechat-pay-foreigner-china",
+      "name": "build work-permit-processing-time",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-to-india-parcel-cost-procedure-2026, china-emergency-procurement-rules-imported-goods-october-2026"
+      "detail": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026, eu-fdi-screening-2026-timeline-notification-rates-importer"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/alipay-wechat-pay-foreigner-china/"
+      "detail": "/guide/work-permit-processing-time/"
     }
   ],
   "researchLog": [
