@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-02T00:32:22.420Z",
+  "at": "2026-11-02T02:04:06.711Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "26 previous run(s), last 2026-11-01T01:20:58.565Z (PUBLISHED)"
+      "detail": "27 previous run(s), last 2026-11-02T00:32:22.420Z (REQUIRES-RESEARCH)"
     },
     {
       "name": "weekly ceiling",
@@ -43,7 +43,7 @@
     {
       "name": "reviewer",
       "ok": false,
-      "detail": "REJECTED: L1 1 gate failure(s) — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
     },
     {
       "name": "writer (revision 1)",
@@ -53,7 +53,7 @@
     {
       "name": "reviewer (revision 1)",
       "ok": false,
-      "detail": "REJECTED: L5 6 issue(s), 6 with a citation"
+      "detail": "REJECTED: L5 10 issue(s), 10 with a citation"
     },
     {
       "name": "state written",
@@ -63,8 +63,8 @@
   ],
   "verdict": "REQUIRES-RESEARCH",
   "reasons": [
-    "the review asks for a document nobody fetched: no claim beyond the figures given",
-    "the draft text it points at: \"The instrument replaces the prior approval requirement for emergency purchases with a filing-based regime\"",
+    "the review asks for a document nobody fetched: no figure outside the supplied set",
+    "the draft text it points at: \"by setting a target that is nearly double the typical 20% to 25% prepayment seen in normal procurement\"",
     "rewriting cannot supply a real figure, and a writer asked to try will produce one that looks real, so the loop stops here"
   ],
   "article": null,
@@ -72,9 +72,9 @@
   "usage": {
     "calls": 7,
     "failed": 2,
-    "usd": 0.0129,
-    "promptTokens": 42898,
-    "completionTokens": 15992
+    "usd": 0.0146,
+    "promptTokens": 42186,
+    "completionTokens": 12212
   },
   "route": "script",
   "categoryActivity": {
@@ -87,8 +87,8 @@
   "uncoveredSections": [],
   "escalation": {
     "layer": "claims_follow_from_figures",
-    "rule": "no claim beyond the figures given",
-    "snippet": "The instrument replaces the prior approval requirement for emergency purchases with a filing-based regime",
+    "rule": "no figure outside the supplied set",
+    "snippet": "by setting a target that is nearly double the typical 20% to 25% prepayment seen in normal procurement",
     "fix_type": "research"
   },
   "qa": {
@@ -104,9 +104,9 @@
       },
       "L5": {
         "pass": false,
-        "detail": "6 issue(s), 6 with a citation"
+        "detail": "10 issue(s), 10 with a citation"
       }
     }
   },
-  "seconds": 434
+  "seconds": 279
 }

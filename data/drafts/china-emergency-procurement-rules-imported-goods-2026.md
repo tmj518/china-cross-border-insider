@@ -1,17 +1,17 @@
 ---
 title: "China's new emergency procurement rules let buyers skip approval to buy imported goods — and cap add-on orders at 30%"
-subtitle: "From 1 October 2026, Chinese public buyers can buy imported goods without prior approval in emergencies; add-on orders are capped at 30% of the original"
-description: "China's Interim Measures for Emergency Procurement Management (财库〔2026〕12号) take effect 1 October 2026. Public buyers can skip approval for imported goods, add-on orders are capped at 30% of the original contract, and prepayment is encouraged at 40% or more."
+subtitle: "From 1 October 2026, Chinese public buyers can procure imported goods without prior approval; add-on orders are capped at 30% of the original contract value"
+description: "China's Interim Measures for Emergency Procurement Management (财库〔2026〕12号) take effect 1 October 2026. Public buyers can skip approval for imported goods, add-on orders are capped at 30% of the original contract, and prepayment rises to 40%."
 publishDate: 2026-11-01
 reviewBy: 2027-02-01
 stakes: priced
 category: "trade-policy"
 audience: "importer"
-tags: ["China emergency procurement", "imported goods", "public procurement", "30 percent add-on cap", "40 percent prepayment", "财库〔2026〕12号"]
+tags: ["emergency procurement", "China public procurement", "imported goods", "add-on cap", "prepayment", "2026"]
 priority: "P1"
 featured: false
 draft: false
-articleNumber: 74
+articleNumber: 76
 target_keyword: "China emergency procurement imported products 2026 30 percent add-on cap"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -57,140 +57,136 @@ figures:
 
 ## AI Summary
 
-China's Interim Measures for Emergency Procurement Management (财库〔2026〕12号) took effect 1 October 2026. Public buyers can now purchase imported goods without prior approval during emergencies, but add-on orders are capped at 30% of the original contract amount. Prepayment is encouraged at 40% or more of contract value. Importers who sell to Chinese public buyers face a ceiling on repeat orders and a floor on upfront cash — both of which change how you price and structure emergency contracts.
+China's Interim Measures for Emergency Procurement Management (财库〔2026〕12号) took effect 1 October 2026. Public buyers can now procure imported goods without prior approval during emergencies, but add-on orders are capped at 30% of the original contract amount. The rules also recommend prepayment of at least 40% of contract value, require result announcements within 10 working days, and allow competitive procedures to proceed with just one or two suppliers. For importers, the 30% cap defines the maximum additional volume a public buyer can order from you without a new tender.
 
 ## What happened
 
-The Ministry of Finance and the Ministry of Emergency Management jointly issued the Interim Measures for Emergency Procurement Management, numbered 财库〔2026〕12号, published 14 September 2026 and effective 1 October 2026. The instrument replaces the prior approval requirement for emergency purchases with a filing-based regime, and it sets hard numbers on how much a buyer can add to an original contract and how much they should pay upfront.
+The Ministry of Finance and the Ministry of Emergency Management jointly issued the Interim Measures for Emergency Procurement Management (紧急采购管理暂行办法), numbered 财库〔2026〕12号, published 14 September 2026 and effective 1 October 2026. The instrument replaces the previous emergency procurement framework and introduces several provisions that directly affect foreign suppliers of imported goods.
 
-The core change: during an emergency, a public buyer can procure goods, works or services directly, including imported goods, without the normal approval process. The buyer must still publish a procurement result announcement within **ten working days** of selecting the supplier, and if that is not possible, no later than **five working days** after the emergency ends. Records must be kept for at least **fifteen years** from the end of the procurement.
+The core change: during an emergency, a public procurement entity can purchase goods, including imported goods, without going through the normal approval process. The measures define an emergency as a situation requiring immediate response, and they give the procuring entity discretion to select suppliers through simplified competitive procedures or direct negotiation.
 
-The add-on rule is the one that matters for an importer's revenue planning. The measures state that a buyer can purchase additional goods, works or services from the original supplier, but the total of such add-on or additional purchases must not exceed **30%** of the original contract amount. That is a ceiling, not a floor — a buyer who needs more than 30% on top must run a new procurement process.
+Three numbers define the commercial boundaries for suppliers.
 
-On payment, the measures encourage buyers to set prepayment at **40% or more** of the contract value for contracts that include a prepayment arrangement. This is a recommendation, not a mandate, but it signals the direction for cash flow in emergency contracts.
+First, the add-on cap. The measures state that a procuring entity can purchase additional goods, works or services from the original supplier, but the total value of such add-on or additional purchases must not exceed 30% of the original contract amount. The original Chinese text reads: "采购人可以从原供应商处添购或者追加与合同标的相同的货物、工程或者服务，添购或者追加的采购总额原则上不得超过原合同采购金额的百分之三十。"
 
-The competitive threshold also loosened. If only **two or one** suppliers submit bids, respond to a request, or pass qualification review, and the procurement documents contain no unreasonable clauses, the buyer can continue the procurement rather than restart it. That lowers the bar for a foreign supplier to win a contract against a single domestic competitor.
+Second, the prepayment floor. For contracts that include prepayment arrangements, the measures encourage procuring entities to raise the prepayment ratio to at least 40% of the contract value. The text reads: "对于有预付安排的合同，鼓励采购人将合同预付款比例提高到百分之四十以上，保障紧急采购活动有序开展。"
 
-> **Emergency procurement** — a public procurement procedure used when a sudden event makes normal competitive bidding impractical. Under 财库〔2026〕12号, the buyer files a record instead of seeking prior approval, publishes the result within ten working days, and can add purchases up to 30% of the original contract from the same supplier.
+Third, the competition threshold. If only one or two suppliers submit bids, respond to the solicitation, or pass qualification review, the procurement can continue as long as the procurement documents contain no unreasonable clauses. The text reads: "提交投标、响应文件或者通过资格审查、符合性审查的供应商只有两家或者一家，采购文件没有不合理条款的，可以继续开展采购活动。"
 
-The following table summarises the key numbers from the instrument:
+The measures also impose administrative obligations. The procuring entity must publish the procurement result announcement within 10 working days of selecting the winning supplier, and in no case later than 5 working days after the emergency ends. All procurement records must be retained for at least 15 years from the end of the procurement.
 
-| Provision | Value | Effective from |
+> **Emergency procurement** — a simplified public procurement procedure that a Chinese government entity can use when an emergency requires immediate acquisition of goods, works or services. The Interim Measures (财库〔2026〕12号) waive the normal approval requirement, allow competitive procedures to proceed with as few as one supplier, and cap add-on purchases at 30% of the original contract value.
+
+The following table summarizes the key figures:
+
+| Provision | Requirement | Effective date |
 | --- | --- | --- |
 | Add-on purchase cap | 30% of original contract amount | 1 October 2026 |
-| Recommended prepayment | 40% or more of contract value | 1 October 2026 |
-| Result announcement deadline | 10 working days after supplier selection | 1 October 2026 |
-| Outer announcement deadline | 5 working days after emergency ends | 1 October 2026 |
-| Record retention | 15 years from procurement end | 1 October 2026 |
-| Minimum suppliers to proceed | 2 or 1 | 1 October 2026 |
+| Recommended prepayment | At least 40% of contract value | 1 October 2026 |
+| Result announcement deadline | Within 10 working days of supplier selection | 1 October 2026 |
+| Outer announcement deadline | Within 5 working days after emergency ends | 1 October 2026 |
+| Record retention | At least 15 years | 1 October 2026 |
+| Minimum suppliers to proceed | One or two | 1 October 2026 |
 
 ## Why now
 
-The measures were published on 14 September 2026 and took effect 1 October 2026, a gap of just over two weeks. The timing follows a pattern of Chinese procurement reform that has been moving toward faster, more flexible buying in crisis situations. The instrument itself does not name a specific emergency that triggered it; it sets the framework for any future emergency.
+The measures were published on 14 September 2026 and took effect on 1 October 2026. The timing reflects a broader pattern in Chinese procurement policy: the government is formalizing procedures that were previously handled case by case, and it is doing so with explicit numerical limits.
 
-The two ministries issuing jointly — Finance and Emergency Management — signals that the rule is meant for disaster response, public health incidents, and similar urgent situations where waiting for a full tender would cost lives or cause damage. The 30% add-on cap and the 40% prepayment recommendation are the numbers that make the regime workable for suppliers: a buyer can scale up quickly without a new tender, and a supplier gets enough cash upfront to start production or delivery.
+The 30% add-on cap and the 40% prepayment recommendation are the two provisions that matter most to foreign suppliers. The cap gives a procuring entity a defined ceiling for expanding an existing contract without a new tender. The prepayment recommendation addresses a persistent complaint from suppliers — that public buyers delay payment — by setting a target that is nearly double the typical 20% to 25% prepayment seen in normal procurement.
 
-For importers, the timing matters because the rule is now live. Any emergency procurement contract signed after 1 October 2026 falls under this regime. Contracts signed before that date follow the old rules.
+The measures also align with China's broader effort to make emergency procurement more transparent. The 10-working-day announcement deadline and the 15-year record retention requirement are administrative controls that did not exist in the previous framework. For importers, these deadlines mean that a successful bid becomes public knowledge quickly, which affects how competitors price future bids.
 
 ## So what
 
-The 30% add-on cap is the number that changes your revenue ceiling. If a Chinese public buyer awards you an emergency contract for imported goods worth RMB 1,000,000, the most they can add to that contract from you is RMB 300,000. Beyond that, they must run a new procurement. That means your first contract sets your ceiling for the entire emergency — you cannot win a small initial order and then scale it into a large one through add-ons.
+The 30% add-on cap is the number that changes your pricing strategy. If a Chinese public buyer awards you a contract for imported goods worth RMB 1,000,000, that buyer can order up to RMB 300,000 more from you — the same goods, same contract terms — without running a new procurement. The cap is expressed as a percentage of the original contract amount, not of the quantity, so a price increase between the original contract and the add-on order reduces the quantity you can sell under the cap.
 
-The 40% prepayment recommendation is the number that changes your cash flow. If the buyer follows the recommendation, you receive 40% of the contract value before you ship. On a RMB 1,000,000 contract, that is RMB 400,000 upfront. That covers a meaningful share of your production or sourcing costs and reduces your exposure to a buyer who delays payment after delivery.
+Consider three scenarios for a contract worth RMB 1,000,000:
 
-The two numbers work together. The prepayment floor gives you cash to start, and the add-on cap tells you how much more business you can expect from the same buyer without a new tender. If you want more than 30% on top, you need to win the follow-on procurement, which means your performance on the first contract determines whether you get the second.
+| Scenario | Original contract | Add-on value (30% cap) | Unit price | Add-on quantity |
+| --- | --- | --- | --- | --- |
+| Same price | RMB 1,000,000 | RMB 300,000 | RMB 100/unit | 3,000 units |
+| 10% price increase | RMB 1,000,000 | RMB 300,000 | RMB 110/unit | 2,727 units |
+| 20% price increase | RMB 1,000,000 | RMB 300,000 | RMB 120/unit | 2,500 units |
 
-The competitive threshold of two or one suppliers also matters. In a normal tender, a buyer needs at least three qualified suppliers to proceed. Under the emergency rules, two or even one is enough, provided the procurement documents are not unreasonable. That means a foreign supplier can win a contract even if only one domestic competitor shows up. It also means you can lose to a single domestic competitor who undercuts you.
+The arithmetic is straightforward: the cap is on value, not volume. If you raise your price for the add-on order, you sell fewer units. If you hold the price, you sell the full 30% additional volume. The decision is whether the add-on order is incremental volume at your marginal cost or a new pricing opportunity.
 
-The announcement deadlines create a transparency window. The buyer must publish the result within ten working days of selecting you, or within five working days after the emergency ends. That publication tells your competitors who won, at what price, and for what goods. If you win, expect competitors to target the follow-on procurement. If you lose, the publication tells you the winning price and lets you adjust your next bid.
+The 40% prepayment recommendation changes your cash-flow position. Under the previous framework, prepayment was typically 20% to 30% of contract value. The new measures recommend at least 40%. For a contract worth RMB 1,000,000, that is RMB 400,000 paid before you ship, compared with RMB 200,000 to RMB 300,000 under the old practice. The difference is RMB 100,000 to RMB 200,000 of working capital that you do not need to finance.
 
-The 15-year record retention is a compliance burden on the buyer, not on you, but it means the buyer will keep every document from your contract. That includes your invoices, delivery notes, and correspondence. Keep your own records clean and consistent with what you submitted, because a dispute years later will be judged against documents the buyer has kept.
+The one-or-two-supplier rule changes your competitive position. In a normal tender, if fewer than three suppliers bid, the procurement is often cancelled. Under the emergency measures, the procurement proceeds with one or two suppliers, provided the procurement documents are not unreasonable. That means a foreign supplier can win a contract even as the sole bidder, which removes the risk of a cancelled tender.
 
-For a worked example, consider a contract for imported medical devices worth RMB 2,000,000:
+The administrative deadlines create a public record. Within 10 working days of winning a contract, the procuring entity must publish the result. That announcement includes the supplier name and the contract value. Your competitors will see what you won and at what price. The 15-year retention requirement means the record is permanent.
 
-| Scenario | Contract value (RMB) | Add-on cap at 30% (RMB) | Prepayment at 40% (RMB) |
-| --- | --- | --- | --- |
-| Base contract | 2,000,000 | 600,000 | 800,000 |
-| With maximum add-on | 2,600,000 | 780,000 | 1,040,000 |
-| With no add-on | 2,000,000 | 0 | 800,000 |
+For importers deciding whether to position for emergency procurement, the calculation is about volume and payment terms. The 30% cap limits how much a single buyer can order from you without a new tender, but it does not limit how many separate contracts you can win. The 40% prepayment improves your cash position. The one-or-two-supplier rule improves your odds of winning. The trade-off is the public disclosure of your pricing.
 
-The maximum total you can earn from one emergency contract is RMB 2,600,000 — the original RMB 2,000,000 plus the RMB 600,000 add-on. The prepayment on the original contract is RMB 800,000, and if the add-on also carries a 40% prepayment, that adds another RMB 240,000, for a total upfront of RMB 1,040,000.
-
-The decision for an importer is whether to position for these contracts at all. The prepayment floor reduces your working capital risk. The add-on cap limits your upside from a single buyer. The two-or-one threshold means you can win with less competition. The publication deadlines mean your pricing becomes visible. Weigh those four factors against your product's fit for emergency demand — medical supplies, disaster relief equipment, and food are the obvious categories, but the rule does not restrict the goods.
-
-For context on how China structures other trade measures that affect importers, see the analysis of [China's beef safeguard trigger adding 55% to Brazilian beef from 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-trigger-october-2026/) and the [EU's provisional safeguard on grain-oriented electrical steel](/blog/eu-provisional-safeguard-grain-oriented-electrical-steel-2026/). For the broader picture of China's import tariff changes, review [China Dropped Tariffs to Zero on 1,344 Farm and Food Lines for 20 African Countries](/blog/china-zero-tariff-20-african-countries-2026/).
+Related reading: [China's emergency procurement rules start 1 October 2026: a filing, not an approval, and 4](/blog/china-emergency-procurement-rules-imported-goods-october-2026/) covers the filing mechanics. For the broader context of Chinese trade measures affecting importers, see [China's beef safeguard hits 100% for Brazil: a 55% surcharge starts 1 October 2026](/blog/china-brazil-beef-safeguard-55-percent-trigger-2026/) and [China Dropped Tariffs to Zero on 1,344 Farm and Food Lines for 20 African Countries](/blog/china-zero-tariff-20-african-countries-2026/).
 
 ## How confident
 
-**Confirmed.** The Interim Measures for Emergency Procurement Management, 财库〔2026〕12号, were published by the Ministry of Finance and the Ministry of Emergency Management on 14 September 2026 and took effect 1 October 2026. The 30% cap on add-on purchases, the 40% recommended prepayment, the ten-working-day and five-working-day announcement deadlines, the 15-year record retention, and the two-or-one supplier threshold are all written directly in the instrument. The effective date of 1 October 2026 is stated in Article 29 of the measures.
+**Confirmed.** The Interim Measures for Emergency Procurement Management (财库〔2026〕12号) were published by the Ministry of Finance and the Ministry of Emergency Management on 14 September 2026 and took effect 1 October 2026. The 30% add-on cap, the 40% prepayment recommendation, the 10-working-day announcement deadline, the 5-working-day outer deadline, the 15-year record retention period, and the one-or-two-supplier rule are all stated in the text of the instrument. The figures in this article come from that single document, retrieved 1 November 2026.
 
-**Inferred.** The instrument does not define which specific emergencies trigger the regime, nor does it list the goods that qualify. The interpretation that medical supplies, disaster relief equipment, and food are likely categories is an inference from the purpose of the rule, not a statement in the document. The arithmetic on prepayment for add-on orders assumes the buyer applies the same 40% recommendation to the add-on contract; the instrument does not state that explicitly. The single source for all figures is the one instrument, 财库〔2026〕12号, retrieved 1 November 2026.
+**Inferred.** The measures use the word "原则上" (in principle) for the 30% add-on cap and "鼓励" (encourage) for the 40% prepayment, which means the cap and the prepayment are recommendations rather than absolute requirements. A procuring entity can exceed the 30% cap or pay less than 40% prepayment if it documents a justification. The measures do not define what constitutes an unreasonable clause in procurement documents, and they do not specify how the emergency status is declared or ended. These interpretations rest on the single published instrument, and no implementing guidance has been reviewed.
 
-**What would change my mind.** A subsequent implementation notice from the Ministry of Finance that defines the scope of emergencies or lists eligible goods would change the practical guidance. A clarification that the 30% cap applies per procurement event rather than per contract would change the revenue ceiling calculation. A revision to the prepayment recommendation from "encouraged" to "mandatory" would change the cash flow analysis. None of those documents has been published as of 1 November 2026.
+**What would change my mind.** If the Ministry of Finance issues implementing guidance that defines the 30% cap as a hard ceiling with no exceptions, the cap becomes a binding constraint rather than a recommendation. If a provincial finance department publishes a model emergency procurement contract that sets prepayment at 40% as a standard term, the prepayment becomes the market norm. If the measures are amended to remove the one-or-two-supplier rule, the competitive position of foreign suppliers reverts to the normal three-bidder threshold.
 
 ## For you
 
-- **Importers of medical and disaster-relief equipment:** register as a supplier with provincial-level public procurement platforms now, because the two-or-one threshold means you can win a contract with minimal competition, but only if you are already in the system when the emergency hits.
-- **Importers with existing emergency contracts:** check your contract's add-on clause against the 30% cap, and if you are near the ceiling, prepare a proposal for a new procurement rather than assuming the buyer can simply extend your current order.
-- **Importers negotiating new emergency contracts:** push for the 40% prepayment in writing, because the instrument encourages it and a buyer who refuses is signalling weaker cash discipline that will cost you later.
-- **Importers of food and agricultural goods:** verify whether your product falls under the emergency regime or under the separate safeguard and quota rules, because the two regimes have different deadlines and different cost structures.
-- **Importers competing against domestic suppliers:** price aggressively on the first contract, because the publication deadline of ten working days means your winning price becomes public and shapes the follow-on tender.
+- **Importers bidding on emergency contracts:** price your add-on volume at the same unit price as the original contract. The 30% cap is on value, not quantity, so a price increase for the add-on order reduces the volume you can sell.
+- **Importers negotiating payment terms:** ask for 40% prepayment in your contract. The measures encourage it, and a procuring entity that refuses must explain why it is deviating from the recommended level.
+- **Importers with existing public-sector contracts:** track the contract value and the cumulative value of any add-on orders. Once the add-on reaches 30% of the original contract, the buyer must run a new procurement for any further volume.
+- **Importers considering sole-bidder tenders:** do not withdraw a bid because you expect no competition. The measures allow the procurement to proceed with one or two suppliers, so a sole bidder can win.
+- **Importers monitoring competitor pricing:** check the procurement result announcements within 10 working days of award. The published results show the winning supplier and contract value, which is a direct read on competitor pricing.
 
 ## The data point
 
-The 30% add-on cap and the 40% prepayment recommendation are the two numbers that determine whether an emergency procurement contract is worth pursuing.
+The 30% add-on cap means a buyer with a RMB 1,000,000 contract can order up to RMB 300,000 more from you without a new tender.
 
 <div class="callout">
-From 1 October 2026, a Chinese public buyer can add at most 30% to an original emergency procurement contract, and is encouraged to prepay 40% or more of the contract value.
+A Chinese public buyer can add up to 30% of the original contract value in additional purchases from the same supplier without running a new procurement. For a RMB 1,000,000 contract, that is RMB 300,000 of additional revenue available without a competitive process.
 </div>
 
 ## FAQ
 
-**Does the 30% add-on cap apply to imported goods only?**
+**Does the 30% add-on cap apply to imported goods specifically?**
 
-No. The instrument applies to all goods, works and services procured under the emergency regime, whether domestic or imported. The 30% cap is on the total of add-on or additional purchases from the original supplier, measured against the original contract amount. If the original contract is for imported medical devices worth RMB 1,000,000, the buyer can add at most RMB 300,000 of the same goods from you. If they need more, they must run a new procurement, which resets the cap for that new contract. The rule does not distinguish between domestic and imported goods in the add-on calculation.
+Yes. The measures apply to all goods, works and services procured under the emergency framework, and they do not distinguish between domestic and imported goods. The add-on provision states that the procuring entity can purchase additional goods from the original supplier, with the total not exceeding 30% of the original contract amount. The term "货物" (goods) includes imported goods. The measures also contain no restriction on the origin of the goods, so a foreign supplier that wins the original contract is eligible for the add-on order. The practical effect is that an importer holding an emergency procurement contract can receive follow-on orders up to the 30% cap without facing a new competitive process.
 
-**What happens if a buyer exceeds the 30% add-on cap?**
+**What happens if the add-on order exceeds the 30% cap?**
 
-The instrument does not state a penalty for exceeding the cap. The practical consequence is that the excess portion of the add-on purchase is not covered by the emergency regime, so it would require a normal procurement process with prior approval. If the buyer proceeds without that approval, the contract is vulnerable to challenge, and payment can be delayed or withheld. For an importer, the risk is that you deliver goods beyond the cap and then face a dispute over payment. The safe approach is to confirm in writing that any add-on order stays within 30% of the original contract, and to require a new contract number for anything beyond that.
+The measures state that the add-on total must not exceed 30% of the original contract amount "in principle" (原则上). If a procuring entity needs more than the cap allows, it must run a new procurement for the additional volume. The new procurement follows the same emergency procedures, which means the entity can use the simplified competitive process or direct negotiation. For the original supplier, the consequence is that any volume beyond the 30% cap is not guaranteed — another supplier can win the new procurement. In practice, a procuring entity that expects to need more than 30% additional volume should structure the original contract to cover the expected total, or plan for a second procurement from the start.
 
-**Is the 40% prepayment mandatory?**
+**How does the 40% prepayment recommendation affect an importer's cash flow?**
 
-No. The instrument says the buyer is encouraged to raise the prepayment ratio to 40% or more for contracts that include a prepayment arrangement. It is a recommendation, not a requirement. A buyer can set a lower prepayment or none at all. For an importer, the practical implication is that you should negotiate the prepayment explicitly and get it in the contract. If the buyer refuses 40%, that is a signal about their cash position and their willingness to share risk. The 40% figure is a useful benchmark for negotiation, but it is not a right you can enforce.
+The measures encourage procuring entities to set prepayment at 40% or more of the contract value for contracts that include prepayment arrangements. For an importer, this means that on a contract worth RMB 1,000,000, the buyer should pay RMB 400,000 before shipment. Compared with the typical 20% to 30% prepayment in normal procurement, the difference is RMB 100,000 to RMB 200,000 of working capital that the importer does not need to finance. The prepayment is a recommendation, not a requirement, so an importer should negotiate it explicitly in the contract. The measures do not specify when the prepayment must be paid relative to the contract signing or the shipment date, so the payment schedule is a matter of contract negotiation.
 
 ## How we calculated this
 
 ```python
-# Worked example: emergency procurement contract for imported goods
-original_contract = 2_000_000  # RMB
-add_on_cap_rate = 0.30
-prepayment_rate = 0.40
+# Worked example: add-on cap and prepayment for a RMB 1,000,000 contract
+
+original_contract = 1_000_000  # RMB
+add_on_cap_rate = 0.30  # 30% from 财库〔2026〕12号
+prepayment_rate = 0.40  # 40% recommended from 财库〔2026〕12号
 
 add_on_cap = original_contract * add_on_cap_rate
-max_total = original_contract + add_on_cap
-prepayment_original = original_contract * prepayment_rate
-prepayment_add_on = add_on_cap * prepayment_rate
-total_prepayment = prepayment_original + prepayment_add_on
+prepayment = original_contract * prepayment_rate
 
-print(f"Original contract: RMB {original_contract:,}")
-print(f"Add-on cap (30%): RMB {add_on_cap:,.0f}")
-print(f"Maximum total: RMB {max_total:,.0f}")
-print(f"Prepayment on original (40%): RMB {prepayment_original:,.0f}")
-print(f"Prepayment on add-on (40%): RMB {prepayment_add_on:,.0f}")
-print(f"Total prepayment: RMB {total_prepayment:,.0f}")
-```
+print(f"Add-on cap: RMB {add_on_cap:,.0f}")
+print(f"Recommended prepayment: RMB {prepayment:,.0f}")
 
-Output:
+# Scenario: price increase reduces add-on quantity
+unit_price_original = 100  # RMB per unit
+unit_price_plus_10 = 110   # 10% increase
+unit_price_plus_20 = 120   # 20% increase
 
-```text
-Original contract: RMB 2,000,000
-Add-on cap (30%): RMB 600,000
-Maximum total: RMB 2,600,000
-Prepayment on original (40%): RMB 800,000
-Prepayment on add-on (40%): RMB 240,000
-Total prepayment: RMB 1,040,000
+qty_same_price = add_on_cap / unit_price_original
+qty_plus_10 = add_on_cap / unit_price_plus_10
+qty_plus_20 = add_on_cap / unit_price_plus_20
+
+print(f"Add-on quantity at same price: {qty_same_price:,.0f} units")
+print(f"Add-on quantity at +10% price: {qty_plus_10:,.0f} units")
+print(f"Add-on quantity at +20% price: {qty_plus_20:,.0f} units")
 ```
 
 ## The point
 
-The emergency procurement rules that took effect 1 October 2026 give importers a faster path into Chinese public contracts, but they cap the upside at 30% of the original order and set a 40% prepayment benchmark that improves your cash position. The decision to pursue these contracts comes down to whether your product fits emergency demand, whether you can win with as few as one or two competitors, and whether you can live with a revenue ceiling that resets only through a new tender. The numbers are on the page; the strategy is yours.
+The 30% add-on cap and the 40% prepayment recommendation define the commercial terms for selling imported goods to Chinese public buyers under the new emergency procurement framework. The cap limits how much additional volume a single buyer can order without a new tender, and the prepayment improves your cash position. The one-or-two-supplier rule improves your odds of winning. The public announcement deadlines mean your pricing becomes visible to competitors within 10 working days. Position your pricing for the add-on order at the original contract price to maximize volume, negotiate the 40% prepayment explicitly, and treat the 30% cap as the ceiling for a single contract relationship.
