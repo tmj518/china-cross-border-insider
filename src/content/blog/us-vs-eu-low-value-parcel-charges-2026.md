@@ -3,7 +3,7 @@ title: "The Same Parcel Costs Three Times More in America Than in Europe"
 subtitle: "US de minimis suspension against the EU EUR 3 per-item charge: the same low-value consignment priced both ways, and why the two regimes punish opposite parcels"
 description: "The US now taxes a low-value parcel by classification and the EU charges it by the item. Priced on the same EUR 300 consignment, the US comes to EUR 91-131 and the EU to EUR 20. Here is the arithmetic, and which parcel each regime punishes."
 publishDate: 2026-10-07
-reviewBy: 2026-11-01
+reviewBy: 2027-05-01
 stakes: priced
 category: "platforms"
 audience: "both"

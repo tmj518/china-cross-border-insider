@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01T01:20:58.565Z",
+  "at": "2026-11-02T00:32:22.420Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "25 previous run(s), last 2026-10-31T00:57:42.103Z (PUBLISHED)"
+      "detail": "26 previous run(s), last 2026-11-01T01:20:58.565Z (PUBLISHED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "8 of 15 net-new this week"
+      "detail": "0 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -26,137 +26,87 @@
       "detail": "every section has a net-new article this week (5 sections)"
     },
     {
-      "name": "research",
+      "name": "directive",
       "ok": true,
-      "detail": "proposed china-brazil-beef-safeguard-55-percent-trigger-october-2026, 6 verified figure(s)"
+      "detail": "china-emergency-procurement-rules-imported-goods-2026 from /data/directive.json"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "6 sourced figure(s)"
+      "detail": "7 sourced figure(s)"
     },
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-brazil-beef-safeguard-55-percent-trigger-october-2026.md"
+      "detail": "draft at /data/drafts/china-emergency-procurement-rules-imported-goods-2026.md"
     },
     {
       "name": "reviewer",
       "ok": false,
-      "detail": "REJECTED: L5 4 issue(s), 4 with a citation"
+      "detail": "REJECTED: L1 1 gate failure(s) — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
     },
     {
       "name": "writer (revision 1)",
       "ok": true,
-      "detail": "draft at /data/drafts/china-brazil-beef-safeguard-55-percent-trigger-october-2026.md"
+      "detail": "draft at /data/drafts/china-emergency-procurement-rules-imported-goods-2026.md"
     },
     {
       "name": "reviewer (revision 1)",
       "ok": false,
-      "detail": "REJECTED: L5 4 issue(s), 4 with a citation"
-    },
-    {
-      "name": "writer (revision 2)",
-      "ok": true,
-      "detail": "draft at /data/drafts/china-brazil-beef-safeguard-55-percent-trigger-october-2026.md"
-    },
-    {
-      "name": "reviewer (revision 2)",
-      "ok": false,
-      "detail": "REJECTED: L5 3 issue(s), 3 with a citation"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "3 objection(s), advisory only - publishing"
-    },
-    {
-      "name": "publish",
-      "ok": true,
-      "detail": "staged at src/content/blog/china-brazil-beef-safeguard-55-percent-trigger-october-2026.md"
-    },
-    {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "2 older article(s) now link here"
+      "detail": "REJECTED: L5 6 issue(s), 6 with a citation"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict PUBLISHED"
+      "detail": "verdict REQUIRES-RESEARCH"
     }
   ],
-  "verdict": "PUBLISHED",
-  "reasons": [],
-  "article": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
+  "verdict": "REQUIRES-RESEARCH",
+  "reasons": [
+    "the review asks for a document nobody fetched: no claim beyond the figures given",
+    "the draft text it points at: \"The instrument replaces the prior approval requirement for emergency purchases with a filing-based regime\"",
+    "rewriting cannot supply a real figure, and a writer asked to try will produce one that looks real, so the loop stops here"
+  ],
+  "article": null,
   "commit": null,
   "usage": {
-    "calls": 30,
-    "failed": 12,
-    "usd": 0.0607,
-    "promptTokens": 149964,
-    "completionTokens": 22500
+    "calls": 7,
+    "failed": 2,
+    "usd": 0.0129,
+    "promptTokens": 42898,
+    "completionTokens": 15992
   },
   "route": "script",
   "categoryActivity": {
-    "logistics": 1,
-    "sourcing": 1,
-    "trade-policy": 6,
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
-  "researchLog": [
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 769 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 2631 characters but no document structure, trying the next one",
-    "  spent   : ~0.0110  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : eu-pet-spunbond-definitive-anti-dumping-duties-2026",
-    "  keyword : EU anti-dumping duty PET Spunbond China 2026 definitive rate",
-    "  duplicate check: score 8 against eu-pea-protein-anti-dumping-definitive-duties-2026",
-    "      shared figure value(s): fiveyears",
-    "      shared keyword stems: definitive",
-    "      shared institution(s): european, trade, economic, security",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 2 of 3)...",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1213 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3591 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1076 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3165 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1267 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3603 characters but no document structure, trying the next one",
-    "  spent   : ~0.0231  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : china-brazil-beef-safeguard-55-percent-trigger-october-2026",
-    "  keyword : China Brazil beef safeguard 55% additional tariff October 2026",
-    "  duplicate check: score 0",
-    "  slug    : china-brazil-beef-safeguard-55-percent-trigger-october-2026",
-    "  keyword : China Brazil beef safeguard 55% additional tariff October 2026",
-    "  category: trade-policy",
-    "  figures : 6",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0231",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "reviewAdvisory": [
-    "The draft's own confidence section says the notice does not address in-transit cargo, yet the FAQ asserts as fact that the surcharge is set by time rather than vessel position, which is an inference presented as a statement of the notice.",
-    "This presents the no-grandfathering reading as settled when the draft elsewhere labels it an inference from the absence of a carve-out, so the FAQ contradicts the confidence section.",
-    "The entire article rests on one notice plus the announcement it cites, and the single-source limitation is only mentioned in passing under Inferred rather than disclosed as a sourcing constraint on the confirmed facts."
-  ],
-  "seconds": 332
+  "escalation": {
+    "layer": "claims_follow_from_figures",
+    "rule": "no claim beyond the figures given",
+    "snippet": "The instrument replaces the prior approval requirement for emergency purchases with a filing-based regime",
+    "fix_type": "research"
+  },
+  "qa": {
+    "verdict": "REJECTED",
+    "layers": {
+      "L1": {
+        "pass": true,
+        "detail": "every gate passed — dist rebuilt with the draft staged"
+      },
+      "advisory": {
+        "pass": true,
+        "detail": "csp, structured data and the reviewer found nothing"
+      },
+      "L5": {
+        "pass": false,
+        "detail": "6 issue(s), 6 with a citation"
+      }
+    }
+  },
+  "seconds": 434
 }

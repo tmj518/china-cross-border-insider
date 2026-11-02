@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-01T01:20:58.565Z",
-  "lastVerdict": "PUBLISHED",
+  "lastRun": "2026-11-02T00:32:22.420Z",
+  "lastVerdict": "REQUIRES-RESEARCH",
   "lastArticle": "china-brazil-beef-safeguard-55-percent-trigger-october-2026",
-  "runs": 26,
+  "runs": 27,
   "published": 26,
   "lastUsage": {
-    "calls": 30,
-    "failed": 12,
-    "usd": 0.0607,
-    "promptTokens": 149964,
-    "completionTokens": 22500
+    "calls": 7,
+    "failed": 2,
+    "usd": 0.0129,
+    "promptTokens": 42898,
+    "completionTokens": 15992
   }
 }
