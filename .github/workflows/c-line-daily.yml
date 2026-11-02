@@ -76,6 +76,18 @@ jobs:
       # kept selecting from the same twenty-five cells. Re-running it from a line that already has a cron
       # costs one attempt a week and nothing on the other six days.
       #
+      #
+      # THE REVIEW DATES AGE ON EVERY LINE, NOT JUST THE ONE THAT RUNS THE MAINTENANCE.
+      #
+      # refresh-review-dates was wired into the daily workflow only, so a guide published today could pass its
+      # review date tomorrow and the CI gate would go red with MUST FIX - twice on 2026-11-02 for two
+      # articles nobody on this line had touched. The step belongs where the writing happens.
+      #
+      - name: Keep review dates current
+        if: always()
+        continue-on-error: true
+        run: node tools/refresh-review-dates.mjs
+
       - name: Keep the demand matrix fresh
         if: always()
         continue-on-error: true
