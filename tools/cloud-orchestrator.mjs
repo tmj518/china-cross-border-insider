@@ -1202,7 +1202,7 @@ if (published) {
   if (qa?.layers?.L5 && qa.layers.L5.pass === false) {
     const n = (qa.layers.L5.issues ?? []).length || 1;
   run.verdict = "PUBLISHED-DEGRADED";
-    reasons.push("reviewer: " + n + " objection(s), advisory - published anyway");
+    run.reasons.push("reviewer: " + n + " objection(s), advisory - published anyway");
     console.log("  reviewer   : " + n + " objection(s), advisory - publishing");
   }
   run.article = slug;
