@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-02T02:04:06.711Z",
+  "at": "2026-11-02T02:27:58.914Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "27 previous run(s), last 2026-11-02T00:32:22.420Z (REQUIRES-RESEARCH)"
+      "detail": "28 previous run(s), last 2026-11-02T02:04:06.711Z (REQUIRES-RESEARCH)"
     },
     {
       "name": "weekly ceiling",
@@ -52,29 +52,47 @@
     },
     {
       "name": "reviewer (revision 1)",
-      "ok": false,
-      "detail": "REJECTED: L5 10 issue(s), 10 with a citation"
+      "ok": true,
+      "detail": "APPROVED: L5 7 issue(s), 7 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "7 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-emergency-procurement-rules-imported-goods-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict REQUIRES-RESEARCH"
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "REQUIRES-RESEARCH",
+  "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "the review asks for a document nobody fetched: no figure outside the supplied set",
-    "the draft text it points at: \"by setting a target that is nearly double the typical 20% to 25% prepayment seen in normal procurement\"",
-    "rewriting cannot supply a real figure, and a writer asked to try will produce one that looks real, so the loop stops here"
+    "reviewer: 7 objection(s), advisory - published anyway"
   ],
-  "article": null,
+  "article": "china-emergency-procurement-rules-imported-goods-2026",
   "commit": null,
   "usage": {
     "calls": 7,
     "failed": 2,
-    "usd": 0.0146,
-    "promptTokens": 42186,
-    "completionTokens": 12212
+    "usd": 0.0123,
+    "promptTokens": 40124,
+    "completionTokens": 14373
   },
   "route": "script",
   "categoryActivity": {
@@ -85,28 +103,13 @@
     "platforms": 0
   },
   "uncoveredSections": [],
-  "escalation": {
-    "layer": "claims_follow_from_figures",
-    "rule": "no figure outside the supplied set",
-    "snippet": "by setting a target that is nearly double the typical 20% to 25% prepayment seen in normal procurement",
-    "fix_type": "research"
-  },
-  "qa": {
-    "verdict": "REJECTED",
-    "layers": {
-      "L1": {
-        "pass": true,
-        "detail": "every gate passed — dist rebuilt with the draft staged"
-      },
-      "advisory": {
-        "pass": true,
-        "detail": "csp, structured data and the reviewer found nothing"
-      },
-      "L5": {
-        "pass": false,
-        "detail": "10 issue(s), 10 with a citation"
-      }
-    }
-  },
-  "seconds": 279
+  "reviewAdvisory": [
+    "No supplied figure or evidence excerpt describes a 'filing' regime or a 'previous approval-based process', so this is an unsupported assertion about what the instrument replaced.",
+    "This attributes motive and historical context ('broader push', 'earlier crisis-response purchasing') that no supplied figure or evidence supports.",
+    "The two-or-one supplier figure supports that procurement may proceed with fewer bidders, but 'makes it easier for a single foreign supplier to win' is an inference not derivable from the supplied evidence.",
+    "The figures give the effective date but no article number; asserting 'Article 29' is a specific citation the draft cannot support from its supplied evidence.",
+    "The draft's own Inferred section concedes the 30% cap's calculation method is undefined, so listing it as flatly 'confirmed' is internally inconsistent.",
+    "Every substantive claim rests on one instrument and the draft never tells the reader it is single-sourced."
+  ],
+  "seconds": 429
 }

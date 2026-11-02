@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -949,6 +949,82 @@
       ],
       "articleSlugs": [
         "brazil-beef-import-additional-55-percent-tariff-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ministry-of-finance-ministry-of-emergency-management-2026-12",
+      "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+      "figures": [
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "百分之三十",
+          "unit": "cap on add-on/additional purchases as a share of the original contract amount",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "百分之四十",
+          "unit": "minimum recommended prepayment share of contract value",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "十个工作日",
+          "unit": "deadline to publish procurement result announcement after supplier selection",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "五个工作日",
+          "unit": "outer deadline to publish result announcement after the emergency ends",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "十五年",
+          "unit": "minimum retention period for emergency procurement records",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "两家或者一家",
+          "unit": "minimum number of suppliers that can proceed in a competitive emergency procurement",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        },
+        {
+          "articleSlug": "china-emergency-procurement-rules-imported-goods-2026",
+          "articleNum": 78,
+          "value": "2026年10月1日",
+          "unit": "effective date of the interim measures",
+          "period": "from 2026-10-01",
+          "source": "Ministry of Finance / Ministry of Emergency Management, 紧急采购管理暂行办法 (财库〔2026〕12号)",
+          "retrieved": "2026-11-01"
+        }
+      ],
+      "articleNums": [
+        78
+      ],
+      "articleSlugs": [
+        "china-emergency-procurement-rules-imported-goods-2026"
       ],
       "modelOutput": false
     },

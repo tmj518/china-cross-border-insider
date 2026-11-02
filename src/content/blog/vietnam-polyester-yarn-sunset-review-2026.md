@@ -234,6 +234,8 @@ named rate — a difference decided by paperwork rather than by price.
 
 > Also read: [Brazil's beef quota filled on 29 September: from 1 October every shipment pays an extra 55%](/blog/china-brazil-beef-safeguard-55-percent-trigger-october-2026/)
 
+> Also read: [China's new emergency procurement rules let buyers skip approval to buy imported goods — and cap add-on orders at 30%](/blog/china-emergency-procurement-rules-imported-goods-2026/)
+
 ## For you
 
 - **Importers of polyester filament yarn into Vietnam:** reconcile the exporting entity on your

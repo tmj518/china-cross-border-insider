@@ -1,0 +1,115 @@
+{
+  "at": "2026-11-02T02:27:58.914Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "28 previous run(s), last 2026-11-02T02:04:06.711Z (REQUIRES-RESEARCH)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "0 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "china-emergency-procurement-rules-imported-goods-2026 from /data/directive.json"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "7 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-emergency-procurement-rules-imported-goods-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-emergency-procurement-rules-imported-goods-2026.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 7 issue(s), 7 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "7 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-emergency-procurement-rules-imported-goods-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 7 objection(s), advisory - published anyway"
+  ],
+  "article": "china-emergency-procurement-rules-imported-goods-2026",
+  "commit": null,
+  "usage": {
+    "calls": 7,
+    "failed": 2,
+    "usd": 0.0123,
+    "promptTokens": 40124,
+    "completionTokens": 14373
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "reviewAdvisory": [
+    "No supplied figure or evidence excerpt describes a 'filing' regime or a 'previous approval-based process', so this is an unsupported assertion about what the instrument replaced.",
+    "This attributes motive and historical context ('broader push', 'earlier crisis-response purchasing') that no supplied figure or evidence supports.",
+    "The two-or-one supplier figure supports that procurement may proceed with fewer bidders, but 'makes it easier for a single foreign supplier to win' is an inference not derivable from the supplied evidence.",
+    "The figures give the effective date but no article number; asserting 'Article 29' is a specific citation the draft cannot support from its supplied evidence.",
+    "The draft's own Inferred section concedes the 30% cap's calculation method is undefined, so listing it as flatly 'confirmed' is internally inconsistent.",
+    "Every substantive claim rests on one instrument and the draft never tells the reader it is single-sourced."
+  ],
+  "seconds": 429
+}
