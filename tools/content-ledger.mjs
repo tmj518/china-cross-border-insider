@@ -200,7 +200,16 @@ const records = rows.map((r) => ({
    * put a confident wrong value in the column. Frontmatter first, then the run record for that slug,
    * then an explicit 未标注.
    */
-  路线: r.route || routeFromRuns(r.key) || "未标注",
+  /*
+   * A GUIDE IS WRITTEN BY THE GUIDE LINE - that is structural, not a guess.
+   *
+   * The column was hand-backfilled on 2026-10-31 and the next ledger run recomputed every row from
+   * frontmatter and run records, found nothing for the older guides, and wrote 未标注 back over them:
+   * c went from 24 rows to 6. A derived column cannot be repaired at the destination while its source
+   * stays empty, so the source gets the one fact that is actually true - src/content/guide is written by
+   * the guide line and by nothing else.
+   */
+  路线: r.route || (/^guide:/.test(r.key) ? "c" : routeFromRuns(r.key)) || "未标注",
 }));
 
 /* ── output ──────────────────────────────────────────────────────────────────────────────────── */
