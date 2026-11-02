@@ -34,6 +34,16 @@ export const CANDIDATES = [
   ["https://www.caac.gov.cn/XXGK/XXGK/", "caac", "CAAC: aviation rules, passenger and cargo carriage"],
   ["https://www.mot.gov.cn/", "mot", "Ministry of Transport: shipping, ports and freight rates"],
   ["https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/", "samr", "SAMR: product standards, labelling, market access"],
+  /*
+   * SECONDARY SOURCES, ON PURPOSE.
+   *
+   * The reviewer rejects a claim that no fetched document supports, and the pipeline has been answering that
+   * by rewriting, which cannot supply a document. News wires quote officials, and a quoted figure with the
+   * outlet and the date is citable: the rule is that a number must come from a page we fetched, not that the
+   * page must be the ministry's own.
+   */
+  ["https://english.news.cn/", "xinhua-en", "Xinhua English: official statements and figures with dates"],
+  ["https://www.chinadaily.com.cn/business", "china-daily", "China Daily business: policy coverage with quoted officials"],
   ["https://www.gov.cn/zhengce/zuixin/", "state-council-policy", "the State Council's latest policy releases, the one page that carries housing, tax and customs notices together"],
   ["https://www.mohurd.gov.cn/", "housing", "Ministry of Housing: property measures, mortgage policy, developer rules"],
   ["https://www.ndrc.gov.cn/", "ndrc", "NDRC: macro policy, prices, investment rules"],
