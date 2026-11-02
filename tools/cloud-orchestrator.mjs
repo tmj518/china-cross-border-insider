@@ -69,7 +69,13 @@ function fixInternalLinks(article) {
   for (const dir of ["blog", "guide"]) {
     let files = [];
     try { files = readdirSync(join(ROOT, "src", "content", dir)).filter((f) => f.endsWith(".md")); } catch { continue; }
-    for (const f of files) published.add(dir + "/" + f.replace(/\.md$/, ""));
+    for (const f of files) {
+      /* A draft is not a URL: link-check skips draft:true, so a link to one is a broken link. */
+      let src = "";
+      try { src = readFileSync(join(ROOT, "src", "content", dir, f), "utf8"); } catch { continue; }
+      if (/^draft:\s*true/m.test(src)) continue;
+      published.add(dir + "/" + f.replace(/\.md$/, ""));
+    }
   }
   const LINK = /\[([^\]]+)\]\(\/(blog|guide)\/([a-z0-9-]+)\/?\)/g;
   const removed = [];
