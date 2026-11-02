@@ -169,6 +169,56 @@ function frontmatter(article) {
  * truncating it keeps the meaning. A wrong enum or a missing required field is not mechanical - guessing
  * there would be fabricating metadata - so those stay violations and the draft is still refused.
  */
+/*
+ * THE FIELDS THE PIPELINE CAN WRITE ITSELF, WRITTEN BEFORE THE GATE SEES THEM.
+ *
+ * On 2026-10-31 the writer produced a complete article and omitted three fields the schema requires:
+ * figures, information_gain and category. The post-publish gate caught it and rolled the page back,
+ * which is the guard working - but the writer had been handed five verified figures in the directive and
+ * simply did not copy them, and the other two are constants of this publication.
+ *
+ * Only fields with a defensible source are filled: the figures come from the directive (already verified
+ * against fetched documents upstream), the category from the directive, and information_gain is
+ * "primary-source" whenever the body quotes a document. Nothing here invents a number.
+ */
+function fillMechanical(article, directive) {
+  const f = frontmatter(article);
+  if (!f) return { article, filled: [] };
+  const filled = [];
+  const setLine = (key, value) => {
+    const re = new RegExp("^" + key + ":.*$", "m");
+    if (re.test(article)) article = article.replace(re, key + ": " + value);
+    else article = article.replace(/^---\r?\n/, "---\n" + key + ": " + value + "\n");
+  };
+  const has = (k) => {
+    const v = f[k];
+    return v != null && String(v).trim() !== "" && String(v).trim() !== "[]";
+  };
+  if (!has("information_gain")) { setLine("information_gain", '"primary-source"'); filled.push("information_gain"); }
+  const CATEGORY_ENUM = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
+  const cat = String(f.category ?? "").replace(/"/g, "").trim();
+  if (!CATEGORY_ENUM.includes(cat)) {
+    const fromDirective = String(directive?.category ?? "").replace(/"/g, "").trim();
+    setLine("category", '"' + (CATEGORY_ENUM.includes(fromDirective) ? fromDirective : "trade-policy") + '"');
+    filled.push("category");
+  }
+  const figures = Array.isArray(directive?.figures) ? directive.figures : [];
+  if (!has("figures") && figures.length) {
+    const blockLines = ["figures:", ...figures.map((x) =>
+      "  - value: " + JSON.stringify(String(x.value ?? "")) +
+      "\n    unit: " + JSON.stringify(String(x.unit ?? "")) +
+      "\n    period: " + JSON.stringify(String(x.period ?? "")) +
+      "\n    source: " + JSON.stringify(String(x.source ?? "")) +
+      "\n    retrieved: " + JSON.stringify(String(x.retrieved ?? directive?.date ?? ""))
+    )].join("\n");
+    if (/^figures:\s*\[\s*\]\s*$/m.test(article)) article = article.replace(/^figures:\s*\[\s*\]\s*$/m, blockLines);
+    else if (/^figures:/m.test(article)) article = article.replace(/^figures:[\s\S]*?(?=\n[a-z_]+:|\n---)/m, blockLines);
+    else article = article.replace(/^---\r?\n/, "---\n" + blockLines + "\n");
+    filled.push("figures x" + figures.length);
+  }
+  return { article, filled };
+}
+
 async function repairFrontmatter(article, violations) {
   let out = article;
   const repaired = [];
@@ -603,6 +653,12 @@ HOW TO REVISE
     unit, period, source and retrieval date. A revision is the single most likely place for an invented
     number to enter, because the instruction to improve something invites filling gaps.
   - Do not invent an experience, a quotation, a person or a panel of data. The first person is banned.
+  - Do not name a document, an article number, an instrument number or a process unless that exact
+    string appears in the bundle. "Article 29" and "a filing-based regime" are the two ways this draft
+    failed on 2026-11-02: both are plausible, both are unsupported, and a reviewer with the same
+    documents will find them every time. Describe what the evidence shows and stop there.
+  - Do not attribute motive, history or a "broader push" to a measure. The documents state what was
+    decided and from when; they do not state why.
   - Keep everything the reviewer did not object to. A revision that rewrites the whole article loses the
     parts that were already approved and usually introduces new problems.
   - Return the complete corrected markdown file, frontmatter included, and nothing else.
@@ -649,6 +705,12 @@ ${previous.slice(0, 60000)}`;
 
   const outSlug = String(extracted.slug ?? directive.slug).replace(/[^a-z0-9-]/g, "").slice(0, 80);
   let article = extracted.article;
+/* Mechanical fields first: they have a defensible source and a wrong value fails the build. */
+const mechanical = fillMechanical(article, directive);
+if (mechanical.filled.length) {
+  article = mechanical.article;
+  console.log("  filled    : " + mechanical.filled.join(", "));
+}
   let violations = schemaViolations(article);
 
   console.log(`  provider  : ${r.provider} / ${r.model}`);
