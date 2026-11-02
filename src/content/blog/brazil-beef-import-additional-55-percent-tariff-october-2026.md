@@ -159,3 +159,5 @@ This 55% additional tariff is a hard, date-specific cliff that does not grandfat
 For the paperwork and the cost in one place, see [Health Cover for Foreigners Working in China](/guide/china-medical-insurance-foreigner/).
 
 For the paperwork and the cost in one place, see [China residence permit application form](/guide/residence-permit-application-form/).
+
+For the paperwork and the cost in one place, see [China tax refund foreigners](/guide/tax-refund-foreigners/).

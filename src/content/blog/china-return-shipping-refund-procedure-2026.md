@@ -133,3 +133,5 @@ The refund on a return to China is the supplier's, and the only thing the seller
 For the paperwork and the cost in one place, see [The Health Check Behind a China Residence Permit](/guide/foreigner-health-check-residence-permit/).
 
 For the paperwork and the cost in one place, see [China residence permit application form](/guide/residence-permit-application-form/).
+
+For the paperwork and the cost in one place, see [China tax refund foreigners](/guide/tax-refund-foreigners/).

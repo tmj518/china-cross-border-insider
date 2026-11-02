@@ -1,47 +1,8 @@
 {
-  "at": "2026-11-02T01:05:22.234Z",
+  "at": "2026-11-02T07:20:24.566Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "work-permit-processing-time",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China work permit processing time",
-      "query": "china work permit processing time",
-      "status": "queued",
-      "evidence": "demand matrix: \"china work permit processing time\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "work",
-        "permit",
-        "processing",
-        "time"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "tax-refund-foreigners",
       "topic": "tax",
@@ -204,6 +165,45 @@
       "query": "china home return permit application",
       "status": "queued",
       "evidence": "demand matrix: \"china home return permit application\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "home",
+        "return",
+        "permit",
+        "application"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "home-return-permit-application-hong-kong",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China home return permit application hong kong",
+      "query": "china home return permit application hong kong",
+      "status": "queued",
+      "evidence": "demand matrix: \"china home return permit application hong kong\" (google)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
@@ -400,6 +400,14 @@
         "impressions": 2,
         "clicks": 0,
         "position": 86
+      }
+    ],
+    [
+      "china-z-visa-requirements",
+      {
+        "impressions": 2,
+        "clicks": 0,
+        "position": 67.5
       }
     ]
   ]

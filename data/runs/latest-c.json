@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-02T01:05:44.427Z",
+  "at": "2026-11-02T07:20:42.998Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "work-permit-processing-time",
-  "seconds": 22,
+  "article": "tax-refund-foreigners",
+  "seconds": 18,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004
+    "usd": 0.0014
   },
   "providers": [
     "volces"
@@ -25,29 +25,29 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding work-permit-processing-time",
+      "name": "grounding tax-refund-foreigners",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates work-permit-processing-time",
+      "name": "gates tax-refund-foreigners",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build work-permit-processing-time",
+      "name": "build tax-refund-foreigners",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026, eu-fdi-screening-2026-timeline-notification-rates-importer"
+      "detail": "china-return-shipping-refund-procedure-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/work-permit-processing-time/"
+      "detail": "/guide/tax-refund-foreigners/"
     }
   ],
   "researchLog": [
