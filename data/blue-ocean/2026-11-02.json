@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-02T02:27:58.808Z",
+  "at": "2026-11-02T23:21:18.671Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -43,11 +43,11 @@
       "position": 6.5
     },
     {
-      "query": "144 hours visa china",
-      "impressions": 1,
+      "query": "visa z trung quốc",
+      "impressions": 2,
       "clicks": 0,
       "ctr": 0,
-      "position": 86
+      "position": 67.5
     }
   ]
 }
