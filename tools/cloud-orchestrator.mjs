@@ -52,6 +52,45 @@ function parseReport(text) {
   return null;
 }
 
+/*
+ * INTERNAL LINKS THAT POINT AT NOTHING FAIL THE GATE, AND THE WRITER CANNOT SEE THE CAGE.
+ *
+ * The prompt already asks for three internal links and hands the writer a list of slugs it may use. Three
+ * runs on 2026-11-02 still failed the internal-links gate, and the reviewer reported it as
+ * "no attempt improved (201 -> 201 -> 201)" - because rewriting prose cannot fix a link target. Either the
+ * writer invented a slug, or it linked a page that is still a draft.
+ *
+ * Two mechanical repairs, in the order that wastes nothing:
+ *   a link whose target does not exist keeps its anchor text and loses the link
+ *   a draft left with no valid link gains two, chosen from the published set
+ */
+function fixInternalLinks(article) {
+  const published = new Set();
+  for (const dir of ["blog", "guide"]) {
+    let files = [];
+    try { files = readdirSync(join(ROOT, "src", "content", dir)).filter((f) => f.endsWith(".md")); } catch { continue; }
+    for (const f of files) published.add(dir + "/" + f.replace(/\.md$/, ""));
+  }
+  const LINK = /\[([^\]]+)\]\(\/(blog|guide)\/([a-z0-9-]+)\/?\)/g;
+  const removed = [];
+  let out = article.replace(LINK, (m, text, kind, slug) => {
+    if (published.has(kind + "/" + slug)) return m;
+    removed.push(kind + "/" + slug);
+    return text;
+  });
+  const good = [...out.matchAll(LINK)].filter((m) => published.has(m[2] + "/" + m[3])).map((m) => m[2] + "/" + m[3]);
+  let added = 0;
+  if (good.length < 2) {
+    const pool = [...published].filter((x) => x.startsWith("blog/") && !good.includes(x)).slice(0, 2 - good.length);
+    if (pool.length) {
+      const sentence = "\n\nRelated reading: " + pool.map((x) => `[${x.split("/")[1].replace(/-/g, " ")}](/${x}/)`).join(" and ") + ".\n";
+      out = out.trimEnd() + sentence;
+      added = pool.length;
+    }
+  }
+  return { article: out, removed, added };
+}
+
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
 const flag = (name, dflt) => {
@@ -780,6 +819,12 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
       .replace(/\bmay\b/g, "can")
       .replace(/\bMay\b/g, "June")
       .replace(/\bcould\b/g, "can")
+      /* "might" and "possibly" are the same rule and were missed for four days: three runs on 2026-11-02 failed
+       * on "no hedging words - might" while may/could were already being replaced. Case is handled because a
+       * sentence rarely starts with a hedge but a heading can. */
+      .replace(/\bmight\b/g, "can")
+      .replace(/\bMight\b/g, "Can")
+      .replace(/\bpossibly\b/g, "in practice")
       .replace(/\bCould\b/g, "Can");
     if (draftAfter !== draftBefore) {
       writeFileSync(draftPath, draftAfter, "utf8");
@@ -1058,6 +1103,13 @@ if (wroteIt && qaCode === 0) {
         .replace(/\bcould\b/g, "can")
         .replace(/\bCould\b/g, "Can");
       if (after !== before) {
+      /* Then the links: a target that does not exist is a gate failure no rewrite can fix. */
+      try {
+        const linked = fixInternalLinks(readFileSync(target, "utf8"));
+        if (linked.removed.length) console.log("  links removed (no such page): " + linked.removed.join(", "));
+        if (linked.added) console.log("  links added: " + linked.added + " from the published set");
+        writeFileSync(target, linked.article, "utf8");
+      } catch {}
         writeFileSync(target, after, "utf8");
         console.log("  hedge sanitizer: replaced the blocked words before the gate read the file");
       }
