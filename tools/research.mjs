@@ -58,6 +58,21 @@ const BUDGET = Number(flag("budget", "0.40"));
  * were always there - the follow-up depth was not.
  */
 const MAX_SOURCES = Number(flag("sources", "8"));
+/*
+ * A SEEDED SUBJECT. The radar proposes what the matrix says people ask; sometimes the answer is already in
+ * Search Console: a query with impressions, ranking first, and no page to land on. That is a harder reason
+ * to write than any matrix cell, and it should be usable without inventing figures - the topic is seeded,
+ * the numbers still have to come from a fetched document.
+ */
+const TOPIC = flag("topic", "");
+/*
+ * AN EXACT DOCUMENT, WHEN THE QUERY NAMES ONE.
+ *
+ * Search Console says a query ranks first with no page behind it. The index pages in the candidate list
+ * do not carry that policy's numbers, so the topic seed alone ends in a correct refusal. Naming the
+ * document is the difference between searching and citing: the figures still have to be in the text.
+ */
+const SEED_URLS = flag("seed-url", "").split(",").map((s) => s.trim()).filter(Boolean);
 
 const SOURCES_DIR = join(ROOT, "data", "sources");
 const LEDGER = join(ROOT, "data", "ledger.jsonl");
@@ -265,7 +280,29 @@ function duplicateScore(proposal, ledger) {
  * still recorded; they simply no longer sit at the front of a queue that can close before the back.
  */
 /* The list lives in tools/sources.mjs so the probe cannot test a different one. */
-const CANDIDATES = SOURCES;
+/*
+ * A SEEDED TOPIC FETCHES ITS OWN SOURCES FIRST.
+ *
+ * The proposal prompt cannot choose a housing subject when the archive holds only EU trade notices:
+ * the model answers from the documents it was given, which is the rule that keeps figures honest. So the
+ * seed moves the fetch order, not the honesty standard - the State Council's policy page and the NDRC go
+ * first when the topic names a domestic measure, and the trade sources still follow.
+ */
+const TOPIC_HOSTS = TOPIC
+  ? /housing|property|mortgage|tax|subsid|rebate|visa|student|freight/i.test(TOPIC)
+    ? ["www.gov.cn", "www.ndrc.gov.cn", "english.www.gov.cn"]
+    : []
+  : [];
+const SEEDED = SEED_URLS.map((u) => [u, "seed-document", "the document the demand evidence points at"]);
+const CANDIDATES = TOPIC_HOSTS.length
+  ? [...SOURCES].sort((a, b) => {
+      const rank = (x) => {
+        try { const h = new URL(x[0]).hostname; const i = TOPIC_HOSTS.indexOf(h); return i === -1 ? 99 : i; } catch { return 99; }
+      };
+      return rank(a) - rank(b);
+    })
+  : SOURCES;
+const FETCH_LIST = [...SEEDED, ...CANDIDATES];
 
 if (!available().length) {
   console.log("RESEARCH\n" + "=".repeat(84));
@@ -288,7 +325,7 @@ const day = new Date().toISOString().slice(0, 10);
 mkdirSync(join(SOURCES_DIR, day), { recursive: true });
 
 const fetched = [];
-for (const [url, label, why] of CANDIDATES) {
+for (const [url, label, why] of FETCH_LIST) {
   if (fetched.length >= MAX_SOURCES) break;
   let out = "";
   try {
@@ -396,7 +433,7 @@ function articleLinks(indexFile, baseUrl, limit) {
 
 const articles = [];
 for (const page of fetched) {
-  const links = articleLinks(page.file, page.url, 4);
+  const links = articleLinks(page.file, page.url, 8);
   for (const link of links) {
     if (articles.length >= MAX_SOURCES * 2) break;
     const label = `${page.label.replace(/^research-/, "")}-article`;
@@ -710,7 +747,7 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
       "You select subjects for a trade-cost publication from documents supplied to you. You quote only " +
       "from those documents and you say so when they do not support an article. You never supply a " +
       "number that is not literally in a document you were given.",
-    messages: [{ role: "user", content: prompt + retryNote }],
+    messages: [{ role: "user", content: prompt + (TOPIC ? "\n\nDEMAND EVIDENCE FROM SEARCH CONSOLE\n\n" + TOPIC + "\n\nWrite about this. People have already typed it and this site has no page that answers it. The figures must still come from the documents above - if they do not carry a number for it, propose the closest subject the documents do support and say so." : "") + retryNote }],
     maxTokens: 8192,
   });
 
