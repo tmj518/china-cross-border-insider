@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-03T00:41:07.142Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "29 previous run(s), last 2026-11-02T02:27:58.914Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "0 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 0)"
+    }
+  ],
+  "verdict": "NO-SUBJECT",
+  "reasons": [],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "RESEARCH  2026-11-03T00:41:07.179Z",
+    "====================================================================================",
+    "  providers usable: volces, deepseek",
+    "    volces    writer=ARK_API_KEY              reviewer=ARK_API_KEY                ep-20251220173606-gzxdg",
+    "    deepseek  writer=OWNER_KEY_2              reviewer=OWNER_KEY_2                deepseek-chat",
+    "    roles: volces writes, deepseek reviews",
+    "    review independent: yes - volces writes, deepseek reviews",
+    "  budget   : $0.40",
+    "  fetches  : up to 4",
+    "  ok    moe-en                      21346B  archived",
+    "  ok    trade-council               87896B  archived",
+    "  ok    machinery-chamber           98002B  archived",
+    "  skip  federal-register-cbp           39B  not usable (recorded anyway)",
+    "  ok    eu-trade-news               97422B  archived",
+    "  ok    moe-en-article              20270B  article archived",
+    "  ok    moe-en-article              19107B  article archived",
+    "  ok    moe-en-article              22250B  article archived",
+    "  ok    moe-en-article              17938B  article archived",
+    "  ok    moe-en-article              17951B  article archived",
+    "  ok    moe-en-article              14073B  article archived",
+    "  ok    moe-en-article              13185B  article archived",
+    "  ok    moe-en-article              13074B  article archived",
+    "  articles : 8 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 115 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 430 characters but no document structure, trying the next one",
+    "  stream      : SSE, 111 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 424 characters but no document structure, trying the next one",
+    "  stream      : SSE, 107 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 435 characters but no document structure, trying the next one",
+    "  spent   : ~0.0031  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: false",
+    "  reason  : The provided documents contain no per-unit cost figures, rates, or amounts attached to products; they are conference summaries and policy announcements with only qualitative statements and one institutional count (104 universities).",
+    "  The documents do not support an article today. That is the answer, and no directive was",
+    "  written. A day without a qualifying subject is a day without an article."
+  ]
+}
