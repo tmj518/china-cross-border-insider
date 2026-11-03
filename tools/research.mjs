@@ -57,7 +57,7 @@ const BUDGET = Number(flag("budget", "0.40"));
  * which the same two or three carried a rate, meant the subject pool was exhausted after two articles. The documents
  * were always there - the follow-up depth was not.
  */
-const MAX_SOURCES = Number(flag("sources", "8"));
+const MAX_SOURCES = Number(flag("sources", "12"));
 /*
  * A SEEDED SUBJECT. The radar proposes what the matrix says people ask; sometimes the answer is already in
  * Search Console: a query with impressions, ranking first, and no page to land on. That is a harder reason
