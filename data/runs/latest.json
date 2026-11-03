@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-03T00:55:53.661Z",
+  "at": "2026-11-03T01:05:00.980Z",
   "providers": [
     "volces",
     "deepseek"
@@ -27,17 +27,63 @@
     },
     {
       "name": "research",
-      "ok": false,
-      "detail": "no verified subject today (exit 2)"
+      "ok": true,
+      "detail": "proposed india-trailer-axle-anti-dumping-sunset-2026, 5 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "5 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/india-trailer-axle-anti-dumping-sunset-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 1 issue(s), 1 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "1 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/india-trailer-axle-anti-dumping-sunset-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "DUPLICATE-SUBJECT",
+  "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "research proposed a subject already covered by a published article and declined to write a directive. Nothing was published, which is the duplicate check working."
+    "reviewer: 1 objection(s), advisory - published anyway"
   ],
-  "article": null,
+  "article": "india-trailer-axle-anti-dumping-sunset-2026",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 28,
+    "failed": 6,
+    "usd": 0.2118,
+    "promptTokens": 700184,
+    "completionTokens": 20716
+  },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
@@ -48,10 +94,13 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  spent   : ~0.1649  (ceiling 0.40)",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 887 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3127 characters but no document structure, trying the next one",
+    "  spent   : ~0.1657  (ceiling 0.40)",
     "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : eu-pet-spunbond-definitive-anti-dumping-duty-2026",
+    "  slug    : eu-anti-dumping-pet-spunbond-definitive-duty-2026",
     "  keyword : EU anti-dumping duty PET Spunbond China 2026 definitive rate",
     "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
     "      shared figure value(s): fiveyears",
@@ -60,33 +109,34 @@
     "  REJECTED as a duplicate - trying another subject rather than ending the day.",
     "  proposing a subject from 8 archived document(s) (attempt 6 of 6)...",
     "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 749 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 2557 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1035 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3569 characters but no document structure, trying the next one",
     "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 926 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3303 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1038 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3440 characters but no document structure, trying the next one",
     "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 916 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3252 characters but no document structure, trying the next one",
-    "  spent   : ~0.1977  (ceiling 0.40)",
+    "  stream      : SSE, 861 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2762 characters but no document structure, trying the next one",
+    "  spent   : ~0.1992  (ceiling 0.40)",
     "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : eu-pet-spunbond-definitive-duty-vs-provisional-2026",
-    "  keyword : EU anti-dumping duty PET Spunbond China definitive rate 2026",
-    "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
-    "      shared figure value(s): fiveyears",
-    "      shared keyword stems: definitive",
-    "      shared institution(s): european, directorate, trade, economic, security",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  ALL_SUBJECTS_DUPLICATE - all 6 proposals are already published.",
-    "    - eu-pet-spunbond-definitive-anti-dumping-duties-2026 (score 9)",
-    "    - eu-pet-spunbond-definitive-anti-dumping-duty-2026 (score 9)",
-    "    - eu-pet-spunbond-definitive-anti-dumping-duty-2026 (score 9)",
-    "    - china-brazil-beef-safeguard-55-percent-trigger-2026 (score 99)",
-    "    - eu-pet-spunbond-definitive-anti-dumping-duty-2026 (score 9)",
-    "    - eu-pet-spunbond-definitive-duty-vs-provisional-2026 (score 9)",
-    "  No directive was written. Publishing a near-duplicate under a new slug would compete with",
-    "  the existing article for the same keyword, which is worse for the site than a quiet day.",
-    "  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure."
-  ]
+    "  slug    : india-trailer-axle-anti-dumping-sunset-2026",
+    "  keyword : India anti-dumping duty Chinese trailer axles 2026 USD per kilogram",
+    "  duplicate check: score 0",
+    "  slug    : india-trailer-axle-anti-dumping-sunset-2026",
+    "  keyword : India anti-dumping duty Chinese trailer axles 2026 USD per kilogram",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.1992",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The bullet raises under-declaration of weight on a customs entry, which is a customs-fraud vector, and frames it as a cost-saving temptation rather than staying clear of it."
+  ],
+  "seconds": 198
 }

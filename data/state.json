@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-02T02:27:58.914Z",
+  "lastRun": "2026-11-03T01:05:00.980Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-emergency-procurement-rules-imported-goods-2026",
-  "runs": 29,
-  "published": 27,
+  "lastArticle": "india-trailer-axle-anti-dumping-sunset-2026",
+  "runs": 30,
+  "published": 28,
   "lastUsage": {
-    "calls": 7,
-    "failed": 2,
-    "usd": 0.0123,
-    "promptTokens": 40124,
-    "completionTokens": 14373
+    "calls": 28,
+    "failed": 6,
+    "usd": 0.2118,
+    "promptTokens": 700184,
+    "completionTokens": 20716
   }
 }

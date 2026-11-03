@@ -159,6 +159,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [China's new emergency procurement rules let buyers skip approval to buy imported goods — and cap add-on orders at 30%](/blog/china-emergency-procurement-rules-imported-goods-2026/)
 
+> Also read: [India keeps anti-dumping duty on Chinese trailer axles at USD 0.16-0.31 per kilogram for five more years](/blog/india-trailer-axle-anti-dumping-sunset-2026/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1697,6 +1697,64 @@
       ],
       "articleSlugs": [
         "china-2026-export-duty-wrought-metals"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "india-ministry-of-commerce-and-industry-reported-by-cccme",
+      "source": "India Ministry of Commerce and Industry, reported by CCCME",
+      "figures": [
+        {
+          "articleSlug": "india-trailer-axle-anti-dumping-sunset-2026",
+          "articleNum": 79,
+          "value": "0.16－0.31美元/千克",
+          "unit": "anti-dumping duty per kilogram of trailer axles",
+          "period": "five years from the 2026-10-22 final sunset review determination",
+          "source": "India Ministry of Commerce and Industry, reported by CCCME",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "india-trailer-axle-anti-dumping-sunset-2026",
+          "articleNum": 79,
+          "value": "0.16美元/千克",
+          "unit": "anti-dumping duty per kilogram for Guangdong Fuwa Heavy Industries",
+          "period": "five years from the 2026-10-22 determination",
+          "source": "India Ministry of Commerce and Industry, reported by CCCME",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "india-trailer-axle-anti-dumping-sunset-2026",
+          "articleNum": 79,
+          "value": "0.31美元/千克",
+          "unit": "anti-dumping duty per kilogram for all other Chinese producers",
+          "period": "five years from the 2026-10-22 determination",
+          "source": "India Ministry of Commerce and Industry, reported by CCCME",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "india-trailer-axle-anti-dumping-sunset-2026",
+          "articleNum": 79,
+          "value": "5年",
+          "unit": "duration of the continued anti-dumping duty",
+          "period": "from the 2026-10-22 final determination",
+          "source": "India Ministry of Commerce and Industry, reported by CCCME",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "india-trailer-axle-anti-dumping-sunset-2026",
+          "articleNum": 79,
+          "value": "2026年10月22日",
+          "unit": "date of the second sunset review final determination",
+          "period": "announcement date",
+          "source": "India Ministry of Commerce and Industry, reported by CCCME",
+          "retrieved": "2026-11-03"
+        }
+      ],
+      "articleNums": [
+        79
+      ],
+      "articleSlugs": [
+        "india-trailer-axle-anti-dumping-sunset-2026"
       ],
       "modelOutput": false
     },

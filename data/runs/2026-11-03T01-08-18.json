@@ -1,0 +1,142 @@
+{
+  "at": "2026-11-03T01:05:00.980Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "29 previous run(s), last 2026-11-02T02:27:58.914Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "0 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed india-trailer-axle-anti-dumping-sunset-2026, 5 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "5 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/india-trailer-axle-anti-dumping-sunset-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 1 issue(s), 1 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "1 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/india-trailer-axle-anti-dumping-sunset-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 1 objection(s), advisory - published anyway"
+  ],
+  "article": "india-trailer-axle-anti-dumping-sunset-2026",
+  "commit": null,
+  "usage": {
+    "calls": 28,
+    "failed": 6,
+    "usd": 0.2118,
+    "promptTokens": 700184,
+    "completionTokens": 20716
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 887 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3127 characters but no document structure, trying the next one",
+    "  spent   : ~0.1657  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-anti-dumping-pet-spunbond-definitive-duty-2026",
+    "  keyword : EU anti-dumping duty PET Spunbond China 2026 definitive rate",
+    "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): fiveyears",
+    "      shared keyword stems: definitive",
+    "      shared institution(s): european, directorate, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 6 of 6)...",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1035 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3569 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1038 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3440 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 861 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2762 characters but no document structure, trying the next one",
+    "  spent   : ~0.1992  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : india-trailer-axle-anti-dumping-sunset-2026",
+    "  keyword : India anti-dumping duty Chinese trailer axles 2026 USD per kilogram",
+    "  duplicate check: score 0",
+    "  slug    : india-trailer-axle-anti-dumping-sunset-2026",
+    "  keyword : India anti-dumping duty Chinese trailer axles 2026 USD per kilogram",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.1992",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The bullet raises under-declaration of weight on a customs entry, which is a customs-fraud vector, and frames it as a cost-saving temptation rather than staying clear of it."
+  ],
+  "seconds": 198
+}
