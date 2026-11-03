@@ -443,7 +443,7 @@ function articleLinks(indexFile, baseUrl, limit) {
 
 const articles = [];
 for (const page of fetched) {
-  const links = articleLinks(page.file, page.url, 8);
+  const links = articleLinks(page.file, page.url, 3);
   for (const link of links) {
     if (articles.length >= MAX_SOURCES * 2) break;
     const label = `${page.label.replace(/^research-/, "")}-article`;
@@ -529,7 +529,7 @@ const corpus = fetched
    * which the reviewer's provider handles. If a run starts failing on context length rather than on content,
    * this number is the first thing to lower.
    */
-  .slice(0, 8)
+  .slice(0, 20)
   .map((f) => {
     const p = join(ROOT, f.file);
     let body = "";
