@@ -152,3 +152,5 @@ The Brazil-specific beef safeguard surcharge is not a distant policy change that
 For the paperwork and the cost in one place, see [Health Cover for Foreigners Working in China](/guide/china-medical-insurance-foreigner/).
 
 For the paperwork and the cost in one place, see [How to transfer money from china to india through bank](/guide/transfer-money-india-through-bank/).
+
+For the paperwork and the cost in one place, see [China work permit process](/guide/work-permit-process/).

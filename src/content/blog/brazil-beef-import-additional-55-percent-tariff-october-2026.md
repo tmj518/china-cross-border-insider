@@ -161,3 +161,5 @@ For the paperwork and the cost in one place, see [Health Cover for Foreigners Wo
 For the paperwork and the cost in one place, see [China residence permit application form](/guide/residence-permit-application-form/).
 
 For the paperwork and the cost in one place, see [China tax refund foreigners](/guide/tax-refund-foreigners/).
+
+For the paperwork and the cost in one place, see [China work permit process](/guide/work-permit-process/).
