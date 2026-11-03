@@ -294,14 +294,24 @@ const TOPIC_HOSTS = TOPIC
     : []
   : [];
 const SEEDED = SEED_URLS.map((u) => [u, "seed-document", "the document the demand evidence points at"]);
+/*
+ * THE SAME EIGHT SOURCES EVERY DAY PROPOSE THE SAME SUBJECTS.
+ *
+ * On 2026-11-03 research proposed three subjects and all three were already published: the pages it
+ * fetches are index pages that still list the same older documents, so the model kept choosing from a
+ * pool the site had already emptied. Rotating the list by the day of the year gives the sources at the
+ * end of the list their turn: nothing is removed, and the archive is the same for anyone reading it.
+ */
+const ROTATION = Math.floor(Date.now() / 86400000) % Math.max(1, SOURCES.length);
+const ROTATED = [...SOURCES.slice(ROTATION), ...SOURCES.slice(0, ROTATION)];
 const CANDIDATES = TOPIC_HOSTS.length
-  ? [...SOURCES].sort((a, b) => {
+  ? [...ROTATED].sort((a, b) => {
       const rank = (x) => {
         try { const h = new URL(x[0]).hostname; const i = TOPIC_HOSTS.indexOf(h); return i === -1 ? 99 : i; } catch { return 99; }
       };
       return rank(a) - rank(b);
     })
-  : SOURCES;
+: ROTATED;
 const FETCH_LIST = [...SEEDED, ...CANDIDATES];
 
 if (!available().length) {
@@ -717,7 +727,7 @@ feasible to false and say so — that is a correct and useful answer, not a fail
  * The evidence check and the verification below run on the accepted proposal only, so a retry costs one model call
  * and no fetches.
  */
-const PROPOSAL_ATTEMPTS = 3;
+const PROPOSAL_ATTEMPTS = 6;   /* three was not enough once the obvious subjects were taken */
 const rejectedSubjects = [];
 let r = null;
 let proposal = null;
