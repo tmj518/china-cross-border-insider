@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-03T01:05:00.980Z",
+  "at": "2026-11-03T23:21:16.869Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "29 previous run(s), last 2026-11-02T02:27:58.914Z (PUBLISHED-DEGRADED)"
+      "detail": "30 previous run(s), last 2026-11-03T01:05:00.980Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "0 of 15 net-new this week"
+      "detail": "1 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -27,116 +27,64 @@
     },
     {
       "name": "research",
-      "ok": true,
-      "detail": "proposed india-trailer-axle-anti-dumping-sunset-2026, 5 verified figure(s)"
-    },
-    {
-      "name": "directive figures",
-      "ok": true,
-      "detail": "5 sourced figure(s)"
-    },
-    {
-      "name": "writer",
-      "ok": true,
-      "detail": "draft at /data/drafts/india-trailer-axle-anti-dumping-sunset-2026.md"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "APPROVED: L5 1 issue(s), 1 with a citation"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "1 objection(s), advisory only - publishing"
-    },
-    {
-      "name": "publish",
-      "ok": true,
-      "detail": "staged at src/content/blog/india-trailer-axle-anti-dumping-sunset-2026.md"
-    },
-    {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "2 older article(s) now link here"
-    },
-    {
-      "name": "state written",
-      "ok": true,
-      "detail": "verdict PUBLISHED-DEGRADED"
+      "ok": false,
+      "detail": "no verified subject today (exit 1)"
     }
   ],
-  "verdict": "PUBLISHED-DEGRADED",
-  "reasons": [
-    "reviewer: 1 objection(s), advisory - published anyway"
-  ],
-  "article": "india-trailer-axle-anti-dumping-sunset-2026",
+  "verdict": "NO-SUBJECT",
+  "reasons": [],
+  "article": null,
   "commit": null,
-  "usage": {
-    "calls": 28,
-    "failed": 6,
-    "usd": 0.2118,
-    "promptTokens": 700184,
-    "completionTokens": 20716
-  },
+  "usage": null,
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 0,
+    "trade-policy": 1,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 887 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3127 characters but no document structure, trying the next one",
-    "  spent   : ~0.1657  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : eu-anti-dumping-pet-spunbond-definitive-duty-2026",
-    "  keyword : EU anti-dumping duty PET Spunbond China 2026 definitive rate",
-    "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
-    "      shared figure value(s): fiveyears",
-    "      shared keyword stems: definitive",
-    "      shared institution(s): european, directorate, trade, economic, security",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 6 of 6)...",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1035 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3569 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1038 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3440 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 861 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 2762 characters but no document structure, trying the next one",
-    "  spent   : ~0.1992  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : india-trailer-axle-anti-dumping-sunset-2026",
-    "  keyword : India anti-dumping duty Chinese trailer axles 2026 USD per kilogram",
-    "  duplicate check: score 0",
-    "  slug    : india-trailer-axle-anti-dumping-sunset-2026",
-    "  keyword : India anti-dumping duty Chinese trailer axles 2026 USD per kilogram",
-    "  category: trade-policy",
-    "  figures : 5",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.1992",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "reviewAdvisory": [
-    "The bullet raises under-declaration of weight on a customs entry, which is a customs-fraud vector, and frames it as a cost-saving temptation rather than staying clear of it."
-  ],
-  "seconds": 198
+    "  ok    statistics-bureau           73159B  archived",
+    "  ok    tax-administration          37502B  archived",
+    "  skip  customs                      1988B  not usable (recorded anyway)",
+    "  ok    gov-en                      58695B  archived",
+    "  ok    immigration                 19724B  archived",
+    "  ok    safe                        26182B  archived",
+    "  ok    moe-en-article              20270B  article archived",
+    "  ok    moe-en-article              19107B  article archived",
+    "  ok    moe-en-article              22250B  article archived",
+    "  ok    trade-council-article        6618B  article archived",
+    "  ok    trade-council-article        6331B  article archived",
+    "  ok    trade-council-article        6224B  article archived",
+    "  ok    machinery-chamber-article    44804B  article archived",
+    "  ok    machinery-chamber-article   106086B  article archived",
+    "  ok    machinery-chamber-article    52969B  article archived",
+    "  ok    eu-trade-news-article       73811B  article archived",
+    "  ok    eu-trade-news-article       77434B  article archived",
+    "  ok    eu-trade-news-article       77015B  article archived",
+    "  ok    trade-remedy-cases-article    26832B  article archived",
+    "  ok    trade-remedy-cases-article    40492B  article archived",
+    "  ok    trade-remedy-cases-article    24436B  article archived",
+    "  ok    ministry-of-finance-article    34071B  article archived",
+    "  ok    ministry-of-finance-article    19579B  article archived",
+    "  ok    ministry-of-finance-article    29056B  article archived",
+    "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   422000B  article archived",
+    "  ok    statistics-bureau-article   182161B  article archived",
+    "  ok    statistics-bureau-article   196130B  article archived",
+    "  ok    tax-administration-article   106658B  article archived",
+    "  ok    tax-administration-article   106658B  article archived",
+    "  articles : 24 followed from the listings",
+    "file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:502",
+    "const fresh = corpus.filter((doc) => {",
+    "              ^",
+    "ReferenceError: Cannot access 'corpus' before initialization",
+    "    at file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:502:15",
+    "    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)",
+    "    at async node:internal/modules/esm/loader:647:26",
+    "    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+    "Node.js v24.22.1"
+  ]
 }
