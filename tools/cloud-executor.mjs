@@ -659,6 +659,10 @@ HOW TO REVISE
     documents will find them every time. Describe what the evidence shows and stop there.
   - Do not attribute motive, history or a "broader push" to a measure. The documents state what was
     decided and from when; they do not state why.
+  - Never present non-compliance as a lever. Under-declaring value or weight, mis-classifying a product
+    or splitting a shipment to stay under a threshold are customs offences, not cost savings, and a
+    bullet that lists them as options is the objection the reviewer raised on 2026-11-03. Where the
+    arithmetic invites one, say what the law requires and what the penalty exposure is.
   - Keep everything the reviewer did not object to. A revision that rewrites the whole article loses the
     parts that were already approved and usually introduces new problems.
   - Return the complete corrected markdown file, frontmatter included, and nothing else.
