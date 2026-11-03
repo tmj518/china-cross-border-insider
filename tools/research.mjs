@@ -515,7 +515,7 @@ const CORPUS_NOTE = [
   "more than an article assembled from navigation text.",
 ].join("\n");
 
-const corpus = fetched
+const corpus = [...fetched, ...articles]
   /*
    * EIGHT DOCUMENTS, NOT FIVE.
    *
@@ -529,7 +529,7 @@ const corpus = fetched
    * which the reviewer's provider handles. If a run starts failing on context length rather than on content,
    * this number is the first thing to lower.
    */
-  .slice(0, 20)
+  .slice(0, 18)
   .map((f) => {
     const p = join(ROOT, f.file);
     let body = "";
