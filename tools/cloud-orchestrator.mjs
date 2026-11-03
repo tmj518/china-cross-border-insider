@@ -405,7 +405,7 @@ if (!directive) {
     } catch { return ""; }
   })();
   const budget = flag("research-budget", "0.40");
-  const maxSources = flag("research-sources", "4");
+  const maxSources = flag("research-sources", "12");
   let researchOut = "";
   let researchCode = 0;
   try {
