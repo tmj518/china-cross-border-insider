@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-03T01:21:06.507Z",
+  "at": "2026-11-03T12:21:33.840Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -9,45 +9,7 @@
     "maxPosition": 20,
     "top": 3
   },
-  "available": true,
-  "empty": true,
-  "reason": "no query met the impression, ctr and position thresholds",
-  "keywords": [],
-  "topSeen": [
-    {
-      "query": "total landed cost calculator",
-      "impressions": 5,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 52.8
-    },
-    {
-      "query": "china 144 hour visa free transit -site:youtube.com -site:reddit.com -site:x.com -site:twitter.com -site:facebook.com -site:instagram.com -site:tiktok.com -site:linkedin.com -site:pinterest.com -site:nytimes.com -site:wsj.com -site:yelp.com -site:rottentomatoes.com",
-      "impressions": 2,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 6.5
-    },
-    {
-      "query": "scfi",
-      "impressions": 2,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 70.5
-    },
-    {
-      "query": "visa z trung quốc",
-      "impressions": 2,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 67.5
-    },
-    {
-      "query": "144 hours visa china",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 86
-    }
-  ]
+  "available": false,
+  "reason": "GSC_CREDENTIALS_BASE64 is not set",
+  "keywords": []
 }

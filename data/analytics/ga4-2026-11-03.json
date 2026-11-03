@@ -3,16 +3,16 @@
   "account": "",
   "days": 28,
   "totals": {
-    "activeUsers": 90,
-    "newUsers": 90,
-    "screenPageViews": 297,
-    "sessions": 112,
-    "eventCount": 772
+    "activeUsers": 100,
+    "newUsers": 100,
+    "screenPageViews": 307,
+    "sessions": 122,
+    "eventCount": 802
   },
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 92
+      "sessions": 102
     },
     {
       "channel": "Organic Search",
@@ -23,13 +23,13 @@
       "sessions": 2
     },
     {
-      "channel": "Unassigned",
-      "sessions": 2
+      "channel": "Referral",
+      "sessions": 1
     },
     {
-      "channel": "Referral",
+      "channel": "Unassigned",
       "sessions": 1
     }
   ],
-  "at": "2026-11-03T01:21:06.129Z"
+  "at": "2026-11-03T12:21:30.226Z"
 }
