@@ -1,0 +1,65 @@
+{
+  "note": "analysis-shaped intents from the demand matrix, used when research has no new subject",
+  "topics": [
+    {
+      "slug": "business-visa-indian-fees",
+      "query": "china business visa for indian fees",
+      "moment": "arrive",
+      "persona": "bri"
+    },
+    {
+      "slug": "visa-nigeria",
+      "query": "china visa fee in nigeria",
+      "moment": "arrive",
+      "persona": "bri"
+    },
+    {
+      "slug": "visa-nigerians",
+      "query": "china visa fee for nigerians",
+      "moment": "arrive",
+      "persona": "bri"
+    },
+    {
+      "slug": "sourcing-agent-fees",
+      "query": "china sourcing agent fees",
+      "moment": "arrive",
+      "persona": "importer"
+    },
+    {
+      "slug": "tour-cost",
+      "query": "china tour cost",
+      "moment": "arrive",
+      "persona": "importer"
+    },
+    {
+      "slug": "study-visa-cost",
+      "query": "study visa china cost",
+      "moment": "arrive",
+      "persona": "student"
+    },
+    {
+      "slug": "student-visa-application",
+      "query": "china student visa application fee",
+      "moment": "arrive",
+      "persona": "student"
+    },
+    {
+      "slug": "application-free-university",
+      "query": "application fee free university in china",
+      "moment": "arrive",
+      "persona": "student"
+    },
+    {
+      "slug": "agricultural-university-application",
+      "query": "china agricultural university application fee",
+      "moment": "arrive",
+      "persona": "student"
+    },
+    {
+      "slug": "import-india-custom-duty",
+      "query": "import from china to india custom duty",
+      "moment": "buy",
+      "persona": "bri"
+    }
+  ]
+}
