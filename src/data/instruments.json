@@ -2122,6 +2122,55 @@
       "modelOutput": false
     },
     {
+      "id": "mofcom-trade-remedy-investigation-bureau-notice-2026-58",
+      "source": "MOFCOM Trade Remedy Investigation Bureau, notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+          "articleNum": 80,
+          "value": "100%",
+          "unit": "share of Brazil's allocated safeguard quantity already used",
+          "period": "reached 29 September 2026",
+          "source": "MOFCOM Trade Remedy Investigation Bureau, notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+          "articleNum": 80,
+          "value": "2026 年 9 月 29 日",
+          "unit": "date the Brazil allocation was exhausted",
+          "period": "29 September 2026",
+          "source": "MOFCOM Trade Remedy Investigation Bureau, notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+          "articleNum": 80,
+          "value": "10 月 1 日零点",
+          "unit": "start time of the 55% add-on",
+          "period": "1 October 2026, 00:00",
+          "source": "MOFCOM Trade Remedy Investigation Bureau, notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-03"
+        },
+        {
+          "articleSlug": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+          "articleNum": 80,
+          "value": "（九）",
+          "unit": "sequence number of this execution notice in the 2026 series",
+          "period": "issued 30 September 2026",
+          "source": "MOFCOM Trade Remedy Investigation Bureau, notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-03"
+        }
+      ],
+      "articleNums": [
+        80
+      ],
+      "articleSlugs": [
+        "china-beef-safeguard-brazil-55-percent-trigger-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "regulation-on-the-implementation-of-the-law-of-the",
       "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
       "figures": [

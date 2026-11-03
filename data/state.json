@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-03T01:05:00.980Z",
+  "lastRun": "2026-11-03T23:47:03.346Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "india-trailer-axle-anti-dumping-sunset-2026",
-  "runs": 30,
-  "published": 28,
+  "lastArticle": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+  "runs": 31,
+  "published": 29,
   "lastUsage": {
-    "calls": 28,
-    "failed": 6,
-    "usd": 0.2118,
-    "promptTokens": 700184,
-    "completionTokens": 20716
+    "calls": 11,
+    "failed": 4,
+    "usd": 0.058,
+    "promptTokens": 176357,
+    "completionTokens": 9427
   }
 }

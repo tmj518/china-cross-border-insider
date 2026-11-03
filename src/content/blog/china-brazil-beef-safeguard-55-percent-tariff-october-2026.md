@@ -97,6 +97,8 @@ A second scenario applies to importers that have split a single large shipment a
 
 > Also read: [India keeps anti-dumping duty on Chinese trailer axles at USD 0.16-0.31 per kilogram for five more years](/blog/india-trailer-axle-anti-dumping-sunset-2026/)
 
+> Also read: [Brazil's beef quota filled on 29 September: from 1 October every shipment pays an extra 55%](/blog/china-beef-safeguard-brazil-55-percent-trigger-october-2026/)
+
 ## For you
 
 - **Importers holding in-transit Brazilian beef cargo:** calculate the exact cost difference between diverting the vessel to a nearby third port and absorbing the full 55% additional tariff, and submit a revised declaration plan to your customs broker no later than 23:59 on 30 September 2026.

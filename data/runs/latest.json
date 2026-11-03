@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-03T23:21:16.869Z",
+  "at": "2026-11-03T23:47:03.346Z",
   "providers": [
     "volces",
     "deepseek"
@@ -27,15 +27,58 @@
     },
     {
       "name": "research",
-      "ok": false,
-      "detail": "no verified subject today (exit 1)"
+      "ok": true,
+      "detail": "proposed china-beef-safeguard-brazil-55-percent-trigger-october-2026, 6 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-beef-safeguard-brazil-55-percent-trigger-october-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: advisory the advisory tier failed: ============================== ok 0.2s reviewer agent FAIL 0.2s titles and descriptions ok 0.1s structured data ok 0.1s text contrast ok 0.1s content security policy total 0.3s cached 0/5 1 GATE(S) FAILED: --- titles and descriptions (exit 1) --- RESULT: FAIL ; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-beef-safeguard-brazil-55-percent-trigger-october-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "NO-SUBJECT",
-  "reasons": [],
-  "article": null,
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 1 objection(s), advisory - published anyway"
+  ],
+  "article": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 11,
+    "failed": 4,
+    "usd": 0.058,
+    "promptTokens": 176357,
+    "completionTokens": 9427
+  },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
@@ -46,45 +89,46 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    statistics-bureau           73159B  archived",
-    "  ok    tax-administration          37502B  archived",
-    "  skip  customs                      1988B  not usable (recorded anyway)",
-    "  ok    gov-en                      58695B  archived",
-    "  ok    immigration                 19724B  archived",
-    "  ok    safe                        26182B  archived",
-    "  ok    moe-en-article              20270B  article archived",
-    "  ok    moe-en-article              19107B  article archived",
-    "  ok    moe-en-article              22250B  article archived",
-    "  ok    trade-council-article        6618B  article archived",
-    "  ok    trade-council-article        6331B  article archived",
-    "  ok    trade-council-article        6224B  article archived",
-    "  ok    machinery-chamber-article    44804B  article archived",
-    "  ok    machinery-chamber-article   106086B  article archived",
-    "  ok    machinery-chamber-article    52969B  article archived",
-    "  ok    eu-trade-news-article       73811B  article archived",
-    "  ok    eu-trade-news-article       77434B  article archived",
-    "  ok    eu-trade-news-article       77015B  article archived",
-    "  ok    trade-remedy-cases-article    26832B  article archived",
-    "  ok    trade-remedy-cases-article    40492B  article archived",
-    "  ok    trade-remedy-cases-article    24436B  article archived",
-    "  ok    ministry-of-finance-article    34071B  article archived",
-    "  ok    ministry-of-finance-article    19579B  article archived",
-    "  ok    ministry-of-finance-article    29056B  article archived",
-    "  ok    mofcom-article              14343B  article archived",
-    "  ok    statistics-bureau-article   422000B  article archived",
-    "  ok    statistics-bureau-article   182161B  article archived",
-    "  ok    statistics-bureau-article   196130B  article archived",
-    "  ok    tax-administration-article   106658B  article archived",
-    "  ok    tax-administration-article   106658B  article archived",
-    "  articles : 24 followed from the listings",
-    "file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:502",
-    "const fresh = corpus.filter((doc) => {",
-    "              ^",
-    "ReferenceError: Cannot access 'corpus' before initialization",
-    "    at file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:502:15",
-    "    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)",
-    "    at async node:internal/modules/esm/loader:647:26",
-    "    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
-    "Node.js v24.22.1"
-  ]
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 782 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2740 characters but no document structure, trying the next one",
+    "  spent   : ~0.0251  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-pet-spunbond-anti-dumping-definitive-duties-2026",
+    "  keyword : EU anti-dumping duty PET Spunbond China 2026 definitive rate",
+    "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): fiveyears",
+    "      shared keyword stems: definitive",
+    "      shared institution(s): european, directorate, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 757 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2685 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1047 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3745 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1333 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3810 characters but no document structure, trying the next one",
+    "  spent   : ~0.0511  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+    "  keyword : China beef safeguard Brazil 55% additional tariff October 2026",
+    "  duplicate check: score 0",
+    "  slug    : china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+    "  keyword : China beef safeguard Brazil 55% additional tariff October 2026",
+    "  category: trade-policy",
+    "  figures : 6",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0511",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 123
 }

@@ -1,0 +1,134 @@
+{
+  "at": "2026-11-03T23:47:03.346Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "30 previous run(s), last 2026-11-03T01:05:00.980Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "1 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-beef-safeguard-brazil-55-percent-trigger-october-2026, 6 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-beef-safeguard-brazil-55-percent-trigger-october-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: advisory the advisory tier failed: ============================== ok 0.2s reviewer agent FAIL 0.2s titles and descriptions ok 0.1s structured data ok 0.1s text contrast ok 0.1s content security policy total 0.3s cached 0/5 1 GATE(S) FAILED: --- titles and descriptions (exit 1) --- RESULT: FAIL ; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-beef-safeguard-brazil-55-percent-trigger-october-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 1 objection(s), advisory - published anyway"
+  ],
+  "article": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+  "commit": null,
+  "usage": {
+    "calls": 11,
+    "failed": 4,
+    "usd": 0.058,
+    "promptTokens": 176357,
+    "completionTokens": 9427
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 1,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 782 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2740 characters but no document structure, trying the next one",
+    "  spent   : ~0.0251  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : eu-pet-spunbond-anti-dumping-definitive-duties-2026",
+    "  keyword : EU anti-dumping duty PET Spunbond China 2026 definitive rate",
+    "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): fiveyears",
+    "      shared keyword stems: definitive",
+    "      shared institution(s): european, directorate, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 757 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2685 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1047 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3745 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1333 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3810 characters but no document structure, trying the next one",
+    "  spent   : ~0.0511  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+    "  keyword : China beef safeguard Brazil 55% additional tariff October 2026",
+    "  duplicate check: score 0",
+    "  slug    : china-beef-safeguard-brazil-55-percent-trigger-october-2026",
+    "  keyword : China beef safeguard Brazil 55% additional tariff October 2026",
+    "  category: trade-policy",
+    "  figures : 6",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0511",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 123
+}
