@@ -489,29 +489,6 @@ if (!fetched.length) {
 
 const ledger = existsSync(LEDGER) ? loadLedger() : buildLedger();
 
-/*
- * DROP THE DOCUMENTS WHOSE EVENT IS ALREADY PUBLISHED, BEFORE THE MODEL READS THEM.
- *
- * Six attempts on 2026-11-03 all came back with the pea-protein anti-dumping case, which was published on
- * 2026-10-29. The duplicate check then rejected each attempt, correctly, and the day ended with nothing.
- * Telling the model "do not repeat" is not enough when the only page it keeps reading is that one: the
- * usableCorpus is filtered instead, so the choice is made among documents that can still yield an article.
- */
-const STOPW = new Set(["the","a","an","and","of","for","to","in","on","from","with","by","china","chinese","new","2026","2025"]);
-const publishedStems = ledger.map((r) => String(r.keyword || r.slug || "").toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOPW.has(w)));
-const fresh = corpus.filter((doc) => {
-  const text = String(doc.text ?? doc.body ?? "").toLowerCase().slice(0, 600);
-  const words = new Set(text.split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOPW.has(w)));
-  for (const stem of publishedStems) {
-    const shared = stem.filter((w) => words.has(w)).length;
-    if (stem.length >= 2 && shared >= Math.min(3, stem.length)) return false;
-  }
-  return true;
-});
-if (fresh.length >= 3 && fresh.length < corpus.length) {
-  console.log("  corpus    : " + (corpus.length - fresh.length) + " document(s) dropped - their event is already published");
-}
-const usableCorpus = fresh.length >= 3 ? fresh : corpus;
 console.log(`\n  ledger: ${ledger.length} published subject(s) to avoid repeating`);
 
 /*
@@ -708,7 +685,7 @@ WHAT IS REJECTED
 ${BLUE_OCEAN_NOTE ? BLUE_OCEAN_NOTE + "\n\n" : ""}${sectionBlock}
 THE SOURCES
 
-${usableCorpus}
+${corpus}
 
 ALREADY PUBLISHED — do not repeat these
 ${covered}
