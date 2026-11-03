@@ -396,6 +396,14 @@ if (!directive) {
    */
   console.log("  no directive, so research starts");
   console.log("");
+  /* A seed from the queue: a day without fresh documents should not be a day without an article. */
+  const seedTopic = (() => {
+    try {
+      const q = JSON.parse(readFileSync(join(ROOT, "data", "a-queue.json"), "utf8"));
+      const open = (q.topics ?? []).filter((t) => !t.usedAt);
+      return open.length ? String(open[0].query) : "";
+    } catch { return ""; }
+  })();
   const budget = flag("research-budget", "0.40");
   const maxSources = flag("research-sources", "4");
   let researchOut = "";
@@ -403,7 +411,7 @@ if (!directive) {
   try {
     researchOut = execFileSync(
       process.execPath,
-      [join(ROOT, "tools", "research.mjs"), `--budget=${budget}`, `--sources=${maxSources}`],
+      [join(ROOT, "tools", "research.mjs"), `--budget=${budget}`, `--sources=${maxSources}`, ...(seedTopic ? [`--topic=${seedTopic}`] : [])],
       {
         encoding: "utf8",
         timeout: 1800000,
