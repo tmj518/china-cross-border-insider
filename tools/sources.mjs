@@ -44,6 +44,10 @@ export const CANDIDATES = [
    */
   ["https://english.news.cn/", "xinhua-en", "Xinhua English: official statements and figures with dates"],
   ["https://www.chinadaily.com.cn/business", "china-daily", "China Daily business: policy coverage with quoted officials"],
+  ["https://www.mofcom.gov.cn/xwfb/xwfyrth/", "mofcom-briefing", "MOFCOM press briefings: the day's trade measures in the ministry's own words"],
+  ["http://www.customs.gov.cn/customs/302249/zfxxgk/2799825/302274/index.html", "customs-releases", "GACC releases: duties, clearance and statistics"],
+  ["https://www.ndrc.gov.cn/xwdt/xwfb/", "ndrc-briefing", "NDRC press releases: prices, energy, investment"],
+  ["https://www.chinatax.gov.cn/chinatax/n810219/n810724/index.html", "sta-news", "STA news: rebate and tax measures"],
   ["https://www.gov.cn/zhengce/zuixin/", "state-council-policy", "the State Council's latest policy releases, the one page that carries housing, tax and customs notices together"],
   ["https://www.mohurd.gov.cn/", "housing", "Ministry of Housing: property measures, mortgage policy, developer rules"],
   ["https://www.ndrc.gov.cn/", "ndrc", "NDRC: macro policy, prices, investment rules"],
