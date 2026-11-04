@@ -181,6 +181,44 @@ function frontmatter(article) {
  * against fetched documents upstream), the category from the directive, and information_gain is
  * "primary-source" whenever the body quotes a document. Nothing here invents a number.
  */
+/*
+ * A TITLE THAT ALREADY EXISTS IS A DUPLICATE PAGE, AND THE GATE SAYS SO AFTER THE FACT.
+ *
+ * On 2026-11-03 the writer produced "Brazil's beef quota filled on 29 September…" - the same sentence as the
+ * 2026-11-01 article, under a slug whose word order was swapped. The duplicate-subject check compares figures
+ * and keyword stems, so it passed; the CI gate then failed on a duplicate title, which is the correct place
+ * to catch it and the most expensive. Checking the title against the collection before staging costs a
+ * directory listing.
+ *
+ * The title is also trimmed to sixty columns here, because the writer treats the limit as advice.
+ */
+function fitTitle(article) {
+  const f = frontmatter(article);
+  if (!f) return { article, problem: "no frontmatter" };
+  const title = String(f.title ?? "").replace(/^"|"$/g, "");
+  let trimmed = [...title].slice(0, 60).join("");
+  if (trimmed !== title) {
+    const cut = trimmed.lastIndexOf(" ");
+    if (cut > 30) trimmed = trimmed.slice(0, cut);
+    trimmed = trimmed.replace(/[\s,;:.]+$/, "");
+  }
+  const dir = join(ROOT, "src", "content", "blog");
+  let clash = null;
+  for (const file of readdirSync(dir).filter((x) => x.endsWith(".md"))) {
+    try {
+      const s = readFileSync(join(dir, file), "utf8");
+      const other = (/^title:\s*"?(.*?)"?\s*$/m.exec(s) ?? [])[1] ?? "";
+      if (other && (other === title || other === trimmed)) { clash = file; break; }
+    } catch {}
+  }
+  if (clash) return { article, problem: `the title already exists in ${clash}` };
+  if (trimmed !== title) {
+    const re = /^title:.*$/m;
+    return { article: article.replace(re, "title: " + JSON.stringify(trimmed)), problem: null, trimmed: true };
+  }
+  return { article, problem: null };
+}
+
 function fillMechanical(article, directive) {
   const f = frontmatter(article);
   if (!f) return { article, filled: [] };
@@ -710,6 +748,18 @@ ${previous.slice(0, 60000)}`;
   const outSlug = String(extracted.slug ?? directive.slug).replace(/[^a-z0-9-]/g, "").slice(0, 80);
   let article = extracted.article;
 /* Mechanical fields first: they have a defensible source and a wrong value fails the build. */
+/* The title before anything else: a duplicate title fails the gate after the article is written. */
+const fit = fitTitle(article);
+if (fit.problem) {
+  console.log("  title     : refused - " + fit.problem);
+  const reportPath = process.env.EXECUTOR_VIOLATIONS;
+  if (reportPath) {
+    try { writeFileSync(reportPath, JSON.stringify([fit.problem], null, 2)); } catch {}
+  }
+  process.exit(1);
+}
+article = fit.article;
+if (fit.trimmed) console.log("  title     : trimmed to 60 columns");
 const mechanical = fillMechanical(article, directive);
 if (mechanical.filled.length) {
   article = mechanical.article;
