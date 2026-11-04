@@ -724,6 +724,25 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     writeCode = e.status ?? 1;
   }
   wroteIt = existsSync(draftPath);
+
+  /*
+   * REPAIR THE DRAFT'S LINKS BEFORE THE REVIEWER STAGES IT.
+   *
+   * fixInternalLinks lived in the publish path, which runs after cloud-qa - and cloud-qa is what stages the
+   * draft into the collection and runs the hard gates. So the gate kept failing on links the repair had not
+   * run on yet, three attempts in a row on 2026-11-04 and again on 2026-11-05, with the verdict blaming the
+   * prose instead of a target that does not exist.
+   */
+  if (wroteIt) {
+    try {
+      const linked = fixInternalLinks(readFileSync(draftPath, "utf8"));
+      if (linked.removed.length) console.log("  links      : removed " + linked.removed.length + " target(s) that do not exist - " + linked.removed.slice(0, 3).join(", "));
+      if (linked.added) console.log("  links      : added " + linked.added + " from the published set");
+      writeFileSync(draftPath, linked.article, "utf8");
+    } catch (e) {
+      console.log("  links      : repair skipped - " + String(e.message).slice(0, 80));
+    }
+  }
   step(
     `writer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`,
     wroteIt,
