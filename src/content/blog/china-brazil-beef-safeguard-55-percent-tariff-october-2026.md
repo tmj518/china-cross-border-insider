@@ -98,6 +98,8 @@ A second scenario applies to importers that have split a single large shipment a
 > Also read: [India keeps anti-dumping duty on Chinese trailer axles at USD 0.16-0.31 per kilogram for five more years](/blog/india-trailer-axle-anti-dumping-sunset-2026/)
 
 
+> Also read: [Thailand raises import excise tax on BEVs and REEVs to 35%](/blog/thailand-ev-excise-tax-35-percent-2027/)
+
 ## For you
 
 - **Importers holding in-transit Brazilian beef cargo:** calculate the exact cost difference between diverting the vessel to a nearby third port and absorbing the full 55% additional tariff, and submit a revised declaration plan to your customs broker no later than 23:59 on 30 September 2026.

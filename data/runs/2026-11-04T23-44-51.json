@@ -1,0 +1,157 @@
+{
+  "at": "2026-11-04T23:38:26.240Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "31 previous run(s), last 2026-11-03T23:47:03.346Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "1 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed thailand-ev-excise-tax-35-percent-2027, 5 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "5 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/thailand-ev-excise-tax-35-percent-2027.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/thailand-ev-excise-tax-35-percent-2027.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 8 issue(s), 8 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "8 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/thailand-ev-excise-tax-35-percent-2027.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 8 objection(s), advisory - published anyway"
+  ],
+  "article": "thailand-ev-excise-tax-35-percent-2027",
+  "commit": null,
+  "usage": {
+    "calls": 13,
+    "failed": 2,
+    "usd": 0.0424,
+    "promptTokens": 294462,
+    "completionTokens": 14801
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 1,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  stream      : SSE, 886 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3130 characters but no document structure, trying the next one",
+    "  stream      : SSE, 598 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2057 characters but no document structure, trying the next one",
+    "  stream      : SSE, 893 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3209 characters but no document structure, trying the next one",
+    "  spent   : ~0.0148  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : eu-pet-spunbond-anti-dumping-definitive-duties-2026",
+    "  keyword : EU anti-dumping duty PET spunbond China 2026 definitive rate",
+    "  duplicate check: score 9 against eu-pea-protein-anti-dumping-definitive-duties-2026",
+    "      shared figure value(s): fiveyears",
+    "      shared keyword stems: definitive",
+    "      shared institution(s): european, directorate, trade, economic, security",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 686 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2043 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1005 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3116 characters but no document structure, trying the next one",
+    "  stream      : SSE, 847 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2711 characters but no document structure, trying the next one",
+    "  spent   : ~0.0296  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : thailand-ev-excise-tax-35-percent-2027",
+    "  keyword : Thailand import electric vehicle excise tax 35% 2027",
+    "  duplicate check: score 0",
+    "  slug    : thailand-ev-excise-tax-35-percent-2027",
+    "  keyword : Thailand import electric vehicle excise tax 35% 2027",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0296",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The 8% current rate is not among the supplied figures and the draft itself admits it is unconfirmed, yet it is used to produce headline numbers (USD 8,100, 337.5%, USD 810,000) presented as fact.",
+    "Going from USD 2,400 to USD 10,500 is a 337.5% increase, not a 337.5% jump in liability as stated relative to the new figure; the draft elsewhere calls it a 337.5% jump while the correct framing is a 4.375x rise, and the number is derived from an invented base rate.",
+    "The USD 240,000 and USD 810,000 figures rest entirely on the unverified 8% assumption and are stated without the hedge used earlier in the same section.",
+    "The confidence section labels the 35% rate and date as confirmed while the same section concedes the current rate is unknown, and the body then presents an 8% baseline as if established.",
+    "These figures are unrelated to the Thailand excise tax and are imported only to pad the piece; the draft itself says they are unrelated, so they add no support.",
+    "A 1% move on USD 30,000 is USD 300, not USD 30,303, and the added excise at 35% would be about USD 105 only if the CIF rose by USD 300; the arithmetic as written is internally inconsistent."
+  ],
+  "seconds": 386
+}

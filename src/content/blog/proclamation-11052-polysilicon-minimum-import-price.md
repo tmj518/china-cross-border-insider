@@ -162,6 +162,8 @@ Three things follow, and the third is the one nobody is pricing.
 > Also read: [India keeps anti-dumping duty on Chinese trailer axles at USD 0.16-0.31 per kilogram for five more years](/blog/india-trailer-axle-anti-dumping-sunset-2026/)
 
 
+> Also read: [Thailand raises import excise tax on BEVs and REEVs to 35%](/blog/thailand-ev-excise-tax-35-percent-2027/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.

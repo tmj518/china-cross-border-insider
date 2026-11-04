@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-04T01:21:02.709Z",
+  "at": "2026-11-04T23:38:26.130Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -29,6 +29,13 @@
       "position": 10
     },
     {
+      "query": "\"council regulation (eu) 2026/382\"",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8
+    },
+    {
       "query": "council regulation (eu) 2026/382",
       "impressions": 2,
       "clicks": 0,
@@ -41,13 +48,6 @@
       "clicks": 0,
       "ctr": 0,
       "position": 67.5
-    },
-    {
-      "query": "\"investment screening\"",
-      "impressions": 1,
-      "clicks": 0,
-      "ctr": 0,
-      "position": 46
     }
   ]
 }

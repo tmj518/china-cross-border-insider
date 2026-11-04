@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-03T23:47:03.346Z",
+  "lastRun": "2026-11-04T23:38:26.240Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-beef-safeguard-brazil-55-percent-trigger-october-2026",
-  "runs": 31,
-  "published": 29,
+  "lastArticle": "thailand-ev-excise-tax-35-percent-2027",
+  "runs": 32,
+  "published": 30,
   "lastUsage": {
-    "calls": 11,
-    "failed": 4,
-    "usd": 0.058,
-    "promptTokens": 176357,
-    "completionTokens": 9427
+    "calls": 13,
+    "failed": 2,
+    "usd": 0.0424,
+    "promptTokens": 294462,
+    "completionTokens": 14801
   }
 }
