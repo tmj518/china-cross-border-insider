@@ -1,46 +1,8 @@
 {
-  "at": "2026-11-03T07:20:26.067Z",
+  "at": "2026-11-04T07:20:25.714Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "work-permit-process",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China work permit process",
-      "query": "china work permit process",
-      "status": "queued",
-      "evidence": "demand matrix: \"china work permit process\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "work",
-        "permit",
-        "process"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "residence-permit-application",
       "topic": "transit",
@@ -234,6 +196,44 @@
       }
     },
     {
+      "slug": "permanent-residence-permit",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China permanent residence permit",
+      "query": "china permanent residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"china permanent residence permit\" (bing)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "permanent",
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 1.8,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
       "slug": "china-240-hour-visa-free-transit",
       "topic": "transit",
       "audience": [
@@ -257,13 +257,13 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 1.1,
+      "priorityScore": 1.79,
       "priorityWhy": {
         "basis": "measured",
-        "base": 1.1,
-        "demandImpressions": 2,
+        "base": 1.79,
+        "demandImpressions": 5,
         "demandBreadth": 0,
-        "demandQuery": "china 144 hour visa free transit -site:youtube.com -site:reddit.com -site:x.com -site:twitter.com -site:facebook.com -site:instagram.com -site:tiktok.com -site:linkedin.com -site:pinterest.com -site:nytimes.com -site:wsj.com -site:yelp.com -site:rottentomatoes.com",
+        "demandQuery": "144-hour visa-free transit",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,

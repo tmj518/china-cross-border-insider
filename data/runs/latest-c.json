@@ -1,9 +1,9 @@
 {
-  "at": "2026-11-03T07:20:49.252Z",
+  "at": "2026-11-04T07:20:49.540Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "work-permit-process",
-  "seconds": 23,
+  "article": "residence-permit-application",
+  "seconds": 24,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -25,29 +25,29 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding work-permit-process",
+      "name": "grounding residence-permit-application",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates work-permit-process",
+      "name": "gates residence-permit-application",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build work-permit-process",
+      "name": "build residence-permit-application",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-safeguard-55-percent-tariff-october-2026"
+      "detail": "china-return-shipping-refund-procedure-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/work-permit-process/"
+      "detail": "/guide/residence-permit-application/"
     }
   ],
   "researchLog": [
