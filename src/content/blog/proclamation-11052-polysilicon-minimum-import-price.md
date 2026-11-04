@@ -161,7 +161,6 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [India keeps anti-dumping duty on Chinese trailer axles at USD 0.16-0.31 per kilogram for five more years](/blog/india-trailer-axle-anti-dumping-sunset-2026/)
 
-> Also read: [Brazil's beef quota filled on 29 September: from 1 October every shipment pays an extra 55%](/blog/china-beef-safeguard-brazil-55-percent-trigger-october-2026/)
 
 ## For you
 
