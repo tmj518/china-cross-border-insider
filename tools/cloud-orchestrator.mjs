@@ -473,6 +473,19 @@ if (!directive) {
    * writing layer failing, and it needs its own verdict rather than being reported as NO-SUBJECT: the response to
    * it is "the corpus is saturated on this beat", not "the documents held nothing".
    */
+  /*
+   * A CRASH IS NOT A QUIET DAY.
+   *
+   * On 2026-11-04 research died on a ReferenceError before proposing anything, and the run reported
+   * NO-SUBJECT - the same yellow card as "the documents held nothing". The operator read it as a quiet day
+   * and the broken file stayed in place for another hour. Exit 1 with a stack trace is a fault; exit 1 with
+   * no directive is a judgment. Only the second is a NO-SUBJECT.
+   */
+  if (!directive && researchCode === 1 && /ReferenceError|TypeError|SyntaxError|Cannot access|is not defined/i.test(researchOut)) {
+    run.verdict = "RESEARCH-CRASHED";
+    run.reasons.push("research threw before proposing: " + String(researchOut).replace(/\s+/g, " ").slice(-300));
+    console.log("  research   : crashed - " + String(researchOut).replace(/\s+/g, " ").slice(-200));
+  }
   if (!directive && researchCode === 2) {
     run.verdict = "DUPLICATE-SUBJECT";
     run.reasons.push(
