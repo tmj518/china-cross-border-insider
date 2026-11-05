@@ -99,7 +99,11 @@
         "out-of-china": 1,
         "within-china": 42,
         "into-china": 7
-      }
+      },
+      "produced": "published",
+      "producedAt": "2026-11-05",
+      "slug": "finding-a-chinese-supplier-procedure-2026",
+      "publishedOn": "2026-11-05"
     },
     {
       "moment": "arrive",
