@@ -64,6 +64,45 @@ function parseReport(text) {
  *   a link whose target does not exist keeps its anchor text and loses the link
  *   a draft left with no valid link gains two, chosen from the published set
  */
+/*
+ * THE QA LOOP, WRITTEN DOWN.
+ *
+ * The operator asked for a backtest loop on 2026-11-05: when a draft fails, the record must say which
+ * check failed, what the offending text was, what kind of repair it needs, and whether the next attempt
+ * cleared it. That record is what makes "it failed" actionable instead of a dead end, and it is the only
+ * way to see which rule keeps costing days.
+ *
+ * One JSON line per attempt, appended, never rewritten: data/qa-loop.jsonl.
+ */
+function logQaLoop(entry) {
+  try {
+    const file = join(ROOT, "data", "qa-loop.jsonl");
+    const line = JSON.stringify({ at: new Date().toISOString(), ...entry });
+    appendFileSync(file, line + "\n", "utf8");
+  } catch {}
+}
+
+/* Read one attempt out of a qa report: which layers failed and the first concrete reason. */
+function summariseQa(qa) {
+  if (!qa || !qa.layers) return { pass: null, layers: {}, firstReason: "" };
+  const layers = {};
+  const reasons = [];
+  for (const [name, l] of Object.entries(qa.layers)) {
+    layers[name] = { pass: Boolean(l.pass), detail: String(l.detail ?? "").slice(0, 220) };
+    if (!l.pass) {
+      for (const f of (l.failed ?? []).slice(0, 4)) reasons.push(`${name}: ${String(f).slice(0, 160)}`);
+      if (!(l.failed ?? []).length) reasons.push(`${name}: ${String(l.detail ?? "").slice(0, 160)}`);
+    }
+  }
+  const issues = (qa.layers?.L5?.issues ?? []).map((x) => ({
+    rule: String(x.rule ?? "").slice(0, 80),
+    fixType: String(x.fix_type ?? ""),
+    snippet: String(x.snippet ?? "").slice(0, 160),
+    why: String(x.why ?? "").slice(0, 160),
+  }));
+  return { pass: qa.verdict === "APPROVED", layers, firstReason: reasons[0] ?? "", reasons: reasons.slice(0, 8), issues };
+}
+
 function fixInternalLinks(article) {
   const published = new Set();
   for (const dir of ["blog", "guide"]) {
@@ -794,6 +833,13 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     if (!qa) console.log("  reviewer   : the report could not be parsed - " + String(qaOut).replace(/\s+/g, " ").slice(-300));
   } catch {
     qa = null;
+  }
+
+  /* One line per attempt: what failed, what the reviewer wanted changed, and whether it was the last try. */
+  {
+    const s = summariseQa(qa);
+    logQaLoop({ slug, attempt, maxAttempts: MAX_ATTEMPTS, qaCode, pass: s.pass, layers: s.layers, reasons: s.reasons, issues: s.issues });
+    if (!s.pass && s.firstReason) console.log("  qa loop    : attempt " + attempt + " failed on " + s.firstReason.slice(0, 120));
   }
 
   /*
