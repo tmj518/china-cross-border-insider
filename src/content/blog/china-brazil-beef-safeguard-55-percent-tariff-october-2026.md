@@ -100,6 +100,8 @@ A second scenario applies to importers that have split a single large shipment a
 
 > Also read: [Thailand raises import excise tax on BEVs and REEVs to 35%](/blog/thailand-ev-excise-tax-35-percent-2027/)
 
+> Also read: [EU slaps definitive anti-dumping duties of 39.8% to 48.1%](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/)
+
 ## For you
 
 - **Importers holding in-transit Brazilian beef cargo:** calculate the exact cost difference between diverting the vessel to a nearby third port and absorbing the full 55% additional tariff, and submit a revised declaration plan to your customs broker no later than 23:59 on 30 September 2026.

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-04T23:38:26.240Z",
+  "lastRun": "2026-11-05T23:21:15.250Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "thailand-ev-excise-tax-35-percent-2027",
-  "runs": 32,
-  "published": 30,
+  "lastArticle": "eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+  "runs": 33,
+  "published": 31,
   "lastUsage": {
-    "calls": 13,
+    "calls": 10,
     "failed": 2,
-    "usd": 0.0424,
-    "promptTokens": 294462,
-    "completionTokens": 14801
+    "usd": 0.0297,
+    "promptTokens": 188038,
+    "completionTokens": 11595
   }
 }

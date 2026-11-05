@@ -1,0 +1,157 @@
+{
+  "at": "2026-11-05T23:21:15.250Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "32 previous run(s), last 2026-11-04T23:38:26.240Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "2 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed eu-pet-spunbond-definitive-anti-dumping-duties-2026, 3 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "3 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-pet-spunbond-definitive-anti-dumping-duties-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/eu-pet-spunbond-definitive-anti-dumping-duties-2026.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 7 issue(s), 7 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "7 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 7 objection(s), advisory - published anyway"
+  ],
+  "article": "eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+  "commit": null,
+  "usage": {
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0297,
+    "promptTokens": 188038,
+    "completionTokens": 11595
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 2,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    ministry-of-finance-article    19579B  article archived",
+    "  ok    ministry-of-finance-article    29056B  article archived",
+    "  ok    mofcom-article              14343B  article archived",
+    "  ok    statistics-bureau-article   435852B  article archived",
+    "  ok    statistics-bureau-article   422000B  article archived",
+    "  ok    statistics-bureau-article   182161B  article archived",
+    "  ok    tax-administration-article   106658B  article archived",
+    "  ok    tax-administration-article   106658B  article archived",
+    "  ok    tax-administration-article   106658B  article archived",
+    "  ok    gov-en-article              21841B  article archived",
+    "  ok    gov-en-article              21822B  article archived",
+    "  ok    gov-en-article              24704B  article archived",
+    "  ok    immigration-article         20272B  article archived",
+    "  ok    immigration-article         20306B  article archived",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 597 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2008 characters but no document structure, trying the next one",
+    "  stream      : SSE, 605 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2046 characters but no document structure, trying the next one",
+    "  stream      : SSE, 582 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 1943 characters but no document structure, trying the next one",
+    "  spent   : ~0.0170  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+    "  keyword : EU anti-dumping duty PET Spunbond China 2026 importer cost",
+    "  duplicate check: score 0",
+    "  slug    : eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+    "  keyword : EU anti-dumping duty PET Spunbond China 2026 importer cost",
+    "  category: trade-policy",
+    "  figures : 3",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0170",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The grandfathering rule, the in-transit treatment and the 'cleared on or after 30 October 2026' rule are asserted as fact but appear nowhere in the figures or the single cited Commission news article, and the FAQ later admits the article does not address in-transit cargo.",
+    "The refund entitlement is stated as a consequence of the rate change, yet the confidence section concedes the article does not describe it and it is 'inferred' - an inferred mechanism cannot be presented as a definite entitlement.",
+    "The 1.9 figure is the gap between the two low endpoints (45.6 - 39.8), but 5.8 is the gap between the two high endpoints (50 - 48.1); pairing them implies a per-producer comparison the draft elsewhere says is impossible without producer-specific rates.",
+    "€3,500 per tonne is not among the figures supplied and is presented as a market CIF value rather than a stated assumption, so every cost table and per-tonne figure rests on an unsourced number.",
+    "The confidence section labels the figures 'Confirmed' while conceding all three come from one Commission news article, and it does not disclose that the definitive regulation itself was not consulted.",
+    "The characterisation is editorial and adds nothing derivable from the figures; the percentage is already stated."
+  ],
+  "seconds": 350
+}

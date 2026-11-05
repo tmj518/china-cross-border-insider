@@ -2402,6 +2402,46 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission",
+      "source": "European Commission",
+      "figures": [
+        {
+          "articleSlug": "eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+          "articleNum": 84,
+          "value": "39.8% to 48.1%",
+          "unit": "definitive anti-dumping duty rate range",
+          "period": "in force for five years from 30 October 2026",
+          "source": "European Commission",
+          "retrieved": "2026-11-05"
+        },
+        {
+          "articleSlug": "eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+          "articleNum": 84,
+          "value": "45.6% to 50%",
+          "unit": "provisional anti-dumping duty rate range",
+          "period": "in force since June 2026",
+          "source": "European Commission",
+          "retrieved": "2026-11-05"
+        },
+        {
+          "articleSlug": "eu-pet-spunbond-definitive-anti-dumping-duties-2026",
+          "articleNum": 84,
+          "value": "€200m",
+          "unit": "EU market value for PET Spunbond",
+          "period": "at the time of the investigation",
+          "source": "European Commission",
+          "retrieved": "2026-11-05"
+        }
+      ],
+      "articleNums": [
+        84
+      ],
+      "articleSlugs": [
+        "eu-pet-spunbond-definitive-anti-dumping-duties-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "european-commission-directorate-general-for-trade-and-econom-48",
       "source": "European Commission Directorate-General for Trade and Economic Security, 2025 EU trade defence activities report news article",
       "figures": [
