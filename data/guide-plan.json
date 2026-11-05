@@ -1,46 +1,8 @@
 {
-  "at": "2026-11-04T07:20:25.714Z",
+  "at": "2026-11-05T07:20:24.935Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "residence-permit-application",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China residence permit application",
-      "query": "china residence permit application",
-      "status": "queued",
-      "evidence": "demand matrix: \"china residence permit application\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "residence",
-        "permit",
-        "application"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "home-permit-application",
       "topic": "transit",
@@ -140,82 +102,6 @@
         "return",
         "permit",
         "application"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "residence-permit-requirements",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Chinese residence permit requirements",
-      "query": "chinese residence permit requirements",
-      "status": "queued",
-      "evidence": "demand matrix: \"chinese residence permit requirements\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "chinese",
-        "residence",
-        "permit",
-        "requirements"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "permanent-residence-permit",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China permanent residence permit",
-      "query": "china permanent residence permit",
-      "status": "queued",
-      "evidence": "demand matrix: \"china permanent residence permit\" (bing)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "permanent",
-        "residence",
-        "permit"
       ],
       "facts": [],
       "mustSay": [],
@@ -392,6 +278,120 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "residence-permit-requirements",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Chinese residence permit requirements",
+      "query": "chinese residence permit requirements",
+      "status": "queued",
+      "evidence": "demand matrix: \"chinese residence permit requirements\" (google)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "chinese",
+        "residence",
+        "permit",
+        "requirements"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "permanent-residence-permit",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China permanent residence permit",
+      "query": "china permanent residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"china permanent residence permit\" (bing)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "permanent",
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "residence-permit-number",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China residence permit number",
+      "query": "china residence permit number",
+      "status": "queued",
+      "evidence": "demand matrix: \"china residence permit number\" (bing)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "residence",
+        "permit",
+        "number"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
   "pages": [
@@ -401,6 +401,14 @@
         "impressions": 2,
         "clicks": 0,
         "position": 86
+      }
+    ],
+    [
+      "residence-permit-application-form",
+      {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 61
       }
     ],
     [
