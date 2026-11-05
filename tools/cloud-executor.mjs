@@ -232,7 +232,21 @@ function fillMechanical(article, directive) {
     const v = f[k];
     return v != null && String(v).trim() !== "" && String(v).trim() !== "[]";
   };
-  if (!has("information_gain")) { setLine("information_gain", '"primary-source"'); filled.push("information_gain"); }
+  /*
+   * THE DECLARATION HAS TO MATCH WHAT THE BODY ACTUALLY DOES.
+   *
+   * This filled "primary-source" whenever the field was empty. A procedural guide quotes no
+   * document, so the value was false, and qa-check blocks a primary-source claim whose body names no
+   * document identifier - which is how the 2026-11-05 agent run lost its only draft at the last step.
+   * The value now follows the body: a named document makes it primary-source, anything else is
+   * custom-calculation, which is what a worked procedure honestly is.
+   */
+  const DOC_ID = /\b\d{1,3}\s?FR\s?\d{3,6}\b|\bHTSUS\s?9903\b|\bAnnouncement\s+No\.?\s?\d+|\b(?:Periodical|Circular|Order|Decision)\s+No\.?\s?\(?\d+|\bRegulation\s+\(EU\)\s+\d{4}\/\d+|\bCELEX\b|\bOJ\s?L\s?\d/i;
+  if (!has("information_gain")) {
+    const bodyText = article.split(/^---$/m).slice(2).join("---");
+    setLine("information_gain", DOC_ID.test(bodyText) ? '"primary-source"' : '"custom-calculation"');
+    filled.push("information_gain");
+  }
   const CATEGORY_ENUM = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
   const cat = String(f.category ?? "").replace(/"/g, "").trim();
   if (!CATEGORY_ENUM.includes(cat)) {
