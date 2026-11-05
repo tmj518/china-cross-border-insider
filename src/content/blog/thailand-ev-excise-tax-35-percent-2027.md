@@ -79,11 +79,11 @@ The announcement came through CCCME, a Chinese industry body that monitors trade
 
 ## So what
 
-For an importer bringing a BEV into Thailand, the 35% excise tax is a significant cost component. Consider a vehicle with a CIF value of USD 30,000. At the new rate, the excise tax alone is USD 10,500. If the current rate is, for example, 8% (a typical rate for EVs under Thailand's incentive program), the current excise tax would be USD 2,400. The increase is USD 8,100 per vehicle — a 337.5% jump in excise tax liability.
+For an importer bringing a BEV into Thailand, the 35% excise tax is a significant cost component. Consider a vehicle with a CIF value of USD 30,000. At the new rate, the excise tax alone is USD 10,500. What the change costs you depends on the rate you pay today, and the directive does not state that rate: put your own current rate into the same formula and the difference is what you will feel from 1 January 2027.
 
 This arithmetic changes the economics of importing EVs into Thailand. An importer who signed a contract at a fixed price before 1 January 2027 will absorb the difference unless the contract includes a price adjustment clause. Importers with in-transit cargo should check whether their shipments will clear customs before the deadline. The effective date is 1 January 2027, so any declaration accepted on or after that date is subject to the new rate.
 
-For a shipment of 100 vehicles with a CIF value of USD 30,000 each, the total excise tax at 35% is USD 1,050,000. At a current rate of 8%, the same shipment would carry USD 240,000 in excise tax. The difference is USD 810,000 — a sum that can wipe out the margin on an entire container load.
+For a shipment of 100 vehicles with a CIF value of USD 30,000 each, the excise tax at 35% comes to USD 1,050,000. That figure is the new rate applied to the shipment; the increase over what you pay today is the same multiplication at your own current rate.
 
 Importers should also consider the exchange rate. The RMB central parity rate on 4 November 2026 was 6.7180 RMB per USD. If an importer is paying for vehicles in RMB, a weaker RMB against the USD increases the CIF value in USD terms, which in turn increases the excise tax. A 1% depreciation of the RMB against the USD would raise the CIF value of a USD 30,000 vehicle to USD 30,303, adding USD 106 in excise tax at the 35% rate.
 
@@ -95,7 +95,7 @@ For context on how other markets are adjusting trade policy, see the analysis of
 
 **Confirmed.** The Thailand Cabinet decision to raise the excise tax on imported BEVs and REEVs to 35%, effective 1 January 2027, is reported by CCCME, citing the Thailand Ministry of Finance. The effective date of 1 January 2027 is explicitly stated in the published notice. The 35% rate is the only rate supplied in the directive, and it is presented as the new rate applying from that date. No other rate or exemption is mentioned in the source document.
 
-**Inferred.** The current excise tax rate for BEVs and REEVs is not specified in the directive. The calculation of the cost increase assumes a current rate of 8%, which is a typical rate under Thailand's EV incentive program, but this is an inference, not a confirmed figure. The arithmetic in the "So what" section uses this assumed rate to illustrate the magnitude of the change. If the current rate is different, the cost increase will differ accordingly. The directive does not provide the current rate, so the exact increase cannot be confirmed.
+**Inferred.** The current excise tax rate for BEVs and REEVs is not specified in the directive, so no current rate is used anywhere in this article. Every figure here is the 35% rate applied to a stated CIF value; the change against today's rate is left as a formula because the baseline is not in the source.
 
 **What would change my mind.** If the Thailand Ministry of Finance publishes a supplementary notice specifying the current excise tax rate, or clarifying that the 35% rate applies only to certain vehicle categories, the cost calculations in this article would need to be revised. Similarly, if the effective date is postponed or if a transition period is announced for in-transit cargo, the deadline for filing declarations would shift. Any such clarification would come from the Thailand Ministry of Finance or the Thai Cabinet, and would supersede the figures used here.
 
@@ -107,7 +107,7 @@ For context on how other markets are adjusting trade policy, see the analysis of
 
 ## The data point
 
-A vehicle with a CIF value of USD 30,000 will carry USD 10,500 in excise tax at the new 35% rate, up from an estimated USD 2,400 at a typical current rate of 8%.
+A vehicle with a CIF value of USD 30,000 will carry USD 10,500 in excise tax at the new 35% rate from 1 January 2027. The directive does not state today's rate, so the change against it is a formula, not a figure.
 
 <div class="callout">
   USD 10,500 — excise tax per vehicle at 35% on a USD 30,000 CIF value, effective 1 January 2027.
@@ -130,26 +130,20 @@ The effective date is 1 January 2027. If your customs declaration is accepted be
 ## How we calculated this
 
 ```python
-# Excise tax calculation for imported BEV/REEV into Thailand
-cif_value = 30000  # USD per vehicle
-new_rate = 0.35    # 35% from 1 January 2027
-current_rate_assumed = 0.08  # typical current rate, not confirmed
+# Excise tax on an imported BEV/REEV into Thailand, at the rate the directive states
+cif_value = 30000      # USD per vehicle, the value used throughout this article
+new_rate = 0.35        # 35% from 1 January 2027
 
 new_excise = cif_value * new_rate
-current_excise = cif_value * current_rate_assumed
-increase = new_excise - current_excise
+print(f"Excise tax per vehicle at 35%: USD {new_excise:,.0f}")
 
-print(f"New excise tax: USD {new_excise:,.0f}")
-print(f"Current excise tax (assumed 8%): USD {current_excise:,.0f}")
-print(f"Increase per vehicle: USD {increase:,.0f}")
-
-# For a 100-vehicle shipment
+# The same multiplication at a 100-vehicle shipment
 shipment_size = 100
-total_new = new_excise * shipment_size
-total_current = current_excise * shipment_size
-print(f"Total new excise for 100 vehicles: USD {total_new:,.0f}")
-print(f"Total current excise for 100 vehicles: USD {total_current:,.0f}")
-print(f"Total increase: USD {total_new - total_current:,.0f}")
+print(f"Excise tax for 100 vehicles at 35%: USD {new_excise * shipment_size:,.0f}")
+
+# Today's rate is not in the directive, so the difference is not computed here.
+# Substitute your own current rate:
+#   increase_per_vehicle = cif_value * (0.35 - your_current_rate)
 ```
 
 ## The point
