@@ -697,6 +697,12 @@ HOW TO REVISE
     documents will find them every time. Describe what the evidence shows and stop there.
   - Do not attribute motive, history or a "broader push" to a measure. The documents state what was
     decided and from when; they do not state why.
+  - Never compute with a baseline the bundle does not contain. If the current rate is unknown,
+    the arithmetic stops at the formula: say "at the new 35% rate the tax on a USD 10,500 vehicle is
+    USD X" and leave the delta to the reader. On 2026-11-05 the draft assumed an unverified 8%
+    current rate, then produced USD 8,100, 240,000 and 810,000 and a 337.5% jump from it - four
+    numbers with no source, all downstream of one admitted unknown. Writing "assumed" above a number
+    does not make the number sourced.
   - Never present non-compliance as a lever. Under-declaring value or weight, mis-classifying a product
     or splitting a shipment to stay under a threshold are customs offences, not cost savings, and a
     bullet that lists them as options is the objection the reviewer raised on 2026-11-03. Where the
