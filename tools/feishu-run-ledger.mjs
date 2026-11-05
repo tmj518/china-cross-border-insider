@@ -141,12 +141,37 @@ const RUN_SNAPSHOT = (() => {
   } catch { return []; }
 })();
 
+/*
+ * THE QA LOOP, IN THE ROW THAT ALREADY EXISTS.
+ *
+ * The operator asked on 2026-11-05 where the loop is recorded and whether the record can be read. The
+ * article-level answer is data/qa-loop.jsonl; the ledger answer is this column, because a run row is what
+ * the operator actually opens. Same facts, one line: how many attempts, which one cleared it, what the
+ * first failure was.
+ */
+function qaLoopNote(j) {
+  try {
+    const f = join(ROOT, "data", "qa-loop.jsonl");
+    if (!existsSync(f)) return "";
+    const slug = String(j.article ?? "");
+    if (!slug) return "";
+    const rows = readFileSync(f, "utf8").split("\n").filter(Boolean)
+      .map((l) => { try { return JSON.parse(l); } catch { return null; } })
+      .filter((r) => r && r.slug === slug);
+    if (!rows.length) return "";
+    const cleared = rows.filter((r) => r.pass).map((r) => r.attempt).sort((a, b) => a - b)[0];
+    const first = String(rows[0]?.reasons?.[0] ?? "").slice(0, 70);
+    return "qa " + rows.length + " attempt(s)" + (cleared ? ", cleared at " + cleared : ", never cleared") + (first ? ", first: " + first : "");
+  } catch { return ""; }
+}
+
 function ledgerSelfCheck(j) {
   const parts = ["ledger ok"];
   parts.push("route " + (j.route ?? "?"));
   parts.push("verdict " + (j.verdict ?? "?"));
   if (Array.isArray(j.published)) parts.push("published " + j.published.length);
   if (j.turns !== undefined) parts.push("turns " + j.turns);
+  { const q = qaLoopNote(j); if (q) parts.push(q); }
   return parts.join(" \u00b7 ");
 }
 
