@@ -1,22 +1,22 @@
 {
-  "at": "2026-11-05T07:20:45.882Z",
+  "at": "2026-11-06T07:20:47.851Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
       "count": 8,
-      "at": "2026-11-05T07:20:45.838Z"
+      "at": "2026-11-06T07:20:47.805Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-04T23:38:26.240Z"
+      "at": "2026-11-05T23:21:15.250Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-05T07:20:45.838Z",
+    "at": "2026-11-06T07:20:47.805Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "home-permit-application"
+    "article": "home-return-permit-application"
   },
   "metrics": {
     "files": 1,
