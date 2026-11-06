@@ -48,7 +48,7 @@ These definitive duties replace the provisional anti-dumping duties of **45.6% t
 
 > **Anti-dumping duty** — a customs duty imposed on imports found to be sold at a price below the normal value in the exporting country, causing injury to the domestic industry. The duty is calculated as a percentage of the CIF value of the imported goods and is paid by the importer at customs clearance, on top of the standard customs tariff.
 
-The following table shows the duty cost for common shipment sizes, using a CIF value of €3,500 per tonne for PET Spunbond:
+The table below applies both rates to a range of shipment sizes at an illustrative CIF value of EUR 3,500 per tonne, which is a worked example and not a market price from the source. Substitute your own CIF value: the duty is a straight percentage of it.
 
 | Shipment size (tonnes) | CIF total value (EUR) | Duty at 39.8% (EUR) | Duty at 48.1% (EUR) |
 | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ The definitive rates are lower than the provisional rates for most producers —
 
 Importers now face a clear decision. The first option is to absorb the duty and continue sourcing from China, accepting a landed cost increase of roughly 40% to 48% on the CIF value. The second option is to source from alternative origins, such as EU domestic producers or third countries not subject to the duty. The third option is to negotiate with Chinese suppliers to reduce the FOB price, shifting part of the duty burden back to the exporter.
 
-The arithmetic for the decision is straightforward. If a Chinese supplier quotes a CIF price of €3,500 per tonne, the duty at 39.8% adds €1,393 per tonne, bringing the landed cost to €4,893 per tonne before other charges. At 48.1%, the duty adds €1,684 per tonne, bringing the landed cost to €5,184 per tonne. An EU domestic producer or a third-country supplier must beat these landed costs to be competitive, and the comparison must include the full landed cost, not just the FOB price.
+The arithmetic for the decision is straightforward. Take the illustrative CIF value of EUR 3,500 per tonne used throughout this article; the duty at 39.8% adds €1,393 per tonne, bringing the landed cost to €4,893 per tonne before other charges. At 48.1%, the duty adds €1,684 per tonne, bringing the landed cost to €5,184 per tonne. An EU domestic producer or a third-country supplier must beat these landed costs to be competitive, and the comparison must include the full landed cost, not just the FOB price.
 
 For importers with existing contracts, the duty applies to all shipments cleared on or after 30 October 2026, regardless of when the contract was signed or when the goods were shipped. There is no grandfathering for pre-existing contracts. Importers with cargo in transit should check the expected arrival date and consider whether to accelerate clearance to avoid the definitive duty, though the provisional duty already applies to shipments since June 2026.
 
@@ -116,13 +116,13 @@ The duty is calculated as a percentage of the CIF value of the shipment, which i
 
 **Does the duty apply to shipments already in transit?**
 
-The definitive duty applies to all shipments cleared through EU customs on or after 30 October 2026, regardless of when the goods were shipped or when the contract was signed. There is no grandfathering for pre-existing contracts or in-transit cargo. Importers with cargo in transit should check the expected arrival date and consider whether to accelerate clearance, though the provisional duty already applies to shipments since June 2026. The specific treatment of in-transit cargo is not addressed in the Commission's news article, and importers should confirm with their customs broker.
+The regulation sets the duty for goods released for free circulation on or after 30 October 2026. The source summarised here does not set out a separate rule for goods that were already in transit on that date, so the treatment of an in-transit consignment should be confirmed with a customs broker against the published regulation before a shipment is priced. There is no grandfathering for pre-existing contracts or in-transit cargo. Importers with cargo in transit should check the expected arrival date and consider whether to accelerate clearance, though the provisional duty already applies to shipments since June 2026. The specific treatment of in-transit cargo is not addressed in the Commission's news article, and importers should confirm with their customs broker.
 
 ## How we calculated this
 
 ```python
 # Duty cost per shipment at the definitive rate range
-cif_value_per_tonne = 3500  # EUR, assumed CIF value for PET Spunbond
+cif_value_per_tonne = 3500  # EUR per tonne, an illustrative figure used for the worked example - NOT a market price from the source
 
 for tonnes in [5, 20, 25]:
     cif_total = cif_value_per_tonne * tonnes
