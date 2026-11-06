@@ -51,6 +51,21 @@ if (!draftPath || !existsSync(draftPath)) {
 }
 const slug = draftPath.replace(/\\/g, "/").split("/").pop().replace(/\.md$/, "");
 const text = readFileSync(draftPath, "utf8");
+/*
+ * WHAT WENT WRONG BEFORE, PUT IN FRONT OF THE REVIEWER.
+ *
+ * data/pitfalls.txt is derived from docs/错题本.md. The reviewer sees the same list the writer sees, because
+ * its job is to catch the same class of error on a new article - an assumed baseline, a mechanism the source
+ * does not state, two endpoints of a range paired as if they were one comparison.
+ */
+function pitfallsBrief() {
+  try {
+    const t = readFileSync(join(ROOT, "data", "pitfalls.txt"), "utf8").trim();
+    if (!t) return "";
+    return "PATTERNS THIS PUBLICATION HAS ALREADY PUBLISHED BY MISTAKE - check for each of them:\n" + t + "\n\n";
+  } catch { return ""; }
+}
+
 const report = { slug, at: new Date().toISOString(), layers: {}, verdict: null, reasons: [] };
 
 /* ---------------------------------------------------------------- L1: the seven gates */
@@ -212,7 +227,7 @@ if (!mechanicallyClear) {
   const directive = directiveFile && existsSync(directiveFile) ? readFileSync(directiveFile, "utf8").slice(0, 8000) : "";
   const r = await askJson({
     role: "reviewer",
-    system:
+    system: pitfallsBrief() +
       "You are the reviewer for an English trade-cost publication. You are not the writer. You decide " +
       "whether a draft may be published unattended. You are shown the draft and the figures it was " +
       "given; you are NOT shown the source documents, so you cannot confirm that a cited figure is " +
