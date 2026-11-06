@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-05T23:21:15.250Z",
+  "lastRun": "2026-11-06T23:21:14.290Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "eu-pet-spunbond-definitive-anti-dumping-duties-2026",
-  "runs": 33,
-  "published": 31,
+  "lastArticle": "eu-pet-spunbond-anti-dumping-duties-2026",
+  "runs": 34,
+  "published": 32,
   "lastUsage": {
-    "calls": 10,
-    "failed": 2,
-    "usd": 0.0297,
-    "promptTokens": 188038,
-    "completionTokens": 11595
+    "calls": 4,
+    "failed": 0,
+    "usd": 0.0163,
+    "promptTokens": 132555,
+    "completionTokens": 6067
   }
 }

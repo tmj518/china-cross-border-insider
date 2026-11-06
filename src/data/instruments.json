@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-05",
+  "generated": "2026-11-06",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -3214,6 +3214,37 @@
       "modelOutput": false
     },
     {
+      "id": "european-commission-definitive-anti-dumping-duties-on-pet-sp",
+      "source": "European Commission, definitive anti-dumping duties on PET Spunbond from China",
+      "figures": [
+        {
+          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
+          "articleNum": 85,
+          "value": "39.8%",
+          "unit": "percentage (anti-dumping duty rate)",
+          "period": "five years from 30 October 2026",
+          "source": "European Commission, definitive anti-dumping duties on PET Spunbond from China",
+          "retrieved": "2026-11-06"
+        },
+        {
+          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
+          "articleNum": 85,
+          "value": "48.1%",
+          "unit": "percentage (anti-dumping duty rate)",
+          "period": "five years from 30 October 2026",
+          "source": "European Commission, definitive anti-dumping duties on PET Spunbond from China",
+          "retrieved": "2026-11-06"
+        }
+      ],
+      "articleNums": [
+        85
+      ],
+      "articleSlugs": [
+        "eu-pet-spunbond-anti-dumping-duties-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "european-commission-dg-taxud-price-of-cbam-certificates",
       "source": "European Commission, DG TAXUD, Price of CBAM certificates",
       "figures": [
@@ -3505,6 +3536,37 @@
       "articleSlugs": [
         "eu-anti-dumping-cellulose-ethers-ad760-registration-2026",
         "eu-cellulose-ethers-duty-timeline"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "european-commission-provisional-duties-on-pet-spunbond-from",
+      "source": "European Commission, provisional duties on PET Spunbond from China",
+      "figures": [
+        {
+          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
+          "articleNum": 85,
+          "value": "45.6%",
+          "unit": "percentage (provisional anti-dumping duty rate)",
+          "period": "June 2026 until 30 October 2026",
+          "source": "European Commission, provisional duties on PET Spunbond from China",
+          "retrieved": "2026-11-06"
+        },
+        {
+          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
+          "articleNum": 85,
+          "value": "50%",
+          "unit": "percentage (provisional anti-dumping duty rate)",
+          "period": "June 2026 until 30 October 2026",
+          "source": "European Commission, provisional duties on PET Spunbond from China",
+          "retrieved": "2026-11-06"
+        }
+      ],
+      "articleNums": [
+        85
+      ],
+      "articleSlugs": [
+        "eu-pet-spunbond-anti-dumping-duties-2026"
       ],
       "modelOutput": false
     },

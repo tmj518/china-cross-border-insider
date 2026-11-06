@@ -166,6 +166,8 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [EU slaps definitive anti-dumping duties of 39.8% to 48.1%](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/)
 
+> Also read: [EU imposes definitive anti-dumping duties on PET Spunbond](/blog/eu-pet-spunbond-anti-dumping-duties-2026/)
+
 ## For you
 
 - **Polysilicon and wafer buyers:** the $100/kg floor for ingots and wafers is nearly five times the polysilicon floor. If your supply chain crosses that boundary, the classification question is worth more than the price negotiation, and the annexes are the only authority for it.
