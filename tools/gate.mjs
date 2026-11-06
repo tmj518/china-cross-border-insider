@@ -172,6 +172,22 @@ const GATES = [
     fast: true,
   },
   {
+    id: "check-figure-trace",
+    tier: "hard",
+    label: "figure trace",
+    args: ["tools/check-figure-trace.mjs", "--all"],
+    inputs: ["src"],   /* it reads the article files, not dist */
+    fast: true,
+    /*
+     * A NUMBER IN PROSE MUST COME FROM figures[], OR THE PARAGRAPH MUST SAY IT IS AN EXAMPLE.
+     *
+     * Twice in three days a draft assumed a baseline - an 8% current excise rate, a EUR 3,500 per-tonne
+     * CIF value - and built the headline numbers on it. The reviewer described both precisely and could not
+     * block either, because its objections are advisory by design. This is the mechanical version of that
+     * objection: the body is compared against the figures the writer was handed.
+     */
+  },
+  {
     id: "check-csp",
     tier: "soft",
     label: "content security policy",
