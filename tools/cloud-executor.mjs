@@ -358,6 +358,20 @@ function readershipBrief() {
  * defensive; a writer told "the last three reviews were unavailable, be explicit about what is inferred"
  * does something useful with it.
  */
+/*
+ * THE PITFALL LIST, READ BY BOTH MODELS.
+ *
+ * data/pitfalls.txt is derived from docs/错题本.md: one line per mistake this publication has already
+ * made. It is prepended to what the writer sees, because a reviewer rejection teaches one article and this
+ * list teaches every article after it.
+ */
+function pitfalls() {
+  try {
+    const t = readFileSync(join(ROOT, "data", "pitfalls.txt"), "utf8").trim();
+    return t ? "MISTAKES THIS PUBLICATION HAS ALREADY MADE - do not repeat any of them:\n" + t : null;
+  } catch { return null; }
+}
+
 function recentLessons(limit = 5) {
   const p = join(ROOT, "data", "lessons.jsonl");
   if (!existsSync(p)) return null;
@@ -376,8 +390,8 @@ function recentLessons(limit = 5) {
       /* a malformed line is the writer of that line's problem, not this one's */
     }
   }
-  if (!entries.length) return null;
-  return [
+  if (!entries.length) return pitfalls();
+  return [pitfalls(), "", 
     "RECENT PROBLEMS IN THIS PIPELINE",
     ...entries,
     "",
