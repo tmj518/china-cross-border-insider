@@ -3,7 +3,7 @@ title: "Your Parcel Is Getting Cheaper to Clear — and Harder to File"
 subtitle: "CBP's proposed low-value shipment rule widens informal entry and moves the deadline to before arrival, with comments due 7 December 2026"
 description: "CBP proposes filing informal entries before arrival, a bond on every one, and a new electronic entry type for mail. For goods worth $251 to $2,500 with Section 232 duties it also removes the $250 ceiling that forced formal entry: $31.81 on a $1,200 shipment."
 publishDate: 2026-10-09
-reviewBy: 2026-11-06
+reviewBy: 2027-05-06
 stakes: priced
 category: "platforms"
 audience: "platform-seller"
