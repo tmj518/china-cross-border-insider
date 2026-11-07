@@ -1526,7 +1526,7 @@
       "unit": "one application",
       "title": "China home return permit application hong kong",
       "query": "china home return permit application hong kong",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"china home return permit application hong kong\" (google)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1554,7 +1554,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-07"
     },
     {
       "slug": "residence-permit-requirements",
@@ -1707,7 +1708,45 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "temporary-residence-permit",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Temporary residence permit china",
+      "query": "temporary residence permit china",
+      "status": "queued",
+      "evidence": "demand matrix: \"temporary residence permit china\" (bing)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "temporary",
+        "residence",
+        "permit",
+        "china"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-06T07:20:25.206Z"
+  "updatedAt": "2026-11-07T07:20:25.265Z"
 }

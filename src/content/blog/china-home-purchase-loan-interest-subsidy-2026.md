@@ -201,3 +201,5 @@ The subsidy is small per home and narrow in scope, and that is the whole story f
 For the paperwork and the cost in one place, see [China home permit application](/guide/home-permit-application/).
 
 For the paperwork and the cost in one place, see [China home return permit application](/guide/home-return-permit-application/).
+
+For the paperwork and the cost in one place, see [China home return permit application hong kong](/guide/home-return-permit-application-hong-kong/).

@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-06T07:20:47.805Z",
+  "at": "2026-11-07T07:20:49.137Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "home-return-permit-application",
-  "seconds": 22,
+  "article": "home-return-permit-application-hong-kong",
+  "seconds": 23,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -25,17 +25,17 @@
       "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding home-return-permit-application",
+      "name": "grounding home-return-permit-application-hong-kong",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates home-return-permit-application",
+      "name": "gates home-return-permit-application-hong-kong",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build home-return-permit-application",
+      "name": "build home-return-permit-application-hong-kong",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -47,7 +47,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/home-return-permit-application/"
+      "detail": "/guide/home-return-permit-application-hong-kong/"
     }
   ],
   "researchLog": [

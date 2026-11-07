@@ -1,47 +1,8 @@
 {
-  "at": "2026-11-06T07:20:25.542Z",
+  "at": "2026-11-07T07:20:25.646Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "home-return-permit-application",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China home return permit application",
-      "query": "china home return permit application",
-      "status": "queued",
-      "evidence": "demand matrix: \"china home return permit application\" (google)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "china",
-        "home",
-        "return",
-        "permit",
-        "application"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "home-return-permit-application-hong-kong",
       "topic": "transit",
@@ -392,6 +353,44 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "temporary-residence-permit",
+      "topic": "transit",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Temporary residence permit china",
+      "query": "temporary residence permit china",
+      "status": "queued",
+      "evidence": "demand matrix: \"temporary residence permit china\" (bing)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "temporary",
+        "residence",
+        "permit",
+        "china"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
   "pages": [
@@ -401,6 +400,22 @@
         "impressions": 2,
         "clicks": 0,
         "position": 86
+      }
+    ],
+    [
+      "alipay-wechat-pay-foreigner-china",
+      {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 86
+      }
+    ],
+    [
+      "china-bank-account-foreigner",
+      {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 75
       }
     ],
     [

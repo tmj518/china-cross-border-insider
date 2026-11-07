@@ -1,22 +1,22 @@
 {
-  "at": "2026-11-06T07:20:47.851Z",
+  "at": "2026-11-07T07:20:49.192Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
       "count": 8,
-      "at": "2026-11-06T07:20:47.805Z"
+      "at": "2026-11-07T07:20:49.137Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-05T23:21:15.250Z"
+      "at": "2026-11-06T23:21:14.290Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-06T07:20:47.805Z",
+    "at": "2026-11-07T07:20:49.137Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "home-return-permit-application"
+    "article": "home-return-permit-application-hong-kong"
   },
   "metrics": {
     "files": 1,
