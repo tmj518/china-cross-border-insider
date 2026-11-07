@@ -166,7 +166,7 @@ Three things follow, and the third is the one nobody is pricing.
 
 > Also read: [EU slaps definitive anti-dumping duties of 39.8% to 48.1%](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/)
 
-> Also read: [EU imposes definitive anti-dumping duties on PET Spunbond](/blog/eu-pet-spunbond-anti-dumping-duties-2026/)
+> Also read: [EU imposes definitive anti-dumping duties on PET Spunbond](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/)
 
 ## For you
 
