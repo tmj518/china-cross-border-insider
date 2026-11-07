@@ -59,11 +59,19 @@ const text = readFileSync(draftPath, "utf8");
  * does not state, two endpoints of a range paired as if they were one comparison.
  */
 function pitfallsBrief() {
-  try {
-    const t = readFileSync(join(ROOT, "data", "pitfalls.txt"), "utf8").trim();
-    if (!t) return "";
-    return "PATTERNS THIS PUBLICATION HAS ALREADY PUBLISHED BY MISTAKE - check for each of them:\n" + t + "\n\n";
-  } catch { return ""; }
+  /* The same nine patterns the writer is told not to commit, restated as things to look for. */
+  const checks = [
+    "Arithmetic on a baseline the figures do not contain (an assumed current rate, an assumed market price).",
+    "A named document, article number or process that the supplied evidence does not contain.",
+    "Motive, history or a \"broader push\" attributed to a measure.",
+    "Non-compliance offered as a cost lever (under-declaration, mis-classification, splitting).",
+    "Range endpoints paired across levels (low minus high) and presented as a comparison.",
+    "A confidence section that contradicts the body.",
+    "A second article about an event this publication has already covered.",
+    "reviewBy that is not six months out.",
+  ];
+  return "PATTERNS THIS PUBLICATION HAS PUBLISHED BY MISTAKE - check every one before you pass a draft:\n" +
+    checks.map((c) => "  - " + c).join("\n") + "\n\n";
 }
 
 const report = { slug, at: new Date().toISOString(), layers: {}, verdict: null, reasons: [] };
