@@ -233,6 +233,8 @@ function titleClash(title, slug) {
   return null;
 }
 
+const plusDays = (n) => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
+
 function fitTitle(article) {
   const f = frontmatter(article);
   if (!f) return { article, problem: "no frontmatter" };
@@ -286,6 +288,18 @@ function fillMechanical(article, directive) {
    * custom-calculation, which is what a worked procedure honestly is.
    */
   const DOC_ID = /\b\d{1,3}\s?FR\s?\d{3,6}\b|\bHTSUS\s?9903\b|\bAnnouncement\s+No\.?\s?\d+|\b(?:Periodical|Circular|Order|Decision)\s+No\.?\s?\(?\d+|\bRegulation\s+\(EU\)\s+\d{4}\/\d+|\bCELEX\b|\bOJ\s?L\s?\d/i;
+  /*
+   * A DATE THE WRITER INVENTS CANNOT BE REPAIRED BY THE MAINTENANCE STEP.
+   *
+   * refresh-review-dates runs before the pipeline, so it can only fix dates that were already older than
+   * today. On 2026-11-07 the writer published an article whose reviewBy was the previous day; the refresh had
+   * already run, CI then failed on a date nobody had set on purpose, and the operator read it as another
+   * gate problem. The value is a constant of this publication, not a judgement: six months from publication.
+   */
+  if (!has("reviewBy") || String(f.reviewBy ?? "").replace(/"/g, "") < plusDays(90)) {
+    setLine("reviewBy", plusDays(180));
+    filled.push("reviewBy");
+  }
   if (!has("information_gain")) {
     const bodyText = article.split(/^---$/m).slice(2).join("---");
     setLine("information_gain", DOC_ID.test(bodyText) ? '"primary-source"' : '"custom-calculation"');
