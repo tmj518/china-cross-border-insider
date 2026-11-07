@@ -192,6 +192,47 @@ function frontmatter(article) {
  *
  * The title is also trimmed to sixty columns here, because the writer treats the limit as advice.
  */
+/*
+ * SIMILAR IS NOT THE SAME, AND THE GATE ONLY KNEW "SAME".
+ *
+ * 2026-11-07: "EU imposes definitive anti-dumping duties on PET Spunbond" published a day after "EU slaps
+ * definitive anti-dumping duties of 39.8% to 48.1%" - same event, different wording, different slug, so both
+ * uniqueness checks passed and the site carried two pages for one measure. The week before it was the Brazil
+ * beef safeguard, twice. Exact-match checking cannot see this; word overlap can.
+ *
+ * Two significant words shared in the slug, or two thirds of the title's words, means the same story.
+ */
+const slugOf = (article) => String((/^slug:\s*"?(.*?)"?\s*$/m.exec(article) ?? [])[1] ?? "").trim();
+
+function titleClash(title, slug) {
+  /*
+   * Trade-structure words describe any measure; a shared product word is what makes it the same story.
+   * Two shared product words, or the same pair in the slug, means an event that already has a page.
+   */
+  const GENERIC = new Set(["anti","dumping","definitive","duty","duties","imposes","impose","imposed","slaps","eu","commission","regulation","case","investigation","provisional","measures","imports","import","review","sunset","safeguard","tariff","rate","rates","quota","with","from","that","this","into","their","china","chinese","2026","2027"]);
+  const words = (s) => new Set(String(s).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !GENERIC.has(w)));
+  const mine = new Set([...words(title), ...words(slug)]);
+  const dir = join(ROOT, "src", "content", "blog");
+  let files = [];
+  try { files = readdirSync(dir).filter((f) => f.endsWith(".md")); } catch { return null; }
+  for (const f of files) {
+    const other = f.replace(/\.md$/, "");
+    if (other === slug) continue;
+    try {
+      const s = readFileSync(join(dir, f), "utf8");
+      const t = (/^title:\s*"?(.*?)"?\s*$/m.exec(s) ?? [])[1] ?? "";
+      const theirs = new Set([...words(t), ...words(other)]);
+      const shared = [...mine].filter((w) => theirs.has(w));
+      /* Jaccard, not a count: one distinctive product word on both sides is a duplicate; two
+       * unrelated product words are not. {"spunbond"} vs {"spunbond"} is 1.0, {"spunbond"} vs {"polysilicon"} is 0. */
+      const union = new Set([...mine, ...theirs]).size;
+      const jaccard = union ? shared.length / union : 0;
+      if (shared.length >= 1 && jaccard >= 0.5) return { file: f, title: t.slice(0, 80), shared: shared.join("+"), jaccard: jaccard.toFixed(2) };
+    } catch {}
+  }
+  return null;
+}
+
 function fitTitle(article) {
   const f = frontmatter(article);
   if (!f) return { article, problem: "no frontmatter" };
@@ -212,6 +253,9 @@ function fitTitle(article) {
     } catch {}
   }
   if (clash) return { article, problem: `the title already exists in ${clash}` };
+  /* Near-duplicates: the same event written twice with different wording. */
+  const near = titleClash(title, slugOf(article));
+  if (near) return { article, problem: `looks like \"${near.title}\" in ${near.file} (slug overlap ${near.sharedSlug}, title overlap ${near.ratio})` };
   if (trimmed !== title) {
     const re = /^title:.*$/m;
     return { article: article.replace(re, "title: " + JSON.stringify(trimmed)), problem: null, trimmed: true };
