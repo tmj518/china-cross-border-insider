@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06",
+  "generated": "2026-11-08",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1759,6 +1759,64 @@
       "modelOutput": false
     },
     {
+      "id": "mofcom-notice-2026-58",
+      "source": "MOFCOM notice 商救济进一函〔2026〕58号",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+          "articleNum": 87,
+          "value": "100%",
+          "unit": "of the country-specific quota for Brazil",
+          "period": "as of 2026-09-29",
+          "source": "MOFCOM notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-08"
+        },
+        {
+          "articleSlug": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+          "articleNum": 87,
+          "value": "55%",
+          "unit": "additional tariff on the current applicable duty rate",
+          "period": "from 2026-10-01 00:00",
+          "source": "MOFCOM notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-08"
+        },
+        {
+          "articleSlug": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+          "articleNum": 87,
+          "value": "第3日",
+          "unit": "days after reaching 100% of quota",
+          "period": "trigger date for the additional tariff",
+          "source": "MOFCOM notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-08"
+        },
+        {
+          "articleSlug": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+          "articleNum": 87,
+          "value": "2026 年 9 月 29 日",
+          "unit": "date the quota was reached",
+          "period": "2026-09-29",
+          "source": "MOFCOM notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-08"
+        },
+        {
+          "articleSlug": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+          "articleNum": 87,
+          "value": "10 月 1 日零点起",
+          "unit": "effective start of the additional tariff",
+          "period": "2026-10-01",
+          "source": "MOFCOM notice 商救济进一函〔2026〕58号",
+          "retrieved": "2026-11-08"
+        }
+      ],
+      "articleNums": [
+        87
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "national-bureau-of-statistics-of-china-industrial-producer-p-28",
       "source": "National Bureau of Statistics of China, Industrial Producer Price Indexes, August 2026",
       "figures": [
@@ -3214,37 +3272,6 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-definitive-anti-dumping-duties-on-pet-sp",
-      "source": "European Commission, definitive anti-dumping duties on PET Spunbond from China",
-      "figures": [
-        {
-          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
-          "articleNum": 85,
-          "value": "39.8%",
-          "unit": "percentage (anti-dumping duty rate)",
-          "period": "five years from 30 October 2026",
-          "source": "European Commission, definitive anti-dumping duties on PET Spunbond from China",
-          "retrieved": "2026-11-06"
-        },
-        {
-          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
-          "articleNum": 85,
-          "value": "48.1%",
-          "unit": "percentage (anti-dumping duty rate)",
-          "period": "five years from 30 October 2026",
-          "source": "European Commission, definitive anti-dumping duties on PET Spunbond from China",
-          "retrieved": "2026-11-06"
-        }
-      ],
-      "articleNums": [
-        85
-      ],
-      "articleSlugs": [
-        "eu-pet-spunbond-anti-dumping-duties-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "european-commission-dg-taxud-price-of-cbam-certificates",
       "source": "European Commission, DG TAXUD, Price of CBAM certificates",
       "figures": [
@@ -3540,37 +3567,6 @@
       "modelOutput": false
     },
     {
-      "id": "european-commission-provisional-duties-on-pet-spunbond-from",
-      "source": "European Commission, provisional duties on PET Spunbond from China",
-      "figures": [
-        {
-          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
-          "articleNum": 85,
-          "value": "45.6%",
-          "unit": "percentage (provisional anti-dumping duty rate)",
-          "period": "June 2026 until 30 October 2026",
-          "source": "European Commission, provisional duties on PET Spunbond from China",
-          "retrieved": "2026-11-06"
-        },
-        {
-          "articleSlug": "eu-pet-spunbond-anti-dumping-duties-2026",
-          "articleNum": 85,
-          "value": "50%",
-          "unit": "percentage (provisional anti-dumping duty rate)",
-          "period": "June 2026 until 30 October 2026",
-          "source": "European Commission, provisional duties on PET Spunbond from China",
-          "retrieved": "2026-11-06"
-        }
-      ],
-      "articleNums": [
-        85
-      ],
-      "articleSlugs": [
-        "eu-pet-spunbond-anti-dumping-duties-2026"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "gacc-announcement-no-136-of-2026-article-2",
       "source": "GACC Announcement No. 136 of 2026, Article 2",
       "figures": [
@@ -3761,6 +3757,39 @@
       "articleSlugs": [
         "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
         "china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "mofcom-announcement-no-87-of-2025",
+      "source": "MOFCOM Announcement No. 87 of 2025",
+      "figures": [
+        {
+          "articleSlug": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+          "articleNum": 87,
+          "value": "2025 年第 87 号",
+          "unit": "MOFCOM announcement number setting the quota",
+          "period": "2025",
+          "source": "MOFCOM Announcement No. 87 of 2025",
+          "retrieved": "2026-11-08"
+        },
+        {
+          "articleSlug": "china-brazil-beef-safeguard-55-percent-trigger-2026",
+          "articleNum": 55,
+          "value": "2025 年第 87 号",
+          "unit": "instrument number setting the safeguard quota and surcharge rule",
+          "period": "in force for 2026 safeguard administration",
+          "source": "MOFCOM Announcement No. 87 of 2025",
+          "retrieved": "2026-10-29"
+        }
+      ],
+      "articleNums": [
+        55,
+        87
+      ],
+      "articleSlugs": [
+        "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+        "china-brazil-beef-safeguard-55-percent-trigger-2026"
       ],
       "modelOutput": false
     },

@@ -104,6 +104,8 @@ A second scenario applies to importers that have split a single large shipment a
 
 > Also read: [EU imposes definitive anti-dumping duties on PET Spunbond](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/)
 
+> Also read: [Brazil beef imports to China now face an extra 55% tariff](/blog/china-brazil-beef-55-percent-tariff-trigger-october-2026/)
+
 ## For you
 
 - **Importers holding in-transit Brazilian beef cargo:** calculate the exact cost difference between diverting the vessel to a nearby third port and absorbing the full 55% additional tariff, and submit a revised declaration plan to your customs broker no later than 23:59 on 30 September 2026.

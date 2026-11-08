@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-06T23:21:14.290Z",
+  "lastRun": "2026-11-08T01:15:49.049Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "eu-pet-spunbond-anti-dumping-duties-2026",
-  "runs": 34,
-  "published": 32,
+  "lastArticle": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
+  "runs": 35,
+  "published": 33,
   "lastUsage": {
-    "calls": 4,
-    "failed": 0,
-    "usd": 0.0163,
-    "promptTokens": 132555,
-    "completionTokens": 6067
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0442,
+    "promptTokens": 173080,
+    "completionTokens": 27096
   }
 }

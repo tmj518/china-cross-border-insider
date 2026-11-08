@@ -3,7 +3,7 @@ title: "Indonesia's Tarpaulin Duty Is $0.75 a Kilo, Not $0.0007 — and One Engl
 subtitle: "A three-stage safeguard on polyethylene tarpaulins, and the rupiah-per-kilogram unit that one widely-copied summary reports as per tonne"
 description: "Indonesia imposes a safeguard duty on polyethylene tarpaulins at 13,400 rupiah per kilogram in stage one, falling to 11,458 by stage three. At 17,881 rupiah to the dollar that is $0.75 a kilo, or $3.60 on a 4x6 metre tarpaulin. A Chinese summary states the same figure per tonne."
 publishDate: 2026-10-10
-reviewBy: 2026-11-07
+reviewBy: 2027-05-07
 stakes: priced
 category: "platforms"
 audience: "importer"

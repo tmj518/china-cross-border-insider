@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-06T23:21:14.290Z",
+  "at": "2026-11-08T01:15:49.049Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "33 previous run(s), last 2026-11-05T23:21:15.250Z (PUBLISHED-DEGRADED)"
+      "detail": "34 previous run(s), last 2026-11-06T23:21:14.290Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
@@ -28,27 +28,42 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed eu-pet-spunbond-anti-dumping-duties-2026, 5 verified figure(s)"
+      "detail": "proposed china-brazil-beef-55-percent-tariff-trigger-october-2026, 6 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "5 sourced figure(s)"
+      "detail": "6 sourced figure(s)"
     },
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/eu-pet-spunbond-anti-dumping-duties-2026.md"
+      "detail": "draft at /data/drafts/china-brazil-beef-55-percent-tariff-trigger-october-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: build the draft does not match the content schema, so the site does not build: dist rebuild failed: Command failed: pnpm exec astro build\n\u001b[31m[InvalidContentEntryDataError]\u001b[39m \u001b[1mblog → china-brazil-beef-55-percent-t; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-brazil-beef-55-percent-tariff-trigger-october-2026.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 7 issue(s), 7 with a citation"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "APPROVED: advisory the advisory tier failed: ============================== ok 0.2s reviewer agent FAIL 0.2s titles and descriptions ok 0.1s content security policy ok 0.1s structured data ok 0.1s text contrast total 0.3s cached 0/5 1 GATE(S) FAILED: --- titles and descriptions (exit 1) --- RESULT: FAIL ; L5 not run - an earlier layer failed"
+      "detail": "7 objection(s), advisory only - publishing"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/eu-pet-spunbond-anti-dumping-duties-2026.md"
+      "detail": "staged at src/content/blog/china-brazil-beef-55-percent-tariff-trigger-october-2026.md"
     },
     {
       "name": "registry",
@@ -68,16 +83,16 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 1 objection(s), advisory - published anyway"
+    "reviewer: 7 objection(s), advisory - published anyway"
   ],
-  "article": "eu-pet-spunbond-anti-dumping-duties-2026",
+  "article": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
   "commit": null,
   "usage": {
-    "calls": 4,
-    "failed": 0,
-    "usd": 0.0163,
-    "promptTokens": 132555,
-    "completionTokens": 6067
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0442,
+    "promptTokens": 173080,
+    "completionTokens": 27096
   },
   "route": "script",
   "categoryActivity": {
@@ -89,46 +104,54 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    statistics-bureau-article   435852B  article archived",
-    "  ok    statistics-bureau-article   422000B  article archived",
-    "  ok    statistics-bureau-article   182161B  article archived",
-    "  ok    tax-administration-article   106658B  article archived",
-    "  ok    tax-administration-article   106658B  article archived",
-    "  ok    tax-administration-article   106658B  article archived",
-    "  ok    gov-en-article              16211B  article archived",
+    "  ok    gov-en-article              16948B  article archived",
+    "  ok    gov-en-article              20523B  article archived",
     "  ok    gov-en-article              16828B  article archived",
-    "  ok    gov-en-article              14824B  article archived",
     "  ok    immigration-article         20272B  article archived",
     "  ok    immigration-article         20306B  article archived",
     "  ok    immigration-article         20199B  article archived",
     "  ok    safe-article                58842B  article archived",
     "  ok    safe-article               100558B  article archived",
+    "  ok    safe-article                17492B  article archived",
+    "  ok    mot-article                 31206B  article archived",
+    "  ok    mot-article                 31455B  article archived",
+    "  ok    mot-article                 33734B  article archived",
+    "  ok    xinhua-en-article            9367B  article archived",
+    "  ok    xinhua-en-article           15310B  article archived",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 589 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1954 characters but no document structure, trying the next one",
-    "  stream      : SSE, 605 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 2024 characters but no document structure, trying the next one",
-    "  stream      : SSE, 884 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 2978 characters but no document structure, trying the next one",
-    "  spent   : ~0.0141  (ceiling 0.40)",
+    "  stream      : SSE, 986 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2822 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1030 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2791 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1096 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3027 characters but no document structure, trying the next one",
+    "  spent   : ~0.0153  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : eu-pet-spunbond-anti-dumping-duties-2026",
-    "  keyword : EU anti-dumping duty PET Spunbond China 2026 importer cost",
+    "  slug    : china-brazil-beef-55-percent-tariff-trigger-october-2026",
+    "  keyword : China Brazil beef additional 55% tariff October 2026 importer cost",
     "  duplicate check: score 0",
-    "  slug    : eu-pet-spunbond-anti-dumping-duties-2026",
-    "  keyword : EU anti-dumping duty PET Spunbond China 2026 importer cost",
+    "  slug    : china-brazil-beef-55-percent-tariff-trigger-october-2026",
+    "  keyword : China Brazil beef additional 55% tariff October 2026 importer cost",
     "  category: trade-policy",
-    "  figures : 5",
+    "  figures : 6",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0141",
+    "  spend this run: ~$0.0153",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 128
+  "reviewAdvisory": [
+    "The USD 4,500 per tonne customs value is not among the supplied figures, so every table and callout number is built on an assumed baseline the evidence does not contain.",
+    "No freight or insurance figure is supplied, so the claim that the tariff exceeds it is an unsupported comparison.",
+    "The acceleration narrative is not in the supplied figures, which only state the quota reached 100% on 29 September 2026.",
+    "This cited article and its content are not among the supplied sources, so the cross-reference asserts a document the evidence does not contain.",
+    "This cited article and its 35% rate are not in the supplied evidence, so the comparison rests on an unverified document.",
+    "The body uses USD 4,500 per tonne and derived totals that the confidence section itself calls illustrative, so the claim that every figure comes from the two documents is false."
+  ],
+  "seconds": 415
 }
