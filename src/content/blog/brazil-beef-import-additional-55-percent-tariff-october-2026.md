@@ -165,3 +165,5 @@ For the paperwork and the cost in one place, see [China tax refund foreigners](/
 For the paperwork and the cost in one place, see [China work permit process](/guide/work-permit-process/).
 
 For the paperwork and the cost in one place, see [China residence permit application](/guide/residence-permit-application/).
+
+For the paperwork and the cost in one place, see [China residence permit for foreigners](/guide/residence-permit-foreigners/).

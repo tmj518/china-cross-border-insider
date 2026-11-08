@@ -1588,7 +1588,7 @@
         "base": 0.69,
         "demandImpressions": 1,
         "demandBreadth": 0,
-        "demandQuery": "residence permit",
+        "demandQuery": "chinese permanent residence",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
@@ -1626,7 +1626,7 @@
         "base": 0.69,
         "demandImpressions": 1,
         "demandBreadth": 0,
-        "demandQuery": "residence permit",
+        "demandQuery": "chinese permanent residence",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
@@ -1664,7 +1664,7 @@
         "base": 0.69,
         "demandImpressions": 1,
         "demandBreadth": 0,
-        "demandQuery": "residence permit",
+        "demandQuery": "chinese residence permit",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
@@ -1680,7 +1680,7 @@
       "unit": "one application",
       "title": "China residence permit for foreigners",
       "query": "china residence permit for foreigners",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"china residence permit for foreigners\" (bing)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1707,7 +1707,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-08"
     },
     {
       "slug": "temporary-residence-permit",
@@ -1740,7 +1741,44 @@
         "base": 0.69,
         "demandImpressions": 1,
         "demandBreadth": 0,
-        "demandQuery": "residence permit",
+        "demandQuery": "chinese residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "alipay-international-account",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Alipay international account",
+      "query": "alipay international account",
+      "status": "queued",
+      "evidence": "demand matrix: \"alipay international account\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "alipay",
+        "international",
+        "account"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "alipay international account",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
@@ -1748,5 +1786,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-07T07:20:25.265Z"
+  "updatedAt": "2026-11-08T07:20:23.853Z"
 }
