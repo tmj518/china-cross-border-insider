@@ -223,7 +223,7 @@ function review(a) {
     const today = new Date(new Date().toISOString().slice(0, 10) + "T00:00:00Z");
     const days = Math.round((rb - today) / 86400000);
     if (Number.isNaN(days)) add(SEV.HIGH, "reviewBy is not a date", a.reviewBy, 0);
-    else if (days < 0) add(SEV.HIGH, "reviewBy is in the past", `${a.reviewBy} (${days} days)`, 0);
+    else if (days < 0) add(SEV.MED, "reviewBy is in the past - the maintenance step will bump it", `${a.reviewBy} (${days} days)`, 0);
     else if (a.stakes === "priced" && days > 180) add(SEV.MED, "priced piece reviewed beyond 180 days", `${days} days to ${a.reviewBy}`, 0);
 
     // The body's own future dates must not fall before reviewBy without comment.
