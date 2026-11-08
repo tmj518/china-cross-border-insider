@@ -792,6 +792,18 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
         : `exit ${writeCode}: ${whyItFailed(writeOut)}`,
   );
   if (!wroteIt) {
+    /*
+     * A DUPLICATE IS NOT A WRITING FAILURE.
+     *
+     * The executor exits 3 when the draft's title matches an event already published. That used to arrive as
+     * WRITE-FAILED with "the writer did not produce X.md", which reads as a broken model and sent the operator
+     * looking at the writer. The subject was the problem, and the honest verdict is DUPLICATE-SUBJECT.
+     */
+    if (writeCode === 3) {
+      run.verdict = "DUPLICATE-SUBJECT";
+      run.reasons.push("the proposed subject duplicates a published article: " + String(writeOut).replace(/\s+/g, " ").slice(0, 200));
+      break;
+    }
     if (writeCode === 4 && attempt < MAX_ATTEMPTS) {
       /*
        * A schema violation is the most mechanically fixable rejection there is: the field, the actual
