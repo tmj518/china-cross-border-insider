@@ -258,6 +258,12 @@ function fitTitle(article) {
   /* Near-duplicates: the same event written twice with different wording. */
   const near = titleClash(title, slugOf(article));
   if (near) return { article, problem: `looks like \"${near.title}\" in ${near.file} (slug overlap ${near.sharedSlug}, title overlap ${near.ratio})` };
+  /* Exit 3 means "a duplicate, not a bad draft", so the pipeline reports DUPLICATE-SUBJECT and can retry */
+  /* with another subject instead of spending three revisions on a title that will never be needed.      */
+  if (near) {
+    console.log("DUPLICATE " + near.file + " (shared: " + near.shared + ")");
+    process.exit(3);
+  }
   if (trimmed !== title) {
     const re = /^title:.*$/m;
     return { article: article.replace(re, "title: " + JSON.stringify(trimmed)), problem: null, trimmed: true };
