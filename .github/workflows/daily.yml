@@ -476,6 +476,20 @@ jobs:
           fi
           node tools/feishu-ledger.mjs
 
+      #
+      # THE DAY PUBLISHES SOMETHING, EVEN WHEN THE TRADE LINE HAS NOTHING.
+      #
+      # NO-SUBJECT, DUPLICATE-SUBJECT and WRITE-FAILED are each a correct answer and each leaves the day
+      # empty. The operator's rule is that the site publishes daily and a weaker article is acceptable
+      # where an empty day is not - so when the trade run did not publish and no article carries today's
+      # date, the guide line runs once. It needs no verified figure to write a procedure, and it has the
+      # best record of the three routes.
+      #
+      - name: Publish a fallback if the day is empty
+        if: always()
+        continue-on-error: true
+        run: node tools/fallback-publish.mjs
+
       - name: Commit and push anything that was approved
         id: commit
         run: |
