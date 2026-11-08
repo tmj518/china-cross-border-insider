@@ -90,6 +90,17 @@ if (!matrixFile) {
 }
 const matrix = JSON.parse(readFileSync(join(dir, matrixFile), "utf8"));
 
+function gscQueries() {
+  try {
+    const dir = join(ROOT, "data", "blue-ocean");
+    if (!existsSync(dir)) return [];
+    const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+    if (!files.length) return [];
+    const latest = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
+    return (latest.keywords ?? []).map((k) => String(k.query ?? "")).filter(Boolean);
+  } catch { return []; }
+}
+
 const seenSlug = new Set(queue.topics.map((t) => t.slug));
 const seenCluster = new Map();
 
@@ -118,6 +129,13 @@ function clusterKey(text) {
   return anchor + "|" + country;
 }
 const candidates = [];
+/* Search Console rows go in first: a query with impressions is demand Google has already confirmed. */
+for (const q of gscQueries()) {
+  const gslug = String(q).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
+  if (!gslug || seenSlug.has(gslug)) continue;
+  seenSlug.add(gslug);
+  candidates.push({ text: q, slug: gslug, audience: "importers", moment: "policy", source: "gsc" });
+}
 for (const row of matrix.intents ?? []) {
   const audience = GUIDE_PERSONAS[row.persona];
   if (!audience) continue;
