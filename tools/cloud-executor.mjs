@@ -641,7 +641,7 @@ ${STRUCTURE}
 
 ${RULES}
 
-${PITFALLS}
+${pitfallRules()}
 
 ${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
 ${JSON.stringify(sourced, null, 2)}
@@ -803,7 +803,7 @@ ${STRUCTURE}
 
 ${RULES}
 
-${PITFALLS}
+${pitfallRules()}
 
 ${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - the only numbers permitted:
 ${JSON.stringify(sourced, null, 2)}
@@ -951,24 +951,32 @@ if (IS_MAIN) await main();
  * reads last and skims. The operator asked for it in the instruction body: a rule that says "this
  * publication has already shipped these mistakes" belongs next to the rules about what may not be written.
  */
-const PITFALLS = (() => {
-  /*
-   * The instructions say what may be written; this says what has already gone wrong, in the language the
-   * draft is written in. data/pitfalls.txt keeps the Chinese record for the operator; the writer gets the
-   * same lessons as rules it can check its own draft against, because a model reads a list of rules and
-   * skims a list of incidents.
-   */
-  const lessons = [
-    "No number may rest on a baseline the figures do not contain. If the current rate or market price is not in the directive, write the formula and stop; do not assume a value, and do not compute a delta from one. An \"assumed\" label does not make the number sourced.",
-    "Do not name a document, an article number, an instrument number or a process (e.g. \"Article 29\", \"a filing-based regime\") unless that exact string appears in the material given to you.",
-    "Do not attribute motive or history to a measure. State what was decided and from when.",
-    "Never present non-compliance as a lever. Under-declaration, mis-classification and shipment splitting are offences; if the arithmetic invites one, state the legal requirement and the penalty exposure.",
-    "When a rate is a range, pair endpoints with endpoints. Do not subtract a low endpoint from a high one and call it a comparison.",
-    "The confidence section and the body must agree. If a figure is unconfirmed in one place, it is unconfirmed everywhere.",
-    "Do not write a second article about an event this publication already covered, even under different wording.",
-    "reviewBy is six months from today, unquoted. It is a constant of this publication, not a judgement.",
-    "Do not use every number in the directive just because it is there; use the ones the argument needs.",
-  ];
-  return "\nMISTAKES THIS PUBLICATION HAS ALREADY SHIPPED - every one reached a live page:\n" +
-    lessons.map((l) => "  - " + l).join("\n") + "\n";
-})();
+/*
+ * WHY THIS IS A FUNCTION AND NOT A CONST.
+ *
+ * The prompt templates at the top of main() interpolate it. A `const` declared further down is not
+ * hoisted, so the first run after it was added died with "Cannot access 'PITFALLS' before initialization"
+ * and the day produced nothing - the third time this exact ordering mistake has cost a run. A function
+ * declaration is hoisted, so position no longer matters and the mistake cannot be repeated.
+ */
+function pitfallRules() {
+/*
+ * The instructions say what may be written; this says what has already gone wrong, in the language the
+ * draft is written in. data/pitfalls.txt keeps the Chinese record for the operator; the writer gets the
+ * same lessons as rules it can check its own draft against, because a model reads a list of rules and
+ * skims a list of incidents.
+ */
+const lessons = [
+  "No number may rest on a baseline the figures do not contain. If the current rate or market price is not in the directive, write the formula and stop; do not assume a value, and do not compute a delta from one. An \"assumed\" label does not make the number sourced.",
+  "Do not name a document, an article number, an instrument number or a process (e.g. \"Article 29\", \"a filing-based regime\") unless that exact string appears in the material given to you.",
+  "Do not attribute motive or history to a measure. State what was decided and from when.",
+  "Never present non-compliance as a lever. Under-declaration, mis-classification and shipment splitting are offences; if the arithmetic invites one, state the legal requirement and the penalty exposure.",
+  "When a rate is a range, pair endpoints with endpoints. Do not subtract a low endpoint from a high one and call it a comparison.",
+  "The confidence section and the body must agree. If a figure is unconfirmed in one place, it is unconfirmed everywhere.",
+  "Do not write a second article about an event this publication already covered, even under different wording.",
+  "reviewBy is six months from today, unquoted. It is a constant of this publication, not a judgement.",
+  "Do not use every number in the directive just because it is there; use the ones the argument needs.",
+];
+return "\nMISTAKES THIS PUBLICATION HAS ALREADY SHIPPED - every one reached a live page:\n" +
+  lessons.map((l) => "  - " + l).join("\n") + "\n";
+}
