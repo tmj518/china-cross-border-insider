@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-08T23:43:47.784Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "35 previous run(s), last 2026-11-08T01:15:49.049Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "4 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 2)"
+    }
+  ],
+  "verdict": "DUPLICATE-SUBJECT",
+  "reasons": [
+    "research proposed a subject already covered by a published article and declined to write a directive. Nothing was published, which is the duplicate check working."
+  ],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 4,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2409 characters but no document structure, trying the next one",
+    "  stream      : SSE, 668 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 1961 characters but no document structure, trying the next one",
+    "  stream      : SSE, 830 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2344 characters but no document structure, trying the next one",
+    "  spent   : ~0.0724  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-beef-safeguard-brazil-55-percent-tariff-october-2026",
+    "  keyword : China Brazil beef additional 55% tariff October 2026 importer cost",
+    "  duplicate check: score 23 against brazil-beef-import-additional-55-percent-tariff-october-2026",
+    "      shared keyword stems: brazil, beef, additional, october",
+    "      shared institution(s): commerce",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 6 of 6)...",
+    "  stream      : SSE, 829 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2180 characters but no document structure, trying the next one",
+    "  stream      : SSE, 825 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2416 characters but no document structure, trying the next one",
+    "  stream      : SSE, 820 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2282 characters but no document structure, trying the next one",
+    "  spent   : ~0.0868  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-beef-safeguard-brazil-55-percent-tariff-october-2026",
+    "  keyword : China Brazil beef additional 55% tariff October 2026 importer cost",
+    "  duplicate check: score 23 against brazil-beef-import-additional-55-percent-tariff-october-2026",
+    "      shared keyword stems: brazil, beef, additional, october",
+    "      shared institution(s): commerce",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  ALL_SUBJECTS_DUPLICATE - all 6 proposals are already published.",
+    "    - china-brazil-beef-55-percent-tariff-trigger-october-2026 (score 99)",
+    "    - china-p-nitrotoluene-eu-anti-dumping-questionnaire-deadline-2026 (score 17)",
+    "    - china-beef-safeguard-brazil-55-percent-tariff-october-2026 (score 23)",
+    "    - china-beef-safeguard-brazil-55-percent-tariff-october-2026 (score 23)",
+    "    - china-beef-safeguard-brazil-55-percent-tariff-october-2026 (score 23)",
+    "    - china-beef-safeguard-brazil-55-percent-tariff-october-2026 (score 23)",
+    "  No directive was written. Publishing a near-duplicate under a new slug would compete with",
+    "  the existing article for the same keyword, which is worse for the site than a quiet day.",
+    "  Exit 2 tells the pipeline to report DUPLICATE-SUBJECT: yellow, not a failure."
+  ]
+}
