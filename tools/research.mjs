@@ -235,7 +235,23 @@ function duplicateScore(proposal, ledger) {
      */
     const sameMeasure = sharedKw.filter((w) => /^(ad|vd|safeguard|duty|tariff|quota|subsidy|screening|registration|licence|certificate|threshold|rebate)/.test(w)).length;
     const strong = sharedVals.length >= 1 || (sameMeasure >= 2 && sharedOrg.length >= 1);
-    const score = strong ? sharedVals.length * 3 + sameMeasure * 2 + sharedOrg.length : 0;
+
+    /*
+     * THE SAME PRODUCT IN THE SAME MEASURE IS THE SAME STORY, EVEN WITH NO SHARED FIGURE.
+     *
+     * 2026-11-08: research proposed "china-brazil-beef-safeguard-trigger-55-percent-october-2026" while three
+     * Brazil-beef articles were already published. Nothing shared a figure value - the rates sat in different
+     * places in each document - so the score stayed 0, the writer refused it on the title, and the day was
+     * reported as WRITE-FAILED. The product words are the evidence here: beef plus safeguard names an event
+     * this site has covered.
+     */
+    const PRODUCT = (s) => new Set(String(s).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !/^(anti|dumping|duty|duties|definitive|provisional|tariff|rate|rates|quota|import|imports|review|sunset|measures|regulation|decision|notice|index|volume|percent)$/.test(w)));
+    const newProduct = PRODUCT(pending.slug ?? "");
+    const rowProduct = PRODUCT(row.slug ?? "");
+    const sharedProduct = [...newProduct].filter((w) => rowProduct.has(w));
+    const productDup = sharedProduct.length >= 2 ? sharedProduct.length * 4 : 0;
+    const strong2 = strong || productDup > 0;
+    const score = strong2 ? productDup + sharedVals.length * 3 + sameMeasure * 2 + sharedOrg.length : 0;
     if (score > best.score) {
       best = {
         score,
