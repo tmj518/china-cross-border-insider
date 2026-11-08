@@ -19,7 +19,7 @@
  * already the next day in Beijing, and publishDate is written in UTC - so comparing dates is wrong by a
  * day exactly when it matters. git log is the same clock that scheduled the job.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
@@ -37,19 +37,30 @@ const published = /^PUBLISHED/.test(verdict);
 /* Did anything reach the content collections in the last twelve hours? */
 let recentlyPublished = false;
 let lastTs = 0;
+/*
+ * The run journal, not git history.
+ *
+ * A git log with a pathspec needs history, and the runner checks out shallow: on 2026-11-09 that call
+ * returned the head commit's own timestamp, so the fallback believed the day was covered by the commit
+ * that had just added this file. data/runs/ is committed by every pipeline and carries `at` and `verdict`,
+ * which is exactly the question being asked and needs no history at all.
+ */
 try {
-  const out = execFileSync("git", ["log", "-1", "--format=%ct", "--", "src/content/blog", "src/content/guide"], {
-    encoding: "utf8",
-    cwd: ROOT,
-    timeout: 30000,
-  }).trim();
-  lastTs = Number(out) || 0;
-  if (lastTs) recentlyPublished = Date.now() / 1000 - lastTs < 12 * 3600;
+  const dir = join(ROOT, "data", "runs");
+  for (const f of readdirSync(dir).filter((x) => x.endsWith(".json"))) {
+    try {
+      const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
+      if (!/^PUBLISHED/.test(String(j.verdict ?? ""))) continue;
+      const ts = Date.parse(j.at);
+      if (Number.isFinite(ts) && ts > lastTs) lastTs = ts;
+    } catch {}
+  }
+  if (lastTs) recentlyPublished = Date.now() - lastTs < 12 * 3600;
 } catch {}
 
 console.log("FALLBACK PUBLISH\n" + "=".repeat(78));
 console.log("  pipeline verdict   : " + (verdict || "(no report)"));
-console.log("  last content commit: " + (lastTs ? new Date(lastTs * 1000).toISOString().slice(0, 16).replace("T", " ") + "Z" : "(none)"));
+console.log("  last published run : " + (lastTs ? new Date(lastTs).toISOString().slice(0, 16).replace("T", " ") + "Z" : "(none)"));
 console.log("  published in 12h   : " + (recentlyPublished ? "yes" : "no"));
 
 if ((published || recentlyPublished) && !FORCE) {
