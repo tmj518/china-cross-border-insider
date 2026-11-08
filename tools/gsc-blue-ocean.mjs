@@ -321,21 +321,23 @@ for (const rung of LADDER.slice(1)) {
 }
 void ladderRows;
 
-const blue = all
-  .filter(
-    (r) =>
-      r.query &&
-      r.impressions > FILTER.minImpressions &&
-      r.ctr < FILTER.maxCtr &&
-      r.position >= FILTER.minPosition &&
-      r.position <= FILTER.maxPosition,
-  )
-  .sort((a, b) => b.impressions - a.impressions)
-  .slice(0, FILTER.top);
+  /*
+   * THE LADDER SELECTS; IT USED TO ONLY PRINT.
+   *
+   * The strict rung asks for a thousand impressions, which a site with six hundred in two weeks can never
+   * meet - so every run reported zero keywords and the pipeline fell back to official documents, month
+   * after month, while the log beneath said "any impression found 22". The rungs now decide: the first one
+   * that matches provides the keywords, and the rank is reported so nobody mistakes a loose match for a
+   * strong one.
+   */
+  const pick = (f) => all.filter((r) => r.query && r.impressions >= f.minImpressions && r.ctr <= f.maxCtr && r.position >= f.minPosition && r.position <= f.maxPosition).slice(0, 40);
+  let rung = LADDER.find((f) => pick(f).length) ?? LADDER[LADDER.length - 1];
+  let blue = pick(rung);
 
 log("");
 log(`  total rows  : ${all.length}`);
 log(`  matched     : ${blue.length}`);
+  log(`  matched by : ${rung.label} rung`);
 /*
  * One line, unmissable, because this is the question the operator asks: did the search data drive the choice or not.
  */
@@ -364,4 +366,4 @@ if (!blue.length) {
   finish({ available: true, empty: true, reason: "no query met the impression, ctr and position thresholds", keywords: [], topSeen: top }, 0);
 }
 
-finish({ available: true, empty: false, keywords: blue, topSeen: all.sort((a, b) => b.impressions - a.impressions).slice(0, 5) }, 0);
+finish({ available: true, empty: false, rung: rung.label, keywords: blue, topSeen: all.sort((a, b) => b.impressions - a.impressions).slice(0, 5) }, 0);
