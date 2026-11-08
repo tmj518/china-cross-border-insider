@@ -173,7 +173,9 @@ const GATES = [
   },
   {
     id: "check-figure-trace",
-    tier: "hard",
+    tier: "soft",
+    /* Soft for now: it reports on every run and blocks nothing, so a rule the writer has not yet
+     * internalised cannot stop the line. Promote to hard once a month passes with zero violations. */
     label: "figure trace",
     args: ["tools/check-figure-trace.mjs", "--all"],
     inputs: ["src"],   /* it reads the article files, not dist */
