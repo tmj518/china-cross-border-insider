@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-08T23:21:14.509Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "35 previous run(s), last 2026-11-08T01:15:49.049Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "4 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 1)"
+    }
+  ],
+  "verdict": "NO-SUBJECT",
+  "reasons": [
+    "research threw before proposing: ome/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:249:32) at file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:816:7 at process.processTicksAndRejections (node:internal/process/task_queues:104:5) Node.js v24.22.2 "
+  ],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 4,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    safe-article                17492B  article archived",
+    "  ok    mot-article                 31206B  article archived",
+    "  ok    mot-article                 31455B  article archived",
+    "  ok    mot-article                 33734B  article archived",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 1083 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3203 characters but no document structure, trying the next one",
+    "  stream      : SSE, 823 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2390 characters but no document structure, trying the next one",
+    "  stream      : SSE, 887 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2726 characters but no document structure, trying the next one",
+    "  spent   : ~0.0144  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug already published: china-brazil-beef-55-percent-tariff-trigger-october-2026 - retrying with another subject",
+    "  slug    : china-brazil-beef-55-percent-tariff-trigger-october-2026",
+    "  keyword : China Brazil beef additional 55% tariff October 2026 importer cost",
+    "  duplicate check: score 99 against china-brazil-beef-55-percent-tariff-trigger-october-2026",
+    "      the slug china-brazil-beef-55-percent-tariff-trigger-october-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 1127 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3196 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1160 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3614 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1170 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3500 characters but no document structure, trying the next one",
+    "  spent   : ~0.0291  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:249",
+    "    const newProduct = PRODUCT(pending.slug ?? \"\");",
+    "                               ^",
+    "ReferenceError: pending is not defined",
+    "    at duplicateScore (file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:249:32)",
+    "    at file:///home/runner/work/china-cross-border-insider/china-cross-border-insider/tools/research.mjs:816:7",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "Node.js v24.22.2"
+  ]
+}
