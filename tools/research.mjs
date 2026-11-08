@@ -246,7 +246,9 @@ function duplicateScore(proposal, ledger) {
      * this site has covered.
      */
     const PRODUCT = (s) => new Set(String(s).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !/^(anti|dumping|duty|duties|definitive|provisional|tariff|rate|rates|quota|import|imports|review|sunset|measures|regulation|decision|notice|index|volume|percent)$/.test(w)));
-    const newProduct = PRODUCT(pending.slug ?? "");
+    const newProduct = PRODUCT(proposal.keyword ?? "");
+    /* The proposal has no slug yet - it is a keyword and figures. Using a variable that does not
+     * exist here crashed research before it could propose anything on 2026-11-09. */
     const rowProduct = PRODUCT(row.slug ?? "");
     const sharedProduct = [...newProduct].filter((w) => rowProduct.has(w));
     const productDup = sharedProduct.length >= 2 ? sharedProduct.length * 4 : 0;
