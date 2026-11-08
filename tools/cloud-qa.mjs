@@ -159,6 +159,19 @@ try {
     }
     const passed = /RESULT:\s*every gate passed/i.test(out);
     const failed = [...out.matchAll(/^\s*FAIL\s+[\d.]+s\s+(.+)$/gm)].map((m) => m[1].trim()).slice(0, 6);
+
+    /*
+     * A GATE THAT NAMES A VALUE IS FIXABLE; ONE THAT NAMES ITSELF IS NOT.
+     *
+     * figure trace failed three revisions in a row on 2026-11-08 because the writer was told "figure trace" and
+     * nothing else - it had no way to know which sentence carried the unsourced number. The gate already
+     * prints the value and the paragraph; the section is right there in the captured output, and this pulls it
+     * into the report so the revision prompt can quote it.
+     */
+    for (const m of out.matchAll(/^---\s*(.+?)\s*\(exit \d+\)\s*---\n([\s\S]*?)(?=\n---\s|$)/gm)) {
+      const body = m[2].trim().split("\n").filter((l) => l.trim()).slice(-4).join(" | ");
+      if (body) failed.push(m[1].trim() + ": " + body.replace(/\s+/g, " ").slice(0, 300));
+    }
     report.layers.L1 = {
       pass: passed,
         detail: (passed ? "every gate passed" : `${failed.length} gate failure(s): ${failed.join(", ") || "(name not captured)"}`) + ` — ${buildNote}`,
