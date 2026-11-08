@@ -1,56 +1,28 @@
 {
-  "at": "2026-11-08T07:20:43.619Z",
+  "at": "2026-11-08T23:56:46.284Z",
   "route": "c",
-  "verdict": "PUBLISHED",
-  "article": "residence-permit-foreigners",
-  "seconds": 19,
+  "verdict": "NO-KEYS",
+  "article": null,
+  "seconds": 0,
   "usage": {
-    "calls": 2,
+    "calls": 0,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "ARK_API_KEY is not set"
+  ],
   "steps": [
     {
       "name": "credentials",
-      "ok": true,
-      "detail": "46 key chars, model ep-20251220173606-gzxdg"
-    },
-    {
-      "name": "queue",
-      "ok": true,
-      "detail": "10 candidate(s)"
-    },
-    {
-      "name": "grounding residence-permit-foreigners",
-      "ok": true,
-      "detail": "procedural, no figures"
-    },
-    {
-      "name": "gates residence-permit-foreigners",
-      "ok": true,
-      "detail": "structure ok, procedural (no figures)"
-    },
-    {
-      "name": "build residence-permit-foreigners",
-      "ok": true,
-      "detail": "site builds with the guide in place"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
-    },
-    {
-      "name": "published",
-      "ok": true,
-      "detail": "/guide/residence-permit-foreigners/"
+      "ok": false,
+      "detail": "ARK_API_KEY is not set"
     }
   ],
   "researchLog": [
-    "model : volces/ep-20251220173606-gzxdg"
+    "model : volces/unset"
   ]
 }
