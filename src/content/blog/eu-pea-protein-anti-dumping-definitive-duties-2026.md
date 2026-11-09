@@ -153,3 +153,5 @@ EU importers of Chinese pea protein now face a permanent 40.5% to 67.1% duty pre
 For the paperwork and the cost in one place, see [Renewing a Chinese Driving Licence](/guide/china-driving-licence-renewal/).
 
 For the paperwork and the cost in one place, see [Chinese residence permit requirements](/guide/residence-permit-requirements/).
+
+For the paperwork and the cost in one place, see [Chinese motorcycle brands rev up European market, forging deeper industrial ties](/guide/chinese-motorcycle-brands-rev-up-european-market-forging-deeper-indust/).

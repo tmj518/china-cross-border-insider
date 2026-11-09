@@ -2187,7 +2187,7 @@
       "unit": "one application",
       "title": "Chinese motorcycle brands rev up European market, forging deeper industrial ties",
       "query": "Chinese motorcycle brands rev up European market, forging deeper industrial ties",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Chinese motorcycle brands rev up European market, forging deeper industrial ties\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2215,7 +2215,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "china-s-cpi-up-0-7-pct-in-october",
