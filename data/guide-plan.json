@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-09T07:20:28.514Z",
+  "at": "2026-11-09T13:24:25.139Z",
   "days": 90,
   "gsc": true,
   "plan": [
@@ -43,192 +43,37 @@
       }
     },
     {
-      "slug": "global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "slug": "visa-z-trung-qu-c",
       "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "Global South delegates seek stronger voice at World Media Summit in Beijing",
-      "query": "Global South delegates seek stronger voice at World Media Summit in Beijing",
+      "title": "Visa z trung quốc",
+      "query": "visa z trung quốc",
       "status": "queued",
-      "evidence": "demand matrix: \"Global South delegates seek stronger voice at World Media Summit in Beijing\" (news)",
+      "evidence": "demand matrix: \"visa z trung quốc\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "Global",
-        "South",
-        "delegates",
-        "seek",
-        "stronger"
+        "visa",
+        "trung",
+        "quốc"
       ],
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 1.8,
+      "priorityScore": 1.79,
       "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
+        "basis": "measured",
+        "base": 1.79,
+        "demandImpressions": 5,
         "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Economic Watch: Beyond market size, European firms tap China's growth, innovation potential",
-      "query": "Economic Watch: Beyond market size, European firms tap China's growth, innovation potential",
-      "status": "queued",
-      "evidence": "demand matrix: \"Economic Watch: Beyond market size, European firms tap China's growth, innovation potential\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Economic",
-        "Watch:",
-        "Beyond",
-        "market",
-        "size,"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "chinese-motorcycle-brands-rev-up-european-market-forging-deeper-indust",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Chinese motorcycle brands rev up European market, forging deeper industrial ties",
-      "query": "Chinese motorcycle brands rev up European market, forging deeper industrial ties",
-      "status": "queued",
-      "evidence": "demand matrix: \"Chinese motorcycle brands rev up European market, forging deeper industrial ties\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Chinese",
-        "motorcycle",
-        "brands",
-        "European",
-        "market,"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-s-cpi-up-0-7-pct-in-october",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China's CPI up 0.7 pct in October",
-      "query": "China's CPI up 0.7 pct in October",
-      "status": "queued",
-      "evidence": "demand matrix: \"China's CPI up 0.7 pct in October\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China's",
-        "October"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China extends suspension of 24 pct additional tariff on U.S. goods for two months",
-      "query": "China extends suspension of 24 pct additional tariff on U.S. goods for two months",
-      "status": "queued",
-      "evidence": "demand matrix: \"China extends suspension of 24 pct additional tariff on U.S. goods for two months\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "extends",
-        "suspension",
-        "additional",
-        "tariff"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
+        "demandQuery": "144-hour visa-free transit",
+        "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
@@ -346,6 +191,80 @@
       }
     },
     {
+      "slug": "alipay-application",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Alipay application",
+      "query": "alipay application",
+      "status": "queued",
+      "evidence": "demand matrix: \"alipay application\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "alipay",
+        "application"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "alipay for foreigners",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "council-regulation-eu-2026-382",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "\"council regulation (eu) 2026/382\"",
+      "query": "\"council regulation (eu) 2026/382\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"\"council regulation (eu) 2026/382\"\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "\"council",
+        "regulation",
+        "(eu)",
+        "2026/382\""
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.97,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.61,
+        "demandImpressions": 4,
+        "demandBreadth": 0,
+        "demandQuery": "\"council regulation (eu) 2026/382\"",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
       "slug": "alipay-international-account",
       "topic": "residence",
       "audience": [
@@ -377,6 +296,77 @@
         "demandBreadth": 0,
         "demandQuery": "alipay international account",
         "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "eu-fdi-screening",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Eu fdi screening",
+      "query": "eu fdi screening",
+      "status": "queued",
+      "evidence": "demand matrix: \"eu fdi screening\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "screening"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "\"investment screening\"",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "investment-screening",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "\"investment screening\"",
+      "query": "\"investment screening\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"\"investment screening\"\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "\"investment",
+        "screening\""
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "\"investment screening\"",
+        "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null

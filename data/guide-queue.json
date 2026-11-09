@@ -2294,7 +2294,190 @@
         "pagePosition": null
       },
       "doneAt": "2026-11-09"
+    },
+    {
+      "slug": "council-regulation-eu-2026-382",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "\"council regulation (eu) 2026/382\"",
+      "query": "\"council regulation (eu) 2026/382\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"\"council regulation (eu) 2026/382\"\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "\"council",
+        "regulation",
+        "(eu)",
+        "2026/382\""
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.97,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.61,
+        "demandImpressions": 4,
+        "demandBreadth": 0,
+        "demandQuery": "\"council regulation (eu) 2026/382\"",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "eu-fdi-screening",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Eu fdi screening",
+      "query": "eu fdi screening",
+      "status": "queued",
+      "evidence": "demand matrix: \"eu fdi screening\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "screening"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "\"investment screening\"",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "investment-screening",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "\"investment screening\"",
+      "query": "\"investment screening\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"\"investment screening\"\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "\"investment",
+        "screening\""
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "\"investment screening\"",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "visa-z-trung-qu-c",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Visa z trung quốc",
+      "query": "visa z trung quốc",
+      "status": "done",
+      "evidence": "demand matrix: \"visa z trung quốc\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "visa",
+        "trung",
+        "quốc"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.79,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.79,
+        "demandImpressions": 5,
+        "demandBreadth": 0,
+        "demandQuery": "144-hour visa-free transit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-09"
+    },
+    {
+      "slug": "alipay-application",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Alipay application",
+      "query": "alipay application",
+      "status": "queued",
+      "evidence": "demand matrix: \"alipay application\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "alipay",
+        "application"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "alipay for foreigners",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-09T07:20:28.099Z"
+  "updatedAt": "2026-11-09T13:24:24.560Z"
 }
