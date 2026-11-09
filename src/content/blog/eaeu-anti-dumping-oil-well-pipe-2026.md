@@ -215,3 +215,5 @@ For the paperwork and the cost in one place, see [Renewing a Chinese Driving Lic
 For the paperwork and the cost in one place, see [Getting a Chinese Phone Number as a Foreigner](/guide/china-sim-card-phone-number-foreigner/).
 
 For the paperwork and the cost in one place, see [Open chinese bank account](/guide/open-chinese-bank-account/).
+
+For the paperwork and the cost in one place, see [Chinese residence permit requirements](/guide/residence-permit-requirements/).
