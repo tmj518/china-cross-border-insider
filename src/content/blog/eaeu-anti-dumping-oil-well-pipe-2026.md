@@ -3,7 +3,7 @@ title: "The Eurasian Duty on Chinese Oil Pipes Runs 12.23% to 31% — and One Li
 subtitle: "The EAEU kept duties of 12.23% to 31.00% on Chinese oil well pipe for five more years, and cut one exporter from the list that removes the duty entirely"
 description: "The Eurasian Economic Commission kept duties of 12.23% to 31.00% on Chinese seamless oil well pipe for another five years and removed Hunting Energy Services (Wuxi) from the price undertaking list. On a $500,000 CIF order that spread is $93,850, all of it decided before the invoice exists."
 publishDate: 2026-10-11
-reviewBy: 2026-11-08
+reviewBy: 2027-05-08
 stakes: priced
 category: "supply-chain"
 audience: "importer"

@@ -1,28 +1,56 @@
 {
-  "at": "2026-11-08T23:56:46.284Z",
+  "at": "2026-11-09T00:07:08.453Z",
   "route": "c",
-  "verdict": "NO-KEYS",
-  "article": null,
-  "seconds": 0,
+  "verdict": "PUBLISHED",
+  "article": "china-240-hour-visa-free-transit",
+  "seconds": 34,
   "usage": {
-    "calls": 0,
+    "calls": 3,
     "failed": 0,
-    "usd": 0
+    "usd": 0.0007000000000000062
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "ARK_API_KEY is not set"
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
-      "ok": false,
-      "detail": "ARK_API_KEY is not set"
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-240-hour-visa-free-transit",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-240-hour-visa-free-transit",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-240-hour-visa-free-transit",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-240-hour-visa-free-transit/"
     }
   ],
   "researchLog": [
-    "model : volces/unset"
+    "model : volces/ep-20251220173606-gzxdg"
   ]
 }

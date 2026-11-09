@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-02T07:20:42.998Z",
+  "at": "2026-11-09T00:07:08.453Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "tax-refund-foreigners",
-  "seconds": 18,
+  "article": "china-240-hour-visa-free-transit",
+  "seconds": 34,
   "usage": {
-    "calls": 2,
+    "calls": 3,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.0007000000000000062
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "10 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding tax-refund-foreigners",
+      "name": "grounding china-240-hour-visa-free-transit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates tax-refund-foreigners",
+      "name": "gates china-240-hour-visa-free-transit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build tax-refund-foreigners",
+      "name": "build china-240-hour-visa-free-transit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-return-shipping-refund-procedure-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/tax-refund-foreigners/"
+      "detail": "/guide/china-240-hour-visa-free-transit/"
     }
   ],
   "researchLog": [

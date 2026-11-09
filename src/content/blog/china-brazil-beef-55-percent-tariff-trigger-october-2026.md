@@ -169,3 +169,5 @@ The per-tonne figure is constant because the additional tariff is ad valorem. Th
 The 55% additional tariff on Brazilian beef is now a fixed part of the landed cost for every shipment cleared on or after 1 October 2026. The arithmetic is simple — 55% of the customs value — but the cash exposure is not. Importers with cargo in transit must decide now whether to absorb the duty, divert the shipment, or renegotiate the contract. Importers planning future purchases must build the additional tariff into their sourcing decision or switch origins. The notice provides no transition period and no exemptions, so the only variable an importer controls is the timing of the customs declaration.
 
 For the paperwork and the cost in one place, see [China residence permit for foreigners](/guide/residence-permit-foreigners/).
+
+For the paperwork and the cost in one place, see [240-Hour Visa-Free Transit in China: Who Qualifies Now](/guide/china-240-hour-visa-free-transit/).

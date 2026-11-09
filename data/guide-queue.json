@@ -983,7 +983,7 @@
       "unit": "one transit",
       "title": "240-Hour Visa-Free Transit in China: Who Qualifies Now",
       "query": "144 hour visa free transit china",
-      "status": "queued",
+      "status": "done",
       "evidence": "Search Console: the 144-hour page ranks 6.5; the policy has since been extended, so the query is stale-traffic we can capture",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1009,7 +1009,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "china-green-card-permanent-residence",
