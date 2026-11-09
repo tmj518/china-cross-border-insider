@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-09T02:09:18.778Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "cny-bank-account",
+  "seconds": 22,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0016
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "10 candidate(s)"
+    },
+    {
+      "name": "grounding cny-bank-account",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates cny-bank-account",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build cny-bank-account",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "no candidate - NO-INBOUND"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/cny-bank-account/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-09T01:59:28.584Z",
+  "at": "2026-11-09T02:09:18.837Z",
   "streaks": {
     "c": {
-      "verdict": "NO-SUBJECT",
-      "count": 2,
-      "at": "2026-11-09T01:59:28.525Z"
+      "verdict": "PUBLISHED",
+      "count": 1,
+      "at": "2026-11-09T02:09:18.778Z"
     },
     "script": {
       "verdict": "DUPLICATE-SUBJECT",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-11-09T01:59:28.525Z",
+    "at": "2026-11-09T02:09:18.778Z",
     "route": "c",
-    "verdict": "NO-SUBJECT",
-    "article": ""
+    "verdict": "PUBLISHED",
+    "article": "cny-bank-account"
   },
   "metrics": {
     "files": 1,
