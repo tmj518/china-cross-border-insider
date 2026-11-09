@@ -78,6 +78,7 @@ function logQaLoop(entry) {
   try {
     const file = join(ROOT, "data", "qa-loop.jsonl");
     const line = JSON.stringify({ at: new Date().toISOString(), ...entry });
+    runId: process.env.GITHUB_RUN_ID ?? null,   /* the ledger needs a handle back to the run */
     appendFileSync(file, line + "\n", "utf8");
   } catch {}
 }
@@ -960,6 +961,21 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     if (draftAfter !== draftBefore) {
       writeFileSync(draftPath, draftAfter, "utf8");
       console.log("  hedge sanitizer: replaced the blocked words in the draft before checking it");
+      /*
+       * A THIRD-PARTY URL IN THE BODY IS A FORMATTING FACT, NOT A JUDGEMENT.
+       *
+       * The rule is that provenance lives in the frontmatter, not in the prose, and the writer keeps pasting the
+       * source URL inline. On 2026-11-09 an explainer draft was rejected on that rule alone. The institution name
+       * stays; the link goes.
+       */
+      try {
+        const before = readFileSync(draftPath, "utf8");
+        const after = before.replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1").replace(/https?:\/\/\S+/g, "");
+        if (after !== before) {
+          writeFileSync(draftPath, after, "utf8");
+          console.log("  urls        : external links replaced with their text");
+        }
+      } catch {}
 
       /*
        * AN EXPLAINER MAY NOT DECLARE primary-source.
