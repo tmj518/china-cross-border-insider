@@ -41,6 +41,27 @@ import { spawnSync, execFileSync } from "node:child_process";
 import { loadEnv, today } from "./lib/gsc.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
+
+    /*
+     * THE SCHEMA HAS EIGHT TOPICS AND THE QUEUE CAN CARRY ANY WORD.
+     *
+     * "property" was in the queue and is not in the enum, so every guide built from it failed the Astro
+     * build and the line reported NO-SUBJECT for three topics in a row on 2026-11-09. A queue value is not a
+     * schema value; the mapping belongs here, where the file is written.
+     */
+    const TOPIC_ENUM = ["work-visa", "residence", "tax", "social-insurance", "relocation", "transit", "driving", "employment"];
+    const TOPIC_ALIAS = { property: "relocation", housing: "relocation", rent: "relocation", banking: "employment", payment: "employment", healthcare: "social-insurance", schooling: "residence", visa: "work-visa" };
+    const validTopic = (t) => {
+      const v = String(t ?? "").trim();
+      if (TOPIC_ENUM.includes(v)) return v;
+      if (TOPIC_ALIAS[v]) return TOPIC_ALIAS[v];
+      return "residence";
+    };
+    const AUDIENCE_ENUM = ["employer", "employee", "student", "visitor", "relocating"];
+    const validAudience = (list) => {
+      const kept = (Array.isArray(list) ? list : []).filter((a) => AUDIENCE_ENUM.includes(a));
+      return kept.length ? kept : ["relocating"];
+    };
 const QUEUE_FILE = join(ROOT, "data", "guide-queue.json");
 const DRAFT_DIR = join(ROOT, "data", "drafts-c");
 const GUIDE_DIR = join(ROOT, "src", "content", "guide");
@@ -662,8 +683,8 @@ async function attempt(topic) {
     "---",
     `title: ${JSON.stringify(body.title.trim())}`,
     `description: ${JSON.stringify(body.description.trim())}`,
-    `topic: ${JSON.stringify(topic.topic)}`,
-    `audience: [${(topic.audience ?? []).map((a) => JSON.stringify(a)).join(", ")}]`,
+    `topic: ${JSON.stringify(validTopic(topic.topic))}`,
+    `audience: [${validAudience(topic.audience).map((a) => JSON.stringify(a)).join(", ")}]`,
     `unit: ${JSON.stringify(topic.unit)}`,
     `lastVerified: ${JSON.stringify(DAY)}`,
     `reviewBy: ${JSON.stringify(plusDays(DAY, 180))}`,
