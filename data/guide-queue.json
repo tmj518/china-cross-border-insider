@@ -1916,7 +1916,7 @@
       "unit": "one application",
       "title": "Residence permit",
       "query": "residence permit",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"residence permit\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1941,7 +1941,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "yuan-bank-account",
