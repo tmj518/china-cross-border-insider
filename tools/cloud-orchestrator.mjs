@@ -949,6 +949,28 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
        * an explainer states no document number, so primary-source is a false declaration and qa-check is right to
        * refuse it. The draft is corrected here, next to the hedge repair, because this runs before the checks.
        */
+      /*
+       * AN EXPLAINER IS RECOGNISED FROM THE DRAFT, NOT ONLY FROM THE DIRECTIVE.
+       *
+       * On 2026-11-09 the trade line produced drafts with no figures and no numeric claim, and the gate rejected
+       * them with "no figures[] entries" three revisions in a row because the directive still carried figures it
+       * never used. A draft that states no number is an explainer whatever the directive says, and declaring that
+       * is a fact about the file, not a rewrite.
+       */
+      if (!directive?.explainer) {
+        try {
+          const raw = readFileSync(draftPath, "utf8");
+          const fmEnd = raw.indexOf("---", 4);
+          const fm = raw.slice(0, fmEnd + 3);
+          const bodyText = raw.slice(fmEnd + 3);
+          const NUM = /(?:EUR|USD|GBP|RMB|CNY)\s?[0-9]|[0-9]+(?:\.[0-9]+)?\s?%/;
+          const noFigures = /^figures:\s*\[\]\s*$/m.test(fm) || !/^\s*- value:/m.test(fm);
+          if (noFigures && !NUM.test(bodyText)) {
+            directive = { ...(directive ?? {}), explainer: true, figures: [] };
+            console.log("  explainer   : the draft states no number, so it is published as an explainer");
+          }
+        } catch {}
+      }
       if (directive?.explainer) {
         try {
           const before = readFileSync(draftPath, "utf8");
