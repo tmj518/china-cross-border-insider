@@ -940,6 +940,27 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     if (draftAfter !== draftBefore) {
       writeFileSync(draftPath, draftAfter, "utf8");
       console.log("  hedge sanitizer: replaced the blocked words in the draft before checking it");
+
+      /*
+       * AN EXPLAINER MAY NOT DECLARE primary-source.
+       *
+       * The writer sets the field itself when the model volunteers a value, so the mechanical fill in cloud-executor
+       * never sees an empty field and never overrides it. Three runs on 2026-11-09 were rejected on exactly this:
+       * an explainer states no document number, so primary-source is a false declaration and qa-check is right to
+       * refuse it. The draft is corrected here, next to the hedge repair, because this runs before the checks.
+       */
+      if (directive?.explainer) {
+        try {
+          const before = readFileSync(draftPath, "utf8");
+          const after = before.replace(/^information_gain:.*$/m, 'information_gain: "cross-source"');
+          if (after !== before) {
+            writeFileSync(draftPath, after, "utf8");
+            console.log("  explainer   : information_gain forced to cross-source");
+          }
+        } catch (e) {
+          console.log("  explainer   : could not set information_gain - " + String(e.message).slice(0, 60));
+        }
+      }
     }
   } catch {}
 
