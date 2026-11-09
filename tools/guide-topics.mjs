@@ -128,7 +128,34 @@ function gscQueries() {
     const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
     if (!files.length) return [];
     const latest = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
-    return (latest.keywords ?? []).map((k) => String(k.query ?? "")).filter(Boolean);
+    /*
+     * ONLY THE WORDS WE DO NOT ALREADY COVER, AND THE BEST-PLACED ONES FIRST.
+     *
+     * A query with impressions that no page answers is the cheapest article available; a query we already rank
+     * for needs nothing. Position is kept as the sort key because a word at position 8 is one page away from
+     * page one, while a word at 90 is not a writing task.
+     */
+    const STOP = new Set(["the","a","an","in","of","for","to","and","is","how","what","china","chinese","my","do","i","on","at","with","from","can","much"]);
+    const coverWords = (s) => new Set(String(s).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOP.has(w)));
+    const covered = [];
+    try {
+      for (const dir of ["blog", "guide"]) {
+        for (const f of readdirSync(join(ROOT, "src", "content", dir))) {
+          if (f.endsWith(".md")) covered.push(coverWords(f.replace(/\.md$/, "").replace(/-/g, " ")));
+        }
+      }
+    } catch {}
+    const gaps = (latest.keywords ?? [])
+      .filter((k) => String(k.query ?? "").length > 3)
+  /* Noise: a foreign-language fragment, a single generic word, or a phrase with no subject. */
+  .filter((k) => !/^(en octubre|china|commercial return|documenten transport china)$/i.test(String(k.query ?? "").trim()))
+      .filter((k) => {
+        const w = [...coverWords(k.query)].filter((x) => x.length > 3);
+        return w.length ? !covered.some((set) => w.filter((x) => set.has(x)).length >= 2) : false;
+      })
+      .sort((a, b) => (Number(a.position) || 999) - (Number(b.position) || 999));
+    console.log("  search console: " + gaps.length + " uncovered query word(s), best position " + (gaps[0]?.position ?? "-"));
+    return gaps.map((k) => String(k.query ?? "")).filter(Boolean);
   } catch { return []; }
 }
 
@@ -227,7 +254,7 @@ const scored = candidates
     /* A figure the sources actually publish beats a figure that only an embassy knows. */
     score:
       (c.source === "news" ? 3 : 0) +
-      (c.source === "gsc" ? 2 : 0) +
+      (c.source === "gsc" ? 5 : 0) +
       (/\b(rent|apartment|deposit|bank|account|pay|payment|insurance|permit|renew|health|sim|salary|tax|refund)\b/i.test(c.text) ? 3 : 0) +
       (/\b(how much|cost|price|fee)\b/i.test(c.text) ? 1 : 0) -
       (/\b(parcel|courier|ship a|visa fee)\b/i.test(c.text) ? 1 : 0),
