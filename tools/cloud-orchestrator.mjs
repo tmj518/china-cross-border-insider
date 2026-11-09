@@ -490,7 +490,11 @@ if (!directive) {
    * run's file in place, which parsed as an object with neither field - truthy, so the run continued into the
    * figure gate and reported THIN-DIRECTIVE. A correct decline was presented as a broken pipeline.
    */
-  const usableDirective = (d) => Boolean(d && d.slug) && Array.isArray(d.figures) && d.figures.length > 0;
+  /* A directive with no figures is an explainer: valid when it says so, rejected when it is merely empty. */
+  const usableDirective = (d) => Boolean(d && d.slug) && (
+    (Array.isArray(d.figures) && d.figures.length > 0) ||
+    (d.explainer === true && (d.figures ?? []).length === 0)
+  );
   if (existsSync(directiveFile)) {
     try {
       const parsed = JSON.parse(readFileSync(directiveFile, "utf8"));
