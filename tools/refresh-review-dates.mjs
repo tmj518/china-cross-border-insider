@@ -32,7 +32,7 @@ for (const dir of ["src/content/blog", "src/content/guide"]) {
     if (m[1] >= today) continue;
     const next = plus(180);
     /* Rebuild the line rather than edit around it: a value that arrives already quoted produced ""2027-04-29"". */
-    if (!DRY) writeFileSync(p, src.replace(/^reviewBy:.*$/m, "reviewBy: " + next), "utf8");
+    if (!DRY) writeFileSync(p, src.replace(/^reviewBy:.*$/m, "reviewBy: " + next), "utf8");   /* unquoted: a quoted rewrite produced ""2027-05-01"" twice */
     console.log(`  ${f}  reviewBy ${m[1]} -> ${next}`);
     changed++;
   }
