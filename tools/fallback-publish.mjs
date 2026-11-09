@@ -19,7 +19,7 @@
  * already the next day in Beijing, and publishDate is written in UTC - so comparing dates is wrong by a
  * day exactly when it matters. git log is the same clock that scheduled the job.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
@@ -34,6 +34,22 @@ try {
 } catch {}
 const published = /^PUBLISHED/.test(verdict);
 
+/*
+ * DURING THE REPAIR WINDOW, ONLY THE GUIDE LINE PUBLISHES.
+ *
+ * On 2026-11-09 the fallback and the guide line both ran and published near-identical residence guides, because
+ * the fallback's journal check could not see a run whose data/runs entry had not been committed yet. While
+ * data/a-line-paused exists, the fallback stands down: the guide line at 15:20 is the publisher, and one route
+ * that works is worth more than two that race.
+ */
+try {
+  if (existsSync(join(ROOT, "data", "a-line-paused"))) {
+    console.log("FALLBACK PUBLISH\n" + "=".repeat(78));
+    console.log("  A line is paused: the guide line publishes today. The fallback stands down.");
+    process.exit(0);
+  }
+} catch {}
+
 /* Did anything reach the content collections in the last twelve hours? */
 let recentlyPublished = false;
 let lastTs = 0;
@@ -47,7 +63,7 @@ let lastTs = 0;
  */
 try {
   const dir = join(ROOT, "data", "runs");
-  for (const f of readdirSync(dir).filter((x) => x.endsWith(".json"))) {
+  for (const f of readdirSync(dir).filter((x) => x.endsWith(".json"))) {   /* dated and latest-* both count */
     try {
       const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
       if (!/^PUBLISHED/.test(String(j.verdict ?? ""))) continue;
