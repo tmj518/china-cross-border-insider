@@ -149,6 +149,9 @@ function gscQueries() {
       .filter((k) => String(k.query ?? "").length > 3)
   /* Noise: a foreign-language fragment, a single generic word, or a phrase with no subject. */
   .filter((k) => !/^(en octubre|china|commercial return|documenten transport china)$/i.test(String(k.query ?? "").trim()))
+  /* The site publishes in English. A query with diacritics is a search from another language, not a subject. */
+  .filter((k) => !/[^\x00-\x7F]/.test(String(k.query ?? "")))
+  .filter((k) => !/^visa z\b/i.test(String(k.query ?? "").trim()))
       .filter((k) => {
         const w = [...coverWords(k.query)].filter((x) => x.length > 3);
         return w.length ? !covered.some((set) => w.filter((x) => set.has(x)).length >= 2) : false;
