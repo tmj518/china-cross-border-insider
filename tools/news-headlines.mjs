@@ -31,6 +31,15 @@ const WIRES = [
 
 const SKIP = /^(home|china|world|business|opinion|video|photo|more|news|subscribe|about|contact|login|search|menu|sports|culture|life|tech|travel|weather|jobs|privacy|terms)$/i;
 
+/*
+ * A FATAL FIRE IS NOT A HOW-TO.
+ *
+ * On 2026-11-09 this feed carried "fourteen confirmed dead in Taiyuan apartment fire" and the guide line
+ * published it as an article. Real news, wrong site: it monetises a disaster and there is no procedure in it.
+ * Crime, accidents, deaths, disasters, protests and court cases are dropped here, before anything is scored.
+ */
+const GRIM = /\b(dead|death|deaths|killed|kills|dies|died|dying|fire|blaze|crash|collision|accident|earthquake|flood|typhoon|landslide|explosion|attack|shooting|murder|arrest|arrested|jailed|sentenced|probe|corruption|protest|riot|victim|casualt\w*|injur\w*|missing|funeral|obituar\w*|toll)\b/i;
+
 async function headlines(url) {
   try {
     const res = await fetch(url, {
@@ -47,6 +56,7 @@ async function headlines(url) {
       if (text.length < 18 || text.length > 140) continue;
       if (SKIP.test(text)) continue;
       if (!/[a-z]/i.test(text)) continue;
+      if (GRIM.test(text)) continue;   /* a disaster is not a how-to */
       if (!/\/\d{4}|\/c_\d|\.html?|\.shtml/i.test(href)) continue;
       if (seen.has(text)) continue;
       seen.add(text);
