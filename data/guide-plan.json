@@ -1,47 +1,8 @@
 {
-  "at": "2026-11-09T04:23:58.060Z",
+  "at": "2026-11-09T07:20:28.514Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "fourteen-confirmed-dead-in-taiyuan-apartment-fire",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Fourteen confirmed dead in Taiyuan apartment fire",
-      "query": "Fourteen confirmed dead in Taiyuan apartment fire",
-      "status": "queued",
-      "evidence": "demand matrix: \"Fourteen confirmed dead in Taiyuan apartment fire\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Fourteen",
-        "confirmed",
-        "dead",
-        "Taiyuan",
-        "apartment"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "fire-at-apartment-building-in-north-china-s-shanxi-leaves-14-dead",
       "topic": "residence",
@@ -64,45 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market",
-      "query": "APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market",
-      "status": "queued",
-      "evidence": "demand matrix: \"APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "APEC-year",
-        "momentum",
-        "fuels",
-        "robust",
-        "CIIE"
       ],
       "facts": [],
       "mustSay": [],
@@ -220,6 +142,81 @@
         "brands",
         "European",
         "market,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-cpi-up-0-7-pct-in-october",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's CPI up 0.7 pct in October",
+      "query": "China's CPI up 0.7 pct in October",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's CPI up 0.7 pct in October\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "October"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China extends suspension of 24 pct additional tariff on U.S. goods for two months",
+      "query": "China extends suspension of 24 pct additional tariff on U.S. goods for two months",
+      "status": "queued",
+      "evidence": "demand matrix: \"China extends suspension of 24 pct additional tariff on U.S. goods for two months\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "extends",
+        "suspension",
+        "additional",
+        "tariff"
       ],
       "facts": [],
       "mustSay": [],

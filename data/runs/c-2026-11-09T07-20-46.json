@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-09T07:20:46.943Z",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+  "seconds": 18,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0014
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "no candidate - NO-INBOUND"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
