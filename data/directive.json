@@ -1,186 +1,186 @@
 {
   "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
-  "_generated": "2026-11-09T03:30:12.388Z",
+  "_generated": "2026-11-09T03:48:07.271Z",
   "_research": {
     "fetched": [
       {
         "url": "https://english.news.cn/20261108/de1f73f0fdc64ed3b90372d78c059324/c.html",
-        "file": "data/sources/2026-11-09/research-xinhua-en-article-ihz9e.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-xdldk.html",
         "bytes": 10468
       },
       {
         "url": "https://english.news.cn/20261108/e4fe6b9e67ad4a499a7e0f5a2c1ed2c9/c.html",
-        "file": "data/sources/2026-11-09/research-xinhua-en-article-pjejp.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-6n75c.html",
         "bytes": 20029
       },
       {
         "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af1228ee4b03ebf8519b37c.html",
-        "file": "data/sources/2026-11-09/research-china-daily-article-pf2si.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-60dc1.html",
         "bytes": 53209
       },
       {
         "url": "https://www.chinadaily.com.cn/a/202611/08/WS6af09b7ce4b03ebf8519b25c.html",
-        "file": "data/sources/2026-11-09/research-china-daily-article-kcnqg.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-05emb.html",
         "bytes": 58385
       },
       {
         "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af0fc7ce4b03ebf8519b27b.html",
-        "file": "data/sources/2026-11-09/research-china-daily-china-article-trreq.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-58d42.html",
         "bytes": 59906
       },
       {
         "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af11a34e4b03ebf8519b2e7.html",
-        "file": "data/sources/2026-11-09/research-china-daily-china-article-qs31q.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-ojwup.html",
         "bytes": 56060
       },
       {
         "url": "https://www.globaltimes.cn/page/202611/1373918.shtml",
-        "file": "data/sources/2026-11-09/research-globaltimes-china-article-zbtbe.html",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-tg4pz.html",
         "bytes": 14057
       },
       {
         "url": "https://www.globaltimes.cn/page/202611/1373903.shtml",
-        "file": "data/sources/2026-11-09/research-globaltimes-china-article-l27dz.html",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-fkk0f.html",
         "bytes": 16258
       },
       {
         "url": "https://www.globaltimes.cn/page/202611/1373885.shtml",
-        "file": "data/sources/2026-11-09/research-globaltimes-china-article-ajk83.html",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-cfiv5.html",
         "bytes": 13797
       },
       {
         "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261109_1408686.html",
-        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-4ih0s.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-meape.html",
         "bytes": 7486
       },
       {
         "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261106_1408664.html",
-        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-6sh7q.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-jrx5u.html",
         "bytes": 5975
       },
       {
         "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261106_1408663.html",
-        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-iknq0.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-s8imv.html",
         "bytes": 5844
       },
       {
         "url": "https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202605/t20260501_1405047.html",
-        "file": "data/sources/2026-11-09/research-ndrc-article-exmh0.html",
+        "file": "data/sources/2026-11-09/research-ndrc-article-cvo3j.html",
         "bytes": 22159
       },
       {
         "url": "https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202603/t20260313_1404131.html",
-        "file": "data/sources/2026-11-09/research-ndrc-article-swuna.html",
+        "file": "data/sources/2026-11-09/research-ndrc-article-t1zb2.html",
         "bytes": 16268
       },
       {
         "url": "https://www.chinadaily.com.cn/opinion/67cfa725a310c240449da1b0",
-        "file": "data/sources/2026-11-09/research-china-daily-article-7c2nu.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-8q0tc.html",
         "bytes": 13353
       },
       {
         "url": "https://www.chinadaily.com.cn/opinion/67cfa725a310c240449da1b0",
-        "file": "data/sources/2026-11-09/research-china-daily-china-article-oxtqs.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-yirsr.html",
         "bytes": 13353
       },
       {
         "url": "https://english.news.cn/special/2026wms/index.html",
-        "file": "data/sources/2026-11-09/research-xinhua-en-article-1xn7b.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-zc1vd.html",
         "bytes": 12413
       },
       {
         "url": "https://www.mofcom.gov.cn/zfxxgk/zfwzgznb/art/2026/art_a32f1f3a3adb431993d9cf0924743845.html",
-        "file": "data/sources/2026-11-09/research-mofcom-briefing-article-7a7jf.html",
+        "file": "data/sources/2026-11-09/research-mofcom-briefing-article-k08p2.html",
         "bytes": 16562
       },
       {
         "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%8F%C2%91%C3%A7%C2%A5%C2%A8&left_right_index=0&searchSource=0",
-        "file": "data/sources/2026-11-09/research-sta-news-article-9bsxn.html",
+        "file": "data/sources/2026-11-09/research-sta-news-article-9wpjo.html",
         "bytes": 106658
       },
       {
         "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%B0%C2%8F%C3%A5%C2%BE%C2%AE%C3%A4%C2%BC%C2%81%C3%A4%C2%B8%C2%9A&left_right_index=0&searchSource=0",
-        "file": "data/sources/2026-11-09/research-sta-news-article-j09qh.html",
+        "file": "data/sources/2026-11-09/research-sta-news-article-rdtzi.html",
         "bytes": 106658
       },
       {
         "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A4%C2%B8%C2%AA%C3%A4%C2%BA%C2%BA%C3%A6%C2%89%C2%80%C3%A5%C2%BE%C2%97%C3%A7%C2%A8%C2%8E&left_right_index=0&searchSource=0",
-        "file": "data/sources/2026-11-09/research-sta-news-article-p96da.html",
+        "file": "data/sources/2026-11-09/research-sta-news-article-7u19w.html",
         "bytes": 106658
       },
       {
         "url": "https://www.gov.cn/home/2023-03/29/content_5748953.htm",
-        "file": "data/sources/2026-11-09/research-state-council-policy-article-glsyf.html",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-se774.html",
         "bytes": 34375
       },
       {
         "url": "https://www.gov.cn/home/2023-03/29/content_5748954.htm",
-        "file": "data/sources/2026-11-09/research-state-council-policy-article-hr7o9.html",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-5juzi.html",
         "bytes": 25268
       },
       {
         "url": "https://www.gov.cn/home/2023-03/29/content_5748955.htm",
-        "file": "data/sources/2026-11-09/research-state-council-policy-article-9pykg.html",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-cxa78.html",
         "bytes": 20312
       },
       {
         "url": "https://www.chinadaily.com.cn/business",
-        "file": "data/sources/2026-11-09/research-china-daily-rkaxw.html",
+        "file": "data/sources/2026-11-09/research-china-daily-6jeoe.html",
         "bytes": 70400
       },
       {
         "url": "https://www.chinadaily.com.cn/china",
-        "file": "data/sources/2026-11-09/research-china-daily-china-wi788.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-vsqlm.html",
         "bytes": 74475
       },
       {
         "url": "https://www.globaltimes.cn/china",
-        "file": "data/sources/2026-11-09/research-globaltimes-china-8ihcv.html",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-s53mv.html",
         "bytes": 98875
       },
       {
         "url": "https://english.news.cn/",
-        "file": "data/sources/2026-11-09/research-xinhua-en-8453m.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-fk61k.html",
         "bytes": 42635
       },
       {
         "url": "https://www.mofcom.gov.cn/xwfb/xwfyrth/",
-        "file": "data/sources/2026-11-09/research-mofcom-briefing-mko51.html",
+        "file": "data/sources/2026-11-09/research-mofcom-briefing-vspdw.html",
         "bytes": 8507
       },
       {
         "url": "https://www.ndrc.gov.cn/xwdt/xwfb/",
-        "file": "data/sources/2026-11-09/research-ndrc-briefing-zhuw7.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-wmvji.html",
         "bytes": 11017
       },
       {
         "url": "https://www.chinatax.gov.cn/chinatax/n810219/n810724/index.html",
-        "file": "data/sources/2026-11-09/research-sta-news-5fsly.html",
+        "file": "data/sources/2026-11-09/research-sta-news-eavlx.html",
         "bytes": 35687
       },
       {
         "url": "https://www.gov.cn/zhengce/zuixin/",
-        "file": "data/sources/2026-11-09/research-state-council-policy-aviy3.html",
+        "file": "data/sources/2026-11-09/research-state-council-policy-5pznd.html",
         "bytes": 21484
       },
       {
         "url": "https://www.ndrc.gov.cn/",
-        "file": "data/sources/2026-11-09/research-ndrc-clemy.html",
+        "file": "data/sources/2026-11-09/research-ndrc-cisoi.html",
         "bytes": 87753
       },
       {
         "url": "http://en.moe.gov.cn/",
-        "file": "data/sources/2026-11-09/research-moe-en-clrjk.html",
+        "file": "data/sources/2026-11-09/research-moe-en-drw90.html",
         "bytes": 21139
       },
       {
         "url": "http://www.ccpit.org",
-        "file": "data/sources/2026-11-09/research-trade-council-dggd9.html",
+        "file": "data/sources/2026-11-09/research-trade-council-2p56v.html",
         "bytes": 87634
       },
       {
         "url": "http://www.cccme.org.cn",
-        "file": "data/sources/2026-11-09/research-machinery-chamber-ht693.html",
+        "file": "data/sources/2026-11-09/research-machinery-chamber-ryr8o.html",
         "bytes": 98149
       }
     ],
@@ -192,6 +192,8 @@
   "slug": "economic-watch-apec-year-momentum-fuels-robust-ciie-presence-explainer-2026-11",
   "keyword": "Economic Watch: APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies ta",
   "figures": [],
+  "explainer": true,
+  "title": "Economic Watch: APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market-Xinhua",
   "sources": [
     "https://english.news.cn/20261108/e4fe6b9e67ad4a499a7e0f5a2c1ed2c9/c.html"
   ]

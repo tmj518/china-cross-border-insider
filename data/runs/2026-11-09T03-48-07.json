@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-09T03:29:03.248Z",
+  "at": "2026-11-09T03:47:00.959Z",
   "providers": [
     "volces",
     "deepseek"
@@ -27,15 +27,38 @@
     },
     {
       "name": "research",
+      "ok": true,
+      "detail": "proposed economic-watch-apec-year-momentum-fuels-robust-ciie-presence-explainer-2026-11, 0 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "0 sourced figure(s)"
+    },
+    {
+      "name": "writer",
       "ok": false,
-      "detail": "no verified subject today (exit 0)"
+      "detail": "exit 3: REFUSED - the directive carries 0 sourced figure(s), the gate requires 1."
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict DUPLICATE-SUBJECT"
     }
   ],
-  "verdict": "NO-SUBJECT",
-  "reasons": [],
+  "verdict": "DUPLICATE-SUBJECT",
+  "reasons": [
+    "the proposed subject duplicates a published article: REFUSED - the directive carries 0 sourced figure(s), the gate requires 1. A writer told to produce an article will produce one, and the numbers it cannot find it will invent in the right format. The i"
+  ],
   "article": null,
   "commit": null,
-  "usage": null,
+  "usage": {
+    "calls": 3,
+    "failed": 0,
+    "usd": 0.0071,
+    "promptTokens": 64221,
+    "completionTokens": 302
+  },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
@@ -65,12 +88,12 @@
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 56 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 235 characters but no document structure, trying the next one",
-    "  stream      : SSE, 122 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 418 characters but no document structure, trying the next one",
-    "  stream      : SSE, 55 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 232 characters but no document structure, trying the next one",
+    "  stream      : SSE, 107 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 390 characters but no document structure, trying the next one",
+    "  stream      : SSE, 120 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 445 characters but no document structure, trying the next one",
+    "  stream      : SSE, 75 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 345 characters but no document structure, trying the next one",
     "  spent   : ~0.0071  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: false",
@@ -86,5 +109,6 @@
     "  wrote /data/directive.json",
     "  spend this run: ~$0.0071",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ]
+  ],
+  "seconds": 66
 }

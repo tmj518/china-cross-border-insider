@@ -1,9 +1,9 @@
 {
-  "at": "2026-11-09T03:30:32.667Z",
+  "at": "2026-11-09T03:48:29.896Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "permanent-residence-permit",
-  "seconds": 20,
+  "article": "residence-permit-number",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -22,20 +22,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding permanent-residence-permit",
+      "name": "grounding residence-permit-number",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates permanent-residence-permit",
+      "name": "gates residence-permit-number",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build permanent-residence-permit",
+      "name": "build residence-permit-number",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -47,7 +47,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/permanent-residence-permit/"
+      "detail": "/guide/residence-permit-number/"
     }
   ],
   "researchLog": [

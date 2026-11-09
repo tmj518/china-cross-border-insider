@@ -175,3 +175,5 @@ For the paperwork and the cost in one place, see [240-Hour Visa-Free Transit in 
 For the paperwork and the cost in one place, see [Work permit visa in china](/guide/work-permit-visa/).
 
 For the paperwork and the cost in one place, see [China permanent residence permit](/guide/permanent-residence-permit/).
+
+For the paperwork and the cost in one place, see [China residence permit number](/guide/residence-permit-number/).

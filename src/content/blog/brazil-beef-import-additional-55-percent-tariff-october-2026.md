@@ -175,3 +175,5 @@ For the paperwork and the cost in one place, see [Work permit visa in china](/gu
 For the paperwork and the cost in one place, see [Getting Your China Entry and Exit Record](/guide/entry-exit-record/).
 
 For the paperwork and the cost in one place, see [China permanent residence permit](/guide/permanent-residence-permit/).
+
+For the paperwork and the cost in one place, see [China residence permit number](/guide/residence-permit-number/).
