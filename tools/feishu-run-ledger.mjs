@@ -169,6 +169,7 @@ function ledgerSelfCheck(j) {
   const parts = ["ledger ok"];
   parts.push("route " + (j.route ?? "?"));
   parts.push("verdict " + (j.verdict ?? "?"));
+  if (j.runId) parts.push("run " + j.runId);   /* a handle back to the run, so a verdict can be re-read later */
   if (Array.isArray(j.published)) parts.push("published " + j.published.length);
   if (j.turns !== undefined) parts.push("turns " + j.turns);
   { const q = qaLoopNote(j); if (q) parts.push(q); }
