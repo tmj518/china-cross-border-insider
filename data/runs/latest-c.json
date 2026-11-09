@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T03:48:29.896Z",
+  "at": "2026-11-09T04:24:19.111Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "residence-permit-number",
-  "seconds": 22,
+  "article": "fourteen-confirmed-dead-in-taiyuan-apartment-fire",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0003999999999999993
+    "usd": 0.0015
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding residence-permit-number",
+      "name": "grounding fourteen-confirmed-dead-in-taiyuan-apartment-fire",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates residence-permit-number",
+      "name": "gates fourteen-confirmed-dead-in-taiyuan-apartment-fire",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build residence-permit-number",
+      "name": "build fourteen-confirmed-dead-in-taiyuan-apartment-fire",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      "detail": "china-foreigner-buy-car-apartment-procedure-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/residence-permit-number/"
+      "detail": "/guide/fourteen-confirmed-dead-in-taiyuan-apartment-fire/"
     }
   ],
   "researchLog": [

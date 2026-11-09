@@ -1,228 +1,237 @@
 {
-  "at": "2026-11-09T02:08:56.271Z",
+  "at": "2026-11-09T04:23:58.060Z",
   "days": 90,
   "gsc": true,
   "plan": [
     {
-      "slug": "cny-bank-account",
+      "slug": "fourteen-confirmed-dead-in-taiyuan-apartment-fire",
       "topic": "residence",
-      "audience": [
-        "importers"
-      ],
-      "unit": "one application",
-      "title": "Cny bank account",
-      "query": "cny bank account",
-      "status": "queued",
-      "evidence": "demand matrix: \"cny bank account\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "bank",
-        "account"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.1,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 1.1,
-        "demandImpressions": 2,
-        "demandBreadth": 0,
-        "demandQuery": "cny bank account",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "open-chinese-bank-account",
-      "topic": "residence",
-      "audience": [
-        "importers"
-      ],
-      "unit": "one application",
-      "title": "Open chinese bank account",
-      "query": "open chinese bank account",
-      "status": "queued",
-      "evidence": "demand matrix: \"open chinese bank account\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "open",
-        "chinese",
-        "bank",
-        "account"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.1,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 1.1,
-        "demandImpressions": 2,
-        "demandBreadth": 0,
-        "demandQuery": "cny bank account",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "yuan-bank-account",
-      "topic": "residence",
-      "audience": [
-        "importers"
-      ],
-      "unit": "one application",
-      "title": "Yuan bank account",
-      "query": "yuan bank account",
-      "status": "queued",
-      "evidence": "demand matrix: \"yuan bank account\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "yuan",
-        "bank",
-        "account"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.1,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 1.1,
-        "demandImpressions": 2,
-        "demandBreadth": 0,
-        "demandQuery": "cny bank account",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "residence-permit-requirements",
-      "topic": "transit",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "Chinese residence permit requirements",
-      "query": "chinese residence permit requirements",
+      "title": "Fourteen confirmed dead in Taiyuan apartment fire",
+      "query": "Fourteen confirmed dead in Taiyuan apartment fire",
       "status": "queued",
-      "evidence": "demand matrix: \"chinese residence permit requirements\" (google)",
+      "evidence": "demand matrix: \"Fourteen confirmed dead in Taiyuan apartment fire\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "chinese",
-        "residence",
-        "permit",
-        "requirements"
+        "Fourteen",
+        "confirmed",
+        "dead",
+        "Taiyuan",
+        "apartment"
       ],
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.69,
+      "priorityScore": 1.8,
       "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
         "demandBreadth": 0,
-        "demandQuery": "chinese permanent residence",
-        "intent": 1,
+        "demandQuery": "",
+        "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
       }
     },
     {
-      "slug": "permanent-residence-permit",
-      "topic": "transit",
+      "slug": "fire-at-apartment-building-in-north-china-s-shanxi-leaves-14-dead",
+      "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "China permanent residence permit",
-      "query": "china permanent residence permit",
+      "title": "Fire at apartment building in North China's Shanxi leaves 14 dead",
+      "query": "Fire at apartment building in North China's Shanxi leaves 14 dead",
       "status": "queued",
-      "evidence": "demand matrix: \"china permanent residence permit\" (bing)",
+      "evidence": "demand matrix: \"Fire at apartment building in North China's Shanxi leaves 14 dead\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "china",
-        "permanent",
-        "residence",
-        "permit"
+        "Fire",
+        "apartment",
+        "building",
+        "North",
+        "China's"
       ],
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.69,
+      "priorityScore": 1.8,
       "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
         "demandBreadth": 0,
-        "demandQuery": "chinese permanent residence",
-        "intent": 1,
+        "demandQuery": "",
+        "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
       }
     },
     {
-      "slug": "residence-permit-number",
-      "topic": "transit",
+      "slug": "apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie",
+      "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "China residence permit number",
-      "query": "china residence permit number",
+      "title": "APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market",
+      "query": "APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market",
       "status": "queued",
-      "evidence": "demand matrix: \"china residence permit number\" (bing)",
+      "evidence": "demand matrix: \"APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "china",
-        "residence",
-        "permit",
-        "number"
+        "APEC-year",
+        "momentum",
+        "fuels",
+        "robust",
+        "CIIE"
       ],
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.69,
+      "priorityScore": 1.8,
       "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
         "demandBreadth": 0,
-        "demandQuery": "chinese residence permit",
-        "intent": 1,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Global South delegates seek stronger voice at World Media Summit in Beijing",
+      "query": "Global South delegates seek stronger voice at World Media Summit in Beijing",
+      "status": "queued",
+      "evidence": "demand matrix: \"Global South delegates seek stronger voice at World Media Summit in Beijing\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Global",
+        "South",
+        "delegates",
+        "seek",
+        "stronger"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Economic Watch: Beyond market size, European firms tap China's growth, innovation potential",
+      "query": "Economic Watch: Beyond market size, European firms tap China's growth, innovation potential",
+      "status": "queued",
+      "evidence": "demand matrix: \"Economic Watch: Beyond market size, European firms tap China's growth, innovation potential\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Economic",
+        "Watch:",
+        "Beyond",
+        "market",
+        "size,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "chinese-motorcycle-brands-rev-up-european-market-forging-deeper-indust",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Chinese motorcycle brands rev up European market, forging deeper industrial ties",
+      "query": "Chinese motorcycle brands rev up European market, forging deeper industrial ties",
+      "status": "queued",
+      "evidence": "demand matrix: \"Chinese motorcycle brands rev up European market, forging deeper industrial ties\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Chinese",
+        "motorcycle",
+        "brands",
+        "European",
+        "market,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
@@ -253,11 +262,84 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.69,
+      "priorityScore": 1.1,
       "priorityWhy": {
         "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "chinese residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "chinese-residence-permit",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Chinese residence permit",
+      "query": "chinese residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"chinese residence permit\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "chinese",
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "chinese residence permit",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "residence-permit",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Residence permit",
+      "query": "residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"residence permit\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
         "demandQuery": "chinese residence permit",
         "intent": 1,
@@ -302,79 +384,6 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
-    },
-    {
-      "slug": "chinese-residence-permit",
-      "topic": "residence",
-      "audience": [
-        "importers"
-      ],
-      "unit": "one application",
-      "title": "Chinese residence permit",
-      "query": "chinese residence permit",
-      "status": "queued",
-      "evidence": "demand matrix: \"chinese residence permit\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "chinese",
-        "residence",
-        "permit"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 0.69,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
-        "demandBreadth": 0,
-        "demandQuery": "chinese permanent residence",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "residence-permit",
-      "topic": "residence",
-      "audience": [
-        "importers"
-      ],
-      "unit": "one application",
-      "title": "Residence permit",
-      "query": "residence permit",
-      "status": "queued",
-      "evidence": "demand matrix: \"residence permit\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "residence",
-        "permit"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 0.69,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
-        "demandBreadth": 0,
-        "demandQuery": "chinese permanent residence",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
     }
   ],
   "pages": [
@@ -389,9 +398,17 @@
     [
       "alipay-wechat-pay-foreigner-china",
       {
-        "impressions": 5,
+        "impressions": 6,
         "clicks": 0,
-        "position": 78.5
+        "position": 76
+      }
+    ],
+    [
+      "china-green-card-permanent-residence",
+      {
+        "impressions": 4,
+        "clicks": 0,
+        "position": 79
       }
     ],
     [
@@ -403,19 +420,11 @@
       }
     ],
     [
-      "china-green-card-permanent-residence",
-      {
-        "impressions": 2,
-        "clicks": 0,
-        "position": 79
-      }
-    ],
-    [
       "china-bank-account-foreigner",
       {
-        "impressions": 4,
+        "impressions": 5,
         "clicks": 0,
-        "position": 80.5
+        "position": 85.66666666666667
       }
     ],
     [

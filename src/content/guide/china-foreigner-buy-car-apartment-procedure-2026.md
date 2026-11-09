@@ -85,3 +85,5 @@ Neither file is refused for lack of money. Both are refused for a document that 
 - **How to check:** The city housing authority's own service guide for the property file, and the local traffic management office (车管所) service guide for the vehicle file. For the national framework, the customs portal, the market regulator's disclosure index and the commerce ministry portal named in the sources above are the places to start when they answer.
 
 If you are moving goods rather than buying a home, the document logic is the same one set out in [the documents that decide whether the container moves](/blog/importing-from-china-documents-checklist/): the file is refused for a mismatch, not for a missing payment.
+
+For the paperwork and the cost in one place, see [Fourteen confirmed dead in Taiyuan apartment fire](/guide/fourteen-confirmed-dead-in-taiyuan-apartment-fire/).
