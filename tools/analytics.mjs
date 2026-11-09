@@ -125,7 +125,38 @@ async function fetchSnapshot(days = 30) {
     console.log("                  -> Read analytics for an account");
     console.log("");
     console.log("  Until then nothing is recorded, and the writer is told nothing about readership.");
-    return null;
+    /*
+     * THE FREE PLAN DOES NOT EXPOSE RUM, BUT GA4 WORKS.
+     *
+     * On 2026-11-09 the probe answered: token ok - sees 1 account; RUM dataset FAILED - "not authorized
+     * for that account". Meanwhile data/analytics/ga4-2026-11-09.json held 375 screen page views and 161
+     * users. The site has readers; the readership module was asking the one source this account cannot
+     * read. It now falls back to the GA4 snapshot the same run already fetched.
+     */
+    function writeGa4Fallback(days) {
+      try {
+        const dir = join(ROOT, "data", "analytics");
+        const files = readdirSync(dir).filter((f) => /^ga4-.*\.json$/.test(f)).sort();
+        if (!files.length) return null;
+        const g = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
+        const snap = {
+          at: new Date().toISOString(),
+          source: "ga4",
+          windowDays: Number(g.days ?? days),
+          totalPageviews: Number(g?.totals?.screenPageViews ?? 0),
+          users: Number(g?.totals?.activeUsers ?? 0),
+          pages: [],
+          channels: g.channels ?? [],
+        };
+        const out = join(dir, new Date().toISOString().slice(0, 10) + ".json");
+        writeFileSync(out, JSON.stringify(snap, null, 2), "utf8");
+        console.log("ANALYTICS - RUM unavailable; READERSHIP taken from GA4");
+        console.log("  pageviews " + snap.totalPageviews + " over " + snap.windowDays + " day(s), users " + snap.users);
+        return snap;
+      } catch { return null; }
+    }
+  { const g = writeGa4Fallback(days); if (g) return g; }
+  return null;
   }
 
   /*
@@ -164,7 +195,8 @@ async function fetchSnapshot(days = 30) {
       console.log("  A 401 or 403 here means the token lacks Account Analytics: Read, or is scoped to the");
       console.log("  wrong account. A 400 naming rumPageloadEventsAdaptiveGroups usually means the free");
       console.log("  plan does not expose that dataset for this account.");
-      return null;
+  { const g = writeGa4Fallback(days); if (g) return g; }
+  return null;
     }
   } catch (e) {
     console.log(`  FAILED - ${e.cause?.code ?? e.name}: ${e.message}`);
