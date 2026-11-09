@@ -90,6 +90,29 @@ if (!matrixFile) {
 }
 const matrix = JSON.parse(readFileSync(join(dir, matrixFile), "utf8"));
 
+/*
+ * TODAY'S HEADLINES, AS SUBJECTS.
+ *
+ * The matrix is what people type; Search Console is what Google already showed us; the wires are what
+ * happened today. tools/news-headlines.mjs writes them, and a headline about China that a foreign reader
+ * would open is exactly the kind of article the operator asked for on 2026-11-09 - no numeric claim, so no
+ * figure has to be invented, and the guide format carries it without a cost table.
+ */
+function newsHeadlines() {
+  try {
+    const dir = join(ROOT, "data", "news");
+    if (!existsSync(dir)) return [];
+    const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+    if (!files.length) return [];
+    const latest = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
+    const CHINA = /(china|chinese|beijing|shanghai|shenzhen|guangzhou|yuan|rmb|ccp|xi jinping|hong kong|taiwan|canton fair|ciie|apec)/i;
+    const NOT_MINE = /(israel|israeli|ukraine|russia|gaza|hamas|trump|biden|election of delegates)/i;
+    return (latest.items ?? [])
+      .map((i) => String(i.title ?? "").replace(/&amp;/g, "&").trim())
+      .filter((t) => t.length > 20 && CHINA.test(t) && !NOT_MINE.test(t));
+  } catch { return []; }
+}
+
 function gscQueries() {
   try {
     const dir = join(ROOT, "data", "blue-ocean");
@@ -130,6 +153,13 @@ function clusterKey(text) {
 }
 const candidates = [];
 /* Search Console rows go in first: a query with impressions is demand Google has already confirmed. */
+/* Headlines first: they are dated today, which nothing else in this queue is. */
+for (const t of newsHeadlines()) {
+  const nslug = String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
+  if (!nslug || seenSlug.has(nslug)) continue;
+  seenSlug.add(nslug);
+  candidates.push({ text: t, slug: nslug, audience: "importers", moment: "policy", source: "news" });
+}
 for (const q of gscQueries()) {
   const gslug = String(q).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
   if (!gslug || seenSlug.has(gslug)) continue;
@@ -167,6 +197,8 @@ const scored = candidates
     ...c,
     /* A figure the sources actually publish beats a figure that only an embassy knows. */
     score:
+      (c.source === "news" ? 3 : 0) +
+      (c.source === "gsc" ? 2 : 0) +
       (/\b(rent|apartment|deposit|bank|account|pay|payment|insurance|permit|renew|health|sim|salary|tax|refund)\b/i.test(c.text) ? 3 : 0) +
       (/\b(how much|cost|price|fee)\b/i.test(c.text) ? 1 : 0) -
       (/\b(parcel|courier|ship a|visa fee)\b/i.test(c.text) ? 1 : 0),
