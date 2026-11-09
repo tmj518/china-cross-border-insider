@@ -140,7 +140,7 @@ const SUBMIT_NOTE = "SUBMIT AT TURN FOURTEEN: if check_draft is still reporting 
  * and spent sixty-nine cents arriving nowhere. A budget that a run cannot finish inside is not a budget. Fifteen turns,
  * and the last two are for submitting rather than editing.
  */
-const MAX_TURNS = Number(flag("max-turns", 16));
+const MAX_TURNS = Number(flag("max-turns", 18));   /* 16 left 9 turns after preparation, one short of publish+finish twenty times */
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
@@ -158,7 +158,7 @@ const MAX_TURNS = Number(flag("max-turns", 16));
  * Four is enough for the directive, a research call, a look at the draft and one correction. Everything past that
  * is refused, and the refusal says to write.
  */
-const PREP_TURNS = 7;   /* 4 was not enough: the run stopped at the index pages */
+const PREP_TURNS = 5;   /* 7 reading turns plus a write and a finish did not fit in 16 */
 
 /*
  * THE SOURCES THAT MUST BE TRIED, BY MOMENT, AND A TIMEOUT IS NOT AN ANSWER.
@@ -1676,6 +1676,11 @@ THE RULES THAT ARE NOT NEGOTIABLE, because they are why this site is worth readi
 HOW YOUR TURNS WORK
 
 You have ${MAX_TURNS} turns and the first ${PREP_TURNS} are for reading. From turn ${PREP_TURNS + 1} only
+HARD RULE: the moment publish_draft returns success, your very next turn must call the finish action.
+Do not read another page, do not refine the draft, do not verify anything else. A published article with
+no finish is recorded as PUBLISHED-WITHOUT-FINISH, which tells the operator nothing about whether the
+run worked - twenty runs on this line ended exactly that way.
+
 write_file, check_draft, publish_draft and finish are accepted - every other tool returns
 "PREPARATION IS OVER". This is enforced, not advised.
 
