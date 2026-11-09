@@ -310,7 +310,7 @@ function fillMechanical(article, directive) {
     filled.push("reviewBy");
   }
   /* An explainer overrides whatever the writer declared: it names no document, so primary-source is false. */
-    if (!has("information_gain") || directive?.explainer) {
+    if (true) {   /* always recomputed from the body: the writer claims primary-source by instinct */
     const bodyText = article.split(/^---$/m).slice(2).join("---");
     /* An explainer names no document, so it cannot claim primary-source. "cross-source" is what it is. */
     setLine("information_gain", directive?.explainer ? '"cross-source"' : (DOC_ID.test(bodyText) ? '"primary-source"' : '"custom-calculation"'));
