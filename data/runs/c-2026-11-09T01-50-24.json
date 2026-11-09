@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-09T01:50:24.770Z",
+  "route": "c",
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 54,
+  "usage": {
+    "calls": 6,
+    "failed": 0,
+    "usd": 0.0012
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [
+    "cny-bank-account: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/cny-bank-account.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at getEntryDat",
+    "open-chinese-bank-account: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/open-chinese-bank-account.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at ge",
+    "yuan-bank-account: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/yuan-bank-account.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at getEntryDa"
+  ],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "10 candidate(s)"
+    },
+    {
+      "name": "grounding cny-bank-account",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates cny-bank-account",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "skipped cny-bank-account",
+      "ok": false,
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
+    },
+    {
+      "name": "grounding open-chinese-bank-account",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates open-chinese-bank-account",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "skipped open-chinese-bank-account",
+      "ok": false,
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
+    },
+    {
+      "name": "grounding yuan-bank-account",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates yuan-bank-account",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "skipped yuan-bank-account",
+      "ok": false,
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

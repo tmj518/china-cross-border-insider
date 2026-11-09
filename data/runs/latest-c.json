@@ -1,18 +1,22 @@
 {
-  "at": "2026-11-09T01:35:46.565Z",
+  "at": "2026-11-09T01:50:24.770Z",
   "route": "c",
-  "verdict": "PUBLISHED",
-  "article": "foreigner-buy-property-china",
-  "seconds": 19,
+  "verdict": "NO-SUBJECT",
+  "article": null,
+  "seconds": 54,
   "usage": {
-    "calls": 2,
+    "calls": 6,
     "failed": 0,
-    "usd": 0.0005000000000000004
+    "usd": 0.0012
   },
   "providers": [
     "volces"
   ],
-  "reasons": [],
+  "reasons": [
+    "cny-bank-account: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/cny-bank-account.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at getEntryDat",
+    "open-chinese-bank-account: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/open-chinese-bank-account.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at ge",
+    "yuan-bank-account: astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross-border-insider/src/content/guide/yuan-bank-account.md:0:0\u001b[24m |   \u001b[1mStack trace:\u001b[22m | \u001b[2m    at getEntryDa"
+  ],
   "steps": [
     {
       "name": "credentials",
@@ -22,32 +26,52 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "10 candidate(s)"
     },
     {
-      "name": "grounding foreigner-buy-property-china",
+      "name": "grounding cny-bank-account",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates foreigner-buy-property-china",
+      "name": "gates cny-bank-account",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build foreigner-buy-property-china",
-      "ok": true,
-      "detail": "site builds with the guide in place"
+      "name": "skipped cny-bank-account",
+      "ok": false,
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
     },
     {
-      "name": "inbound links",
+      "name": "grounding open-chinese-bank-account",
       "ok": true,
-      "detail": "china-home-purchase-loan-interest-subsidy-2026, china-emergency-procurement-rules-imported-goods-2026"
+      "detail": "procedural, no figures"
     },
     {
-      "name": "published",
+      "name": "gates open-chinese-bank-account",
       "ok": true,
-      "detail": "/guide/foreigner-buy-property-china/"
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "skipped open-chinese-bank-account",
+      "ok": false,
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
+    },
+    {
+      "name": "grounding yuan-bank-account",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates yuan-bank-account",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "skipped yuan-bank-account",
+      "ok": false,
+      "detail": "astro build failed with the guide in place, removed:   \u001b[1mLocation:\u001b[22m |     \u001b[4m/home/runner/work/china-cross-border-insider/china-cross"
     }
   ],
   "researchLog": [

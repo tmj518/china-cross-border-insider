@@ -1,104 +1,27 @@
 {
-  "at": "2026-11-08T07:20:24.316Z",
+  "at": "2026-11-09T01:49:30.716Z",
   "days": 90,
   "gsc": true,
   "plan": [
     {
-      "slug": "residence-permit-foreigners",
-      "topic": "transit",
+      "slug": "cny-bank-account",
+      "topic": "residence",
       "audience": [
-        "relocating"
+        "importers"
       ],
       "unit": "one application",
-      "title": "China residence permit for foreigners",
-      "query": "china residence permit for foreigners",
+      "title": "Cny bank account",
+      "query": "cny bank account",
       "status": "queued",
-      "evidence": "demand matrix: \"china residence permit for foreigners\" (bing)",
+      "evidence": "demand matrix: \"cny bank account\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "china",
-        "residence",
-        "permit",
-        "foreigners"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-240-hour-visa-free-transit",
-      "topic": "transit",
-      "audience": [
-        "visitor"
-      ],
-      "unit": "one transit",
-      "title": "240-Hour Visa-Free Transit in China: Who Qualifies Now",
-      "query": "144 hour visa free transit china",
-      "status": "queued",
-      "evidence": "Search Console: the 144-hour page ranks 6.5; the policy has since been extended, so the query is stale-traffic we can capture",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/"
-      ],
-      "fetchKeywords": [
-        "过境",
-        "免签",
-        "240",
-        "transit"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.79,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 1.79,
-        "demandImpressions": 5,
-        "demandBreadth": 0,
-        "demandQuery": "144-hour visa-free transit",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "work-permit-visa",
-      "topic": "transit",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Work permit visa in china",
-      "query": "work permit visa in china",
-      "status": "queued",
-      "evidence": "demand matrix: \"work permit visa in china\" (bing)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "work",
-        "permit",
-        "visa",
-        "china"
+        "bank",
+        "account"
       ],
       "facts": [],
       "mustSay": [],
@@ -109,7 +32,7 @@
         "base": 1.1,
         "demandImpressions": 2,
         "demandBreadth": 0,
-        "demandQuery": "china 144 hour visa free transit -site:youtube.com -site:reddit.com -site:x.com -site:twitter.com -site:facebook.com -site:instagram.com -site:tiktok.com -site:linkedin.com -site:pinterest.com -site:nytimes.com -site:wsj.com -site:yelp.com -site:rottentomatoes.com",
+        "demandQuery": "cny bank account",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
@@ -117,85 +40,75 @@
       }
     },
     {
-      "slug": "entry-exit-record",
-      "topic": "transit",
-      "audience": [
-        "employee",
-        "relocating"
-      ],
-      "unit": "one request",
-      "title": "Getting Your China Entry and Exit Record",
-      "query": "china entry exit record查询",
-      "status": "queued",
-      "sources": [
-        "https://www.nia.gov.cn/",
-        "https://en.nia.gov.cn/",
-        "https://www.nia.gov.cn/n741445/n741624/index.html"
-      ],
-      "fetchKeywords": [
-        "出入境记录",
-        "记录查询",
-        "entry and exit"
-      ],
-      "facts": [],
-      "mustSay": [
-        "The record is issued by the exit-entry authority and covers the dates you entered and left.",
-        "It is requested in person or through the official platform, and the applicant proves identity.",
-        "It is the document a bank, a school or a residence-permit desk asks for when it wants a stay history.",
-        "The record states facts; it does not state purpose of travel."
-      ],
-      "avoid": [
-        "Do not state a fee or a processing time unless the fact sheet contains it."
-      ],
-      "priorityScore": 1.08,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 1.8,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
-    },
-    {
-      "slug": "foreigner-buy-property-china",
+      "slug": "open-chinese-bank-account",
       "topic": "residence",
       "audience": [
-        "relocating",
-        "visitor"
+        "importers"
       ],
-      "unit": "one purchase",
-      "title": "Can a Foreigner Buy Property in China? Rules and Subsidies",
-      "query": "china housing property mortgage subsidy",
+      "unit": "one application",
+      "title": "Open chinese bank account",
+      "query": "open chinese bank account",
       "status": "queued",
-      "evidence": "Search Console: ranks first with 10+ impressions over 90 days and no page of ours answers it",
+      "evidence": "demand matrix: \"open chinese bank account\" (gsc)",
       "sources": [
-        "https://www.gov.cn/zhengce/zuixin/",
-        "https://english.www.gov.cn/"
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "购房",
-        "按揭",
-        "贴息",
-        "property",
-        "mortgage",
-        "subsidy"
+        "open",
+        "chinese",
+        "bank",
+        "account"
       ],
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.97,
+      "priorityScore": 1.1,
       "priorityWhy": {
         "basis": "measured",
-        "base": 1.61,
-        "demandImpressions": 4,
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
-        "demandQuery": "china housing property mortgage subsidy developers policy site:reuters.com",
-        "intent": 0.6,
+        "demandQuery": "cny bank account",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "yuan-bank-account",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Yuan bank account",
+      "query": "yuan bank account",
+      "status": "queued",
+      "evidence": "demand matrix: \"yuan bank account\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "yuan",
+        "bank",
+        "account"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "cny bank account",
+        "intent": 1,
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
@@ -384,6 +297,79 @@
         "demandImpressions": 1,
         "demandBreadth": 0,
         "demandQuery": "alipay international account",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "chinese-residence-permit",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Chinese residence permit",
+      "query": "chinese residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"chinese residence permit\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "chinese",
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "chinese permanent residence",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "residence-permit",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Residence permit",
+      "query": "residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"residence permit\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "chinese permanent residence",
         "intent": 1,
         "gap": 1,
         "pageImpressions": 0,

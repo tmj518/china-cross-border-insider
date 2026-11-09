@@ -1788,7 +1788,191 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "chinese-residence-permit",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Chinese residence permit",
+      "query": "chinese residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"chinese residence permit\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "chinese",
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "chinese permanent residence",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "cny-bank-account",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Cny bank account",
+      "query": "cny bank account",
+      "status": "queued",
+      "evidence": "demand matrix: \"cny bank account\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "bank",
+        "account"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "cny bank account",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "open-chinese-bank-account",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Open chinese bank account",
+      "query": "open chinese bank account",
+      "status": "queued",
+      "evidence": "demand matrix: \"open chinese bank account\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "open",
+        "chinese",
+        "bank",
+        "account"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "cny bank account",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "residence-permit",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Residence permit",
+      "query": "residence permit",
+      "status": "queued",
+      "evidence": "demand matrix: \"residence permit\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "residence",
+        "permit"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "chinese permanent residence",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "yuan-bank-account",
+      "topic": "residence",
+      "audience": [
+        "importers"
+      ],
+      "unit": "one application",
+      "title": "Yuan bank account",
+      "query": "yuan bank account",
+      "status": "queued",
+      "evidence": "demand matrix: \"yuan bank account\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "yuan",
+        "bank",
+        "account"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.1,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "cny bank account",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-08T07:20:23.853Z"
+  "updatedAt": "2026-11-09T01:49:30.361Z"
 }
