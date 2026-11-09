@@ -175,6 +175,7 @@ const GRIM_TOPIC = /\b(dead|death|deaths|killed|kills|dies|died|fire|blaze|crash
 candidates = candidates.filter((t) => {
   const text = `${t.title ?? ""} ${t.query ?? ""} ${t.slug ?? ""}`;
   if (GRIM_TOPIC.test(text)) { console.log("  refused topic (disaster/crime): " + t.slug); return false; }
+  if (/[^\x00-\x7F]/.test(text)) { console.log("  refused topic (not English): " + t.slug); return false; }
   return true;
 });
 if (WANT) candidates = candidates.filter((t) => t.slug === WANT);
