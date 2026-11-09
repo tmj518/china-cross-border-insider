@@ -863,6 +863,20 @@ function runTool(name, input) {
     }
 
     if (name === "write_file") {
+      /*
+       * THE SUBJECT IS REFUSED BEFORE A SINGLE WORD IS WRITTEN.
+       *
+       * The guard sat in publish_draft, which is after the article exists - a wasted call and a draft on
+       * disk that should never have been written. It runs here, on the first write to data/drafts.
+       */
+      if (/\.mdx?$/.test(String(input.path ?? ""))) {
+        const g = topicGuard({ title: input.path, slug: input.path });
+        const text = String(input.content ?? "");
+        const title = /^title:\s*"?(.+?)"?$/m.exec(text)?.[1] ?? "";
+        const g2 = topicGuard({ title, slug: input.path });
+        const bad = !g2.ok ? g2 : (!g.ok ? g : null);
+        if (bad) return done("REFUSED at the subject stage: [" + bad.rule + "] " + bad.reason + " Choose another subject and say so in finish.");
+      }
       const refusal = writeTargetRefused(input.path);
       if (refusal) return done(`REFUSED: ${refusal}`);
       if (DRY) return done("dry run: the write was not performed");
