@@ -162,6 +162,20 @@ const published = new Set(
 );
 
 let candidates = topics.filter((t) => !published.has(t.slug) && t.status !== "done");
+
+/*
+ * A DISASTER IS NOT A PROCEDURE.
+ *
+ * Twice on 2026-11-09 a guide was built from a fatal-fire headline: the filters at the headline feed and at
+ * the queue top-up were both added after the queue already carried it. The last gate is here, where a topic
+ * becomes an article, because a queue written yesterday cannot be trusted to be clean today.
+ */
+const GRIM_TOPIC = /\b(dead|death|deaths|killed|kills|dies|died|fire|blaze|crash|collision|accident|earthquake|flood|typhoon|landslide|explosion|attack|shooting|murder|arrest|jailed|sentenced|probe|corruption|protest|riot|victim|casualt|injur|missing|funeral|obituar|toll)\b/i;
+candidates = candidates.filter((t) => {
+  const text = `${t.title ?? ""} ${t.query ?? ""} ${t.slug ?? ""}`;
+  if (GRIM_TOPIC.test(text)) { console.log("  refused topic (disaster/crime): " + t.slug); return false; }
+  return true;
+});
 if (WANT) candidates = candidates.filter((t) => t.slug === WANT);
 /*
  * Data before order.
