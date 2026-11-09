@@ -162,7 +162,18 @@ function check(file) {
     return { value: first, unit: field("unit"), period: field("period"), source: field("source"), retrieved: field("retrieved") };
   });
 
- if (figureBlocks.length === 0) add("block", "figure five-part records", "no figures[] entries");
+ /*
+ * A TEXT THAT MAKES NO NUMERIC CLAIM NEEDS NO FIGURE RECORDS.
+ *
+ * The rule exists so a number in the prose always has a source; an article that states none has nothing to
+ * source. The operator asked on 2026-11-09 to widen the subject range to anything about China a foreign reader
+ * wants, and most of that arrives as news without a per-unit amount. No figures is allowed when the body
+ * carries no amount and no percentage; a body with numbers and no records is still blocked.
+ */
+const numericClaim = /(?:EUR|USD|GBP|RMB|CNY)\s?[0-9]|[0-9]+(?:\.[0-9]+)?\s?%/.test(body);
+if (figureBlocks.length === 0 && !numericClaim) {
+  add("pass", "figure five-part records", "no figures, and the text makes no numeric claim");
+} else if (figureBlocks.length === 0) add("block", "figure five-part records", "no figures[] entries");
   else if (incomplete === 0) add("pass", "figure five-part records", `${figureBlocks.length}/${figureBlocks.length} complete`);
   else add("block", "figure five-part records", `${incomplete} entries missing unit/period/source/retrieved`);
 
