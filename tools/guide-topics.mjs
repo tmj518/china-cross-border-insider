@@ -158,13 +158,13 @@ for (const t of newsHeadlines()) {
   const nslug = String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
   if (!nslug || seenSlug.has(nslug)) continue;
   seenSlug.add(nslug);
-  candidates.push({ text: t, slug: nslug, audience: "importers", moment: "policy", source: "news" });
+  candidates.push({ text: t, slug: nslug, audience: "relocating", moment: "live", source: "news" });
 }
 for (const q of gscQueries()) {
   const gslug = String(q).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
   if (!gslug || seenSlug.has(gslug)) continue;
   seenSlug.add(gslug);
-  candidates.push({ text: q, slug: gslug, audience: "importers", moment: "policy", source: "gsc" });
+  candidates.push({ text: q, slug: gslug, audience: "relocating", moment: "live", source: "gsc" });
 }
 for (const row of matrix.intents ?? []) {
   const audience = GUIDE_PERSONAS[row.persona];
