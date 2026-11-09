@@ -696,7 +696,7 @@ code fence and do not add commentary before or after it.`;
   let task = task0;
 
   console.log(`EXECUTOR  slug=${directive.slug}${revisionOf ? "  (revision)" : ""}`);
-  console.log(providerSummary());
+  try { console.log(providerSummary()); } catch (e) { console.log("  provider summary failed: " + e.message); }
   console.log(`  figures handed over : ${sourced.length}`);
   console.log(`  exemplars           : ${examples.length}`);
   if (revisionOf) console.log(`  revising            : ${revisionOf}`);
@@ -954,6 +954,8 @@ if (mechanical.filled.length) {
 }
 
 const IS_MAIN = process.argv[1] ? process.argv[1].replace(/\\/g, "/").endsWith("cloud-executor.mjs") : false;
+process.on("unhandledRejection", (e) => { console.error("UNHANDLED: " + (e?.stack ?? e)); process.exit(1); });
+process.on("uncaughtException", (e) => { console.error("UNCAUGHT: " + (e?.stack ?? e)); process.exit(1); });
 if (IS_MAIN) await main();
 
 
