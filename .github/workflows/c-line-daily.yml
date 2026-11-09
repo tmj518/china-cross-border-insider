@@ -94,6 +94,16 @@ jobs:
         run: node tools/ensure-matrix.mjs --max-age-days=7
 
       #
+      #
+      # TODAY'S HEADLINES BEFORE THE MATRIX. A headline is dated; a phrasing harvested last month is not,
+      # and the operator's question on 2026-11-09 was why a country that publishes hundreds of thousands of
+      # items a day produces no new subject. This is the page that changes daily.
+      #
+      - name: Collect today's headlines
+        if: always()
+        continue-on-error: true
+        run: node tools/news-headlines.mjs
+
       - name: Top up the queue from the demand matrix
         if: always()
         continue-on-error: true
