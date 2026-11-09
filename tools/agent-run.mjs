@@ -140,7 +140,7 @@ const SUBMIT_NOTE = "SUBMIT AT TURN FOURTEEN: if check_draft is still reporting 
  * and spent sixty-nine cents arriving nowhere. A budget that a run cannot finish inside is not a budget. Fifteen turns,
  * and the last two are for submitting rather than editing.
  */
-const MAX_TURNS = Number(flag("max-turns", 18));   /* 16 left 9 turns after preparation, one short of publish+finish twenty times */
+const MAX_TURNS = Number(flag("max-turns", 24));   /* 24, not 18: the operator ruled that publishing completely beats saving turns */
 
 /*
  * How many turns may be spent reading and inspecting before writing has to start.
