@@ -711,7 +711,7 @@ Choose a subject in ${PRIMARY_SECTION} if the documents below genuinely support 
 the operator's rule says is furthest behind, so it takes precedence over a subject in a covered section.
 Your "category" field must be "${PRIMARY_SECTION}" if you take it.
 
-If the documents do not support a ${PRIMARY_SECTION} subject - fewer than two cost figures (a rate, an
+If the documents do not support a ${PRIMARY_SECTION} subject - fewer than one cost figure (a rate, an
 amount, a percentage, a quantity - not a date and not a document number) that appear
 verbatim, or no cost consequence an importer can act on - then choose what they do support and say so in
 "angle". Forcing an article out of material that cannot carry it produces the commodity summary this site
@@ -719,7 +719,7 @@ exists not to publish, and one week's gap in a section costs less than that.
 
 Prefer a subject in one of them when the documents below genuinely support it. A subject in a covered
 section that the documents support well is better than a subject in a behind section that they support
-thinly: an article without two citable cost figures and a cost consequence is the commodity summary this
+thinly: an article without one citable cost figure and a cost consequence is the commodity summary this
 site exists not to publish, and publishing one costs more than a week's gap in a section. Say which
 section your subject belongs to in "category", and if the documents do not support the section that is
 behind, choose what they do support.
@@ -732,6 +732,17 @@ documents into per-unit cost consequences for importers.
 Below are source documents, fetched and archived today. Their paths are real; quote from them.
 
 WHAT MAKES A SUBJECT WORTH WRITING
+ORDER OF JUDGEMENT - apply these in order, and do not skip to the last one:
+  1. Would a foreign reader working with China click this? A policy, an industry, an exhibition, a port, a city
+     change, or a rule that affects foreigners. That is the test. If the answer is yes, it is a subject.
+  2. Does the material carry ONE usable figure - a rate, an amount, a percentage, a threshold, a deadline?
+     If yes: propose a cost article with that figure (one is enough; do not demand two and do not invent a second).
+     If no:  propose it anyway as an EXPLAINER - "figures": [], "explainer": true. The writer then states no
+            number at all. A reading of an announcement with no numbers is a legitimate article and the
+            operator's rule is that the site publishes every day.
+  3. Nothing invented, nothing repeated. No figure outside the documents, no document number that is not in
+     them, and no second article about an event already published.
+
   - a change with a date: something that took effect, expires, or was announced
   - NOT A COST CONSEQUENCE: national aggregates and ratios. A GDP share, a total national spend, an index
     level or a year-on-year percentage change in a national total is not a figure an importer can act on. Two runs on
@@ -745,7 +756,7 @@ WHAT MAKES A SUBJECT WORTH WRITING
     rate or amount, propose it with "figures": [] and "explainer": true. The article then states no number at
     all - the writer is forbidden from inventing one - and the site still publishes. The operator's rule of
     2026-11-09: anything about China a foreign reader wants, written without numbers when numbers are absent.
-  - otherwise, at least two cost figures (a rate, an amount, a percentage, a quantity - not a date, not a document
+  - otherwise, at least one cost figure (a rate, an amount, a percentage, a quantity - not a date, not a document
     number), each of which appears verbatim in one of these documents
   - a cost consequence an importer can act on: a duty, a fee, a deadline, a rate, a threshold
   - it is not already covered. The last forty published subjects are listed below.
