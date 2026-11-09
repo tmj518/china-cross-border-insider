@@ -626,8 +626,11 @@ if (directive.slug && existsSync(join(ROOT, "src", "content", "blog", `${directi
 }
 
 const figures = (directive.figures ?? []).filter((f) => f?.value && f?.source && f?.retrieved);
-if (figures.length < MIN_SUBSTANTIVE) {
-  step("directive figures", false, `${figures.length} sourced, the gate requires ${MIN_SUBSTANTIVE}`);
+/* An explainer carries no figures by design: the article states no number, so there is nothing to source. */
+const explainerMode = directive.explainer === true && (directive.figures ?? []).length === 0;
+const MIN_SUBSTANTIVE_EFFECTIVE = explainerMode ? 0 : MIN_SUBSTANTIVE;
+if (figures.length < MIN_SUBSTANTIVE_EFFECTIVE) {
+  step("directive figures", false, `${figures.length} sourced, the gate requires ${MIN_SUBSTANTIVE_EFFECTIVE}`);
   run.verdict = "THIN-DIRECTIVE";
   run.reasons.push(`the directive carries ${figures.length} sourced figure(s)`);
   mkdirSync(join(ROOT, "data", "tmp"), { recursive: true });
