@@ -956,6 +956,23 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
           if (after !== before) {
             writeFileSync(draftPath, after, "utf8");
             console.log("  explainer   : information_gain forced to cross-source");
+        /*
+         * AN EXPLAINER STATES NO NUMBER, SO A NUMBER THAT ARRIVED ANYWAY IS REMOVED, NOT SOURCED.
+         *
+         * The writer keeps adding a percentage even when told not to, and the gate is right to refuse it: a number
+         * without a figure record is exactly what this pipeline exists to prevent. Deleting the sentence is the only
+         * honest repair - inventing a source is not, and keeping the number is worse.
+         */
+        try {
+          const before = readFileSync(draftPath, "utf8");
+          const NUM = /(?:EUR|USD|GBP|RMB|CNY)\s?[0-9]|[0-9]+(?:\.[0-9]+)?\s?%/;
+          const kept = before.split("\n").filter((l) => !(NUM.test(l) && !l.trim().startsWith("|") && !/^\s*[-*]\s/.test(l)));
+          const dropped = before.split("\n").length - kept.length;
+          if (dropped > 0) {
+            writeFileSync(draftPath, kept.join("\n"), "utf8");
+            console.log("  explainer   : removed " + dropped + " line(s) that carried a number");
+          }
+        } catch {}
           }
         } catch (e) {
           console.log("  explainer   : could not set information_gain - " + String(e.message).slice(0, 60));
