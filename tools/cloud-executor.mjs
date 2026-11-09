@@ -309,9 +309,11 @@ function fillMechanical(article, directive) {
     setLine("reviewBy", plusDays(180));
     filled.push("reviewBy");
   }
-  if (!has("information_gain")) {
+  /* An explainer overrides whatever the writer declared: it names no document, so primary-source is false. */
+    if (!has("information_gain") || directive?.explainer) {
     const bodyText = article.split(/^---$/m).slice(2).join("---");
-    setLine("information_gain", DOC_ID.test(bodyText) ? '"primary-source"' : '"custom-calculation"');
+    /* An explainer names no document, so it cannot claim primary-source. "cross-source" is what it is. */
+    setLine("information_gain", directive?.explainer ? '"cross-source"' : (DOC_ID.test(bodyText) ? '"primary-source"' : '"custom-calculation"'));
     filled.push("information_gain");
   }
   const CATEGORY_ENUM = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
