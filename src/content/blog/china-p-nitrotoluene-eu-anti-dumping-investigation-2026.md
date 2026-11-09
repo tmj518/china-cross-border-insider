@@ -186,3 +186,5 @@ NOTE
 The announcement does not tell an importer what the duty will be. It tells the importer that a clock started on 3 October 2026 and that the clock is 20 days long. Everything an importer does after that — the questionnaire, the response, the argument about whether a price was dumped — depends on being on the record before the window closes. The cost of registering is an administrative act. The cost of not registering is a year of exposure with no voice in it, on a tariff line the importer already buys.
 
 For the paperwork and the cost in one place, see [Renting in China: Contract, Deposit and Registration](/guide/china-renting-apartment-deposit/).
+
+For the paperwork and the cost in one place, see [Open chinese bank account](/guide/open-chinese-bank-account/).

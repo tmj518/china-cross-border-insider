@@ -213,3 +213,5 @@ For an importer, the question is not what the duty is. It is which rate your sup
 For the paperwork and the cost in one place, see [Renewing a Chinese Driving Licence](/guide/china-driving-licence-renewal/).
 
 For the paperwork and the cost in one place, see [Getting a Chinese Phone Number as a Foreigner](/guide/china-sim-card-phone-number-foreigner/).
+
+For the paperwork and the cost in one place, see [Open chinese bank account](/guide/open-chinese-bank-account/).

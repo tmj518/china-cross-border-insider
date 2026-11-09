@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T02:09:18.778Z",
+  "at": "2026-11-09T02:47:25.293Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "cny-bank-account",
+  "article": "open-chinese-bank-account",
   "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0016
+    "usd": 0.0017000000000000001
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "10 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding cny-bank-account",
+      "name": "grounding open-chinese-bank-account",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates cny-bank-account",
+      "name": "gates open-chinese-bank-account",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build cny-bank-account",
+      "name": "build open-chinese-bank-account",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "no candidate - NO-INBOUND"
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, eaeu-anti-dumping-oil-well-pipe-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/cny-bank-account/"
+      "detail": "/guide/open-chinese-bank-account/"
     }
   ],
   "researchLog": [
