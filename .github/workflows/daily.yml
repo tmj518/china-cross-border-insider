@@ -488,6 +488,23 @@ jobs:
       - name: Publish a fallback if the day is empty
         if: always()
         continue-on-error: true
+        env:
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 || secrets.APIKEY20261016201628 }}
+          DUBAO201628: ${{ secrets.DUBAO201628 }}
+          DUBAOTUILI12345: ${{ secrets.DUBAOTUILI12345 }}
+          OWNER_KEY_1: ${{ secrets.APIKEY20261016201628 }}
+          OWNER_KEY_2: ${{ secrets.GITHUB66CHINA }}
+          ARK_MODEL: ${{ vars.ARK_MODEL }}
+          ARK_MODEL_WRITER: ${{ vars.ARK_MODEL_WRITER }}
+          ARK_MODELKIMI: ${{ vars.ARK_MODELKIMI }}
+          ARK_MODEL_PLANNER: ${{ vars.ARK_MODEL_PLANNER || vars.ARK_MODEL_WRITER }}
+          ARK_MODEL_REVIEWER: ${{ vars.ARK_MODEL_REVIEWER || vars.ARK_MODEL }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_REVIEW_API_KEY: ${{ secrets.DEEPSEEK_REVIEW_API_KEY }}
+          DEEPSEEK_WRITE_API_KEY: ${{ secrets.DEEPSEEK_WRITE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/fallback-publish.mjs
 
       - name: Commit and push anything that was approved
