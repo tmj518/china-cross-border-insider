@@ -422,10 +422,21 @@ function fillRequiredMeta(src) {
     fm = re.test(fm) ? fm.replace(re, key + ': "' + value + '"') : fm + '\n' + key + ': "' + value + '"';
   };
 
+  /*
+   * information_gain must match what the body actually does, not what the writer volunteered.
+   *
+   * This forced "primary-source" on any invalid value, and qa-check refuses that value unless the prose names a
+   * document identifier. The B line spent a whole run and $0.10 on 2026-11-09 arriving at
+   * "publish refused: 1 blocking rule - primary-source cited", and the A line died the same way three times.
+   * The value is now derived: a named document makes it primary-source, otherwise cross-source.
+   */
+  const DOC_ID = /\b\d{1,3}\s?FR\s?\d{3,6}\b|\bHTSUS\s?9903\b|\bAnnouncement\s+No\.?\s?\d+|\b(?:Periodical|Circular|Order|Decision)\s+No\.?\s?\(?\d+|\bRegulation\s+\(EU\)\s+\d{4}\/\d+|\bCELEX\b|\bOJ\s?L\s?\d/i;
   const gain = get("information_gain");
-  if (!GAIN_VALUES.includes(gain)) {
-    set("information_gain", "primary-source");
-    changed.push('information_gain "' + (gain || "(missing)") + '" -> primary-source');
+  const bodyText = body;   /* the prose after the frontmatter, already parsed a few lines above */
+  const derived = DOC_ID.test(bodyText) ? "primary-source" : "cross-source";
+  if (!GAIN_VALUES.includes(gain) || gain !== derived) {
+    set("information_gain", derived);
+    changed.push('information_gain "' + (gain || "(missing)") + '" -> ' + derived);
   }
 
   if (!/^reviewBy:\s*"?\d{4}-\d{2}-\d{2}/m.test(fm)) {
