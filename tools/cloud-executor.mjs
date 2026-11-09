@@ -623,7 +623,9 @@ async function main() {
 
   const figures = Array.isArray(directive.figures) ? directive.figures : [];
   const sourced = figures.filter((f) => f && f.value && f.source && f.retrieved);
-  if (sourced.length < MIN_FIGURES) {
+  /* An explainer states no number, so there is no figure to require; the refusal below is about inventing one. */
+const explainerMode = directive?.explainer === true && figures.length === 0;
+if (!explainerMode && sourced.length < MIN_FIGURES) {
     console.log(`REFUSED - the directive carries ${sourced.length} sourced figure(s), the gate requires ${MIN_FIGURES}.`);
     console.log("");
     console.log("  A writer told to produce an article will produce one, and the numbers it cannot find it");
