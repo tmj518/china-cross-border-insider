@@ -478,11 +478,20 @@ for (const page of fetched) {
     const file = /archived: (\S+)/.exec(out)?.[1] ?? null;
     const bytes = Number(/ok\s+\d+\s+(\d+) bytes/.exec(out)?.[1] ?? 0);
     console.log(`  ${ok ? "ok  " : "skip"}  ${label.padEnd(24)} ${String(bytes).padStart(8)}B  ${ok ? "article archived" : "not usable"}`);
-    if (ok && file) articles.push({ url: link, label, why: `an article linked from ${page.label}`, file: file.replace(/\\/g, "/"), bytes });
+    if (ok && file) {
+      /* The date in the URL is the only freshness signal most ministries give: /202611/t20261109_... */
+      const md = /\/(20\d{2})(\d{2})(\d{2})?[\/_.]/.exec(link) || /\/(20\d{2})-(\d{2})-(\d{2})\//.exec(link);
+      const day = md ? md[1] + "-" + md[2] + "-" + (md[3] || "01") : null;
+      articles.push({ url: link, label, why: "an article linked from " + page.label, file: file.replace(/\\/g, "/"), bytes, day });
+    }
   }
 }
 
 if (articles.length) {
+  /* Newest first: an article dated today is the only kind that can yield a new subject on this beat. */
+  articles.sort((a, b) => String(b.day ?? "").localeCompare(String(a.day ?? "")));
+  const datedToday = articles.filter((a) => a.day && a.day >= new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10));
+  console.log("  fresh     : " + datedToday.length + " article(s) dated today, newest " + (articles[0]?.day ?? "unknown"));
   /*
    * Articles first in the corpus. The model reads the first eight entries, and a listing in that position is what
    * produced "no figure to write from".
