@@ -330,7 +330,19 @@ const CANDIDATES = TOPIC_HOSTS.length
       return rank(a) - rank(b);
     })
 : ROTATED;
-const FETCH_LIST = [...SEEDED, ...CANDIDATES];
+/*
+ * THE NEWS WIRES GO FIRST, EVERY RUN.
+ *
+ * Ministry index pages are the right source for a measure's text and the wrong source for freshness:
+ * on 2026-11-09 the newest article the twelve rotated pages offered was dated the day before, and the
+ * proposals kept landing on events already published. The operator's point is the correct one - a country
+ * publishing hundreds of thousands of items a day cannot be short of subjects. What it is short of is
+ * pages that change daily, and a news wire is exactly that.
+ */
+const NEWS_FIRST = CANDIDATES.filter(([url]) => /xinhua|news\.cn|chinadaily|globaltimes/i.test(url));
+const REST = CANDIDATES.filter(([url]) => !/xinhua|news\.cn|chinadaily|globaltimes/i.test(url));
+const PRIORITISED = [...NEWS_FIRST, ...REST];
+const FETCH_LIST = [...SEEDED, ...PRIORITISED];
 
 if (!available().length) {
   console.log("RESEARCH\n" + "=".repeat(84));
