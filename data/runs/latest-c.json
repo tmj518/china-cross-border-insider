@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T01:15:20.101Z",
+  "at": "2026-11-09T01:24:42.715Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "work-permit-visa",
-  "seconds": 23,
+  "article": "entry-exit-record",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0003999999999999976
+    "usd": 0.0013999999999999846
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "7 candidate(s)"
     },
     {
-      "name": "grounding work-permit-visa",
+      "name": "grounding entry-exit-record",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates work-permit-visa",
+      "name": "gates entry-exit-record",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build work-permit-visa",
+      "name": "build entry-exit-record",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      "detail": "us-low-value-shipment-entry-rule-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/work-permit-visa/"
+      "detail": "/guide/entry-exit-record/"
     }
   ],
   "researchLog": [

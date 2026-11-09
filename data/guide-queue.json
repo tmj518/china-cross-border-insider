@@ -428,7 +428,7 @@
       "unit": "one request",
       "title": "Getting Your China Entry and Exit Record",
       "query": "china entry exit record查询",
-      "status": "queued",
+      "status": "done",
       "sources": [
         "https://www.nia.gov.cn/",
         "https://en.nia.gov.cn/",
@@ -461,7 +461,8 @@
         "pageImpressions": 0,
         "pagePosition": null
       },
-      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html"
+      "numbersPage": "https://www.nia.gov.cn/n741445/n741624/index.html",
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "china-tax-annual-reconciliation",
