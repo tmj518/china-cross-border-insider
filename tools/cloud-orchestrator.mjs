@@ -395,6 +395,22 @@ if (existsSync(directiveFile)) {
   try {
     directive = JSON.parse(readFileSync(directiveFile, "utf8"));
     /*
+     * A DIRECTIVE FILE LEFT IN THE REPOSITORY IS NOT A DIRECTIVE FOR TODAY.
+     *
+     * data/directive.json is committed, and the workflow passes --directive-file when the dispatch sets one.
+     * On 2026-11-10 every evening run therefore wrote the same water-law article from a file written the day
+     * before, and the researcher never ran - which is why no "proposed" line appeared in any of those logs.
+     * Only today's directive is used; anything older is reported and ignored.
+     */
+    {
+      const stamp = String(directive?.generatedAt ?? directive?.at ?? "").slice(0, 10);
+      const today = new Date().toISOString().slice(0, 10);
+      if (stamp && stamp !== today) {
+        console.log("  directive  : ignoring " + directiveFile + " - written " + stamp + ", not today (" + today + ")");
+        directive = null;
+      }
+    }
+    /*
      * THE SUBJECT IS CHECKED BEFORE THE WRITER IS PAID FOR IT.
      *
      * On 2026-11-09 this line wrote a leadership commentary and published it. The refusal existed, but only
