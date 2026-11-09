@@ -25,7 +25,7 @@
  * than a plain one that always works. If the bot is set up with a signature, `FEISHU_SECRET` is used;
  * otherwise the request is unsigned.
  */
-import { readFileSync, existsSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, existsSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { createHmac } from "node:crypto";
 import { join } from "node:path";
 
@@ -387,7 +387,32 @@ if (!report) {
 
   if (report.reasons?.length) {
     lines.push("");
-    lines.push("Needs a decision or a fix:");
+    /*
+     * A yellow stop on a day that already published is not a decision for anybody.
+     *
+     * "Needs a decision or a fix" is the right heading for a day that ended with nothing. It is the wrong
+     * heading for a NO-SUBJECT at 09:20 on a day whose article is already live, and repeating it there is
+     * how a card teaches the operator to skim past the one card that matters.
+     */
+    /*
+     * "Did today publish anything", not "did THIS run publish". The card that prompted this question was a
+     * DUPLICATE-SUBJECT from the 09:20 backup on a day the fallback had already published a guide, so
+     * report.verdict alone answers the wrong question. data/runs/ is the journal every route writes.
+     */
+    const dayCovered = (() => {
+      if (/^PUBLISHED/.test(String(report.verdict ?? ""))) return true;
+      try {
+        const dir = join(ROOT, "data", "runs");
+        const today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+        for (const f of readdirSync(dir).filter((x) => x.endsWith(".json"))) {
+          const j = JSON.parse(readFileSync(join(dir, f), "utf8"));
+          if (!/^PUBLISHED/.test(String(j.verdict ?? ""))) continue;
+          if (new Date(new Date(j.at).getTime() + 8 * 3600e3).toISOString().slice(0, 10) === today) return true;
+        }
+      } catch {}
+      return false;
+    })();
+    lines.push(dayCovered ? "For the record (nothing to do - the day has an article):" : "Needs a decision or a fix:");
     for (const r of report.reasons.slice(0, 6)) lines.push(`  • ${String(r).slice(0, 220)}`);
     if (report.reasons.length > 6) lines.push(`  … and ${report.reasons.length - 6} more in the report`);
     /*
