@@ -81,6 +81,16 @@ const TOKEN = (process.env.CF_API_TOKEN ?? "").trim();
  * alternative is a silent zero.
  */
 const BEACON = ((process.env.CF_ANALYTICS_TOKEN ?? "").trim() || "be1864c080cf47f88bd1c126a8571ede").trim();
+/*
+ * THE PAGE CARRIES TWO BEACON TOKENS AND THE QUERY ASKED FOR ONE.
+ *
+ * Live HTML on 2026-11-09 contained both be1864c0... (the value hard-coded here) and 6a64d2... (the one
+ * Cloudflare injects). If the account's records sit under the second, a single-tag query returns zero for
+ * ever and the site looks unread. Every token the page carries is queried, and CF_ANALYTICS_TOKENS can
+ * override the list.
+ */
+const BEACON_TAGS = (process.env.CF_ANALYTICS_TOKENS ?? "").split(",").map((x) => x.trim()).filter(Boolean);
+if (!BEACON_TAGS.length) { BEACON_TAGS.push(BEACON, "6a64d235e1e54fc1877a359f6b254459"); }
 const SITE_HOST = "landedmath.com";
 
 /** Paths are what the ledger keys on; Cloudflare reports full URLs. */
@@ -128,7 +138,7 @@ async function fetchSnapshot(days = 30) {
       accounts(filter: { accountTag: "${ACCOUNT}" }) {
         rumPageloadEventsAdaptiveGroups(
           limit: 200
-          filter: { date_geq: "${new Date(Date.now() - days * 86400000).toISOString().slice(0, 10)}", siteTag: "${BEACON}" }
+          filter: { date_geq: "${new Date(Date.now() - days * 86400000).toISOString().slice(0, 10)}", siteTag_in: ${JSON.stringify(BEACON_TAGS)} }
           orderBy: [count_DESC]
         ) {
           count
