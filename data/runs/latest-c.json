@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T01:24:42.715Z",
+  "at": "2026-11-09T01:35:46.565Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "entry-exit-record",
-  "seconds": 21,
+  "article": "foreigner-buy-property-china",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0013999999999999846
+    "usd": 0.0005000000000000004
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding entry-exit-record",
+      "name": "grounding foreigner-buy-property-china",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates entry-exit-record",
+      "name": "gates foreigner-buy-property-china",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build entry-exit-record",
+      "name": "build foreigner-buy-property-china",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "us-low-value-shipment-entry-rule-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "china-home-purchase-loan-interest-subsidy-2026, china-emergency-procurement-rules-imported-goods-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/entry-exit-record/"
+      "detail": "/guide/foreigner-buy-property-china/"
     }
   ],
   "researchLog": [

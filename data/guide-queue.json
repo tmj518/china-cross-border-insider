@@ -945,7 +945,7 @@
       "unit": "one purchase",
       "title": "Can a Foreigner Buy Property in China? Rules and Subsidies",
       "query": "china housing property mortgage subsidy",
-      "status": "queued",
+      "status": "done",
       "evidence": "Search Console: ranks first with 10+ impressions over 90 days and no page of ours answers it",
       "sources": [
         "https://www.gov.cn/zhengce/zuixin/",
@@ -973,7 +973,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "china-240-hour-visa-free-transit",
