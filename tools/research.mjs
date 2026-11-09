@@ -264,6 +264,7 @@ function duplicateScore(proposal, ledger) {
     const proposalMeasure = MEASURE.test(String(proposal.keyword ?? "") + " " + String(proposal.slug ?? ""));
     const rowMeasure = MEASURE.test(String(row.keyword ?? "") + " " + String(row.slug ?? ""));
     const productDup = sharedProduct.length >= 2 && proposalMeasure && rowMeasure ? sharedProduct.length * 4 : 0;
+    const strong2 = strong || productDup > 0;   /* restored 2026-11-09: an edit removed it and the run died at this line */
     const score = strong2 ? productDup + sharedVals.length * 3 + sameMeasure * 2 + sharedOrg.length : 0;
     if (score > best.score) {
       best = {
