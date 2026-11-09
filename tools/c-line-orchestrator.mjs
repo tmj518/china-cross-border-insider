@@ -34,6 +34,7 @@
  *
  * 3. EVERY DIGIT IN THE PROSE TRACES TO THE FACT SHEET. Checked before a file is written.
  */
+import { topicGuard } from "./topic-guard.mjs";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, rmSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { spawnSync, execFileSync } from "node:child_process";
@@ -176,6 +177,11 @@ candidates = candidates.filter((t) => {
   const text = `${t.title ?? ""} ${t.query ?? ""} ${t.slug ?? ""}`;
   if (GRIM_TOPIC.test(text)) { console.log("  refused topic (disaster/crime): " + t.slug); return false; }
   if (/[^\x00-\x7F]/.test(text)) { console.log("  refused topic (not English): " + t.slug); return false; }
+  /* One rule, imported rather than re-spelled: see tools/topic-guard.mjs. */
+  {
+    const g = topicGuard({ title: t.title, keyword: t.keyword, slug: t.slug });
+    if (!g.ok) { console.log("  refused topic [" + g.rule + "]: " + t.slug + " - " + g.reason); return false; }
+  }
   return true;
 });
 if (WANT) candidates = candidates.filter((t) => t.slug === WANT);
