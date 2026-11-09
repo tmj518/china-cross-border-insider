@@ -569,7 +569,20 @@ const V6_2_FROM = "2026-10-08";
   else add("warn", "FAQ answer length", `${badAnswers}/${faqQs} answers outside 80-150 words`);
 
   const tables = (body.match(/^\|.*\|\s*$/gm) || []).length;
-  tables >= 4 ? add("pass", "comparison table present", `${tables} table rows`) : add("block", "comparison table present", `${tables} table rows`);
+  /*
+ * A TABLE OF NUMBERS NEEDS NUMBERS.
+ *
+ * The table rule exists so a reader can compare options side by side; an explainer that states no amount
+ * has nothing to put in the cells, and three runs on 2026-11-09 were rejected on "0 table rows" for exactly
+ * that reason. Explainer mode asks for a qualitative table (what to do, where, how long) instead - still a
+ * table, still comparable, no invented figures.
+ */
+const explainerArticle = figureBlocks.length === 0 && !numericClaim;
+tables >= 4
+  ? add("pass", "comparison table present", `${tables} table rows`)
+  : explainerArticle
+    ? add("block", "comparison table present", "explainer: add a qualitative table (step / where / how long)")
+    : add("block", "comparison table present", `${tables} table rows`);
 
   const quotes = (body.match(/^>\s+\S/gm) || []).length;
   quotes >= 1 ? add("pass", "definition block present", `${quotes} blockquote(s)`) : add("block", "definition block present", "none");
