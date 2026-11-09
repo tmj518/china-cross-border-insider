@@ -196,7 +196,21 @@ async function fetchSnapshot(days = 30) {
       console.log("  wrong account. A 400 naming rumPageloadEventsAdaptiveGroups usually means the free");
       console.log("  plan does not expose that dataset for this account.");
   { const g = writeGa4Fallback(days); if (g) return g; }
-  return null;
+  /* GA4 has the numbers even when RUM refuses the account. */
+      try {
+        const dir = join(ROOT, "data", "analytics");
+        const files = readdirSync(dir).filter((f) => /^ga4-.*\.json$/.test(f)).sort();
+        if (files.length) {
+          const g = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
+          const snap = { at: new Date().toISOString(), source: "ga4", windowDays: Number(g.days ?? days),
+            totalPageviews: Number(g?.totals?.screenPageViews ?? 0), users: Number(g?.totals?.activeUsers ?? 0), pages: [] };
+          writeFileSync(join(dir, "readership-" + new Date().toISOString().slice(0, 10) + ".json"), JSON.stringify(snap, null, 2), "utf8");
+          console.log("ANALYTICS - RUM unavailable; READERSHIP taken from GA4");
+          console.log("  pageviews " + snap.totalPageviews + " over " + snap.windowDays + " day(s), users " + snap.users);
+          return snap;
+        }
+      } catch (e) { console.log("  GA4 fallback failed: " + e.message); }
+      return null;
     }
   } catch (e) {
     console.log(`  FAILED - ${e.cause?.code ?? e.name}: ${e.message}`);
