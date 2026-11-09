@@ -1,4 +1,259 @@
 {
-  "consumedAt": "2026-11-09T05:21:49.722Z",
-  "lastArticle": "how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11"
+  "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
+  "_generated": "2026-11-09T12:29:40.630Z",
+  "_research": {
+    "fetched": [
+      {
+        "url": "https://english.news.cn/20261109/47c233afe8b94177981694122bdfc78a/c.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-cu48b.html",
+        "bytes": 23669
+      },
+      {
+        "url": "https://english.news.cn/20261109/ab24e387a3004bbab1083cc74f319526/c.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-hbdxl.html",
+        "bytes": 6874
+      },
+      {
+        "url": "https://english.news.cn/20261109/ed83dcec432f4fe3b8864b5f347d9de5/c.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-xj1fs.html",
+        "bytes": 9852
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af15c6de4b03ebf8519b471.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-0hbkl.html",
+        "bytes": 55525
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af15b76e4b03ebf8519b469.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-u98pr.html",
+        "bytes": 55006
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af0fc7ce4b03ebf8519b27b.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-d6ebt.html",
+        "bytes": 59906
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af11a34e4b03ebf8519b2e7.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html",
+        "bytes": 56060
+      },
+      {
+        "url": "https://www.globaltimes.cn/page/202611/1373918.shtml",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-k4nzb.html",
+        "bytes": 14057
+      },
+      {
+        "url": "https://www.globaltimes.cn/page/202611/1373932.shtml",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-um70m.html",
+        "bytes": 11638
+      },
+      {
+        "url": "https://www.globaltimes.cn/page/202611/1373903.shtml",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-1iqmf.html",
+        "bytes": 16258
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261109_1408686.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-1t8jb.html",
+        "bytes": 7486
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261106_1408664.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-xqxas.html",
+        "bytes": 5975
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261106_1408663.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-mf97m.html",
+        "bytes": 5844
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202605/t20260501_1405047.html",
+        "file": "data/sources/2026-11-09/research-ndrc-article-ssydz.html",
+        "bytes": 22159
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202603/t20260313_1404131.html",
+        "file": "data/sources/2026-11-09/research-ndrc-article-z64b3.html",
+        "bytes": 16268
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/opinion/67cfa725a310c240449da1b0",
+        "file": "data/sources/2026-11-09/research-china-daily-article-jy7k0.html",
+        "bytes": 13353
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/opinion/67cfa725a310c240449da1b0",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-o628g.html",
+        "bytes": 13353
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/zfxxgk/zfwzgznb/art/2026/art_a32f1f3a3adb431993d9cf0924743845.html",
+        "file": "data/sources/2026-11-09/research-mofcom-briefing-article-22ial.html",
+        "bytes": 16562
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%8F%C2%91%C3%A7%C2%A5%C2%A8&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-11-09/research-sta-news-article-1cpj4.html",
+        "bytes": 106658
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%B0%C2%8F%C3%A5%C2%BE%C2%AE%C3%A4%C2%BC%C2%81%C3%A4%C2%B8%C2%9A&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-11-09/research-sta-news-article-fbcod.html",
+        "bytes": 106658
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A4%C2%B8%C2%AA%C3%A4%C2%BA%C2%BA%C3%A6%C2%89%C2%80%C3%A5%C2%BE%C2%97%C3%A7%C2%A8%C2%8E&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-11-09/research-sta-news-article-is7qh.html",
+        "bytes": 106658
+      },
+      {
+        "url": "https://www.gov.cn/home/2023-03/29/content_5748953.htm",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-z1d3e.html",
+        "bytes": 34375
+      },
+      {
+        "url": "https://www.gov.cn/home/2023-03/29/content_5748954.htm",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-374bf.html",
+        "bytes": 25268
+      },
+      {
+        "url": "https://www.gov.cn/home/2023-03/29/content_5748955.htm",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-rmxh5.html",
+        "bytes": 20312
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/business",
+        "file": "data/sources/2026-11-09/research-china-daily-wwpyb.html",
+        "bytes": 70594
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/china",
+        "file": "data/sources/2026-11-09/research-china-daily-china-81o80.html",
+        "bytes": 74498
+      },
+      {
+        "url": "https://www.globaltimes.cn/china",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-i87g7.html",
+        "bytes": 98332
+      },
+      {
+        "url": "https://english.news.cn/",
+        "file": "data/sources/2026-11-09/research-xinhua-en-9kbmh.html",
+        "bytes": 43152
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/xwfb/xwfyrth/",
+        "file": "data/sources/2026-11-09/research-mofcom-briefing-bzb0s.html",
+        "bytes": 8507
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-cgrq4.html",
+        "bytes": 11017
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/chinatax/n810219/n810724/index.html",
+        "file": "data/sources/2026-11-09/research-sta-news-p4k1x.html",
+        "bytes": 35687
+      },
+      {
+        "url": "https://www.gov.cn/zhengce/zuixin/",
+        "file": "data/sources/2026-11-09/research-state-council-policy-tunn4.html",
+        "bytes": 21484
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/",
+        "file": "data/sources/2026-11-09/research-ndrc-qkdi3.html",
+        "bytes": 87717
+      },
+      {
+        "url": "http://en.moe.gov.cn/",
+        "file": "data/sources/2026-11-09/research-moe-en-rsycn.html",
+        "bytes": 21139
+      },
+      {
+        "url": "http://www.ccpit.org",
+        "file": "data/sources/2026-11-09/research-trade-council-xvstl.html",
+        "bytes": 87634
+      },
+      {
+        "url": "http://www.cccme.org.cn",
+        "file": "data/sources/2026-11-09/research-machinery-chamber-iacu9.html",
+        "bytes": 97990
+      }
+    ],
+    "model": "volces/ep-20251220175517-rjpsc",
+    "spentUsd": 0.0096,
+    "duplicateScore": 0,
+    "duplicateAgainst": null
+  },
+  "slug": "china-revised-water-law-river-lake-protection-effective-march-22-2027-importer-construction-compliance",
+  "title_idea": "China's revised Water Law takes effect March 22 2027, banning new unapproved construction in river and lake management areas",
+  "keyword": "China revised Water Law 2027 river lake management area construction ban importer compliance",
+  "category": "trade-policy",
+  "audience": "importer",
+  "angle": "This article lets foreign importers planning new facilities, storage yards or port-related construction near Chinese rivers and lakes confirm the upcoming compliance timeline and prohibited activities to avoid project delays or forced demolition orders.",
+  "figures": [
+    {
+      "value": "March 22, 2027",
+      "unit": "effective date",
+      "period": "from March 22, 2027 onwards",
+      "source": "National People's Congress Standing Committee",
+      "retrieved": "2026-11-09",
+      "evidence": "The revised law, set to take effect on March 22, 2027, was adopted at the 25th session of the Standing Committee of the 14th National People's Congress.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html"
+    },
+    {
+      "value": "no new forestland or farmland may be added",
+      "unit": "land use restriction",
+      "period": "applies within all delineated river and lake management areas after the law takes effect",
+      "source": "National People's Congress Standing Committee",
+      "retrieved": "2026-11-09",
+      "evidence": "No new forestland or farmland may be added within such management areas.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html"
+    },
+    {
+      "value": "for rivers and lakes with embankments, the management area will cover the waters, sandbars and beaches between the two banks, as well as the embankments and embankment protection land",
+      "unit": "defined management area scope",
+      "period": "applies to all embanked rivers and lakes under the revised law",
+      "source": "Legislative Affairs Commission of the NPC Standing Committee",
+      "retrieved": "2026-11-09",
+      "evidence": "For rivers and lakes with embankments, the management area will cover the waters, sandbars and beaches between the two banks, as well as the embankments and embankment protection land.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html"
+    },
+    {
+      "value": "for rivers and lakes without embankments, the management area will cover the waters, sandbars and beaches between the historical maximum flood level and the flood water level that a project is designed to withstand",
+      "unit": "defined management area scope",
+      "period": "applies to all unembanked rivers and lakes under the revised law",
+      "source": "Legislative Affairs Commission of the NPC Standing Committee",
+      "retrieved": "2026-11-09",
+      "evidence": "For rivers and lakes without embankments, the management area will cover the waters, sandbars and beaches between the historical maximum flood level and the flood water level that a project is designed to withstand.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html"
+    },
+    {
+      "value": "county-level and higher-level local governments are required to organize the restoration of land to rivers and lakes in a planned manner",
+      "unit": "mandatory restoration requirement",
+      "period": "applies to areas already illegally occupied or reclaimed in river and lake zones",
+      "source": "National People's Congress Standing Committee",
+      "retrieved": "2026-11-09",
+      "evidence": "For areas that have already been occupied or reclaimed, county-level and higher-level local governments are required to organize the restoration of land to rivers and lakes in a planned manner.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html"
+    },
+    {
+      "value": "provincial-level local governments must lawfully organize its adjustment and orderly withdrawal",
+      "unit": "mandatory land withdrawal requirement",
+      "period": "applies to existing forestland or farmland in river and lake management areas that affects flood-control safety",
+      "source": "National People's Congress Standing Committee",
+      "retrieved": "2026-11-09",
+      "evidence": "Where existing forestland or farmland affects flood-control safety, provincial-level local governments must lawfully organize its adjustment and orderly withdrawal.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-china-article-34dhl.html"
+    }
+  ],
+  "explainer": false,
+  "title": "China's revised Water Law takes effect March 22 2027, banning new unapproved construction in river and lake management areas",
+  "sources": [
+    "National People's Congress Standing Committee, Legislative Affairs Commission of the NPC Standing Committee, China Daily"
+  ]
 }

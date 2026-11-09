@@ -1,13 +1,14 @@
 {
-  "at": "2026-11-09T03:03:07.382Z",
+  "at": "2026-11-09T12:30:00.896Z",
+  "runId": "42617081505",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "yuan-bank-account",
-  "seconds": 21,
+  "article": "china-s-cpi-up-0-7-pct-in-october",
+  "seconds": 20,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0003999999999999993
+    "usd": 0.0011999999999999997
   },
   "providers": [
     "volces"
@@ -22,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding yuan-bank-account",
+      "name": "grounding china-s-cpi-up-0-7-pct-in-october",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates yuan-bank-account",
+      "name": "gates china-s-cpi-up-0-7-pct-in-october",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build yuan-bank-account",
+      "name": "build china-s-cpi-up-0-7-pct-in-october",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "no candidate - NO-INBOUND"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/yuan-bank-account/"
+      "detail": "/guide/china-s-cpi-up-0-7-pct-in-october/"
     }
   ],
   "researchLog": [
