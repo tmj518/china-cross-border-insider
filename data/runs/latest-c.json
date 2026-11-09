@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T00:07:08.453Z",
+  "at": "2026-11-09T01:15:20.101Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-240-hour-visa-free-transit",
-  "seconds": 34,
+  "article": "work-permit-visa",
+  "seconds": 23,
   "usage": {
-    "calls": 3,
+    "calls": 2,
     "failed": 0,
-    "usd": 0.0007000000000000062
+    "usd": 0.0003999999999999976
   },
   "providers": [
     "volces"
@@ -22,20 +22,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding china-240-hour-visa-free-transit",
+      "name": "grounding work-permit-visa",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-240-hour-visa-free-transit",
+      "name": "gates work-permit-visa",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-240-hour-visa-free-transit",
+      "name": "build work-permit-visa",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -47,7 +47,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-240-hour-visa-free-transit/"
+      "detail": "/guide/work-permit-visa/"
     }
   ],
   "researchLog": [

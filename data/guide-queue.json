@@ -1331,7 +1331,7 @@
       "unit": "one application",
       "title": "Work permit visa in china",
       "query": "work permit visa in china",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"work permit visa in china\" (bing)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1358,7 +1358,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "residence-permit-application-form",

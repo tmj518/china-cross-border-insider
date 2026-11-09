@@ -171,3 +171,5 @@ The 55% additional tariff on Brazilian beef is now a fixed part of the landed co
 For the paperwork and the cost in one place, see [China residence permit for foreigners](/guide/residence-permit-foreigners/).
 
 For the paperwork and the cost in one place, see [240-Hour Visa-Free Transit in China: Who Qualifies Now](/guide/china-240-hour-visa-free-transit/).
+
+For the paperwork and the cost in one place, see [Work permit visa in china](/guide/work-permit-visa/).
