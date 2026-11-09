@@ -155,3 +155,5 @@ For the paperwork and the cost in one place, see [Renewing a Chinese Driving Lic
 For the paperwork and the cost in one place, see [Chinese residence permit requirements](/guide/residence-permit-requirements/).
 
 For the paperwork and the cost in one place, see [Chinese motorcycle brands rev up European market, forging deeper industrial ties](/guide/chinese-motorcycle-brands-rev-up-european-market-forging-deeper-indust/).
+
+For the paperwork and the cost in one place, see [Chinese residence permit](/guide/chinese-residence-permit/).

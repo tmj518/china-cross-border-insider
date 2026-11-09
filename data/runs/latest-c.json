@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-09T13:32:26.597Z",
-  "runId": "42626260961",
+  "at": "2026-11-09T13:45:28.875Z",
+  "runId": "42628138225",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "temporary-residence-permit",
-  "seconds": 20,
+  "article": "chinese-residence-permit",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding temporary-residence-permit",
+      "name": "grounding chinese-residence-permit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates temporary-residence-permit",
+      "name": "gates chinese-residence-permit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build temporary-residence-permit",
+      "name": "build chinese-residence-permit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-pea-protein-anti-dumping-definitive-duties-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/temporary-residence-permit/"
+      "detail": "/guide/chinese-residence-permit/"
     }
   ],
   "researchLog": [
