@@ -124,6 +124,27 @@ function gscQueries() {
   } catch { return []; }
 }
 
+/*
+ * TWO SLUGS FOR ONE QUESTION.
+ *
+ * "cny-bank-account" and "open-chinese-bank-account" are the same article, and on 2026-11-09 both reached the
+ * queue and both published. A slug comparison cannot see it because the words are ordered differently. This
+ * compares the significant words as a set and refuses a candidate that shares two of them with anything
+ * already queued or already published.
+ */
+const STOPWORDS = new Set(["the","and","for","with","from","china","chinese","how","what","your","you","into","that","this","can","does","are","was","were","will","new","per"]);
+const sig = (t) => new Set(String(t).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOPWORDS.has(w)));
+const publishedGuides = (() => { try { return readdirSync(join(ROOT, "src", "content", "guide")).map((f) => f.replace(/\.md$/, "")); } catch { return []; } })();
+function nearDuplicate(slugish) {
+  const mine = sig(slugish);
+  for (const other of [...queue.topics.map((t) => t.slug), ...publishedGuides]) {
+    const theirs = sig(other);
+    const shared = [...mine].filter((w) => theirs.has(w)).length;
+    if (shared >= 2) return other;
+  }
+  return null;
+}
+
 const seenSlug = new Set(queue.topics.map((t) => t.slug));
 const seenCluster = new Map();
 
@@ -205,6 +226,13 @@ const scored = candidates
   }))
   .sort((a, b) => b.score - a.score);
 
+/* Refuse anything that shares two significant words with a queued or published guide. */
+for (const c of scored) {
+  const twin = nearDuplicate(c.slug);
+  if (twin) { c.duplicateOf = twin; }
+}
+const fresh = scored.filter((c) => !c.duplicateOf);
+if (fresh.length < scored.length) console.log("  near-duplicate: " + (scored.length - fresh.length) + " candidate(s) refused");
 const wanted = Math.max(0, MIN_OPEN - open.length);
 const picked = scored.slice(0, wanted);
 console.log(`  matrix ${matrixFile}: ${(matrix.intents ?? []).length} intents, ${candidates.length} uncovered guide-shaped, adding ${picked.length}`);
