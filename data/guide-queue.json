@@ -1726,7 +1726,7 @@
       "unit": "one application",
       "title": "Temporary residence permit china",
       "query": "temporary residence permit china",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"temporary residence permit china\" (bing)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1753,7 +1753,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "alipay-international-account",
@@ -2477,7 +2478,43 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "alipay-settings",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Alipay settings",
+      "query": "alipay settings",
+      "status": "queued",
+      "evidence": "demand matrix: \"alipay settings\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "alipay",
+        "settings"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.66,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "alipay for foreigners",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-09T13:24:24.560Z"
+  "updatedAt": "2026-11-09T13:32:06.486Z"
 }

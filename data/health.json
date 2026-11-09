@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-09T13:24:46.679Z",
+  "at": "2026-11-09T13:32:27.070Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 11,
-      "at": "2026-11-09T13:24:46.625Z"
+      "count": 12,
+      "at": "2026-11-09T13:32:26.597Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-11-09T13:24:46.625Z",
+    "at": "2026-11-09T13:32:26.597Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "visa-z-trung-qu-c"
+    "article": "temporary-residence-permit"
   },
   "metrics": {
     "files": 1,
@@ -37,7 +37,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 11 runs in a row.",
+    "c has ended PUBLISHED 12 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

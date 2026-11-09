@@ -183,3 +183,5 @@ For the paperwork and the cost in one place, see [Economic Watch: Beyond market 
 For the paperwork and the cost in one place, see [China's CPI up 0.7 pct in October](/guide/china-s-cpi-up-0-7-pct-in-october/).
 
 For the paperwork and the cost in one place, see [China extends suspension of 24 pct additional tariff on U.S. goods for two months](/guide/china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-/).
+
+For the paperwork and the cost in one place, see [Temporary residence permit china](/guide/temporary-residence-permit/).
