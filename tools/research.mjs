@@ -724,7 +724,11 @@ WHAT MAKES A SUBJECT WORTH WRITING
     consequence is strongest and name the figure the article will rest on. A published article with one solid
     number and an honest disclosure is worth more than a day with nothing, and the operator's instruction is that
     the pipeline must publish every day.
-  - at least two cost figures (a rate, an amount, a percentage, a quantity - not a date, not a document
+  - an EXPLAINER is always acceptable: if the documents describe a change, a procedure or a rule but carry no
+    rate or amount, propose it with "figures": [] and "explainer": true. The article then states no number at
+    all - the writer is forbidden from inventing one - and the site still publishes. The operator's rule of
+    2026-11-09: anything about China a foreign reader wants, written without numbers when numbers are absent.
+  - otherwise, at least two cost figures (a rate, an amount, a percentage, a quantity - not a date, not a document
     number), each of which appears verbatim in one of these documents
   - a cost consequence an importer can act on: a duty, a fee, a deadline, a rate, a threshold
   - it is not already covered. The last forty published subjects are listed below.
