@@ -653,7 +653,7 @@ ${RULES}
 ${pitfallRules()}
 
 ${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
-${JSON.stringify(sourced, null, 2)}
+${(sourced?.figures ?? []).length === 0 ? "\nTHIS DIRECTIVE HAS NO FIGURES. Write an explainer: describe what changed, who it affects and what to do, and state NO amount and NO percentage anywhere in the body. A single number will fail the gate.\n" : ""}${JSON.stringify(sourced, null, 2)}
 
 THE BIBLIOGRAPHY - cite these, and only these, in the sources field:
 ${JSON.stringify(directive.sources ?? [], null, 2)}
