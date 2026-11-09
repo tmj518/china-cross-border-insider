@@ -188,3 +188,5 @@ The announcement does not tell an importer what the duty will be. It tells the i
 For the paperwork and the cost in one place, see [Renting in China: Contract, Deposit and Registration](/guide/china-renting-apartment-deposit/).
 
 For the paperwork and the cost in one place, see [Open chinese bank account](/guide/open-chinese-bank-account/).
+
+For the paperwork and the cost in one place, see [APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market](/guide/apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie/).

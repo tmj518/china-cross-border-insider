@@ -177,3 +177,5 @@ For the paperwork and the cost in one place, see [Getting Your China Entry and E
 For the paperwork and the cost in one place, see [China permanent residence permit](/guide/permanent-residence-permit/).
 
 For the paperwork and the cost in one place, see [China residence permit number](/guide/residence-permit-number/).
+
+For the paperwork and the cost in one place, see [APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market](/guide/apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie/).

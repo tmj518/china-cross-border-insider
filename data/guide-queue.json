@@ -2067,7 +2067,7 @@
       "unit": "one application",
       "title": "APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market",
       "query": "APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2095,7 +2095,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",

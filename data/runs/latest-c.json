@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T04:24:19.111Z",
+  "at": "2026-11-09T05:50:16.289Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "fourteen-confirmed-dead-in-taiyuan-apartment-fire",
-  "seconds": 21,
+  "article": "apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0.0011
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "10 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding fourteen-confirmed-dead-in-taiyuan-apartment-fire",
+      "name": "grounding apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates fourteen-confirmed-dead-in-taiyuan-apartment-fire",
+      "name": "gates apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build fourteen-confirmed-dead-in-taiyuan-apartment-fire",
+      "name": "build apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-foreigner-buy-car-apartment-procedure-2026"
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/fourteen-confirmed-dead-in-taiyuan-apartment-fire/"
+      "detail": "/guide/apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie/"
     }
   ],
   "researchLog": [
