@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-09T12:30:00.896Z",
-  "runId": "42617081505",
+  "at": "2026-11-09T12:55:13.360Z",
+  "runId": "42620863030",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-s-cpi-up-0-7-pct-in-october",
-  "seconds": 20,
+  "article": "china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0011999999999999997
+    "usd": 0.0011
   },
   "providers": [
     "volces"
@@ -23,20 +23,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding china-s-cpi-up-0-7-pct-in-october",
+      "name": "grounding china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-s-cpi-up-0-7-pct-in-october",
+      "name": "gates china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-s-cpi-up-0-7-pct-in-october",
+      "name": "build china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -48,7 +48,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-s-cpi-up-0-7-pct-in-october/"
+      "detail": "/guide/china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-/"
     }
   ],
   "researchLog": [

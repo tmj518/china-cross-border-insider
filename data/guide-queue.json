@@ -2264,7 +2264,7 @@
       "unit": "one application",
       "title": "China extends suspension of 24 pct additional tariff on U.S. goods for two months",
       "query": "China extends suspension of 24 pct additional tariff on U.S. goods for two months",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China extends suspension of 24 pct additional tariff on U.S. goods for two months\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2292,7 +2292,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     }
   ],
   "updatedAt": "2026-11-09T07:20:28.099Z"
