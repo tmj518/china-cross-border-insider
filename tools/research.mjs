@@ -251,8 +251,19 @@ function duplicateScore(proposal, ledger) {
      * exist here crashed research before it could propose anything on 2026-11-09. */
     const rowProduct = PRODUCT(row.slug ?? "");
     const sharedProduct = [...newProduct].filter((w) => rowProduct.has(w));
-    const productDup = sharedProduct.length >= 2 ? sharedProduct.length * 4 : 0;
-    const strong2 = strong || productDup > 0;
+    /*
+     * SHARING A PRODUCT WORD IS NOT SHARING A STORY.
+     *
+     * This scored four points per shared product word, so "copper" alone made two unrelated articles duplicates.
+     * On 2026-11-09 every proposal was rejected against one analysis piece and the day published nothing from
+     * this line - the fourth day in a row. A duplicate is the same event: it shares a figure value, or it shares
+     * a product AND the measure named in the policy (safeguard, anti-dumping, quota, registration). Product words
+     * alone are how a beat works, not how a duplicate is detected.
+     */
+    const MEASURE = /(safeguard|anti-dumping|antidumping|quota|tariff|duty|levy|registration|licence|license|ban|subsidy|rebate)/i;
+    const proposalMeasure = MEASURE.test(String(proposal.keyword ?? "") + " " + String(proposal.slug ?? ""));
+    const rowMeasure = MEASURE.test(String(row.keyword ?? "") + " " + String(row.slug ?? ""));
+    const productDup = sharedProduct.length >= 2 && proposalMeasure && rowMeasure ? sharedProduct.length * 4 : 0;
     const score = strong2 ? productDup + sharedVals.length * 3 + sameMeasure * 2 + sharedOrg.length : 0;
     if (score > best.score) {
       best = {
