@@ -403,9 +403,9 @@ if (existsSync(directiveFile)) {
      * Only today's directive is used; anything older is reported and ignored.
      */
     {
-      const stamp = String(directive?.generatedAt ?? directive?.at ?? "").slice(0, 10);
+  const stamp = String(directive?.generatedAt ?? directive?.at ?? directive?._generated ?? directive?.date ?? "").slice(0, 10);
       const today = new Date().toISOString().slice(0, 10);
-      if (stamp && stamp !== today) {
+  if (stamp !== today) {   /* a file with no date is a file from an older run by definition */
         console.log("  directive  : ignoring " + directiveFile + " - written " + stamp + ", not today (" + today + ")");
         directive = null;
       }
