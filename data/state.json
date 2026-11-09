@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-09T03:47:00.959Z",
-  "lastVerdict": "DUPLICATE-SUBJECT",
-  "lastArticle": "china-brazil-beef-55-percent-tariff-trigger-october-2026",
-  "runs": 36,
-  "published": 33,
+  "lastRun": "2026-11-09T05:16:22.688Z",
+  "lastVerdict": "PUBLISHED-DEGRADED",
+  "lastArticle": "how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11",
+  "runs": 37,
+  "published": 34,
   "lastUsage": {
-    "calls": 3,
-    "failed": 0,
-    "usd": 0.0071,
-    "promptTokens": 64221,
-    "completionTokens": 302
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0187,
+    "promptTokens": 105733,
+    "completionTokens": 8484
   }
 }

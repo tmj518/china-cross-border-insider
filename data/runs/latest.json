@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-09T03:47:00.959Z",
+  "at": "2026-11-09T05:16:22.688Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "35 previous run(s), last 2026-11-08T01:15:49.049Z (PUBLISHED-DEGRADED)"
+      "detail": "36 previous run(s), last 2026-11-09T03:47:00.959Z (DUPLICATE-SUBJECT)"
     },
     {
       "name": "weekly ceiling",
@@ -28,7 +28,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed economic-watch-apec-year-momentum-fuels-robust-ciie-presence-explainer-2026-11, 0 verified figure(s)"
+      "detail": "proposed how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11, 0 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -37,27 +37,62 @@
     },
     {
       "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11.md"
+    },
+    {
+      "name": "reviewer",
       "ok": false,
-      "detail": "exit 3: REFUSED - the directive carries 0 sourced figure(s), the gate requires 1."
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 5 issue(s), 5 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "5 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict DUPLICATE-SUBJECT"
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "DUPLICATE-SUBJECT",
+  "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "the proposed subject duplicates a published article: REFUSED - the directive carries 0 sourced figure(s), the gate requires 1. A writer told to produce an article will produce one, and the numbers it cannot find it will invent in the right format. The i"
+    "reviewer: 5 objection(s), advisory - published anyway"
   ],
-  "article": null,
+  "article": "how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11",
   "commit": null,
   "usage": {
-    "calls": 3,
-    "failed": 0,
-    "usd": 0.0071,
-    "promptTokens": 64221,
-    "completionTokens": 302
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0187,
+    "promptTokens": 105733,
+    "completionTokens": 8484
   },
   "route": "script",
   "categoryActivity": {
@@ -69,37 +104,37 @@
   },
   "uncoveredSections": [],
   "researchLog": [
+    "  ok    xinhua-en-article           23505B  article archived",
     "  ok    xinhua-en-article           10468B  article archived",
-    "  ok    xinhua-en-article           20029B  article archived",
-    "  ok    xinhua-en-article           12413B  article archived",
+    "  ok    xinhua-en-article            7092B  article archived",
     "  ok    mofcom-briefing-article     16562B  article archived",
     "  ok    ndrc-briefing-article        7486B  article archived",
     "  ok    ndrc-briefing-article        5975B  article archived",
     "  ok    ndrc-briefing-article        5844B  article archived",
-    "  ok    sta-news-article           106658B  article archived",
-    "  ok    sta-news-article           106658B  article archived",
-    "  ok    sta-news-article           106658B  article archived",
     "  ok    state-council-policy-article    34375B  article archived",
     "  ok    state-council-policy-article    25268B  article archived",
     "  ok    state-council-policy-article    20312B  article archived",
     "  ok    ndrc-article                22159B  article archived",
     "  ok    ndrc-article                16268B  article archived",
-    "  fresh     : 0 article(s) dated today, newest 2026-11-08",
+    "  ok    ndrc-article                 7486B  article archived",
+    "  ok    moe-en-article              20270B  article archived",
+    "  ok    moe-en-article              19107B  article archived",
+    "  fresh     : 2 article(s) dated today, newest 2026-11-09",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 107 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 390 characters but no document structure, trying the next one",
-    "  stream      : SSE, 120 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 445 characters but no document structure, trying the next one",
-    "  stream      : SSE, 75 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 345 characters but no document structure, trying the next one",
-    "  spent   : ~0.0071  (ceiling 0.40)",
+    "  stream      : SSE, 142 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 521 characters but no document structure, trying the next one",
+    "  stream      : SSE, 870 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3464 characters but no document structure, trying the next one",
+    "  stream      : SSE, 126 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 436 characters but no document structure, trying the next one",
+    "  spent   : ~0.0079  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: false",
-    "  explainer  : economic-watch-apec-year-momentum-fuels-robust-ciie-presence-explainer-2026-11 built from https://english.news.cn/20261108/e4fe6b9e67ad4a499a7e0f5a2c1ed2c9/c.html",
-    "  slug    : economic-watch-apec-year-momentum-fuels-robust-ciie-presence-explainer-2026-11",
-    "  keyword : Economic Watch: APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies ta",
+    "  explainer  : how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11 built from https://english.news.cn/20261109/47c233afe8b94177981694122bdfc78a/c.html",
+    "  slug    : how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11",
+    "  keyword : How Xi steers China's green transformation and global climate action-Xinhua",
     "  category: undefined",
     "  figures : 0",
     "  evidence check:",
@@ -107,8 +142,15 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0071",
+    "  spend this run: ~$0.0079",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 66
+  "reviewAdvisory": [
+    "The draft repeatedly attributes policy direction to a named leader ('under Xi Jinping', 'how Xi Jinping steers'), which is political leadership commentary rather than trade-cost analysis and crosses the risk line.",
+    "The confidence section asserts there are no figures, yet the body presents illustrative cost arithmetic and scenarios ('raises its export price', 'spread across output') that read as quantified reasoning without any supplied figures, contradicting the stated confidence.",
+    "The draft invents a two-scenario cost model with specific production examples that the single Xinhua explainer does not supply, presenting unsupported arithmetic as analysis.",
+    "The draft links China's green transformation to specific EU anti-dumping cases without any evidence in the supplied material that the two are connected.",
+    "The draft acknowledges a single source but does not include the required explicit single-source disclosure sentence warning readers the analysis rests on one document."
+  ],
+  "seconds": 327
 }
