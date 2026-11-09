@@ -1024,6 +1024,9 @@ const directive = {
   audience: proposal.audience,
   angle: proposal.angle,
   figures: proposal.figures,
+  /* An explainer says so, because the orchestrator accepts a no-figure directive only when it declares it. */
+  explainer: Boolean(proposal.explainer),
+  title: proposal.title ?? proposal.title_idea,
   sources: proposal.sources,
 };
 
