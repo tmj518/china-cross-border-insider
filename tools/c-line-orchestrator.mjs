@@ -107,6 +107,7 @@ function finish(code = 0) {
   }
   const report = {
     at: new Date().toISOString(),
+    runId: process.env.GITHUB_RUN_ID ?? null,   /* the ledger needs a handle back to the run */
     route: "c",
     verdict,
     article: article || null,
