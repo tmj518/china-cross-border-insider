@@ -2147,7 +2147,7 @@
       "unit": "one application",
       "title": "Economic Watch: Beyond market size, European firms tap China's growth, innovation potential",
       "query": "Economic Watch: Beyond market size, European firms tap China's growth, innovation potential",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Economic Watch: Beyond market size, European firms tap China's growth, innovation potential\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2175,7 +2175,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "chinese-motorcycle-brands-rev-up-european-market-forging-deeper-indust",

@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T07:20:46.943Z",
+  "at": "2026-11-09T08:49:44.227Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
-  "seconds": 18,
+  "article": "economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in",
+  "seconds": 24,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.0013
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "name": "grounding economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "name": "gates economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be",
+      "name": "build economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "no candidate - NO-INBOUND"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/global-south-delegates-seek-stronger-voice-at-world-media-summit-in-be/"
+      "detail": "/guide/economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in/"
     }
   ],
   "researchLog": [

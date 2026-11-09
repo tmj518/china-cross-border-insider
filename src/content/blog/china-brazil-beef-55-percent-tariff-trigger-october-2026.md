@@ -177,3 +177,5 @@ For the paperwork and the cost in one place, see [Work permit visa in china](/gu
 For the paperwork and the cost in one place, see [China permanent residence permit](/guide/permanent-residence-permit/).
 
 For the paperwork and the cost in one place, see [China residence permit number](/guide/residence-permit-number/).
+
+For the paperwork and the cost in one place, see [Economic Watch: Beyond market size, European firms tap China's growth, innovation potential](/guide/economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in/).
