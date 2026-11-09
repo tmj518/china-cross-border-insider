@@ -148,7 +148,7 @@ async function fetchSnapshot(days = 30) {
           pages: [],
           channels: g.channels ?? [],
         };
-        const out = join(dir, new Date().toISOString().slice(0, 10) + ".json");
+        const out = join(dir, "readership-" + new Date().toISOString().slice(0, 10) + ".json");   /* sorts after ga4-*, which is what the workflow reads */
         writeFileSync(out, JSON.stringify(snap, null, 2), "utf8");
         console.log("ANALYTICS - RUM unavailable; READERSHIP taken from GA4");
         console.log("  pageviews " + snap.totalPageviews + " over " + snap.windowDays + " day(s), users " + snap.users);
