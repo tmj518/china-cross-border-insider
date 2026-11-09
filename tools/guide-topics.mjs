@@ -106,7 +106,15 @@ function newsHeadlines() {
     if (!files.length) return [];
     const latest = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
     const CHINA = /(china|chinese|beijing|shanghai|shenzhen|guangzhou|yuan|rmb|ccp|xi jinping|hong kong|taiwan|canton fair|ciie|apec)/i;
-    const NOT_MINE = /(israel|israeli|ukraine|russia|gaza|hamas|trump|biden|election of delegates)/i;
+    /*
+ * A DISASTER IS NOT A HOW-TO.
+ *
+ * On 2026-11-09 the headline feed put "fourteen confirmed dead in Taiyuan apartment fire" into the guide
+ * queue and the line published it as a guide. That is not a bad article; it is an unacceptable one - it
+ * monetises a fatal fire and it is not a procedure anybody follows. Crime, accidents, deaths, disasters,
+ * protests and court cases are excluded by word, before anything is scored.
+ */
+const NOT_MINE = /(israel|israeli|ukraine|russia|gaza|hamas|trump|biden|election of delegates|dead|death|deaths|killed|dies|died|fire|blaze|crash|collision|accident|earthquake|flood|typhoon|landslide|explosion|attack|shooting|murder|arrest|arrested|jailed|sentenced|probe|corruption|protest|riot|strike action|victim|casualt|injur|missing|funeral|obituar)/i;
     return (latest.items ?? [])
       .map((i) => String(i.title ?? "").replace(/&amp;/g, "&").trim())
       .filter((t) => t.length > 20 && CHINA.test(t) && !NOT_MINE.test(t));
