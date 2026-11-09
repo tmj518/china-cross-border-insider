@@ -28,6 +28,7 @@
  *   1  a real failure: a step errored, or the review rejected work that had been attempted
  *   78 no provider key, so nothing could be attempted
  */
+import { topicGuard } from "./topic-guard.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync, rmSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -393,6 +394,24 @@ let directive = null;
 if (existsSync(directiveFile)) {
   try {
     directive = JSON.parse(readFileSync(directiveFile, "utf8"));
+    /*
+     * THE SUBJECT IS CHECKED BEFORE THE WRITER IS PAID FOR IT.
+     *
+     * On 2026-11-09 this line wrote a leadership commentary and published it. The refusal existed, but only
+     * in the headline crawler, which is upstream of the directive. A directive can arrive from a queue, a
+     * person or an agent, so the rule is applied here, where every route passes.
+     */
+    if (directive) {
+      const g = topicGuard({ title: directive.title, keyword: directive.keyword, slug: directive.slug });
+      if (!g.ok) {
+        run.verdict = "TOPIC-REFUSED";
+        run.reasons.push(g.reason);
+        step("topic guard", false, g.rule + ": " + g.reason);
+        directive = null;
+      } else {
+        step("topic guard", true, "the subject is one this site publishes");
+      }
+    }
     /*
    * A directive is a slug and figures. Anything else in that file is a record that a previous run finished.
    *
