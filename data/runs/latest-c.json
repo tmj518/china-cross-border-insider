@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-09T13:54:18.406Z",
-  "runId": "42629444014",
+  "at": "2026-11-09T23:49:26.564Z",
+  "runId": "42723126437",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "residence-permit",
-  "seconds": 18,
+  "article": "alipay-application",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0017
+    "usd": 0.00040000000000000105
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding residence-permit",
+      "name": "grounding alipay-application",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates residence-permit",
+      "name": "gates alipay-application",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build residence-permit",
+      "name": "build alipay-application",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "no candidate - NO-INBOUND"
+      "detail": "china-return-shipping-refund-procedure-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/residence-permit/"
+      "detail": "/guide/alipay-application/"
     }
   ],
   "researchLog": [

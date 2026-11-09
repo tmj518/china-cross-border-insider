@@ -1,0 +1,259 @@
+{
+  "_note": "Written by tools/research.mjs and verified by tools/check-evidence.mjs. Every external figure's excerpt was found in its archived document and carries its value. Figures are the only numbers the writer may use.",
+  "_generated": "2026-11-09T23:48:27.869Z",
+  "_research": {
+    "fetched": [
+      {
+        "url": "https://english.news.cn/20261109/47c233afe8b94177981694122bdfc78a/c.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-fja07.html",
+        "bytes": 23669
+      },
+      {
+        "url": "https://english.news.cn/20261109/ab24e387a3004bbab1083cc74f319526/c.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-mower.html",
+        "bytes": 6874
+      },
+      {
+        "url": "https://english.news.cn/20261109/ca359ae46d834e6e9456156342f3255b/c.html",
+        "file": "data/sources/2026-11-09/research-xinhua-en-article-75cbl.html",
+        "bytes": 28665
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af15c6de4b03ebf8519b471.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-9v4go.html",
+        "bytes": 55525
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af15b76e4b03ebf8519b469.html",
+        "file": "data/sources/2026-11-09/research-china-daily-article-c7abi.html",
+        "bytes": 55006
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af0fc7ce4b03ebf8519b27b.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-yi3pi.html",
+        "bytes": 59906
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/a/202611/09/WS6af11a34e4b03ebf8519b2e7.html",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-eayk7.html",
+        "bytes": 56060
+      },
+      {
+        "url": "https://www.globaltimes.cn/page/202611/1373923.shtml",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-xf1wi.html",
+        "bytes": 11953
+      },
+      {
+        "url": "https://www.globaltimes.cn/page/202611/1373966.shtml",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-sy6y5.html",
+        "bytes": 11884
+      },
+      {
+        "url": "https://www.globaltimes.cn/page/202611/1373945.shtml",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-article-msnh8.html",
+        "bytes": 9744
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261109_1408686.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-9882k.html",
+        "bytes": 7486
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261106_1408664.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-jhh29.html",
+        "bytes": 5975
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261106_1408663.html",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-article-imgnp.html",
+        "bytes": 5844
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202605/t20260501_1405047.html",
+        "file": "data/sources/2026-11-09/research-ndrc-article-qxwu6.html",
+        "bytes": 22159
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202603/t20260313_1404131.html",
+        "file": "data/sources/2026-11-09/research-ndrc-article-grpnv.html",
+        "bytes": 16268
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/opinion/67cfa725a310c240449da1b0",
+        "file": "data/sources/2026-11-09/research-china-daily-article-v0vaz.html",
+        "bytes": 13353
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/opinion/67cfa725a310c240449da1b0",
+        "file": "data/sources/2026-11-09/research-china-daily-china-article-11qt3.html",
+        "bytes": 13353
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/zfxxgk/zfwzgznb/art/2026/art_a32f1f3a3adb431993d9cf0924743845.html",
+        "file": "data/sources/2026-11-09/research-mofcom-briefing-article-o5uev.html",
+        "bytes": 16562
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%8F%C2%91%C3%A7%C2%A5%C2%A8&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-11-09/research-sta-news-article-hs910.html",
+        "bytes": 106658
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A5%C2%B0%C2%8F%C3%A5%C2%BE%C2%AE%C3%A4%C2%BC%C2%81%C3%A4%C2%B8%C2%9A&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-11-09/research-sta-news-article-jpkpq.html",
+        "bytes": 106658
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/search5/html/searchResult.html?siteCode=bm29000002&searchWord=%C3%A4%C2%B8%C2%AA%C3%A4%C2%BA%C2%BA%C3%A6%C2%89%C2%80%C3%A5%C2%BE%C2%97%C3%A7%C2%A8%C2%8E&left_right_index=0&searchSource=0",
+        "file": "data/sources/2026-11-09/research-sta-news-article-lbv2t.html",
+        "bytes": 106658
+      },
+      {
+        "url": "https://www.gov.cn/home/2023-03/29/content_5748953.htm",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-ear3a.html",
+        "bytes": 34375
+      },
+      {
+        "url": "https://www.gov.cn/home/2023-03/29/content_5748954.htm",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-ccd7d.html",
+        "bytes": 25268
+      },
+      {
+        "url": "https://www.gov.cn/home/2023-03/29/content_5748955.htm",
+        "file": "data/sources/2026-11-09/research-state-council-policy-article-wr2l1.html",
+        "bytes": 20312
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/business",
+        "file": "data/sources/2026-11-09/research-china-daily-zlpkm.html",
+        "bytes": 70585
+      },
+      {
+        "url": "https://www.chinadaily.com.cn/china",
+        "file": "data/sources/2026-11-09/research-china-daily-china-f4r1d.html",
+        "bytes": 74478
+      },
+      {
+        "url": "https://www.globaltimes.cn/china",
+        "file": "data/sources/2026-11-09/research-globaltimes-china-ipl9s.html",
+        "bytes": 98567
+      },
+      {
+        "url": "https://english.news.cn/",
+        "file": "data/sources/2026-11-09/research-xinhua-en-si72h.html",
+        "bytes": 42885
+      },
+      {
+        "url": "https://www.mofcom.gov.cn/xwfb/xwfyrth/",
+        "file": "data/sources/2026-11-09/research-mofcom-briefing-bpvo4.html",
+        "bytes": 8507
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/xwdt/xwfb/",
+        "file": "data/sources/2026-11-09/research-ndrc-briefing-rpmwb.html",
+        "bytes": 11017
+      },
+      {
+        "url": "https://www.chinatax.gov.cn/chinatax/n810219/n810724/index.html",
+        "file": "data/sources/2026-11-09/research-sta-news-nryy5.html",
+        "bytes": 35687
+      },
+      {
+        "url": "https://www.gov.cn/zhengce/zuixin/",
+        "file": "data/sources/2026-11-09/research-state-council-policy-2nvpf.html",
+        "bytes": 21484
+      },
+      {
+        "url": "https://www.ndrc.gov.cn/",
+        "file": "data/sources/2026-11-09/research-ndrc-3qfyr.html",
+        "bytes": 87717
+      },
+      {
+        "url": "http://en.moe.gov.cn/",
+        "file": "data/sources/2026-11-09/research-moe-en-vmmmm.html",
+        "bytes": 21139
+      },
+      {
+        "url": "http://www.ccpit.org",
+        "file": "data/sources/2026-11-09/research-trade-council-6oi1a.html",
+        "bytes": 87634
+      },
+      {
+        "url": "http://www.cccme.org.cn",
+        "file": "data/sources/2026-11-09/research-machinery-chamber-fk4mu.html",
+        "bytes": 98024
+      }
+    ],
+    "model": "volces/ep-20251220173606-gzxdg",
+    "spentUsd": 0.0161,
+    "duplicateScore": 0,
+    "duplicateAgainst": null
+  },
+  "slug": "china-ppi-october-2026-importer-cost-pressure",
+  "title_idea": "China's factory-gate inflation hits 5.7% in October: what importers pay next",
+  "keyword": "China PPI October 2026 importer cost pressure",
+  "category": "supply-chain",
+  "audience": "importer",
+  "angle": "Decide whether to renegotiate supplier prices or accelerate orders before further factory-gate increases pass through.",
+  "figures": [
+    {
+      "value": "5.7 percent",
+      "unit": "year-on-year producer price index increase",
+      "period": "October 2026",
+      "source": "National Bureau of Statistics via China Daily",
+      "retrieved": "2026-11-09",
+      "evidence": "The producer price index, which tracks factory-gate prices, rose 5.7 percent year-on-year in October, up from 5 percent in September, the bureau said.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-article-9v4go.html"
+    },
+    {
+      "value": "0.7 percent",
+      "unit": "month-on-month producer price index increase",
+      "period": "October 2026",
+      "source": "National Bureau of Statistics via China Daily",
+      "retrieved": "2026-11-09",
+      "evidence": "On a month-on-month basis, producer prices rose 0.7 percent in October, down from a 1.2 percent gain in September.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-article-9v4go.html"
+    },
+    {
+      "value": "22.4 percent",
+      "unit": "year-on-year gasoline price increase",
+      "period": "October 2026",
+      "source": "National Bureau of Statistics via China Daily",
+      "retrieved": "2026-11-09",
+      "evidence": "Gasoline prices climbed 22.4 percent from a year earlier, contributing about 0.63 percentage points to CPI growth, the bureau said.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-article-9v4go.html"
+    },
+    {
+      "value": "0.63 percentage points",
+      "unit": "contribution to CPI growth from gasoline prices",
+      "period": "October 2026",
+      "source": "National Bureau of Statistics via China Daily",
+      "retrieved": "2026-11-09",
+      "evidence": "Gasoline prices climbed 22.4 percent from a year earlier, contributing about 0.63 percentage points to CPI growth, the bureau said.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-article-9v4go.html"
+    },
+    {
+      "value": "0.7 percent",
+      "unit": "year-on-year consumer price index increase",
+      "period": "October 2026",
+      "source": "National Bureau of Statistics via China Daily",
+      "retrieved": "2026-11-09",
+      "evidence": "Meanwhile, the consumer price index, a key gauge of inflation, rose 0.7 percent year-on-year in October, compared with 0.9 percent in September.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-article-9v4go.html"
+    },
+    {
+      "value": "0.8 percent",
+      "unit": "year-on-year core CPI increase",
+      "period": "October 2026",
+      "source": "National Bureau of Statistics via China Daily",
+      "retrieved": "2026-11-09",
+      "evidence": "Core CPI — which excludes food and energy prices and offers a clearer gauge of underlying price pressures — rose 0.8 percent year-on-year in October, easing from a 1 percent increase in September, the bureau added.",
+      "evidence_from": "data/sources/2026-11-09/research-china-daily-article-9v4go.html"
+    }
+  ],
+  "explainer": false,
+  "title": "China's factory-gate inflation hits 5.7% in October: what importers pay next",
+  "sources": [
+    "National Bureau of Statistics via China Daily"
+  ]
+}

@@ -143,3 +143,5 @@ For the paperwork and the cost in one place, see [China home permit application]
 For the paperwork and the cost in one place, see [China home return permit application](/guide/home-return-permit-application/).
 
 For the paperwork and the cost in one place, see [China home return permit application hong kong](/guide/home-return-permit-application-hong-kong/).
+
+For the paperwork and the cost in one place, see [Alipay application](/guide/alipay-application/).
