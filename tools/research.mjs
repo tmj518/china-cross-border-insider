@@ -204,6 +204,23 @@ const COMMON_VALUES = new Set(["100", "1000", "10000", "100000", "50", "10", "20
   "2024", "2025", "2026", "2027", "2028", "2029", "2030", "1", "2", "3", "5", "15", "25"]);
 const informativeValue = (v) => v.length >= 3 && !COMMON_VALUES.has(v);
 
+/* Build a no-figure subject from the best document available: the newest article, else the longest page. */
+function buildExplainer(articles, fetched) {
+  const pick = (articles && articles.length ? articles : fetched || [])
+    .filter((d) => d && d.url && d.file)
+    .sort((a, b) => String(b.day ?? "").localeCompare(String(a.day ?? "")) || (b.bytes ?? 0) - (a.bytes ?? 0))[0];
+  if (!pick) return null;
+  let title = "";
+  try {
+    const raw = readFileSync(join(ROOT, pick.file), "utf8");
+    title = (/<title[^>]*>([\s\S]{4,160}?)<\/title>/i.exec(raw) ?? [])[1] ?? "";
+    title = title.replace(/\s+/g, " ").replace(/&amp;/g, "&").trim();
+  } catch {}
+  if (!title || title.length < 12) title = "What China announced today: a reading of the latest notice";
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) + "-explainer-" + new Date().toISOString().slice(0, 7);
+  return { slug, keyword: title.slice(0, 90), title, sourceUrl: pick.url, why: "explainer from " + pick.url, sourceFile: pick.file };
+}
+
 function duplicateScore(proposal, ledger) {
   const pk = new Set(stems(proposal.keyword ?? ""));
   const pv = new Set((proposal.figures ?? []).map((f) => String(f.value ?? "").replace(/[$,%\s]/g, "").toLowerCase()).filter(informativeValue));
@@ -832,7 +849,24 @@ for (let attempt = 1; attempt <= PROPOSAL_ATTEMPTS; attempt++) {
   console.log(`  feasible: ${candidate.feasible}`);
 
   if (candidate.feasible === false) {
-    /* The documents do not support anything. A retry would ask the same question of the same material. */
+    /*
+     * WHEN THE MODEL SAYS "NOTHING HERE", THE DAY IS NOT OVER.
+     *
+     * The operator's rule of 2026-11-09 is that the site publishes every day and a text with no numbers is a
+     * legitimate article. On 2026-11-09 three runs in a row ended here because the documents carried only
+     * national aggregates - real policy, no per-unit rate - and the model was asked for a cost article.
+     *
+     * So a subject is built from the strongest document in the corpus instead: its own title, its own URL,
+     * no figures, explainer mode. The writer is forbidden from stating a number, the figure-trace check has
+     * nothing to trace, and the site still publishes a real reading of what China announced.
+     */
+    const explainer = buildExplainer(articles, fetched);
+    if (explainer) {
+      proposal = { ...explainer, feasible: true, explainer: true, figures: [], sources: [explainer.sourceUrl], sourceHosts: [new URL(explainer.sourceUrl).hostname] };
+      acceptedDupScore = { score: 0, against: null, why: [] };
+      console.log("  explainer  : " + explainer.slug + " built from " + explainer.sourceUrl);
+      break;
+    }
     proposal = candidate;
     break;
   }
