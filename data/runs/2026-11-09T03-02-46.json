@@ -1,0 +1,90 @@
+{
+  "at": "2026-11-09T03:01:44.146Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "35 previous run(s), last 2026-11-08T01:15:49.049Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "0 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "research",
+      "ok": false,
+      "detail": "no verified subject today (exit 0)"
+    }
+  ],
+  "verdict": "NO-SUBJECT",
+  "reasons": [],
+  "article": null,
+  "commit": null,
+  "usage": null,
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    china-daily-article         13353B  article archived",
+    "  ok    china-daily-article         53209B  article archived",
+    "  ok    china-daily-article         58385B  article archived",
+    "  ok    china-daily-china-article    13353B  article archived",
+    "  ok    china-daily-china-article    59906B  article archived",
+    "  ok    china-daily-china-article    56060B  article archived",
+    "  ok    globaltimes-china-article    14057B  article archived",
+    "  ok    globaltimes-china-article    16258B  article archived",
+    "  ok    globaltimes-china-article    13797B  article archived",
+    "  ok    xinhua-en-article           10468B  article archived",
+    "  ok    xinhua-en-article           20029B  article archived",
+    "  ok    xinhua-en-article           12413B  article archived",
+    "  ok    mofcom-briefing-article     16562B  article archived",
+    "  ok    ndrc-briefing-article        7486B  article archived",
+    "  ok    ndrc-briefing-article        5975B  article archived",
+    "  ok    ndrc-briefing-article        5844B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    state-council-policy-article    34375B  article archived",
+    "  ok    state-council-policy-article    25268B  article archived",
+    "  ok    state-council-policy-article    20312B  article archived",
+    "  ok    ndrc-article                22159B  article archived",
+    "  ok    ndrc-article                16268B  article archived",
+    "  fresh     : 0 article(s) dated today, newest 2026-11-08",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 108 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 397 characters but no document structure, trying the next one",
+    "  stream      : SSE, 112 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 374 characters but no document structure, trying the next one",
+    "  stream      : SSE, 112 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 425 characters but no document structure, trying the next one",
+    "  spent   : ~0.0071  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: false",
+    "  reason  : The provided documents contain no per-unit cost figures (rates, amounts, thresholds) that an importer can act on; the only numeric values are national aggregates, political counts, and dates, which are explicitly rejected.",
+    "  The documents do not support an article today. That is the answer, and no directive was",
+    "  written. A day without a qualifying subject is a day without an article."
+  ]
+}

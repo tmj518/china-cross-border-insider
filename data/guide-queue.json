@@ -1947,7 +1947,7 @@
       "unit": "one application",
       "title": "Yuan bank account",
       "query": "yuan bank account",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"yuan bank account\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1973,7 +1973,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     }
   ],
   "updatedAt": "2026-11-09T01:49:30.361Z"
