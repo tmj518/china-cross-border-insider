@@ -417,6 +417,17 @@ jobs:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: |
+          #
+          # A-LINE PAUSED (2026-11-09). The trade writer has failed at a different gate every day this week and each
+          # attempt costs the operator a red card. The site still publishes daily: the guide line runs at 15:20 and the
+          # fallback below publishes when a day is empty. Re-enable by deleting data/a-line-paused once the explainer
+          # path has been tested end to end.
+          #
+          if [ -f data/a-line-paused ] && [ "$ROUTE" = "script" ]; then
+            echo "A line paused: $(cat data/a-line-paused)"
+            echo "The guide line and the fallback carry the day."
+            exit 0
+          fi
           DIRECTIVE="${{ github.event.inputs.directive_file }}"
           if [ -z "$DIRECTIVE" ] && [ -n "${{ github.event.client_payload.directive_file }}" ]; then
             DIRECTIVE="${{ github.event.client_payload.directive_file }}"
