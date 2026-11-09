@@ -451,7 +451,7 @@ jobs:
               ROUTE="script"
             else
               HOUR=$(date -u +%H)
-              if [ "$HOUR" -ge "12" ]; then ROUTE="agent"; else ROUTE="script"; fi
+              if [ -z "$ROUTE" ] && [ "$HOUR" -ge "12" ]; then ROUTE="agent"; elif [ -z "$ROUTE" ]; then ROUTE="script"; fi   # an explicit route always wins
             fi
           fi
           echo "route: $ROUTE"
@@ -653,7 +653,7 @@ jobs:
         run: |
           # Scheduled runs carry no inputs, so the route comes from the clock.
           if [ -z "$ROUTE" ]; then
-            if [ "$(date -u +%H)" -ge "12" ]; then export ROUTE="agent"; else export ROUTE="script"; fi
+            if [ -z "${ROUTE:-}" ] && [ "$(date -u +%H)" -ge "12" ]; then export ROUTE="agent"; elif [ -z "${ROUTE:-}" ]; then export ROUTE="script"; fi
           fi
           node tools/notify-feishu.mjs
 
