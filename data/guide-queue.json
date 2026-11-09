@@ -1609,7 +1609,7 @@
       "unit": "one application",
       "title": "China permanent residence permit",
       "query": "china permanent residence permit",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"china permanent residence permit\" (bing)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -1636,7 +1636,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-09"
     },
     {
       "slug": "residence-permit-number",

@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-09T03:21:07.504Z",
+  "at": "2026-11-09T03:30:32.667Z",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "residence-permit-requirements",
-  "seconds": 18,
+  "article": "permanent-residence-permit",
+  "seconds": 20,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004000000000000002
+    "usd": 0.0003999999999999993
   },
   "providers": [
     "volces"
@@ -22,32 +22,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding residence-permit-requirements",
+      "name": "grounding permanent-residence-permit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates residence-permit-requirements",
+      "name": "gates permanent-residence-permit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build residence-permit-requirements",
+      "name": "build permanent-residence-permit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-pea-protein-anti-dumping-definitive-duties-2026"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/residence-permit-requirements/"
+      "detail": "/guide/permanent-residence-permit/"
     }
   ],
   "researchLog": [
