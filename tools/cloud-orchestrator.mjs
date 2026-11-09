@@ -781,13 +781,33 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
    */
   if (wroteIt) {
     try {
-      const linked = fixInternalLinks(readFileSync(draftPath, "utf8"));
       if (linked.removed.length) console.log("  links      : removed " + linked.removed.length + " target(s) that do not exist - " + linked.removed.slice(0, 3).join(", "));
       if (linked.added) console.log("  links      : added " + linked.added + " from the published set");
       writeFileSync(draftPath, linked.article, "utf8");
     } catch (e) {
       console.log("  links      : repair skipped - " + String(e.message).slice(0, 80));
     }
+
+      /*
+       * INBOUND PRECHECK - the same rule link-check applies, run here so a dangling link cannot reach the
+       * publish step and be discovered by CI the next morning. It adds no threshold and changes no gate:
+       * tools/check-inbound-precheck.mjs reads the tree with link-check's own definition of a real page.
+       */
+      let precheckFailed = false;
+      try {
+        execFileSync(process.execPath, [join(ROOT, "tools", "check-inbound-precheck.mjs"), `--staged=${draftPath}`], { encoding: "utf8", timeout: 120000 });
+        step("inbound precheck", true, "every internal link resolves");
+      } catch (e) {
+        const out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+        precheckFailed = true;
+        const dangling = out.split("\n").filter((l) => /->/.test(l)).slice(0, 4).map((l) => l.trim());
+        step("inbound precheck", false, "dangling link: " + (dangling.join(" | ") || "see report").slice(0, 200));
+      }
+      if (precheckFailed) {
+        run.verdict = "DANGLING-LINK";
+        run.reasons.push("a link points at a page that does not exist or is still a draft");
+        break;
+      }
   }
   step(
     `writer${attempt > 1 ? ` (revision ${attempt - 1})` : ""}`,
