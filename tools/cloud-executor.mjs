@@ -222,12 +222,15 @@ function titleClash(title, slug) {
       const s = readFileSync(join(dir, f), "utf8");
       const t = (/^title:\s*"?(.*?)"?\s*$/m.exec(s) ?? [])[1] ?? "";
       const theirs = new Set([...words(t), ...words(other)]);
+      const MEASURE = /(safeguard|anti-dumping|antidumping|quota|tariff|duty|levy|registration|licence|license|ban|subsidy|rebate)/i;
+      const bothMeasure = MEASURE.test(title + " " + slug) && MEASURE.test(t + " " + other);
       const shared = [...mine].filter((w) => theirs.has(w));
       /* Jaccard, not a count: one distinctive product word on both sides is a duplicate; two
        * unrelated product words are not. {"spunbond"} vs {"spunbond"} is 1.0, {"spunbond"} vs {"polysilicon"} is 0. */
       const union = new Set([...mine, ...theirs]).size;
       const jaccard = union ? shared.length / union : 0;
-      if (shared.length >= 1 && jaccard >= 0.5) return { file: f, title: t.slice(0, 80), shared: shared.join("+"), jaccard: jaccard.toFixed(2) };
+      /* Sharing a product word is how a beat works; sharing a product AND a measure is a duplicate. */
+      if (bothMeasure && shared.length >= 1 && jaccard >= 0.5) return { file: f, title: t.slice(0, 80), shared: shared.join("+"), jaccard: jaccard.toFixed(2) };
     } catch {}
   }
   return null;
