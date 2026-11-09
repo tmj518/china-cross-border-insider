@@ -13,6 +13,7 @@
  * machine: it can only do what someone wrote down in advance. Every judgement the agent made implicitly
  * had to be enumerated, and every enumeration has a gap. Fourteen consecutive runs failed, and each
  * failure was one gap - a missing field in a validator, a prompt that did not say a thing the agent would
+import { topicGuard } from "./topic-guard.mjs";
  * have inferred, an import that an experiment-only loader could not resolve.
  *
  * The operator's own description of the goal was "one more scheduled trigger, hands free". Not a rewrite.
@@ -1180,6 +1181,19 @@ function runTool(name, input) {
     }
 
     if (name === "publish_draft") {
+      /*
+       * THE SUBJECT IS CHECKED BEFORE THE FILE IS MOVED.
+       *
+       * The guard refuses a leadership commentary, a casualty report or a non-English query here, so an
+       * article that should not exist never reaches src/content. Same rule as the script line.
+       */
+      {
+        const src = readFileSync(join(ROOT, input.path), "utf8");
+        const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(src)?.[1] ?? "";
+        const field = (k) => new RegExp("^" + k + ":\\s*\"?([^\"\\n]*)\"?", "m").exec(fm)?.[1] ?? "";
+        const g = topicGuard({ title: field("title"), keyword: field("target_keyword"), slug: input.path });
+        if (!g.ok) return done("REFUSED: [" + g.rule + "] " + g.reason + " Rewrite the subject or finish with NO-SUBJECT.");
+      }
       /*
        * Publishing no longer requires a green check_draft.
        *
