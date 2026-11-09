@@ -114,7 +114,7 @@ function newsHeadlines() {
  * monetises a fatal fire and it is not a procedure anybody follows. Crime, accidents, deaths, disasters,
  * protests and court cases are excluded by word, before anything is scored.
  */
-const NOT_MINE = /(israel|israeli|ukraine|russia|gaza|hamas|trump|biden|election of delegates|dead|death|deaths|killed|dies|died|fire|blaze|crash|collision|accident|earthquake|flood|typhoon|landslide|explosion|attack|shooting|murder|arrest|arrested|jailed|sentenced|probe|corruption|protest|riot|strike action|victim|casualt|injur|missing|funeral|obituar)/i;
+const NOT_MINE = /(israel|israeli|ukraine|russia|gaza|hamas|trump|biden|dead|death|deaths|killed|dies|died|fire|blaze|crash|collision|accident|earthquake|flood|typhoon|landslide|explosion|attack|shooting|murder|arrest|arrested|jailed|sentenced|probe|corruption|protest|riot|victim|casualt|injur|missing|funeral|obituar|xi jinping|president xi|premier li|ccp congress|politburo|communist party|leadership|steers)/i;
     return (latest.items ?? [])
       .map((i) => String(i.title ?? "").replace(/&amp;/g, "&").trim())
       .filter((t) => t.length > 20 && CHINA.test(t) && !NOT_MINE.test(t));
