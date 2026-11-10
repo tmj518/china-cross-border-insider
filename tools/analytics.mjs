@@ -220,7 +220,6 @@ async function fetchSnapshot(days = 30) {
       console.log("  A 401 or 403 here means the token lacks Account Analytics: Read, or is scoped to the");
       console.log("  wrong account. A 400 naming rumPageloadEventsAdaptiveGroups usually means the free");
       console.log("  plan does not expose that dataset for this account.");
-  { const g = writeGa4Fallback(days); if (g) return g; }
   /* GA4 has the numbers even when RUM refuses the account. */
       try {
         const dir = join(ROOT, "data", "analytics");
