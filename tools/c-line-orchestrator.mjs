@@ -665,6 +665,15 @@ async function attempt(topic) {
   const allowed = new Set();
   for (const f of factSheet) for (const d of digitsIn(f.value)) allowed.add(d);
   for (const d of digitsIn(DAY)) allowed.add(d); /* the verification date is not a policy claim */
+  /*
+   * THE INSTRUMENT'S OWN NUMBER IS NOT A CLAIM ABOUT COST.
+   *
+   * "council regulation (eu) 2026/382" carries 2026 and 382, and the guide line refused a draft because
+   * neither is in the fact sheet - the title was quoting the regulation it is about. Numbers that appear in
+   * the topic slug are part of the subject's name, so they cannot be invented figures.
+   */
+  for (const d of digitsIn(String(topic.slug ?? ""))) allowed.add(d);   /* the instrument's own number */
+  for (const d of digitsIn(String(topic.title ?? ""))) allowed.add(d);
 
   const proseOf = (b) =>
     [
