@@ -220,3 +220,5 @@ The announcement is four sentences and the substance is in a 147-page annex, whi
 For a supplier, the question is not whether the tariff is zero. It is whether your country is one of the twenty, whether your product is inside chapters 01 to 22, and whether the consignment can satisfy an origin rule that this instrument does not contain. Three answers, and two of them are in the annex.
 
 For the paperwork and the cost in one place, see [Italian Trade Agency showcases an immersive Italian apartment at CIIE](/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/).
+
+For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace in first 10 months](/guide/china-s-foreign-trade-growth-picks-up-pace-in-first-10-months/).

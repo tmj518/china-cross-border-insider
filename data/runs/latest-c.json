@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-10T03:56:46.106Z",
-  "runId": "42752603641",
+  "at": "2026-11-10T05:26:36.753Z",
+  "runId": "42762069447",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
-  "seconds": 20,
+  "article": "china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
+  "seconds": 23,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -23,20 +23,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "name": "grounding china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "name": "gates china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "name": "build china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -48,7 +48,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/"
+      "detail": "/guide/china-s-foreign-trade-growth-picks-up-pace-in-first-10-months/"
     }
   ],
   "researchLog": [

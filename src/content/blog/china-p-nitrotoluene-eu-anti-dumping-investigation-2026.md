@@ -192,3 +192,5 @@ For the paperwork and the cost in one place, see [Open chinese bank account](/gu
 For the paperwork and the cost in one place, see [APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market](/guide/apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie/).
 
 For the paperwork and the cost in one place, see [Italian Trade Agency showcases an immersive Italian apartment at CIIE](/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/).
+
+For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace in first 10 months](/guide/china-s-foreign-trade-growth-picks-up-pace-in-first-10-months/).
