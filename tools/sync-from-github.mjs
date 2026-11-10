@@ -97,10 +97,12 @@ try {
   let copied = 0;
   const failed = [];
   /* Copy file by file: cpSync throws on one locked file and leaves the rest undone. */
+  const SKIP = ["docs/collab"];   /* the live channel is not a mirror */
   const walkCopy = (from, to) => {
     if (!existsSync(from)) return;
     mkdirSync(to, { recursive: true });
     for (const name of readdirSync(from)) {
+      if (SKIP.some((k) => (from + "/" + name).replace(/\\/g, "/").includes(k))) continue;
       const a = join(from, name);
       const b = join(to, name);
       const st = statSync(a);
