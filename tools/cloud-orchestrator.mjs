@@ -1347,12 +1347,11 @@ if (wroteIt && qaCode === 0) {
       if (after !== before) {
       /* Then the links: a target that does not exist is a gate failure no rewrite can fix. */
       try {
-        const linked = fixInternalLinks(readFileSync(target, "utf8"));
+        const linked = fixInternalLinks(after);
         if (linked.removed.length) console.log("  links removed (no such page): " + linked.removed.join(", "));
         if (linked.added) console.log("  links added: " + linked.added + " from the published set");
         writeFileSync(target, linked.article, "utf8");
       } catch {}
-        writeFileSync(target, after, "utf8");
         console.log("  hedge sanitizer: replaced the blocked words before the gate read the file");
       }
     } catch {}
