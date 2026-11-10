@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-10T06:29:57.819Z",
-  "runId": "42768805165",
+  "at": "2026-11-10T07:20:51.206Z",
+  "runId": "42774558963",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "alipay-for-foreigners",
-  "seconds": 18,
+  "article": "china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0.0013
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "4 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding alipay-for-foreigners",
+      "name": "grounding china-africa-health-cooperation-can-help-more-children-survive-thrive-",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates alipay-for-foreigners",
+      "name": "gates china-africa-health-cooperation-can-help-more-children-survive-thrive-",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build alipay-for-foreigners",
+      "name": "build china-africa-health-cooperation-can-help-more-children-survive-thrive-",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "no candidate - NO-INBOUND"
+      "detail": "china-zero-tariff-20-african-countries-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/alipay-for-foreigners/"
+      "detail": "/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/"
     }
   ],
   "researchLog": [

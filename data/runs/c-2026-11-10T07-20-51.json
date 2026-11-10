@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-10T07:20:51.206Z",
+  "runId": "42774558963",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+  "seconds": 19,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0013
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-zero-tariff-20-african-countries-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

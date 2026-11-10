@@ -2794,7 +2794,242 @@
         "pagePosition": null
       },
       "doneAt": "2026-11-10"
+    },
+    {
+      "slug": "china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China-Africa health cooperation can help more children survive, thrive: UNICEF",
+      "query": "China-Africa health cooperation can help more children survive, thrive: UNICEF",
+      "status": "done",
+      "evidence": "demand matrix: \"China-Africa health cooperation can help more children survive, thrive: UNICEF\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China-Africa",
+        "health",
+        "cooperation",
+        "help",
+        "more"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-10"
+    },
+    {
+      "slug": "china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China sweeps gymnastics team golds, adds 3 athletics medals at YOG",
+      "query": "China sweeps gymnastics team golds, adds 3 athletics medals at YOG",
+      "status": "queued",
+      "evidence": "demand matrix: \"China sweeps gymnastics team golds, adds 3 athletics medals at YOG\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "sweeps",
+        "gymnastics",
+        "team",
+        "golds,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China hands over remains of U.S. airmen found along WWII Hump Route",
+      "query": "China hands over remains of U.S. airmen found along WWII Hump Route",
+      "status": "queued",
+      "evidence": "demand matrix: \"China hands over remains of U.S. airmen found along WWII Hump Route\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "hands",
+        "over",
+        "remains",
+        "U.S."
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "special-report-the-9th-china-international-import-expo",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Special Report: The 9th China International Import Expo",
+      "query": "Special Report: The 9th China International Import Expo",
+      "status": "queued",
+      "evidence": "demand matrix: \"Special Report: The 9th China International Import Expo\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Special",
+        "Report:",
+        "China",
+        "International",
+        "Import"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-second-homegrown-large-cruise-ship-starts-first-trial-voyage",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's second homegrown large cruise ship starts first trial voyage",
+      "query": "China's second homegrown large cruise ship starts first trial voyage",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's second homegrown large cruise ship starts first trial voyage\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "second",
+        "homegrown",
+        "large",
+        "cruise"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xinhua-special-ciie-2026-vibrancy-sharing-openness",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness",
+      "query": "Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Xinhua",
+        "Special",
+        "CIIE",
+        "2026:",
+        "Vibrancy,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-10T03:56:25.175Z"
+  "updatedAt": "2026-11-10T07:20:31.430Z"
 }
