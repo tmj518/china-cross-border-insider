@@ -405,7 +405,11 @@ if (existsSync(directiveFile)) {
     {
   const stamp = String(directive?.generatedAt ?? directive?.at ?? directive?._generated ?? directive?.date ?? "").slice(0, 10);
       const today = new Date().toISOString().slice(0, 10);
-  if (stamp !== today) {   /* a file with no date is a file from an older run by definition */
+  /* Date granularity was not enough: a directive written at 00:47 was reused by every run until midnight.
+     Anything older than ninety minutes belongs to an earlier run and must not decide today's subject. */
+  const stampMs = stamp ? new Date(stamp).getTime() : NaN;
+  const ageMin = Number.isFinite(stampMs) ? (Date.now() - stampMs) / 60000 : Infinity;
+  if (ageMin > 90) {
         console.log("  directive  : ignoring " + directiveFile + " - written " + stamp + ", not today (" + today + ")");
         directive = null;
       }
