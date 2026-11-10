@@ -1643,6 +1643,64 @@
       "modelOutput": false
     },
     {
+      "id": "ciie-organizers-reported-by-xinhua",
+      "source": "CIIE organizers, reported by Xinhua",
+      "figures": [
+        {
+          "articleSlug": "china-import-expo-85-billion-deals-2026",
+          "articleNum": 97,
+          "value": "85.45 billion U.S. dollars",
+          "unit": "intended deals",
+          "period": "ninth CIIE, concluded Nov. 10, 2026",
+          "source": "CIIE organizers, reported by Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-import-expo-85-billion-deals-2026",
+          "articleNum": 97,
+          "value": "4,142",
+          "unit": "overseas exhibitors",
+          "period": "ninth CIIE, 2026",
+          "source": "CIIE organizers, reported by Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-import-expo-85-billion-deals-2026",
+          "articleNum": 97,
+          "value": "480",
+          "unit": "global, Asian or China debuts",
+          "period": "ninth CIIE, 2026",
+          "source": "CIIE organizers, reported by Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-import-expo-85-billion-deals-2026",
+          "articleNum": 97,
+          "value": "17 percent",
+          "unit": "increase in free exhibition space for least developed countries",
+          "period": "ninth CIIE, 2026",
+          "source": "CIIE organizers, reported by Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-import-expo-85-billion-deals-2026",
+          "articleNum": 97,
+          "value": "49",
+          "unit": "companies and institutions signed up for 10th CIIE",
+          "period": "signed Nov. 6, 2026, for 2027 edition",
+          "source": "CIIE organizers, reported by Xinhua",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "articleNums": [
+        97
+      ],
+      "articleSlugs": [
+        "china-import-expo-85-billion-deals-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "customs-tariff-commission-of-the-state-council-annex-3",
       "source": "Customs Tariff Commission of the State Council, Annex 3 export goods tariff schedule, rows 29 and 30",
       "figures": [

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-10T06:38:59.951Z",
+  "lastRun": "2026-11-10T23:21:15.292Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-foreign-trade-first-ten-months-2026-import-growth",
-  "runs": 42,
-  "published": 36,
+  "lastArticle": "china-import-expo-85-billion-deals-2026",
+  "runs": 43,
+  "published": 37,
   "lastUsage": {
-    "calls": 13,
-    "failed": 6,
-    "usd": 0.0332,
-    "promptTokens": 91954,
-    "completionTokens": 7612
+    "calls": 10,
+    "failed": 5,
+    "usd": 0.0118,
+    "promptTokens": 82097,
+    "completionTokens": 9930
   }
 }

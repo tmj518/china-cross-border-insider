@@ -131,6 +131,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 
 > Also read: [China's imports rose 23.6% in the first ten months of 2026](/blog/china-foreign-trade-first-ten-months-2026-import-growth/)
 
+> Also read: [CIIE 2026 closes with $85.45 billion in intended deals](/blog/china-import-expo-85-billion-deals-2026/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.
