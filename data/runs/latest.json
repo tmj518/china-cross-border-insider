@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-09T23:46:51.486Z",
+  "at": "2026-11-09T23:59:52.575Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "37 previous run(s), last 2026-11-09T05:16:22.688Z (PUBLISHED-DEGRADED)"
+      "detail": "38 previous run(s), last 2026-11-09T23:46:51.486Z (DANGLING-LINK)"
     },
     {
       "name": "weekly ceiling",
@@ -26,14 +26,14 @@
       "detail": "every section has a net-new article this week (5 sections)"
     },
     {
-      "name": "directive",
+      "name": "topic guard",
       "ok": true,
-      "detail": "none at /data/directive.json"
+      "detail": "the subject is one this site publishes"
     },
     {
-      "name": "research",
+      "name": "directive",
       "ok": true,
-      "detail": "proposed china-ppi-october-2026-importer-cost-pressure, 6 verified figure(s)"
+      "detail": "china-ppi-october-2026-importer-cost-pressure from /data/directive.json"
     },
     {
       "name": "directive figures",
@@ -58,11 +58,11 @@
   "article": null,
   "commit": null,
   "usage": {
-    "calls": 7,
+    "calls": 1,
     "failed": 0,
-    "usd": 0.0183,
-    "promptTokens": 142667,
-    "completionTokens": 9162
+    "usd": 0.0065,
+    "promptTokens": 10551,
+    "completionTokens": 3344
   },
   "route": "script",
   "categoryActivity": {
@@ -73,47 +73,5 @@
     "platforms": 0
   },
   "uncoveredSections": [],
-  "researchLog": [
-    "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 691 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 2606 characters but no document structure, trying the next one",
-    "  stream      : SSE, 742 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 2894 characters but no document structure, trying the next one",
-    "  stream      : SSE, 767 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 2967 characters but no document structure, trying the next one",
-    "  spent   : ~0.0079  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : china-extends-24-percent-us-tariff-suspension-two-months",
-    "  keyword : China 24% additional tariff US goods suspension extension 2026",
-    "  duplicate check: score 11 against brazil-beef-import-additional-55-percent-tariff-october-2026",
-    "      shared keyword stems: additional",
-    "      shared institution(s): china",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
-    "  stream      : SSE, 1275 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4623 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1260 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4577 characters but no document structure, trying the next one",
-    "  stream      : SSE, 959 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3512 characters but no document structure, trying the next one",
-    "  spent   : ~0.0161  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : china-ppi-october-2026-importer-cost-pressure",
-    "  keyword : China PPI October 2026 importer cost pressure",
-    "  duplicate check: score 0",
-    "  slug    : china-ppi-october-2026-importer-cost-pressure",
-    "  keyword : China PPI October 2026 importer cost pressure",
-    "  category: supply-chain",
-    "  figures : 6",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0161",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
-  ],
-  "seconds": 134
+  "seconds": 23
 }

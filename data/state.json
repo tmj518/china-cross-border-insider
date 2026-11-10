@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-09T23:46:51.486Z",
+  "lastRun": "2026-11-09T23:59:52.575Z",
   "lastVerdict": "DANGLING-LINK",
   "lastArticle": "how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11",
-  "runs": 38,
+  "runs": 39,
   "published": 34,
   "lastUsage": {
-    "calls": 7,
+    "calls": 1,
     "failed": 0,
-    "usd": 0.0183,
-    "promptTokens": 142667,
-    "completionTokens": 9162
+    "usd": 0.0065,
+    "promptTokens": 10551,
+    "completionTokens": 3344
   }
 }

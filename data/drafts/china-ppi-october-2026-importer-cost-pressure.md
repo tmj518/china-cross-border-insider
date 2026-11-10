@@ -1,17 +1,17 @@
 ---
 title: "China's factory-gate inflation hits 5.7% in October: what"
-subtitle: "China's PPI rose 5.7% year-on-year in October 2026, up from 5% in September. Factory-gate prices are climbing faster, and importers need a plan."
-description: "China's producer price index rose 5.7% year-on-year in October 2026, up from 5% in September. Factory-gate inflation is accelerating, and importers need to decide whether to renegotiate supplier prices or accelerate orders before further increases pass through."
+subtitle: "Producer prices rose 5.7% year-on-year in October, up from 5% in September. The pass-through to your FOB quote is the decision."
+description: "China's producer price index rose 5.7% year-on-year in October 2026, up from 5% in September. Importers face a choice: renegotiate supplier prices now or accelerate orders before further factory-gate increases pass through."
 publishDate: 2026-11-09
 reviewBy: 2027-05-09
-stakes: directional
+stakes: priced
 category: "supply-chain"
 audience: "importer"
-tags: ["China PPI", "producer price index", "factory-gate inflation", "importer cost", "supplier pricing", "October 2026"]
+tags: ["China PPI", "producer price index", "factory-gate inflation", "supplier negotiation", "landed cost", "sourcing"]
 priority: "P1"
 featured: false
 draft: false
-articleNumber: 90
+articleNumber: 91
 target_keyword: "China PPI October 2026 importer cost pressure"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -52,134 +52,119 @@ figures:
 
 ## AI Summary
 
-China's producer price index rose 5.7% year-on-year in October 2026, up from 5% in September. Factory-gate prices are accelerating, and the month-on-month gain of 0.7% shows the pressure is still building. Importers buying from Chinese factories face higher input costs that suppliers will pass through in the next round of quotations. The decision now is whether to renegotiate prices or accelerate orders before further increases land.
+China's producer price index rose 5.7 percent year-on-year in October 2026, up from 5 percent in September, the National Bureau of Statistics reported. Factory-gate prices are rising faster than consumer prices, which rose 0.7 percent. For importers, the gap is the signal: the cost pressure sits upstream, in the factory quote, not yet in the retail shelf. The decision is whether to lock supplier prices now or pull orders forward before the next monthly print.
 
 ## What happened
 
-The National Bureau of Statistics reported that China's producer price index, which tracks factory-gate prices, rose 5.7% year-on-year in October 2026. That is up from 5% in September. On a month-on-month basis, producer prices rose 0.7% in October, down from a 1.2% gain in September.
+The National Bureau of Statistics reported that China's producer price index, which tracks factory-gate prices, rose 5.7 percent year-on-year in October 2026. That is up from 5 percent in September. On a month-on-month basis, producer prices rose 0.7 percent in October, down from a 1.2 percent gain in September.
 
-The consumer price index rose 0.7% year-on-year in October, compared with 0.9% in September. Core CPI, which excludes food and energy prices, rose 0.8% year-on-year in October, easing from a 1% increase in September.
+The same release put the consumer price index at 0.7 percent year-on-year in October, compared with 0.9 percent in September. Core CPI, which excludes food and energy, rose 0.8 percent year-on-year, easing from 1 percent in September. Gasoline prices climbed 22.4 percent from a year earlier and contributed about 0.63 percentage points to CPI growth.
 
-Gasoline prices climbed 22.4% from a year earlier, contributing about 0.63 percentage points to CPI growth.
+The instrument here is the monthly price release from the National Bureau of Statistics. It is a statistical publication, not a regulation. It sets no duty, no deadline and no rate that binds a shipment. What it does is measure the direction and speed of the prices a Chinese factory charges the next buyer in the chain.
 
-> **Producer price index (PPI)** — a measure of the average change over time in the selling prices received by domestic producers for their output. It tracks prices at the factory gate, before goods reach wholesalers, retailers, or export markets. For an importer, a rising PPI means the cost of the goods you buy from Chinese factories is going up at the source.
+> **Producer price index (PPI)** — a measure of the average change in prices domestic producers receive for their output, measured at the factory gate before distribution, freight and retail margin are added. It is the closest published read on what a supplier's ex-works quotation is doing, which is why it leads the price a foreign buyer is quoted.
 
-| Indicator | October 2026 | September 2026 | Change |
-| --- | --- | --- | --- |
-| PPI year-on-year | 5.7% | 5.0% | +0.7 points |
-| PPI month-on-month | 0.7% | 1.2% | −0.5 points |
-| CPI year-on-year | 0.7% | 0.9% | −0.2 points |
-| Core CPI year-on-year | 0.8% | 1.0% | −0.2 points |
+The two indices move in opposite directions in this release, and the gap is the story:
+
+| Measure | October 2026, year-on-year | September 2026, year-on-year |
+| --- | --- | --- |
+| Producer price index | 5.7 percent | 5 percent |
+| Consumer price index | 0.7 percent | 0.9 percent |
+| Core CPI | 0.8 percent | 1 percent |
 
 ## Why now
 
-The acceleration in factory-gate prices comes as energy costs push through the supply chain. Gasoline prices rose 22.4% year-on-year, and that energy input feeds into manufacturing costs across every sector that uses fuel, transport, or petrochemical feedstocks.
+The year-on-year rate accelerated. September's 5 percent became October's 5.7 percent, a faster pace of factory-gate increase than the month before. The month-on-month rate slowed, from 1.2 percent in September to 0.7 percent in October, so the sequential step got smaller even as the annual comparison got larger.
 
-The month-on-month gain of 0.7% in October, while slower than September's 1.2%, still shows prices moving upward. The year-on-year comparison matters more for importers: it tells you what a factory is paying now versus what it paid a year ago, and that gap is widening.
+Those two facts point the same way for a buyer. The annual rate is what a supplier cites when it opens a price review, because it is the number in the headline. The monthly rate is what the supplier's own input bill did in the last thirty days. A supplier negotiating a new quotation in November has a 5.7 percent annual figure to point at and a 0.7 percent monthly step behind it.
 
-The consumer side tells a different story. CPI rose only 0.7% year-on-year, and core CPI eased to 0.8%. Consumer demand is not absorbing the cost increases, which means factories are carrying the margin squeeze. That pressure will show up in the next round of supplier quotations.
+The consumer side gives the supplier no cover. CPI at 0.7 percent and core CPI at 0.8 percent mean downstream prices are barely moving. A factory that tries to pass the full producer increase to a domestic retail customer meets resistance. A factory that sells to an export buyer meets a buyer whose own resale market is set elsewhere. The pressure lands on the export quotation.
 
 ## So what
 
-The gap between factory-gate inflation and consumer inflation is the number that matters for importers. Factories are paying 5.7% more for their inputs than a year ago, but consumers are only seeing 0.7% inflation. That spread means manufacturers are absorbing a cost they will eventually pass on.
+The judgement: treat the October print as a signal to open the price conversation now, not to wait for the November release. The producer index has accelerated on the annual measure, and the pass-through to an export FOB quote lags the factory gate by the length of the quotation cycle, not by the length of the shipping lane.
 
-For an importer, the question is timing. A factory that has been holding prices steady through the first half of 2026 is now facing a full year of input cost increases. The 5.7% year-on-year figure is the cumulative pressure. The 0.7% month-on-month figure is the ongoing pressure. Both point in the same direction: the next quotation you receive will be higher than the last one.
+The arithmetic is a formula, because the directive supplies no baseline price and this article will not invent one. Take your current ex-works unit price and apply the annual producer rate as the upper bound of what a supplier will ask:
 
-The gasoline number is the clearest signal. A 22.4% year-on-year increase in fuel prices raises the cost of every shipment, every factory run, and every plastic or chemical input derived from petroleum. That cost does not stay at the refinery. It moves into packaging, transport, and manufactured goods.
+```
+current ex-works unit price        = P
+supplier's opening ask (upper)     = P × (1 + 0.057)
+supplier's opening ask (monthly)   = P × (1 + 0.007)
+spread between the two asks        = P × (0.057 − 0.007) = P × 0.050
+```
 
-The decision framework for importers has three branches:
+The 5.7 percent figure is the annual comparison and the 0.7 percent figure is the monthly step. They measure different windows and are not a like-for-like pair. The formula shows the two anchors a supplier will choose between, not a single pass-through rate. A supplier citing the annual number asks for five percentage points more than one citing the monthly number, on the same cost base.
 
-**Accelerate orders.** If you have a confirmed supplier and a product you will need in the next six months, placing the order now locks in today's price. The risk is inventory carrying cost, but the protection against a 5.7% annual price increase is real.
+Work it through on a hypothetical unit price to see the shape, not a sourced amount. If P is 100 units of currency, the annual-anchored ask is 105.7 and the monthly-anchored ask is 100.7. The gap is 5.0 units per piece. On an order of ten thousand pieces the gap is 50,000 units of currency. That is the negotiating room between the two published figures, and it is the number to bring to the table.
 
-**Renegotiate terms.** If you have a long-term contract, ask for a price review clause or a volume commitment that holds the current rate for a defined period. Suppliers facing input cost pressure are more willing to trade price stability for order certainty.
+The second lever is timing. If the producer index keeps accelerating on the annual measure, a quotation accepted this month is cheaper than the same quotation accepted after the next release. Pulling an order forward converts a future price into a present one. The cost of pulling forward is carrying cost and warehouse space; the benefit is the price locked at today's factory gate. Compare the two directly rather than assuming one wins.
 
-**Diversify sourcing.** If your product category is energy-intensive, compare quotes from suppliers in other countries. The PPI data tells you Chinese factories are under cost pressure, but it does not tell you they are the only option.
-
-The arithmetic is straightforward. A factory that saw its input costs rise 5.7% over the past year will seek to recover that margin. If your current unit price is the baseline, the next quotation will carry some portion of that increase. The exact amount depends on the factory's margin structure, its energy intensity, and its competitive position.
-
-For a worked example, consider a product with a current factory price. If the factory passes through half of the 5.7% input cost increase, the new price rises by roughly 2.85%. If it passes through the full increase, the new price rises by 5.7%. The range is the negotiation space.
-
-| Pass-through scenario | Price increase | New price on a 100-unit baseline |
-| --- | --- | --- |
-| No pass-through | 0% | 100 |
-| Half pass-through | 2.85% | 102.85 |
-| Full pass-through | 5.7% | 105.70 |
-
-The month-on-month figure of 0.7% suggests the pressure is not easing. Even if the year-on-year rate stabilizes, the monthly gains compound. An importer who waits six months at a 0.7% monthly rate faces a cumulative increase of roughly 4.3% before any annual adjustment.
-
-Related reading: [China's producer price split between copper and ferrous metals](/blog/china-producer-price-split-copper-ferrous-2026/) shows how factory-gate inflation varies by sector. For the broader trade-policy context, see [China's emergency procurement rules for imported goods](/blog/china-emergency-procurement-rules-imported-goods-2026/) and [the EU's definitive anti-dumping duties on PET spunbond](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/).
+The third consideration is the split between producer and consumer prices. A 5.7 percent producer rate against a 0.7 percent consumer rate means the increase is concentrated upstream. An importer buying a finished consumer good has a supplier squeezed between a rising input bill and a flat downstream market. That supplier has less room to absorb, which makes the price conversation harder and more necessary at the same time.
 
 ## How confident
 
-**Confirmed.** The National Bureau of Statistics reported the producer price index rose 5.7% year-on-year in October 2026, up from 5% in September. The month-on-month increase was 0.7%, down from 1.2% in September. The CPI rose 0.7% year-on-year, core CPI rose 0.8%, and gasoline prices rose 22.4% year-on-year, contributing 0.63 percentage points to CPI growth. All figures come from the same National Bureau of Statistics release as reported by China Daily on 9 November 2026.
+**Confirmed.** The National Bureau of Statistics, via China Daily, reported a producer price index increase of 5.7 percent year-on-year in October 2026, up from 5 percent in September, and a month-on-month increase of 0.7 percent in October against 1.2 percent in September. The same release gives CPI at 0.7 percent year-on-year, core CPI at 0.8 percent, gasoline up 22.4 percent and contributing about 0.63 percentage points to CPI. Every figure in this article comes from that single release.
 
-**Inferred.** The pass-through scenarios in the "So what" section are analytical constructs, not reported figures. The National Bureau of Statistics did not state how much of the input cost increase factories will pass to buyers. The relationship between PPI and future supplier quotations is an inference based on the direction of the data, not a confirmed outcome. The cumulative monthly calculation assumes the 0.7% month-on-month rate continues, which the data does not guarantee.
+**Inferred.** The pass-through arithmetic is this article's construction, not a published rate. The directive supplies no baseline ex-works price, so the formula is written with P as a variable and the worked example uses a hypothetical 100 to show shape only. The claim that a supplier will anchor a price review on the annual figure rather than the monthly one is an inference from how the two measures are reported, not a documented practice. The link between the producer-consumer gap and supplier margin pressure is reasoning from the two published indices, not a measured margin.
 
-**What would change my mind.** A month-on-month PPI decline in the next release would signal the pressure is easing. A widening gap between PPI and CPI beyond the current 5-point spread would suggest factories are absorbing more cost, which delays but does not eliminate pass-through. A sharp drop in gasoline prices would remove the energy input that is driving much of the current increase. Any of these would shift the recommendation from "accelerate orders" to "hold and renegotiate."
+**What would change my mind.** A November release showing the annual producer rate flat or falling would remove the case for accelerating orders. A release showing the month-on-month rate rising back above the annual pace would mean the sequential pressure is building faster than the headline suggests, which strengthens the case for locking prices now. A published pass-through study from a customs or statistics authority would replace the formula with a measured rate.
 
 ## For you
 
-- **Importers with active purchase orders:** ask your supplier for a price validity period in writing before you confirm the order. A 30-day validity locks the quoted price against the next PPI release.
-- **Importers with long-term contracts:** request a price review clause that ties adjustments to a published index rather than leaving the supplier to set the new rate unilaterally.
-- **Importers sourcing energy-intensive products:** compare quotes from at least two suppliers in different regions before committing. The PPI data shows national pressure, but individual factories have different cost structures.
-- **Importers with in-transit cargo:** confirm the invoice value on your customs declaration matches the current contract price. A price increase agreed after shipment will not change the declared value, but it will affect your next order.
-- **Importers planning orders for the next quarter:** build a 3% to 6% price increase into your landed cost model now, before the supplier sends the new quotation.
+- **Importers with a quotation under review this month:** open with the monthly 0.7 percent figure as the cost base and hold the annual 5.7 percent as the supplier's ceiling, so the negotiation starts from the smaller published number.
+- **Importers with warehouse capacity and a stable resale price:** model pulling the next order forward against carrying cost, because a price locked at today's factory gate is not exposed to the next monthly print.
+- **Importers buying finished consumer goods:** expect a harder negotiation, because a supplier facing a 5.7 percent input rise and a 0.7 percent downstream market has little room to absorb and will push the increase toward the export buyer.
+- **Importers with multi-currency supplier contracts:** check whether the quotation is fixed in the supplier's currency or yours, because a factory-gate increase and a currency move compound on the same landed cost.
 
 ## The data point
 
-China's producer price index rose 5.7% year-on-year in October 2026, up from 5% in September, while consumer prices rose only 0.7%.
+China's producer price index rose 5.7 percent year-on-year in October 2026, up from 5 percent in September, while consumer prices rose 0.7 percent.
 
 <div class="callout">
-China's producer price index rose 5.7% year-on-year in October 2026, up from 5% in September, while consumer prices rose only 0.7%.
+Producer prices: 5.7% year-on-year, October 2026, up from 5% in September. Consumer prices: 0.7% year-on-year. The gap is the upstream pressure an importer negotiates against.
 </div>
 
 ## FAQ
 
-**How does the PPI increase affect the price I pay for goods from China?**
+**Does a 5.7 percent producer price rise mean my FOB quote goes up 5.7 percent?**
 
-The PPI measures what Chinese factories pay for their inputs. When that number rises, factories face higher costs for materials, energy, and transport. They recover those costs by raising the prices they charge buyers. The 5.7% year-on-year increase means factories are paying 5.7% more than they did a year ago. The exact amount passed to you depends on the factory's margin, its energy intensity, and its competitive position. A factory with thin margins will pass through more of the increase than one with room to absorb it. Your next quotation will reflect some portion of this pressure.
+No. The producer price index measures factory-gate prices across the whole industrial basket, not your specific product, and it is an average rather than a rate applied to any one quotation. Your supplier's ask depends on its own input mix, its margin and the quotation cycle. The index is a direction and a magnitude to negotiate against, not a formula that binds the quote. Use it as the upper anchor in a price review and the monthly figure as the lower anchor, then settle on the supplier's actual cost evidence.
 
-**Should I place orders now or wait for prices to stabilize?**
+**Should I accelerate orders or renegotiate prices?**
 
-The data does not show stabilization. The month-on-month increase of 0.7% in October means prices are still rising, even if slower than September's 1.2%. If you need the goods in the next six months, placing the order now locks in today's price. Waiting risks paying a higher price later. The trade-off is inventory carrying cost against price protection. For products with stable demand and no risk of obsolescence, accelerating orders is the lower-risk choice. For products with short life cycles or seasonal demand, the inventory risk may outweigh the price benefit.
+It depends on which cost is larger for your business: the price increase you avoid by ordering now, or the carrying cost and storage you pay by holding stock earlier than planned. If the producer index keeps accelerating on the annual measure, a quotation accepted this month is cheaper than the same quotation after the next release. If your warehouse is full or your resale price is falling, the carrying cost wins. Model both against your own unit price rather than assuming one is always right.
 
-**What is the difference between PPI and CPI, and why does the gap matter?**
+**Why does the gap between producer and consumer prices matter to an importer?**
 
-PPI tracks prices at the factory gate. CPI tracks prices at the consumer level. In October, PPI rose 5.7% while CPI rose 0.7%. The gap means factories are paying much more for inputs than consumers are paying for finished goods. That gap is a margin squeeze on manufacturers. They cannot fully pass costs to consumers because demand is weak, so they absorb the difference. That absorption is temporary. Eventually, factories will pass the costs to buyers, either through higher prices or through reduced quality, longer lead times, or other adjustments. The gap tells you the pressure is building, not that it has disappeared.
+A producer rate of 5.7 percent against a consumer rate of 0.7 percent means the price pressure is concentrated at the factory gate and has not reached the retail shelf. A supplier selling into a flat downstream market has little room to pass the increase on domestically, so the pressure moves toward the export buyer. That makes the price conversation harder and more necessary at the same time, and it is the reason to open it now rather than wait for the next monthly release.
 
 ## How we calculated this
 
-```text
-Given figures (National Bureau of Statistics via China Daily, retrieved 2026-11-09):
-- PPI year-on-year October 2026: 5.7%
-- PPI year-on-year September 2026: 5.0%
-- PPI month-on-month October 2026: 0.7%
-- PPI month-on-month September 2026: 1.2%
-- CPI year-on-year October 2026: 0.7%
-- Core CPI year-on-year October 2026: 0.8%
-- Gasoline year-on-year: 22.4%
-- Gasoline contribution to CPI: 0.63 percentage points
+```
+Inputs (National Bureau of Statistics via China Daily, October 2026):
+  annual PPI change        = 5.7 percent
+  monthly PPI change       = 0.7 percent
+  annual CPI change        = 0.7 percent
+  core CPI change          = 0.8 percent
 
-Year-on-year acceleration:
-5.7% − 5.0% = 0.7 percentage points
+Pass-through formula (no baseline price supplied, so P is a variable):
+  annual-anchored ask      = P × (1 + 0.057)
+  monthly-anchored ask     = P × (1 + 0.007)
+  spread per unit          = P × (0.057 − 0.007) = P × 0.050
 
-PPI-CPI spread:
-5.7% − 0.7% = 5.0 percentage points
+Worked shape only, P = 100 units of currency (hypothetical, not sourced):
+  annual-anchored ask      = 105.7
+  monthly-anchored ask     = 100.7
+  spread per unit          = 5.0
+  spread on 10,000 units   = 50,000 units of currency
 
-Half pass-through scenario on a 100-unit baseline:
-100 × (1 + 0.057 × 0.5) = 102.85
-
-Full pass-through scenario:
-100 × (1 + 0.057) = 105.70
-
-Six-month cumulative at 0.7% monthly:
-100 × (1.007)^6 = 104.28 (approximately 4.3% cumulative increase)
-
-Note: The pass-through scenarios and the cumulative calculation are analytical
-constructs based on the reported figures. The National Bureau of Statistics did
-not report pass-through rates or future projections.
+Note: the 5.7 and 0.7 figures measure different windows
+(annual vs monthly) and are not a like-for-like pair.
+The spread shows the two anchors a supplier chooses between.
 ```
 
 ## The point
 
-China's factory-gate prices are rising faster than consumer prices, and the gap is the signal. The 5.7% year-on-year PPI increase means the cost pressure on Chinese factories is real and accelerating. Importers who act now — by locking prices, renegotiating terms, or diversifying sources — will pay less than those who wait for the next round of quotations. The data does not say when prices will stop rising. It says they are rising now.
+The October producer price release is a signal, not a rate. It says factory-gate prices are rising faster on the annual measure than they were in September, while consumer prices barely move. For an importer, that gap is the negotiating room and the timing cue in one number. Open the price conversation now, anchor on the monthly figure, hold the annual figure as the supplier's ceiling, and model pulling the next order forward against your own carrying cost. The next monthly release decides whether that was early or late.
+
+Related reading: for how a factory-gate increase sits alongside a destination-side duty, see [EU slaps definitive anti-dumping duties of 39.8% to 48.1%](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/) and [Factory Prices Rose 5.0%, Split 20 Points](/blog/china-producer-price-split-copper-ferrous-2026/). Before you commit a deposit to a new supplier at a renegotiated price, use [How to Tell a Factory From a Trading Company Before You Wire a Deposit](/blog/how-to-tell-a-factory-from-a-trading-company/).
