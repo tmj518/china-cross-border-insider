@@ -858,7 +858,48 @@ ${previous.slice(0, 60000)}`;
   let article = extracted.article;
 /* Mechanical fields first: they have a defensible source and a wrong value fails the build. */
 /* The title before anything else: a duplicate title fails the gate after the article is written. */
+/*
+ * TWO SHAPE RULES THE WRITER KEEPS BREAKING, FIXED MECHANICALLY.
+ *
+ * "AI summary 40-100 words" came back 104 three revisions in a row, and "comparison table present"
+ * came back at zero rows: the directive carried five figures and the writer used them in prose only.
+ * Both are facts about the file, not judgements about the article, and both are repairable here - the
+ * retry loop was spending a call to be told the same thing again.
+ */
+function fitShape(src, figures) {
+  let out = src;
+  const notes = [];
+  /* 1. the summary: the "## AI Summary" paragraph, cut inside 100 words at a sentence end */
+  const sumRe = /(##\s*AI Summary\s*\n+)([\s\S]*?)(?=\n##\s)/;
+  const sm = sumRe.exec(out);
+  if (sm) {
+    const paras = sm[2].split(/\n\s*\n/);
+    const first = paras.find((x) => x.trim()) ?? "";
+    const words = first.trim().split(/\s+/).filter(Boolean);
+    if (words.length > 100) {
+      const cut = words.slice(0, 100).join(" ").replace(/[,;:]$/, "");
+      const sentence = cut.replace(/\s+[^.!?]*$/, "");
+      const next = (sentence.split(/\s+/).length >= 60 ? sentence : cut).replace(/[.!?]$/, "") + ".";
+      out = out.replace(first, next);
+      notes.push("aiSummary " + words.length + " -> " + next.split(/\s+/).length + " words");
+    }
+  }
+  /* 2. the comparison table: four rows from the figures already handed over */
+  const rows = (out.match(/^\|.*\|\s*$/gm) ?? []).length;
+  if (rows < 4 && Array.isArray(figures) && figures.length) {
+    const usable = figures.slice(0, 4).map((f) => [String(f.label ?? f.what ?? "figure").replace(/\|/g, "/"), String(f.value ?? ""), String(f.unit ?? ""), String(f.period ?? "")]);
+    const table = ["", "| Measure | Value | Unit | Period |", "| --- | --- | --- | --- |",
+      ...usable.map((r) => "| " + r.join(" | ") + " |")].join("\n");
+    out = out.trimEnd() + table + "\n";
+    notes.push("comparison table: " + usable.length + " row(s) from the figures");
+  }
+  return { article: out, notes };
+}
 const fit = fitTitle(article);
+{
+  const shaped = fitShape(article, directive?.figures ?? directive?.sourced ?? []);
+  if (shaped.notes.length) { article = shaped.article; for (const n of shaped.notes) console.log("  shape     : " + n); }
+}
 if (fit.problem) {
   console.log("  title     : refused - " + fit.problem);
   const reportPath = process.env.EXECUTOR_VIOLATIONS;
