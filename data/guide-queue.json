@@ -2683,7 +2683,7 @@
       "unit": "one application",
       "title": "Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver",
       "query": "Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2711,7 +2711,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-10"
     },
     {
       "slug": "the-world-comes-to-china-opportunities-flow-both-ways",

@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-10T05:26:36.753Z",
-  "runId": "42762069447",
+  "at": "2026-11-10T05:44:40.928Z",
+  "runId": "42763935888",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
-  "seconds": 23,
+  "article": "second-china-canada-strategic-economic-and-financial-dialogue-conclude",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "7 candidate(s)"
     },
     {
-      "name": "grounding china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
+      "name": "grounding second-china-canada-strategic-economic-and-financial-dialogue-conclude",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
+      "name": "gates second-china-canada-strategic-economic-and-financial-dialogue-conclude",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
+      "name": "build second-china-canada-strategic-economic-and-financial-dialogue-conclude",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, china-zero-tariff-20-african-countries-2026"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-s-foreign-trade-growth-picks-up-pace-in-first-10-months/"
+      "detail": "/guide/second-china-canada-strategic-economic-and-financial-dialogue-conclude/"
     }
   ],
   "researchLog": [

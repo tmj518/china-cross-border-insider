@@ -189,3 +189,5 @@ For the paperwork and the cost in one place, see [China extends suspension of 24
 For the paperwork and the cost in one place, see [Temporary residence permit china](/guide/temporary-residence-permit/).
 
 For the paperwork and the cost in one place, see ["council regulation (eu) 2026/382"](/guide/council-regulation-eu-2026-382/).
+
+For the paperwork and the cost in one place, see [Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver](/guide/second-china-canada-strategic-economic-and-financial-dialogue-conclude/).
