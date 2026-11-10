@@ -2607,7 +2607,7 @@
       "unit": "one application",
       "title": "Alipay for foreigners",
       "query": "alipay for foreigners",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"alipay for foreigners\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2632,7 +2632,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-10"
     },
     {
       "slug": "china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
