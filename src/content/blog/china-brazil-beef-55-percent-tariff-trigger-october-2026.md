@@ -189,3 +189,5 @@ For the paperwork and the cost in one place, see [Temporary residence permit chi
 For the paperwork and the cost in one place, see ["council regulation (eu) 2026/382"](/guide/council-regulation-eu-2026-382/).
 
 For the paperwork and the cost in one place, see [Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver](/guide/second-china-canada-strategic-economic-and-financial-dialogue-conclude/).
+
+For the paperwork and the cost in one place, see [China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition](/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/).

@@ -2763,7 +2763,7 @@
       "unit": "one application",
       "title": "China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition",
       "query": "China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2791,7 +2791,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-10"
     }
   ],
   "updatedAt": "2026-11-10T03:56:25.175Z"

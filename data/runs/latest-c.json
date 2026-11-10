@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-10T05:52:52.323Z",
-  "runId": "42764787637",
+  "at": "2026-11-10T06:13:08.674Z",
+  "runId": "42766941784",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "the-world-comes-to-china-opportunities-flow-both-ways",
-  "seconds": 19,
+  "article": "china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
+  "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.001
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding the-world-comes-to-china-opportunities-flow-both-ways",
+      "name": "grounding china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates the-world-comes-to-china-opportunities-flow-both-ways",
+      "name": "gates china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build the-world-comes-to-china-opportunities-flow-both-ways",
+      "name": "build china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-emergency-procurement-rules-imported-goods-october-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/the-world-comes-to-china-opportunities-flow-both-ways/"
+      "detail": "/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/"
     }
   ],
   "researchLog": [

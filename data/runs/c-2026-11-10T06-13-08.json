@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-10T06:13:08.674Z",
+  "runId": "42766941784",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
+  "seconds": 17,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.001
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "5 candidate(s)"
+    },
+    {
+      "name": "grounding china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
