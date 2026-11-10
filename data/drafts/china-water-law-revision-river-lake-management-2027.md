@@ -1,17 +1,18 @@
 ---
+route: "script"
 title: "China's Revised Water Law: River and Lake Management Areas"
-subtitle: "From 22 March 2027, new restrictions on land use and construction in river and lake management areas affect logistics and infrastructure projects near waterways"
-description: "China's revised Water Law takes effect 22 March 2027. It adds a new chapter on river and lake management, prohibits illegal occupation and unauthorized construction, and restricts new forestland or farmland. Importers with projects near waterways must plan for these limits."
+subtitle: "From 22 March 2027, the revised Water Law restricts land use and construction in river and lake management areas, affecting logistics and infrastructure"
+description: "China's revised Water Law takes effect 22 March 2027, adding a new chapter on river and lake management. It prohibits illegal occupation, unauthorized construction, and new forestland or farmland in these areas. Importers with logistics or infrastructure projects near waterways must plan for"
 publishDate: 2026-11-10
 reviewBy: 2027-05-10
 stakes: directional
 category: "trade-policy"
 audience: "importer"
-tags: ["water law", "China", "river management", "lake management", "land use", "construction", "logistics"]
+tags: ["water law", "river management", "lake management", "land use", "construction", "logistics", "infrastructure"]
 priority: "P1"
 featured: false
 draft: false
-articleNumber: 92
+articleNumber: 94
 target_keyword: "China Water Law revision 2027 river lake management area importer"
 search_intent: "informational"
 information_gain: "custom-calculation"
@@ -33,7 +34,7 @@ figures:
     period: "2027-03-22 onwards"
     source: "Revised Water Law of the People's Republic of China"
     retrieved: "2026-11-10"
-  - value: "No new forestland or farmland may be added within such management areas."
+  - value: "No new forestland or farmland can be added within such management areas."
     unit: "land-use restriction"
     period: "2027-03-22 onwards"
     source: "Revised Water Law of the People's Republic of China"
@@ -47,91 +48,99 @@ figures:
 
 ## AI Summary
 
-China's revised Water Law takes effect on 22 March 2027. It adds a new chapter on the management and protection of rivers and lakes, prohibiting the illegal occupation or unlawful use of river and lake waters and shorelines, and unauthorized construction in these areas. No new forestland or farmland may be added within such management areas. Importers with logistics facilities, warehouses, or infrastructure projects near waterways must review their land use and construction plans before the effective date.
+China's revised Water Law takes effect on 22 March 2027. It adds a new chapter on the management and protection of rivers and lakes, prohibiting illegal occupation or unlawful use of waters and shorelines, and unauthorized construction in these areas. No new forestland or farmland can be added within management areas. County-level and higher-level governments must organize restoration of occupied land. Importers with logistics or infrastructure projects near waterways face new restrictions and potential restoration obligations.
 
 ## What happened
 
-The Standing Committee of the 14th National People's Congress adopted the revised Water Law at its 25th session. The law takes effect on 22 March 2027. The revision adds a new chapter on the management and protection of rivers and lakes.
+The Standing Committee of the 14th National People's Congress adopted the revised Water Law at its 25th session. The law takes effect on 22 March 2027. The revision adds a new chapter on the management and protection of rivers and lakes, according to a news release from the Legislative Affairs Commission of the NPC Standing Committee.
 
-The new chapter prohibits the illegal occupation or unlawful use of river and lake waters and shorelines, as well as unauthorized construction in these areas. It also states that no new forestland or farmland may be added within such management areas. For areas that have already been occupied or reclaimed, county-level and higher-level local governments are required to organize the restoration of land to rivers and lakes in a planned manner.
+The new chapter prohibits the illegal occupation or unlawful use of river and lake waters and shorelines, as well as unauthorized construction in these areas. It also states that no new forestland or farmland can be added within such management areas.
 
-> **River and lake management areas** — the zones defined under the revised Water Law that cover river and lake waters, shorelines, and adjacent land subject to the new restrictions on occupation, use, and construction. The law does not publish a single national map; the boundaries are set and enforced by local authorities.
+For areas that have already been occupied or reclaimed, county-level and higher-level local governments are required to organize the restoration of land to rivers and lakes in a planned manner.
 
-The following table summarizes the key restrictions and obligations introduced by the new chapter:
+> **River and lake management areas** — the zones defined under China's Water Law where the river or lake's waters, shorelines, and adjacent land are subject to specific management and protection rules. The revised law tightens what can and cannot be done within these boundaries.
 
-| Restriction or obligation | Scope | Effective date |
+The following table summarizes the key changes:
+
+| Provision | What it does | Effective |
 | --- | --- | --- |
-| Prohibition on illegal occupation or unlawful use of waters and shorelines | River and lake management areas | 22 March 2027 |
-| Prohibition on unauthorized construction | River and lake management areas | 22 March 2027 |
-| No new forestland or farmland | Within river and lake management areas | 22 March 2027 |
-| Restoration of occupied or reclaimed land to rivers and lakes | Areas already occupied or reclaimed | Planned manner, from 22 March 2027 |
-
-The revision does not grandfather existing lawful uses. It directs local governments to organize restoration of land that has already been occupied or reclaimed. That means a project built before the effective date is not automatically protected; it may be subject to a restoration plan.
+| New chapter on rivers and lakes | Adds dedicated management and protection rules | 22 March 2027 |
+| Prohibition on illegal occupation | Bans unlawful use of waters and shorelines | 22 March 2027 |
+| No new forestland or farmland | Restricts land-use changes within management areas | 22 March 2027 |
+| Restoration obligation | Local governments must plan restoration of occupied land | 22 March 2027 |
 
 ## Why now
 
-The revision was adopted at the 25th session of the Standing Committee of the 14th National People's Congress. The effective date of 22 March 2027 gives a lead time of roughly four months from the date of this article. The new chapter responds to the need for a unified national framework on river and lake management, replacing fragmented local rules. The timing matters because the gap between adoption and effect gives importers a window to review existing projects and adjust plans before the restrictions bind.
+The revision was adopted at the 25th session of the Standing Committee of the 14th National People's Congress, with the effective date set for 22 March 2027. The timing gives local governments and businesses a runway of several months to adjust. The new chapter responds to ongoing pressures on river and lake ecosystems, but the law itself does not state a specific trigger event. What matters for importers is the fixed effective date and the scope of the restrictions.
 
 ## So what
 
-The revised Water Law changes the risk profile for any importer with a physical footprint near a river or lake in China. That includes warehouses, container yards, transshipment hubs, and any infrastructure built on reclaimed land or along shorelines. The prohibition on unauthorized construction means that any new build in a management area requires explicit authorization. The restriction on new forestland and farmland means that land-use conversions in these areas are closed off.
+The revised Water Law does not set a duty rate or a customs deadline. It changes the legal environment for any physical asset you operate or plan to build near a waterway in China. That includes warehouses, container yards, trucking depots, and any infrastructure tied to your supply chain.
 
-The restoration obligation is the cost driver. If a local government determines that your facility occupies or reclaims land within a management area, it must organize restoration in a planned manner. That process can involve relocating or removing the structure. The law does not specify compensation, and it does not exempt projects that were lawful under previous rules. The practical consequence is that an importer with a site in a management area faces a future obligation to restore the land, with the timing and terms set by the local government.
+The restriction on new forestland or farmland within management areas is a land-use control. If your logistics site sits inside a management area, you cannot convert adjacent land into new uses that fall under those categories. The prohibition on unauthorized construction means any new building, extension, or even temporary structure within a management area requires authorization under the new chapter. The restoration obligation means that if your site occupies reclaimed land, a county-level or higher government can require that land to be returned to the river or lake in a planned manner.
 
-The arithmetic here is not a duty rate; it is a land-use risk. The cost is the value of the facility plus the cost of relocation, minus any compensation the local government provides. The law does not set a compensation formula. That means the exposure is open-ended and depends on the local restoration plan.
+The cost arithmetic here is not a per-shipment figure. It is a project-level risk. A warehouse built on reclaimed land near a river can face a restoration order. The order would require you to relocate, demolish, or otherwise vacate the land. The cost of that move is your own relocation expense, plus the loss of the asset you built. There is no published compensation formula in the law, and no grandfathering clause for existing structures appears in the text.
 
-For importers planning new projects, the rule is simple: before acquiring or leasing land near a river or lake, verify whether the site falls within a management area. The law does not publish a national map, so the verification is a local inquiry. A site that looks available today may be subject to a restoration plan after 22 March 2027.
+For importers, the practical steps are:
 
-For importers with existing facilities, the action is to review the site's status against the new chapter. If the site is in a management area, document the lawful basis of the occupation and prepare for a possible restoration order. The law does not provide a transition period for existing uses; it directs local governments to plan restoration.
+- Identify whether any of your current or planned facilities sit within a river or lake management area.
+- Review your land-use permits and construction approvals against the new chapter's prohibitions.
+- If your site occupies reclaimed land, assess the likelihood of a restoration order from the local government.
+- For new projects, factor in the authorization requirement for any construction within a management area.
 
-The revision also affects infrastructure projects that support imports, such as port expansions, rail links, and road upgrades near waterways. A project that requires construction in a management area now needs explicit authorization under the new chapter. That authorization process is not defined in the law, which means the practical requirement is to engage with the local water authority early.
+The law's effect on logistics is indirect but real. A port, a bonded warehouse, or a distribution center near a river is not automatically illegal. But the legal risk of unauthorized construction or occupation is now explicit, and the restoration obligation gives local governments a tool to reclaim land. That tool can be used against a site you operate, even if you did not build it.
+
+Compare this with other recent trade-policy changes that carry direct per-unit costs. The [Brazil beef safeguard](/blog/china-brazil-beef-55-percent-tariff-trigger-october-2026/) adds a 55% tariff on a shipment. The [EU anti-dumping duties on PET spunbond](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/) range from 39.8% to 48.1%. The [Thailand EV excise tax](/blog/thailand-ev-excise-tax-35-percent-2027/) raises import costs by 35%. This Water Law revision is different: it does not change the price of goods at the border. It changes the legal status of the land your goods move through.
+
+The cost is not in the tariff schedule. It is in the capital you have sunk into a site that a restoration order can take away. That is a directional risk, not a priced one. You cannot calculate a per-container fee for it. You can calculate the exposure of a specific asset.
 
 ## How confident
 
-**Confirmed.** The revised Water Law was adopted at the 25th session of the Standing Committee of the 14th National People's Congress and takes effect on 22 March 2027. The new chapter on the management and protection of rivers and lakes is confirmed by the Legislative Affairs Commission of the NPC Standing Committee. The prohibitions on illegal occupation, unlawful use, unauthorized construction, and the restriction on new forestland and farmland are stated in the law. The restoration obligation for county-level and higher-level local governments is also stated. All of these figures come from the single instrument: the Revised Water Law of the People's Republic of China.
+**Confirmed.** The revised Water Law was adopted at the 25th session of the Standing Committee of the 14th National People's Congress and takes effect on 22 March 2027. The revision adds a new chapter on the management and protection of rivers and lakes. The chapter prohibits illegal occupation or unlawful use of river and lake waters and shorelines, and unauthorized construction in these areas. It also states that no new forestland or farmland can be added within such management areas. These statements come from the news release of the Legislative Affairs Commission of the NPC Standing Committee, as reported by China Daily.
 
-**Inferred.** The practical interpretation of "management areas" is not defined by a national map in the law. The boundaries are set and enforced by local authorities, and the law does not specify the process for determining them. The restoration obligation applies to areas already occupied or reclaimed, but the law does not state a timeline, a compensation formula, or an appeal process. The cost exposure for an importer with a facility in a management area is therefore inferred from the restoration obligation, not from a specific provision that quantifies the cost.
+**Inferred.** The practical consequences for importers — the risk of restoration orders against existing logistics sites, the need to review land-use permits, and the absence of a grandfathering clause — are inferences drawn from the text of the law. The law does not name specific industries or asset types. It does not state a compensation formula for restoration. It does not list which areas are designated as management areas. Those designations will come from local governments and implementing regulations, which are not part of the material I have. The cost arithmetic in this article is therefore directional, not priced.
 
-**What would change my mind.** A published implementation rule that defines the boundaries of river and lake management areas, or a national map, would change the analysis from a directional risk to a site-specific one. A compensation formula for restoration would change the cost arithmetic. A transition period for existing lawful uses would change the urgency. None of these appear in the law as adopted.
+**What would change my mind.** A published implementing regulation that defines the boundaries of river and lake management areas, or that provides a grandfathering clause for existing structures, would change the risk assessment. A local government notice that names specific logistics or industrial sites for restoration would give a concrete example of enforcement. A clarification that existing construction permits remain valid would reduce the urgency. None of those documents are in the material I have, so the assessment stands on the law's text alone.
 
 ## For you
 
-- **Importers with existing facilities near waterways:** audit your site's location against local river and lake management area boundaries before 22 March 2027, and document the lawful basis of any occupation or construction.
-- **Importers planning new logistics or infrastructure projects:** verify with the local water authority whether the site falls within a management area before acquiring or leasing land, and build the authorization requirement into the project timeline.
-- **Importers with projects on reclaimed land:** treat the restoration obligation as a live risk, and model the cost of relocation or removal as part of the project's total exposure.
+- **Importers with existing warehouses or yards near rivers or lakes:** audit your land-use permits and construction approvals against the new chapter's prohibitions before 22 March 2027. If your site sits on reclaimed land, document its history and prepare for a possible restoration order.
+- **Importers planning new logistics infrastructure in China:** include the management-area restriction in your site-selection checklist. Before signing a lease or buying land, verify whether the parcel falls within a river or lake management area and whether your planned construction requires authorization under the new chapter.
+- **Importers with bonded or cold-chain facilities on waterways:** review your facility's legal status under the restoration obligation. A county-level government can require restoration of occupied land, which would disrupt your clearance and storage operations. Factor this risk into your contingency planning.
 
 ## The data point
 
-The revised Water Law takes effect on 22 March 2027, and the new chapter on river and lake management prohibits unauthorized construction and restricts new forestland or farmland in management areas.
+The revised Water Law takes effect on 22 March 2027, adding a new chapter that prohibits illegal occupation, unauthorized construction, and new forestland or farmland within river and lake management areas.
 
 <div class="callout">
-  Effective date: 22 March 2027. New chapter: management and protection of rivers and lakes. Restrictions: no illegal occupation, no unlawful use, no unauthorized construction, no new forestland or farmland. Obligation: local governments must organize restoration of occupied or reclaimed land.
+  Effective 22 March 2027: no new forestland or farmland within river and lake management areas; unauthorized construction prohibited; local governments must plan restoration of occupied land.
 </div>
 
 ## FAQ
 
-**Does the revised Water Law apply to projects that were built before 22 March 2027?**
+**Does the revised Water Law affect goods already in transit to China?**
 
-The law does not include a grandfathering provision for existing projects. It directs county-level and higher-level local governments to organize the restoration of land to rivers and lakes in a planned manner for areas that have already been occupied or reclaimed. That means a facility built before the effective date is not automatically exempt. The local government determines the restoration plan, and the law does not specify a timeline or a compensation formula. An importer with an existing facility in a management area should treat the restoration obligation as a live risk and engage with the local water authority to understand the plan.
+No. The law does not address customs clearance, tariffs, or the movement of goods. It governs land use and construction within river and lake management areas. Goods in transit are unaffected by this revision. Your customs declarations and duty calculations remain subject to the tariff schedule and trade-remedy measures, not to water law. The only connection is indirect: if your logistics infrastructure near a waterway is disrupted by a restoration order, your cargo handling can be delayed. That is an operational risk, not a customs one.
 
-**How do I know if my site is in a river or lake management area?**
+**What counts as a river or lake management area?**
 
-The revised Water Law does not publish a national map of management areas. The boundaries are set and enforced by local authorities. The practical step is to inquire with the local water authority or the county-level government that administers the site. The law prohibits illegal occupation or unlawful use of river and lake waters and shorelines, and unauthorized construction in these areas, so the definition of the management area is the key fact. An importer should not assume that a site outside a visible waterway is outside the management area; the boundaries can include adjacent land.
+The revised law does not define the boundaries of management areas in the text I have. It prohibits illegal occupation or unlawful use of river and lake waters and shorelines, and unauthorized construction in these areas. The actual boundaries will be determined by local governments and implementing regulations. For an importer, the practical step is to check with the local water authority or land administration before acquiring or developing a site near a waterway. Do not assume a parcel is outside a management area simply because it is not immediately adjacent to the water.
 
-**What should I do if my project is in a management area?**
+**Can I build a warehouse on land that was previously reclaimed from a river or lake?**
 
-The first step is to document the current status of the site, including any permits or approvals that authorized the occupation or construction. The second step is to contact the local water authority to confirm whether the site falls within a management area and whether a restoration plan is being prepared. The third step is to model the cost of relocation or removal, since the law does not specify compensation. The law directs local governments to organize restoration in a planned manner, so the timing and terms are set locally. An importer should not wait for a restoration order to start the review.
+The revised law prohibits unauthorized construction in river and lake management areas. It also requires county-level and higher-level governments to organize the restoration of land to rivers and lakes in a planned manner for areas already occupied or reclaimed. If your warehouse sits on reclaimed land within a management area, it can be subject to a restoration order. The law does not provide a grandfathering clause for existing structures in the text I have. Before 22 March 2027, review your permits and consult the local government about the status of your site.
 
 ## How we calculated this
 
-This article carries no cost table. The directive supplied no amounts or percentages. The analysis is directional: the revised Water Law creates a land-use risk, not a duty rate. The cost exposure for an importer with a facility in a management area is the value of the facility plus relocation costs, minus any compensation the local government provides. The law does not set a compensation formula, so the exposure is open-ended and depends on the local restoration plan.
+This article carries no cost table and no per-unit arithmetic. The directive supplied no figures beyond the effective date, the regulatory additions, and the restrictions. The analysis is directional: it identifies the legal risk and the operational steps, without assigning a monetary value.
 
 ```text
-No arithmetic performed.
-The directive supplied no figures with monetary values or percentages.
-The article states the effective date, the regulatory restrictions, and the restoration obligation as confirmed by the law.
+No calculation performed.
+The directive contains no amounts or percentages.
+The article states the effective date (22 March 2027) and the restrictions.
+The cost impact is project-level and depends on site-specific factors.
 ```
 
 ## The point
 
-The revised Water Law takes effect on 22 March 2027, and its new chapter on river and lake management changes the rules for land use and construction near waterways. Importers with existing facilities or new projects in these areas face a prohibition on unauthorized construction, a restriction on new forestland and farmland, and a restoration obligation that local governments must organize. The law does not grandfather existing uses, and it does not set a compensation formula. The action is to verify the status of your site with the local water authority before the effective date, and to model the cost of restoration as part of your project's total exposure. For related trade-policy changes that affect importers, see [China's emergency procurement rules](/blog/china-emergency-procurement-rules-imported-goods-2026/), the [EU's definitive anti-dumping duties on PET spunbond](/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/), and [Thailand's excise tax on electric vehicles](/blog/thailand-ev-excise-tax-35-percent-2027/).
+China's revised Water Law, effective 22 March 2027, adds a new chapter on river and lake management that prohibits illegal occupation, unauthorized construction, and new forestland or farmland within management areas, and requires local governments to plan restoration of occupied land. For importers, the risk is not in the tariff schedule but in the legal status of logistics and infrastructure assets near waterways. Audit your sites, verify your permits, and plan for the possibility of a restoration order.

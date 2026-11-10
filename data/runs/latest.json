@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-10T00:45:32.287Z",
+  "at": "2026-11-10T01:33:31.295Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "39 previous run(s), last 2026-11-09T23:59:52.575Z (DANGLING-LINK)"
+      "detail": "40 previous run(s), last 2026-11-10T00:45:32.287Z (DANGLING-LINK)"
     },
     {
       "name": "weekly ceiling",
@@ -26,9 +26,14 @@
       "detail": "every section has a net-new article this week (5 sections)"
     },
     {
-      "name": "research",
+      "name": "topic guard",
       "ok": true,
-      "detail": "proposed china-water-law-revision-river-lake-management-2027, 5 verified figure(s)"
+      "detail": "the subject is one this site publishes"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "china-water-law-revision-river-lake-management-2027 from /data/directive.json"
     },
     {
       "name": "directive figures",
@@ -37,27 +42,72 @@
     },
     {
       "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-water-law-revision-river-lake-management-2027.md"
+    },
+    {
+      "name": "reviewer",
       "ok": false,
-      "detail": "dangling link: guide/china-foreigner-buy-car-apartment-procedure-2026  ->  guide/fourteen-confirmed-dead-in-taiyuan-apartment-fire"
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-water-law-revision-river-lake-management-2027.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 5 issue(s), 5 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "5 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-water-law-revision-river-lake-management-2027.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict DANGLING-LINK"
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "DANGLING-LINK",
+  "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "a link points at a page that does not exist or is still a draft"
+    "reviewer: 5 objection(s), advisory - published anyway"
   ],
-  "article": null,
+  "article": "china-water-law-revision-river-lake-management-2027",
   "commit": null,
   "usage": {
     "calls": 7,
-    "failed": 0,
-    "usd": 0.0168,
-    "promptTokens": 133360,
-    "completionTokens": 7456
+    "failed": 2,
+    "usd": 0.0124,
+    "promptTokens": 39876,
+    "completionTokens": 8737
   },
   "route": "script",
   "categoryActivity": {
@@ -68,47 +118,12 @@
     "platforms": 0
   },
   "uncoveredSections": [],
-  "researchLog": [
-    "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 725 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 2843 characters but no document structure, trying the next one",
-    "  stream      : SSE, 750 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 2925 characters but no document structure, trying the next one",
-    "  stream      : SSE, 780 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3029 characters but no document structure, trying the next one",
-    "  spent   : ~0.0074  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : china-extends-24-percent-us-tariff-suspension-two-months",
-    "  keyword : China US additional tariff suspension 24% extension 2026",
-    "  duplicate check: score 11 against brazil-beef-import-additional-55-percent-tariff-october-2026",
-    "      shared keyword stems: additional",
-    "      shared institution(s): china",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
-    "  stream      : SSE, 850 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3176 characters but no document structure, trying the next one",
-    "  stream      : SSE, 507 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 1833 characters but no document structure, trying the next one",
-    "  stream      : SSE, 898 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3532 characters but no document structure, trying the next one",
-    "  spent   : ~0.0148  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : china-water-law-revision-river-lake-management-2027",
-    "  keyword : China Water Law revision 2027 river lake management area importer",
-    "  duplicate check: score 0",
-    "  slug    : china-water-law-revision-river-lake-management-2027",
-    "  keyword : China Water Law revision 2027 river lake management area importer",
-    "  category: trade-policy",
-    "  figures : 5",
-    "  evidence check:",
-    "    external figures : 0",
-    "    verified         : 0",
-    "    failed           : 0",
-    "  wrote /data/directive.json",
-    "  spend this run: ~$0.0148",
-    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  "reviewAdvisory": [
+    "The draft asserts the absence of a grandfathering clause and compensation formula as a finding, but the directive's figures contain no such negative evidence; absence in the supplied excerpt cannot establish absence in the law.",
+    "The figures say governments must organize restoration in a planned manner; the draft converts this into a power to compel a specific private site's return, which is an inference not stated in the supplied text.",
+    "The draft attributes a motive (responding to ecosystem pressures) to the revision while conceding the law states no trigger, which is unsupported commentary about why the measure was adopted.",
+    "The confidence section labels the adoption and effective date 'Confirmed' while the body elsewhere treats the absence of a grandfathering clause and compensation formula as established, though those are inferences the section itself later calls inferred, creating an internal contradiction.",
+    "The draft cites a specific news release and China Daily as the source, but the directive's figures list only the Revised Water Law itself and do not contain that document attribution."
   ],
-  "seconds": 127
+  "seconds": 262
 }

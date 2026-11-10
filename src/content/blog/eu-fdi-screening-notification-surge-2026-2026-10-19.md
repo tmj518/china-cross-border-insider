@@ -127,6 +127,8 @@ For the surrounding regime, the notification thresholds and the 2028 timeline ar
 > Also read: [EU imposed 26 definitive trade-defence measures and 27 provisional anti-dumping duties in 2025](/blog/eu-trade-defence-provisional-retroactive-measures-2025/)
 
 
+> Also read: [China's Revised Water Law: River and Lake Management Areas](/blog/china-water-law-revision-river-lake-management-2027/)
+
 ## For you
 
 - **Importers acquiring a Chinese-owned EU plant:** treat the 15-day close as the base case and hold financing against the 12% tail, because manufacturing is 53% of in-depth cases.

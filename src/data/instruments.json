@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09",
+  "generated": "2026-11-10",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1929,6 +1929,64 @@
       ],
       "articleSlugs": [
         "china-ppi-positive-factory-price-drift"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "revised-water-law-of-the-people-s-republic-of",
+      "source": "Revised Water Law of the People's Republic of China",
+      "figures": [
+        {
+          "articleSlug": "china-water-law-revision-river-lake-management-2027",
+          "articleNum": 94,
+          "value": "March 22, 2027",
+          "unit": "effective date",
+          "period": "2027-03-22 onwards",
+          "source": "Revised Water Law of the People's Republic of China",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-water-law-revision-river-lake-management-2027",
+          "articleNum": 94,
+          "value": "new chapter on the management and protection of rivers and lakes",
+          "unit": "regulatory addition",
+          "period": "2027-03-22 onwards",
+          "source": "Revised Water Law of the People's Republic of China",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-water-law-revision-river-lake-management-2027",
+          "articleNum": 94,
+          "value": "prohibits the illegal occupation or unlawful use of river and lake waters and shorelines",
+          "unit": "regulatory restriction",
+          "period": "2027-03-22 onwards",
+          "source": "Revised Water Law of the People's Republic of China",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-water-law-revision-river-lake-management-2027",
+          "articleNum": 94,
+          "value": "No new forestland or farmland can be added within such management areas.",
+          "unit": "land-use restriction",
+          "period": "2027-03-22 onwards",
+          "source": "Revised Water Law of the People's Republic of China",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-water-law-revision-river-lake-management-2027",
+          "articleNum": 94,
+          "value": "county-level and higher-level local governments are required to organize the restoration of land to rivers and lakes in a planned manner",
+          "unit": "restoration obligation",
+          "period": "2027-03-22 onwards",
+          "source": "Revised Water Law of the People's Republic of China",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "articleNums": [
+        94
+      ],
+      "articleSlugs": [
+        "china-water-law-revision-river-lake-management-2027"
       ],
       "modelOutput": false
     },

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-10T00:45:32.287Z",
-  "lastVerdict": "DANGLING-LINK",
-  "lastArticle": "how-xi-steers-china-s-green-transformation-and-global-climat-explainer-2026-11",
-  "runs": 40,
-  "published": 34,
+  "lastRun": "2026-11-10T01:33:31.295Z",
+  "lastVerdict": "PUBLISHED-DEGRADED",
+  "lastArticle": "china-water-law-revision-river-lake-management-2027",
+  "runs": 41,
+  "published": 35,
   "lastUsage": {
     "calls": 7,
-    "failed": 0,
-    "usd": 0.0168,
-    "promptTokens": 133360,
-    "completionTokens": 7456
+    "failed": 2,
+    "usd": 0.0124,
+    "promptTokens": 39876,
+    "completionTokens": 8737
   }
 }

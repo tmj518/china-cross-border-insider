@@ -117,6 +117,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 > Also read: [EU imposed 26 definitive trade-defence measures and 27 provisional anti-dumping duties in 2025](/blog/eu-trade-defence-provisional-retroactive-measures-2025/)
 
 
+> Also read: [China's Revised Water Law: River and Lake Management Areas](/blog/china-water-law-revision-river-lake-management-2027/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.
