@@ -218,3 +218,5 @@ Substitute the standard rate for your own tariff line, and the value of your own
 The announcement is four sentences and the substance is in a 147-page annex, which is why the headline travels and the coverage does not. Read the annex and the measure is narrower and more specific than "China opens its market to Africa": 1,344 lines, all in the farm and food chapters, 20 named countries, and a term that ends on 30 April 2028.
 
 For a supplier, the question is not whether the tariff is zero. It is whether your country is one of the twenty, whether your product is inside chapters 01 to 22, and whether the consignment can satisfy an origin rule that this instrument does not contain. Three answers, and two of them are in the annex.
+
+For the paperwork and the cost in one place, see [Italian Trade Agency showcases an immersive Italian apartment at CIIE](/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/).

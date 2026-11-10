@@ -2520,7 +2520,276 @@
         "pagePosition": null
       },
       "doneAt": "2026-11-10"
+    },
+    {
+      "slug": "italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Italian Trade Agency showcases an immersive Italian apartment at CIIE",
+      "query": "Italian Trade Agency showcases an immersive Italian apartment at CIIE",
+      "status": "done",
+      "evidence": "demand matrix: \"Italian Trade Agency showcases an immersive Italian apartment at CIIE\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Italian",
+        "Trade",
+        "Agency",
+        "showcases",
+        "immersive"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-10"
+    },
+    {
+      "slug": "china-permanent-resident",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China permanent resident",
+      "query": "china permanent resident",
+      "status": "queued",
+      "evidence": "demand matrix: \"china permanent resident\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "china",
+        "permanent",
+        "resident"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "china permanent resident",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "alipay-for-foreigners",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Alipay for foreigners",
+      "query": "alipay for foreigners",
+      "status": "queued",
+      "evidence": "demand matrix: \"alipay for foreigners\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "alipay",
+        "foreigners"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.66,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "alipay for foreigners",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-foreign-trade-growth-picks-up-pace-in-first-10-months",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's foreign trade growth picks up pace in first 10 months",
+      "query": "China's foreign trade growth picks up pace in first 10 months",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's foreign trade growth picks up pace in first 10 months\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "foreign",
+        "trade",
+        "growth",
+        "picks"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "second-china-canada-strategic-economic-and-financial-dialogue-conclude",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver",
+      "query": "Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver",
+      "status": "queued",
+      "evidence": "demand matrix: \"Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Second",
+        "China-Canada",
+        "Strategic",
+        "Economic",
+        "Financial"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "the-world-comes-to-china-opportunities-flow-both-ways",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "The world comes to China, opportunities flow both ways",
+      "query": "The world comes to China, opportunities flow both ways",
+      "status": "queued",
+      "evidence": "demand matrix: \"The world comes to China, opportunities flow both ways\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "world",
+        "comes",
+        "China,",
+        "opportunities",
+        "flow"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition",
+      "query": "China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "polar",
+        "icebreaker",
+        "Xuelong",
+        "crosses"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-09T13:32:06.486Z"
+  "updatedAt": "2026-11-10T03:56:25.175Z"
 }

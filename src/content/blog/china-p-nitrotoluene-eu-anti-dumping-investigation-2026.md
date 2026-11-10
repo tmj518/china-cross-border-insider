@@ -190,3 +190,5 @@ For the paperwork and the cost in one place, see [Renting in China: Contract, De
 For the paperwork and the cost in one place, see [Open chinese bank account](/guide/open-chinese-bank-account/).
 
 For the paperwork and the cost in one place, see [APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market](/guide/apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie/).
+
+For the paperwork and the cost in one place, see [Italian Trade Agency showcases an immersive Italian apartment at CIIE](/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/).

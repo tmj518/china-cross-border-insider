@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-10T03:56:46.106Z",
+  "runId": "42752603641",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+  "seconds": 20,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0004
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, china-zero-tariff-20-african-countries-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
