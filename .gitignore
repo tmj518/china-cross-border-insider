@@ -137,3 +137,6 @@ logs/
 # The C line's staging area. A guide only leaves this directory after it has passed its gates and a
 # real astro build, so nothing here is ever an artifact worth keeping.
 data/drafts-c/
+
+# A directive belongs to one run. Committing it made every run reuse the same subject.
+data/directive.json
