@@ -108,8 +108,33 @@ function today() {
 
 /* ---------------------------------------------------------------- fetch */
 
+/*
+ * READERSHIP FROM GA4 WHEN CLOUDFLARE WILL NOT ANSWER.
+ *
+ * The probe says "token ok" but "RUM dataset FAILED - not authorized for that account", and the workflow
+ * then records zero page views while GA4 holds 375 for the same period. This reads the GA4 snapshot the
+ * same run already wrote and produces the file the notification card reads.
+ */
+function ga4Readership(days) {
+  try {
+    const dir = join(ROOT, "data", "analytics");
+    const files = readdirSync(dir).filter((f) => /^ga4-.*\.json$/.test(f)).sort();
+    if (!files.length) return null;
+    const g = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
+    const snap = { at: new Date().toISOString(), source: "ga4", windowDays: Number(g.days ?? days),
+      totalPageviews: Number(g?.totals?.screenPageViews ?? 0),
+      users: Number(g?.totals?.activeUsers ?? 0), pages: [], channels: g.channels ?? [] };
+    writeFileSync(join(dir, "readership-" + new Date().toISOString().slice(0, 10) + ".json"),
+      JSON.stringify(snap, null, 2), "utf8");
+    console.log("ANALYTICS - cannot fetch; READERSHIP taken from GA4");
+    console.log("  pageviews " + snap.totalPageviews + " over " + snap.windowDays + " day(s), users " + snap.users);
+    return snap;
+  } catch (e) { console.log("  GA4 fallback failed: " + e.message); return null; }
+}
+
 async function fetchSnapshot(days = 30) {
   if (!ACCOUNT || !TOKEN) {
+    { const g = ga4Readership(days); if (g) return g; }
     console.log("ANALYTICS - cannot fetch\n");
     console.log(`  Missing: ${[!ACCOUNT && "CF_ACCOUNT_ID", !TOKEN && "CF_API_TOKEN"].filter(Boolean).join(", ")}`);
     console.log("");
