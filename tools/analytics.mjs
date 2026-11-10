@@ -180,7 +180,7 @@ async function fetchSnapshot(days = 30) {
         return snap;
       } catch { return null; }
     }
-  { const g = writeGa4Fallback(days); if (g) return g; }
+  { const g = ga4Readership(days); if (g) return g; }   /* the module-level one; writeGa4Fallback is scoped inside the credential block and was undefined here */
   return null;
   }
 
