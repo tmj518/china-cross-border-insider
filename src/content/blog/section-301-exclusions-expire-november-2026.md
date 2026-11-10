@@ -3,7 +3,7 @@ title: "Section 301 Exclusions End Nov 9: $15k Extra Duty/Container"
 subtitle: "The Section 301 exclusions expiration date is 9 November 2026, and the per-unit math for a US importer of Chinese goods is already fixed"
 description: "USTR's remaining 178 Section 301 exclusions end for goods entered on or after 10 November 2026. Here is the per-unit and per-container math, and the correction window still open on past entries."
 publishDate: 2026-10-01
-reviewBy: 2026-11-09
+reviewBy: 2027-05-09
 stakes: priced
 category: "trade-policy"
 audience: "platform-seller"

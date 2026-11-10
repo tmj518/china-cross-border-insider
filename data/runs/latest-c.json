@@ -1,21 +1,19 @@
 {
-  "at": "2026-11-10T00:00:54.720Z",
-  "runId": "42724792180",
+  "at": "2026-11-10T00:47:57.362Z",
+  "runId": "42730644050",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "alipay-international-account",
-  "seconds": 39,
+  "article": "council-regulation-eu-2026-382",
+  "seconds": 18,
   "usage": {
-    "calls": 5,
+    "calls": 2,
     "failed": 0,
-    "usd": 0.0039
+    "usd": 0.00030000000000000165
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "council-regulation-eu-2026-382: prose uses numbers not in the fact sheet: 382"
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
@@ -25,7 +23,7 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "4 candidate(s)"
     },
     {
       "name": "grounding council-regulation-eu-2026-382",
@@ -33,34 +31,24 @@
       "detail": "procedural, no figures"
     },
     {
-      "name": "skipped council-regulation-eu-2026-382",
-      "ok": false,
-      "detail": "prose uses numbers not in the fact sheet: 382"
-    },
-    {
-      "name": "grounding alipay-international-account",
-      "ok": true,
-      "detail": "procedural, no figures"
-    },
-    {
-      "name": "gates alipay-international-account",
+      "name": "gates council-regulation-eu-2026-382",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build alipay-international-account",
+      "name": "build council-regulation-eu-2026-382",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "no candidate - NO-INBOUND"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/alipay-international-account/"
+      "detail": "/guide/council-regulation-eu-2026-382/"
     }
   ],
   "researchLog": [

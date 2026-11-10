@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-09T23:59:52.575Z",
+  "at": "2026-11-10T00:45:32.287Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "38 previous run(s), last 2026-11-09T23:46:51.486Z (DANGLING-LINK)"
+      "detail": "39 previous run(s), last 2026-11-09T23:59:52.575Z (DANGLING-LINK)"
     },
     {
       "name": "weekly ceiling",
@@ -26,19 +26,14 @@
       "detail": "every section has a net-new article this week (5 sections)"
     },
     {
-      "name": "topic guard",
+      "name": "research",
       "ok": true,
-      "detail": "the subject is one this site publishes"
-    },
-    {
-      "name": "directive",
-      "ok": true,
-      "detail": "china-ppi-october-2026-importer-cost-pressure from /data/directive.json"
+      "detail": "proposed china-water-law-revision-river-lake-management-2027, 5 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "6 sourced figure(s)"
+      "detail": "5 sourced figure(s)"
     },
     {
       "name": "inbound precheck",
@@ -58,11 +53,11 @@
   "article": null,
   "commit": null,
   "usage": {
-    "calls": 1,
+    "calls": 7,
     "failed": 0,
-    "usd": 0.0065,
-    "promptTokens": 10551,
-    "completionTokens": 3344
+    "usd": 0.0168,
+    "promptTokens": 133360,
+    "completionTokens": 7456
   },
   "route": "script",
   "categoryActivity": {
@@ -73,5 +68,47 @@
     "platforms": 0
   },
   "uncoveredSections": [],
-  "seconds": 23
+  "researchLog": [
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 725 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2843 characters but no document structure, trying the next one",
+    "  stream      : SSE, 750 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2925 characters but no document structure, trying the next one",
+    "  stream      : SSE, 780 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3029 characters but no document structure, trying the next one",
+    "  spent   : ~0.0074  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-extends-24-percent-us-tariff-suspension-two-months",
+    "  keyword : China US additional tariff suspension 24% extension 2026",
+    "  duplicate check: score 11 against brazil-beef-import-additional-55-percent-tariff-october-2026",
+    "      shared keyword stems: additional",
+    "      shared institution(s): china",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 850 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3176 characters but no document structure, trying the next one",
+    "  stream      : SSE, 507 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 1833 characters but no document structure, trying the next one",
+    "  stream      : SSE, 898 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3532 characters but no document structure, trying the next one",
+    "  spent   : ~0.0148  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-water-law-revision-river-lake-management-2027",
+    "  keyword : China Water Law revision 2027 river lake management area importer",
+    "  duplicate check: score 0",
+    "  slug    : china-water-law-revision-river-lake-management-2027",
+    "  keyword : China Water Law revision 2027 river lake management area importer",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0148",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 127
 }
