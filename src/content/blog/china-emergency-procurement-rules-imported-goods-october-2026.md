@@ -188,3 +188,5 @@ From the instrument:
 The change is about timing, not price. A supplier selling into Chinese government emergency procurement after 1 October 2026 gets a contract signed without the approval queue and collects 40% before shipping, and that is worth roughly 0.6% to 0.8% of contract value in the cost of money on the runs modelled here. The border is untouched: customs, duty and documents work exactly as they did before. Price the prepayment into the offer, plan for the 30% add-on, and keep the file for 15 years.
 
 For the paperwork and the cost in one place, see [Alipay and WeChat Pay for Foreigners: What Actually Works](/guide/alipay-wechat-pay-foreigner-china/).
+
+For the paperwork and the cost in one place, see [The world comes to China, opportunities flow both ways](/guide/the-world-comes-to-china-opportunities-flow-both-ways/).

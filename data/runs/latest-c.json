@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-10T05:44:40.928Z",
-  "runId": "42763935888",
+  "at": "2026-11-10T05:52:52.323Z",
+  "runId": "42764787637",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "second-china-canada-strategic-economic-and-financial-dialogue-conclude",
-  "seconds": 22,
+  "article": "the-world-comes-to-china-opportunities-flow-both-ways",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004
+    "usd": 0.0014
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding second-china-canada-strategic-economic-and-financial-dialogue-conclude",
+      "name": "grounding the-world-comes-to-china-opportunities-flow-both-ways",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates second-china-canada-strategic-economic-and-financial-dialogue-conclude",
+      "name": "gates the-world-comes-to-china-opportunities-flow-both-ways",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build second-china-canada-strategic-economic-and-financial-dialogue-conclude",
+      "name": "build the-world-comes-to-china-opportunities-flow-both-ways",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      "detail": "china-emergency-procurement-rules-imported-goods-october-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/second-china-canada-strategic-economic-and-financial-dialogue-conclude/"
+      "detail": "/guide/the-world-comes-to-china-opportunities-flow-both-ways/"
     }
   ],
   "researchLog": [

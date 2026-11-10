@@ -2723,7 +2723,7 @@
       "unit": "one application",
       "title": "The world comes to China, opportunities flow both ways",
       "query": "The world comes to China, opportunities flow both ways",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"The world comes to China, opportunities flow both ways\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2751,7 +2751,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-10"
     },
     {
       "slug": "china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp",
