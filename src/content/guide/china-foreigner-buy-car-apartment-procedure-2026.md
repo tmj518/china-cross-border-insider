@@ -86,4 +86,4 @@ Neither file is refused for lack of money. Both are refused for a document that 
 
 If you are moving goods rather than buying a home, the document logic is the same one set out in [the documents that decide whether the container moves](/blog/importing-from-china-documents-checklist/): the file is refused for a mismatch, not for a missing payment.
 
-For the paperwork and the cost in one place, see [Fourteen confirmed dead in Taiyuan apartment fire](/guide/fourteen-confirmed-dead-in-taiyuan-apartment-fire/).
+For the paperwork and the cost in one place, see Fourteen confirmed dead in Taiyuan apartment fire.
