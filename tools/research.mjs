@@ -621,6 +621,15 @@ const corpus = [...fetched, ...articles]
   })
   .join("\n");
 
+/* Recent proposals are not in the published ledger: a subject proposed at 00:47 and published at 09:33
+   stayed invisible here, and the directive left on disk was reused all day. */
+const proposedRecently = (() => {
+  try {
+    const rows = readFileSync(join(ROOT, "data", "proposed.jsonl"), "utf8").trim().split("\n").slice(-12);
+    return rows.map((l) => { try { const j = JSON.parse(l); return "  " + String(j.slug ?? ""); } catch { return null; } }).filter(Boolean).join("\n");
+  } catch { return ""; }
+})();
+
 const covered = ledger
   .slice(-40)
   .map((r) => `  #${r.articleNumber} ${r.slug} — keyword "${r.keyword}"`)
@@ -772,6 +781,7 @@ ${corpus}
 
 ALREADY PUBLISHED — do not repeat these
 ${covered}
+${proposedRecently ? "\nALREADY PROPOSED RECENTLY - a proposal is not a publication, and repeating one wastes a run:\n" + proposedRecently : ""}
 
 Return ONLY a JSON object:
 {
