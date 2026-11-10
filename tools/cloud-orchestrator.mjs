@@ -1335,6 +1335,17 @@ if (wroteIt && qaCode === 0) {
     published = true;
     step("publish", true, `staged at src/content/blog/${slug}.md`);
     /*
+     * THE DIRECTIVE IS CONSUMED, SO IT IS DELETED.
+     *
+     * It is written by research and left on disk; the workflow's commit step then puts it in the repository,
+     * where the next run finds it and skips research entirely. That is how one water-law subject was
+     * published three times on 2026-11-10. A published directive has done its job; the next run must
+     * research its own.
+     */
+    for (const f of [DIRECTIVE, directiveFile].filter(Boolean)) {
+      try { if (existsSync(f)) { rmSync(f); console.log("  directive  : consumed and removed - " + f); } } catch {}
+    }
+    /*
      * HEDGE SANITIZER: two words, replaced before the gate reads the file.
      *
      * The blocked-word rule bans "may" and "could" because in a cost article they turn a statement into a guess. It is
