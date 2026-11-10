@@ -304,7 +304,7 @@ jobs:
             node -e "const {readdirSync,readFileSync,writeFileSync}=require('fs');const d='data/analytics';let f=null;try{f=readdirSync(d).filter(x=>x.endsWith('.json')).sort().pop()}catch{};const s=f?JSON.parse(readFileSync(d+'/'+f,'utf8')):null;writeFileSync('data/tmp/integrations.json',JSON.stringify({readership:{configured:true,pageviews:s?.totalPageviews??0,days:s?.windowDays??7,articles:(s?.pages??[]).filter(p=>String(p.path).startsWith('/blog/')).length}},null,2))"
           else
             MISSING=$(grep -oE "Missing: .*" /tmp/analytics.txt | head -1 | sed 's/Missing: //')
-            node -e "const {writeFileSync}=require('fs');writeFileSync('data/tmp/integrations.json',JSON.stringify({readership:{configured:false,missing:'${MISSING:-CF_ACCOUNT_ID, CF_API_TOKEN}'}}))"
+            node tools/write-integrations.mjs
           fi
           true
 
