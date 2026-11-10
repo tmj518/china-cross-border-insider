@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-10T01:33:31.295Z",
+  "lastRun": "2026-11-10T06:38:59.951Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-water-law-revision-river-lake-management-2027",
-  "runs": 41,
-  "published": 35,
+  "lastArticle": "china-foreign-trade-first-ten-months-2026-import-growth",
+  "runs": 42,
+  "published": 36,
   "lastUsage": {
-    "calls": 7,
-    "failed": 2,
-    "usd": 0.0124,
-    "promptTokens": 39876,
-    "completionTokens": 8737
+    "calls": 13,
+    "failed": 6,
+    "usd": 0.0332,
+    "promptTokens": 91954,
+    "completionTokens": 7612
   }
 }

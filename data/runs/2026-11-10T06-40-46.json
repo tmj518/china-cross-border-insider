@@ -1,0 +1,152 @@
+{
+  "at": "2026-11-10T06:38:59.951Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "41 previous run(s), last 2026-11-10T01:33:31.295Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "1 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-foreign-trade-first-ten-months-2026-import-growth, 5 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "5 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-foreign-trade-first-ten-months-2026-import-growth.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 1 issue(s), 1 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "1 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-foreign-trade-first-ten-months-2026-import-growth.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 1 objection(s), advisory - published anyway"
+  ],
+  "article": "china-foreign-trade-first-ten-months-2026-import-growth",
+  "commit": null,
+  "usage": {
+    "calls": 13,
+    "failed": 6,
+    "usd": 0.0332,
+    "promptTokens": 91954,
+    "completionTokens": 7612
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 1,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    ndrc-briefing-article        5975B  article archived",
+    "  ok    ndrc-briefing-article        5844B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    state-council-policy-article    34375B  article archived",
+    "  ok    state-council-policy-article    25268B  article archived",
+    "  ok    state-council-policy-article    20312B  article archived",
+    "  ok    ndrc-article                22159B  article archived",
+    "  ok    ndrc-article                16268B  article archived",
+    "  fresh     : 1 article(s) dated today, newest 2026-11-10",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  provider   : volces timed out - parked for the rest of this run",
+    "  stream      : SSE, 957 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3471 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 927 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3372 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 966 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3440 characters but no document structure, trying the next one",
+    "  spent   : ~0.0192  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : china-foreign-trade-first-ten-months-2026-import-growth",
+    "  keyword : China foreign trade first ten months 2026 imports growth",
+    "  duplicate check: score 0",
+    "  slug    : china-foreign-trade-first-ten-months-2026-import-growth",
+    "  keyword : China foreign trade first ten months 2026 imports growth",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0192",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The publish date is 2026-11-10, so reviewBy is exactly six months out, which is compliant; however, the directive's pattern list flags reviewBy that is not six months out, and this one is six months out, so no issue. Wait, this is a false flag. Let me re-evaluate."
+  ],
+  "seconds": 107
+}

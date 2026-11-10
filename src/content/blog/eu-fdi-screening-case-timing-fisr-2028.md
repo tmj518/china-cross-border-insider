@@ -119,6 +119,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 
 > Also read: [China's Revised Water Law: River and Lake Management Areas](/blog/china-water-law-revision-river-lake-management-2027/)
 
+> Also read: [China's imports rose 23.6% in the first ten months of 2026](/blog/china-foreign-trade-first-ten-months-2026-import-growth/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.

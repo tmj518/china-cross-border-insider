@@ -2189,6 +2189,55 @@
       "modelOutput": false
     },
     {
+      "id": "general-administration-of-customs-via-xinhua",
+      "source": "General Administration of Customs, via Xinhua",
+      "figures": [
+        {
+          "articleSlug": "china-foreign-trade-first-ten-months-2026-import-growth",
+          "articleNum": 95,
+          "value": "20 percent",
+          "unit": "year-on-year growth in total imports and exports",
+          "period": "January-October 2026",
+          "source": "General Administration of Customs, via Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-foreign-trade-first-ten-months-2026-import-growth",
+          "articleNum": 95,
+          "value": "18.8 percent",
+          "unit": "year-on-year growth in total imports and exports",
+          "period": "January-September 2026",
+          "source": "General Administration of Customs, via Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-foreign-trade-first-ten-months-2026-import-growth",
+          "articleNum": 95,
+          "value": "23.6 percent",
+          "unit": "year-on-year growth in imports",
+          "period": "January-October 2026",
+          "source": "General Administration of Customs, via Xinhua",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "articleSlug": "china-foreign-trade-first-ten-months-2026-import-growth",
+          "articleNum": 95,
+          "value": "17.6 percent",
+          "unit": "year-on-year growth in exports",
+          "period": "January-October 2026",
+          "source": "General Administration of Customs, via Xinhua",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "articleNums": [
+        95
+      ],
+      "articleSlugs": [
+        "china-foreign-trade-first-ten-months-2026-import-growth"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ministry-of-finance-of-the-prc-and-state-taxation",
       "source": "Ministry of Finance of the PRC and State Taxation Administration, export tax rebate adjustment announcement, January 2026",
       "figures": [
