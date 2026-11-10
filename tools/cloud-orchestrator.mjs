@@ -817,6 +817,9 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
    */
   if (wroteIt) {
     try {
+      /* The declaration went missing when this block was reordered, so every run logged
+       * "repair skipped - linked is not defined" and the dead links went straight to the precheck. */
+      const linked = fixInternalLinks(readFileSync(draftPath, "utf8"));
       if (linked.removed.length) console.log("  links      : removed " + linked.removed.length + " target(s) that do not exist - " + linked.removed.slice(0, 3).join(", "));
       if (linked.added) console.log("  links      : added " + linked.added + " from the published set");
       writeFileSync(draftPath, linked.article, "utf8");
