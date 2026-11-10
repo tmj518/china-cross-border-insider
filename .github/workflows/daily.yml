@@ -458,9 +458,9 @@ jobs:
           if [ "$ROUTE" = "agent" ]; then
             node tools/agent-run.mjs ${{ github.event.inputs.force == 'true' && '--force' || '' }}
           elif [ -n "$DIRECTIVE" ]; then
-            node tools/cloud-orchestrator.mjs ${{ github.event.inputs.force == 'true' && '--force' || '' }}
+            node tools/cloud-orchestrator.mjs --directive-file="$DIRECTIVE" ${{ github.event.inputs.force == 'true' && '--force' || '' }}
           else
-            node tools/cloud-orchestrator.mjs
+            node tools/cloud-orchestrator.mjs ${{ github.event.inputs.force == 'true' && '--force' || '' }}
           fi
 
       - name: Create the Feishu ledger if it does not exist yet
