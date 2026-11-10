@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-10T00:47:57.362Z",
-  "runId": "42730644050",
+  "at": "2026-11-10T01:52:49.014Z",
+  "runId": "42738762475",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "council-regulation-eu-2026-382",
-  "seconds": 18,
+  "article": "alipay-settings",
+  "seconds": 24,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.00030000000000000165
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "4 candidate(s)"
+      "detail": "3 candidate(s)"
     },
     {
-      "name": "grounding council-regulation-eu-2026-382",
+      "name": "grounding alipay-settings",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates council-regulation-eu-2026-382",
+      "name": "gates alipay-settings",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build council-regulation-eu-2026-382",
+      "name": "build alipay-settings",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      "detail": "no candidate - NO-INBOUND"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/council-regulation-eu-2026-382/"
+      "detail": "/guide/alipay-settings/"
     }
   ],
   "researchLog": [

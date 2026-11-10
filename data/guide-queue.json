@@ -2493,7 +2493,7 @@
       "unit": "one application",
       "title": "Alipay settings",
       "query": "alipay settings",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"alipay settings\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2518,7 +2518,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-10"
     }
   ],
   "updatedAt": "2026-11-09T13:32:06.486Z"
