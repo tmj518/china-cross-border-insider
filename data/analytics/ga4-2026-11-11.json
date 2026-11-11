@@ -3,20 +3,20 @@
   "account": "",
   "days": 28,
   "totals": {
-    "activeUsers": 186,
-    "newUsers": 185,
-    "screenPageViews": 401,
-    "sessions": 215,
-    "eventCount": 1100
+    "activeUsers": 190,
+    "newUsers": 189,
+    "screenPageViews": 407,
+    "sessions": 221,
+    "eventCount": 1121
   },
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 184
+      "sessions": 186
     },
     {
       "channel": "Organic Search",
-      "sessions": 26
+      "sessions": 30
     },
     {
       "channel": "AI Assistant",
@@ -31,5 +31,5 @@
       "sessions": 1
     }
   ],
-  "at": "2026-11-11T02:34:56.987Z"
+  "at": "2026-11-11T23:21:13.437Z"
 }

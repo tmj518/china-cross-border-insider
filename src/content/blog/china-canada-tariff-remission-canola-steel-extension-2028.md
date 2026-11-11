@@ -107,6 +107,8 @@ The fourth use is the beef figure. The 500 million Canadian dollars projected fo
 
 **What would change this.** A remission order that names the duty rates, the goods and the exact end date would replace the horizon calculation with a per-shipment figure. A statement that the remission will not be renewed would make the 2029 duty certain rather than contingent. A customs release giving the period behind the 14.3 percent and 20.1 percent rates would let an importer benchmark their own book against them.
 
+> Also read: [China's revised human genetic resources rules require NHC](/blog/china-human-genetic-resources-export-approval-2026/)
+
 ## For you
 
 - **Canadian importers of Chinese steel and aluminium:** rebuild the duty line in your landed-cost model to run the remission through 2028 and carry the full duty from 2029, so the cliff is visible in the model rather than discovered at renewal.

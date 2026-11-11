@@ -123,6 +123,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 
 > Also read: [CIIE 2026 closes with $85.45 billion in intended deals](/blog/china-import-expo-85-billion-deals-2026/)
 
+> Also read: [China's revised human genetic resources rules require NHC](/blog/china-human-genetic-resources-export-approval-2026/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.
