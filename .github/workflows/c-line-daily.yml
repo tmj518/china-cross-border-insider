@@ -121,7 +121,7 @@ jobs:
       - name: Write one guide
         id: run
         env:
-          ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 }}
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}   # locked 2026-11-11: same reason as the trade line
           ARK_MODEL_WRITER: ${{ vars.ARK_MODEL_WRITER }}
           #
           # The second vendor, which was not passed here before.
