@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-11T03:50:44.442Z",
-  "runId": "42955311145",
+  "at": "2026-11-11T04:07:20.945Z",
+  "runId": "42957048462",
   "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
-  "seconds": 23,
+  "article": "special-report-the-9th-china-international-import-expo",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -26,29 +26,29 @@
       "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "name": "grounding special-report-the-9th-china-international-import-expo",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "name": "gates special-report-the-9th-china-international-import-expo",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "name": "build special-report-the-9th-china-international-import-expo",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-emergency-procurement-rules-imported-goods-october-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "china-import-expo-85-billion-deals-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/"
+      "detail": "/guide/special-report-the-9th-china-international-import-expo/"
     }
   ],
   "researchLog": [

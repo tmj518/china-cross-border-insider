@@ -171,3 +171,5 @@ No distribution of deals across exhibitors is published.
 ## The point
 
 The ninth CIIE closed with a record $85.45 billion in intended deals, up 2.3 percent from the previous edition, with 4,142 overseas exhibitors and 480-plus product debuts. The figure is the strongest available signal that Chinese buyers remain active and willing to commit to foreign goods. It is not a contract, and the conversion rate is unknown, but the direction is clear: the world's largest import market is still buying. For an importer, the question is not whether the demand exists, but whether your product is in the room when the deals are signed.
+
+For the paperwork and the cost in one place, see [Special Report: The 9th China International Import Expo](/guide/special-report-the-9th-china-international-import-expo/).

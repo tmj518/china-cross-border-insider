@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-11T03:50:44.491Z",
+  "at": "2026-11-11T04:07:21.004Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 1,
-      "at": "2026-11-11T03:50:44.442Z"
+      "count": 2,
+      "at": "2026-11-11T04:07:20.945Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-11-11T03:50:44.442Z",
+    "at": "2026-11-11T04:07:20.945Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route"
+    "article": "special-report-the-9th-china-international-import-expo"
   },
   "metrics": {
     "files": 1,

@@ -201,3 +201,5 @@ For the paperwork and the cost in one place, see [China-Africa health cooperatio
 For the paperwork and the cost in one place, see [China sweeps gymnastics team golds, adds 3 athletics medals at YOG](/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/).
 
 For the paperwork and the cost in one place, see [China hands over remains of U.S. airmen found along WWII Hump Route](/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/).
+
+For the paperwork and the cost in one place, see [Special Report: The 9th China International Import Expo](/guide/special-report-the-9th-china-international-import-expo/).
