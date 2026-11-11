@@ -519,6 +519,10 @@ jobs:
         run: node tools/fallback-publish.mjs
 
       - name: Commit and push anything that was approved
+        # A published file belongs in the repository even when the pipeline verdict is red: on 2026-11-11
+        # the agent wrote and staged an article, the pipeline step failed, this step was skipped, and the article
+        # never existed anywhere outside the runner.
+        if: always()
         id: commit
         run: |
           git config user.name "landedmath-bot"
