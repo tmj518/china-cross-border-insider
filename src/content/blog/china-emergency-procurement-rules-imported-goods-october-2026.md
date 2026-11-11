@@ -190,3 +190,5 @@ The change is about timing, not price. A supplier selling into Chinese governmen
 For the paperwork and the cost in one place, see [Alipay and WeChat Pay for Foreigners: What Actually Works](/guide/alipay-wechat-pay-foreigner-china/).
 
 For the paperwork and the cost in one place, see [The world comes to China, opportunities flow both ways](/guide/the-world-comes-to-china-opportunities-flow-both-ways/).
+
+For the paperwork and the cost in one place, see [China hands over remains of U.S. airmen found along WWII Hump Route](/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/).

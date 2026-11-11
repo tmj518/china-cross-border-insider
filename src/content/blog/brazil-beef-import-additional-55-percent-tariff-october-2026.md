@@ -199,3 +199,5 @@ For the paperwork and the cost in one place, see [China's polar icebreaker Xuelo
 For the paperwork and the cost in one place, see [China-Africa health cooperation can help more children survive, thrive: UNICEF](/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/).
 
 For the paperwork and the cost in one place, see [China sweeps gymnastics team golds, adds 3 athletics medals at YOG](/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/).
+
+For the paperwork and the cost in one place, see [China hands over remains of U.S. airmen found along WWII Hump Route](/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/).

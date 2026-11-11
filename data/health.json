@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-11T03:42:40.647Z",
+  "at": "2026-11-11T03:50:44.491Z",
   "streaks": {
     "c": {
-      "verdict": "NO-KEYS",
+      "verdict": "PUBLISHED",
       "count": 1,
-      "at": "2026-11-11T03:42:40.431Z"
+      "at": "2026-11-11T03:50:44.442Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-11-11T03:42:40.431Z",
+    "at": "2026-11-11T03:50:44.442Z",
     "route": "c",
-    "verdict": "NO-KEYS",
-    "article": ""
+    "verdict": "PUBLISHED",
+    "article": "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route"
   },
   "metrics": {
     "files": 1,

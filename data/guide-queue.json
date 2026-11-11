@@ -2884,7 +2884,7 @@
       "unit": "one application",
       "title": "China hands over remains of U.S. airmen found along WWII Hump Route",
       "query": "China hands over remains of U.S. airmen found along WWII Hump Route",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China hands over remains of U.S. airmen found along WWII Hump Route\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2912,7 +2912,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-11"
     },
     {
       "slug": "special-report-the-9th-china-international-import-expo",

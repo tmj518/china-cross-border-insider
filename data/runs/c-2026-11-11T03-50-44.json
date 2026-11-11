@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-11T03:50:44.442Z",
+  "runId": "42955311145",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+  "seconds": 23,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0015
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-emergency-procurement-rules-imported-goods-october-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
