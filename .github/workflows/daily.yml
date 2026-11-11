@@ -101,7 +101,7 @@ jobs:
       - id: check
         name: Verify both providers with a real one-token call
         env:
-          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}   # locked 2026-11-11: the alias chain could fall through to an account with no balance, and "Insufficient Balance" was being read as a provider outage
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY || secrets.DUBAO201628 || secrets.APIKEY20261016201628 }}   # reverted: secrets.ARK_API_KEY does not exist, the chain is what supplies it
           DUBAO201628: ${{ secrets.DUBAO201628 }}
           # Uppercase, like every other secret-derived name here. The lowercase spelling only worked
           # because this file exported a lowercase key; on a Linux runner that is a different variable,
@@ -160,7 +160,7 @@ jobs:
           }
 
           WRITER_MODEL="${ARK_MODEL_WRITER:-${ARK_MODEL:-${DOUBAO_ENDPOINT:-}}}"
-          WRITER_KEY="${ARK_API_KEY:-}"   # only the key the preflight proves
+          WRITER_KEY="${ARK_API_KEY:-${DOUBAO_API_KEY:-${OWNER_KEY_1:-}}}"
           REVIEW_KEY="${DEEPSEEK_REVIEW_API_KEY:-${DEEPSEEK_API_KEY:-${OWNER_KEY_2:-}}}"
           OWNER_ARK="${OWNER_KEY_1:-}"
 
