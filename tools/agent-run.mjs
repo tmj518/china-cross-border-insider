@@ -13,7 +13,6 @@
  * machine: it can only do what someone wrote down in advance. Every judgement the agent made implicitly
  * had to be enumerated, and every enumeration has a gap. Fourteen consecutive runs failed, and each
  * failure was one gap - a missing field in a validator, a prompt that did not say a thing the agent would
-import { topicGuard } from "./topic-guard.mjs";
  * have inferred, an import that an experiment-only loader could not resolve.
  *
  * The operator's own description of the goal was "one more scheduled trigger, hands free". Not a rewrite.
@@ -41,6 +40,7 @@ import { topicGuard } from "./topic-guard.mjs";
  *   node tools/agent-run.mjs --max-turns=8          # bound the loop
  *   node tools/agent-run.mjs --dry-run              # plan only, run no commands
  */
+import { topicGuard } from "./topic-guard.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, rmSync } from "node:fs";
 import { join, relative } from "node:path";
 import { execFileSync } from "node:child_process";
