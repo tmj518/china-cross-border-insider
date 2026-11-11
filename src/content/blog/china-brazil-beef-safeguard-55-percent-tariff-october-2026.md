@@ -163,3 +163,5 @@ For the paperwork and the cost in one place, see [Health Cover for Foreigners Wo
 For the paperwork and the cost in one place, see [How to transfer money from china to india through bank](/guide/transfer-money-india-through-bank/).
 
 For the paperwork and the cost in one place, see [China work permit process](/guide/work-permit-process/).
+
+For the paperwork and the cost in one place, see [China sweeps gymnastics team golds, adds 3 athletics medals at YOG](/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/).

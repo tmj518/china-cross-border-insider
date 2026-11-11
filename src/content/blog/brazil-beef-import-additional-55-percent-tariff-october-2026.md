@@ -197,3 +197,5 @@ For the paperwork and the cost in one place, see [The world comes to China, oppo
 For the paperwork and the cost in one place, see [China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition](/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/).
 
 For the paperwork and the cost in one place, see [China-Africa health cooperation can help more children survive, thrive: UNICEF](/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/).
+
+For the paperwork and the cost in one place, see [China sweeps gymnastics team golds, adds 3 athletics medals at YOG](/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/).

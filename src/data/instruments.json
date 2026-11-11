@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10",
+  "generated": "2026-11-11",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -3251,6 +3251,37 @@
       "modelOutput": false
     },
     {
+      "id": "canadian-government-statement-as-reported-by-china-daily",
+      "source": "Canadian government statement, as reported by China Daily",
+      "figures": [
+        {
+          "articleSlug": "china-canada-tariff-remission-canola-steel-extension-2028",
+          "articleNum": 0,
+          "value": "2028",
+          "unit": "year through which preferential market access is extended",
+          "period": "as stated in the Canadian government statement",
+          "source": "Canadian government statement, as reported by China Daily",
+          "retrieved": "2026-11-11"
+        },
+        {
+          "articleSlug": "china-canada-tariff-remission-canola-steel-extension-2028",
+          "articleNum": 0,
+          "value": "2028",
+          "unit": "year through which Canadian tariff remissions on Chinese steel and aluminium run",
+          "period": "as stated in the Canadian government statement",
+          "source": "Canadian government statement, as reported by China Daily",
+          "retrieved": "2026-11-11"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-canada-tariff-remission-canola-steel-extension-2028"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "cbp-proposed-rule-low-value-shipments-91-fr-docket",
       "source": "CBP proposed rule, Low-Value Shipments, 91 FR, docket USCBP-2026-0298",
       "figures": [
@@ -3825,6 +3856,37 @@
       "articleSlugs": [
         "china-real-name-registration-supplier-verification",
         "how-to-tell-a-factory-from-a-trading-company"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "general-administration-of-customs-as-reported-by-china-daily",
+      "source": "General Administration of Customs, as reported by China Daily",
+      "figures": [
+        {
+          "articleSlug": "china-canada-tariff-remission-canola-steel-extension-2028",
+          "articleNum": 0,
+          "value": "14.3 percent",
+          "unit": "year-on-year growth in China-Canada trade",
+          "period": "period not stated in the source",
+          "source": "General Administration of Customs, as reported by China Daily",
+          "retrieved": "2026-11-11"
+        },
+        {
+          "articleSlug": "china-canada-tariff-remission-canola-steel-extension-2028",
+          "articleNum": 0,
+          "value": "20.1 percent",
+          "unit": "year-on-year growth in China's imports from Canada",
+          "period": "period not stated in the source",
+          "source": "General Administration of Customs, as reported by China Daily",
+          "retrieved": "2026-11-11"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-canada-tariff-remission-canola-steel-extension-2028"
       ],
       "modelOutput": false
     },

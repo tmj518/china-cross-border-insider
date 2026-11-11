@@ -1,23 +1,19 @@
 {
-  "at": "2026-11-11T01:21:26.879Z",
-  "runId": "42938250089",
+  "at": "2026-11-11T02:40:31.418Z",
+  "runId": "42946938320",
   "route": "c",
-  "verdict": "NO-SUBJECT",
-  "article": null,
-  "seconds": 19,
+  "verdict": "PUBLISHED",
+  "article": "china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog",
+  "seconds": 17,
   "usage": {
-    "calls": 6,
-    "failed": 6,
-    "usd": 0
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0010999999999999968
   },
   "providers": [
     "volces"
   ],
-  "reasons": [
-    "china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog: model failed: Insufficient Balance (request_id: 93362208-5e3f-4f89-9bac-feedd9cba090)",
-    "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route: model failed: Insufficient Balance (request_id: 20d56dea-4c2a-424b-9531-3668b929a5ff)",
-    "special-report-the-9th-china-international-import-expo: model failed: Insufficient Balance (request_id: b1b626bd-cb56-4fe9-b216-6e976974a6e4)"
-  ],
+  "reasons": [],
   "steps": [
     {
       "name": "credentials",
@@ -35,29 +31,24 @@
       "detail": "procedural, no figures"
     },
     {
-      "name": "skipped china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog",
-      "ok": false,
-      "detail": "model failed: Insufficient Balance (request_id: 93362208-5e3f-4f89-9bac-feedd9cba090)"
-    },
-    {
-      "name": "grounding china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
+      "name": "gates china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog",
       "ok": true,
-      "detail": "procedural, no figures"
+      "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "skipped china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
-      "ok": false,
-      "detail": "model failed: Insufficient Balance (request_id: 20d56dea-4c2a-424b-9531-3668b929a5ff)"
-    },
-    {
-      "name": "grounding special-report-the-9th-china-international-import-expo",
+      "name": "build china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog",
       "ok": true,
-      "detail": "procedural, no figures"
+      "detail": "site builds with the guide in place"
     },
     {
-      "name": "skipped special-report-the-9th-china-international-import-expo",
-      "ok": false,
-      "detail": "model failed: Insufficient Balance (request_id: b1b626bd-cb56-4fe9-b216-6e976974a6e4)"
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-brazil-beef-safeguard-55-percent-tariff-october-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/"
     }
   ],
   "researchLog": [

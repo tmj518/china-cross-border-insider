@@ -2844,7 +2844,7 @@
       "unit": "one application",
       "title": "China sweeps gymnastics team golds, adds 3 athletics medals at YOG",
       "query": "China sweeps gymnastics team golds, adds 3 athletics medals at YOG",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China sweeps gymnastics team golds, adds 3 athletics medals at YOG\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2872,7 +2872,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-11"
     },
     {
       "slug": "china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route",
