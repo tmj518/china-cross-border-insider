@@ -152,7 +152,7 @@ const PROVIDERS = {
      * serves both roles, which is safe because it is one vendor and one account.
      */
     keys: {
-      writer: ["DEEPSEEK_WRITE_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OWNER_KEY_2"],
+      writer: ["DEEPSEEK_API_KEY", "DEEPSEEK_REVIEW_API_KEY", "OWNER_KEY_2", "DEEPSEEK_WRITE_API_KEY"],   /* the write key answered Insufficient Balance on 2026-11-11; it is tried last now */
       reviewer: ["DEEPSEEK_REVIEW_API_KEY", "DEEPSEEK_API_KEY", "OWNER_KEY_2", "DEEPSEEK_WRITE_API_KEY"],
       planner: ["DEEPSEEK_PLAN_API_KEY", "DEEPSEEK_API_KEY", "DEEPSEEK_WRITE_API_KEY", "OWNER_KEY_2"],
     },
