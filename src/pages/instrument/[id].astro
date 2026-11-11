@@ -118,6 +118,22 @@ const tail = commaAt > 0 ? cleaned.slice(commaAt + 1).trim() : "";
 const publisherIsShared = commaAt > 0 && !/\d/.test(head) && head.length > 14 && tail.length >= 12;
 const name = (publisherIsShared ? tail : cleaned).trim();
 
+  /*
+   * A NAME THAT IS ONLY THE PUBLISHER IS NOT A NAME.
+   *
+   * Two instruments whose source strings end with ", as reported by China Daily" produced the same name -
+   * "as reported by China Daily" - and therefore the same page title twice. The uniqueness gate caught it,
+   * correctly. When the derived name carries no institution of its own, the distinguishing part is the
+   * document's own slug, so it is used instead.
+   */
+  const nameIsOnlyPublisher = /^(as\s+)?(reported|published)\b/i.test(name) || name.length < 8;
+  const displayName = nameIsOnlyPublisher
+    ? String(instrument.id)
+        .replace(/-as-(reported|published)-.*$/i, "")
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase())
+    : name;
+
 /**
  * A stable identifier, pulled out of the source string when one is present.
  *
@@ -168,7 +184,7 @@ const figures = instrument.figures;
  * shortened and the distinguishing part survives. fitTitle subtracts the suffix from the budget, so this is
  * the width a result actually shows.
  */
-const title = `${fitTitle(name, qualifier, SITE.name, 60)} — ${SITE.name}`;
+const title = `${fitTitle(displayName, qualifier, SITE.name, 60)} — ${SITE.name}`;
 /*
  * The publisher leads the description when the title dropped it.
  *
@@ -178,7 +194,7 @@ const title = `${fitTitle(name, qualifier, SITE.name, 60)} — ${SITE.name}`;
  */
 const publisherPrefix = publisherIsShared ? `${head}. ` : "";
 const description =
-  `${publisherPrefix}${figures.length} figure${figures.length === 1 ? "" : "s"} on this site come from ${name}` +
+  `${publisherPrefix}${figures.length} figure${figures.length === 1 ? "" : "s"} on this site come from ${displayName}` +
   `${qualifier ? ` (${qualifier})` : ""}, cited by ${cited.length} ` +
   `article${cited.length === 1 ? "" : "s"}. Every value carries its unit, period, source and retrieval date.`;
 
