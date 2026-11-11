@@ -109,7 +109,7 @@ function finish(code = 0) {
   const report = {
     at: new Date().toISOString(),
     runId: process.env.GITHUB_RUN_ID ?? null,   /* the ledger needs a handle back to the run */
-    route: "c",
+    route: process.env.ROUTE === "fallback" ? "fallback" : "c",   /* a fallback article is not a C-line publication */
     verdict,
     article: article || null,
     seconds: Math.round((Date.now() - STARTED) / 1000),
