@@ -2591,7 +2591,7 @@
         "base": 0.69,
         "demandImpressions": 1,
         "demandBreadth": 0,
-        "demandQuery": "china permanent resident",
+        "demandQuery": "application for permanent residence status in china",
         "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,
@@ -2964,7 +2964,7 @@
       "unit": "one application",
       "title": "China's second homegrown large cruise ship starts first trial voyage",
       "query": "China's second homegrown large cruise ship starts first trial voyage",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China's second homegrown large cruise ship starts first trial voyage\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -2992,7 +2992,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-11"
     },
     {
       "slug": "xinhua-special-ciie-2026-vibrancy-sharing-openness",
@@ -3149,7 +3150,46 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's import expo tells a larger story of openness, shared opportunities",
+      "query": "China's import expo tells a larger story of openness, shared opportunities",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's import expo tells a larger story of openness, shared opportunities\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "import",
+        "expo",
+        "tells",
+        "larger"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-11T04:06:58.344Z"
+  "updatedAt": "2026-11-11T07:20:38.068Z"
 }

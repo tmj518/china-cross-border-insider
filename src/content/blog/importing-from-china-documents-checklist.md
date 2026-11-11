@@ -226,3 +226,5 @@ Replace the shipment value, the duty rate and the number of days with your own a
 Every document on this list existed before this year. What changed in 2026 is that the fallbacks were withdrawn — the manual origin route closes on 30 November, the container suitability result expires in 21 days, and the product-safety identification is enforced against listings rather than requested.
 
 So the document set is no longer administration. It is the cheapest part of the shipment and the only part where a few days of neglect converts directly into a payment. Build it before you book the space, and check the three dates rather than the list.
+
+For the paperwork and the cost in one place, see [China's second homegrown large cruise ship starts first trial voyage](/guide/china-s-second-homegrown-large-cruise-ship-starts-first-trial-voyage/).

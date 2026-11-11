@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-11T04:07:21.004Z",
+  "at": "2026-11-11T07:20:57.299Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 2,
-      "at": "2026-11-11T04:07:20.945Z"
+      "count": 3,
+      "at": "2026-11-11T07:20:57.258Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
@@ -13,10 +13,10 @@
     }
   },
   "lastRun": {
-    "at": "2026-11-11T04:07:20.945Z",
+    "at": "2026-11-11T07:20:57.258Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "special-report-the-9th-china-international-import-expo"
+    "article": "china-s-second-homegrown-large-cruise-ship-starts-first-trial-voyage"
   },
   "metrics": {
     "files": 1,
@@ -37,6 +37,7 @@
     ]
   },
   "warnings": [
+    "c has ended PUBLISHED 3 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
