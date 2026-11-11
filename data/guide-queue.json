@@ -3030,7 +3030,85 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "china-s-health-story-holds-lessons-for-all-lancet-says",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's health story holds lessons for all, Lancet says",
+      "query": "China's health story holds lessons for all, Lancet says",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's health story holds lessons for all, Lancet says\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "health",
+        "story",
+        "holds",
+        "lessons"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "chinese-medical-team-conducts-health-outreach-in-sierra-leone",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Chinese medical team conducts health outreach in Sierra Leone",
+      "query": "Chinese medical team conducts health outreach in Sierra Leone",
+      "status": "queued",
+      "evidence": "demand matrix: \"Chinese medical team conducts health outreach in Sierra Leone\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Chinese",
+        "medical",
+        "team",
+        "conducts",
+        "health"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-10T07:20:31.430Z"
+  "updatedAt": "2026-11-11T03:42:39.591Z"
 }

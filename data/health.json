@@ -1,22 +1,22 @@
 {
-  "at": "2026-11-10T07:20:51.254Z",
+  "at": "2026-11-11T03:42:40.647Z",
   "streaks": {
     "c": {
-      "verdict": "PUBLISHED",
-      "count": 8,
-      "at": "2026-11-10T07:20:51.206Z"
+      "verdict": "NO-KEYS",
+      "count": 1,
+      "at": "2026-11-11T03:42:40.431Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-10T06:38:59.951Z"
+      "at": "2026-11-10T23:21:15.292Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-10T07:20:51.206Z",
+    "at": "2026-11-11T03:42:40.431Z",
     "route": "c",
-    "verdict": "PUBLISHED",
-    "article": "china-africa-health-cooperation-can-help-more-children-survive-thrive-"
+    "verdict": "NO-KEYS",
+    "article": ""
   },
   "metrics": {
     "files": 1,
@@ -37,7 +37,6 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 8 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
