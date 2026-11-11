@@ -93,6 +93,8 @@ console.log("\n  The day is empty, so the guide line runs once. It fetches its o
 console.log("  every figure against them, which is why it is the fallback and not the trade writer.");
 try {
   const out = execFileSync(process.execPath, [join(ROOT, "tools", "c-line-orchestrator.mjs")], {
+    /* Mark the run so the C line never mistakes a fallback article for its own. */
+    env: { ...process.env, ROUTE: "fallback" },
     encoding: "utf8",
     timeout: 1800000,
     maxBuffer: 64 * 1024 * 1024,
