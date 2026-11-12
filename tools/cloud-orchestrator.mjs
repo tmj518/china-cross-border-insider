@@ -1275,7 +1275,10 @@ if (!run.verdict && mechanicalOk && reviewObjections.length) {
       slug,
       kind: "published-despite-review",
       detail: reviewObjections.slice(0, 3).join(" | ").slice(0, 400),
-      action: "the mechanical checks passed and the article was published; the next writer prompt reads this",
+      action:
+     `published with ${reviewObjections.length} advisory objection(s) let through: ` +
+     reviewObjections.slice(0, 3).map((x) => String(x).split(/[.:]/)[0].trim()).join(" / ").slice(0, 200),
+   advisoriesLetThrough: reviewObjections.length,
     }) + "\n",
     "utf8",
   );
