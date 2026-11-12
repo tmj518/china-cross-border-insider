@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-11T23:21:14.504Z",
+  "at": "2026-11-12T23:21:14.143Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "43 previous run(s), last 2026-11-10T23:21:15.292Z (PUBLISHED-DEGRADED)"
+      "detail": "44 previous run(s), last 2026-11-11T23:21:14.504Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "4 of 15 net-new this week"
+      "detail": "6 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,124 +33,87 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-human-genetic-resources-export-approval-2026, 6 verified figure(s)"
+      "detail": "proposed china-fuel-price-cut-november-12-2026-importer-logistics-cost, 2 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "6 sourced figure(s)"
-    },
-    {
-      "name": "inbound precheck",
-      "ok": true,
-      "detail": "every internal link resolves"
+      "detail": "2 sourced figure(s)"
     },
     {
       "name": "writer",
-      "ok": true,
-      "detail": "draft at /data/drafts/china-human-genetic-resources-export-approval-2026.md"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "APPROVED: L5 5 issue(s), 5 with a citation"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "5 objection(s), advisory only - publishing"
-    },
-    {
-      "name": "publish",
-      "ok": true,
-      "detail": "staged at src/content/blog/china-human-genetic-resources-export-approval-2026.md"
-    },
-    {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
-    },
-    {
-      "name": "inbound links",
-      "ok": true,
-      "detail": "2 older article(s) now link here"
+      "ok": false,
+      "detail": "exit 1: UNCAUGHT: ReferenceError: siteRules is not defined"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict PUBLISHED-DEGRADED"
+      "detail": "verdict WRITE-FAILED"
     }
   ],
-  "verdict": "PUBLISHED-DEGRADED",
+  "verdict": "WRITE-FAILED",
   "reasons": [
-    "reviewer: 5 objection(s), advisory - published anyway"
+    "the writer did not produce china-fuel-price-cut-november-12-2026-importer-logistics-cost.md on attempt 1"
   ],
-  "article": "china-human-genetic-resources-export-approval-2026",
+  "article": null,
   "commit": null,
   "usage": {
-    "calls": 16,
-    "failed": 6,
-    "usd": 0.0534,
-    "promptTokens": 150653,
-    "completionTokens": 11579
+    "calls": 3,
+    "failed": 0,
+    "usd": 0.0067,
+    "promptTokens": 57381,
+    "completionTokens": 1353
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 4,
+    "trade-policy": 6,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4163 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1197 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4080 characters but no document structure, trying the next one",
-    "  spent   : ~0.0200  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
+    "  ok    china-daily-article         57589B  article archived",
+    "  ok    ndrc-briefing-article        5725B  article archived",
+    "  ok    ndrc-briefing-article        6039B  article archived",
+    "  ok    ndrc-briefing-article        5855B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    state-council-policy-article    34375B  article archived",
+    "  ok    state-council-policy-article    25268B  article archived",
+    "  ok    state-council-policy-article    20312B  article archived",
+    "  ok    ndrc-article                22159B  article archived",
+    "  ok    ndrc-article                16268B  article archived",
+    "  ok    ndrc-article                 5725B  article archived",
+    "  fresh     : 0 article(s) dated today, newest 2026-11-12",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 446 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1494 characters but no document structure, trying the next one",
+    "  stream      : SSE, 457 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 1452 characters but no document structure, trying the next one",
+    "  stream      : SSE, 450 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 1413 characters but no document structure, trying the next one",
+    "  spent   : ~0.0067  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : china-nev-vat-export-rebate-13-to-9-april-2027",
-    "  keyword : China NEV VAT export rebate 13% to 9% April 2027",
-    "  duplicate check: score 16 against china-export-tax-rebate-removal-battery-solar",
-    "      shared keyword stems: rebate",
-    "      shared institution(s): finance, taxation",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 915 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3702 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 762 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3028 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1048 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4077 characters but no document structure, trying the next one",
-    "  spent   : ~0.0392  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
-    "  feasible: true",
-    "  slug    : china-human-genetic-resources-export-approval-2026",
-    "  keyword : China human genetic resources export approval NHC 2026",
+    "  slug    : china-fuel-price-cut-november-12-2026-importer-logistics-cost",
+    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
     "  duplicate check: score 0",
-    "  slug    : china-human-genetic-resources-export-approval-2026",
-    "  keyword : China human genetic resources export approval NHC 2026",
-    "  category: trade-policy",
-    "  figures : 6",
+    "  slug    : china-fuel-price-cut-november-12-2026-importer-logistics-cost",
+    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  category: logistics",
+    "  figures : 2",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0392",
+    "  spend this run: ~$0.0067",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "reviewAdvisory": [
-    "The draft names specific evasion techniques (under-declaration, mislabelling, consignment splitting) in a cost context, which the publication's rules forbid even when framed as a warning.",
-    "The draft asserts the 2025 smuggling case is the reason or backdrop for the revision, a motive the supplied figures do not establish.",
-    "This links the enforcement case to the revision's purpose, attributing a causal rationale the figures do not support.",
-    "Framing the case as a benchmark for non-compliance implies the revision was prompted by it, a motive not in the figures.",
-    "Again asserts the revision is published against the case, attributing a motive the evidence does not contain."
-  ],
-  "seconds": 106
+  "seconds": 60
 }

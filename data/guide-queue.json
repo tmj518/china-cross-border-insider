@@ -3244,7 +3244,7 @@
       "unit": "one application",
       "title": "Former deserted Chinese mining sites star again via \"lights, camera, action\"",
       "query": "Former deserted Chinese mining sites star again via \"lights, camera, action\"",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Former deserted Chinese mining sites star again via \"lights, camera, action\"\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3272,7 +3272,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     }
   ],
   "updatedAt": "2026-11-12T07:20:30.591Z"

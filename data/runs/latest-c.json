@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-12T13:50:45.266Z",
-  "runId": "43231051912",
+  "at": "2026-11-12T23:22:33.828Z",
+  "runId": "43328061305",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "chinese-vp-attends-cop31-antalya-leaders-summit",
-  "seconds": 21,
+  "article": "former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.0004000000000000002
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "4 candidate(s)"
     },
     {
-      "name": "grounding chinese-vp-attends-cop31-antalya-leaders-summit",
+      "name": "grounding former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates chinese-vp-attends-cop31-antalya-leaders-summit",
+      "name": "gates former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build chinese-vp-attends-cop31-antalya-leaders-summit",
+      "name": "build former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-pea-protein-anti-dumping-definitive-duties-2026"
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-safeguard-55-percent-trigger-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/chinese-vp-attends-cop31-antalya-leaders-summit/"
+      "detail": "/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/"
     }
   ],
   "researchLog": [

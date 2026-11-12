@@ -209,3 +209,5 @@ For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vi
 For the paperwork and the cost in one place, see [China's health story holds lessons for all, Lancet says](/guide/china-s-health-story-holds-lessons-for-all-lancet-says/).
 
 For the paperwork and the cost in one place, see [China's import expo tells a larger story of openness, shared opportunities](/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/).
+
+For the paperwork and the cost in one place, see [Former deserted Chinese mining sites star again via "lights, camera, action"](/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/).
