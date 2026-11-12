@@ -416,6 +416,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+          PIPELINE_ROUTE: ${{ env.ROUTE }}
         run: |
           #
           # A-LINE PAUSED (2026-11-09). The trade writer has failed at a different gate every day this week and each
@@ -516,8 +517,6 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-        env:
-          PIPELINE_ROUTE: ${{ env.ROUTE }}
         run: node tools/fallback-publish.mjs
 
       - name: Commit and push anything that was approved
