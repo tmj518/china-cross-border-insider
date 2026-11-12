@@ -2302,6 +2302,16 @@ const report = {
   usage: usageToday(),
   checkOnly: false,
   reasons: finished ? [] : [err ?? "the agent did not call finish, so there is no verdict for the day"],
+  /* #029: a REJECTED record names the layer and the rule, or says unknown - the next morning must not be a guess. */
+  layer: (() => {
+    const b = (typeof gate !== "undefined" && gate?.blocks?.[0]) || null;
+    if (b?.layer) return String(b.layer);
+    return "unknown";
+  })(),
+  rule: (() => {
+    const b = (typeof gate !== "undefined" && gate?.blocks?.[0]) || null;
+    return b?.rule ? String(b.rule) : "unknown";
+  })(),
 };
 writeFileSync(REPORT, JSON.stringify(report, null, 2), "utf8");
 
