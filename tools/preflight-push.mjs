@@ -18,6 +18,7 @@
  *
  * Exit 0 only when every check passes.
  */
+import { nestedScopeScan } from "./scope-scan.mjs";
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -107,4 +108,8 @@ console.log("PREFLIGHT\n" + "=".repeat(74));
 for (const n of notes) console.log("  note " + n);
 for (const p of problems) console.log("  FAIL " + p);
 console.log("\n" + (problems.length ? `RESULT: ${problems.length} problem(s) - do not push` : "RESULT: clear to push"));
-process.exit(problems.length ? 1 : 0);
+/* #034: a function written into another function parses fine and is invisible to its callers. */
+for (const b of nestedScopeScan()) console.log("  \u2717 scope " + b);
+const scopeProblems = nestedScopeScan().length;
+
+process.exit(problems.length + scopeProblems > 0 ? 1 : 0);
