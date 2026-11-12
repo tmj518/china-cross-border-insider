@@ -28,6 +28,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 import { askJson, summary as providerSummary } from "./lib-llm.mjs";
+import { SITE_RULES } from "./site-rules.mjs";
 /*
  * The frontmatter constraints live in one place so the prompt, this validator and the parity check all
  * read the same list. They were described in three places that could not check each other, and twice in
@@ -654,6 +655,7 @@ ${STRUCTURE}
 
 ${RULES}
 
+${siteRules()}
 ${pitfallRules()}
 
 ${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - these are the only numbers you may use:
@@ -816,6 +818,7 @@ ${STRUCTURE}
 
 ${RULES}
 
+${siteRules()}
 ${pitfallRules()}
 
 ${readershipBrief() ? readershipBrief() + "\n\n" : ""}${recentLessons() ? recentLessons() + "\n\n" : ""}${linkableArticles() ? linkableArticles() + "\n\n" : ""}THE FIGURES - the only numbers permitted:
@@ -1022,6 +1025,8 @@ function pitfallRules() {
  * same lessons as rules it can check its own draft against, because a model reads a list of rules and
  * skims a list of incidents.
  */
+/* The site's own rules, shared with the reviewer rather than re-spelled here. */
+function siteRules() { return SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n"); }
 const lessons = [
 /* The library-level promise, stated where the writer can see it. It was in no prompt before. */
 "THE LIBRARY RULE: an article that states a number must carry that number's five-part record, and an article with no sourced figure must declare itself an explainer. One sourced figure is enough to be a cost article - five is the shape of a full one, never a floor. A draft with numbers and no records fails at the gate, and a draft with neither numbers nor a declaration fails too.",
