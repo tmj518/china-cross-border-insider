@@ -622,6 +622,32 @@ tables >= 4
   );
   vague.length === 0 ? add("pass", "no hedging words", "clean") : add("block", "no hedging words", vague.join(", "));
   const permissive = (body.match(new RegExp(PERMISSIVE_VERBS.source, "gi")) || []).length;
+  /*
+   * TWO PROSE RULES THAT WERE ADVISORY AND ARE NOW BLOCKING.
+   *
+   * The writer has been told since 2026-10-18 that non-compliance is not a cost lever and that a
+   * measure may not be given a motive. It broke both on 2026-11-12 and the reviewer passed the draft with
+   * five advisory objections. A rule the writer can ignore and the reviewer can waive is not a rule.
+   *
+   * Both patterns are narrow on purpose: the first only fires when the sentence offers the practice as
+   * something an importer could do, the second only when enforcement is named as the reason for a change.
+   * Naming a fined company, or reporting that a notice followed a case, stays legal.
+   */
+  const EVASION = /\b(under-?(?:declar|invoic|valu)\w*|mis-?(?:declar|classif|report)\w*|falsely?\s+declar\w*|split(?:ting)?\s+(?:the\s+)?(?:shipment|consignment|order|invoice)|low-?value\s+declar\w*|declare\s+less|understate\s+(?:the\s+)?(?:value|quantity))/gi;
+  const EVASION_OFFER = /\b(save|reduce|lower|avoid|cut|minimi[sz]e|park|structure|arrange)\b[^.]{0,60}\b(under-?(?:declar|invoic|valu)|mis-?(?:declar|classif|report)|split(?:ting)?\s+(?:the\s+)?(?:shipment|consignment|order)|declare\s+less)|\b(under-?(?:declar|invoic|valu)|mis-?(?:declar|classif|report)|split(?:ting)?\s+(?:the\s+)?(?:shipment|consignment|order))\w*[^.]{0,60}\b(to|so as to|in order to)\s+(save|reduce|avoid|lower|cut)\b/gi;
+  const evasionHits = [...body.matchAll(EVASION_OFFER)].map((m) => m[0].replace(/\s+/g, " ").slice(0, 60));
+  const evasionNamed = [...body.matchAll(EVASION)].length;
+  evasionHits.length === 0
+    ? add("pass", "no evasion offered as a lever", evasionNamed ? evasionNamed + " mention(s), none offered" : "clean")
+    : add("block", "no evasion offered as a lever", evasionHits.join(" | "));
+  /* A motive needs a cause in the figures. Without one, a change may only be described as happening. */
+  const MOTIVE = /\b(?:because of|in response to|prompted by|driven by|sparked by|following)\b[^.]{0,90}\b(?:enforcement|crackdown|case(?:s)?|investigation|probe|penalt\w+|fine[sd]?|seizure[s]?)\b/gi;
+  const motiveHits = [...body.matchAll(MOTIVE)].map((m) => m[0].replace(/\s+/g, " ").slice(0, 80));
+  const causalInFigures = (typeof figuresList !== "undefined" ? figuresList : []).some((f) =>
+  /because|caus|due to|prompted|response to|in reaction to/i.test(Object.values(f ?? {}).join(" ")));
+  motiveHits.length === 0 || causalInFigures
+    ? add("pass", "no motive attributed without a cause in the figures", motiveHits.length ? motiveHits.length + " phrase(s), causal source present" : "clean")
+    : add("block", "no motive attributed without a cause in the figures", motiveHits.join(" | "));
   if (permissive) add("pass", "permissive 'may' not treated as a hedge", `${permissive} instance(s)`);
 
   const cliche = BANNED_CLICHE.filter((w) => body.toLowerCase().includes(w));
