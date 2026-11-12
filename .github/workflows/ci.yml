@@ -148,8 +148,8 @@ jobs:
           fi
           STEP=$(node -e "try{const j=require(process.env.GITHUB_EVENT_PATH);console.log((j.steps||[]).filter(s=>s.conclusion==='failure')[0]?.name||'unknown')}catch{console.log('unknown')}")
           if echo "$STEP" | grep -qiE 'install|chromium|setup|checkout|npm'; then HEAD="CI 环境失败"; else HEAD="CI 闸门失败"; fi
-          TEXT=$(printf '🔴 Landed Math — %s\n\n提交: %s\n分支: %s\n主题: %s\n\n看日志: %s' \
-                "$(git rev-parse --short HEAD)" "${GITHUB_REF_NAME}" "$COMMIT_MSG" "$RUN_URL")
+          TEXT=$(printf '🔴 Landed Math — %s\n\n提交: %s\n分支: %s\n主题: %s\n失败步骤: %s\n\n看日志: %s' \
+            "$HEAD" "$(git rev-parse --short HEAD)" "${GITHUB_REF_NAME}" "$COMMIT_MSG" "$STEP" "$RUN_URL")
           jq -n --arg t "$TEXT" '{msg_type:"text",content:{text:$t}}' > /tmp/card.json
           curl -sS -X POST "$FEISHU_WEBHOOK" -H 'content-type: application/json' -d @/tmp/card.json
           echo "card sent"
