@@ -33,6 +33,19 @@ try {
   verdict = JSON.parse(readFileSync(join(ROOT, "data", "tmp", "orchestrator-report.json"), "utf8")).verdict ?? "";
 } catch {}
 const published = /^PUBLISHED/.test(verdict);
+/*
+ * A FAILED AGENT RUN MUST NOT BECOME A GUIDE.
+ *
+ * On 2026-11-12 the 20:20 agent route was REJECTED three times and this step published a guide after each
+ * failure (12:30, 13:04, 13:17). Those pages were byproducts of a broken test, not articles, and they
+ * polluted both the library and the ledger. The fallback exists to keep C's own slot from going empty;
+ * it has no business covering for a route that failed for its own reasons.
+ */
+if (String(process.env.PIPELINE_ROUTE ?? "").toLowerCase() === "agent") {
+  console.log("FALLBACK PUBLISH\n" + "=".repeat(78));
+  console.log("  the agent route ran and did not publish: standing down, a failed agent run is not a gap in C's slot");
+  process.exit(0);
+}
 
 /*
  * DURING THE REPAIR WINDOW, ONLY THE GUIDE LINE PUBLISHES.
