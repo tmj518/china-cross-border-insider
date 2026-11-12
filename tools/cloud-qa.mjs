@@ -30,6 +30,7 @@
  * its blind spots; if only one key is present the run proceeds and says the review was not
  * independent, because a silent downgrade is worse than a reported one.
  */
+import { SITE_RULES } from "./site-rules.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -60,6 +61,7 @@ const text = readFileSync(draftPath, "utf8");
  */
 function pitfallsBrief() {
   /* The same nine patterns the writer is told not to commit, restated as things to look for. */
+function siteRules() { return SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n"); }
   const checks = [
   /* The same library rule, as a thing to look for. */
   "Numbers without their five-part records, or a number-free draft that does not declare itself an explainer - the library promise is one sourced figure, not five.",
@@ -250,7 +252,7 @@ if (!mechanicallyClear) {
   const directive = directiveFile && existsSync(directiveFile) ? readFileSync(directiveFile, "utf8").slice(0, 8000) : "";
   const r = await askJson({
     role: "reviewer",
-    system: pitfallsBrief() +
+    system: siteRules() + "\n\n" + pitfallsBrief() +
       "You are the reviewer for an English trade-cost publication. You are not the writer. You decide " +
       "whether a draft may be published unattended. You are shown the draft and the figures it was " +
       "given; you are NOT shown the source documents, so you cannot confirm that a cited figure is " +
