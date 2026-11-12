@@ -3004,7 +3004,7 @@
       "unit": "one application",
       "title": "Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness",
       "query": "Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3032,7 +3032,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     },
     {
       "slug": "china-s-health-story-holds-lessons-for-all-lancet-says",
