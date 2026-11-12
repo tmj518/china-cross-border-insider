@@ -59,9 +59,10 @@ const text = readFileSync(draftPath, "utf8");
  * its job is to catch the same class of error on a new article - an assumed baseline, a mechanism the source
  * does not state, two endpoints of a range paired as if they were one comparison.
  */
+function siteRules() { return SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n"); }
+
 function pitfallsBrief() {
   /* The same nine patterns the writer is told not to commit, restated as things to look for. */
-function siteRules() { return SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n"); }
   const checks = [
   /* The same library rule, as a thing to look for. */
   "Numbers without their five-part records, or a number-free draft that does not declare itself an explainer - the library promise is one sourced figure, not five.",
