@@ -1292,6 +1292,23 @@ function runTool(name, input) {
         /* the registry rebuild is reported by preflight; the article is staged either way */
       }
       published.add(slug);
+      /*
+       * THE VERDICT IS DECIDED HERE, NOT BY WHETHER THE MODEL REMEMBERS TO CALL finish.
+       *
+       * On 2026-11-12 the 20:20 run published a complete article (7 figures, 1,409 words, live and in the
+       * sitemap) and the card still said REJECTED, because the loop ran out of turns before the model called
+       * finish and the forced-submission path recorded the last tool result instead of what exists. A published
+       * page is a published page; the model's bookkeeping is not evidence about the site.
+       */
+      if (!finished) {
+        finished = {
+          verdict: LAST_GATE_WARNINGS > 0 ? "PUBLISHED-DEGRADED" : "PUBLISHED",
+          summary:
+            `${slug} is published to src/content/blog and the registry was rebuilt` +
+            (LAST_GATE_WARNINGS > 0 ? `, with ${LAST_GATE_WARNINGS} gate warning(s) open` : "") +
+            ". The verdict is set by the publish step, so a run that never calls finish cannot report failure over a live page.",
+        };
+      }
       if (CELL) {
         try {
           markCell(CELL.matrix, CELL.persona, CELL.moment, "published", { slug, publishedOn: new Date().toISOString().slice(0, 10) });
@@ -1300,7 +1317,7 @@ function runTool(name, input) {
           console.log("  cell      : published but not marked (" + e.message + ")");
         }
       }
-      return done(`published ${slug} to src/content/blog/. The registry was rebuilt.`);
+      return done(`published ${slug} to src/content/blog/. The registry was rebuilt. The verdict is already PUBLISHED - call finish only to add a one-line summary; anything else is refused.`);
     }
 
     if (name === "get_gsc_blue_ocean") {
