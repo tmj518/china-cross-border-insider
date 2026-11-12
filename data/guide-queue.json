@@ -3164,7 +3164,7 @@
       "unit": "one application",
       "title": "China's import expo tells a larger story of openness, shared opportunities",
       "query": "China's import expo tells a larger story of openness, shared opportunities",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China's import expo tells a larger story of openness, shared opportunities\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3192,7 +3192,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     },
     {
       "slug": "chinese-vp-attends-cop31-antalya-leaders-summit",

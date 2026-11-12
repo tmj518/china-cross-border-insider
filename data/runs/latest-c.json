@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-12T13:04:33.281Z",
-  "runId": "43222525935",
+  "at": "2026-11-12T13:17:38.618Z",
+  "runId": "43225026767",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-",
-  "seconds": 20,
+  "article": "china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0011999999999999997
+    "usd": 0.00030000000000000165
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-",
+      "name": "grounding china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-",
+      "name": "gates china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-",
+      "name": "build china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-foreign-trade-first-ten-months-2026-import-growth, china-import-expo-85-billion-deals-2026"
+      "detail": "china-import-expo-85-billion-deals-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-/"
+      "detail": "/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/"
     }
   ],
   "researchLog": [
