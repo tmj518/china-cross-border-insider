@@ -1,4 +1,5 @@
 ---
+figureFloorExempt: true
 title: "What a Parcel From China to India Actually Costs"
 description: "No official page publishes a per-parcel rate from China to India."
 publishDate: "2026-10-29"
