@@ -61,6 +61,8 @@ const text = readFileSync(draftPath, "utf8");
 function pitfallsBrief() {
   /* The same nine patterns the writer is told not to commit, restated as things to look for. */
   const checks = [
+  /* The same library rule, as a thing to look for. */
+  "Numbers without their five-part records, or a number-free draft that does not declare itself an explainer - the library promise is one sourced figure, not five.",
     "Arithmetic on a baseline the figures do not contain (an assumed current rate, an assumed market price).",
     "A named document, article number or process that the supplied evidence does not contain.",
     "Motive, history or a \"broader push\" attributed to a measure.",
