@@ -1,22 +1,27 @@
 {
-  "at": "2026-11-11T07:20:57.299Z",
+  "at": "2026-11-12T07:20:48.255Z",
   "streaks": {
     "c": {
       "verdict": "PUBLISHED",
-      "count": 3,
-      "at": "2026-11-11T07:20:57.258Z"
+      "count": 4,
+      "at": "2026-11-12T07:20:48.196Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-10T23:21:15.292Z"
+      "at": "2026-11-11T23:21:14.504Z"
+    },
+    "fallback": {
+      "verdict": "PUBLISHED",
+      "count": 1,
+      "at": "2026-11-12T01:21:24.943Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-11T07:20:57.258Z",
+    "at": "2026-11-12T07:20:48.196Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-s-second-homegrown-large-cruise-ship-starts-first-trial-voyage"
+    "article": "china-s-health-story-holds-lessons-for-all-lancet-says"
   },
   "metrics": {
     "files": 1,
@@ -37,7 +42,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 3 runs in a row.",
+    "c has ended PUBLISHED 4 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

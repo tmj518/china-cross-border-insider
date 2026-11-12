@@ -205,3 +205,5 @@ For the paperwork and the cost in one place, see [China hands over remains of U.
 For the paperwork and the cost in one place, see [Special Report: The 9th China International Import Expo](/guide/special-report-the-9th-china-international-import-expo/).
 
 For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness](/guide/xinhua-special-ciie-2026-vibrancy-sharing-openness/).
+
+For the paperwork and the cost in one place, see [China's health story holds lessons for all, Lancet says](/guide/china-s-health-story-holds-lessons-for-all-lancet-says/).

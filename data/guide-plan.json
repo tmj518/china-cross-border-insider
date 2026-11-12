@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-11T07:20:38.423Z",
+  "at": "2026-11-12T07:20:31.041Z",
   "days": 90,
   "gsc": true,
   "plan": [
@@ -25,84 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-s-second-homegrown-large-cruise-ship-starts-first-trial-voyage",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China's second homegrown large cruise ship starts first trial voyage",
-      "query": "China's second homegrown large cruise ship starts first trial voyage",
-      "status": "queued",
-      "evidence": "demand matrix: \"China's second homegrown large cruise ship starts first trial voyage\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China's",
-        "second",
-        "homegrown",
-        "large",
-        "cruise"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "xinhua-special-ciie-2026-vibrancy-sharing-openness",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness",
-      "query": "Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness",
-      "status": "queued",
-      "evidence": "demand matrix: \"Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Xinhua",
-        "Special",
-        "CIIE",
-        "2026:",
-        "Vibrancy,"
       ],
       "facts": [],
       "mustSay": [],
@@ -277,6 +199,84 @@
       }
     },
     {
+      "slug": "chinese-vp-attends-cop31-antalya-leaders-summit",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Chinese VP attends COP31 Antalya Leaders' Summit",
+      "query": "Chinese VP attends COP31 Antalya Leaders' Summit",
+      "status": "queued",
+      "evidence": "demand matrix: \"Chinese VP attends COP31 Antalya Leaders' Summit\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Chinese",
+        "attends",
+        "COP31",
+        "Antalya",
+        "Leaders'"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Former deserted Chinese mining sites star again via \"lights, camera, action\"",
+      "query": "Former deserted Chinese mining sites star again via \"lights, camera, action\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"Former deserted Chinese mining sites star again via \"lights, camera, action\"\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Former",
+        "deserted",
+        "Chinese",
+        "mining",
+        "sites"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
       "slug": "eu-fdi-screening",
       "topic": "residence",
       "audience": [
@@ -298,11 +298,11 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.42,
+      "priorityScore": 0.66,
       "priorityWhy": {
         "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
         "demandQuery": "\"investment screening\"",
         "intent": 0.6,
@@ -334,11 +334,11 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.42,
+      "priorityScore": 0.66,
       "priorityWhy": {
         "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
         "demandQuery": "\"investment screening\"",
         "intent": 0.6,
@@ -397,7 +397,7 @@
     [
       "alipay-wechat-pay-foreigner-china",
       {
-        "impressions": 10,
+        "impressions": 12,
         "clicks": 0,
         "position": 76
       }
@@ -421,9 +421,17 @@
     [
       "china-bank-account-foreigner",
       {
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0,
         "position": 89.25
+      }
+    ],
+    [
+      "home-return-permit-application-hong-kong",
+      {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 9
       }
     ],
     [

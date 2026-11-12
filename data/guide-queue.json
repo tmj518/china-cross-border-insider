@@ -2360,11 +2360,11 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.42,
+      "priorityScore": 0.66,
       "priorityWhy": {
         "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
         "demandQuery": "\"investment screening\"",
         "intent": 0.6,
@@ -2396,11 +2396,11 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.42,
+      "priorityScore": 0.66,
       "priorityWhy": {
         "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
         "demandQuery": "\"investment screening\"",
         "intent": 0.6,
@@ -3044,7 +3044,7 @@
       "unit": "one application",
       "title": "China's health story holds lessons for all, Lancet says",
       "query": "China's health story holds lessons for all, Lancet says",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China's health story holds lessons for all, Lancet says\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3072,7 +3072,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     },
     {
       "slug": "chinese-medical-team-conducts-health-outreach-in-sierra-leone",
@@ -3190,7 +3191,85 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "chinese-vp-attends-cop31-antalya-leaders-summit",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Chinese VP attends COP31 Antalya Leaders' Summit",
+      "query": "Chinese VP attends COP31 Antalya Leaders' Summit",
+      "status": "queued",
+      "evidence": "demand matrix: \"Chinese VP attends COP31 Antalya Leaders' Summit\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Chinese",
+        "attends",
+        "COP31",
+        "Antalya",
+        "Leaders'"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Former deserted Chinese mining sites star again via \"lights, camera, action\"",
+      "query": "Former deserted Chinese mining sites star again via \"lights, camera, action\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"Former deserted Chinese mining sites star again via \"lights, camera, action\"\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Former",
+        "deserted",
+        "Chinese",
+        "mining",
+        "sites"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-11T07:20:38.068Z"
+  "updatedAt": "2026-11-12T07:20:30.591Z"
 }
