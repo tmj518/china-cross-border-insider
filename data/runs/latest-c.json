@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-12T13:17:38.618Z",
-  "runId": "43225026767",
+  "at": "2026-11-12T13:50:45.266Z",
+  "runId": "43231051912",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
+  "article": "chinese-vp-attends-cop31-antalya-leaders-summit",
   "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.00030000000000000165
+    "usd": 0.0014
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
+      "name": "grounding chinese-vp-attends-cop31-antalya-leaders-summit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
+      "name": "gates chinese-vp-attends-cop31-antalya-leaders-summit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",
+      "name": "build chinese-vp-attends-cop31-antalya-leaders-summit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-import-expo-85-billion-deals-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-pea-protein-anti-dumping-definitive-duties-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/"
+      "detail": "/guide/chinese-vp-attends-cop31-antalya-leaders-summit/"
     }
   ],
   "researchLog": [

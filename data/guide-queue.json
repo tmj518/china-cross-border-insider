@@ -3204,7 +3204,7 @@
       "unit": "one application",
       "title": "Chinese VP attends COP31 Antalya Leaders' Summit",
       "query": "Chinese VP attends COP31 Antalya Leaders' Summit",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Chinese VP attends COP31 Antalya Leaders' Summit\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3232,7 +3232,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     },
     {
       "slug": "former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
