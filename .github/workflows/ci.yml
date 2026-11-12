@@ -151,7 +151,7 @@ jobs:
             echo "FEISHU_WEBHOOK is not set, so no card is sent. The run is still red."
             exit 0
           fi
-          STEP=$(node -e "try{const j=require(process.env.GITHUB_EVENT_PATH);console.log((j.steps||[]).filter(s=>s.conclusion==='failure')[0]?.name||'unknown')}catch{console.log('unknown')}")
+          STEP=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/jobs" --jq '[.jobs[].steps[]|select(.conclusion=="failure")][0].name' 2>/dev/null || echo unknown)
           if echo "$STEP" | grep -qiE 'install|chromium|setup|checkout|npm'; then HEAD="CI 环境失败"; else HEAD="CI 闸门失败"; fi
           TEXT=$(printf '🔴 Landed Math — %s\n\n提交: %s\n分支: %s\n主题: %s\n失败步骤: %s\n\n看日志: %s' \
             "$HEAD" "$(git rev-parse --short HEAD)" "${GITHUB_REF_NAME}" "$COMMIT_MSG" "$STEP" "$RUN_URL")
