@@ -1023,6 +1023,8 @@ function pitfallRules() {
  * skims a list of incidents.
  */
 const lessons = [
+/* The library-level promise, stated where the writer can see it. It was in no prompt before. */
+"THE LIBRARY RULE: an article that states a number must carry that number's five-part record, and an article with no sourced figure must declare itself an explainer. One sourced figure is enough to be a cost article - five is the shape of a full one, never a floor. A draft with numbers and no records fails at the gate, and a draft with neither numbers nor a declaration fails too.",
   "No number may rest on a baseline the figures do not contain. If the current rate or market price is not in the directive, write the formula and stop; do not assume a value, and do not compute a delta from one. An \"assumed\" label does not make the number sourced.",
   "Do not name a document, an article number, an instrument number or a process (e.g. \"Article 29\", \"a filing-based regime\") unless that exact string appears in the material given to you.",
   "Do not attribute motive or history to a measure. State what was decided and from when.",
