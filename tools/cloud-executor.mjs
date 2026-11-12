@@ -28,6 +28,15 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 import { askJson, summary as providerSummary } from "./lib-llm.mjs";
+
+/*
+ * THE SITE RULES, AT MODULE SCOPE.
+ *
+ * They were defined inside pitfallRules() so the two prompt templates that call siteRules() could not see
+ * them: the 07:20 slot on 2026-11-13 died on "siteRules is not defined" after the function had passed
+ * node --check, because a nested declaration is legal syntax and an invisible symbol at once.
+ */
+const siteRules = () => SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n");
 import { SITE_RULES } from "./site-rules.mjs";
 /*
  * The frontmatter constraints live in one place so the prompt, this validator and the parity check all
@@ -969,3 +978,76 @@ if (mechanical.filled.length) {
     process.exit(4);
   }
 
+  mkdirSync(join(ROOT, "data", "drafts"), { recursive: true });
+  const outFile = join(ROOT, "data", "drafts", `${outSlug}.md`);
+
+  /*
+   * The number is assigned here, not taken from the draft.
+   *
+   * A number identifies a position in the sequence, so a new article is one past the highest that exists. On
+   * 2026-10-17 a draft arrived carrying #24 and the collection already had one, which puts two pages in the
+   * same slot - a defect that surfaces on a listing page weeks later and takes an afternoon to trace. The
+   * writer still supplies the field because the prompt's specification names it; the value is replaced.
+   */
+  const assigned = nextArticleNumber();
+  const previous = /^articleNumber:\s*(\d+)\s*$/m.exec(article)?.[1];
+  const withNumber = /^articleNumber:\s*\d+\s*$/m.test(article)
+    ? article.replace(/^articleNumber:\s*\d+\s*$/m, `articleNumber: ${assigned}`)
+    : article.replace(/^---\r?\n/, `---\narticleNumber: ${assigned}\n`);
+  if (previous && Number(previous) !== assigned) {
+    console.log(`  number    : the draft said #${previous}, the collection needs #${assigned} - assigned #${assigned}`);
+  }
+  writeFileSync(outFile, withNumber, "utf8");
+
+  const words = (article.split(/\n---\n/)[1] ?? "").split(/\s+/).filter(Boolean).length;
+  console.log(`  written   : ${outFile.replace(/\\/g, "/").replace(ROOT.replace(/\\/g, "/") + "/", "")}`);
+  console.log(`  words     : ${words}`);
+  console.log("");
+  console.log("  Next: node tools/cloud-qa.mjs --draft=" + outFile.replace(/\\/g, "/"));
+}
+
+const IS_MAIN = process.argv[1] ? process.argv[1].replace(/\\/g, "/").endsWith("cloud-executor.mjs") : false;
+process.on("unhandledRejection", (e) => { console.error("UNHANDLED: " + (e?.stack ?? e)); process.exit(1); });
+process.on("uncaughtException", (e) => { console.error("UNCAUGHT: " + (e?.stack ?? e)); process.exit(1); });
+if (IS_MAIN) await main();
+
+
+/*
+ * THE MISTAKES GO INTO THE INSTRUCTIONS, NOT ONLY INTO THE APPENDIX.
+ *
+ * data/pitfalls.txt used to arrive with the recent lessons, after the directive, which is where a model
+ * reads last and skims. The operator asked for it in the instruction body: a rule that says "this
+ * publication has already shipped these mistakes" belongs next to the rules about what may not be written.
+ */
+/*
+ * WHY THIS IS A FUNCTION AND NOT A CONST.
+ *
+ * The prompt templates at the top of main() interpolate it. A `const` declared further down is not
+ * hoisted, so the first run after it was added died with "Cannot access 'PITFALLS' before initialization"
+ * and the day produced nothing - the third time this exact ordering mistake has cost a run. A function
+ * declaration is hoisted, so position no longer matters and the mistake cannot be repeated.
+ */
+function pitfallRules() {
+/*
+ * The instructions say what may be written; this says what has already gone wrong, in the language the
+ * draft is written in. data/pitfalls.txt keeps the Chinese record for the operator; the writer gets the
+ * same lessons as rules it can check its own draft against, because a model reads a list of rules and
+ * skims a list of incidents.
+ */
+/* The site's own rules, shared with the reviewer rather than re-spelled here. */
+const lessons = [
+/* The library-level promise, stated where the writer can see it. It was in no prompt before. */
+"THE LIBRARY RULE: an article that states a number must carry that number's five-part record, and an article with no sourced figure must declare itself an explainer. One sourced figure is enough to be a cost article - five is the shape of a full one, never a floor. A draft with numbers and no records fails at the gate, and a draft with neither numbers nor a declaration fails too.",
+  "No number may rest on a baseline the figures do not contain. If the current rate or market price is not in the directive, write the formula and stop; do not assume a value, and do not compute a delta from one. An \"assumed\" label does not make the number sourced.",
+  "Do not name a document, an article number, an instrument number or a process (e.g. \"Article 29\", \"a filing-based regime\") unless that exact string appears in the material given to you.",
+  "Do not attribute motive or history to a measure. State what was decided and from when.",
+  "Never present non-compliance as a lever. Under-declaration, mis-classification and shipment splitting are offences; if the arithmetic invites one, state the legal requirement and the penalty exposure.",
+  "When a rate is a range, pair endpoints with endpoints. Do not subtract a low endpoint from a high one and call it a comparison.",
+  "The confidence section and the body must agree. If a figure is unconfirmed in one place, it is unconfirmed everywhere.",
+  "Do not write a second article about an event this publication already covered, even under different wording.",
+  "reviewBy is six months from today, unquoted. It is a constant of this publication, not a judgement.",
+  "Do not use every number in the directive just because it is there; use the ones the argument needs.",
+];
+return "\nMISTAKES THIS PUBLICATION HAS ALREADY SHIPPED - every one reached a live page:\n" +
+  lessons.map((l) => "  - " + l).join("\n") + "\n";
+}
