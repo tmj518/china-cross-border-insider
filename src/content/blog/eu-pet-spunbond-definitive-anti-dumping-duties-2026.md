@@ -1,4 +1,5 @@
 ---
+figureFloorExempt: true
 route: "script"
 title: "EU slaps definitive anti-dumping duties of 39.8% to 48.1%"
 subtitle: "From 30 October 2026, Chinese PET Spunbond imports into the EU pay definitive duties of 39.8% to 48.1% for five years, replacing provisional rates of 45.6% to"
