@@ -109,6 +109,9 @@ export const blog = defineCollection({
     priority: z.enum(["P0", "P1", "P2"]).optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+  /* A procedure with no sourced figure carries no five-part records; the library-level promise in qa-check
+     counts only the articles that do carry figures, and this flag is how a file says which it is. */
+  figureFloorExempt: z.boolean().optional(),
     /**
      * The article's number in publication order, written down rather than derived.
      *
