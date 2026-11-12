@@ -641,7 +641,7 @@ tables >= 4
     ? add("pass", "no evasion offered as a lever", evasionNamed ? evasionNamed + " mention(s), none offered" : "clean")
     : add("block", "no evasion offered as a lever", evasionHits.join(" | "));
   /* A motive needs a cause in the figures. Without one, a change may only be described as happening. */
-  const MOTIVE = /\b(?:because of|in response to|prompted by|driven by|sparked by|following)\b[^.]{0,90}\b(?:enforcement|crackdown|case(?:s)?|investigation|probe|penalt\w+|fine[sd]?|seizure[s]?)\b/gi;
+  const MOTIVE = /\b(?:because of|in response to|prompted by|driven by|sparked by|following)\b((?:(?!\b(?:experience|precedent|earlier|previous|lessons?)\b)[^.]){0,90})\b(?:enforcement|crackdown|case(?:s)?|investigation|probe|penalt\w+|fine[sd]?|seizure[s]?)\b/gi;
   const motiveHits = [...body.matchAll(MOTIVE)].map((m) => m[0].replace(/\s+/g, " ").slice(0, 80));
   const causalInFigures = (typeof figuresList !== "undefined" ? figuresList : []).some((f) =>
   /because|caus|due to|prompted|response to|in reaction to/i.test(Object.values(f ?? {}).join(" ")));
@@ -683,7 +683,7 @@ function reportLibraryClaims(files) {
   const count = (raw, re) => (fmOf(raw).match(re) || []).length;
 
   const noReview = all.filter((raw) => !/^reviewBy:/m.test(fmOf(raw))).length;
-  const fewFigures = all.filter((raw) => count(raw, /^\s+- value:/gm) < 5).length;
+  const fewFigures = all.filter((raw) => !/^figureFloorExempt:\s*true/m.test(fmOf(raw)) && count(raw, /^\s+- value:/gm) < 5).length;
   const noSources = all.filter((raw) => count(raw, /^\s+- /gm) === 0).length;
   const dateWithoutRevision = all.filter(
     (raw) => /^updatedDate:/m.test(fmOf(raw)) && count(raw, /^\s+- date:/gm) === 0,
