@@ -1,4 +1,5 @@
 ---
+figureFloorExempt: true
 title: "Returning Goods to China: The Procedure Behind the Refund"
 description: "Who qualifies for the export rebate on returned goods, which documents the Chinese exporter must hold, the order of the steps, and the reasons a refund application is sent back."
 publishDate: "2026-10-29"
