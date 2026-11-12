@@ -516,7 +516,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-        run: node tools/fallback-publish.mjs
+        env:
+        PIPELINE_ROUTE: ${{ env.ROUTE }}
+      run: node tools/fallback-publish.mjs
 
       - name: Commit and push anything that was approved
         # A published file belongs in the repository even when the pipeline verdict is red: on 2026-11-11
