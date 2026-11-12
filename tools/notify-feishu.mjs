@@ -385,6 +385,12 @@ if (!report) {
     lines.push("  They are in data/lessons.jsonl and feed the next article's prompt.");
   }
 
+  /* #029: the card always says why. A clean notification with no reason is worse than a red one. */
+  if (!report.reasons?.length) {
+    lines.push("");
+    lines.push("Reason:");
+    lines.push(`  • not recorded (${report.verdict ?? "no verdict"}) - the run wrote no reason field, which is itself the defect`);
+  }
   if (report.reasons?.length) {
     lines.push("");
     /*
