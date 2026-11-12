@@ -3084,7 +3084,7 @@
       "unit": "one application",
       "title": "Chinese medical team conducts health outreach in Sierra Leone",
       "query": "Chinese medical team conducts health outreach in Sierra Leone",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Chinese medical team conducts health outreach in Sierra Leone\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3112,7 +3112,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     },
     {
       "slug": "china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-",

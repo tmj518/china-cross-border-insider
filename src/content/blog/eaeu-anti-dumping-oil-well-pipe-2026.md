@@ -221,3 +221,5 @@ For the paperwork and the cost in one place, see [Chinese residence permit requi
 For the paperwork and the cost in one place, see [Chinese motorcycle brands rev up European market, forging deeper industrial ties](/guide/chinese-motorcycle-brands-rev-up-european-market-forging-deeper-indust/).
 
 For the paperwork and the cost in one place, see [Chinese residence permit](/guide/chinese-residence-permit/).
+
+For the paperwork and the cost in one place, see [Chinese medical team conducts health outreach in Sierra Leone](/guide/chinese-medical-team-conducts-health-outreach-in-sierra-leone/).

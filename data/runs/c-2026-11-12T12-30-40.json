@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-10T07:20:51.206Z",
-  "runId": "42774558963",
-  "route": "c",
+  "at": "2026-11-12T12:30:40.070Z",
+  "runId": "43217056550",
+  "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-africa-health-cooperation-can-help-more-children-survive-thrive-",
-  "seconds": 19,
+  "article": "chinese-medical-team-conducts-health-outreach-in-sierra-leone",
+  "seconds": 23,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0013
+    "usd": 0.0002999999999999947
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "name": "grounding chinese-medical-team-conducts-health-outreach-in-sierra-leone",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "name": "gates chinese-medical-team-conducts-health-outreach-in-sierra-leone",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-africa-health-cooperation-can-help-more-children-survive-thrive-",
+      "name": "build chinese-medical-team-conducts-health-outreach-in-sierra-leone",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-zero-tariff-20-african-countries-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "eaeu-anti-dumping-oil-well-pipe-2026, eu-pea-protein-anti-dumping-definitive-duties-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/"
+      "detail": "/guide/chinese-medical-team-conducts-health-outreach-in-sierra-leone/"
     }
   ],
   "researchLog": [

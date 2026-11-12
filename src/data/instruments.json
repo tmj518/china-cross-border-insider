@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -3371,6 +3371,37 @@
       "modelOutput": false
     },
     {
+      "id": "chinese-vice-president-han-zheng-at-31st-unfccc-cop",
+      "source": "Chinese Vice President Han Zheng at 31st UNFCCC COP Antalya Leaders' Summit",
+      "figures": [
+        {
+          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
+          "articleNum": 0,
+          "value": "50 percent",
+          "unit": "share of non-fossil fuel energy in power generation",
+          "period": "2026 China target",
+          "source": "Chinese Vice President Han Zheng at 31st UNFCCC COP Antalya Leaders' Summit",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
+          "articleNum": 0,
+          "value": "35 percent",
+          "unit": "share of electricity in final energy consumption",
+          "period": "2030 China target",
+          "source": "Chinese Vice President Han Zheng at 31st UNFCCC COP Antalya Leaders' Summit",
+          "retrieved": "2026-11-12"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "commission-implementing-regulation-eu-2026-1740-annex-i",
       "source": "Commission Implementing Regulation (EU) 2026/1740, Annex I",
       "figures": [
@@ -4106,6 +4137,37 @@
       ],
       "articleSlugs": [
         "china-industrial-profits-q4-supply-chain"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-development-and-reform-commission",
+      "source": "National Development and Reform Commission",
+      "figures": [
+        {
+          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
+          "articleNum": 0,
+          "value": "645",
+          "unit": "yuan per tonne",
+          "period": "effective from November 12 2024 24:00",
+          "source": "National Development and Reform Commission",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
+          "articleNum": 0,
+          "value": "625",
+          "unit": "yuan per tonne",
+          "period": "effective from November 12 2024 24:00",
+          "source": "National Development and Reform Commission",
+          "retrieved": "2026-11-12"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
       ],
       "modelOutput": false
     },
