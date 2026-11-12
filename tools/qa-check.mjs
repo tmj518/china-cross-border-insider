@@ -683,7 +683,21 @@ function reportLibraryClaims(files) {
   const count = (raw, re) => (fmOf(raw).match(re) || []).length;
 
   const noReview = all.filter((raw) => !/^reviewBy:/m.test(fmOf(raw))).length;
-  const fewFigures = all.filter((raw) => !/^figureFloorExempt:\s*true/m.test(fmOf(raw)) && count(raw, /^\s+- value:/gm) < 5).length;
+  /*
+   * THE LIBRARY PROMISE IS ONE SOURCED FIGURE, NOT FIVE.
+   *
+   * Five was the shape of a cost article when every article was one. The operator widened the beat on
+   * 2026-11-09 to anything a foreign reader wants, and most of that arrives without a per-unit amount.
+   * The promise the site can actually keep is: an article that states a number carries its record, and an
+   * article with no numbers says so in its frontmatter. Five belongs in the cost-article format, not in a
+   * library-wide claim the writers cannot see and the reviewers are not shown.
+   */
+  const fewFigures = all.filter(
+    (raw) =>
+      !/^explainer:\s*true/m.test(fmOf(raw)) &&
+      !/^figureFloorExempt:\s*true/m.test(fmOf(raw)) &&
+      count(raw, /^\s+- value:/gm) < 1,
+  ).length;
   const noSources = all.filter((raw) => count(raw, /^\s+- /gm) === 0).length;
   const dateWithoutRevision = all.filter(
     (raw) => /^updatedDate:/m.test(fmOf(raw)) && count(raw, /^\s+- date:/gm) === 0,
@@ -691,7 +705,7 @@ function reportLibraryClaims(files) {
 
   const claims = [
     ["every article carries reviewBy", noReview === 0, `${noReview} missing`],
-    ["every article carries >= 5 figures", fewFigures === 0, `${fewFigures} short`],
+    ["every article carries a sourced figure or declares itself an explainer", fewFigures === 0, `${fewFigures} without either`],
     ["every article names sources", noSources === 0, `${noSources} with none`],
     [
       "updatedDate only with a recorded revision",
