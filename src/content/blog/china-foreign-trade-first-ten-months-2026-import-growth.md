@@ -179,3 +179,5 @@ Not computed, because the release does not carry the inputs:
 ## The point
 
 The customs release gives an importer three rates and one total, and nothing more. Imports at 23.6 percent, exports at 17.6 percent, total trade at 20 percent on 44.81 trillion yuan, with the total-trade pace up from 18.8 percent over nine months. The value is not in the headline. It is in the comparison: put your own January-October book against the matching rate, and you learn whether you are running with the national pace or against it. That is a fact about your business the release lets you name, and it costs nothing to check.
+
+For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace on stellar imports, booming AI demand](/guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-/).

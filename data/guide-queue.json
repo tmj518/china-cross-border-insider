@@ -3124,7 +3124,7 @@
       "unit": "one application",
       "title": "China's foreign trade growth picks up pace on stellar imports, booming AI demand",
       "query": "China's foreign trade growth picks up pace on stellar imports, booming AI demand",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China's foreign trade growth picks up pace on stellar imports, booming AI demand\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3152,7 +3152,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-12"
     },
     {
       "slug": "china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit",

@@ -175,3 +175,5 @@ The ninth CIIE closed with a record $85.45 billion in intended deals, up 2.3 per
 For the paperwork and the cost in one place, see [Special Report: The 9th China International Import Expo](/guide/special-report-the-9th-china-international-import-expo/).
 
 For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness](/guide/xinhua-special-ciie-2026-vibrancy-sharing-openness/).
+
+For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace on stellar imports, booming AI demand](/guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-/).

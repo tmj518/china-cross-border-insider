@@ -2643,6 +2643,46 @@
       "modelOutput": false
     },
     {
+      "id": "china-insights-consultancy",
+      "source": "China Insights Consultancy",
+      "figures": [
+        {
+          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+          "articleNum": 0,
+          "value": "1.4 million units",
+          "unit": "shipments of harmonic reducers for robots in China",
+          "period": "2025",
+          "source": "China Insights Consultancy",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+          "articleNum": 0,
+          "value": "20.7 million units",
+          "unit": "projected shipments of harmonic reducers for robots in China",
+          "period": "2030",
+          "source": "China Insights Consultancy",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+          "articleNum": 0,
+          "value": "72.4 percent",
+          "unit": "compound annual growth rate of harmonic reducer shipments for robots in China",
+          "period": "2025 to 2030",
+          "source": "China Insights Consultancy",
+          "retrieved": "2026-11-12"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "customs-tariff-commission-of-the-state-council-official-inte",
       "source": "Customs Tariff Commission of the State Council, official interpretation of the 2026 tariff adjustment plan, 29 December 2025",
       "figures": [
@@ -3243,6 +3283,47 @@
       "modelOutput": false
     },
     {
+      "id": "zhiyan-consulting",
+      "source": "Zhiyan Consulting",
+      "figures": [
+        {
+          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+          "articleNum": 0,
+          "value": "3.8 billion yuan",
+          "unit": "market valuation of China's harmonic reducer market",
+          "period": "2025",
+          "source": "Zhiyan Consulting",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+          "articleNum": 0,
+          "value": "4.8 billion yuan",
+          "unit": "projected market valuation of China's harmonic reducer market",
+          "period": "2026",
+          "source": "Zhiyan Consulting",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
+          "articleNum": 0,
+          "value": "3.8 billion yuan",
+          "unit": "market valuation",
+          "period": "2025 for China's harmonic reducer market",
+          "source": "Zhiyan Consulting",
+          "retrieved": "2026-11-12"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "calculated-24-april-2027-minus-4-october-2026-using",
       "source": "Calculated: 24 April 2027 minus 4 October 2026, using the deadlines in Notice C/2026/6637",
       "figures": [
@@ -3367,6 +3448,38 @@
       ],
       "articleSlugs": [
         "us-low-value-shipment-entry-rule-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "china-s-national-standard-information-public-service-platfor",
+      "source": "China's National Standard Information Public Service Platform",
+      "figures": [
+        {
+          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+          "articleNum": 0,
+          "value": "April 1, 2027",
+          "unit": "effective date of revised national standards for harmonic drive reducers",
+          "period": "from the specified implementation date onwards",
+          "source": "China's National Standard Information Public Service Platform",
+          "retrieved": "2026-11-12"
+        },
+        {
+          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
+          "articleNum": 0,
+          "value": "April 1, 2027",
+          "unit": "effective date",
+          "period": "for revised national harmonic drive reducer standards GB/T 12601-2026 and GB/T 14118-2026",
+          "source": "China's National Standard Information Public Service Platform",
+          "retrieved": "2026-11-12"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
+        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
       ],
       "modelOutput": false
     },
