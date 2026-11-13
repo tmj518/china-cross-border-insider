@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-13T00:40:40.698Z",
+  "at": "2026-11-13T00:50:38.994Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "45 previous run(s), last 2026-11-12T23:21:14.143Z (WRITE-FAILED)"
+      "detail": "46 previous run(s), last 2026-11-13T00:40:40.698Z (DANGLING-LINK)"
     },
     {
       "name": "weekly ceiling",
@@ -43,7 +43,7 @@
     {
       "name": "inbound precheck",
       "ok": false,
-      "detail": "dangling link: blog/china-foreign-trade-first-ten-months-2026-import-growth  ->  guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming- | blog/china-import-expo-85-billion-deals-2026  ->  guide"
+      "detail": "dangling link: blog/china-import-expo-85-billion-deals-2026  ->  guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming- | blog/eaeu-anti-dumping-oil-well-pipe-2026  ->  guide/chinese-medical-te"
     },
     {
       "name": "state written",
@@ -60,9 +60,9 @@
   "usage": {
     "calls": 8,
     "failed": 4,
-    "usd": 0.0224,
-    "promptTokens": 74096,
-    "completionTokens": 5606
+    "usd": 0.0227,
+    "promptTokens": 74106,
+    "completionTokens": 5854
   },
   "route": "script",
   "categoryActivity": {
@@ -89,22 +89,22 @@
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 444 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1451 characters but no document structure, trying the next one",
+    "  stream      : SSE, 452 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1449 characters but no document structure, trying the next one",
     "  provider   : volces timed out - parked for the rest of this run",
-    "  stream      : SSE, 1023 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3308 characters but no document structure, trying the next one",
+    "  stream      : SSE, 959 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3091 characters but no document structure, trying the next one",
     "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 999 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3224 characters but no document structure, trying the next one",
-    "  spent   : ~0.0161  (ceiling 0.40)",
+    "  stream      : SSE, 1017 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3193 characters but no document structure, trying the next one",
+    "  spent   : ~0.0160  (ceiling 0.40)",
     "  model   : deepseek/deepseek-chat",
     "  feasible: true",
     "  slug    : china-fuel-price-cut-november-12-2026-per-tonne",
-    "  keyword : China domestic fuel price cut November 12 2026 yuan per tonne",
+    "  keyword : China fuel price cut November 12 2026 per tonne",
     "  duplicate check: score 0",
     "  slug    : china-fuel-price-cut-november-12-2026-per-tonne",
-    "  keyword : China domestic fuel price cut November 12 2026 yuan per tonne",
+    "  keyword : China fuel price cut November 12 2026 per tonne",
     "  category: logistics",
     "  figures : 6",
     "  evidence check:",
@@ -112,8 +112,8 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0161",
+    "  spend this run: ~$0.0160",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 80
+  "seconds": 79
 }

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-13T00:40:40.698Z",
+  "lastRun": "2026-11-13T00:50:38.994Z",
   "lastVerdict": "DANGLING-LINK",
   "lastArticle": "china-human-genetic-resources-export-approval-2026",
-  "runs": 46,
+  "runs": 47,
   "published": 38,
   "lastUsage": {
     "calls": 8,
     "failed": 4,
-    "usd": 0.0224,
-    "promptTokens": 74096,
-    "completionTokens": 5606
+    "usd": 0.0227,
+    "promptTokens": 74106,
+    "completionTokens": 5854
   }
 }

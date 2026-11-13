@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-13T00:42:19.670Z",
-  "runId": "43338873649",
+  "at": "2026-11-13T00:52:15.455Z",
+  "runId": "43340212354",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "eu-fdi-screening",
-  "seconds": 19,
+  "article": "investment-screening",
+  "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.001299999999999999
+    "usd": 0.0013999999999999985
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "3 candidate(s)"
+      "detail": "2 candidate(s)"
     },
     {
-      "name": "grounding eu-fdi-screening",
+      "name": "grounding investment-screening",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates eu-fdi-screening",
+      "name": "gates investment-screening",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build eu-fdi-screening",
+      "name": "build investment-screening",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026, eu-fdi-screening-2026-timeline-notification-rates-importer"
+      "detail": "eu-fdi-screening-2026-timeline-notification-rates-importer, eu-fdi-screening-2028-regime-timing-risk"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/eu-fdi-screening/"
+      "detail": "/guide/investment-screening/"
     }
   ],
   "researchLog": [

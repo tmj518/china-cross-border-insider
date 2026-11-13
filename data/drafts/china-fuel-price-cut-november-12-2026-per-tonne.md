@@ -1,154 +1,167 @@
 ---
-title: "China cuts gasoline and diesel prices by 645 and 625 yuan a"
-subtitle: "The NDRC cut the per-tonne wholesale ceiling for standard gasoline and diesel at midnight on 12 November 2026, resetting the base for inland trucking quotes"
-description: "China's NDRC cut the maximum retail price of standard gasoline by 645 yuan a tonne and diesel by 625 yuan a tonne, effective 24:00 on 12 November 2026. Importers should reprice inland trucking and factory-gate fuel surcharges against the new ceiling."
+title: "China cuts gasoline and diesel prices by 645 and 625 yuan"
+subtitle: "The NDRC cut standard-grade gasoline by 645 yuan and diesel by 625 yuan per tonne at 24:00 on November 12, 2026. Inland trucking and factory-gate delivery get"
+description: "China's NDRC cut standard-grade gasoline by 645 yuan and diesel by 625 yuan per tonne, effective 24:00 on November 12, 2026. Importers should reprice inland trucking and factory-gate delivery on the new diesel number."
 publishDate: 2026-11-13
 reviewBy: 2027-05-13
-stakes: priced
+stakes: "priced"
 category: "logistics"
 audience: "importer"
-tags: ["fuel price", "NDRC", "inland trucking", "fuel surcharge", "landed cost", "China logistics"]
+tags: ["fuel price", "diesel", "inland trucking", "factory-gate delivery", "landed cost", "NDRC"]
 priority: "P1"
 featured: false
 draft: false
-articleNumber: 99
-target_keyword: "China domestic fuel price cut November 12 2026 yuan per tonne"
-search_intent: "informational"
+articleNumber: 100
+target_keyword: "China fuel price cut November 12 2026 per tonne"
+search_intent: "transactional"
 information_gain: "custom-calculation"
 sources:
-  - "National Development and Reform Commission (NDRC), Price Department — 2026年11月12日国内成品油价格调整, published 2026/11/12"
+  - "National Development and Reform Commission (NDRC), Price Department — 2026年11月12日国内成品油价格调整 (https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261112_1408795.html)"
 figures:
   - value: "645元"
-    unit: "yuan per tonne cut in gasoline (standard grade) maximum retail price"
+    unit: "yuan per tonne, gasoline (standard grade) retail price cut"
     period: "effective 24:00 on November 12, 2026"
-    source: "National Development and Reform Commission, Price Department"
+    source: "National Development and Reform Commission (NDRC), Price Department"
     retrieved: "2026-11-13"
   - value: "625元"
-    unit: "yuan per tonne cut in diesel (standard grade) maximum retail price"
+    unit: "yuan per tonne, diesel (standard grade) retail price cut"
     period: "effective 24:00 on November 12, 2026"
-    source: "National Development and Reform Commission, Price Department"
+    source: "National Development and Reform Commission (NDRC), Price Department"
     retrieved: "2026-11-13"
   - value: "11月12日24时"
     unit: "effective time of the price adjustment"
-    period: "November 12, 2026, midnight"
-    source: "National Development and Reform Commission, Price Department"
+    period: "November 12, 2026, 24:00"
+    source: "National Development and Reform Commission (NDRC), Price Department"
     retrieved: "2026-11-13"
   - value: "10月29日"
-    unit: "date of the previous fuel price adjustment used as the comparison base"
+    unit: "date of the previous fuel price adjustment"
     period: "October 29, 2026"
-    source: "National Development and Reform Commission, Price Department"
+    source: "National Development and Reform Commission (NDRC), Price Department"
     retrieved: "2026-11-13"
   - value: "前10个工作日"
-    unit: "working days averaged to set the adjustment"
-    period: "the ten working days before November 12, 2026"
-    source: "National Development and Reform Commission, Price Department"
+    unit: "working days averaged for the pricing comparison"
+    period: "the ten working days before the November 12, 2026 adjustment"
+    source: "National Development and Reform Commission (NDRC), Price Department"
     retrieved: "2026-11-13"
   - value: "12315"
-    unit: "hotline number for reporting price-law violations"
+    unit: "consumer complaint hotline for price violations"
     period: "ongoing"
-    source: "National Development and Reform Commission, Price Department"
+    source: "National Development and Reform Commission (NDRC), Price Department"
     retrieved: "2026-11-13"
 ---
 
 ## AI Summary
 
-China's National Development and Reform Commission cut the maximum retail price of standard gasoline by 645 yuan a tonne and standard diesel by 625 yuan a tonne, effective 24:00 on 12 November 2026. Diesel is the fuel that moves containers inland, so the cut lowers the ceiling a trucking quote is built on. Importers holding a factory-gate fuel surcharge or an inland haulage rate should ask for the new per-tonne base and reprice before the next booking.
+China's National Development and Reform Commission cut standard-grade gasoline by 645 yuan per tonne and standard-grade diesel by 625 yuan per tonne, effective 24:00 on November 12, 2026. Diesel is the number that matters to an importer: it is the fuel behind inland trucking and factory-gate delivery. The cut lowers the per-litre cost of moving cargo inside China. The saving per container is small, but it is real, and it lands on every quote that carries a fuel line.
 
 ## What happened
 
-The Price Department of the National Development and Reform Commission published a fuel price adjustment on 12 November 2026. From 24:00 that day, the maximum retail price of standard-grade gasoline falls by 645 yuan per tonne, and the maximum retail price of standard-grade diesel falls by 625 yuan per tonne.
+The Price Department of the National Development and Reform Commission issued its fuel price adjustment for November 12, 2026. From 24:00 that day, the retail price of standard-grade gasoline falls by 645 yuan per tonne and the retail price of standard-grade diesel falls by 625 yuan per tonne.
 
-The instrument is a price adjustment notice, not a tax or a subsidy. It sets a ceiling: retail prices at the pump are not permitted to exceed the adjusted maximum, and the per-tonne figure is the unit the ceiling is expressed in. The notice also states that consumers can report price-law violations through the 12315 platform.
+The instrument is the NDRC's periodic domestic refined-oil price adjustment. It sets the change in yuan per tonne for the standard grade of each fuel. The notice states the effective time as 24:00 on November 12, 2026, which is the start of November 13.
 
-> **Maximum retail price ceiling** — the highest price a seller is permitted to charge for a listed grade of fuel, set per tonne by the NDRC and translated at the pump into a per-litre price. A cut to the ceiling lowers the most a station can charge; it does not oblige any station, hauler or factory to pass the full amount through to a buyer.
+> **Standard-grade diesel** — the reference grade the NDRC prices in yuan per tonne. Retail pumps sell diesel by the litre, so the per-tonne cut is the input to a conversion, not the price a trucker sees at the pump.
 
-The adjustment covers the two standard grades named in the notice. It does not, on the face of the document, set a separate figure for every blended or premium grade sold in the market.
+The notice also names the previous adjustment, on October 29, 2026, and explains the comparison behind the cut: since that adjustment, international crude prices moved down, and the average price over the ten working days before this adjustment came in below the average over the ten working days before the previous one. The ten-working-day average is the comparison the pricing system uses.
+
+The notice closes with the enforcement line: consumers can report price violations through the 12315 platform. That is the channel for a station that does not pass the cut through, not a channel for an importer.
+
+| Item | Change | Effective |
+| --- | --- | --- |
+| Gasoline, standard grade | down 645 yuan per tonne | 24:00, November 12, 2026 |
+| Diesel, standard grade | down 625 yuan per tonne | 24:00, November 12, 2026 |
+| Previous adjustment | October 29, 2026 | — |
+| Pricing comparison | ten working days before each adjustment | — |
 
 ## Why now
 
-The notice gives the mechanism in one line. Since the previous adjustment on 29 October 2026, international crude prices moved down over the period, and the average price across the ten working days before this adjustment came in below the average across the ten working days before the previous one.
+The timing is the pricing calendar, not a policy event. The NDRC adjusts domestic refined-oil prices on a cycle tied to international crude, and the notice states the mechanism plainly: the ten-working-day average before this adjustment was lower than the ten-working-day average before the October 29 adjustment. Crude moved down over that window, and the domestic price followed.
 
-That is the whole of the stated reason: a ten-working-day average comparison against the 29 October base. The notice does not describe anything beyond the averaging window, and this article does not either.
+The October 29 adjustment is the baseline. This cut is measured against it, and the next adjustment will be measured against this one. For an importer, the practical point is that the diesel number changed on a known date, and any inland transport quote dated before 24:00 on November 12, 2026 was built on the old number.
 
 ## So what
 
-The number an importer needs is not the pump price. It is the per-tonne diesel base that sits underneath an inland trucking quote or a factory-gate fuel surcharge, and that base has just moved down by 625 yuan a tonne for standard diesel.
+Diesel is the fuel that moves cargo inside China. A truck hauling containers from a factory to a port, or from a port to a warehouse, burns diesel, and the per-tonne cut flows into the per-litre price the haulier pays. The saving per shipment is modest, but it is a cost line an importer can now reprice.
 
-The arithmetic is a ceiling, so treat it as one. Take the diesel component of a haulage rate, express it per tonne of fuel consumed, and the maximum that component can now be is 625 yuan lower than it was before midnight on 12 November 2026. Whether a given carrier passes that through depends on the contract, not on the notice.
+The arithmetic runs through the per-tonne figure. The NDRC cut diesel by 625 yuan per tonne. To turn that into a per-litre number, divide by the density of diesel in kilograms per litre and by 1,000 kilograms per tonne. The notice does not publish a density, so the formula is the deliverable here, not a finished per-litre figure:
 
-Work it in the three places it shows up.
+```
+diesel cut per litre = 625 yuan per tonne ÷ (density kg/L × 1,000 kg per tonne)
+```
 
-**Inland trucking.** A container moved from a Chinese port to an inland factory is priced on a diesel cost per kilometre, converted to a per-container rate. The carrier's fuel line is built on a per-tonne diesel figure. The ceiling on that figure is now 625 yuan a tonne lower. Ask the carrier for the per-tonne diesel base in the current quote and the date it was set. If it predates 12 November 2026, the quote is carrying a ceiling that no longer applies.
+At a density of 0.835 kg per litre, the cut is 625 ÷ 835 = 0.7485 yuan per litre, or about 0.75 yuan per litre. That density is an assumption for the worked example, not a figure from the notice. The importer's own haulier knows the density and the litres burned, and that is the number to plug in.
 
-**Factory-gate fuel surcharges.** Many Chinese factories quote FOB with a fuel surcharge line that tracks the domestic diesel price. That line is usually a percentage or a fixed per-unit amount recalculated when the NDRC adjusts. The trigger date is 12 November 2026. A surcharge recalculated on the 29 October base is stale.
+From there, the per-shipment saving is the litres burned on the inland leg multiplied by the per-litre cut. A truck that burns 35 litres per 100 kilometres and runs a 300-kilometre factory-to-port leg burns 105 litres. At 0.75 yuan per litre, that leg is 78.75 yuan cheaper than it was on November 12. A 40-tonne load carrying two 20-foot containers spreads that 78.75 yuan across the cargo.
 
-**The gasoline side.** The 645 yuan a tonne cut applies to standard gasoline. It matters less to container haulage, which runs on diesel, and more to light commercial delivery and to any cost line a supplier indexes to gasoline. If a supplier's surcharge is indexed to gasoline rather than diesel, the relevant figure is 645, not 625.
+Work it through a second case. A 500-kilometre leg at the same 35 litres per 100 kilometres burns 175 litres. At 0.75 yuan per litre, the saving is 131.25 yuan per truck. A haulier running ten trucks a day on that lane saves 1,312.50 yuan a day, and that is the number to put in front of the transport manager when the next quote arrives.
 
-The two figures are close but they are not the same number, and a quote that applies the gasoline cut to a diesel cost is wrong by the difference between them. Keep the grades separate when you check a supplier's arithmetic.
+The gasoline cut of 645 yuan per tonne matters less to freight. Gasoline is the fuel of light vehicles and small vans, not the heavy trucks that carry containers. An importer whose inland leg is a courier or a small-van delivery sees the gasoline number; an importer moving pallets and containers sees the diesel number. The diesel cut is the one to reprice.
 
-For importers whose cargo is still moving through Chinese ports and inland legs, the fuel line is one of several cost components that reset on a published date. The same discipline applies to the customs side of the landed cost, where the timing of a declaration decides which rate applies — see [China's imports rose 23.6% in the first ten months of 2026](/blog/china-foreign-trade-first-ten-months-2026-import-growth/) for the volume context behind inland capacity, and [What a Parcel From China to India Actually Costs](/blog/china-to-india-parcel-cost-procedure-2026/) for how a small-parcel cost stack is built line by line.
+The judgement: this is a small, dated, verifiable input to inland cost, not a reason to renegotiate a supply contract. The right move is to ask the haulier for a quote dated after November 12, 2026 and to check that the fuel line reflects the new diesel price. A quote that still carries the October 29 fuel basis is stale.
+
+The cut also touches factory-gate delivery. When a supplier quotes a delivered price, the delivery leg carries diesel. A delivered quote issued before November 12, 2026 was built on the old diesel number, and the supplier's cost on that leg has fallen. That is a small lever in the next price conversation, and it is worth naming.
 
 ## How confident
 
-**Confirmed.** The NDRC Price Department notice of 12 November 2026 states that from 24:00 that day the maximum retail price of standard gasoline falls by 645 yuan per tonne and standard diesel by 625 yuan per tonne. It states that the previous adjustment was on 29 October 2026, that the ten-working-day average before this adjustment was below the ten-working-day average before the previous one, and that price-law violations can be reported through 12315. Every figure in this article comes from that single notice.
+**Confirmed.** The NDRC Price Department notice states that from 24:00 on November 12, 2026, standard-grade gasoline falls by 645 yuan per tonne and standard-grade diesel by 625 yuan per tonne. It names October 29, 2026 as the previous adjustment and states that the ten-working-day average before this adjustment was below the ten-working-day average before the previous one. It names 12315 as the reporting channel. Every figure in this article comes from that single notice.
 
-**Inferred.** The link from the per-tonne ceiling to a specific trucking quote or factory surcharge is an inference, not something the notice states. The notice sets a maximum retail price; it does not set a haulage rate, a surcharge formula or a pass-through obligation. The three cost lines in "So what" are the places a per-tonne diesel figure normally enters an importer's landed cost, and the arithmetic there is a ceiling calculation, not a measured saving. All of it rests on one document, and no second source has been cross-checked against it.
+**Inferred.** The per-litre and per-shipment savings rest on a density of 0.835 kilograms per litre and a burn rate of 35 litres per 100 kilometres, neither of which the notice publishes. Those are worked-example assumptions, and a haulier's own density and consumption replace them. The link from the per-tonne cut to a lower trucking quote is an inference: the notice sets the retail price, and how much of the cut reaches a given haulier's invoice depends on that haulier's contract. All of this rests on one document, and no second source was checked.
 
-**What would change my mind.** A later NDRC notice reversing or amending the 12 November adjustment, or a published haulage or surcharge index showing the per-tonne diesel base did not move with the ceiling, would change the arithmetic. So would a contract term that fixes a fuel base to a date other than the adjustment date. Absent any of those, the ceiling moved on 12 November 2026 and the quotes should be checked against it.
+**What would change my mind.** A later NDRC adjustment that reverses the cut, or a haulier quote dated after November 12, 2026 that does not move with the diesel price, would change the arithmetic. A published density for standard-grade diesel from the same authority would replace the assumption in the worked example.
 
 ## For you
 
-- **Importers with an inland leg booked after 12 November 2026:** ask the carrier for the per-tonne diesel base in the quote and the date it was set, and confirm it reflects the 625 yuan cut effective 24:00 on 12 November 2026.
-- **Importers with a factory-gate fuel surcharge in the FOB price:** request the surcharge recalculation date from the supplier and check whether the line is indexed to diesel (625) or gasoline (645), because the two cuts differ.
-- **Importers comparing two quotes for the same lane:** put both quotes on the same per-tonne diesel base before comparing, so a stale fuel line does not make one carrier look cheaper than it is.
-- **Importers with cargo already in transit on an inland leg:** confirm with the forwarder which adjustment date the haulage invoice uses, since the ceiling changed at midnight on 12 November 2026 and an invoice dated before that carries the old base.
+- **Importers booking inland trucking this month:** ask the haulier for a quote dated after 24:00 on November 12, 2026 and check that the fuel line uses the new diesel price of 625 yuan per tonne lower.
+- **Importers with a delivered factory-gate price:** raise the diesel cut with the supplier on the next order, because the delivery leg in that price is now cheaper to run.
+- **Importers running their own fleet or a dedicated lane:** recompute the per-litre cut with your own density and litres burned, then apply it to the monthly fuel budget.
+- **Importers comparing quotes from two hauliers:** put both on the same post-November 12 diesel basis before comparing, so a stale fuel line does not make one quote look cheaper than it is.
 
 ## The data point
 
-The NDRC cut the standard diesel maximum retail price by 625 yuan per tonne, effective 24:00 on 12 November 2026.
+The NDRC cut standard-grade diesel by 625 yuan per tonne at 24:00 on November 12, 2026.
 
 <div class="callout">
-Standard diesel maximum retail price: down 625 yuan per tonne. Standard gasoline: down 645 yuan per tonne. Effective 24:00, 12 November 2026. Source: NDRC Price Department, 2026年11月12日国内成品油价格调整.
+625 yuan per tonne — the diesel cut effective 24:00 on November 12, 2026, per the NDRC Price Department. Divide by density in kilograms per litre and by 1,000 to reach the per-litre cut.
 </div>
 
 ## FAQ
 
-**Does this cut change my inland trucking rate automatically?**
+**How much did China cut diesel and gasoline prices on November 12, 2026?**
+The NDRC Price Department cut standard-grade gasoline by 645 yuan per tonne and standard-grade diesel by 625 yuan per tonne. The change took effect at 24:00 on November 12, 2026, which is the start of November 13. The notice names October 29, 2026 as the previous adjustment and states that the ten-working-day average before this adjustment was below the ten-working-day average before the previous one. Both figures are per tonne of the standard grade, not per litre at the pump.
 
-No. The NDRC notice sets a maximum retail price ceiling per tonne of standard diesel. It does not set a haulage rate and it does not oblige a carrier to pass the cut through. What changes is the ceiling the carrier's fuel line is built on. Whether your rate moves depends on the fuel clause in your contract and on when the carrier recalculates. Ask for the per-tonne diesel base in the current quote and the date it was set. A quote built on the 29 October 2026 base is carrying a ceiling that no longer applies, and that is the conversation to have before the next booking.
+**How does a per-tonne diesel cut reach my inland trucking cost?**
+The per-tonne cut converts to a per-litre cut by dividing by the density of diesel in kilograms per litre and by 1,000 kilograms per tonne. The notice does not publish a density, so the importer uses the haulier's own figure. At a density of 0.835 kilograms per litre, the 625 yuan per tonne cut is about 0.75 yuan per litre. Multiply that by the litres burned on the inland leg to get the per-shipment saving, then check that the haulier's quote reflects it.
 
-**Why are gasoline and diesel cut by different amounts?**
-
-The notice sets two separate per-tonne figures: 645 yuan for standard gasoline and 625 yuan for standard diesel. The document does not explain the difference between the two grades, and this article does not either. For an importer the practical point is that the two numbers are not interchangeable. Container haulage runs on diesel, so the 625 figure is the one that sits under an inland trucking quote. A supplier surcharge indexed to gasoline uses the 645 figure. When you check a supplier's arithmetic, confirm which grade the surcharge is indexed to before you accept the number.
-
-**What was the previous adjustment, and why does the date matter?**
-
-The previous adjustment was on 29 October 2026. The notice states that the ten-working-day average price before the 12 November adjustment came in below the ten-working-day average before the 29 October one, and that is the stated basis for the cut. The date matters to an importer because it is the base a stale quote is likely built on. A haulage or surcharge line recalculated on the 29 October base has not yet absorbed the 12 November ceiling. Ask for the recalculation date, and treat anything dated before 12 November 2026 as due for a refresh.
+**Does the gasoline cut affect my freight cost?**
+Only if the inland leg runs on light vehicles. Gasoline is the fuel of cars and small vans, and the 645 yuan per tonne cut applies to that fuel. Containers and pallets move on heavy trucks that burn diesel, so the 625 yuan per tonne diesel cut is the one that touches most import freight. An importer using a courier or a small-van delivery sees the gasoline number; an importer moving containers sees the diesel number.
 
 ## How we calculated this
 
-```text
-Inputs (NDRC Price Department, 2026年11月12日国内成品油价格调整):
-  gasoline cut  = 645 yuan per tonne (standard grade)
-  diesel cut    = 625 yuan per tonne (standard grade)
-  effective     = 24:00, 12 November 2026
-  prior base    = 29 October 2026 adjustment
-  averaging     = ten working days before each adjustment
+```
+Diesel cut, per tonne:        625 yuan per tonne (NDRC, effective 24:00, 12 Nov 2026)
+Gasoline cut, per tonne:      645 yuan per tonne (NDRC, same notice)
 
-Ceiling arithmetic (no baseline price is stated in the notice):
-  new diesel ceiling = (old diesel ceiling) - 625 yuan per tonne
-  new gasoline ceiling = (old gasoline ceiling) - 645 yuan per tonne
+Per-litre conversion:
+  cut per litre = 625 ÷ (density kg/L × 1,000)
+  worked example, density 0.835 kg/L (assumption, not from the notice):
+  625 ÷ (0.835 × 1,000) = 625 ÷ 835 = 0.7485 yuan per litre ≈ 0.75
 
-  The notice does not publish the old ceiling in yuan per tonne,
-  so the new absolute ceiling cannot be computed from this document.
-  Only the change is sourced. Write the formula and stop.
+Per-shipment saving, case 1 (300 km leg):
+  burn rate 35 L/100 km (assumption)
+  300 km × 35 ÷ 100 = 105 litres
+  105 × 0.7485 = 78.59 yuan per truck
 
-Grade check:
-  diesel-indexed surcharge  -> apply 625
-  gasoline-indexed surcharge -> apply 645
-  do not substitute one for the other
+Per-shipment saving, case 2 (500 km leg):
+  500 km × 35 ÷ 100 = 175 litres
+  175 × 0.7485 = 130.99 yuan per truck
+  ten trucks a day: 10 × 130.99 = 1,309.88 yuan per day
+
+Note: density and burn rate are worked-example assumptions.
+The NDRC notice publishes the per-tonne cut only.
 ```
 
 ## The point
 
-The NDRC moved the ceiling, not your rate. Standard diesel is 625 yuan a tonne cheaper at the maximum retail price from midnight on 12 November 2026, and standard gasoline is 645 yuan cheaper. Every inland trucking quote and factory-gate fuel surcharge in your landed cost is built on a per-tonne fuel base, and that base has a new ceiling. The work for an importer is small and specific: get the per-tonne diesel figure and its date from each carrier and supplier, check it against 12 November 2026, and reprice before the next booking. A quote that still carries the 29 October base is the one to challenge.
+The November 12, 2026 cut is small and dated, and that is exactly what makes it usable. The NDRC put a number on diesel — 625 yuan per tonne lower from 24:00 that day — and every inland trucking and factory-gate delivery quote built before that timestamp carries a fuel line that is now out of date. The importer's job is not to celebrate the cut but to reprice against it: ask for a quote dated after the change, check the fuel line, and run the per-litre arithmetic with the haulier's own density and litres burned. The saving per container is modest, but a stale fuel line is a cost an importer pays for no reason, and the fix is a single dated quote.
+
+Related reading: [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/) and [china 2026 export duty wrought metals](/blog/china-2026-export-duty-wrought-metals/).
