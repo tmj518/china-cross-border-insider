@@ -41,6 +41,13 @@ const published = /^PUBLISHED/.test(verdict);
  * polluted both the library and the ledger. The fallback exists to keep C's own slot from going empty;
  * it has no business covering for a route that failed for its own reasons.
  */
+/*
+ * AND A FORCED SCRIPT RUN IS THE SAME CASE.
+ *
+ * 2026-11-13 08:40 and 08:50: two forced A runs published their blog, and the fallback published a guide
+ * after each - eu-fdi-screening and investment-screening - because it only stood down for the agent route.
+ * Those are C's product. If the day already has an article, the fallback has nothing to cover.
+ */
 if (String(process.env.PIPELINE_ROUTE ?? "").toLowerCase() === "agent") {
   console.log("FALLBACK PUBLISH\n" + "=".repeat(78));
   console.log("  the agent route ran and did not publish: standing down, a failed agent run is not a gap in C's slot");
@@ -86,6 +93,13 @@ try {
   }
   if (lastTs) recentlyPublished = Date.now() - lastTs < 12 * 3600;
 } catch {}
+
+/* #106: the script route that already published must not get a guide on top of its article. */
+if (String(process.env.PIPELINE_ROUTE ?? "").toLowerCase() === "script" && (published || recentlyPublished)) {
+  console.log("FALLBACK PUBLISH\n" + "=".repeat(78));
+  console.log("  the script route already published today: standing down");
+  process.exit(0);
+}
 
 console.log("FALLBACK PUBLISH\n" + "=".repeat(78));
 console.log("  pipeline verdict   : " + (verdict || "(no report)"));
