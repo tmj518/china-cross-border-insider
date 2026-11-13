@@ -2403,7 +2403,7 @@
       "modelOutput": false
     },
     {
-      "id": "national-development-and-reform-commission-ndrc-price-adjust",
+      "id": "national-development-and-reform-commission-ndrc-price-adjust-101",
       "source": "National Development and Reform Commission (NDRC), price adjustment notice",
       "figures": [
         {
@@ -4155,6 +4155,37 @@
       ],
       "articleSlugs": [
         "china-industrial-profits-q4-supply-chain"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-development-and-reform-commission-ndrc-price-adjust",
+      "source": "National Development and Reform Commission (NDRC) price adjustment announcement",
+      "figures": [
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-per-tonne",
+          "articleNum": 103,
+          "value": "645元",
+          "unit": "yuan per tonne (gasoline standard product)",
+          "period": "effective from 24:00 on November 12, 2026",
+          "source": "National Development and Reform Commission (NDRC) price adjustment announcement",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-per-tonne",
+          "articleNum": 103,
+          "value": "625元",
+          "unit": "yuan per tonne (diesel standard product)",
+          "period": "effective from 24:00 on November 12, 2026",
+          "source": "National Development and Reform Commission (NDRC) price adjustment announcement",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "articleNums": [
+        103
+      ],
+      "articleSlugs": [
+        "china-fuel-price-cut-november-12-2026-per-tonne"
       ],
       "modelOutput": false
     },

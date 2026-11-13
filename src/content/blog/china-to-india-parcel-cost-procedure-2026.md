@@ -101,6 +101,8 @@ Read the table from the top. Each row's failure mode is the next row's missing i
 
 **What would change this.** A fetched page from the General Administration of Customs of the PRC or the Indian customs authority stating the declaration code for postal and parcel consignments, the value ceiling that separates one clearance route from another, or the document list for a parcel would replace the inferred sequence with a quoted one, and would let this page carry figures. Until then it carries none.
 
+> Also read: [China cuts gasoline and diesel prices by 645 and 625 yuan](/blog/china-fuel-price-cut-november-12-2026-per-tonne/)
+
 ## For you
 
 - **Shippers who have a freight quote and nothing else:** ask the forwarder which declaration route the parcel will travel under, and get it in writing before the parcel is collected. The route is the decision that cannot be revisited.

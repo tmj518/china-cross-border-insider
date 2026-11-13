@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-13T01:00:17.230Z",
+  "at": "2026-11-13T23:21:19.928Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "47 previous run(s), last 2026-11-13T00:50:38.994Z (DANGLING-LINK)"
+      "detail": "48 previous run(s), last 2026-11-13T01:00:17.230Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "5 of 15 net-new this week"
+      "detail": "6 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,12 +33,12 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-fuel-price-cut-november-12-2026-diesel-per-tonne, 6 verified figure(s)"
+      "detail": "proposed china-fuel-price-cut-november-12-2026-per-tonne, 2 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "6 sourced figure(s)"
+      "detail": "2 sourced figure(s)"
     },
     {
       "name": "inbound precheck",
@@ -48,22 +48,37 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-fuel-price-cut-november-12-2026-diesel-per-tonne.md"
+      "detail": "draft at /data/drafts/china-fuel-price-cut-november-12-2026-per-tonne.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-fuel-price-cut-november-12-2026-per-tonne.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 6 issue(s), 6 with a citation"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "APPROVED: L5 4 issue(s), 4 with a citation"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "4 objection(s), advisory only - publishing"
+      "detail": "6 objection(s), advisory only - publishing"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/china-fuel-price-cut-november-12-2026-diesel-per-tonne.md"
+      "detail": "staged at src/content/blog/china-fuel-price-cut-november-12-2026-per-tonne.md"
     },
     {
       "name": "registry",
@@ -83,20 +98,20 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 4 objection(s), advisory - published anyway"
+    "reviewer: 6 objection(s), advisory - published anyway"
   ],
-  "article": "china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+  "article": "china-fuel-price-cut-november-12-2026-per-tonne",
   "commit": null,
   "usage": {
-    "calls": 13,
-    "failed": 6,
-    "usd": 0.0315,
-    "promptTokens": 96664,
-    "completionTokens": 8305
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0212,
+    "promptTokens": 105700,
+    "completionTokens": 11498
   },
   "route": "script",
   "categoryActivity": {
-    "logistics": 0,
+    "logistics": 1,
     "sourcing": 0,
     "trade-policy": 5,
     "supply-chain": 0,
@@ -104,6 +119,8 @@
   },
   "uncoveredSections": [],
   "researchLog": [
+    "  ok    china-daily-article         54554B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
     "  ok    sta-news-article           106658B  article archived",
     "  ok    sta-news-article           106658B  article archived",
     "  ok    state-council-policy-article    34375B  article archived",
@@ -115,41 +132,41 @@
     "  ok    moe-en-article              20270B  article archived",
     "  ok    moe-en-article              19107B  article archived",
     "  ok    moe-en-article              22250B  article archived",
-    "  fresh     : 0 article(s) dated today, newest 2026-11-12",
+    "  fresh     : 0 article(s) dated today, newest 2026-11-13",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 438 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1369 characters but no document structure, trying the next one",
-    "  provider   : volces timed out - parked for the rest of this run",
-    "  stream      : SSE, 1033 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3365 characters but no document structure, trying the next one",
-    "  provider   : volces is parked after a timeout - going straight to deepseek",
-    "  stream      : SSE, 1048 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3499 characters but no document structure, trying the next one",
-    "  spent   : ~0.0161  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
+    "  stream      : SSE, 439 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1393 characters but no document structure, trying the next one",
+    "  stream      : SSE, 805 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2569 characters but no document structure, trying the next one",
+    "  stream      : SSE, 440 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 1439 characters but no document structure, trying the next one",
+    "  spent   : ~0.0070  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : china-fuel-price-cut-november-12-2026-diesel-per-tonne",
-    "  keyword : China fuel price cut November 2026 diesel per tonne importer logistics cost",
+    "  slug    : china-fuel-price-cut-november-12-2026-per-tonne",
+    "  keyword : China fuel price cut November 2026 per tonne",
     "  duplicate check: score 0",
-    "  slug    : china-fuel-price-cut-november-12-2026-diesel-per-tonne",
-    "  keyword : China fuel price cut November 2026 diesel per tonne importer logistics cost",
+    "  slug    : china-fuel-price-cut-november-12-2026-per-tonne",
+    "  keyword : China fuel price cut November 2026 per tonne",
     "  category: logistics",
-    "  figures : 6",
+    "  figures : 2",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0161",
+    "  spend this run: ~$0.0070",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
   "reviewAdvisory": [
-    "The draft treats the 625 yuan cut as if it were the full ceiling price per tonne, but the figures give only the size of the cut, not the prior or new ceiling level, so the per-tonne reduction cannot be derived from the supplied figures.",
-    "The confidence section first says every figure comes from the single NDRC notice and then immediately attributes two figures to China Daily, contradicting itself and misstating the sourcing.",
-    "The 1.25 percent policy rate and 1.327 percent DR001 figure are single-sourced to China Daily but the article does not carry a clear single-source disclosure for them in the body, only a buried note in the confidence section.",
-    "The figure record gives the 1.25 percent rate as applying to each working day since November 2, 2026, but the draft presents it as a current policy rate without the period qualifier, and the DR001 figure is described as 'Wednesday' without anchoring it to the stated week."
+    "The 30 litres/100km consumption rate and 0.84 kg/l density are assumed baselines not present in the supplied figures, so the per-kilometre and per-tonne savings are not derivable from the NDRC announcement alone.",
+    "The 10-working-day window and the international crude basket linkage are asserted as mechanism detail the supplied evidence does not contain, and the draft presents them as established fact rather than inference.",
+    "The provincial ceiling-price process and quality differentials are described as fact without a cited provincial notice or regulation in the figures, so the reader cannot verify the mechanism.",
+    "The confidence section labels the consumption and density as assumptions, but the body presents the resulting savings as arithmetic facts and the table as estimates only in a trailing sentence, so the confidence section contradicts the body's framing.",
+    "The 0.72 kg/l gasoline density is a new assumed baseline not in the figures and not disclosed as an assumption in the FAQ, so the per-litre figures are not derivable from the supplied evidence.",
+    "The declared information gain is a custom calculation, but the calculation rests on assumed consumption and density values the figures do not contain, so the gain is not supported by the supplied evidence."
   ],
-  "seconds": 132
+  "seconds": 345
 }
