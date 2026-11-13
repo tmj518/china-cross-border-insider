@@ -30,7 +30,7 @@
  * its blind spots; if only one key is present the run proceeds and says the review was not
  * independent, because a silent downgrade is worse than a reported one.
  */
-import { SITE_RULES } from "./site-rules.mjs";
+import { SITE_RULES, CHARTER, REVIEW_CHECKS } from "./site-rules.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -59,7 +59,13 @@ const text = readFileSync(draftPath, "utf8");
  * its job is to catch the same class of error on a new article - an assumed baseline, a mechanism the source
  * does not state, two endpoints of a range paired as if they were one comparison.
  */
-function siteRules() { return SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n"); }
+function siteRules() {
+  return (
+    "THE CHARTER THIS SITE IS WRITTEN TO:\n" + CHARTER.map((c) => "  - " + c).join("\n") +
+    "\n\nTHE RULES:\n" + SITE_RULES.map((r, i) => `  SITE RULE ${i + 1}: ${r}`).join("\n") +
+    "\n\nTHE PATTERNS THIS PUBLICATION HAS PUBLISHED BY MISTAKE:\n" + REVIEW_CHECKS.map((c) => "  - " + c).join("\n")
+  );
+}
 
 function pitfallsBrief() {
   /* The same nine patterns the writer is told not to commit, restated as things to look for. */
