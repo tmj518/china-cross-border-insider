@@ -176,6 +176,6 @@ For the paperwork and the cost in one place, see [Special Report: The 9th China 
 
 For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness](/guide/xinhua-special-ciie-2026-vibrancy-sharing-openness/).
 
-For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace on stellar imports, booming AI demand](/guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming-/).
+For the paperwork and the cost in one place, see China's foreign trade growth picks up pace on stellar imports, booming AI demand.
 
 For the paperwork and the cost in one place, see [China's import expo tells a larger story of openness, shared opportunities](/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/).
