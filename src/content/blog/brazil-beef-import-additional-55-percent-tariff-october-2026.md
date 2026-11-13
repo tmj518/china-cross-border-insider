@@ -213,3 +213,5 @@ For the paperwork and the cost in one place, see [China's health story holds les
 For the paperwork and the cost in one place, see [China's import expo tells a larger story of openness, shared opportunities](/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/).
 
 For the paperwork and the cost in one place, see [Former deserted Chinese mining sites star again via "lights, camera, action"](/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/).
+
+For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).

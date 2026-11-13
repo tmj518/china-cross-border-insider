@@ -193,3 +193,5 @@ For the paperwork and the cost in one place, see [Second China-Canada Strategic 
 For the paperwork and the cost in one place, see [China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition](/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/).
 
 For the paperwork and the cost in one place, see [China's health story holds lessons for all, Lancet says](/guide/china-s-health-story-holds-lessons-for-all-lancet-says/).
+
+For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).
