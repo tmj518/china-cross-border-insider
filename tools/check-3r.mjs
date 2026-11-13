@@ -76,9 +76,19 @@ function check(file) {
   } else {
     fails.push("relevant: no target_keyword declared");
   }
-  const market = /\b(Malaysia|Vietnam|Indonesia|Thailand|Philippines|Mexico|Brazil|Poland|Netherlands|Germany|EU|ASEAN|importer'?s market|your market)\b/i.test(body);
-  if (market) passes.push("relevant: the article names a market an importer actually buys into");
-  else fails.push("relevant: no market named - the reader cannot tell whose costs changed");
+  /*
+   * RELEVANT is about the reader, not about naming a country.
+   *
+   * The operator removed the market rule on 2026-11-13: the charter says the site serves five kinds of
+   * reader, and an article about a domestic Chinese rule can be useful to a platform seller without ever
+   * naming Malaysia. What still matters is that the article states who it is for and what they can now do.
+   */
+  const audience = field("audience");
+  const forYou = /^##\s*(For you|How to use|What to do)/im.test(body);
+  if (audience) passes.push("relevant: the article declares its audience");
+  else fails.push("relevant: no audience declared");
+  if (forYou) passes.push("relevant: there is a section that tells the reader what to do");
+  else fails.push("relevant: no section telling the reader what to do");
 
   /* RIGHTS --------------------------------------------------------------- */
   const quotes = [...body.matchAll(/"([^"]{80,})"/g)].map((m) => m[1]);
@@ -117,7 +127,7 @@ for (const f of files) {
 }
 console.log("\n3R\n" + "=".repeat(70));
 console.log(`  checked ${files.length} article(s), ${failed} with a failed R`);
-console.log(`  RESULT: ${failed ? failed + " article(s) fail REAL or RIGHTS" : "every article passes REAL and RIGHTS"}${warned ? " - " + warned + " carry a RELEVANT warning (market not named)" : ""}`);
+console.log(`  RESULT: ${failed ? failed + " article(s) fail REAL or RIGHTS" : "every article passes REAL and RIGHTS"}${warned ? " - " + warned + " carry a RELEVANT warning" : ""}`);
 /*
  * A SOFT GATE MUST NOT BE ABLE TO TURN THE BUILD RED.
  *
