@@ -78,7 +78,30 @@ function check(file) {
    * table keyed on the rule name means a rule that gains guidance is one diff, and a rule that has none is
    * reported as unguided rather than silently passing.
    */
+  /*
+   * TWENTY-ONE BLOCKING RULES WAS TOO MANY, AND THE OPERATOR SAID SO.
+   *
+   * 2026-11-13: "the 21 blocking rules are too many - cut them down, good sources plus a strong brief is
+   * enough; an empty site does not rank either." A blocking rule is a promise that a draft without it is not
+   * worth publishing. For the shape rules below, that promise was wrong: they measure house style, and a
+   * competent article that skips the definition block is still worth reading.
+   *
+   * Everything in DEMOTED still runs and still prints - it is advice to the writer, not a wall. What stays
+   * blocking is the set that decides whether the article is TRUE: encoding, sourced figures, a primary
+   * document, the arithmetic, no URLs, no hedging, no evasion lever, no invented motive, sensitive terms.
+   */
+  const DEMOTED = new Set([
+    "AI summary 40-100 words",
+    "FAQ 3-5 questions, 80-150 word answers",
+    "comparison table present",
+    "definition block present",
+    "audience segments >= 3",
+    "no AI cliches",
+    "target_keyword declared",
+    "How confident has all three parts",
+  ]);
   const add = (level, rule, detail) => {
+    if (level === "block" && DEMOTED.has(rule)) level = "warn";
     const g = level === "block" ? guideFor(rule) : null;
     results.push({ level, rule, detail, want: g?.want, how: g?.how, example: g?.example, unguided: level === "block" && !g });
   };
