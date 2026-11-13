@@ -888,6 +888,19 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
       run.reasons.push(`the writer produced a draft that violates the content schema and the violations were not recorded, so there is nothing to revise against`);
       break;
     }
+    /*
+     * A missing draft is worth one retry, and it was not getting one.
+     *
+     * The executor exits non-zero when the model returns prose instead of calling write_file, or when the
+     * call never lands. On 2026-11-13 that cost the day: 3 calls, 60 seconds, "the writer did not produce
+     * X.md on attempt 1", and the run stopped even though MAX_ATTEMPTS is three. A schema violation was
+     * retried; a missing file - the cheaper failure - was not.
+     */
+    if (writeCode !== 3 && writeCode !== 4 && attempt < MAX_ATTEMPTS) {
+      console.log(`  revising            : attempt ${attempt + 1} of ${MAX_ATTEMPTS}, the writer produced no draft`);
+      run.reasons.push(`attempt ${attempt}: no draft produced`);
+      continue;
+    }
     run.verdict = "WRITE-FAILED";
     run.reasons.push(
       writeCode === 4
