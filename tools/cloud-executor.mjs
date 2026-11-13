@@ -36,8 +36,12 @@ import { askJson, summary as providerSummary } from "./lib-llm.mjs";
  * them: the 07:20 slot on 2026-11-13 died on "siteRules is not defined" after the function had passed
  * node --check, because a nested declaration is legal syntax and an invisible symbol at once.
  */
-const siteRules = () => SITE_RULES.map((r, i) => `SITE RULE ${i + 1}: ${r}`).join("\n");
-import { SITE_RULES } from "./site-rules.mjs";
+const siteRules = () =>
+  "THE CHARTER THIS SITE IS WRITTEN TO:\n" + CHARTER.map((c) => "  - " + c).join("\n") +
+  "\n\nTHE RULES A DRAFT MUST MEET:\n" + SITE_RULES.map((r, i) => `  SITE RULE ${i + 1}: ${r}`).join("\n") +
+  "\n\nWHAT THE REVIEWER WILL CHECK, line by line - a draft that fails any of these comes back:\n" +
+  REVIEW_CHECKS.map((c) => "  - " + c).join("\n");
+import { SITE_RULES, CHARTER, REVIEW_CHECKS } from "./site-rules.mjs";
 /*
  * The frontmatter constraints live in one place so the prompt, this validator and the parity check all
  * read the same list. They were described in three places that could not check each other, and twice in
