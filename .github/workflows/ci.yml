@@ -146,6 +146,7 @@ jobs:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           COMMIT_MSG: ${{ github.event.head_commit.message || github.event.pull_request.title || 'no commit message' }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -z "$FEISHU_WEBHOOK" ]; then
             echo "FEISHU_WEBHOOK is not set, so no card is sent. The run is still red."
