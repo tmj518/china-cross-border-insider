@@ -113,6 +113,29 @@ try {
     }
   };
   for (const dir of MIRROR) walkCopy(join(src, dir), join(ROOT, dir));
+  /*
+   * A MIRROR DELETES TOO, OR IT IS NOT A MIRROR.
+   *
+   * On 2026-11-13 five articles were deleted on GitHub and every one of them stayed in this folder, so a
+   * local link-check reported broken targets that did not exist on the site and three publishes were spent
+   * chasing them. Only src/content is pruned: that is where an absent file changes a verdict. docs/collab
+   * stays untouched because it is a channel, not a copy.
+   */
+  const prune = (from, to) => {
+    if (!existsSync(to)) return 0;
+    let removed = 0;
+    for (const name of readdirSync(to)) {
+      const b = join(to, name);
+      const a = join(from, name);
+      if (SKIP.some((k) => b.replace(/\\/g, "/").includes(k))) continue;
+      if (statSync(b).isDirectory()) { if (existsSync(a)) removed += prune(a, b); continue; }
+      if (!existsSync(a)) { try { rmSync(b); removed++; } catch {} }
+    }
+    return removed;
+  };
+  let pruned = 0;
+  try { pruned = prune(join(src, "src", "content"), join(ROOT, "src", "content")); } catch {}
+  if (pruned) console.log("  pruned   " + pruned + " stale file(s) under src/content - the mirror follows the repo");
   for (const f of FILES) {
     const from = join(src, f);
     if (!existsSync(from)) continue;
