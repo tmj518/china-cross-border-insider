@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-12",
+  "generated": "2026-11-13",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1643,65 +1643,6 @@
       "modelOutput": false
     },
     {
-      "id": "china-insights-consultancy",
-      "source": "China Insights Consultancy",
-      "figures": [
-        {
-          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-          "articleNum": 0,
-          "value": "1.4 million units",
-          "unit": "shipments of harmonic reducers for robots in China",
-          "period": "2025",
-          "source": "China Insights Consultancy",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-          "articleNum": 0,
-          "value": "20.7 million units",
-          "unit": "projected shipments of harmonic reducers for robots in China",
-          "period": "2030",
-          "source": "China Insights Consultancy",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-          "articleNum": 0,
-          "value": "72.4 percent",
-          "unit": "compound annual growth rate of harmonic reducer shipments for robots in China",
-          "period": "2025 to 2030",
-          "source": "China Insights Consultancy",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "1.4",
-          "unit": "million units, 2025 total shipments of harmonic reducers for robots in China",
-          "period": "2025",
-          "source": "China Insights Consultancy",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "72.4",
-          "unit": "percent compound annual growth rate of China's robot harmonic reducer shipments, 2025 to 2030",
-          "period": "2025-2030",
-          "source": "China Insights Consultancy",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "ciie-organizers-reported-by-xinhua",
       "source": "CIIE organizers, reported by Xinhua",
       "figures": [
@@ -2166,66 +2107,6 @@
       "modelOutput": false
     },
     {
-      "id": "zhiyan-consulting",
-      "source": "Zhiyan Consulting",
-      "figures": [
-        {
-          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-          "articleNum": 0,
-          "value": "3.8 billion yuan",
-          "unit": "market valuation of China's harmonic reducer market",
-          "period": "2025",
-          "source": "Zhiyan Consulting",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-          "articleNum": 0,
-          "value": "4.8 billion yuan",
-          "unit": "projected market valuation of China's harmonic reducer market",
-          "period": "2026",
-          "source": "Zhiyan Consulting",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "3.8",
-          "unit": "billion yuan, 2025 total market value of China's harmonic reducer market",
-          "period": "2025",
-          "source": "Zhiyan Consulting",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "4.8",
-          "unit": "billion yuan, projected 2026 total market value of China's harmonic reducer market",
-          "period": "2026",
-          "source": "Zhiyan Consulting",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "3.8 billion yuan",
-          "unit": "market valuation",
-          "period": "2025 for China's harmonic reducer market",
-          "source": "Zhiyan Consulting",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "counted-from-the-annex-to-announcement-no-5-of",
       "source": "Counted from the annex to Announcement No. 5 of 2026",
       "figures": [
@@ -2522,6 +2403,55 @@
       "modelOutput": false
     },
     {
+      "id": "national-development-and-reform-commission-ndrc-price-adjust",
+      "source": "National Development and Reform Commission (NDRC), price adjustment notice",
+      "figures": [
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+          "articleNum": 101,
+          "value": "645",
+          "unit": "yuan per tonne, gasoline (standard grade) price cut",
+          "period": "effective 24:00 on November 12, 2026",
+          "source": "National Development and Reform Commission (NDRC), price adjustment notice",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+          "articleNum": 101,
+          "value": "625",
+          "unit": "yuan per tonne, diesel (standard grade) price cut",
+          "period": "effective 24:00 on November 12, 2026",
+          "source": "National Development and Reform Commission (NDRC), price adjustment notice",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+          "articleNum": 101,
+          "value": "10",
+          "unit": "working days averaged before the adjustment",
+          "period": "the ten working days preceding the November 12, 2026 adjustment",
+          "source": "National Development and Reform Commission (NDRC), price adjustment notice",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+          "articleNum": 101,
+          "value": "12315",
+          "unit": "hotline number for reporting price violations",
+          "period": "ongoing",
+          "source": "National Development and Reform Commission (NDRC), price adjustment notice",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "articleNums": [
+        101
+      ],
+      "articleSlugs": [
+        "china-fuel-price-cut-november-12-2026-diesel-per-tonne"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "regulation-on-the-implementation-of-the-law-of-the",
       "source": "Regulation on the Implementation of the Law of the PRC on Import and Export Commodity Inspection, Article 51",
       "figures": [
@@ -2758,48 +2688,6 @@
       ],
       "articleSlugs": [
         "us-de-minimis-postal-route-closes-october-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "china-s-national-standard-information-public-service-platfor",
-      "source": "China's National Standard Information Public Service Platform",
-      "figures": [
-        {
-          "articleSlug": "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-          "articleNum": 0,
-          "value": "April 1, 2027",
-          "unit": "effective date of revised national standards for harmonic drive reducers",
-          "period": "from the specified implementation date onwards",
-          "source": "China's National Standard Information Public Service Platform",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "April 1, 2027",
-          "unit": "effective date",
-          "period": "2027",
-          "source": "China's National Standard Information Public Service Platform",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "April 1, 2027",
-          "unit": "effective date",
-          "period": "for revised national harmonic drive reducer standards GB/T 12601-2026 and GB/T 14118-2026",
-          "source": "China's National Standard Information Public Service Platform",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-harmonic-reducer-new-national-standards-effective-april-1-2027-importer-sourcing",
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
       ],
       "modelOutput": false
     },
@@ -3528,37 +3416,6 @@
       ],
       "articleSlugs": [
         "us-low-value-shipment-entry-rule-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "chinese-vice-president-han-zheng-at-31st-unfccc-cop",
-      "source": "Chinese Vice President Han Zheng at 31st UNFCCC COP Antalya Leaders' Summit",
-      "figures": [
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "50 percent",
-          "unit": "share of non-fossil fuel energy in power generation",
-          "period": "2026 China target",
-          "source": "Chinese Vice President Han Zheng at 31st UNFCCC COP Antalya Leaders' Summit",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "35 percent",
-          "unit": "share of electricity in final energy consumption",
-          "period": "2030 China target",
-          "source": "Chinese Vice President Han Zheng at 31st UNFCCC COP Antalya Leaders' Summit",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
       ],
       "modelOutput": false
     },
@@ -4302,68 +4159,6 @@
       "modelOutput": false
     },
     {
-      "id": "national-development-and-reform-commission",
-      "source": "National Development and Reform Commission",
-      "figures": [
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "645",
-          "unit": "yuan per tonne",
-          "period": "effective from November 12 2024 24:00",
-          "source": "National Development and Reform Commission",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "625",
-          "unit": "yuan per tonne",
-          "period": "effective from November 12 2024 24:00",
-          "source": "National Development and Reform Commission",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "national-development-and-reform-commission-of-china",
-      "source": "National Development and Reform Commission of China",
-      "figures": [
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "645",
-          "unit": "yuan per tonne of standard gasoline",
-          "period": "November 12, 2026",
-          "source": "National Development and Reform Commission of China",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "625",
-          "unit": "yuan per tonne of standard diesel",
-          "period": "November 12, 2026",
-          "source": "National Development and Reform Commission of China",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost"
-      ],
-      "modelOutput": false
-    },
-    {
       "id": "one-big-beautiful-bill-act-pub-l-119-21",
       "source": "One Big Beautiful Bill Act, Pub. L. 119-21",
       "figures": [
@@ -4393,38 +4188,6 @@
       "articleSlugs": [
         "us-de-minimis-postal-route-closes-october-2026",
         "us-low-value-shipment-entry-rule-2026"
-      ],
-      "modelOutput": false
-    },
-    {
-      "id": "people-s-bank-of-china",
-      "source": "People's Bank of China",
-      "figures": [
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-          "articleNum": 0,
-          "value": "1.25",
-          "unit": "percent, daily overnight reverse repurchase operations policy rate",
-          "period": "November 12, 2026",
-          "source": "People's Bank of China",
-          "retrieved": "2026-11-12"
-        },
-        {
-          "articleSlug": "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027",
-          "articleNum": 0,
-          "value": "1.25 percent",
-          "unit": "annual interest rate",
-          "period": "for daily PBOC overnight reverse repurchase operations starting November 2 2026",
-          "source": "People's Bank of China",
-          "retrieved": "2026-11-12"
-        }
-      ],
-      "articleNums": [
-        0
-      ],
-      "articleSlugs": [
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-april-2027-importer-cost",
-        "china-november-12-2026-fuel-price-cut-harmonic-reducer-standard-effective-april-2027"
       ],
       "modelOutput": false
     },

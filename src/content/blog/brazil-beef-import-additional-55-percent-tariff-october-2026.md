@@ -104,6 +104,8 @@ Shipments that completed customs clearance before 1 October 2026 fall outside th
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [China cuts diesel and gasoline wholesale prices by 625 and](/blog/china-fuel-price-cut-november-12-2026-diesel-per-tonne/)
+
 ## For you
 
 - **Brazilian beef importer holding existing in-transit cargo:** Pull every pending customs declaration for shipments that can be filed and accepted before 00:00 on 1 October 2026. Confirm all origin certificates, health certificates, and customs declaration documents are fully validated by your broker 24 hours before the deadline to avoid last-minute rejection. Any declaration accepted before the timestamp avoids the 55% extra cost entirely.

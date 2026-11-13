@@ -1,0 +1,155 @@
+{
+  "at": "2026-11-13T01:00:17.230Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "47 previous run(s), last 2026-11-13T00:50:38.994Z (DANGLING-LINK)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "5 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-fuel-price-cut-november-12-2026-diesel-per-tonne, 6 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-fuel-price-cut-november-12-2026-diesel-per-tonne.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 4 issue(s), 4 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "4 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-fuel-price-cut-november-12-2026-diesel-per-tonne.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 4 objection(s), advisory - published anyway"
+  ],
+  "article": "china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+  "commit": null,
+  "usage": {
+    "calls": 13,
+    "failed": 6,
+    "usd": 0.0315,
+    "promptTokens": 96664,
+    "completionTokens": 8305
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 5,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    sta-news-article           106658B  article archived",
+    "  ok    state-council-policy-article    34375B  article archived",
+    "  ok    state-council-policy-article    25268B  article archived",
+    "  ok    state-council-policy-article    20312B  article archived",
+    "  ok    ndrc-article                22159B  article archived",
+    "  ok    ndrc-article                16268B  article archived",
+    "  ok    ndrc-article                 5725B  article archived",
+    "  ok    moe-en-article              20270B  article archived",
+    "  ok    moe-en-article              19107B  article archived",
+    "  ok    moe-en-article              22250B  article archived",
+    "  fresh     : 0 article(s) dated today, newest 2026-11-12",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 438 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1369 characters but no document structure, trying the next one",
+    "  provider   : volces timed out - parked for the rest of this run",
+    "  stream      : SSE, 1033 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3365 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1048 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3499 characters but no document structure, trying the next one",
+    "  spent   : ~0.0161  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
+    "  feasible: true",
+    "  slug    : china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+    "  keyword : China fuel price cut November 2026 diesel per tonne importer logistics cost",
+    "  duplicate check: score 0",
+    "  slug    : china-fuel-price-cut-november-12-2026-diesel-per-tonne",
+    "  keyword : China fuel price cut November 2026 diesel per tonne importer logistics cost",
+    "  category: logistics",
+    "  figures : 6",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0161",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The draft treats the 625 yuan cut as if it were the full ceiling price per tonne, but the figures give only the size of the cut, not the prior or new ceiling level, so the per-tonne reduction cannot be derived from the supplied figures.",
+    "The confidence section first says every figure comes from the single NDRC notice and then immediately attributes two figures to China Daily, contradicting itself and misstating the sourcing.",
+    "The 1.25 percent policy rate and 1.327 percent DR001 figure are single-sourced to China Daily but the article does not carry a clear single-source disclosure for them in the body, only a buried note in the confidence section.",
+    "The figure record gives the 1.25 percent rate as applying to each working day since November 2, 2026, but the draft presents it as a current policy rate without the period qualifier, and the DR001 figure is described as 'Wednesday' without anchoring it to the stated week."
+  ],
+  "seconds": 132
+}
