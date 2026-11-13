@@ -115,6 +115,16 @@ const GATES = [
     fast: true,
   },
   {
+    /* The operator asked for a named safety gate: REAL / RELEVANT / RIGHTS. Soft, because it reports on the
+       whole library and 85 older guides predate the market rule. */
+    id: "check-3r",
+    tier: "soft",
+    label: "3R safety",
+    args: ["tools/check-3r.mjs", "--all"],
+    inputs: ARTICLES,
+    fast: true,
+  },
+  {
     id: "reviewer-check",
     tier: "soft",
     label: "reviewer agent",
