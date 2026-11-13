@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-12T23:21:14.143Z",
+  "at": "2026-11-13T00:40:40.698Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "44 previous run(s), last 2026-11-11T23:21:14.504Z (PUBLISHED-DEGRADED)"
+      "detail": "45 previous run(s), last 2026-11-12T23:21:14.143Z (WRITE-FAILED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "6 of 15 net-new this week"
+      "detail": "5 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,52 +33,47 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-fuel-price-cut-november-12-2026-importer-logistics-cost, 2 verified figure(s)"
+      "detail": "proposed china-fuel-price-cut-november-12-2026-per-tonne, 6 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "2 sourced figure(s)"
+      "detail": "6 sourced figure(s)"
     },
     {
-      "name": "writer",
+      "name": "inbound precheck",
       "ok": false,
-      "detail": "exit 1: UNCAUGHT: ReferenceError: siteRules is not defined"
+      "detail": "dangling link: blog/china-foreign-trade-first-ten-months-2026-import-growth  ->  guide/china-s-foreign-trade-growth-picks-up-pace-on-stellar-imports-booming- | blog/china-import-expo-85-billion-deals-2026  ->  guide"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict WRITE-FAILED"
+      "detail": "verdict DANGLING-LINK"
     }
   ],
-  "verdict": "WRITE-FAILED",
+  "verdict": "DANGLING-LINK",
   "reasons": [
-    "the writer did not produce china-fuel-price-cut-november-12-2026-importer-logistics-cost.md on attempt 1"
+    "a link points at a page that does not exist or is still a draft"
   ],
   "article": null,
   "commit": null,
   "usage": {
-    "calls": 3,
-    "failed": 0,
-    "usd": 0.0067,
-    "promptTokens": 57381,
-    "completionTokens": 1353
+    "calls": 8,
+    "failed": 4,
+    "usd": 0.0224,
+    "promptTokens": 74096,
+    "completionTokens": 5606
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
-    "trade-policy": 6,
+    "trade-policy": 5,
     "supply-chain": 0,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    china-daily-article         57589B  article archived",
-    "  ok    ndrc-briefing-article        5725B  article archived",
-    "  ok    ndrc-briefing-article        6039B  article archived",
-    "  ok    ndrc-briefing-article        5855B  article archived",
-    "  ok    sta-news-article           106658B  article archived",
     "  ok    sta-news-article           106658B  article archived",
     "  ok    sta-news-article           106658B  article archived",
     "  ok    state-council-policy-article    34375B  article archived",
@@ -87,33 +82,38 @@
     "  ok    ndrc-article                22159B  article archived",
     "  ok    ndrc-article                16268B  article archived",
     "  ok    ndrc-article                 5725B  article archived",
+    "  ok    moe-en-article              20270B  article archived",
+    "  ok    moe-en-article              19107B  article archived",
+    "  ok    moe-en-article              22250B  article archived",
     "  fresh     : 0 article(s) dated today, newest 2026-11-12",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 446 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1494 characters but no document structure, trying the next one",
-    "  stream      : SSE, 457 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 1452 characters but no document structure, trying the next one",
-    "  stream      : SSE, 450 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 1413 characters but no document structure, trying the next one",
-    "  spent   : ~0.0067  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
+    "  stream      : SSE, 444 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1451 characters but no document structure, trying the next one",
+    "  provider   : volces timed out - parked for the rest of this run",
+    "  stream      : SSE, 1023 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3308 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 999 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3224 characters but no document structure, trying the next one",
+    "  spent   : ~0.0161  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : china-fuel-price-cut-november-12-2026-importer-logistics-cost",
-    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  slug    : china-fuel-price-cut-november-12-2026-per-tonne",
+    "  keyword : China domestic fuel price cut November 12 2026 yuan per tonne",
     "  duplicate check: score 0",
-    "  slug    : china-fuel-price-cut-november-12-2026-importer-logistics-cost",
-    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  slug    : china-fuel-price-cut-november-12-2026-per-tonne",
+    "  keyword : China domestic fuel price cut November 12 2026 yuan per tonne",
     "  category: logistics",
-    "  figures : 2",
+    "  figures : 6",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0067",
+    "  spend this run: ~$0.0161",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 60
+  "seconds": 80
 }

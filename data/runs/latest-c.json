@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-12T23:22:33.828Z",
-  "runId": "43328061305",
+  "at": "2026-11-13T00:42:19.670Z",
+  "runId": "43338873649",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+  "article": "eu-fdi-screening",
   "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004000000000000002
+    "usd": 0.001299999999999999
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "4 candidate(s)"
+      "detail": "3 candidate(s)"
     },
     {
-      "name": "grounding former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+      "name": "grounding eu-fdi-screening",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+      "name": "gates eu-fdi-screening",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti",
+      "name": "build eu-fdi-screening",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-safeguard-55-percent-trigger-2026"
+      "detail": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026, eu-fdi-screening-2026-timeline-notification-rates-importer"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/"
+      "detail": "/guide/eu-fdi-screening/"
     }
   ],
   "researchLog": [
