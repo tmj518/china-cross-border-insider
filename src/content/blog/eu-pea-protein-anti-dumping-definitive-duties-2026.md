@@ -158,6 +158,6 @@ For the paperwork and the cost in one place, see [Chinese motorcycle brands rev 
 
 For the paperwork and the cost in one place, see [Chinese residence permit](/guide/chinese-residence-permit/).
 
-For the paperwork and the cost in one place, see [Chinese medical team conducts health outreach in Sierra Leone](/guide/chinese-medical-team-conducts-health-outreach-in-sierra-leone/).
+For the paperwork and the cost in one place, see Chinese medical team conducts health outreach in Sierra Leone.
 
 For the paperwork and the cost in one place, see [Chinese VP attends COP31 Antalya Leaders' Summit](/guide/chinese-vp-attends-cop31-antalya-leaders-summit/).
