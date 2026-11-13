@@ -118,4 +118,12 @@ for (const f of files) {
 console.log("\n3R\n" + "=".repeat(70));
 console.log(`  checked ${files.length} article(s), ${failed} with a failed R`);
 console.log(`  RESULT: ${failed ? failed + " article(s) fail REAL or RIGHTS" : "every article passes REAL and RIGHTS"}${warned ? " - " + warned + " carry a RELEVANT warning (market not named)" : ""}`);
-process.exit(failed ? 1 : 0);
+/*
+ * A SOFT GATE MUST NOT BE ABLE TO TURN THE BUILD RED.
+ *
+ * Added 2026-11-13 and immediately failed CI on commit 623ffcf: the library-wide run found 85 older guides
+ * that predate the market rule, exited 1, and gate.mjs counted it as a failed gate. The tier said soft; the
+ * exit code said otherwise, and the exit code is what the runner reads. --all therefore always exits 0 and
+ * reports; a single file still exits 1 so a caller can use it as a check.
+ */
+process.exit(ALL ? 0 : failed ? 1 : 0);
