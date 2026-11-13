@@ -10,6 +10,7 @@
  * nobody can read is a standard nobody can meet. The long form is docs/标准-闸门清单.md.
  */
 export const SITE_RULES = [
+  "Name the market the reader buys into - Malaysia, Vietnam, Indonesia, the EU, Mexico or whichever it is - and say what the change does to a buyer there. An article that leaves the market unnamed does not tell anyone whose costs moved.",
   "Every article names at least one identifiable primary document (a notice number, a Federal Register citation, a regulation number). A vague mention of 'an announcement' does not count.",
 
   "A number in the prose needs its five-part figure record: value, unit, period, source document, retrieval date. A draft with numbers and no records fails. A draft with no usable figure is published as an explainer (figures: [], explainer: true) and then states no number at all - and one sourced figure is enough to be a cost article, never five.",
