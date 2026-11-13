@@ -215,3 +215,5 @@ For the paperwork and the cost in one place, see [China's import expo tells a la
 For the paperwork and the cost in one place, see [Former deserted Chinese mining sites star again via "lights, camera, action"](/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/).
 
 For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).
+
+For the paperwork and the cost in one place, see [China wraps up offshore trust tax transition, declared tax tops 160 bln yuan](/guide/china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln/).

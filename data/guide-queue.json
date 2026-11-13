@@ -3277,7 +3277,347 @@
         "pagePosition": null
       },
       "doneAt": "2026-11-12"
+    },
+    {
+      "slug": "china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China wraps up offshore trust tax transition, declared tax tops 160 bln yuan",
+      "query": "China wraps up offshore trust tax transition, declared tax tops 160 bln yuan",
+      "status": "done",
+      "evidence": "demand matrix: \"China wraps up offshore trust tax transition, declared tax tops 160 bln yuan\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "wraps",
+        "offshore",
+        "trust",
+        "transition,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-13"
+    },
+    {
+      "slug": "correct",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Correct?",
+      "query": "correct?",
+      "status": "queued",
+      "evidence": "demand matrix: \"correct?\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "correct?"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "correct?",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "fdi-screening",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Fdi screening",
+      "query": "fdi screening",
+      "status": "queued",
+      "evidence": "demand matrix: \"fdi screening\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "screening"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.66,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 1.1,
+        "demandImpressions": 2,
+        "demandBreadth": 0,
+        "demandQuery": "\"investment screening\"",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "how-to-set-up-alipay-in-usa",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "How to set up alipay in usa",
+      "query": "how to set up alipay in usa",
+      "status": "queued",
+      "evidence": "demand matrix: \"how to set up alipay in usa\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "alipay"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "how to set up alipay in usa",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen",
+      "query": "Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "attend",
+        "APEC",
+        "Economic",
+        "Leaders'",
+        "Meeting,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief",
+      "query": "China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "APEC",
+        "hosting",
+        "comes",
+        "amid"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "high-frequency-data-show-improving-trend-in-chinese-economy-in-october",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "High-frequency data show improving trend in Chinese economy in October",
+      "query": "High-frequency data show improving trend in Chinese economy in October",
+      "status": "queued",
+      "evidence": "demand matrix: \"High-frequency data show improving trend in Chinese economy in October\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "High-frequency",
+        "data",
+        "show",
+        "improving",
+        "trend"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "technology-reshapes-china-s-agricultural-modernization",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Technology reshapes China's agricultural modernization",
+      "query": "Technology reshapes China's agricultural modernization",
+      "status": "queued",
+      "evidence": "demand matrix: \"Technology reshapes China's agricultural modernization\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Technology",
+        "reshapes",
+        "China's",
+        "agricultural",
+        "modernization"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "cop31-participants-say-china-injects-impetus-into-global-green-develop",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "COP31 participants say China injects impetus into global green development",
+      "query": "COP31 participants say China injects impetus into global green development",
+      "status": "queued",
+      "evidence": "demand matrix: \"COP31 participants say China injects impetus into global green development\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "COP31",
+        "participants",
+        "China",
+        "injects",
+        "impetus"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-12T07:20:30.591Z"
+  "updatedAt": "2026-11-13T07:20:29.537Z"
 }

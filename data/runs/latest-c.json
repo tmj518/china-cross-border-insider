@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-13T01:21:23.502Z",
-  "runId": "43344189013",
-  "route": "fallback",
+  "at": "2026-11-13T07:20:47.909Z",
+  "runId": "43385010112",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-permanent-resident",
-  "seconds": 18,
+  "article": "china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln",
+  "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0017
+    "usd": 0.0012
   },
   "providers": [
     "volces"
@@ -23,20 +23,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "1 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding china-permanent-resident",
+      "name": "grounding china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-permanent-resident",
+      "name": "gates china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-permanent-resident",
+      "name": "build china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -48,7 +48,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-permanent-resident/"
+      "detail": "/guide/china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln/"
     }
   ],
   "researchLog": [

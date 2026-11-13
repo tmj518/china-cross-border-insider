@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-12T07:20:48.255Z",
+  "at": "2026-11-13T07:20:47.954Z",
   "streaks": {
-    "c": {
+    "fallback": {
       "verdict": "PUBLISHED",
-      "count": 4,
-      "at": "2026-11-12T07:20:48.196Z"
+      "count": 8,
+      "at": "2026-11-13T01:21:23.502Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-11T23:21:14.504Z"
+      "at": "2026-11-13T01:00:17.230Z"
     },
-    "fallback": {
+    "c": {
       "verdict": "PUBLISHED",
       "count": 1,
-      "at": "2026-11-12T01:21:24.943Z"
+      "at": "2026-11-13T07:20:47.909Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-12T07:20:48.196Z",
+    "at": "2026-11-13T07:20:47.909Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-s-health-story-holds-lessons-for-all-lancet-says"
+    "article": "china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln"
   },
   "metrics": {
     "files": 1,
@@ -42,7 +42,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 4 runs in a row.",
+    "fallback has ended PUBLISHED 8 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

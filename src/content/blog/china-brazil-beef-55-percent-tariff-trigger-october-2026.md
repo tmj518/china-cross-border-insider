@@ -195,3 +195,5 @@ For the paperwork and the cost in one place, see [China's polar icebreaker Xuelo
 For the paperwork and the cost in one place, see [China's health story holds lessons for all, Lancet says](/guide/china-s-health-story-holds-lessons-for-all-lancet-says/).
 
 For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).
+
+For the paperwork and the cost in one place, see [China wraps up offshore trust tax transition, declared tax tops 160 bln yuan](/guide/china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln/).
