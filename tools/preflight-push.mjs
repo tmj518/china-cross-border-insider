@@ -112,4 +112,31 @@ console.log("\n" + (problems.length ? `RESULT: ${problems.length} problem(s) - d
 for (const b of nestedScopeScan()) console.log("  \u2717 scope " + b);
 const scopeProblems = nestedScopeScan().length;
 
-process.exit(problems.length + scopeProblems > 0 ? 1 : 0);
+/*
+ * THE FAST GATES RUN HERE, BEFORE A PUSH.
+ *
+ * 2026-11-13: a new soft gate was added, the tier said soft, the exit code said failed, and CI went red on
+ * 623ffcf within a minute of the push. Running the cheap gates locally is the difference between finding that
+ * on this machine and finding it in a notification. The slow ones (network, browser) stay in CI.
+ */
+const FAST_GATES = [
+  ["tools/qa-check.mjs", "--all"],
+  ["tools/link-check.mjs"],
+  ["tools/check-3r.mjs", "--all"],
+  ["tools/check-meta.mjs"],
+  ["tools/check-csp.mjs"],
+  ["tools/check-contrast.mjs"],
+];
+let gateFailures = 0;
+for (const args of FAST_GATES) {
+  try {
+    execFileSync(process.execPath, args, { cwd: ROOT, stdio: "pipe", timeout: 180000 });
+    console.log("  ok   gate " + args.join(" "));
+  } catch (e) {
+    gateFailures++;
+    const out = String(e.stdout ?? "").split("\n").filter((l) => /BLOCK|FAIL|RESULT/.test(l)).slice(-3);
+    console.log("  FAIL gate " + args.join(" ") + (out.length ? " - " + out.join(" | ").slice(0, 200) : ""));
+  }
+}
+
+process.exit(problems.length + scopeProblems + gateFailures > 0 ? 1 : 0);
