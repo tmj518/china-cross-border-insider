@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-14T23:21:10.471Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "49 previous run(s), last 2026-11-13T23:21:19.928Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "7 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-fuel-price-cut-november-12-2026-logistics-cost, 2 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "2 sourced figure(s)"
+    },
+    {
+      "name": "writer",
+      "ok": false,
+      "detail": "exit 1: EXECUTOR  slug=china-fuel-price-cut-november-12-2026-logistics-cost"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": false,
+      "detail": "exit 1: EXECUTOR  slug=china-fuel-price-cut-november-12-2026-logistics-cost"
+    },
+    {
+      "name": "writer (revision 2)",
+      "ok": false,
+      "detail": "exit 1: EXECUTOR  slug=china-fuel-price-cut-november-12-2026-logistics-cost"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict WRITE-FAILED"
+    }
+  ],
+  "verdict": "WRITE-FAILED",
+  "reasons": [
+    "attempt 1: no draft produced",
+    "attempt 2: no draft produced",
+    "the writer did not produce china-fuel-price-cut-november-12-2026-logistics-cost.md on attempt 3"
+  ],
+  "article": null,
+  "commit": null,
+  "usage": {
+    "calls": 9,
+    "failed": 0,
+    "usd": 0.0194,
+    "promptTokens": 144063,
+    "completionTokens": 12523
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 2,
+    "sourcing": 0,
+    "trade-policy": 5,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 580 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2235 characters but no document structure, trying the next one",
+    "  stream      : SSE, 652 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2453 characters but no document structure, trying the next one",
+    "  stream      : SSE, 639 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2440 characters but no document structure, trying the next one",
+    "  spent   : ~0.0066  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-us-trade-council-30-billion-tariff-cut-2026",
+    "  keyword : China US reciprocal tariff reduction 30 billion 2026 importer cost",
+    "  duplicate check: score 8 against china-2026-export-duty-wrought-metals",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 445 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1437 characters but no document structure, trying the next one",
+    "  stream      : SSE, 436 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 1357 characters but no document structure, trying the next one",
+    "  stream      : SSE, 433 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 1374 characters but no document structure, trying the next one",
+    "  spent   : ~0.0131  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-fuel-price-cut-november-12-2026-logistics-cost",
+    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  duplicate check: score 0",
+    "  slug    : china-fuel-price-cut-november-12-2026-logistics-cost",
+    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  category: logistics",
+    "  figures : 2",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0131",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 193
+}
