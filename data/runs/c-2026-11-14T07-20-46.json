@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-14T07:20:46.864Z",
+  "runId": "43570608443",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie",
+  "seconds": 17,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0014
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

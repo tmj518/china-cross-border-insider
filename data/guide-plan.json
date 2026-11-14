@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-13T07:20:30.283Z",
+  "at": "2026-11-14T07:20:29.910Z",
   "days": 90,
   "gsc": true,
   "plan": [
@@ -25,84 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China wraps up offshore trust tax transition, declared tax tops 160 bln yuan",
-      "query": "China wraps up offshore trust tax transition, declared tax tops 160 bln yuan",
-      "status": "queued",
-      "evidence": "demand matrix: \"China wraps up offshore trust tax transition, declared tax tops 160 bln yuan\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "wraps",
-        "offshore",
-        "trust",
-        "transition,"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen",
-      "query": "Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen",
-      "status": "queued",
-      "evidence": "demand matrix: \"Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "attend",
-        "APEC",
-        "Economic",
-        "Leaders'",
-        "Meeting,"
       ],
       "facts": [],
       "mustSay": [],
@@ -259,6 +181,84 @@
         "China",
         "injects",
         "impetus"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-willing-to-further-boost-political-mutual-trust-with-thailand-sa",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China willing to further boost political mutual trust with Thailand, says Chinese premier",
+      "query": "China willing to further boost political mutual trust with Thailand, says Chinese premier",
+      "status": "queued",
+      "evidence": "demand matrix: \"China willing to further boost political mutual trust with Thailand, says Chinese premier\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "willing",
+        "further",
+        "boost",
+        "political"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "apec-host-china-s-evolving-role-in-regional-economic-cooperation",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "APEC host China's evolving role in regional economic cooperation",
+      "query": "APEC host China's evolving role in regional economic cooperation",
+      "status": "queued",
+      "evidence": "demand matrix: \"APEC host China's evolving role in regional economic cooperation\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "APEC",
+        "host",
+        "China's",
+        "evolving",
+        "role"
       ],
       "facts": [],
       "mustSay": [],

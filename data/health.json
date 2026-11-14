@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-13T07:20:47.954Z",
+  "at": "2026-11-14T07:20:46.916Z",
   "streaks": {
     "fallback": {
       "verdict": "PUBLISHED",
-      "count": 8,
-      "at": "2026-11-13T01:21:23.502Z"
+      "count": 7,
+      "at": "2026-11-14T01:21:23.798Z"
+    },
+    "c": {
+      "verdict": "PUBLISHED",
+      "count": 2,
+      "at": "2026-11-14T07:20:46.864Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-13T01:00:17.230Z"
-    },
-    "c": {
-      "verdict": "PUBLISHED",
-      "count": 1,
-      "at": "2026-11-13T07:20:47.909Z"
+      "at": "2026-11-13T23:21:19.928Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-13T07:20:47.909Z",
+    "at": "2026-11-14T07:20:46.864Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln"
+    "article": "china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie"
   },
   "metrics": {
     "files": 1,
@@ -42,7 +42,7 @@
     ]
   },
   "warnings": [
-    "fallback has ended PUBLISHED 8 runs in a row.",
+    "fallback has ended PUBLISHED 7 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

@@ -197,3 +197,5 @@ For the paperwork and the cost in one place, see [China's health story holds les
 For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).
 
 For the paperwork and the cost in one place, see [China wraps up offshore trust tax transition, declared tax tops 160 bln yuan](/guide/china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln/).
+
+For the paperwork and the cost in one place, see [China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief](/guide/china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie/).
