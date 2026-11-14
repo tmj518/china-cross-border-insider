@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-14T01:21:23.798Z",
+  "runId": "43540008650",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",
+  "seconds": 20,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0004
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "8 candidate(s)"
+    },
+    {
+      "name": "grounding xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "no candidate - NO-INBOUND"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

@@ -3432,7 +3432,7 @@
       "unit": "one application",
       "title": "Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen",
       "query": "Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi to attend APEC Economic Leaders' Meeting, related events in Shenzhen\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3460,7 +3460,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-14"
     },
     {
       "slug": "china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie",
