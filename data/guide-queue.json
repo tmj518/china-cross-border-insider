@@ -3552,7 +3552,7 @@
       "unit": "one application",
       "title": "Technology reshapes China's agricultural modernization",
       "query": "Technology reshapes China's agricultural modernization",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Technology reshapes China's agricultural modernization\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3580,7 +3580,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-15"
     },
     {
       "slug": "cop31-participants-say-china-injects-impetus-into-global-green-develop",

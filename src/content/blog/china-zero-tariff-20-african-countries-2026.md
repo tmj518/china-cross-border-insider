@@ -224,3 +224,5 @@ For the paperwork and the cost in one place, see [Italian Trade Agency showcases
 For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace in first 10 months](/guide/china-s-foreign-trade-growth-picks-up-pace-in-first-10-months/).
 
 For the paperwork and the cost in one place, see [China-Africa health cooperation can help more children survive, thrive: UNICEF](/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/).
+
+For the paperwork and the cost in one place, see [Technology reshapes China's agricultural modernization](/guide/technology-reshapes-china-s-agricultural-modernization/).

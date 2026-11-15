@@ -223,3 +223,5 @@ For the paperwork and the cost in one place, see [China's 3rd APEC hosting comes
 For the paperwork and the cost in one place, see [High-frequency data show improving trend in Chinese economy in October](/guide/high-frequency-data-show-improving-trend-in-chinese-economy-in-october/).
 
 For the paperwork and the cost in one place, see [China steps up coverage of innovative drugs under medical insurance](/guide/china-steps-up-coverage-of-innovative-drugs-under-medical-insurance/).
+
+For the paperwork and the cost in one place, see [Technology reshapes China's agricultural modernization](/guide/technology-reshapes-china-s-agricultural-modernization/).
