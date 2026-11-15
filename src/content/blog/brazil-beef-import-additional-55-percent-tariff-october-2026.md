@@ -225,3 +225,5 @@ For the paperwork and the cost in one place, see [High-frequency data show impro
 For the paperwork and the cost in one place, see [China steps up coverage of innovative drugs under medical insurance](/guide/china-steps-up-coverage-of-innovative-drugs-under-medical-insurance/).
 
 For the paperwork and the cost in one place, see [Technology reshapes China's agricultural modernization](/guide/technology-reshapes-china-s-agricultural-modernization/).
+
+For the paperwork and the cost in one place, see [COP31 participants say China injects impetus into global green development](/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/).

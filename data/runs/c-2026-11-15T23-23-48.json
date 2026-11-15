@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-13T00:52:15.455Z",
-  "runId": "43340212354",
+  "at": "2026-11-15T23:23:48.097Z",
+  "runId": "43774294102",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "investment-screening",
-  "seconds": 17,
+  "article": "cop31-participants-say-china-injects-impetus-into-global-green-develop",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0013999999999999985
+    "usd": 0.0002999999999999947
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "2 candidate(s)"
+      "detail": "7 candidate(s)"
     },
     {
-      "name": "grounding investment-screening",
+      "name": "grounding cop31-participants-say-china-injects-impetus-into-global-green-develop",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates investment-screening",
+      "name": "gates cop31-participants-say-china-injects-impetus-into-global-green-develop",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build investment-screening",
+      "name": "build cop31-participants-say-china-injects-impetus-into-global-green-develop",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eu-fdi-screening-2026-timeline-notification-rates-importer, eu-fdi-screening-2028-regime-timing-risk"
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/investment-screening/"
+      "detail": "/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/"
     }
   ],
   "researchLog": [

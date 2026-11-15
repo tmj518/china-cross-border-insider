@@ -3592,7 +3592,7 @@
       "unit": "one application",
       "title": "COP31 participants say China injects impetus into global green development",
       "query": "COP31 participants say China injects impetus into global green development",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"COP31 participants say China injects impetus into global green development\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3620,7 +3620,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-15"
     },
     {
       "slug": "china-willing-to-further-boost-political-mutual-trust-with-thailand-sa",

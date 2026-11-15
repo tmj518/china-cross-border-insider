@@ -194,3 +194,5 @@ For the paperwork and the cost in one place, see [APEC-year momentum fuels robus
 For the paperwork and the cost in one place, see [Italian Trade Agency showcases an immersive Italian apartment at CIIE](/guide/italian-trade-agency-showcases-an-immersive-italian-apartment-at-ciie/).
 
 For the paperwork and the cost in one place, see [China's foreign trade growth picks up pace in first 10 months](/guide/china-s-foreign-trade-growth-picks-up-pace-in-first-10-months/).
+
+For the paperwork and the cost in one place, see [COP31 participants say China injects impetus into global green development](/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/).
