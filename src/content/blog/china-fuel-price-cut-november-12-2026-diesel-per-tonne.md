@@ -113,6 +113,8 @@ For context on how the same quarter's trade flows are running, the ten-month imp
 
 **What would change my mind.** A published NDRC or provincial guidance that fixes a pass-through formula from the per-tonne ceiling to freight rates would replace the ratio method with a stated one. A carrier or factory contract that names a different index, such as a retail pump price or a provincial figure, would move the calculation off the national ceiling entirely. And a subsequent NDRC notice reversing the cut would reset the baseline the importer is repricing against.
 
+> Also read: [China cuts petrol and diesel prices by 645 and 625 yuan a](/blog/china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne/)
+
 ## For you
 
 - **Importers holding quotes dated before November 12:** ask each carrier and factory to restate the fuel line against the 625 yuan per tonne diesel ceiling and the 645 yuan per tonne gasoline ceiling, and confirm the restatement date in writing.

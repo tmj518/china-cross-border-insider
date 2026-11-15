@@ -131,6 +131,8 @@ Eight dollars on a container is noise. Seventy-nine dollars on every container, 
 
 > Also read: [China cuts gasoline and diesel prices by 645 and 625 yuan](/blog/china-fuel-price-cut-november-12-2026-per-tonne/)
 
+> Also read: [China cuts petrol and diesel prices by 645 and 625 yuan a](/blog/china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne/)
+
 ## For you
 
 - **Importers on Asia-Europe:** the lane reading fell 2.9% in the week to 30 September while the CCFI composite was flat. If your surcharge went up on a composite-based clause, you are paying an adjustment your lane did not support. Ask for the lane series behind the number.

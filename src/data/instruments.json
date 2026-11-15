@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-13",
+  "generated": "2026-11-15",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1572,6 +1572,73 @@
       ],
       "articleSlugs": [
         "china-input-cost-gap-supplier-price-negotiation-2027"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-development-and-reform-commission-price-department",
+      "source": "National Development and Reform Commission, Price Department",
+      "figures": [
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+          "articleNum": 104,
+          "value": "645",
+          "unit": "yuan per tonne, cut in gasoline (standard product) retail price",
+          "period": "effective 24:00 on 12 November 2026",
+          "source": "National Development and Reform Commission, Price Department",
+          "retrieved": "2026-11-15"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+          "articleNum": 104,
+          "value": "625",
+          "unit": "yuan per tonne, cut in diesel (standard product) retail price",
+          "period": "effective 24:00 on 12 November 2026",
+          "source": "National Development and Reform Commission, Price Department",
+          "retrieved": "2026-11-15"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+          "articleNum": 104,
+          "value": "10",
+          "unit": "working days, the averaging window used for the price adjustment",
+          "period": "the ten working days before the 12 November 2026 adjustment",
+          "source": "National Development and Reform Commission, Price Department",
+          "retrieved": "2026-11-15"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+          "articleNum": 104,
+          "value": "11月12日24时",
+          "unit": "effective time of the price cut",
+          "period": "12 November 2026, 24:00",
+          "source": "National Development and Reform Commission, Price Department",
+          "retrieved": "2026-11-15"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+          "articleNum": 104,
+          "value": "10月29日",
+          "unit": "date of the previous fuel price adjustment",
+          "period": "29 October 2026",
+          "source": "National Development and Reform Commission, Price Department",
+          "retrieved": "2026-11-15"
+        },
+        {
+          "articleSlug": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+          "articleNum": 104,
+          "value": "12315",
+          "unit": "hotline for reporting price-law violations",
+          "period": "in force at publication, 12 November 2026",
+          "source": "National Development and Reform Commission, Price Department",
+          "retrieved": "2026-11-15"
+        }
+      ],
+      "articleNums": [
+        104
+      ],
+      "articleSlugs": [
+        "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne"
       ],
       "modelOutput": false
     },

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-14T23:21:10.471Z",
-  "lastVerdict": "WRITE-FAILED",
-  "lastArticle": "china-fuel-price-cut-november-12-2026-per-tonne",
-  "runs": 50,
-  "published": 40,
+  "lastRun": "2026-11-15T01:21:01.587Z",
+  "lastVerdict": "PUBLISHED-DEGRADED",
+  "lastArticle": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+  "runs": 51,
+  "published": 41,
   "lastUsage": {
-    "calls": 9,
-    "failed": 0,
-    "usd": 0.0194,
-    "promptTokens": 144063,
-    "completionTokens": 12523
+    "calls": 16,
+    "failed": 6,
+    "usd": 0.0535,
+    "promptTokens": 148650,
+    "completionTokens": 12168
   }
 }

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-14T23:21:10.471Z",
+  "at": "2026-11-15T01:21:01.587Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "49 previous run(s), last 2026-11-13T23:21:19.928Z (PUBLISHED-DEGRADED)"
+      "detail": "50 previous run(s), last 2026-11-14T23:21:10.471Z (WRITE-FAILED)"
     },
     {
       "name": "weekly ceiling",
@@ -33,48 +33,66 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-fuel-price-cut-november-12-2026-logistics-cost, 2 verified figure(s)"
+      "detail": "proposed china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne, 6 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "2 sourced figure(s)"
+      "detail": "6 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
     },
     {
       "name": "writer",
-      "ok": false,
-      "detail": "exit 1: EXECUTOR  slug=china-fuel-price-cut-november-12-2026-logistics-cost"
+      "ok": true,
+      "detail": "draft at /data/drafts/china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne.md"
     },
     {
-      "name": "writer (revision 1)",
-      "ok": false,
-      "detail": "exit 1: EXECUTOR  slug=china-fuel-price-cut-november-12-2026-logistics-cost"
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 5 issue(s), 5 with a citation"
     },
     {
-      "name": "writer (revision 2)",
-      "ok": false,
-      "detail": "exit 1: EXECUTOR  slug=china-fuel-price-cut-november-12-2026-logistics-cost"
+      "name": "reviewer",
+      "ok": true,
+      "detail": "5 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict WRITE-FAILED"
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "WRITE-FAILED",
+  "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "attempt 1: no draft produced",
-    "attempt 2: no draft produced",
-    "the writer did not produce china-fuel-price-cut-november-12-2026-logistics-cost.md on attempt 3"
+    "reviewer: 5 objection(s), advisory - published anyway"
   ],
-  "article": null,
+  "article": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
   "commit": null,
   "usage": {
-    "calls": 9,
-    "failed": 0,
-    "usd": 0.0194,
-    "promptTokens": 144063,
-    "completionTokens": 12523
+    "calls": 16,
+    "failed": 6,
+    "usd": 0.0535,
+    "promptTokens": 148650,
+    "completionTokens": 12168
   },
   "route": "script",
   "categoryActivity": {
@@ -86,46 +104,53 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  articles : 24 followed from the listings",
-    "  ledger: 36 published subject(s) to avoid repeating",
-    "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 580 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 2235 characters but no document structure, trying the next one",
-    "  stream      : SSE, 652 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 2453 characters but no document structure, trying the next one",
-    "  stream      : SSE, 639 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 2440 characters but no document structure, trying the next one",
-    "  spent   : ~0.0066  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1087 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4014 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1077 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3991 characters but no document structure, trying the next one",
+    "  spent   : ~0.0188  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : china-us-trade-council-30-billion-tariff-cut-2026",
-    "  keyword : China US reciprocal tariff reduction 30 billion 2026 importer cost",
+    "  slug    : china-us-trade-council-reciprocal-tariff-reduction-30-billion-2026",
+    "  keyword : China US reciprocal tariff reduction 30 billion 2026 trade council",
     "  duplicate check: score 8 against china-2026-export-duty-wrought-metals",
     "  REJECTED as a duplicate - trying another subject rather than ending the day.",
     "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
-    "  stream      : SSE, 445 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1437 characters but no document structure, trying the next one",
-    "  stream      : SSE, 436 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 1357 characters but no document structure, trying the next one",
-    "  stream      : SSE, 433 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 1374 characters but no document structure, trying the next one",
-    "  spent   : ~0.0131  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 772 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2546 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 894 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2927 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 992 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3190 characters but no document structure, trying the next one",
+    "  spent   : ~0.0369  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : china-fuel-price-cut-november-12-2026-logistics-cost",
-    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  slug    : china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+    "  keyword : China fuel price cut November 12 2026 diesel petrol per tonne",
     "  duplicate check: score 0",
-    "  slug    : china-fuel-price-cut-november-12-2026-logistics-cost",
-    "  keyword : China fuel price cut November 2026 diesel gasoline per tonne",
+    "  slug    : china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
+    "  keyword : China fuel price cut November 12 2026 diesel petrol per tonne",
     "  category: logistics",
-    "  figures : 2",
+    "  figures : 6",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0131",
+    "  spend this run: ~$0.0369",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 193
+  "reviewAdvisory": [
+    "The figure records label the 645 and 625 yuan per tonne cuts as 'retail price' changes, but the body and blockquote correctly describe them as changes to the ex-refinery ceiling (标准品), so the record's unit misstates what the notice sets and contradicts the article's own definition.",
+    "Two of the six figure records carry dates ('11月12日24时', '10月29日') as values with a 'unit' of effective time or date, which is not a figure with a value and unit and inflates the sourced-figure count.",
+    "The declared information_gain is 'custom-calculation', which is not one of the permitted values (primary, cross-source, analysis).",
+    "The title ends mid-word ('yuan a'), so the headline is broken and does not state the unit or the effective date.",
+    "The single-source disclosure appears only inside the confidence section; the body presents the 12315 enforcement line and the ten-working-day mechanism as settled without a reader-facing note that one document is the whole basis."
+  ],
+  "seconds": 121
 }
