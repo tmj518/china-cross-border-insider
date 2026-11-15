@@ -3698,7 +3698,86 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "how-do-employers-find-health-cover-for-staff-based-in-china",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "How do employers find health cover for staff based in china?",
+      "query": "how do employers find health cover for staff based in china?",
+      "status": "queued",
+      "evidence": "demand matrix: \"how do employers find health cover for staff based in china?\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "employers",
+        "find",
+        "health",
+        "cover",
+        "staff"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.69,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "how do employers find health cover for staff based in china?",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-steps-up-coverage-of-innovative-drugs-under-medical-insurance",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China steps up coverage of innovative drugs under medical insurance",
+      "query": "China steps up coverage of innovative drugs under medical insurance",
+      "status": "done",
+      "evidence": "demand matrix: \"China steps up coverage of innovative drugs under medical insurance\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "steps",
+        "coverage",
+        "innovative",
+        "drugs"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-15"
     }
   ],
-  "updatedAt": "2026-11-14T07:20:29.282Z"
+  "updatedAt": "2026-11-15T07:20:33.549Z"
 }

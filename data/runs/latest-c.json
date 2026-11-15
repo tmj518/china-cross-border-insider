@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-14T23:24:41.877Z",
-  "runId": "43652768775",
-  "route": "fallback",
+  "at": "2026-11-15T07:20:52.873Z",
+  "runId": "43689479366",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "high-frequency-data-show-improving-trend-in-chinese-economy-in-october",
+  "article": "china-steps-up-coverage-of-innovative-drugs-under-medical-insurance",
   "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0002999999999999982
+    "usd": 0.0016
   },
   "providers": [
     "volces"
@@ -23,20 +23,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding high-frequency-data-show-improving-trend-in-chinese-economy-in-october",
+      "name": "grounding china-steps-up-coverage-of-innovative-drugs-under-medical-insurance",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates high-frequency-data-show-improving-trend-in-chinese-economy-in-october",
+      "name": "gates china-steps-up-coverage-of-innovative-drugs-under-medical-insurance",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build high-frequency-data-show-improving-trend-in-chinese-economy-in-october",
+      "name": "build china-steps-up-coverage-of-innovative-drugs-under-medical-insurance",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -48,7 +48,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/high-frequency-data-show-improving-trend-in-chinese-economy-in-october/"
+      "detail": "/guide/china-steps-up-coverage-of-innovative-drugs-under-medical-insurance/"
     }
   ],
   "researchLog": [

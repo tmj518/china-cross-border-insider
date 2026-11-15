@@ -221,3 +221,5 @@ For the paperwork and the cost in one place, see [China wraps up offshore trust 
 For the paperwork and the cost in one place, see [China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief](/guide/china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie/).
 
 For the paperwork and the cost in one place, see [High-frequency data show improving trend in Chinese economy in October](/guide/high-frequency-data-show-improving-trend-in-chinese-economy-in-october/).
+
+For the paperwork and the cost in one place, see [China steps up coverage of innovative drugs under medical insurance](/guide/china-steps-up-coverage-of-innovative-drugs-under-medical-insurance/).
