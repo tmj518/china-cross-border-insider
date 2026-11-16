@@ -1,0 +1,119 @@
+{
+  "at": "2026-11-16T01:21:09.282Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "52 previous run(s), last 2026-11-15T23:21:15.508Z (DANGLING-LINK)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "0 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-asean-fta-3-0-upgrade-protocol-importer-cost, 5 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "5 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": false,
+      "detail": "dangling link: blog/xi-s-article-on-jointly-building-asia-pacific-community-with-explainer-2026-11  ->  blog/bonded-logistics-growth-supply-chain"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict DANGLING-LINK"
+    }
+  ],
+  "verdict": "DANGLING-LINK",
+  "reasons": [
+    "a link points at a page that does not exist or is still a draft"
+  ],
+  "article": null,
+  "commit": null,
+  "usage": {
+    "calls": 12,
+    "failed": 2,
+    "usd": 0.0278,
+    "promptTokens": 187825,
+    "completionTokens": 8100
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 296 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 1176 characters but no document structure, trying the next one",
+    "  stream      : SSE, 314 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 1209 characters but no document structure, trying the next one",
+    "  stream      : SSE, 324 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 1266 characters but no document structure, trying the next one",
+    "  spent   : ~0.0136  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-us-tariff-reduction-30-billion-goods-trade-council",
+    "  keyword : China US tariff reduction 30 billion goods 2026",
+    "  duplicate check: score 9 against china-zero-tariff-20-african-countries-2026",
+    "      shared institution(s): article",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 3 of 6)...",
+    "  stream      : SSE, 697 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 2406 characters but no document structure, trying the next one",
+    "  stream      : SSE, 706 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 2454 characters but no document structure, trying the next one",
+    "  stream      : SSE, 719 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 2519 characters but no document structure, trying the next one",
+    "  spent   : ~0.0206  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-asean-fta-3-0-upgrade-protocol-importer-cost",
+    "  keyword : China ASEAN FTA 3.0 upgrade protocol importer",
+    "  duplicate check: score 0",
+    "  slug    : china-asean-fta-3-0-upgrade-protocol-importer-cost",
+    "  keyword : China ASEAN FTA 3.0 upgrade protocol importer",
+    "  category: trade-policy",
+    "  figures : 5",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0206",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "seconds": 111
+}

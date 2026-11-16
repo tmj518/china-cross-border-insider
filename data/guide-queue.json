@@ -3632,7 +3632,7 @@
       "unit": "one application",
       "title": "China willing to further boost political mutual trust with Thailand, says Chinese premier",
       "query": "China willing to further boost political mutual trust with Thailand, says Chinese premier",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China willing to further boost political mutual trust with Thailand, says Chinese premier\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3660,7 +3660,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-16"
     },
     {
       "slug": "apec-host-china-s-evolving-role-in-regional-economic-cooperation",

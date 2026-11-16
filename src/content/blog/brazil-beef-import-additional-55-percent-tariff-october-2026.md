@@ -227,3 +227,5 @@ For the paperwork and the cost in one place, see [China steps up coverage of inn
 For the paperwork and the cost in one place, see [Technology reshapes China's agricultural modernization](/guide/technology-reshapes-china-s-agricultural-modernization/).
 
 For the paperwork and the cost in one place, see [COP31 participants say China injects impetus into global green development](/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/).
+
+For the paperwork and the cost in one place, see [China willing to further boost political mutual trust with Thailand, says Chinese premier](/guide/china-willing-to-further-boost-political-mutual-trust-with-thailand-sa/).

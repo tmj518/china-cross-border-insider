@@ -179,3 +179,5 @@ For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vi
 For the paperwork and the cost in one place, see China's foreign trade growth picks up pace on stellar imports, booming AI demand.
 
 For the paperwork and the cost in one place, see [China's import expo tells a larger story of openness, shared opportunities](/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/).
+
+For the paperwork and the cost in one place, see [China willing to further boost political mutual trust with Thailand, says Chinese premier](/guide/china-willing-to-further-boost-political-mutual-trust-with-thailand-sa/).
