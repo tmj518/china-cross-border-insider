@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-15T07:20:52.911Z",
+  "at": "2026-11-16T07:23:35.673Z",
   "streaks": {
+    "c": {
+      "verdict": "PUBLISHED",
+      "count": 4,
+      "at": "2026-11-16T07:23:35.634Z"
+    },
     "fallback": {
       "verdict": "PUBLISHED",
       "count": 5,
-      "at": "2026-11-14T23:24:41.877Z"
-    },
-    "c": {
-      "verdict": "PUBLISHED",
-      "count": 3,
-      "at": "2026-11-15T07:20:52.873Z"
+      "at": "2026-11-16T01:23:19.901Z"
     },
     "script": {
-      "verdict": "PUBLISHED-DEGRADED",
+      "verdict": "DANGLING-LINK",
       "count": 1,
-      "at": "2026-11-15T01:21:01.587Z"
+      "at": "2026-11-16T01:21:09.282Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-15T07:20:52.873Z",
+    "at": "2026-11-16T07:23:35.634Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-steps-up-coverage-of-innovative-drugs-under-medical-insurance"
+    "article": "what-does-apec-mean-to-you-and-me"
   },
   "metrics": {
     "files": 1,
@@ -42,8 +42,8 @@
     ]
   },
   "warnings": [
+    "c has ended PUBLISHED 4 runs in a row.",
     "fallback has ended PUBLISHED 5 runs in a row.",
-    "c has ended PUBLISHED 3 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

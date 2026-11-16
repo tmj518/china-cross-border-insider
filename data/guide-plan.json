@@ -1,30 +1,29 @@
 {
-  "at": "2026-11-15T07:20:33.928Z",
+  "at": "2026-11-16T07:23:11.565Z",
   "days": 90,
   "gsc": true,
   "plan": [
     {
-      "slug": "china-steps-up-coverage-of-innovative-drugs-under-medical-insurance",
+      "slug": "what-does-apec-mean-to-you-and-me",
       "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "China steps up coverage of innovative drugs under medical insurance",
-      "query": "China steps up coverage of innovative drugs under medical insurance",
+      "title": "What Does APEC Mean to You and Me?",
+      "query": "What Does APEC Mean to You and Me?",
       "status": "queued",
-      "evidence": "demand matrix: \"China steps up coverage of innovative drugs under medical insurance\" (news)",
+      "evidence": "demand matrix: \"What Does APEC Mean to You and Me?\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "China",
-        "steps",
-        "coverage",
-        "innovative",
-        "drugs"
+        "What",
+        "Does",
+        "APEC",
+        "Mean"
       ],
       "facts": [],
       "mustSay": [],
@@ -82,123 +81,6 @@
       }
     },
     {
-      "slug": "technology-reshapes-china-s-agricultural-modernization",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Technology reshapes China's agricultural modernization",
-      "query": "Technology reshapes China's agricultural modernization",
-      "status": "queued",
-      "evidence": "demand matrix: \"Technology reshapes China's agricultural modernization\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Technology",
-        "reshapes",
-        "China's",
-        "agricultural",
-        "modernization"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "cop31-participants-say-china-injects-impetus-into-global-green-develop",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "COP31 participants say China injects impetus into global green development",
-      "query": "COP31 participants say China injects impetus into global green development",
-      "status": "queued",
-      "evidence": "demand matrix: \"COP31 participants say China injects impetus into global green development\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "COP31",
-        "participants",
-        "China",
-        "injects",
-        "impetus"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-willing-to-further-boost-political-mutual-trust-with-thailand-sa",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China willing to further boost political mutual trust with Thailand, says Chinese premier",
-      "query": "China willing to further boost political mutual trust with Thailand, says Chinese premier",
-      "status": "queued",
-      "evidence": "demand matrix: \"China willing to further boost political mutual trust with Thailand, says Chinese premier\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "willing",
-        "further",
-        "boost",
-        "political"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
       "slug": "apec-host-china-s-evolving-role-in-regional-economic-cooperation",
       "topic": "residence",
       "audience": [
@@ -220,6 +102,123 @@
         "China's",
         "evolving",
         "role"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "chinese-premier-urges-china-asean-to-stand-united-overcome-distraction",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Chinese premier urges China, ASEAN to stand united, overcome distractions",
+      "query": "Chinese premier urges China, ASEAN to stand united, overcome distractions",
+      "status": "queued",
+      "evidence": "demand matrix: \"Chinese premier urges China, ASEAN to stand united, overcome distractions\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Chinese",
+        "premier",
+        "urges",
+        "China,",
+        "ASEAN"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific",
+      "query": "From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific",
+      "status": "queued",
+      "evidence": "demand matrix: \"From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "From",
+        "Beijing",
+        "Shenzhen:",
+        "China's",
+        "push"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's retail sales of goods, services up 2.5 pct in first 10 months",
+      "query": "China's retail sales of goods, services up 2.5 pct in first 10 months",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's retail sales of goods, services up 2.5 pct in first 10 months\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "retail",
+        "sales",
+        "goods,",
+        "services"
       ],
       "facts": [],
       "mustSay": [],

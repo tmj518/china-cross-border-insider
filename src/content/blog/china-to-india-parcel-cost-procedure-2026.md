@@ -134,3 +134,5 @@ Produce the documents that support the value rather than restating it. The query
 For the paperwork and the cost in one place, see [How to transfer money from china to india through bank](/guide/transfer-money-india-through-bank/).
 
 For the paperwork and the cost in one place, see [Alipay and WeChat Pay for Foreigners: What Actually Works](/guide/alipay-wechat-pay-foreigner-china/).
+
+For the paperwork and the cost in one place, see [What Does APEC Mean to You and Me?](/guide/what-does-apec-mean-to-you-and-me/).
