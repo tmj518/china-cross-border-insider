@@ -5,14 +5,14 @@
   "totals": {
     "activeUsers": 201,
     "newUsers": 200,
-    "screenPageViews": 428,
-    "sessions": 238,
-    "eventCount": 1184
+    "screenPageViews": 422,
+    "sessions": 237,
+    "eventCount": 1174
   },
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 196
+      "sessions": 195
     },
     {
       "channel": "Organic Search",
@@ -31,5 +31,5 @@
       "sessions": 1
     }
   ],
-  "at": "2026-11-16T01:21:08.532Z"
+  "at": "2026-11-16T23:21:14.873Z"
 }

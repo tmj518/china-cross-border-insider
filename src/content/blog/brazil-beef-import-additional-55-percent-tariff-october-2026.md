@@ -229,3 +229,5 @@ For the paperwork and the cost in one place, see [Technology reshapes China's ag
 For the paperwork and the cost in one place, see [COP31 participants say China injects impetus into global green development](/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/).
 
 For the paperwork and the cost in one place, see [China willing to further boost political mutual trust with Thailand, says Chinese premier](/guide/china-willing-to-further-boost-political-mutual-trust-with-thailand-sa/).
+
+For the paperwork and the cost in one place, see [APEC host China's evolving role in regional economic cooperation](/guide/apec-host-china-s-evolving-role-in-regional-economic-cooperation/).
