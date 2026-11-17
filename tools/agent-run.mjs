@@ -1341,6 +1341,24 @@ function runTool(name, input) {
       } catch (e) {
         console.log("  links     : repair skipped - " + String(e.message).slice(0, 80));
       }
+      /*
+       * FILL THE REQUIRED FIELDS BEFORE JUDGING THEM.
+       *
+       * 2026-11-17 21:00: the agent draft was refused with "reviewBy declared" although fillRequiredMeta exists
+       * in this file - it was applied on the check path, not on the publish path, so the gate judged the raw draft.
+       * reviewBy is a date the pipeline can compute; refusing a page over it is refusing to do arithmetic.
+       */
+      if (!procedureDraft) {
+        try {
+          const filled = fillRequiredMeta(readFileSync(from, "utf8"));
+          if (filled.src !== readFileSync(from, "utf8")) {
+            writeFileSync(from, filled.src, "utf8");
+            console.log("  meta      : filled " + filled.changed.join("; ").slice(0, 120));
+          }
+        } catch (e) {
+          console.log("  meta      : fill skipped - " + String(e.message).slice(0, 80));
+        }
+      }
       /* No BLOCK may reach the collection. Warnings may. */
       const gate = procedureDraft ? { ok: true, blocks: [], warns: [] } : gateOf(from);
       if (!gate.ok) {
