@@ -1270,6 +1270,40 @@ function runTool(name, input) {
         ? join(ROOT, "src", "content", "guide", `${slug}.md`)
         : join(ROOT, "src", "content", "blog", `${slug}.md`);
       /*
+       * OUTBOUND LINKS BEFORE THE GATE, NOT ONLY DEAD-LINK REPAIR.
+       *
+       * 2026-11-17 20:20: the agent published a complete article with ZERO internal links. Nothing was
+       * broken, so the repair below did nothing, and the page shipped as an orphan - a dead end for reader
+       * and crawler alike. Two links to real, non-draft pages are added when the draft has fewer than two.
+       */
+      try {
+        const pages = [];
+        for (const d of ["blog", "guide"]) {
+          for (const f of readdirSync(join(ROOT, "src", "content", d))) {
+            if (!f.endsWith(".md")) continue;
+            const s2 = readFileSync(join(ROOT, "src", "content", d, f), "utf8");
+            if (/^draft:\s*true/m.test(s2)) continue;
+            const key = d + "/" + f.replace(/\.md$/, "");
+            if (key === "blog/" + slug || key === "guide/" + slug) continue;
+            pages.push(key);
+          }
+        }
+        let src2 = readFileSync(from, "utf8");
+        const have = [...src2.matchAll(/\[([^\]]+)\]\(\/(blog|guide)\/([a-z0-9-]+)\/?\)/g)].length;
+        if (have < 2) {
+          const picks = pages.filter((x) => x.startsWith("blog/")).slice(0, 2 - have);
+          if (picks.length) {
+            const links = picks.map((k) => "[" + k.split("/")[1].replace(/-/g, " ") + "](/" + k + "/)").join(" and ");
+            src2 = src2.trimEnd() + "\n\nFor the per-unit arithmetic behind this story, see " + links + ".\n";
+            writeFileSync(from, src2, "utf8");
+            console.log("  links     : added " + picks.length + " outbound link(s) so the page is not a dead end");
+          }
+        }
+      } catch (e) {
+        console.log("  links     : outbound repair skipped - " + String(e.message).slice(0, 80));
+      }
+
+      /*
        * THE INTERNAL-LINKS GATE WAS A DEAD END FOR THE AGENT, SO THE LINK REPAIR RUNS HERE.
        *
        * On 2026-11-12 the 20:20 run wrote a complete article and spent turns 16-22 trying to satisfy the
