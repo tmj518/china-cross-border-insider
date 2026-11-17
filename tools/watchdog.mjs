@@ -196,6 +196,37 @@ if (process.env.CF_API_TOKEN && process.env.CF_ACCOUNT_ID) {
   record("warn", "deploy", "not verified - no CF token in this environment");
 }
 
+/* 6 ----------------------------------------------------------- growth vs target */
+/*
+ * THE GOAL IS 10,000 UV/DAY. This line says where the site actually is, because a number nobody prints is a
+ * number nobody improves: activeUsers over the GA4 window divided by the window, and the library that produced it.
+ */
+try {
+  const dir = join(ROOT, "data", "analytics");
+  const snaps = existsSync(dir) ? readdirSync(dir).filter((f) => /^ga4-\d{4}-\d\d-\d\d\.json$/.test(f)).sort() : [];
+  let pages = 0;
+  for (const d of ["blog", "guide"]) {
+    try {
+      for (const f of readdirSync(join(ROOT, "src", "content", d))) {
+        if (!f.endsWith(".md")) continue;
+        if (/^draft:\s*true/m.test(readFileSync(join(ROOT, "src", "content", d, f), "utf8"))) continue;
+        pages++;
+      }
+    } catch {}
+  }
+  if (!snaps.length) record("warn", "growth", `no GA4 snapshot; ${pages} page(s) published`);
+  else {
+    const j = JSON.parse(readFileSync(join(dir, snaps[snaps.length - 1]), "utf8"));
+    const users = Number(j.totals?.activeUsers ?? 0);
+    const windowDays = Number(j.days ?? 28);
+    const perDay = users / windowDays;
+    const pct = ((perDay / 10000) * 100).toFixed(2);
+    record(perDay >= 10000 ? "ok" : "warn", "growth", `${perDay.toFixed(1)} UV/day over ${windowDays}d from ${pages} pages = ${pct}% of the 10,000 target`);
+  }
+} catch (e) {
+  record("warn", "growth", "growth numbers unreadable: " + String(e.message).slice(0, 80));
+}
+
 /* ------------------------------------------------------------------- verdict */
 const critical = checks.filter((c) => c.level === "critical").length;
 const warn = checks.filter((c) => c.level === "warn").length;
