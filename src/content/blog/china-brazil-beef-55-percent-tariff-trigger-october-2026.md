@@ -207,3 +207,5 @@ For the paperwork and the cost in one place, see [China steps up coverage of inn
 For the paperwork and the cost in one place, see [APEC host China's evolving role in regional economic cooperation](/guide/apec-host-china-s-evolving-role-in-regional-economic-cooperation/).
 
 For the paperwork and the cost in one place, see [Chinese premier urges China, ASEAN to stand united, overcome distractions](/guide/chinese-premier-urges-china-asean-to-stand-united-overcome-distraction/).
+
+For the paperwork and the cost in one place, see [How do employers find health cover for staff based in china?](/guide/how-do-employers-find-health-cover-for-staff-based-in-china/).
