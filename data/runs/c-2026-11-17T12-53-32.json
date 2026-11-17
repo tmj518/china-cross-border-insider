@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-17T04:33:06.596Z",
-  "runId": "44017866919",
+  "at": "2026-11-17T12:53:32.338Z",
+  "runId": "44087019206",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+  "article": "china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
   "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0017
+    "usd": 0.0014000000000000054
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "name": "grounding china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "name": "gates china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "name": "build china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-brazil-beef-safeguard-55-percent-tariff-october-2026, china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, china-water-law-revision-river-lake-management-2027"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi/"
+      "detail": "/guide/china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific/"
     }
   ],
   "researchLog": [

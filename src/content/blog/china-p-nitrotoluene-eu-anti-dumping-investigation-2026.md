@@ -198,3 +198,5 @@ For the paperwork and the cost in one place, see [China's foreign trade growth p
 For the paperwork and the cost in one place, see [COP31 participants say China injects impetus into global green development](/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/).
 
 For the paperwork and the cost in one place, see [Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development](/guide/xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-/).
+
+For the paperwork and the cost in one place, see [China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific](/guide/china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific/).
