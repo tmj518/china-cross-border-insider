@@ -21,6 +21,10 @@ const TOKEN = process.env.CF_API_TOKEN ?? "";
 const ACCOUNT = process.env.CF_ACCOUNT_ID ?? "";
 const JSON_OUT = process.argv.includes("--json");
 const EXPECT = process.argv.find((a) => a.startsWith("--expect="))?.split("=")[1];
+/* Which project, named rather than assumed: an account can hold several Pages projects and several zones,
+   and picking projects[0] is how a status tool reports the wrong site as healthy. */
+const PROJECT = process.argv.find((a) => a.startsWith("--project="))?.split("=")[1] ?? process.env.CF_PAGES_PROJECT ?? "china-cross-border-insider";
+const SITE = process.argv.find((a) => a.startsWith("--site="))?.split("=")[1] ?? "landedmath.com";
 
 if (!TOKEN || !ACCOUNT) {
   console.log("CF STATUS\n" + "=".repeat(70));
@@ -45,7 +49,12 @@ let failed = 0;
 
 try {
   const projects = await call(`/accounts/${ACCOUNT}/pages/projects`);
-  for (const p of projects) {
+  const names = projects.map((x) => x.name);
+  if (!names.includes(PROJECT)) {
+    out.projectsError = `project "${PROJECT}" not found; account has: ${names.join(", ")}`;
+    failed = 1;
+  }
+  for (const p of projects.filter((x) => x.name === PROJECT)) {
     const latest = (p.latest_deployment ?? null);
     const row = {
       name: p.name,
@@ -57,6 +66,14 @@ try {
       created: latest?.created_on ?? null,
       url: latest?.url ?? null,
     };
+    try {
+      const doms = await call(`/accounts/${ACCOUNT}/pages/projects/${p.name}/domains`);
+      row.domains = doms.map((d) => d.name);
+      row.servesSite = row.domains.some((d) => d === SITE || d.endsWith("." + SITE));
+    } catch {
+      row.domains = [];
+      row.servesSite = false;
+    }
     out.projects.push(row);
   }
 } catch (e) {
@@ -79,6 +96,10 @@ try {
   failed = 1;
 }
 
+if (out.projects.some((p) => p.servesSite === false)) {
+  failed = 1;
+  out.siteMismatch = true;
+}
 if (EXPECT) {
   const hit = out.projects.find((p) => p.commit && (p.commit === EXPECT.slice(0, 7)));
   out.expect = EXPECT;
@@ -92,7 +113,8 @@ if (JSON_OUT) {
   console.log("CF STATUS\n" + "=".repeat(70));
   if (out.projectsError) console.log("  pages: " + out.projectsError);
   for (const p of out.projects) {
-    console.log(`  pages   ${p.name.padEnd(18)} ${String(p.status).padEnd(10)} ${String(p.stage).padEnd(12)} ${p.commit ?? "-"}  ${p.created ?? ""}`);
+    console.log(`  pages   ${p.name.padEnd(22)} ${String(p.status).padEnd(9)} ${String(p.stage).padEnd(9)} ${p.commit ?? "-"}  ${p.created ?? ""}`);
+    console.log(`          domains: ${(p.domains ?? []).join(", ") || "(none)"}   serves ${SITE}: ${p.servesSite ? "yes" : "NO"}`);
   }
   if (out.workersError) console.log("  workers: " + out.workersError);
   for (const w of out.workers) {
