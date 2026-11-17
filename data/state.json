@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-17T03:58:29.182Z",
+  "lastRun": "2026-11-17T23:21:19.233Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
-  "runs": 56,
-  "published": 42,
+  "lastArticle": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+  "runs": 57,
+  "published": 43,
   "lastUsage": {
-    "calls": 13,
-    "failed": 6,
-    "usd": 0.034,
-    "promptTokens": 89720,
-    "completionTokens": 8862
+    "calls": 15,
+    "failed": 2,
+    "usd": 0.035,
+    "promptTokens": 218965,
+    "completionTokens": 16689
   }
 }

@@ -877,6 +877,91 @@
       "modelOutput": false
     },
     {
+      "id": "ministry-of-natural-resources-via-china-daily",
+      "source": "Ministry of Natural Resources via China Daily",
+      "figures": [
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "2,000-meter-class",
+          "unit": "depth class of the drilling system",
+          "period": "as of the sea trial completion",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "2,004.8 meters",
+          "unit": "maximum operating water depth achieved",
+          "period": "during the sea trial",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "1,419 meters",
+          "unit": "previous international depth record for similar systems",
+          "period": "before this trial",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "33-day",
+          "unit": "duration of the sea trial",
+          "period": "completed before Nov 17, 2026",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "142.7 meters",
+          "unit": "shallow water depth tested",
+          "period": "during the sea trial",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "four",
+          "unit": "number of drilling modes now functionally verified",
+          "period": "as of the sea trial",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "five",
+          "unit": "number of drilling and coring tests conducted",
+          "period": "during the sea trial",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+          "articleNum": 110,
+          "value": "2024",
+          "unit": "year the Mengxiang vessel was commissioned",
+          "period": "commissioned in 2024",
+          "source": "Ministry of Natural Resources via China Daily",
+          "retrieved": "2026-11-17"
+        }
+      ],
+      "articleNums": [
+        110
+      ],
+      "articleSlugs": [
+        "china-mengxiang-riserless-drilling-2004-meters-importer-cost"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "global-times",
       "source": "Global Times",
       "figures": [

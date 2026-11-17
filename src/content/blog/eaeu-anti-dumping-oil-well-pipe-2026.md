@@ -144,6 +144,8 @@ The undertaking list cuts deeper than the range. An exporter on it sells without
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [China's 2,000-Meter Riserless Drilling System: What It](/blog/china-mengxiang-riserless-drilling-2004-meters-importer-cost/)
+
 ## For you
 
 - **Buyers of oil country tubular goods into Russia, Kazakhstan, Belarus, Armenia or Kyrgyzstan:** ask the mill for its undertaking status in writing before the order, not at the port. The question is whether the specific exporting legal entity is on the list, because the list names entities and the removal this month named one.
