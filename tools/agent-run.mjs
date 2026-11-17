@@ -1372,6 +1372,22 @@ function runTool(name, input) {
        * finish and the forced-submission path recorded the last tool result instead of what exists. A published
        * page is a published page; the model's bookkeeping is not evidence about the site.
        */
+      /*
+       * A STALE REJECTED MUST NOT SURVIVE A REAL PUBLICATION.
+       *
+       * 2026-11-17 20:20: the model called finish(REJECTED) at turn 24 because the draft still had zero links;
+       * the forced submission then published it and the link repair fixed the links. The page was live, the card
+       * said REJECTED, and it carried no reason line - the worst of both. When the file is in the collection the
+       * verdict is PUBLISHED, and whatever the model said before is kept as the reason it took so long.
+       */
+      if (finished && /^REJECTED$/.test(String(finished.verdict ?? ""))) {
+        const said = String(finished.summary ?? "").slice(0, 200);
+        finished = {
+          verdict: LAST_GATE_WARNINGS > 0 ? "PUBLISHED-DEGRADED" : "PUBLISHED",
+          summary: `${slug} is published; the model had called finish(REJECTED) first: ${said}`,
+          supersededRejection: said,
+        };
+      }
       if (!finished) {
         finished = {
           verdict: LAST_GATE_WARNINGS > 0 ? "PUBLISHED-DEGRADED" : "PUBLISHED",
@@ -2010,6 +2026,11 @@ for (turn = 1; turn <= MAX_TURNS && !finished; turn++) {
       record({ turn, repeated: name, key: key.slice(0, 120), note: "answered from memory, not executed" });
     } else {
       result = runTool(name, input);
+      /* #108: the moment the draft passes, say what to do next. A model that keeps editing after PASS is the
+         reason a run reaches turn 24 and calls finish(REJECTED) over a finished article. */
+      if (name === "check_draft" && /PASS\b/.test(String(result)) && !/BLOCK/.test(String(result))) {
+        result = String(result) + "\n\nNEXT: the draft passes. Call publish_draft on it now, then finish(PUBLISHED). Do not keep editing.";
+      }
       if (key) seenCalls.set(key, result);
       /*
        * A write invalidates every answer about that file.
@@ -2335,7 +2356,12 @@ const report = {
   published: [...published],
   usage: usageToday(),
   checkOnly: false,
-  reasons: finished ? [] : [err ?? "the agent did not call finish, so there is no verdict for the day"],
+  reasons: (() => {
+    if (finished?.summary) return [String(finished.summary).slice(0, 300)];
+    if (finished?.supersededRejection) return [String(finished.supersededRejection).slice(0, 300)];
+    if (err) return [String(err).slice(0, 300)];
+    return ["the agent did not call finish, so there is no verdict for the day"];
+  })(),
   /* #029: a REJECTED record names the layer and the rule, or says unknown - the next morning must not be a guess. */
   layer: (() => {
     const b = (typeof gate !== "undefined" && gate?.blocks?.[0]) || null;
