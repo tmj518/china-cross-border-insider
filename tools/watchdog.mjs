@@ -118,6 +118,29 @@ if (latest) {
   else record("critical", "live", `${code} ${url}`);
 }
 
+/* 5b ------------------------------------------------------ topic supply */
+/*
+ * A SITE THAT RUNS OUT OF TOPICS STOPS QUIETLY.
+ *
+ * The radar wrote 21 cell files today but only 8 usable candidates, and the guide queue held 4 entries. When
+ * the queue empties the pipeline does not crash - it publishes a fallback guide and looks healthy while the
+ * growth stops. This is the check that makes the silence visible.
+ */
+try {
+  let depth = 0;
+  for (const f of ["data/guide-queue.json"]) {
+    const abs = join(ROOT, f);
+    if (!existsSync(abs)) continue;
+    const j = JSON.parse(readFileSync(abs, "utf8"));
+    depth += Array.isArray(j) ? j.length : (j.topics?.length ?? j.items?.length ?? 0);
+  }
+  if (depth >= 10) record("ok", "topics", `${depth} queued topic(s)`);
+  else if (depth >= 4) record("warn", "topics", `only ${depth} queued topic(s) - the weekly radar runs on Mondays`);
+  else record("critical", "topics", `${depth} queued topic(s): the queue is nearly empty and growth will stall`);
+} catch (e) {
+  record("warn", "topics", "queue unreadable: " + String(e.message).slice(0, 80));
+}
+
 /* 5 ------------------------------------------------------ cloudflare deploy */
 /*
  * The GitHub side can be green while Cloudflare is serving the previous build. This check only runs when a
