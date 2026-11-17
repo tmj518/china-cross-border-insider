@@ -6,8 +6,8 @@
     "activeUsers": 207,
     "newUsers": 206,
     "screenPageViews": 428,
-    "sessions": 243,
-    "eventCount": 1195
+    "sessions": 244,
+    "eventCount": 1197
   },
   "channels": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "channel": "Organic Search",
-      "sessions": 39
+      "sessions": 40
     },
     {
       "channel": "Unassigned",
@@ -31,5 +31,5 @@
       "sessions": 1
     }
   ],
-  "at": "2026-11-17T09:43:16.957Z"
+  "at": "2026-11-17T12:21:27.924Z"
 }

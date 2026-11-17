@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-15T23:23:48.097Z",
-  "runId": "43774294102",
+  "at": "2026-11-17T12:24:51.547Z",
+  "runId": "44082272945",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "cop31-participants-say-china-injects-impetus-into-global-green-develop",
-  "seconds": 21,
+  "article": "xi-says-improvement-development-of-china-canada-relations-right-choice",
+  "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0002999999999999947
+    "usd": 0.0012999999999999956
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding cop31-participants-say-china-injects-impetus-into-global-green-develop",
+      "name": "grounding xi-says-improvement-development-of-china-canada-relations-right-choice",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates cop31-participants-say-china-injects-impetus-into-global-green-develop",
+      "name": "gates xi-says-improvement-development-of-china-canada-relations-right-choice",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build cop31-participants-say-china-injects-impetus-into-global-green-develop",
+      "name": "build xi-says-improvement-development-of-china-canada-relations-right-choice",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "china-canada-tariff-remission-canola-steel-extension-2028, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/"
+      "detail": "/guide/xi-says-improvement-development-of-china-canada-relations-right-choice/"
     }
   ],
   "researchLog": [

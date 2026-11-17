@@ -1786,6 +1786,73 @@
       "modelOutput": false
     },
     {
+      "id": "xinhua-news-agency",
+      "source": "Xinhua News Agency",
+      "figures": [
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "40 percent",
+          "unit": "share of the world's population",
+          "period": "2026",
+          "source": "Xinhua News Agency",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "more than 60 percent",
+          "unit": "share of global GDP",
+          "period": "2026",
+          "source": "Xinhua News Agency",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "nearly half",
+          "unit": "share of global trade",
+          "period": "2026",
+          "source": "Xinhua News Agency",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "more than 60 percent",
+          "unit": "share of the Asia-Pacific region's economic growth contributed by China",
+          "period": "2026",
+          "source": "Xinhua News Agency",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "more than tenfold",
+          "unit": "growth multiple of Shenzhen's trade with other APEC economies",
+          "period": "1996 to 2025",
+          "source": "Xinhua News Agency",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "3.13 trillion yuan",
+          "unit": "Shenzhen's total trade value with other APEC economies",
+          "period": "2025",
+          "source": "Xinhua News Agency",
+          "retrieved": "2026-11-17"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "shenzhen-apec-2026-trade-impacts-importer-cost-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ciie-organizers-reported-by-xinhua",
       "source": "CIIE organizers, reported by Xinhua",
       "figures": [

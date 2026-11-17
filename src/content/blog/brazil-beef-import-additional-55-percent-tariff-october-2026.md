@@ -239,3 +239,5 @@ For the paperwork and the cost in one place, see [How do employers find health c
 For the paperwork and the cost in one place, see [Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development](/guide/xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-/).
 
 For the paperwork and the cost in one place, see [Xi says to boost China-Papua New Guinea ties to new heights](/guide/xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights/).
+
+For the paperwork and the cost in one place, see [Xi says improvement, development of China-Canada relations right choice](/guide/xi-says-improvement-development-of-china-canada-relations-right-choice/).

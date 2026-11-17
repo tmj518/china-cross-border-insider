@@ -4073,7 +4073,7 @@
       "unit": "one application",
       "title": "Xi says improvement, development of China-Canada relations right choice",
       "query": "Xi says improvement, development of China-Canada relations right choice",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi says improvement, development of China-Canada relations right choice\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4101,7 +4101,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",

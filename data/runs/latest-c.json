@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-17T09:43:37.323Z",
-  "runId": "44058066986",
+  "at": "2026-11-17T12:24:51.547Z",
+  "runId": "44082272945",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
-  "seconds": 20,
+  "article": "xi-says-improvement-development-of-china-canada-relations-right-choice",
+  "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0014
+    "usd": 0.0012999999999999956
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "6 candidate(s)"
     },
     {
-      "name": "grounding xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
+      "name": "grounding xi-says-improvement-development-of-china-canada-relations-right-choice",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
+      "name": "gates xi-says-improvement-development-of-china-canada-relations-right-choice",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
+      "name": "build xi-says-improvement-development-of-china-canada-relations-right-choice",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eu-pet-spunbond-definitive-anti-dumping-duties-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "china-canada-tariff-remission-canola-steel-extension-2028, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights/"
+      "detail": "/guide/xi-says-improvement-development-of-china-canada-relations-right-choice/"
     }
   ],
   "researchLog": [
