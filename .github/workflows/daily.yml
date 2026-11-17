@@ -519,6 +519,21 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/fallback-publish.mjs
 
+      - name: Mine new topics (weekly)
+        # The radar's own cron is disabled with the others - the Cloudflare Worker is the only clock - so the
+        # weekly mining rides on the Monday 09:20 backup slot instead of a fifth schedule. Without it the queue
+        # only shrinks, and a site cannot grow towards real traffic on a shrinking queue.
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ "$(date -u +%u)" != "1" ]; then
+            echo "not Monday: the radar runs on Mondays only"
+            exit 0
+          fi
+          node tools/demand-radar.mjs || echo "radar harvest failed; keeping the previous demand files"
+          node tools/demand-to-queue.mjs --write || echo "queue candidates not written"
+          node tools/gsc-blue-ocean.mjs --days=7 || echo "no Search Console data this week"
+
       - name: Repair dead links and let the watchdog report
         # The operator is on leave. This is the part of the checklist that used to live in a conversation: find
         # a broken internal link, repair it, notice a day with no article, say so out loud.
