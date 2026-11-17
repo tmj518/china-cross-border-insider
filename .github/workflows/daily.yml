@@ -519,6 +519,18 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/fallback-publish.mjs
 
+      - name: Repair dead links and let the watchdog report
+        # The operator is on leave. This is the part of the checklist that used to live in a conversation: find
+        # a broken internal link, repair it, notice a day with no article, say so out loud.
+        if: always()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: |
+          node tools/watchdog.mjs --fix || echo "watchdog reported a critical condition (see the card)"
+          git add -A
+          git diff --cached --quiet || git commit -m "watchdog: repair dangling links ($(date -u +%F))"
+
       - name: Commit and push anything that was approved
         # A published file belongs in the repository even when the pipeline verdict is red: on 2026-11-11
         # the agent wrote and staged an article, the pipeline step failed, this step was skipped, and the article
