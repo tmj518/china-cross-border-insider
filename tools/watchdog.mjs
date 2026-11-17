@@ -118,6 +118,28 @@ if (latest) {
   else record("critical", "live", `${code} ${url}`);
 }
 
+/* 5 ------------------------------------------------------ cloudflare deploy */
+/*
+ * The GitHub side can be green while Cloudflare is serving the previous build. This check only runs when a
+ * token exists; when it does not, the watchdog says so instead of implying the deploy was verified.
+ */
+if (process.env.CF_API_TOKEN && process.env.CF_ACCOUNT_ID) {
+  try {
+    const out = execFileSync(process.execPath, [join(ROOT, "tools", "cf-status.mjs"), "--json"], { cwd: ROOT, encoding: "utf8", timeout: 90000 });
+    const j = JSON.parse(out);
+    const p0 = j.projects?.[0];
+    if (!p0) record("warn", "deploy", "no Pages project returned");
+    else if (String(p0.stage) === "deploy" && String(p0.status) === "success") record("ok", "deploy", `${p0.name} ${p0.commit ?? "?"} deployed`);
+    else record("critical", "deploy", `${p0.name} ${p0.commit ?? "?"} ${p0.stage}/${p0.status}`);
+    const w = (j.workers ?? []).find((x) => /cron/i.test(x.name));
+    if (w) record(w.schedules?.length ? "ok" : "critical", "clock", `${w.name}: ${(w.schedules ?? []).join(", ") || "no schedule"}`);
+  } catch (e) {
+    record("warn", "deploy", "cf-status could not answer: " + String(e.message).slice(0, 100));
+  }
+} else {
+  record("warn", "deploy", "not verified - no CF token in this environment");
+}
+
 /* ------------------------------------------------------------------- verdict */
 const critical = checks.filter((c) => c.level === "critical").length;
 const warn = checks.filter((c) => c.level === "warn").length;
