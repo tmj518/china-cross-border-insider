@@ -107,9 +107,13 @@ if (latest) {
   const url = `${SITE}/${latest.dir === "blog" ? "blog" : "guide"}/${latest.slug}/`;
   let code = "?";
   try {
-    const out = execFileSync("curl.exe", ["-s", "-o", "NUL", "-w", "%{http_code}", "--max-time", "25", url], { encoding: "utf8", timeout: 40000 });
-    code = out.trim();
-  } catch {}
+    /* fetch, not curl.exe: the runner is Linux and has no curl.exe. That difference made a healthy page
+       report "? " and the watchdog cry wolf on its first cloud run. */
+    const r = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(30000) });
+    code = String(r.status);
+  } catch (e) {
+    code = "unreachable";
+  }
   if (code === "200") record("ok", "live", `200 ${url}`);
   else record("critical", "live", `${code} ${url}`);
 }
@@ -137,10 +141,22 @@ if (webhook && critical) {
     "这是云端自己在报警：没有人工在盯。",
   ].join("\n");
   try {
-    execFileSync("curl.exe", ["-s", "-X", "POST", webhook, "-H", "content-type: application/json", "-d", JSON.stringify({ msg_type: "text", content: { text } })], { timeout: 30000 });
-    console.log("  alert: sent to Feishu");
-  } catch {
-    console.log("  alert: the webhook refused it");
+    const secret = (process.env.FEISHU_SECRET ?? "").trim();
+    const ts = String(Math.floor(Date.now() / 1000));
+    let url = webhook;
+    if (secret) {
+      const sign = (await import("node:crypto")).createHmac("sha256", `${ts}\n${secret}`).update("").digest("base64");
+      url = `${webhook}&timestamp=${ts}&sign=${encodeURIComponent(sign)}`;
+    }
+    const r = await fetch(url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ msg_type: "text", content: { text } }),
+      signal: AbortSignal.timeout(30000),
+    });
+    console.log("  alert: " + (r.ok ? "sent to Feishu" : "Feishu refused it (" + r.status + ")"));
+  } catch (e) {
+    console.log("  alert: failed - " + String(e.message).slice(0, 80));
   }
 }
 
