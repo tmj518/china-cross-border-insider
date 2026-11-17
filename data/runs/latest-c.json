@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-17T07:20:49.979Z",
-  "runId": "44037894439",
-  "route": "c",
+  "at": "2026-11-17T09:31:58.592Z",
+  "runId": "44056278414",
+  "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "xinhua-commentary-for-apec-the-answer-lies-in-action",
-  "seconds": 22,
+  "article": "xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding xinhua-commentary-for-apec-the-answer-lies-in-action",
+      "name": "grounding xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates xinhua-commentary-for-apec-the-answer-lies-in-action",
+      "name": "gates xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build xinhua-commentary-for-apec-the-answer-lies-in-action",
+      "name": "build xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eu-fdi-screening-notification-threshold-2026, eu-fdi-screening-notification-threshold-2028"
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/xinhua-commentary-for-apec-the-answer-lies-in-action/"
+      "detail": "/guide/xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-/"
     }
   ],
   "researchLog": [

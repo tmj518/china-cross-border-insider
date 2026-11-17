@@ -235,3 +235,5 @@ For the paperwork and the cost in one place, see [APEC host China's evolving rol
 For the paperwork and the cost in one place, see [Chinese premier urges China, ASEAN to stand united, overcome distractions](/guide/chinese-premier-urges-china-asean-to-stand-united-overcome-distraction/).
 
 For the paperwork and the cost in one place, see [How do employers find health cover for staff based in china?](/guide/how-do-employers-find-health-cover-for-staff-based-in-china/).
+
+For the paperwork and the cost in one place, see [Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development](/guide/xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-/).

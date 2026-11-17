@@ -3993,7 +3993,7 @@
       "unit": "one application",
       "title": "Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development",
       "query": "Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4021,7 +4021,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
