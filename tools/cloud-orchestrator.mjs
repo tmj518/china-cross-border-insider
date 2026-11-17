@@ -836,6 +836,24 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
        * publish step and be discovered by CI the next morning. It adds no threshold and changes no gate:
        * tools/check-inbound-precheck.mjs reads the tree with link-check's own definition of a real page.
        */
+      /*
+       * A DANGLING LINK SOMEWHERE ELSE IS NOT THIS DRAFT'S FAULT.
+       *
+       * 2026-11-17 07:20: the draft was fine, but an older article linked to a page that is still a draft,
+       * the precheck saw it, and the whole run was recorded DANGLING-LINK - so a fresh article was never
+       * written and the day fell to the fallback. The precheck exists to stop a bad link reaching the site;
+       * it was being used to stop a good article from being written. Repair the tree first, then judge.
+       */
+      try {
+        const rep = execFileSync(process.execPath, [join(ROOT, "tools", "repair-dangling.mjs")], { encoding: "utf8", timeout: 120000 });
+        const fixed = Number((/repaired (\d+)/.exec(rep) ?? [])[1] ?? 0);
+        if (fixed) {
+          console.log("  links      : repaired " + fixed + " dangling link(s) elsewhere in the tree");
+          run.reasons.push("repaired " + fixed + " dangling link(s) in other articles before judging this draft");
+        }
+      } catch (e) {
+        console.log("  links      : tree repair skipped - " + String(e.message).slice(0, 80));
+      }
       let precheckFailed = false;
       try {
         execFileSync(process.execPath, [join(ROOT, "tools", "check-inbound-precheck.mjs"), `--staged=${draftPath}`], { encoding: "utf8", timeout: 120000 });
