@@ -529,7 +529,9 @@ jobs:
         run: |
           # No commit here: the next step commits everything this job changed, and this one has no git
           # identity configured - which is how the first cloud watchdog run failed.
-          node tools/watchdog.mjs --fix || echo "watchdog reported a critical condition (see the card)"
+          # A critical condition must make this step red: a watchdog that reports into a green run is the
+          # same silence it exists to break. The card is sent by the script itself, before it exits.
+          node tools/watchdog.mjs --fix
 
       - name: Commit and push anything that was approved
         # A published file belongs in the repository even when the pipeline verdict is red: on 2026-11-11
