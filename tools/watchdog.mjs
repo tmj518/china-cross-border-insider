@@ -105,14 +105,30 @@ try {
 /* 4 --------------------------------------------------------------------- live */
 if (latest) {
   const url = `${SITE}/${latest.dir === "blog" ? "blog" : "guide"}/${latest.slug}/`;
+  /*
+   * A 404 WHILE THE DEPLOY IS STILL IN FLIGHT IS NOT A BROKEN SITE.
+   *
+   * 2026-11-17 20:24: an article was committed at 20:23, Pages was still building, the watchdog asked for the
+   * page three minutes later, got 404 and sent a red card. The page was live 200 ten minutes later. So: try
+   * three times, and downgrade a 404 to a warning while a deployment is in flight.
+   */
   let code = "?";
-  try {
-    /* fetch, not curl.exe: the runner is Linux and has no curl.exe. That difference made a healthy page
-       report "? " and the watchdog cry wolf on its first cloud run. */
-    const r = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(30000) });
-    code = String(r.status);
-  } catch (e) {
-    code = "unreachable";
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const r = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(30000) });
+      code = String(r.status);
+    } catch {
+      code = "unreachable";
+    }
+    if (code === "200") break;
+    if (attempt < 3) await new Promise((r) => setTimeout(r, attempt * 15000));
+  }
+  if (code !== "200") {
+    const deploying = checks.find((c) => c.name === "deploy" && /in flight/.test(c.detail));
+    if (deploying) {
+      code = "200-pending";
+      record("warn", "live", `still deploying after three tries: ${url}`);
+    }
   }
   if (code === "200") record("ok", "live", `200 ${url}`);
   else record("critical", "live", `${code} ${url}`);
