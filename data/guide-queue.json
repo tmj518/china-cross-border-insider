@@ -4153,7 +4153,7 @@
       "unit": "one application",
       "title": "Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation",
       "query": "Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4181,7 +4181,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "documentary-shenzhen-beyond-the-skyline",

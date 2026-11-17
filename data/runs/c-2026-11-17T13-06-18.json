@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-17T04:52:42.926Z",
-  "runId": "44020072764",
+  "at": "2026-11-17T13:06:18.534Z",
+  "runId": "44088893577",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
-  "seconds": 22,
+  "article": "xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
+  "seconds": 18,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004
+    "usd": 0.0013999999999999985
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "4 candidate(s)"
     },
     {
-      "name": "grounding china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
+      "name": "grounding xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
+      "name": "gates xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
+      "name": "build xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-foreign-trade-first-ten-months-2026-import-growth, china-emergency-procurement-rules-imported-goods-2026"
+      "detail": "shenzhen-apec-2026-trade-impacts-importer-cost-2026, shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months/"
+      "detail": "/guide/xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-/"
     }
   ],
   "researchLog": [

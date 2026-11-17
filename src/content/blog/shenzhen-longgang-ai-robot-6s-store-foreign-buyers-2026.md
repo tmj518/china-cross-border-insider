@@ -164,3 +164,5 @@ Not derived, because no input exists:
 ## The point
 
 The Longgang robot avenue is a real signal that Shenzhen's robotics supply is deep enough and foreign-facing enough to justify a sourcing trip, and the debut share is the part of the floor a buyer cannot see anywhere else. It is not a price list, and the report behind it carries no number a landed-cost model can use. Go to build a shortlist and a specification; leave the deposit until a quotation, a certification and an export reference are in hand.
+
+For the paperwork and the cost in one place, see [Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation](/guide/xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-/).

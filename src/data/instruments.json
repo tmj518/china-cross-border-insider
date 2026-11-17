@@ -1451,6 +1451,73 @@
       "modelOutput": false
     },
     {
+      "id": "macao-sar-2027-policy-address-as-reported-by-xinhua",
+      "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+      "figures": [
+        {
+          "articleSlug": "macao-2027-policy-address-tourism-incentives-hengqin",
+          "articleNum": 0,
+          "value": "2.9 percent",
+          "unit": "year-on-year real GDP growth, first three quarters",
+          "period": "first three quarters, ahead of the 2027 policy year",
+          "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "macao-2027-policy-address-tourism-incentives-hengqin",
+          "articleNum": 0,
+          "value": "2027",
+          "unit": "policy year the address targets",
+          "period": "2027",
+          "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "macao-2027-policy-address-tourism-incentives-hengqin",
+          "articleNum": 0,
+          "value": "Europe, India and the Middle East",
+          "unit": "target source markets for tourism incentives",
+          "period": "2027 policy year",
+          "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "macao-2027-policy-address-tourism-incentives-hengqin",
+          "articleNum": 0,
+          "value": "investment guidance fund",
+          "unit": "new fund vehicle for diversification projects",
+          "period": "2027 policy year",
+          "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "macao-2027-policy-address-tourism-incentives-hengqin",
+          "articleNum": 0,
+          "value": "Guangdong-Macao In-Depth Cooperation Zone in Hengqin",
+          "unit": "named investment destination for fund projects",
+          "period": "2027 policy year",
+          "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "macao-2027-policy-address-tourism-incentives-hengqin",
+          "articleNum": 0,
+          "value": "digital pataca and the digital yuan",
+          "unit": "currency link to be developed",
+          "period": "2027 policy year",
+          "source": "Macao SAR 2027 policy address, as reported by Xinhua/Global Times",
+          "retrieved": "2026-11-17"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "macao-2027-policy-address-tourism-incentives-hengqin"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ministry-of-finance-pboc-and-nfra-notice-2026-95",
       "source": "Ministry of Finance, PBOC and NFRA Notice 财金〔2026〕95号",
       "figures": [
