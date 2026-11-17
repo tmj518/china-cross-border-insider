@@ -82,7 +82,7 @@ For an importer, the figures describe the size of the market the meeting's outco
 
 ## For you
 
-An importer planning sourcing and shipment routes ahead of the November 18-19 meeting can read the 3.13 trillion yuan Shenzhen figure as the scale of the corridor, and the 17.6 percent high-tech manufacturing growth as the pace of the product categories moving through it. For a related look at how official figures translate into per-unit costs, see the [Landed Math home page](/).
+An importer planning sourcing and shipment routes ahead of the November 18-19 meeting can read the 3.13 trillion yuan Shenzhen figure as the scale of the corridor, and the 17.6 percent high-tech manufacturing growth as the pace of the product categories moving through it. For how official figures translate into per-unit costs on a specific shipment, see [shenzhen longgang ai robot 6s store foreign buyers 2026](/blog/shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026/) and [china fuel price cut november 12 2026 diesel petrol per tonne](/blog/china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne/).
 
 ## The data point
 
