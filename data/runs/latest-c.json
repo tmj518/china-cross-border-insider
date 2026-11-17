@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-17T04:33:06.596Z",
-  "runId": "44017866919",
+  "at": "2026-11-17T04:52:42.926Z",
+  "runId": "44020072764",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
-  "seconds": 19,
+  "article": "china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0017
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "name": "grounding china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "name": "gates china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "name": "build china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-brazil-beef-safeguard-55-percent-tariff-october-2026, china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      "detail": "china-foreign-trade-first-ten-months-2026-import-growth, china-emergency-procurement-rules-imported-goods-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi/"
+      "detail": "/guide/china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months/"
     }
   ],
   "researchLog": [

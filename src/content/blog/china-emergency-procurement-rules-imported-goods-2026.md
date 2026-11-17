@@ -184,3 +184,5 @@ print(f"Total contract value with add-on: {total_value} RMB")
 China's new emergency procurement rules open the door for imported goods without prior approval, but they cap the upside at 30% of the original contract and set a 40% prepayment benchmark. For an importer, the decision to position for emergency procurement is a calculation: the initial contract is the anchor, the add-on is bounded, and the prepayment is a negotiating target. The numbers are on the page — price the cap, ask for the prepayment, and keep the records.
 
 For the paperwork and the cost in one place, see [Can a Foreigner Buy Property in China? Rules and Subsidies](/guide/foreigner-buy-property-china/).
+
+For the paperwork and the cost in one place, see [China's retail sales of goods, services up 2.5 pct in first 10 months](/guide/china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months/).
