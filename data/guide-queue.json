@@ -4033,7 +4033,7 @@
       "unit": "one application",
       "title": "Xi says to boost China-Papua New Guinea ties to new heights",
       "query": "Xi says to boost China-Papua New Guinea ties to new heights",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi says to boost China-Papua New Guinea ties to new heights\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4061,7 +4061,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "xi-says-improvement-development-of-china-canada-relations-right-choice",
