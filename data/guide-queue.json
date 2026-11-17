@@ -3397,7 +3397,7 @@
       "unit": "one application",
       "title": "How to set up alipay in usa",
       "query": "how to set up alipay in usa",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"how to set up alipay in usa\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3421,7 +3421,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "xi-to-attend-apec-economic-leaders-meeting-related-events-in-shenzhen",

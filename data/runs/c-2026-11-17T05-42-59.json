@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-17T05:42:59.254Z",
+  "runId": "44025937243",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "how-to-set-up-alipay-in-usa",
+  "seconds": 18,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0014
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "4 candidate(s)"
+    },
+    {
+      "name": "grounding how-to-set-up-alipay-in-usa",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates how-to-set-up-alipay-in-usa",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build how-to-set-up-alipay-in-usa",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "no candidate - NO-INBOUND"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/how-to-set-up-alipay-in-usa/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

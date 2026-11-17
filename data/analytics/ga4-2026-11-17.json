@@ -3,11 +3,11 @@
   "account": "",
   "days": 28,
   "totals": {
-    "activeUsers": 203,
-    "newUsers": 202,
-    "screenPageViews": 424,
-    "sessions": 239,
-    "eventCount": 1180
+    "activeUsers": 204,
+    "newUsers": 203,
+    "screenPageViews": 425,
+    "sessions": 240,
+    "eventCount": 1184
   },
   "channels": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "channel": "Organic Search",
-      "sessions": 36
+      "sessions": 37
     },
     {
       "channel": "Unassigned",
@@ -31,5 +31,5 @@
       "sessions": 1
     }
   ],
-  "at": "2026-11-17T04:52:19.824Z"
+  "at": "2026-11-17T05:42:41.131Z"
 }
