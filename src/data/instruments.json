@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15",
+  "generated": "2026-11-17",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -873,6 +873,82 @@
         "china-brazil-beef-safeguard-55-percent-tariff-october-2026",
         "china-brazil-beef-safeguard-55-percent-trigger-2026",
         "china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "global-times",
+      "source": "Global Times",
+      "figures": [
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "more than 200",
+          "unit": "devices on display",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "30 percent",
+          "unit": "share of devices making global debut or entering commercial application for the first time",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "about 70 percent",
+          "unit": "share of visitors who were foreigners",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "13,000",
+          "unit": "AI and robotics companies in Longgang district",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "793",
+          "unit": "application scenarios opened under the 'City + AI' initiative",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "1-billion-yuan ($150 million)",
+          "unit": "AI industry master fund",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+          "articleNum": 109,
+          "value": "150",
+          "unit": "robots performing a continuous coordinated movement for one hour",
+          "period": "November 2026",
+          "source": "Global Times",
+          "retrieved": "2026-11-17"
+        }
+      ],
+      "articleNums": [
+        109
+      ],
+      "articleSlugs": [
+        "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026"
       ],
       "modelOutput": false
     },

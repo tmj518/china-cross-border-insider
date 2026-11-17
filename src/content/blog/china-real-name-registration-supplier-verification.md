@@ -134,6 +134,8 @@ Order value, deposit percentage and check cost are your inputs; the break-even i
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [Shenzhen's robot 6S stores draw foreign buyers during APEC](/blog/shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026/)
+
 ## For you
 
 - **Importers onboarding a new supplier:** ask for the unified social credit code and the full Chinese legal name, then check the registration and note the date of the most recent amendment. A registration amended after 1 May 2026 has passed the real-name step; an older one has not, which is not a red flag by itself but is a reason to ask more.

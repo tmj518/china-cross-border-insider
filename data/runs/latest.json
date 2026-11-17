@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-17T01:21:07.072Z",
+  "at": "2026-11-17T03:58:29.182Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "54 previous run(s), last 2026-11-16T23:21:16.121Z (DANGLING-LINK)"
+      "detail": "55 previous run(s), last 2026-11-17T01:21:07.072Z (DANGLING-LINK)"
     },
     {
       "name": "weekly ceiling",
@@ -33,36 +33,66 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-apec-2026-shenzhen-robot-6s-store-foreign-buyers, 8 verified figure(s)"
+      "detail": "proposed shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "8 sourced figure(s)"
+      "detail": "7 sourced figure(s)"
     },
     {
       "name": "inbound precheck",
-      "ok": false,
-      "detail": "dangling link: blog/xi-s-article-on-jointly-building-asia-pacific-community-with-explainer-2026-11  ->  blog/bonded-logistics-growth-supply-chain"
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 4 issue(s), 4 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "4 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict DANGLING-LINK"
+      "detail": "verdict PUBLISHED-DEGRADED"
     }
   ],
-  "verdict": "DANGLING-LINK",
+  "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "a link points at a page that does not exist or is still a draft"
+    "reviewer: 4 objection(s), advisory - published anyway"
   ],
-  "article": null,
+  "article": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
   "commit": null,
   "usage": {
-    "calls": 4,
-    "failed": 0,
-    "usd": 0.0086,
-    "promptTokens": 66143,
-    "completionTokens": 4574
+    "calls": 13,
+    "failed": 6,
+    "usd": 0.034,
+    "promptTokens": 89720,
+    "completionTokens": 8862
   },
   "route": "script",
   "categoryActivity": {
@@ -74,46 +104,52 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    moe-en-article              20270B  article archived",
-    "  ok    moe-en-article              19107B  article archived",
-    "  ok    moe-en-article              22250B  article archived",
     "  ok    trade-council-article        6618B  article archived",
     "  ok    trade-council-article        6331B  article archived",
     "  ok    trade-council-article        6224B  article archived",
     "  ok    machinery-chamber-article    44804B  article archived",
     "  ok    machinery-chamber-article   103901B  article archived",
     "  ok    machinery-chamber-article    53443B  article archived",
-    "  ok    peoples-daily-en-article    20551B  article archived",
+    "  ok    peoples-daily-en-article    20579B  article archived",
     "  ok    peoples-daily-en-article    20746B  article archived",
     "  ok    peoples-daily-en-article    17400B  article archived",
-    "  fresh     : 1 article(s) dated today, newest 2026-11-17",
+    "  fresh     : 2 article(s) dated today, newest 2026-11-17",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 99 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 365 characters but no document structure, trying the next one",
-    "  stream      : SSE, 141 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 486 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1281 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4565 characters but no document structure, trying the next one",
-    "  spent   : ~0.0064  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
+    "  provider   : volces timed out - parked for the rest of this run",
+    "  stream      : SSE, 1131 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4192 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1173 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4353 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1154 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4294 characters but no document structure, trying the next one",
+    "  spent   : ~0.0186  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : china-apec-2026-shenzhen-robot-6s-store-foreign-buyers",
-    "  keyword : Shenzhen robot 6S store APEC 2026 foreign buyers",
+    "  slug    : shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+    "  keyword : Shenzhen robot 6S store foreign buyers APEC 2026",
     "  duplicate check: score 3 against eu-per-item-customs-charge-2026",
     "      shared figure value(s): 150",
-    "  slug    : china-apec-2026-shenzhen-robot-6s-store-foreign-buyers",
-    "  keyword : Shenzhen robot 6S store APEC 2026 foreign buyers",
+    "  slug    : shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+    "  keyword : Shenzhen robot 6S store foreign buyers APEC 2026",
     "  category: sourcing",
-    "  figures : 8",
+    "  figures : 7",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0064",
+    "  spend this run: ~$0.0186",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 97
+  "reviewAdvisory": [
+    "The figure record gives 'more than 200' devices, not 200, so multiplying by 200 treats a lower bound as an exact baseline and produces a derived count the source does not support.",
+    "The 140 figure is computed from an assumed exact 200 and an assumed exact 30 percent, neither of which the figures contain, so it is a fabricated number presented in the calculation block.",
+    "The article explicitly states no landed-cost figure is computed and the only arithmetic is the unsupported 200 x 0.30 derivation, so the declared information gain does not match the content.",
+    "The 'world's first' claim is attributed to the report but no figure record or quoted definition supports it, and the draft elsewhere says the report does not itemise the 6S format, leaving the superlative unverifiable from the supplied material."
+  ],
+  "seconds": 91
 }

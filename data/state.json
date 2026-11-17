@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-17T01:21:07.072Z",
-  "lastVerdict": "DANGLING-LINK",
-  "lastArticle": "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
-  "runs": 55,
-  "published": 41,
+  "lastRun": "2026-11-17T03:58:29.182Z",
+  "lastVerdict": "PUBLISHED-DEGRADED",
+  "lastArticle": "shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026",
+  "runs": 56,
+  "published": 42,
   "lastUsage": {
-    "calls": 4,
-    "failed": 0,
-    "usd": 0.0086,
-    "promptTokens": 66143,
-    "completionTokens": 4574
+    "calls": 13,
+    "failed": 6,
+    "usd": 0.034,
+    "promptTokens": 89720,
+    "completionTokens": 8862
   }
 }

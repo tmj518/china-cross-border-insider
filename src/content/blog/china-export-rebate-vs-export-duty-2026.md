@@ -115,6 +115,8 @@ Three conclusions follow.
 
 > Different question, same method: [the step-by-step guides](/guide/)
 
+> Also read: [Shenzhen's robot 6S stores draw foreign buyers during APEC](/blog/shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026/)
+
 ## For you
 
 - **Buyers of copper or aluminium raw material:** check the provisional annex before accepting a cost increase. The nominal rate on copper cathode is 30 per cent and the operative rate is 10 per cent, so the difference between reading the schedule and reading it fully is threefold. For ferrochrome there is no provisional rate, so 40 per cent is real.
