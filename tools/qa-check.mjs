@@ -13,6 +13,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { proseWords, WORD_TARGET, hasCostTable } from "../src/lib/prose.mjs";
+import { INFORMATION_GAIN_VALUES, CATEGORY_VALUES } from "./site-rules.mjs";
 import { guideFor } from "../src/lib/rule-guide.mjs";
 import { substantiveFigures, figuresShortfall } from "../src/lib/figures.mjs";
 import { MIN_SUBSTANTIVE } from "../src/lib/figure-limits.mjs";
@@ -142,8 +143,8 @@ function check(file) {
   const ENUM_FROM = "2026-10-19";
   const thisDate = (fmLine("publishDate") ?? "").replace(/"/g, "");
   if (thisDate >= ENUM_FROM) {
-    const GAIN_ENUM = ["custom-calculation", "cross-source", "own-data", "primary-source"];
-    const CATEGORY_ENUM = ["trade-policy", "platforms", "supply-chain", "sourcing", "logistics"];
+    const GAIN_ENUM = INFORMATION_GAIN_VALUES;
+    const CATEGORY_ENUM = CATEGORY_VALUES;
     const gainValue = String(gain ?? "").replace(/^information_gain:\s*/, "").replace(/"/g, "").trim();
     const catValue = String(fmLine("category") ?? "").replace(/"/g, "").trim();
     add(
