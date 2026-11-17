@@ -3362,7 +3362,7 @@
       "unit": "one application",
       "title": "Fdi screening",
       "query": "fdi screening",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"fdi screening\" (gsc)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3386,7 +3386,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "how-to-set-up-alipay-in-usa",

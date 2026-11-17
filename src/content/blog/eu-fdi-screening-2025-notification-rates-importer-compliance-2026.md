@@ -166,3 +166,5 @@ The 2025 EU FDI screening data removes the guesswork from third-country investor
 For the paperwork and the cost in one place, see [China work permit processing time](/guide/work-permit-processing-time/).
 
 For the paperwork and the cost in one place, see [Eu fdi screening](/guide/eu-fdi-screening/).
+
+For the paperwork and the cost in one place, see [Fdi screening](/guide/fdi-screening/).

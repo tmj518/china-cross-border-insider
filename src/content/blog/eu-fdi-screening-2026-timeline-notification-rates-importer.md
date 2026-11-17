@@ -165,3 +165,5 @@ For the paperwork and the cost in one place, see [China work permit processing t
 For the paperwork and the cost in one place, see [Eu fdi screening](/guide/eu-fdi-screening/).
 
 For the paperwork and the cost in one place, see ["investment screening"](/guide/investment-screening/).
+
+For the paperwork and the cost in one place, see [Fdi screening](/guide/fdi-screening/).

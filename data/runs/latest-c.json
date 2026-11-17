@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-17T06:03:05.228Z",
-  "runId": "44028244510",
+  "at": "2026-11-17T06:14:29.269Z",
+  "runId": "44029651522",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "how-do-employers-find-health-cover-for-staff-based-in-china",
-  "seconds": 22,
+  "article": "fdi-screening",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0016
+    "usd": 0.0011
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "3 candidate(s)"
+      "detail": "2 candidate(s)"
     },
     {
-      "name": "grounding how-do-employers-find-health-cover-for-staff-based-in-china",
+      "name": "grounding fdi-screening",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates how-do-employers-find-health-cover-for-staff-based-in-china",
+      "name": "gates fdi-screening",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build how-do-employers-find-health-cover-for-staff-based-in-china",
+      "name": "build fdi-screening",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "brazil-beef-import-additional-55-percent-tariff-october-2026, china-brazil-beef-55-percent-tariff-trigger-october-2026"
+      "detail": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026, eu-fdi-screening-2026-timeline-notification-rates-importer"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/how-do-employers-find-health-cover-for-staff-based-in-china/"
+      "detail": "/guide/fdi-screening/"
     }
   ],
   "researchLog": [
