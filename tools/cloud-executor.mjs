@@ -256,11 +256,28 @@ function fitTitle(article) {
   const f = frontmatter(article);
   if (!f) return { article, problem: "no frontmatter" };
   const title = String(f.title ?? "").replace(/^"|"$/g, "");
+  /*
+   * A TRUNCATED TITLE MUST STILL BE A SENTENCE.
+   *
+   * 2026-11-17: "China cuts petrol and diesel prices by 645 and 625 yuan a" shipped - the trim cut at 60
+   * characters and then at the last space, leaving the article "a" dangling from "a tonne".
+   */
+  const STOP = new Set(["a", "an", "the", "of", "by", "at", "in", "on", "for", "and", "or", "to", "with", "from", "as", "per"]);
   let trimmed = [...title].slice(0, 60).join("");
   if (trimmed !== title) {
     const cut = trimmed.lastIndexOf(" ");
     if (cut > 30) trimmed = trimmed.slice(0, cut);
-    trimmed = trimmed.replace(/[\s,;:.]+$/, "");
+    for (let guard = 0; guard < 6; guard++) {
+      const words = trimmed.trim().split(/\s+/);
+      const last = (words[words.length - 1] ?? "").toLowerCase().replace(/[^a-z]/g, "");
+      if (words.length > 3 && (STOP.has(last) || last.length <= 1)) {
+        words.pop();
+        trimmed = words.join(" ");
+        continue;
+      }
+      break;
+    }
+    trimmed = trimmed.replace(/[\s,;:.\-]+$/, "");
   }
   const dir = join(ROOT, "src", "content", "blog");
   let clash = null;
