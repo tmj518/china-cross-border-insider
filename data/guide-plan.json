@@ -1,46 +1,8 @@
 {
-  "at": "2026-11-16T07:23:11.565Z",
+  "at": "2026-11-17T07:20:27.851Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "what-does-apec-mean-to-you-and-me",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "What Does APEC Mean to You and Me?",
-      "query": "What Does APEC Mean to You and Me?",
-      "status": "queued",
-      "evidence": "demand matrix: \"What Does APEC Mean to You and Me?\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "What",
-        "Does",
-        "APEC",
-        "Mean"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "fire-at-apartment-building-in-north-china-s-shanxi-leaves-14-dead",
       "topic": "residence",
@@ -81,27 +43,183 @@
       }
     },
     {
-      "slug": "apec-host-china-s-evolving-role-in-regional-economic-cooperation",
+      "slug": "xinhua-commentary-for-apec-the-answer-lies-in-action",
       "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "APEC host China's evolving role in regional economic cooperation",
-      "query": "APEC host China's evolving role in regional economic cooperation",
+      "title": "Xinhua Commentary: For APEC, the answer lies in action",
+      "query": "Xinhua Commentary: For APEC, the answer lies in action",
       "status": "queued",
-      "evidence": "demand matrix: \"APEC host China's evolving role in regional economic cooperation\" (news)",
+      "evidence": "demand matrix: \"Xinhua Commentary: For APEC, the answer lies in action\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
+        "Xinhua",
+        "Commentary:",
+        "APEC,",
+        "answer",
+        "lies"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development",
+      "query": "Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "China-Vietnam",
+        "top-level",
+        "exchanges",
+        "inject"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says to boost China-Papua New Guinea ties to new heights",
+      "query": "Xi says to boost China-Papua New Guinea ties to new heights",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says to boost China-Papua New Guinea ties to new heights\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "boost",
+        "China-Papua",
+        "Guinea",
+        "ties"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-improvement-development-of-china-canada-relations-right-choice",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says improvement, development of China-Canada relations right choice",
+      "query": "Xi says improvement, development of China-Canada relations right choice",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says improvement, development of China-Canada relations right choice\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "improvement,",
+        "development",
+        "China-Canada",
+        "relations"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific",
+      "query": "China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
         "APEC",
-        "host",
-        "China's",
-        "evolving",
-        "role"
+        "moment:",
+        "Xi's",
+        "vision"
       ],
       "facts": [],
       "mustSay": [],
@@ -120,27 +238,27 @@
       }
     },
     {
-      "slug": "chinese-premier-urges-china-asean-to-stand-united-overcome-distraction",
+      "slug": "xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
       "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "Chinese premier urges China, ASEAN to stand united, overcome distractions",
-      "query": "Chinese premier urges China, ASEAN to stand united, overcome distractions",
+      "title": "Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation",
+      "query": "Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation",
       "status": "queued",
-      "evidence": "demand matrix: \"Chinese premier urges China, ASEAN to stand united, overcome distractions\" (news)",
+      "evidence": "demand matrix: \"Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "Chinese",
-        "premier",
-        "urges",
-        "China,",
-        "ASEAN"
+        "Xinhua",
+        "Commentary:",
+        "APEC",
+        "Shenzhen",
+        "meeting"
       ],
       "facts": [],
       "mustSay": [],
@@ -159,27 +277,26 @@
       }
     },
     {
-      "slug": "from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",
+      "slug": "documentary-shenzhen-beyond-the-skyline",
       "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific",
-      "query": "From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific",
+      "title": "Documentary | Shenzhen: Beyond the Skyline",
+      "query": "Documentary | Shenzhen: Beyond the Skyline",
       "status": "queued",
-      "evidence": "demand matrix: \"From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific\" (news)",
+      "evidence": "demand matrix: \"Documentary | Shenzhen: Beyond the Skyline\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "From",
-        "Beijing",
+        "Documentary",
         "Shenzhen:",
-        "China's",
-        "push"
+        "Beyond",
+        "Skyline"
       ],
       "facts": [],
       "mustSay": [],
@@ -198,27 +315,27 @@
       }
     },
     {
-      "slug": "china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
+      "slug": "production-in-full-swing-across-china",
       "topic": "residence",
       "audience": [
         "relocating"
       ],
       "unit": "one application",
-      "title": "China's retail sales of goods, services up 2.5 pct in first 10 months",
-      "query": "China's retail sales of goods, services up 2.5 pct in first 10 months",
+      "title": "Production in full swing across China",
+      "query": "Production in full swing across China",
       "status": "queued",
-      "evidence": "demand matrix: \"China's retail sales of goods, services up 2.5 pct in first 10 months\" (news)",
+      "evidence": "demand matrix: \"Production in full swing across China\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
         "https://english.www.gov.cn/",
         "https://www.gov.cn/zhengce/zuixin/"
       ],
       "fetchKeywords": [
-        "China's",
-        "retail",
-        "sales",
-        "goods,",
-        "services"
+        "Production",
+        "full",
+        "swing",
+        "across",
+        "China"
       ],
       "facts": [],
       "mustSay": [],
@@ -230,115 +347,6 @@
         "demandImpressions": 0,
         "demandBreadth": 0,
         "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "how-to-set-up-alipay-in-usa",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "How to set up alipay in usa",
-      "query": "how to set up alipay in usa",
-      "status": "queued",
-      "evidence": "demand matrix: \"how to set up alipay in usa\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "alipay"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 0.69,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
-        "demandBreadth": 0,
-        "demandQuery": "how to set up alipay in usa",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "how-do-employers-find-health-cover-for-staff-based-in-china",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "How do employers find health cover for staff based in china?",
-      "query": "how do employers find health cover for staff based in china?",
-      "status": "queued",
-      "evidence": "demand matrix: \"how do employers find health cover for staff based in china?\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "employers",
-        "find",
-        "health",
-        "cover",
-        "staff"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 0.69,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
-        "demandBreadth": 0,
-        "demandQuery": "how do employers find health cover for staff based in china?",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "fdi-screening",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Fdi screening",
-      "query": "fdi screening",
-      "status": "queued",
-      "evidence": "demand matrix: \"fdi screening\" (gsc)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "screening"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 0.66,
-      "priorityWhy": {
-        "basis": "measured",
-        "base": 1.1,
-        "demandImpressions": 2,
-        "demandBreadth": 0,
-        "demandQuery": "\"investment screening\"",
         "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,

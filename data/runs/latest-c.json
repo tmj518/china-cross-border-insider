@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-17T06:14:29.269Z",
-  "runId": "44029651522",
-  "route": "fallback",
+  "at": "2026-11-17T07:20:49.979Z",
+  "runId": "44037894439",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "fdi-screening",
-  "seconds": 19,
+  "article": "xinhua-commentary-for-apec-the-answer-lies-in-action",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0011
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "2 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding fdi-screening",
+      "name": "grounding xinhua-commentary-for-apec-the-answer-lies-in-action",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates fdi-screening",
+      "name": "gates xinhua-commentary-for-apec-the-answer-lies-in-action",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build fdi-screening",
+      "name": "build xinhua-commentary-for-apec-the-answer-lies-in-action",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "eu-fdi-screening-2025-notification-rates-importer-compliance-2026, eu-fdi-screening-2026-timeline-notification-rates-importer"
+      "detail": "eu-fdi-screening-notification-threshold-2026, eu-fdi-screening-notification-threshold-2028"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/fdi-screening/"
+      "detail": "/guide/xinhua-commentary-for-apec-the-answer-lies-in-action/"
     }
   ],
   "researchLog": [

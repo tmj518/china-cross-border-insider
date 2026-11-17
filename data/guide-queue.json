@@ -3943,7 +3943,319 @@
         "pagePosition": null
       },
       "doneAt": "2026-11-16"
+    },
+    {
+      "slug": "xinhua-commentary-for-apec-the-answer-lies-in-action",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xinhua Commentary: For APEC, the answer lies in action",
+      "query": "Xinhua Commentary: For APEC, the answer lies in action",
+      "status": "done",
+      "evidence": "demand matrix: \"Xinhua Commentary: For APEC, the answer lies in action\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Xinhua",
+        "Commentary:",
+        "APEC,",
+        "answer",
+        "lies"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-17"
+    },
+    {
+      "slug": "xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development",
+      "query": "Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "China-Vietnam",
+        "top-level",
+        "exchanges",
+        "inject"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says to boost China-Papua New Guinea ties to new heights",
+      "query": "Xi says to boost China-Papua New Guinea ties to new heights",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says to boost China-Papua New Guinea ties to new heights\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "boost",
+        "China-Papua",
+        "Guinea",
+        "ties"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-improvement-development-of-china-canada-relations-right-choice",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says improvement, development of China-Canada relations right choice",
+      "query": "Xi says improvement, development of China-Canada relations right choice",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says improvement, development of China-Canada relations right choice\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "improvement,",
+        "development",
+        "China-Canada",
+        "relations"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific",
+      "query": "China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "APEC",
+        "moment:",
+        "Xi's",
+        "vision"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation",
+      "query": "Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Xinhua",
+        "Commentary:",
+        "APEC",
+        "Shenzhen",
+        "meeting"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "documentary-shenzhen-beyond-the-skyline",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Documentary | Shenzhen: Beyond the Skyline",
+      "query": "Documentary | Shenzhen: Beyond the Skyline",
+      "status": "queued",
+      "evidence": "demand matrix: \"Documentary | Shenzhen: Beyond the Skyline\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Documentary",
+        "Shenzhen:",
+        "Beyond",
+        "Skyline"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "production-in-full-swing-across-china",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Production in full swing across China",
+      "query": "Production in full swing across China",
+      "status": "queued",
+      "evidence": "demand matrix: \"Production in full swing across China\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Production",
+        "full",
+        "swing",
+        "across",
+        "China"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-16T07:23:10.450Z"
+  "updatedAt": "2026-11-17T07:20:27.307Z"
 }

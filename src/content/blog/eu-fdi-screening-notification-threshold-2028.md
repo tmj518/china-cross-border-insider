@@ -164,3 +164,5 @@ Calendar to application date:
 ## The point
 
 The 88% is the number a buyer wants to hear and the 12% is the number a buyer has to plan for. The EU's screening mechanism clears most deals in a fortnight and holds a minority for a review whose length the Commission does not publish. With the new regulation applying from 17 January 2028 and notifications up 40% in a single year, the deal that fits inside the current window is worth more than the deal that does not. Time the notification, not just the signing.
+
+For the paperwork and the cost in one place, see [Xinhua Commentary: For APEC, the answer lies in action](/guide/xinhua-commentary-for-apec-the-answer-lies-in-action/).
