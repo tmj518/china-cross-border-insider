@@ -78,4 +78,4 @@ We read the Xinhua announcement dated 15 November 2026 and searched it for the c
 
 Nothing in this document changes a per-unit cost. The next number that belongs in a landed-cost sheet will arrive through a customs or ministry notice, and when it does it will carry a rate and an effective date, and it can be priced.
 
-Related reading: [bonded logistics growth supply chain](/blog/bonded-logistics-growth-supply-chain/) and [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/).
+Related reading: bonded logistics growth supply chain and [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/).
