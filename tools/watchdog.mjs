@@ -131,7 +131,7 @@ if (process.env.CF_API_TOKEN && process.env.CF_ACCOUNT_ID) {
     const p0 = (j.projects ?? []).find((x) => x.name === (process.env.CF_PAGES_PROJECT ?? "china-cross-border-insider")) ?? j.projects?.[0];
     if (!p0) record("warn", "deploy", "no Pages project returned");
     else if (p0.servesSite === false) record("critical", "deploy", `${p0.name} does not serve landedmath.com (${(p0.domains ?? []).join(",") || "no domains"})`);
-    else if (String(p0.stage) === "deploy" && String(p0.status) === "success") record("ok", "deploy", `${p0.name} ${p0.commit ?? "?"} deployed on ${(p0.domains ?? [])[0] ?? "?"}`);
+    else if (String(p0.stage) === "deploy" && (String(p0.status) === "success" || String(p0.status) === "active")) record("ok", "deploy", `${p0.name} ${p0.commit ?? "?"} deployed on ${(p0.domains ?? [])[0] ?? "?"}`);
     else record("critical", "deploy", `${p0.name} ${p0.commit ?? "?"} ${p0.stage}/${p0.status}`);
     const w = (j.workers ?? []).find((x) => /cron/i.test(x.name));
     if (w) record(w.schedules?.length ? "ok" : "critical", "clock", `${w.name}: ${(w.schedules ?? []).join(", ") || "no schedule"}`);
