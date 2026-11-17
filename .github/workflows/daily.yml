@@ -545,6 +545,7 @@ jobs:
             echo "committed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          git add -A
           git commit -m "daily: $(date -u +%F) — $(node -e "try{console.log(require('./data/tmp/orchestrator-report.json').verdict)}catch{console.log('run')}")"
           # Retry the push. Two writers push to this branch - a person and the bot - and a rejected push used to
           # end the step, which threw away the run's report for the second time in one night.
