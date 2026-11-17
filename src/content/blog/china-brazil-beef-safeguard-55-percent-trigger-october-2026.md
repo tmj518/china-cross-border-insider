@@ -173,3 +173,5 @@ Origin-switch headroom on the 100,000 USD consignment:
 ## The point
 
 The trigger fired on 29 September and the surcharge started on 1 October, so there is no decision left about whether Brazilian beef pays the 55% for an October arrival — it does. The decision is what to do with the next order. Price the surcharge on customs value, put that figure against a quote from another origin, and treat the rule as fixed by the notice.
+
+For the paperwork and the cost in one place, see [From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific](/guide/from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi/).

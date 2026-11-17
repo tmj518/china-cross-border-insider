@@ -3831,7 +3831,7 @@
       "unit": "one application",
       "title": "From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific",
       "query": "From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3859,7 +3859,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months",
