@@ -30,7 +30,7 @@
  * its blind spots; if only one key is present the run proceeds and says the review was not
  * independent, because a silent downgrade is worse than a reported one.
  */
-import { SITE_RULES, CHARTER, REVIEW_CHECKS } from "./site-rules.mjs";
+import { SITE_RULES, CHARTER, REVIEW_CHECKS, INFORMATION_GAIN_VALUES, CATEGORY_VALUES } from "./site-rules.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
