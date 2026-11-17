@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-16T23:23:29.552Z",
-  "runId": "43978460840",
+  "at": "2026-11-17T01:23:03.674Z",
+  "runId": "43994833506",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "apec-host-china-s-evolving-role-in-regional-economic-cooperation",
-  "seconds": 23,
+  "article": "chinese-premier-urges-china-asean-to-stand-united-overcome-distraction",
+  "seconds": 20,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.00040000000000000105
+    "usd": 0.0002999999999999999
   },
   "providers": [
     "volces"
@@ -23,20 +23,20 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "7 candidate(s)"
     },
     {
-      "name": "grounding apec-host-china-s-evolving-role-in-regional-economic-cooperation",
+      "name": "grounding chinese-premier-urges-china-asean-to-stand-united-overcome-distraction",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates apec-host-china-s-evolving-role-in-regional-economic-cooperation",
+      "name": "gates chinese-premier-urges-china-asean-to-stand-united-overcome-distraction",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build apec-host-china-s-evolving-role-in-regional-economic-cooperation",
+      "name": "build chinese-premier-urges-china-asean-to-stand-united-overcome-distraction",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
@@ -48,7 +48,7 @@
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/apec-host-china-s-evolving-role-in-regional-economic-cooperation/"
+      "detail": "/guide/chinese-premier-urges-china-asean-to-stand-united-overcome-distraction/"
     }
   ],
   "researchLog": [

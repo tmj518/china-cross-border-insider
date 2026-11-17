@@ -231,3 +231,5 @@ For the paperwork and the cost in one place, see [COP31 participants say China i
 For the paperwork and the cost in one place, see [China willing to further boost political mutual trust with Thailand, says Chinese premier](/guide/china-willing-to-further-boost-political-mutual-trust-with-thailand-sa/).
 
 For the paperwork and the cost in one place, see [APEC host China's evolving role in regional economic cooperation](/guide/apec-host-china-s-evolving-role-in-regional-economic-cooperation/).
+
+For the paperwork and the cost in one place, see [Chinese premier urges China, ASEAN to stand united, overcome distractions](/guide/chinese-premier-urges-china-asean-to-stand-united-overcome-distraction/).

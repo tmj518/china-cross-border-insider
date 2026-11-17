@@ -3791,7 +3791,7 @@
       "unit": "one application",
       "title": "Chinese premier urges China, ASEAN to stand united, overcome distractions",
       "query": "Chinese premier urges China, ASEAN to stand united, overcome distractions",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Chinese premier urges China, ASEAN to stand united, overcome distractions\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3819,7 +3819,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-17"
     },
     {
       "slug": "from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi",

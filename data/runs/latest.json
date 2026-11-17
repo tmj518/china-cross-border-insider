@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-16T23:21:16.121Z",
+  "at": "2026-11-17T01:21:07.072Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,7 +13,7 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "53 previous run(s), last 2026-11-16T01:21:09.282Z (DANGLING-LINK)"
+      "detail": "54 previous run(s), last 2026-11-16T23:21:16.121Z (DANGLING-LINK)"
     },
     {
       "name": "weekly ceiling",
@@ -33,12 +33,12 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-fuel-price-cut-november-2026-diesel-petrol-per-tonne, 2 verified figure(s)"
+      "detail": "proposed china-apec-2026-shenzhen-robot-6s-store-foreign-buyers, 8 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "2 sourced figure(s)"
+      "detail": "8 sourced figure(s)"
     },
     {
       "name": "inbound precheck",
@@ -58,11 +58,11 @@
   "article": null,
   "commit": null,
   "usage": {
-    "calls": 7,
+    "calls": 4,
     "failed": 0,
-    "usd": 0.0161,
-    "promptTokens": 129878,
-    "completionTokens": 6364
+    "usd": 0.0086,
+    "promptTokens": 66143,
+    "completionTokens": 4574
   },
   "route": "script",
   "categoryActivity": {
@@ -74,46 +74,46 @@
   },
   "uncoveredSections": [],
   "researchLog": [
+    "  ok    moe-en-article              20270B  article archived",
+    "  ok    moe-en-article              19107B  article archived",
+    "  ok    moe-en-article              22250B  article archived",
+    "  ok    trade-council-article        6618B  article archived",
+    "  ok    trade-council-article        6331B  article archived",
+    "  ok    trade-council-article        6224B  article archived",
+    "  ok    machinery-chamber-article    44804B  article archived",
+    "  ok    machinery-chamber-article   103901B  article archived",
+    "  ok    machinery-chamber-article    53443B  article archived",
+    "  ok    peoples-daily-en-article    20551B  article archived",
+    "  ok    peoples-daily-en-article    20746B  article archived",
+    "  ok    peoples-daily-en-article    17400B  article archived",
+    "  fresh     : 1 article(s) dated today, newest 2026-11-17",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 440 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1382 characters but no document structure, trying the next one",
-    "  stream      : SSE, 447 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 1405 characters but no document structure, trying the next one",
-    "  stream      : SSE, 459 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 1456 characters but no document structure, trying the next one",
-    "  spent   : ~0.0069  (ceiling 0.40)",
+    "  stream      : SSE, 99 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 365 characters but no document structure, trying the next one",
+    "  stream      : SSE, 141 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 486 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1281 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4565 characters but no document structure, trying the next one",
+    "  spent   : ~0.0064  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug already published: china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne - retrying with another subject",
-    "  slug    : china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
-    "  keyword : China fuel price cut November 2026 diesel petrol per tonne",
-    "  duplicate check: score 99 against china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne",
-    "      the slug china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne is already in src/content/blog",
-    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
-    "  stream      : SSE, 452 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 1430 characters but no document structure, trying the next one",
-    "  stream      : SSE, 414 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 1253 characters but no document structure, trying the next one",
-    "  stream      : SSE, 451 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 1446 characters but no document structure, trying the next one",
-    "  spent   : ~0.0138  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : china-fuel-price-cut-november-2026-diesel-petrol-per-tonne",
-    "  keyword : China fuel price cut November 2026 diesel petrol per tonne",
-    "  duplicate check: score 0",
-    "  slug    : china-fuel-price-cut-november-2026-diesel-petrol-per-tonne",
-    "  keyword : China fuel price cut November 2026 diesel petrol per tonne",
-    "  category: logistics",
-    "  figures : 2",
+    "  slug    : china-apec-2026-shenzhen-robot-6s-store-foreign-buyers",
+    "  keyword : Shenzhen robot 6S store APEC 2026 foreign buyers",
+    "  duplicate check: score 3 against eu-per-item-customs-charge-2026",
+    "      shared figure value(s): 150",
+    "  slug    : china-apec-2026-shenzhen-robot-6s-store-foreign-buyers",
+    "  keyword : Shenzhen robot 6S store APEC 2026 foreign buyers",
+    "  category: sourcing",
+    "  figures : 8",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0138",
+    "  spend this run: ~$0.0064",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 111
+  "seconds": 97
 }
