@@ -526,6 +526,9 @@ jobs:
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+          # The deploy and cron checks need the account-scoped token; without it the watchdog says "not verified".
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
         run: |
           # No commit here: the next step commits everything this job changed, and this one has no git
           # identity configured - which is how the first cloud watchdog run failed.
