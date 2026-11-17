@@ -1,6 +1,6 @@
 ---
 route: "script"
-title: "China cuts petrol and diesel prices by 645 and 625 yuan a"
+title: "China cuts petrol and diesel prices by 645 and 625 yuan a tonne"
 subtitle: "The NDRC cut ex-refinery gasoline by 645 yuan and diesel by 625 yuan per tonne at 24:00 on 12 November 2026. Here is how to reprice inland trucking per tonne."
 description: "China's NDRC cut gasoline by 645 yuan and diesel by 625 yuan per tonne from 24:00 on 12 November 2026. Importers should recompute inland trucking and factory-gate delivery cost per tonne of cargo."
 publishDate: 2026-11-15
