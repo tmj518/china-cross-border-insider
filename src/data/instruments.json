@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17",
+  "generated": "2026-11-18",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -958,6 +958,82 @@
       ],
       "articleSlugs": [
         "china-mengxiang-riserless-drilling-2004-meters-importer-cost"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "global-navigation-satellite-system-and-location-based-servic",
+      "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+      "figures": [
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "nearly 42 million units",
+          "unit": "Beidou terminal devices in operation (excluding consumer electronics)",
+          "period": "first half of 2026",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+          "retrieved": "2026-11-18"
+        },
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "about 27 percent",
+          "unit": "year-on-year growth in Beidou terminal devices",
+          "period": "first half of 2026 vs first half of 2025",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+          "retrieved": "2026-11-18"
+        },
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "more than 38 million",
+          "unit": "Beidou terminal units deployed across 14 key industrial sectors",
+          "period": "first half of 2026",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+          "retrieved": "2026-11-18"
+        },
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "more than 98 percent",
+          "unit": "share of domestically sold smartphones supporting Beidou",
+          "period": "first half of 2026",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+          "retrieved": "2026-11-18"
+        },
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "10 million",
+          "unit": "passenger vehicles equipped with Beidou terminals put on the Chinese market",
+          "period": "first half of 2026",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+          "retrieved": "2026-11-18"
+        },
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "26 million units",
+          "unit": "electric bicycles with Beidou positioning sold",
+          "period": "first half of 2026",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China, Beidou industry development report",
+          "retrieved": "2026-11-18"
+        },
+        {
+          "articleSlug": "beidou-terminal-devices-china-2026-importer-tracking",
+          "articleNum": 111,
+          "value": "629 billion yuan ($94.37 billion)",
+          "unit": "overall value of satellite-enabled navigation and positioning services in China",
+          "period": "end of 2025",
+          "source": "Global Navigation Satellite System and Location-Based Services Association of China",
+          "retrieved": "2026-11-18"
+        }
+      ],
+      "articleNums": [
+        111
+      ],
+      "articleSlugs": [
+        "beidou-terminal-devices-china-2026-importer-tracking"
       ],
       "modelOutput": false
     },

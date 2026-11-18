@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-18T01:21:07.601Z",
+  "at": "2026-11-18T23:21:13.211Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -89,6 +89,13 @@
       "clicks": 0,
       "ctr": 0,
       "position": 15
+    },
+    {
+      "query": "fisr",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 88
     },
     {
       "query": "home return permit application hong kong",

@@ -90,6 +90,8 @@ The table above uses the diesel cut of 625 yuan per tonne and a consumption rate
 
 **What would change my mind.** A provincial pricing bureau notice that applies a different differential to the standard product cut would change the pump price in that province. A carrier's published fuel surcharge table that does not move with the NDRC diesel price would change the freight-quote arithmetic. A subsequent NDRC adjustment in the next 10-working-day cycle that reverses part or all of this cut would change the forward-looking transport budget.
 
+> Also read: [China's Beidou network now runs 42 million industrial](/blog/beidou-terminal-devices-china-2026-importer-tracking/)
+
 ## For you
 
 - **Importers arranging their own inland transport:** recalculate per-shipment fuel budgets using the 625 yuan per tonne diesel cut, and ask carriers for revised quotes that reflect the lower fuel cost.

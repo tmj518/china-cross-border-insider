@@ -103,6 +103,8 @@ Read the table from the top. Each row's failure mode is the next row's missing i
 
 > Also read: [China cuts gasoline and diesel prices by 645 and 625 yuan](/blog/china-fuel-price-cut-november-12-2026-per-tonne/)
 
+> Also read: [China's Beidou network now runs 42 million industrial](/blog/beidou-terminal-devices-china-2026-importer-tracking/)
+
 ## For you
 
 - **Shippers who have a freight quote and nothing else:** ask the forwarder which declaration route the parcel will travel under, and get it in writing before the parcel is collected. The route is the decision that cannot be revisited.
