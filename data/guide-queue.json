@@ -4193,7 +4193,7 @@
       "unit": "one application",
       "title": "Documentary | Shenzhen: Beyond the Skyline",
       "query": "Documentary | Shenzhen: Beyond the Skyline",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Documentary | Shenzhen: Beyond the Skyline\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4220,7 +4220,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-18"
     },
     {
       "slug": "production-in-full-swing-across-china",

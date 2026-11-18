@@ -105,3 +105,5 @@ No calculation was performed. Every figure in this article is quoted directly fr
 The meeting is a context event, not a rate change. Importers get the scale of the bloc and the host city's trade corridor from the official figures, and nothing more, until a document states a rate.
 
 For the paperwork and the cost in one place, see [Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation](/guide/xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-/).
+
+For the paperwork and the cost in one place, see [Documentary | Shenzhen: Beyond the Skyline](/guide/documentary-shenzhen-beyond-the-skyline/).
