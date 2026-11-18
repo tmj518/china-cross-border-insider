@@ -4261,7 +4261,277 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "xi-meets-putin-in-shenzhen",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi meets Putin in Shenzhen",
+      "query": "Xi meets Putin in Shenzhen",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi meets Putin in Shenzhen\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "meets",
+        "Putin",
+        "Shenzhen"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-meets-rok-president-in-shenzhen",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi meets ROK president in Shenzhen",
+      "query": "Xi meets ROK president in Shenzhen",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi meets ROK president in Shenzhen\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "meets",
+        "president",
+        "Shenzhen"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world",
+      "query": "China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "APEC",
+        "journey",
+        "witnesses",
+        "quarter-century"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-steps-up-efforts-to-recycle-waste-from-new-energy-industries",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China steps up efforts to recycle waste from new energy industries",
+      "query": "China steps up efforts to recycle waste from new energy industries",
+      "status": "done",
+      "evidence": "demand matrix: \"China steps up efforts to recycle waste from new energy industries\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "steps",
+        "efforts",
+        "recycle",
+        "waste"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-18"
+    },
+    {
+      "slug": "opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Opening ceremony of APEC CEO Summit 2026 held in Shenzhen",
+      "query": "Opening ceremony of APEC CEO Summit 2026 held in Shenzhen",
+      "status": "queued",
+      "evidence": "demand matrix: \"Opening ceremony of APEC CEO Summit 2026 held in Shenzhen\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Opening",
+        "ceremony",
+        "APEC",
+        "Summit",
+        "2026"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "apec-striving-together-for-shared-prosperity",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "APEC: Striving Together for Shared Prosperity",
+      "query": "APEC: Striving Together for Shared Prosperity",
+      "status": "queued",
+      "evidence": "demand matrix: \"APEC: Striving Together for Shared Prosperity\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "APEC:",
+        "Striving",
+        "Together",
+        "Shared",
+        "Prosperity"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "building-an-asia-pacific-community-china-s-journey-of-cooperation",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Building an Asia-Pacific community: China's journey of cooperation",
+      "query": "Building an Asia-Pacific community: China's journey of cooperation",
+      "status": "queued",
+      "evidence": "demand matrix: \"Building an Asia-Pacific community: China's journey of cooperation\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Building",
+        "Asia-Pacific",
+        "community:",
+        "China's",
+        "journey"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-17T07:20:27.307Z"
+  "updatedAt": "2026-11-18T07:20:25.265Z"
 }

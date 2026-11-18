@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-17T07:20:50.022Z",
+  "at": "2026-11-18T07:20:44.825Z",
   "streaks": {
-    "c": {
-      "verdict": "PUBLISHED",
-      "count": 3,
-      "at": "2026-11-17T07:20:49.979Z"
-    },
     "fallback": {
       "verdict": "PUBLISHED",
-      "count": 10,
-      "at": "2026-11-17T06:14:29.269Z"
+      "count": 7,
+      "at": "2026-11-18T01:21:27.232Z"
+    },
+    "c": {
+      "verdict": "PUBLISHED",
+      "count": 2,
+      "at": "2026-11-18T07:20:44.764Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-17T03:58:29.182Z"
+      "at": "2026-11-17T23:21:19.233Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-17T07:20:49.979Z",
+    "at": "2026-11-18T07:20:44.764Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "xinhua-commentary-for-apec-the-answer-lies-in-action"
+    "article": "china-steps-up-efforts-to-recycle-waste-from-new-energy-industries"
   },
   "metrics": {
     "files": 1,
@@ -42,8 +42,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 3 runs in a row.",
-    "fallback has ended PUBLISHED 10 runs in a row.",
+    "fallback has ended PUBLISHED 7 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
