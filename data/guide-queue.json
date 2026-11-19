@@ -4310,7 +4310,7 @@
       "unit": "one application",
       "title": "Xi meets ROK president in Shenzhen",
       "query": "Xi meets ROK president in Shenzhen",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi meets ROK president in Shenzhen\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4336,7 +4336,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-19"
     },
     {
       "slug": "china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",

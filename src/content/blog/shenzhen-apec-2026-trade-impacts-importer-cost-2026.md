@@ -109,3 +109,5 @@ For the paperwork and the cost in one place, see [Xinhua Commentary: APEC Shenzh
 For the paperwork and the cost in one place, see [Documentary | Shenzhen: Beyond the Skyline](/guide/documentary-shenzhen-beyond-the-skyline/).
 
 For the paperwork and the cost in one place, see [Xi meets Putin in Shenzhen](/guide/xi-meets-putin-in-shenzhen/).
+
+For the paperwork and the cost in one place, see [Xi meets ROK president in Shenzhen](/guide/xi-meets-rok-president-in-shenzhen/).
