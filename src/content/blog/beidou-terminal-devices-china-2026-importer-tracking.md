@@ -169,3 +169,5 @@ contains no price or cost baseline.
 Beidou is no longer a niche option for tracking Chinese freight. With nearly 42 million industrial terminals in operation and more than 38 million deployed across key sectors, the network is the default infrastructure for cargo visibility in China. For an importer, the decision is not whether to adopt Beidou tracking — it is whether your forwarder and supplier are using the network that is already there. The report's numbers tell you the coverage exists. The next step is to verify it on your own shipments.
 
 Related reading: [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/) and [china 2026 export duty wrought metals](/blog/china-2026-export-duty-wrought-metals/).
+
+For the paperwork and the cost in one place, see [Production in full swing across China](/guide/production-in-full-swing-across-china/).

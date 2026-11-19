@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-18T07:20:44.764Z",
-  "runId": "44258061193",
-  "route": "c",
+  "at": "2026-11-19T01:21:23.546Z",
+  "runId": "44436168595",
+  "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-steps-up-efforts-to-recycle-waste-from-new-energy-industries",
+  "article": "production-in-full-swing-across-china",
   "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0015
+    "usd": 0.0014
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding china-steps-up-efforts-to-recycle-waste-from-new-energy-industries",
+      "name": "grounding production-in-full-swing-across-china",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-steps-up-efforts-to-recycle-waste-from-new-energy-industries",
+      "name": "gates production-in-full-swing-across-china",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-steps-up-efforts-to-recycle-waste-from-new-energy-industries",
+      "name": "build production-in-full-swing-across-china",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-brazil-beef-safeguard-55-percent-tariff-october-2026, china-brazil-beef-safeguard-55-percent-trigger-october-2026"
+      "detail": "beidou-terminal-devices-china-2026-importer-tracking, brazil-beef-import-additional-55-percent-tariff-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-steps-up-efforts-to-recycle-waste-from-new-energy-industries/"
+      "detail": "/guide/production-in-full-swing-across-china/"
     }
   ],
   "researchLog": [

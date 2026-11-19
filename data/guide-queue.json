@@ -4232,7 +4232,7 @@
       "unit": "one application",
       "title": "Production in full swing across China",
       "query": "Production in full swing across China",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Production in full swing across China\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4260,7 +4260,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-19"
     },
     {
       "slug": "xi-meets-putin-in-shenzhen",

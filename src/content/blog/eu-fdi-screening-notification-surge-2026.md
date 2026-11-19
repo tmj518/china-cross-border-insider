@@ -3,7 +3,7 @@ title: "EU FDI screening notifications rose 40% and 12% of deals needed a deeper
 subtitle: "What the 2025 screening report changes about a cross-border timetable"
 description: "EU screening notifications rose 40% in 2025 while formal Commission opinions stayed near 2%, and 88% of cases closed within 15 days."
 publishDate: 2026-10-19
-reviewBy: 2026-11-18
+reviewBy: 2027-05-18
 stakes: directional
 category: "platforms"
 audience: "both"
