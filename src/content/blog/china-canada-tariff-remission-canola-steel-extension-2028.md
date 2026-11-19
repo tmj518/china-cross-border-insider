@@ -109,6 +109,8 @@ The fourth use is the beef figure. The 500 million Canadian dollars projected fo
 
 > Also read: [China's revised human genetic resources rules require NHC](/blog/china-human-genetic-resources-export-approval-2026/)
 
+> Also read: [China commits $20 million to APEC practical cooperation](/blog/china-apec-20-million-usd-practical-cooperation-fund/)
+
 ## For you
 
 - **Canadian importers of Chinese steel and aluminium:** rebuild the duty line in your landed-cost model to run the remission through 2028 and carry the full duty from 2029, so the cliff is visible in the model rather than discovered at renewal.

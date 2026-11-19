@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-18T23:21:13.985Z",
+  "at": "2026-11-19T23:21:24.252Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "57 previous run(s), last 2026-11-17T23:21:19.233Z (PUBLISHED-DEGRADED)"
+      "detail": "58 previous run(s), last 2026-11-18T23:21:13.985Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "4 of 15 net-new this week"
+      "detail": "5 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,7 +33,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed beidou-terminal-devices-china-2026-importer-tracking, 7 verified figure(s)"
+      "detail": "proposed china-apec-20-million-usd-practical-cooperation-fund, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -48,22 +48,37 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/beidou-terminal-devices-china-2026-importer-tracking.md"
+      "detail": "draft at /data/drafts/china-apec-20-million-usd-practical-cooperation-fund.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-apec-20-million-usd-practical-cooperation-fund.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 15 issue(s), 15 with a citation"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "APPROVED: L5 11 issue(s), 11 with a citation"
-    },
-    {
-      "name": "reviewer",
-      "ok": true,
-      "detail": "11 objection(s), advisory only - publishing"
+      "detail": "15 objection(s), advisory only - publishing"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/beidou-terminal-devices-china-2026-importer-tracking.md"
+      "detail": "staged at src/content/blog/china-apec-20-million-usd-practical-cooperation-fund.md"
     },
     {
       "name": "registry",
@@ -83,20 +98,20 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 11 objection(s), advisory - published anyway"
+    "reviewer: 15 objection(s), advisory - published anyway"
   ],
-  "article": "beidou-terminal-devices-china-2026-importer-tracking",
+  "article": "china-apec-20-million-usd-practical-cooperation-fund",
   "commit": null,
   "usage": {
-    "calls": 11,
-    "failed": 4,
-    "usd": 0.0259,
-    "promptTokens": 101682,
-    "completionTokens": 10910
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0252,
+    "promptTokens": 133753,
+    "completionTokens": 12566
   },
   "route": "script",
   "categoryActivity": {
-    "logistics": 0,
+    "logistics": 1,
     "sourcing": 1,
     "trade-policy": 2,
     "supply-chain": 1,
@@ -104,54 +119,54 @@
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    trade-council-article        6618B  article archived",
-    "  ok    trade-council-article        6331B  article archived",
-    "  ok    trade-council-article        6224B  article archived",
+    "  ok    china-daily-article         55843B  article archived",
     "  ok    machinery-chamber-article    44804B  article archived",
-    "  ok    machinery-chamber-article   104936B  article archived",
-    "  ok    machinery-chamber-article    53443B  article archived",
-    "  ok    peoples-daily-en-article    20597B  article archived",
+    "  ok    machinery-chamber-article   104561B  article archived",
+    "  ok    machinery-chamber-article    53461B  article archived",
+    "  ok    peoples-daily-en-article    20603B  article archived",
     "  ok    peoples-daily-en-article    20746B  article archived",
-    "  ok    peoples-daily-en-article    17488B  article archived",
-    "  ok    cgtn-article               133645B  article archived",
-    "  ok    cgtn-article               129378B  article archived",
-    "  ok    cgtn-article               131983B  article archived",
-    "  fresh     : 0 article(s) dated today, newest 2026-11-18",
+    "  ok    peoples-daily-en-article    17517B  article archived",
+    "  ok    cgtn-article               132260B  article archived",
+    "  ok    cgtn-article               133617B  article archived",
+    "  ok    cgtn-article               133403B  article archived",
+    "  ok    cctv-en-article             32529B  article archived",
+    "  ok    cctv-en-article             31894B  article archived",
+    "  ok    cctv-en-article             47022B  article archived",
+    "  fresh     : 1 article(s) dated today, newest 2026-11-20",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 1115 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3744 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1162 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4562 characters but no document structure, trying the next one",
-    "  provider   : volces timed out - parked for the rest of this run",
-    "  stream      : SSE, 1207 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4978 characters but no document structure, trying the next one",
-    "  spent   : ~0.0127  (ceiling 0.40)",
-    "  model   : deepseek/deepseek-chat",
+    "  stream      : SSE, 1078 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3864 characters but no document structure, trying the next one",
+    "  stream      : SSE, 148 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 552 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1092 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3784 characters but no document structure, trying the next one",
+    "  spent   : ~0.0102  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : beidou-terminal-devices-china-2026-importer-tracking",
-    "  keyword : Beidou terminal devices China 2026 importer tracking",
+    "  slug    : china-apec-20-million-usd-practical-cooperation-fund",
+    "  keyword : China APEC $20 million practical cooperation 2026",
     "  duplicate check: score 0",
-    "  slug    : beidou-terminal-devices-china-2026-importer-tracking",
-    "  keyword : Beidou terminal devices China 2026 importer tracking",
-    "  category: logistics",
+    "  slug    : china-apec-20-million-usd-practical-cooperation-fund",
+    "  keyword : China APEC $20 million practical cooperation 2026",
+    "  category: trade-policy",
     "  figures : 7",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0127",
+    "  spend this run: ~$0.0102",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
   "reviewAdvisory": [
-    "The 9 million unit increase is derived from an assumed H1 2025 baseline that the figures do not supply; only the 27 percent growth rate is given, so the absolute delta is invented arithmetic.",
-    "The report contains no price, cost or rate figure, so the claim that tracking is now cheaper or bundled is an inference presented as fact with no sourced baseline.",
-    "The figures describe terminal counts by sector, not which forwarders, ports or platforms use Beidou, so 'almost certainly' and 'comes from a Beidou terminal' are unsupported.",
-    "No figure in the directive compares Beidou with GPS cost or coverage, so the claim that GPS adds cost for no benefit is unsupported.",
-    "The 9 million figure is not in the supplied figure records and cannot be derived without an H1 2025 baseline the directive does not contain.",
-    "The body states 'The numbers say yes' and 'it is the baseline' as settled fact, while the confidence section admits the default claim is only inferred, so the two sections contradict each other."
+    "The directive's figures contain no Brazilian beef tariff, no 55 percent rate and no 1 October 2026 date, so this named measure is asserted without any supplied evidence.",
+    "This attributes an intention to China that no supplied figure carries; the pledge is a financial commitment, not evidence of intent.",
+    "The 'historically covered' claim about APEC work programs is not in any supplied figure or document and is presented as background fact.",
+    "The body cites the CCCME listing and China Daily article as separate sources and the sources list names CGTN and China Daily, so the 'single document' confidence statement contradicts the body.",
+    "Site Rule 1 requires an identifiable primary document; 'Xinhua article on APEC meeting' names no headline, date or notice number, and the same vague label is used for every figure record.",
+    "The five-part record requires a period; 'announced at APEC 2026, ongoing' states neither a measurement window nor a disbursement period."
   ],
-  "seconds": 326
+  "seconds": 320
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-18",
+  "generated": "2026-11-19",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -3037,6 +3037,55 @@
       ],
       "articleSlugs": [
         "section-301-exclusions-expire-november-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "xinhua-article-on-apec-meeting",
+      "source": "Xinhua article on APEC meeting",
+      "figures": [
+        {
+          "articleSlug": "china-apec-20-million-usd-practical-cooperation-fund",
+          "articleNum": 113,
+          "value": "20 million",
+          "unit": "U.S. dollars",
+          "period": "announced at APEC 2026, ongoing",
+          "source": "Xinhua article on APEC meeting",
+          "retrieved": "2026-11-19"
+        },
+        {
+          "articleSlug": "china-apec-20-million-usd-practical-cooperation-fund",
+          "articleNum": 113,
+          "value": "21",
+          "unit": "member economies",
+          "period": "as of 2026",
+          "source": "Xinhua article on APEC meeting",
+          "retrieved": "2026-11-19"
+        },
+        {
+          "articleSlug": "china-apec-20-million-usd-practical-cooperation-fund",
+          "articleNum": 113,
+          "value": "33rd",
+          "unit": "APEC Economic Leaders' Meeting",
+          "period": "November 18-19, 2026",
+          "source": "Xinhua article on APEC meeting",
+          "retrieved": "2026-11-19"
+        },
+        {
+          "articleSlug": "china-apec-20-million-usd-practical-cooperation-fund",
+          "articleNum": 113,
+          "value": "2027",
+          "unit": "year",
+          "period": "next APEC host year",
+          "source": "Xinhua article on APEC meeting",
+          "retrieved": "2026-11-19"
+        }
+      ],
+      "articleNums": [
+        113
+      ],
+      "articleSlugs": [
+        "china-apec-20-million-usd-practical-cooperation-fund"
       ],
       "modelOutput": false
     },

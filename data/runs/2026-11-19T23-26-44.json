@@ -1,0 +1,172 @@
+{
+  "at": "2026-11-19T23:21:24.252Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "58 previous run(s), last 2026-11-18T23:21:13.985Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "5 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-apec-20-million-usd-practical-cooperation-fund, 7 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "7 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-apec-20-million-usd-practical-cooperation-fund.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-apec-20-million-usd-practical-cooperation-fund.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": true,
+      "detail": "APPROVED: L5 15 issue(s), 15 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "15 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-apec-20-million-usd-practical-cooperation-fund.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 15 objection(s), advisory - published anyway"
+  ],
+  "article": "china-apec-20-million-usd-practical-cooperation-fund",
+  "commit": null,
+  "usage": {
+    "calls": 10,
+    "failed": 2,
+    "usd": 0.0252,
+    "promptTokens": 133753,
+    "completionTokens": 12566
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 1,
+    "sourcing": 1,
+    "trade-policy": 2,
+    "supply-chain": 1,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    china-daily-article         55843B  article archived",
+    "  ok    machinery-chamber-article    44804B  article archived",
+    "  ok    machinery-chamber-article   104561B  article archived",
+    "  ok    machinery-chamber-article    53461B  article archived",
+    "  ok    peoples-daily-en-article    20603B  article archived",
+    "  ok    peoples-daily-en-article    20746B  article archived",
+    "  ok    peoples-daily-en-article    17517B  article archived",
+    "  ok    cgtn-article               132260B  article archived",
+    "  ok    cgtn-article               133617B  article archived",
+    "  ok    cgtn-article               133403B  article archived",
+    "  ok    cctv-en-article             32529B  article archived",
+    "  ok    cctv-en-article             31894B  article archived",
+    "  ok    cctv-en-article             47022B  article archived",
+    "  fresh     : 1 article(s) dated today, newest 2026-11-20",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 1078 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3864 characters but no document structure, trying the next one",
+    "  stream      : SSE, 148 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 552 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1092 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3784 characters but no document structure, trying the next one",
+    "  spent   : ~0.0102  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-apec-20-million-usd-practical-cooperation-fund",
+    "  keyword : China APEC $20 million practical cooperation 2026",
+    "  duplicate check: score 0",
+    "  slug    : china-apec-20-million-usd-practical-cooperation-fund",
+    "  keyword : China APEC $20 million practical cooperation 2026",
+    "  category: trade-policy",
+    "  figures : 7",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0102",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The directive's figures contain no Brazilian beef tariff, no 55 percent rate and no 1 October 2026 date, so this named measure is asserted without any supplied evidence.",
+    "This attributes an intention to China that no supplied figure carries; the pledge is a financial commitment, not evidence of intent.",
+    "The 'historically covered' claim about APEC work programs is not in any supplied figure or document and is presented as background fact.",
+    "The body cites the CCCME listing and China Daily article as separate sources and the sources list names CGTN and China Daily, so the 'single document' confidence statement contradicts the body.",
+    "Site Rule 1 requires an identifiable primary document; 'Xinhua article on APEC meeting' names no headline, date or notice number, and the same vague label is used for every figure record.",
+    "The five-part record requires a period; 'announced at APEC 2026, ongoing' states neither a measurement window nor a disbursement period."
+  ],
+  "seconds": 320
+}
