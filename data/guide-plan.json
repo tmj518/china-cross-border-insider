@@ -1,47 +1,8 @@
 {
-  "at": "2026-11-18T07:20:25.739Z",
+  "at": "2026-11-19T07:20:33.865Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-steps-up-efforts-to-recycle-waste-from-new-energy-industries",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China steps up efforts to recycle waste from new energy industries",
-      "query": "China steps up efforts to recycle waste from new energy industries",
-      "status": "queued",
-      "evidence": "demand matrix: \"China steps up efforts to recycle waste from new energy industries\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "steps",
-        "efforts",
-        "recycle",
-        "waste"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "fire-at-apartment-building-in-north-china-s-shanxi-leaves-14-dead",
       "topic": "residence",
@@ -64,45 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "production-in-full-swing-across-china",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Production in full swing across China",
-      "query": "Production in full swing across China",
-      "status": "queued",
-      "evidence": "demand matrix: \"Production in full swing across China\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Production",
-        "full",
-        "swing",
-        "across",
-        "China"
       ],
       "facts": [],
       "mustSay": [],
@@ -351,6 +273,45 @@
       }
     },
     {
+      "slug": "china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
+      "query": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
+      "status": "queued",
+      "evidence": "demand matrix: \"China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "advocate,",
+        "promoter,",
+        "forerunner",
+        "Asia-Pacific"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
       "slug": "correct",
       "topic": "residence",
       "audience": [
@@ -379,6 +340,41 @@
         "demandImpressions": 1,
         "demandBreadth": 0,
         "demandQuery": "correct?",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "fisr",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Fisr",
+      "query": "fisr",
+      "status": "queued",
+      "evidence": "demand matrix: \"fisr\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "fisr"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "fisr",
         "intent": 0.6,
         "gap": 1,
         "pageImpressions": 0,

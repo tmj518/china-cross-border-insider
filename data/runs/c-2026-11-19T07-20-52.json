@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-19T07:20:52.834Z",
+  "runId": "44478806665",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "xi-meets-putin-in-shenzhen",
+  "seconds": 19,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0014
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding xi-meets-putin-in-shenzhen",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates xi-meets-putin-in-shenzhen",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build xi-meets-putin-in-shenzhen",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "shenzhen-apec-2026-trade-impacts-importer-cost-2026, shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/xi-meets-putin-in-shenzhen/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

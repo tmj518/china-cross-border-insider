@@ -107,3 +107,5 @@ The meeting is a context event, not a rate change. Importers get the scale of th
 For the paperwork and the cost in one place, see [Xinhua Commentary: APEC Shenzhen meeting to inject fresh momentum into Asia-Pacific cooperation](/guide/xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-/).
 
 For the paperwork and the cost in one place, see [Documentary | Shenzhen: Beyond the Skyline](/guide/documentary-shenzhen-beyond-the-skyline/).
+
+For the paperwork and the cost in one place, see [Xi meets Putin in Shenzhen](/guide/xi-meets-putin-in-shenzhen/).

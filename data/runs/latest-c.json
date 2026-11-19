@@ -1,9 +1,9 @@
 {
-  "at": "2026-11-19T01:21:23.546Z",
-  "runId": "44436168595",
-  "route": "fallback",
+  "at": "2026-11-19T07:20:52.834Z",
+  "runId": "44478806665",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "production-in-full-swing-across-china",
+  "article": "xi-meets-putin-in-shenzhen",
   "seconds": 19,
   "usage": {
     "calls": 2,
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding production-in-full-swing-across-china",
+      "name": "grounding xi-meets-putin-in-shenzhen",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates production-in-full-swing-across-china",
+      "name": "gates xi-meets-putin-in-shenzhen",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build production-in-full-swing-across-china",
+      "name": "build xi-meets-putin-in-shenzhen",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "beidou-terminal-devices-china-2026-importer-tracking, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "shenzhen-apec-2026-trade-impacts-importer-cost-2026, shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/production-in-full-swing-across-china/"
+      "detail": "/guide/xi-meets-putin-in-shenzhen/"
     }
   ],
   "researchLog": [

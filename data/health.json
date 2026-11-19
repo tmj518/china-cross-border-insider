@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-18T07:20:44.825Z",
+  "at": "2026-11-19T07:20:52.877Z",
   "streaks": {
     "fallback": {
       "verdict": "PUBLISHED",
       "count": 7,
-      "at": "2026-11-18T01:21:27.232Z"
+      "at": "2026-11-19T01:21:23.546Z"
     },
     "c": {
       "verdict": "PUBLISHED",
       "count": 2,
-      "at": "2026-11-18T07:20:44.764Z"
+      "at": "2026-11-19T07:20:52.834Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-17T23:21:19.233Z"
+      "at": "2026-11-18T23:21:13.985Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-18T07:20:44.764Z",
+    "at": "2026-11-19T07:20:52.834Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-steps-up-efforts-to-recycle-waste-from-new-energy-industries"
+    "article": "xi-meets-putin-in-shenzhen"
   },
   "metrics": {
     "files": 1,

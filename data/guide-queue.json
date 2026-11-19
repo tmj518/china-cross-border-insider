@@ -4272,7 +4272,7 @@
       "unit": "one application",
       "title": "Xi meets Putin in Shenzhen",
       "query": "Xi meets Putin in Shenzhen",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi meets Putin in Shenzhen\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4298,7 +4298,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-19"
     },
     {
       "slug": "xi-meets-rok-president-in-shenzhen",
@@ -4532,7 +4533,81 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "fisr",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Fisr",
+      "query": "fisr",
+      "status": "queued",
+      "evidence": "demand matrix: \"fisr\" (gsc)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "fisr"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 0.42,
+      "priorityWhy": {
+        "basis": "measured",
+        "base": 0.69,
+        "demandImpressions": 1,
+        "demandBreadth": 0,
+        "demandQuery": "fisr",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
+      "query": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
+      "status": "queued",
+      "evidence": "demand matrix: \"China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "advocate,",
+        "promoter,",
+        "forerunner",
+        "Asia-Pacific"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-18T07:20:25.265Z"
+  "updatedAt": "2026-11-19T07:20:33.282Z"
 }
