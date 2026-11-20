@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-19T07:20:33.865Z",
+  "at": "2026-11-20T07:20:30.177Z",
   "days": 90,
   "gsc": true,
   "plan": [
@@ -25,119 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "xi-meets-putin-in-shenzhen",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Xi meets Putin in Shenzhen",
-      "query": "Xi meets Putin in Shenzhen",
-      "status": "queued",
-      "evidence": "demand matrix: \"Xi meets Putin in Shenzhen\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "meets",
-        "Putin",
-        "Shenzhen"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "xi-meets-rok-president-in-shenzhen",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Xi meets ROK president in Shenzhen",
-      "query": "Xi meets ROK president in Shenzhen",
-      "status": "queued",
-      "evidence": "demand matrix: \"Xi meets ROK president in Shenzhen\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "meets",
-        "president",
-        "Shenzhen"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world",
-      "query": "China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world",
-      "status": "queued",
-      "evidence": "demand matrix: \"China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China's",
-        "APEC",
-        "journey",
-        "witnesses",
-        "quarter-century"
       ],
       "facts": [],
       "mustSay": [],
@@ -294,6 +181,123 @@
         "promoter,",
         "forerunner",
         "Asia-Pacific"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-africa-health-ties-bolster-local-capabilities",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China-Africa health ties bolster local capabilities",
+      "query": "China-Africa health ties bolster local capabilities",
+      "status": "queued",
+      "evidence": "demand matrix: \"China-Africa health ties bolster local capabilities\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China-Africa",
+        "health",
+        "ties",
+        "bolster",
+        "local"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-prabowo-announce-launch-of-china-indonesia-comprehensive-economic-p",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations",
+      "query": "Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Prabowo",
+        "announce",
+        "launch",
+        "China-Indonesia",
+        "comprehensive"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-china-singapore-should-strengthen-strategic-communication-enha",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says China, Singapore should strengthen strategic communication, enhance coordination",
+      "query": "Xi says China, Singapore should strengthen strategic communication, enhance coordination",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says China, Singapore should strengthen strategic communication, enhance coordination\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "China,",
+        "Singapore",
+        "should",
+        "strengthen"
       ],
       "facts": [],
       "mustSay": [],

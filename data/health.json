@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-19T07:20:52.877Z",
+  "at": "2026-11-20T07:20:47.441Z",
   "streaks": {
     "fallback": {
       "verdict": "PUBLISHED",
-      "count": 7,
-      "at": "2026-11-19T01:21:23.546Z"
+      "count": 6,
+      "at": "2026-11-20T01:21:36.260Z"
     },
     "c": {
       "verdict": "PUBLISHED",
-      "count": 2,
-      "at": "2026-11-19T07:20:52.834Z"
+      "count": 3,
+      "at": "2026-11-20T07:20:47.388Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-18T23:21:13.985Z"
+      "at": "2026-11-19T23:21:24.252Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-19T07:20:52.834Z",
+    "at": "2026-11-20T07:20:47.388Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "xi-meets-putin-in-shenzhen"
+    "article": "opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen"
   },
   "metrics": {
     "files": 1,
@@ -42,7 +42,8 @@
     ]
   },
   "warnings": [
-    "fallback has ended PUBLISHED 7 runs in a row.",
+    "fallback has ended PUBLISHED 6 runs in a row.",
+    "c has ended PUBLISHED 3 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }

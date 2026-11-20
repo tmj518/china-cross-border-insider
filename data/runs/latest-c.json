@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-20T01:21:36.260Z",
-  "runId": "44652906343",
-  "route": "fallback",
+  "at": "2026-11-20T07:20:47.388Z",
+  "runId": "44694202820",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",
-  "seconds": 25,
+  "article": "opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen",
+  "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0012
+    "usd": 0.0011
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",
+      "name": "grounding opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",
+      "name": "gates opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp",
+      "name": "build opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-apec-20-million-usd-practical-cooperation-fund, china-import-expo-85-billion-deals-2026"
+      "detail": "shenzhen-apec-2026-trade-impacts-importer-cost-2026, shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp/"
+      "detail": "/guide/opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen/"
     }
   ],
   "researchLog": [

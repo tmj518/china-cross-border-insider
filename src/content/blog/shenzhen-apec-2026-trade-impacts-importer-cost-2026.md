@@ -111,3 +111,5 @@ For the paperwork and the cost in one place, see [Documentary | Shenzhen: Beyond
 For the paperwork and the cost in one place, see [Xi meets Putin in Shenzhen](/guide/xi-meets-putin-in-shenzhen/).
 
 For the paperwork and the cost in one place, see [Xi meets ROK president in Shenzhen](/guide/xi-meets-rok-president-in-shenzhen/).
+
+For the paperwork and the cost in one place, see [Opening ceremony of APEC CEO Summit 2026 held in Shenzhen](/guide/opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen/).
