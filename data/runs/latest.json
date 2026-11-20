@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-19T23:21:24.252Z",
+  "at": "2026-11-20T23:21:22.569Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "58 previous run(s), last 2026-11-18T23:21:13.985Z (PUBLISHED-DEGRADED)"
+      "detail": "59 previous run(s), last 2026-11-19T23:21:24.252Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "5 of 15 net-new this week"
+      "detail": "6 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,7 +33,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-apec-20-million-usd-practical-cooperation-fund, 7 verified figure(s)"
+      "detail": "proposed china-asean-fta-3-0-upgrade-protocol-december-2026, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -48,7 +48,7 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-apec-20-million-usd-practical-cooperation-fund.md"
+      "detail": "draft at /data/drafts/china-asean-fta-3-0-upgrade-protocol-december-2026.md"
     },
     {
       "name": "reviewer",
@@ -63,22 +63,22 @@
     {
       "name": "writer (revision 1)",
       "ok": true,
-      "detail": "draft at /data/drafts/china-apec-20-million-usd-practical-cooperation-fund.md"
+      "detail": "draft at /data/drafts/china-asean-fta-3-0-upgrade-protocol-december-2026.md"
     },
     {
       "name": "reviewer (revision 1)",
       "ok": true,
-      "detail": "APPROVED: L5 15 issue(s), 15 with a citation"
+      "detail": "APPROVED: L5 reviewer did not return JSON - the response ran to the 8192-token ceiling, so the object was cut off"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "15 objection(s), advisory only - publishing"
+      "detail": "unavailable, recorded as a lesson, publishing anyway"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/china-apec-20-million-usd-practical-cooperation-fund.md"
+      "detail": "staged at src/content/blog/china-asean-fta-3-0-upgrade-protocol-december-2026.md"
     },
     {
       "name": "registry",
@@ -98,58 +98,58 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 15 objection(s), advisory - published anyway"
+    "reviewer: 1 objection(s), advisory - published anyway"
   ],
-  "article": "china-apec-20-million-usd-practical-cooperation-fund",
+  "article": "china-asean-fta-3-0-upgrade-protocol-december-2026",
   "commit": null,
   "usage": {
     "calls": 10,
     "failed": 2,
-    "usd": 0.0252,
-    "promptTokens": 133753,
-    "completionTokens": 12566
+    "usd": 0.0299,
+    "promptTokens": 106600,
+    "completionTokens": 20435
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 1,
     "sourcing": 1,
-    "trade-policy": 2,
+    "trade-policy": 3,
     "supply-chain": 1,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    china-daily-article         55843B  article archived",
-    "  ok    machinery-chamber-article    44804B  article archived",
-    "  ok    machinery-chamber-article   104561B  article archived",
-    "  ok    machinery-chamber-article    53461B  article archived",
+    "  ok    china-daily-article         56162B  article archived",
     "  ok    peoples-daily-en-article    20603B  article archived",
     "  ok    peoples-daily-en-article    20746B  article archived",
-    "  ok    peoples-daily-en-article    17517B  article archived",
-    "  ok    cgtn-article               132260B  article archived",
-    "  ok    cgtn-article               133617B  article archived",
-    "  ok    cgtn-article               133403B  article archived",
+    "  ok    peoples-daily-en-article    17713B  article archived",
+    "  ok    cgtn-article               128830B  article archived",
+    "  ok    cgtn-article               129612B  article archived",
+    "  ok    cgtn-article               132175B  article archived",
     "  ok    cctv-en-article             32529B  article archived",
     "  ok    cctv-en-article             31894B  article archived",
     "  ok    cctv-en-article             47022B  article archived",
-    "  fresh     : 1 article(s) dated today, newest 2026-11-20",
+    "  ok    mof-article                 22231B  article archived",
+    "  ok    mof-article                 23303B  article archived",
+    "  ok    mof-article                 21756B  article archived",
+    "  fresh     : 1 article(s) dated today, newest 2026-11-21",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 1078 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3864 characters but no document structure, trying the next one",
-    "  stream      : SSE, 148 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 552 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1092 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3784 characters but no document structure, trying the next one",
-    "  spent   : ~0.0102  (ceiling 0.40)",
+    "  stream      : SSE, 1111 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4002 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1241 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4597 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1131 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4163 characters but no document structure, trying the next one",
+    "  spent   : ~0.0076  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : china-apec-20-million-usd-practical-cooperation-fund",
-    "  keyword : China APEC $20 million practical cooperation 2026",
+    "  slug    : china-asean-fta-3-0-upgrade-protocol-december-2026",
+    "  keyword : China ASEAN FTA 3.0 upgrade protocol December 2026 importer cost",
     "  duplicate check: score 0",
-    "  slug    : china-apec-20-million-usd-practical-cooperation-fund",
-    "  keyword : China APEC $20 million practical cooperation 2026",
+    "  slug    : china-asean-fta-3-0-upgrade-protocol-december-2026",
+    "  keyword : China ASEAN FTA 3.0 upgrade protocol December 2026 importer cost",
     "  category: trade-policy",
     "  figures : 7",
     "  evidence check:",
@@ -157,16 +157,8 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0102",
+    "  spend this run: ~$0.0076",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "reviewAdvisory": [
-    "The directive's figures contain no Brazilian beef tariff, no 55 percent rate and no 1 October 2026 date, so this named measure is asserted without any supplied evidence.",
-    "This attributes an intention to China that no supplied figure carries; the pledge is a financial commitment, not evidence of intent.",
-    "The 'historically covered' claim about APEC work programs is not in any supplied figure or document and is presented as background fact.",
-    "The body cites the CCCME listing and China Daily article as separate sources and the sources list names CGTN and China Daily, so the 'single document' confidence statement contradicts the body.",
-    "Site Rule 1 requires an identifiable primary document; 'Xinhua article on APEC meeting' names no headline, date or notice number, and the same vague label is used for every figure record.",
-    "The five-part record requires a period; 'announced at APEC 2026, ongoing' states neither a measurement window nor a disbursement period."
-  ],
-  "seconds": 320
+  "seconds": 357
 }

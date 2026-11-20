@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-19T23:21:24.252Z",
+  "lastRun": "2026-11-20T23:21:22.569Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-apec-20-million-usd-practical-cooperation-fund",
-  "runs": 59,
-  "published": 45,
+  "lastArticle": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+  "runs": 60,
+  "published": 46,
   "lastUsage": {
     "calls": 10,
     "failed": 2,
-    "usd": 0.0252,
-    "promptTokens": 133753,
-    "completionTokens": 12566
+    "usd": 0.0299,
+    "promptTokens": 106600,
+    "completionTokens": 20435
   }
 }

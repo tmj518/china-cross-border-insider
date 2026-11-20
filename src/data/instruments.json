@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -2545,6 +2545,55 @@
       "modelOutput": false
     },
     {
+      "id": "china-daily-report",
+      "source": "China Daily report",
+      "figures": [
+        {
+          "articleSlug": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+          "articleNum": 115,
+          "value": "17 consecutive years",
+          "unit": "China as ASEAN's largest trading partner",
+          "period": "as of 2026",
+          "source": "China Daily report",
+          "retrieved": "2026-11-20"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+          "articleNum": 115,
+          "value": "six consecutive years",
+          "unit": "ASEAN as China's largest trading partner",
+          "period": "as of 2026",
+          "source": "China Daily report",
+          "retrieved": "2026-11-20"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+          "articleNum": 115,
+          "value": "about 200",
+          "unit": "senior officials, experts, lawyers and business representatives",
+          "period": "at the eighth China-ASEAN Legal Cooperation Forum, Nov 2026",
+          "source": "China Daily report",
+          "retrieved": "2026-11-20"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+          "articleNum": 115,
+          "value": "13 countries",
+          "unit": "countries represented at the forum",
+          "period": "at the eighth China-ASEAN Legal Cooperation Forum, Nov 2026",
+          "source": "China Daily report",
+          "retrieved": "2026-11-20"
+        }
+      ],
+      "articleNums": [
+        115
+      ],
+      "articleSlugs": [
+        "china-asean-fta-3-0-upgrade-protocol-december-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "counted-from-the-annex-to-announcement-no-5-of",
       "source": "Counted from the annex to Announcement No. 5 of 2026",
       "figures": [
@@ -4481,6 +4530,37 @@
       ],
       "articleSlugs": [
         "china-canada-tariff-remission-canola-steel-extension-2028"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ministry-of-commerce",
+      "source": "Ministry of Commerce",
+      "figures": [
+        {
+          "articleSlug": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+          "articleNum": 115,
+          "value": "$744.41 billion",
+          "unit": "bilateral trade value",
+          "period": "January through July 2026",
+          "source": "Ministry of Commerce",
+          "retrieved": "2026-11-20"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+          "articleNum": 115,
+          "value": "24.7 percent",
+          "unit": "year-on-year trade growth",
+          "period": "January through July 2026",
+          "source": "Ministry of Commerce",
+          "retrieved": "2026-11-20"
+        }
+      ],
+      "articleNums": [
+        115
+      ],
+      "articleSlugs": [
+        "china-asean-fta-3-0-upgrade-protocol-december-2026"
       ],
       "modelOutput": false
     },
