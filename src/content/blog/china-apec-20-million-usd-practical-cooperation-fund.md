@@ -165,3 +165,5 @@ No further calculation is possible or appropriate. The pledge does not change an
 China's USD 20 million pledge to APEC practical cooperation is a directional signal, not a priced event. It shows continued Chinese commitment to the 21-economy bloc at a time when China's trade with other APEC economies is growing 25.4 percent year on year. For importers, the actionable step is to watch for follow-up announcements naming specific cooperation projects. Until those projects are named, the pledge has no calculable effect on the cost of any shipment.
 
 Related reading: [beidou terminal devices china 2026 importer tracking](/blog/beidou-terminal-devices-china-2026-importer-tracking/), [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/), and [china fuel price cut november 12 2026 per tonne](/blog/china-fuel-price-cut-november-12-2026-per-tonne/).
+
+For the paperwork and the cost in one place, see [China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world](/guide/china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp/).
