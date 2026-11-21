@@ -169,3 +169,5 @@ Related reading: [beidou terminal devices china 2026 importer tracking](/blog/be
 For the paperwork and the cost in one place, see [China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world](/guide/china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp/).
 
 For the paperwork and the cost in one place, see [APEC: Striving Together for Shared Prosperity](/guide/apec-striving-together-for-shared-prosperity/).
+
+For the paperwork and the cost in one place, see [Building an Asia-Pacific community: China's journey of cooperation](/guide/building-an-asia-pacific-community-china-s-journey-of-cooperation/).

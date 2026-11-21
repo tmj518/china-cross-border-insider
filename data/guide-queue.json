@@ -4508,7 +4508,7 @@
       "unit": "one application",
       "title": "Building an Asia-Pacific community: China's journey of cooperation",
       "query": "Building an Asia-Pacific community: China's journey of cooperation",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Building an Asia-Pacific community: China's journey of cooperation\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4536,7 +4536,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-21"
     },
     {
       "slug": "fisr",
@@ -4728,7 +4729,85 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xinhua Commentary: Shenzhen \"peace summit\" underscores shared responsibilities of major countries",
+      "query": "Xinhua Commentary: Shenzhen \"peace summit\" underscores shared responsibilities of major countries",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xinhua Commentary: Shenzhen \"peace summit\" underscores shared responsibilities of major countries\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Xinhua",
+        "Commentary:",
+        "Shenzhen",
+        "\"peace",
+        "summit\""
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-china-australia-should-be-mutually-trusted-partners",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says China, Australia should be mutually trusted partners",
+      "query": "Xi says China, Australia should be mutually trusted partners",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says China, Australia should be mutually trusted partners\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "China,",
+        "Australia",
+        "should",
+        "mutually"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-20T07:20:29.201Z"
+  "updatedAt": "2026-11-21T07:20:32.696Z"
 }
