@@ -2,7 +2,7 @@
 title: "Shenzhen APEC 2026: What the Trade Figures Mean for"
 description: "Ahead of the November 18-19 2026 APEC leaders' meeting in Shenzhen, the official figures on APEC trade share and Shenzhen's trade growth, priced for import"
 publishDate: "2026-11-17"
-reviewBy: 2026-11-20
+reviewBy: 2027-05-20
 category: trade-policy
 audience: "both"
 information_gain: cross-source
@@ -113,3 +113,5 @@ For the paperwork and the cost in one place, see [Xi meets Putin in Shenzhen](/g
 For the paperwork and the cost in one place, see [Xi meets ROK president in Shenzhen](/guide/xi-meets-rok-president-in-shenzhen/).
 
 For the paperwork and the cost in one place, see [Opening ceremony of APEC CEO Summit 2026 held in Shenzhen](/guide/opening-ceremony-of-apec-ceo-summit-2026-held-in-shenzhen/).
+
+For the paperwork and the cost in one place, see [APEC: Striving Together for Shared Prosperity](/guide/apec-striving-together-for-shared-prosperity/).

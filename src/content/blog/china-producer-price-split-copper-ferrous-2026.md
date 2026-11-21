@@ -3,7 +3,7 @@ title: "Factory Prices Rose 5.0%, Split 20 Points"
 subtitle: "Producer prices rose 5.0% year on year. Inside, non-ferrous metals and wire are up 20.0% and ferrous metals down 0.4% — a 20.4-point gap."
 description: "China's September 2026 producer price index rose 5.0% year on year, with purchased non-ferrous metals and wire up 20.0% and ferrous metals down 0.4%. Electrolytic copper added ¥2,972.5 a tonne in the ten days to 30 September while hot-rolled coil lost ¥11.8."
 publishDate: 2026-10-18
-reviewBy: 2026-11-20
+reviewBy: 2027-05-20
 stakes: priced
 category: "supply-chain"
 audience: "importer"

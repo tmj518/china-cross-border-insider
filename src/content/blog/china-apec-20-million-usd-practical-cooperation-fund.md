@@ -167,3 +167,5 @@ China's USD 20 million pledge to APEC practical cooperation is a directional sig
 Related reading: [beidou terminal devices china 2026 importer tracking](/blog/beidou-terminal-devices-china-2026-importer-tracking/), [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/), and [china fuel price cut november 12 2026 per tonne](/blog/china-fuel-price-cut-november-12-2026-per-tonne/).
 
 For the paperwork and the cost in one place, see [China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world](/guide/china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp/).
+
+For the paperwork and the cost in one place, see [APEC: Striving Together for Shared Prosperity](/guide/apec-striving-together-for-shared-prosperity/).
