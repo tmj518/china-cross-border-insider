@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-20T23:21:22.569Z",
+  "at": "2026-11-21T23:21:16.470Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "59 previous run(s), last 2026-11-19T23:21:24.252Z (PUBLISHED-DEGRADED)"
+      "detail": "60 previous run(s), last 2026-11-20T23:21:22.569Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "6 of 15 net-new this week"
+      "detail": "7 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,7 +33,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-asean-fta-3-0-upgrade-protocol-december-2026, 7 verified figure(s)"
+      "detail": "proposed china-asean-fta-3-0-december-2026-rules-alignment, 7 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -48,37 +48,22 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-asean-fta-3-0-upgrade-protocol-december-2026.md"
-    },
-    {
-      "name": "reviewer",
-      "ok": false,
-      "detail": "REJECTED: L1 1 gate failure(s): structural gates — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
-    },
-    {
-      "name": "inbound precheck",
-      "ok": true,
-      "detail": "every internal link resolves"
-    },
-    {
-      "name": "writer (revision 1)",
-      "ok": true,
-      "detail": "draft at /data/drafts/china-asean-fta-3-0-upgrade-protocol-december-2026.md"
-    },
-    {
-      "name": "reviewer (revision 1)",
-      "ok": true,
-      "detail": "APPROVED: L5 reviewer did not return JSON - the response ran to the 8192-token ceiling, so the object was cut off"
+      "detail": "draft at /data/drafts/china-asean-fta-3-0-december-2026-rules-alignment.md"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "unavailable, recorded as a lesson, publishing anyway"
+      "detail": "APPROVED: L5 9 issue(s), 9 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "9 objection(s), advisory only - publishing"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/china-asean-fta-3-0-upgrade-protocol-december-2026.md"
+      "detail": "staged at src/content/blog/china-asean-fta-3-0-december-2026-rules-alignment.md"
     },
     {
       "name": "registry",
@@ -98,58 +83,58 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 1 objection(s), advisory - published anyway"
+    "reviewer: 9 objection(s), advisory - published anyway"
   ],
-  "article": "china-asean-fta-3-0-upgrade-protocol-december-2026",
+  "article": "china-asean-fta-3-0-december-2026-rules-alignment",
   "commit": null,
   "usage": {
-    "calls": 10,
-    "failed": 2,
-    "usd": 0.0299,
-    "promptTokens": 106600,
-    "completionTokens": 20435
+    "calls": 11,
+    "failed": 4,
+    "usd": 0.0376,
+    "promptTokens": 114976,
+    "completionTokens": 10163
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 1,
     "sourcing": 1,
-    "trade-policy": 3,
+    "trade-policy": 4,
     "supply-chain": 1,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    china-daily-article         56162B  article archived",
-    "  ok    peoples-daily-en-article    20603B  article archived",
-    "  ok    peoples-daily-en-article    20746B  article archived",
-    "  ok    peoples-daily-en-article    17713B  article archived",
-    "  ok    cgtn-article               128830B  article archived",
-    "  ok    cgtn-article               129612B  article archived",
-    "  ok    cgtn-article               132175B  article archived",
-    "  ok    cctv-en-article             32529B  article archived",
-    "  ok    cctv-en-article             31894B  article archived",
-    "  ok    cctv-en-article             47022B  article archived",
+    "  ok    cgtn-article               131566B  article archived",
+    "  ok    cctv-en-article             39299B  article archived",
+    "  ok    cctv-en-article             30739B  article archived",
+    "  ok    cctv-en-article             30814B  article archived",
+    "  ok    mof-article                 22220B  article archived",
     "  ok    mof-article                 22231B  article archived",
     "  ok    mof-article                 23303B  article archived",
-    "  ok    mof-article                 21756B  article archived",
-    "  fresh     : 1 article(s) dated today, newest 2026-11-21",
+    "  ok    stats-en-article            64152B  article archived",
+    "  ok    stats-en-article             5722B  article archived",
+    "  ok    stats-en-article            38395B  article archived",
+    "  fresh     : 0 article(s) dated today, newest 2026-11-21",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 1111 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4002 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1241 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4597 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1131 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4163 characters but no document structure, trying the next one",
-    "  spent   : ~0.0076  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
+    "  provider   : volces timed out - parked for the rest of this run",
+    "  stream      : SSE, 1204 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4545 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1247 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4675 characters but no document structure, trying the next one",
+    "  provider   : volces is parked after a timeout - going straight to deepseek",
+    "  stream      : SSE, 1240 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4632 characters but no document structure, trying the next one",
+    "  spent   : ~0.0254  (ceiling 0.40)",
+    "  model   : deepseek/deepseek-chat",
     "  feasible: true",
-    "  slug    : china-asean-fta-3-0-upgrade-protocol-december-2026",
-    "  keyword : China ASEAN FTA 3.0 upgrade protocol December 2026 importer cost",
+    "  slug    : china-asean-fta-3-0-december-2026-rules-alignment",
+    "  keyword : China ASEAN FTA 3.0 upgrade protocol December 2026",
     "  duplicate check: score 0",
-    "  slug    : china-asean-fta-3-0-upgrade-protocol-december-2026",
-    "  keyword : China ASEAN FTA 3.0 upgrade protocol December 2026 importer cost",
+    "  slug    : china-asean-fta-3-0-december-2026-rules-alignment",
+    "  keyword : China ASEAN FTA 3.0 upgrade protocol December 2026",
     "  category: trade-policy",
     "  figures : 7",
     "  evidence check:",
@@ -157,8 +142,16 @@
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0076",
+    "  spend this run: ~$0.0254",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 357
+  "reviewAdvisory": [
+    "The draft asserts a 'new format' for certificates of origin that no supplied figure or source establishes, and the article elsewhere admits the report does not state which documents are affected.",
+    "The draft tells readers to file declarations under 'new rules' that the article itself says are unspecified, inventing a procedure the evidence does not contain.",
+    "The draft asserts documentation will work across the region, a specific outcome the cited report does not state and the article's own confidence section calls an inference.",
+    "The draft declares a saving 'real' when no figure or source in the evidence quantifies or establishes it, contradicting the article's own 'directional, not priced' framing.",
+    "The confidence section admits smoother origin and customs procedures is an inference, yet the AI Summary and description state it as a directive fact, so the confidence section contradicts the body.",
+    "The draft invents a specific shipment scenario and asserts its customs outcome ('the shipment stops at customs') without any source, presenting fabricated experience as analysis."
+  ],
+  "seconds": 297
 }

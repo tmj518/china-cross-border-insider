@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-20",
+  "generated": "2026-11-21",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -2077,6 +2077,64 @@
       ],
       "articleSlugs": [
         "shenzhen-apec-2026-trade-impacts-importer-cost-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "china-daily-report-on-the-eighth-china-asean-legal",
+      "source": "China Daily report on the eighth China-ASEAN Legal Cooperation Forum",
+      "figures": [
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "Dec 1",
+          "unit": "effective date of the China-ASEAN Free Trade Area 3.0 Upgrade Protocol",
+          "period": "from December 1, 2026",
+          "source": "China Daily report on the eighth China-ASEAN Legal Cooperation Forum",
+          "retrieved": "2026-11-21"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "17 consecutive years",
+          "unit": "duration China has been ASEAN's largest trading partner",
+          "period": "as of November 2026",
+          "source": "China Daily report on the eighth China-ASEAN Legal Cooperation Forum",
+          "retrieved": "2026-11-21"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "six consecutive years",
+          "unit": "duration ASEAN has been China's largest trading partner",
+          "period": "as of November 2026",
+          "source": "China Daily report on the eighth China-ASEAN Legal Cooperation Forum",
+          "retrieved": "2026-11-21"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "about 200",
+          "unit": "senior officials, experts, lawyers and business representatives attending the forum",
+          "period": "November 2026",
+          "source": "China Daily report on the eighth China-ASEAN Legal Cooperation Forum",
+          "retrieved": "2026-11-21"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "13 countries",
+          "unit": "countries represented at the forum",
+          "period": "November 2026",
+          "source": "China Daily report on the eighth China-ASEAN Legal Cooperation Forum",
+          "retrieved": "2026-11-21"
+        }
+      ],
+      "articleNums": [
+        116
+      ],
+      "articleSlugs": [
+        "china-asean-fta-3-0-december-2026-rules-alignment"
       ],
       "modelOutput": false
     },
@@ -4561,6 +4619,37 @@
       ],
       "articleSlugs": [
         "china-asean-fta-3-0-upgrade-protocol-december-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ministry-of-commerce-cited-by-china-daily",
+      "source": "Ministry of Commerce, cited by China Daily",
+      "figures": [
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "$744.41 billion",
+          "unit": "bilateral China-ASEAN trade value",
+          "period": "January through July 2026",
+          "source": "Ministry of Commerce, cited by China Daily",
+          "retrieved": "2026-11-21"
+        },
+        {
+          "articleSlug": "china-asean-fta-3-0-december-2026-rules-alignment",
+          "articleNum": 116,
+          "value": "24.7 percent",
+          "unit": "year-on-year growth in China-ASEAN bilateral trade",
+          "period": "January through July 2026",
+          "source": "Ministry of Commerce, cited by China Daily",
+          "retrieved": "2026-11-21"
+        }
+      ],
+      "articleNums": [
+        116
+      ],
+      "articleSlugs": [
+        "china-asean-fta-3-0-december-2026-rules-alignment"
       ],
       "modelOutput": false
     },

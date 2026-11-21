@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-20T23:21:22.569Z",
+  "lastRun": "2026-11-21T23:21:16.470Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-asean-fta-3-0-upgrade-protocol-december-2026",
-  "runs": 60,
-  "published": 46,
+  "lastArticle": "china-asean-fta-3-0-december-2026-rules-alignment",
+  "runs": 61,
+  "published": 47,
   "lastUsage": {
-    "calls": 10,
-    "failed": 2,
-    "usd": 0.0299,
-    "promptTokens": 106600,
-    "completionTokens": 20435
+    "calls": 11,
+    "failed": 4,
+    "usd": 0.0376,
+    "promptTokens": 114976,
+    "completionTokens": 10163
   }
 }
