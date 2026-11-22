@@ -4663,7 +4663,7 @@
       "unit": "one application",
       "title": "Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations",
       "query": "Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4691,7 +4691,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-22"
     },
     {
       "slug": "xi-says-china-singapore-should-strengthen-strategic-communication-enha",

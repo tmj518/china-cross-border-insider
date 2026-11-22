@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -3526,6 +3526,47 @@
       "modelOutput": false
     },
     {
+      "id": "national-bureau-of-statistics-of-china",
+      "source": "National Bureau of Statistics of China",
+      "figures": [
+        {
+          "articleSlug": "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+          "articleNum": 0,
+          "value": "17.6 percent",
+          "unit": "year-on-year growth rate of China's high-tech manufacturing output",
+          "period": "October 2026",
+          "source": "National Bureau of Statistics of China",
+          "retrieved": "2026-11-17"
+        },
+        {
+          "articleSlug": "shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer",
+          "articleNum": 0,
+          "value": "31.2 percent",
+          "unit": "year-on-year growth rate of China's total goods import and export value",
+          "period": "as reported November 2026",
+          "source": "National Bureau of Statistics of China",
+          "retrieved": "2026-11-22"
+        },
+        {
+          "articleSlug": "shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer",
+          "articleNum": 0,
+          "value": "17.6 percent",
+          "unit": "year-on-year growth rate of China's high-tech manufacturing value added",
+          "period": "as reported November 2026",
+          "source": "National Bureau of Statistics of China",
+          "retrieved": "2026-11-22"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "shenzhen-apec-2026-trade-impacts-importer-cost-2026",
+        "shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "national-bureau-of-statistics-of-china-prices-of-important",
       "source": "National Bureau of Statistics of China, Prices of important production materials in circulation, late September 2026, published 9 October 2026",
       "figures": [
@@ -4908,6 +4949,37 @@
       "articleSlugs": [
         "eu-cbam-vs-steel-safeguard-duty-per-tonne-2026",
         "eu-steel-safeguard-quota-2026-chinese-hrc-cost"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "shenzhen-customs",
+      "source": "Shenzhen Customs",
+      "figures": [
+        {
+          "articleSlug": "shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer",
+          "articleNum": 0,
+          "value": "4.86 billion yuan",
+          "unit": "total export value of Shenzhen-made robots to APEC member economies",
+          "period": "first three quarters of 2026",
+          "source": "Shenzhen Customs",
+          "retrieved": "2026-11-22"
+        },
+        {
+          "articleSlug": "shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer",
+          "articleNum": 0,
+          "value": "7.5 times",
+          "unit": "year-on-year growth multiple of Shenzhen-made robot exports to APEC member economies",
+          "period": "first three quarters of 2026",
+          "source": "Shenzhen Customs",
+          "retrieved": "2026-11-22"
+        }
+      ],
+      "articleNums": [
+        0
+      ],
+      "articleSlugs": [
+        "shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer"
       ],
       "modelOutput": false
     },

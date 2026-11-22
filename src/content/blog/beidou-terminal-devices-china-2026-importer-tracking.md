@@ -171,3 +171,5 @@ Beidou is no longer a niche option for tracking Chinese freight. With nearly 42 
 Related reading: [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/) and [china 2026 export duty wrought metals](/blog/china-2026-export-duty-wrought-metals/).
 
 For the paperwork and the cost in one place, see [Production in full swing across China](/guide/production-in-full-swing-across-china/).
+
+For the paperwork and the cost in one place, see [Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations](/guide/xi-prabowo-announce-launch-of-china-indonesia-comprehensive-economic-p/).

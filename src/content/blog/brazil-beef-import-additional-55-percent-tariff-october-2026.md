@@ -243,3 +243,5 @@ For the paperwork and the cost in one place, see [Xi says to boost China-Papua N
 For the paperwork and the cost in one place, see [Xi says improvement, development of China-Canada relations right choice](/guide/xi-says-improvement-development-of-china-canada-relations-right-choice/).
 
 For the paperwork and the cost in one place, see [Production in full swing across China](/guide/production-in-full-swing-across-china/).
+
+For the paperwork and the cost in one place, see [Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations](/guide/xi-prabowo-announce-launch-of-china-indonesia-comprehensive-economic-p/).
