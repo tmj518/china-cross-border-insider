@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-21T07:20:33.219Z",
+  "at": "2026-11-22T07:20:34.874Z",
   "days": 90,
   "gsc": true,
   "plan": [
@@ -25,84 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "building-an-asia-pacific-community-china-s-journey-of-cooperation",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Building an Asia-Pacific community: China's journey of cooperation",
-      "query": "Building an Asia-Pacific community: China's journey of cooperation",
-      "status": "queued",
-      "evidence": "demand matrix: \"Building an Asia-Pacific community: China's journey of cooperation\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Building",
-        "Asia-Pacific",
-        "community:",
-        "China's",
-        "journey"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
-      "query": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
-      "status": "queued",
-      "evidence": "demand matrix: \"China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "advocate,",
-        "promoter,",
-        "forerunner",
-        "Asia-Pacific"
       ],
       "facts": [],
       "mustSay": [],
@@ -298,6 +220,84 @@
         "Australia",
         "should",
         "mutually"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador",
+      "query": "Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador",
+      "status": "queued",
+      "evidence": "demand matrix: \"Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Looking",
+        "forward",
+        "chapter",
+        "China-ASEAN",
+        "comprehensive"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China urges U.S. to revoke proposed telecom restrictions: commerce ministry",
+      "query": "China urges U.S. to revoke proposed telecom restrictions: commerce ministry",
+      "status": "queued",
+      "evidence": "demand matrix: \"China urges U.S. to revoke proposed telecom restrictions: commerce ministry\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "urges",
+        "U.S.",
+        "revoke",
+        "proposed"
       ],
       "facts": [],
       "mustSay": [],

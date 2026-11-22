@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-22T01:21:27.692Z",
-  "runId": "44971005232",
-  "route": "fallback",
+  "at": "2026-11-22T07:20:53.093Z",
+  "runId": "44997753911",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+  "article": "china-africa-health-ties-bolster-local-capabilities",
   "seconds": 18,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004
+    "usd": 0.0013
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+      "name": "grounding china-africa-health-ties-bolster-local-capabilities",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+      "name": "gates china-africa-health-ties-bolster-local-capabilities",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+      "name": "build china-africa-health-ties-bolster-local-capabilities",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-apec-20-million-usd-practical-cooperation-fund, xi-s-article-on-jointly-building-asia-pacific-community-with-explainer-2026-11"
+      "detail": "china-zero-tariff-20-african-countries-2026, eu-pet-spunbond-definitive-anti-dumping-duties-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera/"
+      "detail": "/guide/china-africa-health-ties-bolster-local-capabilities/"
     }
   ],
   "researchLog": [

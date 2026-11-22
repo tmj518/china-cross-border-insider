@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-21T07:20:54.447Z",
+  "at": "2026-11-22T07:20:53.135Z",
   "streaks": {
     "fallback": {
       "verdict": "PUBLISHED",
       "count": 5,
-      "at": "2026-11-21T01:21:29.117Z"
+      "at": "2026-11-22T01:21:27.692Z"
     },
     "c": {
       "verdict": "PUBLISHED",
       "count": 4,
-      "at": "2026-11-21T07:20:54.406Z"
+      "at": "2026-11-22T07:20:53.093Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-20T23:21:22.569Z"
+      "at": "2026-11-21T23:21:16.470Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-21T07:20:54.406Z",
+    "at": "2026-11-22T07:20:53.093Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "building-an-asia-pacific-community-china-s-journey-of-cooperation"
+    "article": "china-africa-health-ties-bolster-local-capabilities"
   },
   "metrics": {
     "files": 1,

@@ -150,3 +150,5 @@ print(f"Rate difference: {diff_low:.1%} to {diff_high:.1%} percentage points")
 The EU's definitive anti-dumping duty on Chinese PET Spunbond is a five-year cost increase of 39.8% to 48.1% on the CIF value of every shipment. Importers must price this duty into their landed cost model, check for refunds on provisional duties paid, and compare alternative origins against the new cost structure. The duty is not a temporary disruption — it is the new baseline for sourcing PET Spunbond from China.
 
 For the paperwork and the cost in one place, see [Xi says to boost China-Papua New Guinea ties to new heights](/guide/xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights/).
+
+For the paperwork and the cost in one place, see [China-Africa health ties bolster local capabilities](/guide/china-africa-health-ties-bolster-local-capabilities/).
