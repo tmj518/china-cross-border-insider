@@ -4583,7 +4583,7 @@
       "unit": "one application",
       "title": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
       "query": "China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4611,7 +4611,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-22"
     },
     {
       "slug": "china-africa-health-ties-bolster-local-capabilities",

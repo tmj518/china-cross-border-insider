@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-21T07:20:54.406Z",
-  "runId": "44879760282",
-  "route": "c",
+  "at": "2026-11-22T01:21:27.692Z",
+  "runId": "44971005232",
+  "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "building-an-asia-pacific-community-china-s-journey-of-cooperation",
-  "seconds": 21,
+  "article": "china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
+  "seconds": 18,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding building-an-asia-pacific-community-china-s-journey-of-cooperation",
+      "name": "grounding china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates building-an-asia-pacific-community-china-s-journey-of-cooperation",
+      "name": "gates china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build building-an-asia-pacific-community-china-s-journey-of-cooperation",
+      "name": "build china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "xi-s-article-on-jointly-building-asia-pacific-community-with-explainer-2026-11, china-apec-20-million-usd-practical-cooperation-fund"
+      "detail": "china-apec-20-million-usd-practical-cooperation-fund, xi-s-article-on-jointly-building-asia-pacific-community-with-explainer-2026-11"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/building-an-asia-pacific-community-china-s-journey-of-cooperation/"
+      "detail": "/guide/china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera/"
     }
   ],
   "researchLog": [

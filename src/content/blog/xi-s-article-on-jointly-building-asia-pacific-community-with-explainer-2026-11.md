@@ -81,3 +81,5 @@ Nothing in this document changes a per-unit cost. The next number that belongs i
 Related reading: bonded logistics growth supply chain and [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/).
 
 For the paperwork and the cost in one place, see [Building an Asia-Pacific community: China's journey of cooperation](/guide/building-an-asia-pacific-community-china-s-journey-of-cooperation/).
+
+For the paperwork and the cost in one place, see [China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi](/guide/china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera/).
