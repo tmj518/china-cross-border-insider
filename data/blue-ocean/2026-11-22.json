@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-22T12:21:36.220Z",
+  "at": "2026-11-22T23:21:15.977Z",
   "site": "sc-domain:landedmath.com",
   "windowDays": 7,
   "filter": {
@@ -9,7 +9,25 @@
     "maxPosition": 20,
     "top": 3
   },
-  "available": false,
-  "reason": "GSC_CREDENTIALS_BASE64 is not set",
-  "keywords": []
+  "available": true,
+  "empty": false,
+  "rung": "any impression",
+  "keywords": [
+    {
+      "query": "fisr",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 87.5
+    }
+  ],
+  "topSeen": [
+    {
+      "query": "fisr",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 87.5
+    }
+  ]
 }
