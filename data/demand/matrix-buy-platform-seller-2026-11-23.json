@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:21:41.227Z",
+  "at": "2026-11-23T23:26:49.836Z",
   "date": "2026-11-23",
   "persona": "platform-seller",
   "moment": "buy",
@@ -25,15 +25,6 @@
       ]
     },
     {
-      "query": "how to sell products on amazon from china",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "sell on amazon from china"
-      ]
-    },
-    {
       "query": "buy from china sell on amazon",
       "engines": [
         "google"
@@ -44,6 +35,15 @@
     },
     {
       "query": "import from china and sell on amazon",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "sell on amazon from china"
+      ]
+    },
+    {
+      "query": "products from china to sell on amazon",
       "engines": [
         "google"
       ],
@@ -124,7 +124,7 @@
       ]
     },
     {
-      "query": "dropshipping from china to nigeria",
+      "query": "dropshipping from china reddit",
       "engines": [
         "google"
       ],
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "query": "dropshipping from china reddit",
+      "query": "dropshipping from china to nigeria",
       "engines": [
         "google"
       ],

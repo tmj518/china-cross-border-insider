@@ -126,6 +126,8 @@ The following table frames the directional cost implications across resource typ
 
 **What would change my mind.** A commercial deployment announcement naming specific projects, target resources, or production timelines would convert the directional signal into a priced one. A second sea trial at greater depth would extend the confirmed operating range beyond 2,004.8 meters. A statement from the Ministry of Natural Resources or the vessel operator about intended commercial use — whether for hydrates, minerals, or oil — would clarify which importers face the most direct cost impact. Until such information appears, the cost consequences remain directional rather than priced.
 
+> Also read: [China's EV charging power use jumps 59.4% in October: what](/blog/china-october-2026-electricity-consumption-ev-charging-data-services/)
+
 ## For you
 
 - **Importers of deep-sea minerals:** Track whether this system accelerates China's mineral assessment programs. The 2,004.8-meter depth capability expands the range of seabed deposits that can be drilled and cored, which is the first step toward any future mineral production. Revisit your supply assumptions for cobalt, nickel, and manganese if Chinese deep-sea assessment activity increases.

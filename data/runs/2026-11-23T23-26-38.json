@@ -1,0 +1,157 @@
+{
+  "at": "2026-11-23T23:21:22.337Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "62 previous run(s), last 2026-11-22T23:21:16.185Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "0 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-october-2026-electricity-consumption-ev-charging-data-services, 7 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "7 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-october-2026-electricity-consumption-ev-charging-data-services.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "APPROVED: L5 12 issue(s), 12 with a citation"
+    },
+    {
+      "name": "reviewer",
+      "ok": true,
+      "detail": "12 objection(s), advisory only - publishing"
+    },
+    {
+      "name": "publish",
+      "ok": true,
+      "detail": "staged at src/content/blog/china-october-2026-electricity-consumption-ev-charging-data-services.md"
+    },
+    {
+      "name": "registry",
+      "ok": true,
+      "detail": "rebuilt"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "2 older article(s) now link here"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict PUBLISHED-DEGRADED"
+    }
+  ],
+  "verdict": "PUBLISHED-DEGRADED",
+  "reasons": [
+    "reviewer: 12 objection(s), advisory - published anyway"
+  ],
+  "article": "china-october-2026-electricity-consumption-ev-charging-data-services",
+  "commit": null,
+  "usage": {
+    "calls": 9,
+    "failed": 2,
+    "usd": 0.0222,
+    "promptTokens": 101220,
+    "completionTokens": 10987
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 0,
+    "sourcing": 0,
+    "trade-policy": 0,
+    "supply-chain": 0,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  ok    china-daily-article         55319B  article archived",
+    "  ok    mof-article                 22362B  article archived",
+    "  ok    mof-article                 22886B  article archived",
+    "  ok    mof-article                 22220B  article archived",
+    "  ok    stats-en-article            64152B  article archived",
+    "  ok    stats-en-article             5722B  article archived",
+    "  ok    stats-en-article            38395B  article archived",
+    "  ok    moa-article                 48663B  article archived",
+    "  ok    moa-article                 51413B  article archived",
+    "  ok    moa-article                 52336B  article archived",
+    "  ok    mem-article                 31304B  article archived",
+    "  ok    mem-article                 30847B  article archived",
+    "  ok    mem-article                 29400B  article archived",
+    "  fresh     : 1 article(s) dated today, newest 2026-11-24",
+    "  articles : 24 followed from the listings",
+    "  ledger: 36 published subject(s) to avoid repeating",
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 909 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3330 characters but no document structure, trying the next one",
+    "  stream      : SSE, 890 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3158 characters but no document structure, trying the next one",
+    "  stream      : SSE, 996 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3517 characters but no document structure, trying the next one",
+    "  spent   : ~0.0081  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-october-2026-electricity-consumption-ev-charging-data-services",
+    "  keyword : China EV charging electricity consumption October 2026 importer",
+    "  duplicate check: score 0",
+    "  slug    : china-october-2026-electricity-consumption-ev-charging-data-services",
+    "  keyword : China EV charging electricity consumption October 2026 importer",
+    "  category: supply-chain",
+    "  figures : 7",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0081",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "reviewAdvisory": [
+    "The figures give only consumption values and growth rates; they do not state what drives data-center electricity growth, so the draft attributes a cause the evidence does not contain.",
+    "The figures contain no wear, replacement or expansion data, so this chain of consequences is invented rather than derived from the supplied numbers.",
+    "Nothing in the figures states that operators are ordering, that foreign suppliers have a window, or that domestic manufacturers will absorb demand; this is speculation presented as a sourcing conclusion.",
+    "The draft elsewhere admits the figures state no lead times, yet here asserts a competition for factory capacity that no supplied figure supports.",
+    "The figures contain no forecast or timing signal, so the two-to-three-quarter window is invented and the article's central sourcing advice rests on it.",
+    "The draft compares a single-month growth rate with a ten-month cumulative growth rate as if they were the same measure, which is a cross-level comparison the figures do not support."
+  ],
+  "seconds": 316
+}

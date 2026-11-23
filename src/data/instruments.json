@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1943,6 +1943,73 @@
       ],
       "articleSlugs": [
         "china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "national-energy-administration-via-xinhua",
+      "source": "National Energy Administration via Xinhua",
+      "figures": [
+        {
+          "articleSlug": "china-october-2026-electricity-consumption-ev-charging-data-services",
+          "articleNum": 118,
+          "value": "18.6 billion kilowatt-hours",
+          "unit": "kilowatt-hours",
+          "period": "October 2026",
+          "source": "National Energy Administration via Xinhua",
+          "retrieved": "2026-11-23"
+        },
+        {
+          "articleSlug": "china-october-2026-electricity-consumption-ev-charging-data-services",
+          "articleNum": 118,
+          "value": "59.4 percent",
+          "unit": "year-on-year growth",
+          "period": "October 2026",
+          "source": "National Energy Administration via Xinhua",
+          "retrieved": "2026-11-23"
+        },
+        {
+          "articleSlug": "china-october-2026-electricity-consumption-ev-charging-data-services",
+          "articleNum": 118,
+          "value": "9.9 billion kilowatt-hours",
+          "unit": "kilowatt-hours",
+          "period": "October 2026",
+          "source": "National Energy Administration via Xinhua",
+          "retrieved": "2026-11-23"
+        },
+        {
+          "articleSlug": "china-october-2026-electricity-consumption-ev-charging-data-services",
+          "articleNum": 118,
+          "value": "34.7 percent",
+          "unit": "year-on-year growth",
+          "period": "October 2026",
+          "source": "National Energy Administration via Xinhua",
+          "retrieved": "2026-11-23"
+        },
+        {
+          "articleSlug": "china-october-2026-electricity-consumption-ev-charging-data-services",
+          "articleNum": 118,
+          "value": "55.9 percent",
+          "unit": "year-on-year growth",
+          "period": "January-October 2026",
+          "source": "National Energy Administration via Xinhua",
+          "retrieved": "2026-11-23"
+        },
+        {
+          "articleSlug": "china-october-2026-electricity-consumption-ev-charging-data-services",
+          "articleNum": 118,
+          "value": "40.8 percent",
+          "unit": "year-on-year growth",
+          "period": "January-October 2026",
+          "source": "National Energy Administration via Xinhua",
+          "retrieved": "2026-11-23"
+        }
+      ],
+      "articleNums": [
+        118
+      ],
+      "articleSlugs": [
+        "china-october-2026-electricity-consumption-ev-charging-data-services"
       ],
       "modelOutput": false
     },

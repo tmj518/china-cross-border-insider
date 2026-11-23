@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:23:53.850Z",
+  "at": "2026-11-23T23:29:00.659Z",
   "date": "2026-11-23",
   "persona": "bri",
   "moment": "arrive",
@@ -12,7 +12,7 @@
   "status": "ok",
   "okCalls": 4,
   "failCalls": 4,
-  "total": 39,
+  "total": 38,
   "rows": [
     {
       "query": "china business visa india",
@@ -142,15 +142,6 @@
     },
     {
       "query": "china tourist visa requirements for nigerian citizens",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "china visa for nigerian citizens"
-      ]
-    },
-    {
-      "query": "china business visa requirements for nigerian citizens 2024",
       "engines": [
         "google"
       ],

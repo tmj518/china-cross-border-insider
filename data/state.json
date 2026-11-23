@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-22T23:21:16.185Z",
+  "lastRun": "2026-11-23T23:21:22.337Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-asean-fta-3-0-december-2026-legal-rules-alignment",
-  "runs": 62,
-  "published": 48,
+  "lastArticle": "china-october-2026-electricity-consumption-ev-charging-data-services",
+  "runs": 63,
+  "published": 49,
   "lastUsage": {
-    "calls": 16,
-    "failed": 6,
-    "usd": 0.0622,
-    "promptTokens": 178449,
-    "completionTokens": 12759
+    "calls": 9,
+    "failed": 2,
+    "usd": 0.0222,
+    "promptTokens": 101220,
+    "completionTokens": 10987
   }
 }

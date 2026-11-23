@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:23:24.111Z",
+  "at": "2026-11-23T23:28:31.361Z",
   "date": "2026-11-23",
   "persona": "importer",
   "moment": "leave",
@@ -12,7 +12,7 @@
   "status": "ok",
   "okCalls": 4,
   "failCalls": 4,
-  "total": 12,
+  "total": 13,
   "rows": [
     {
       "query": "china export documentation requirements",
@@ -106,6 +106,15 @@
     },
     {
       "query": "china export customs clearance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china export customs clearance has started",
       "engines": [
         "google"
       ],

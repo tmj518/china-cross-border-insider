@@ -170,6 +170,8 @@ For buyers exposed to controlled materials, the input side is larger than a pric
 
 > Also read: [China's 2,000-Meter Riserless Drilling System: What It](/blog/china-mengxiang-riserless-drilling-2004-meters-importer-cost/)
 
+> Also read: [China's EV charging power use jumps 59.4% in October: what](/blog/china-october-2026-electricity-consumption-ev-charging-data-services/)
+
 ## For you
 
 - **Buyers of metal-intensive goods (hardware, cable, components):** the relevant input rate is 19.8%, not 3.8%, and the per-unit cost of it is 4.95 dollars on the worked example above. Ask the supplier for the metal content of the unit before discussing the increase. A cost line you can price to the gram is a cost line you can audit, and one you cannot price is a claim.

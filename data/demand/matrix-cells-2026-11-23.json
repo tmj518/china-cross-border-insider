@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:26:04.575Z",
+  "at": "2026-11-23T23:31:09.763Z",
   "date": "2026-11-23",
   "instrument": "Google and Bing public autocomplete. Returns phrasings, not volume; read it as a scope map, not a ranking.",
   "qualityRules": [
@@ -10,12 +10,12 @@
     "status == failed (harvest) -> 定义待验证"
   ],
   "selfCheck": {
-    "total_raw": 568,
-    "total_clean": 568,
-    "total_own": 425,
-    "sum_clean_by_cell": 568,
-    "detail_rows": 568,
-    "unique_cross_cell": 544,
+    "total_raw": 565,
+    "total_clean": 565,
+    "total_own": 424,
+    "sum_clean_by_cell": 565,
+    "detail_rows": 565,
+    "unique_cross_cell": 540,
     "reconcile": true
   },
   "cells": [
@@ -24,15 +24,15 @@
       "persona": "bri",
       "status": "ok",
       "seedQuality": "unambiguous",
-      "clean": 39,
-      "own": 39,
+      "clean": 38,
+      "own": 38,
       "calc": 6,
       "pages": 0,
       "pageIds": [],
       "verdict": "有需求·无页面",
       "why": "",
       "directionMix": {
-        "within-china": 38,
+        "within-china": 37,
         "into-china": 1
       }
     },
@@ -120,15 +120,15 @@
       "persona": "student",
       "status": "ok",
       "seedQuality": "unambiguous",
-      "clean": 25,
-      "own": 25,
+      "clean": 24,
+      "own": 24,
       "calc": 3,
       "pages": 0,
       "pageIds": [],
       "verdict": "有需求·无页面",
       "why": "",
       "directionMix": {
-        "within-china": 25
+        "within-china": 24
       }
     },
     {
@@ -138,7 +138,7 @@
       "seedQuality": "unambiguous",
       "clean": 42,
       "own": 42,
-      "calc": 19,
+      "calc": 18,
       "pages": 6,
       "pageIds": [
         "blog/china-malaysia-origin-data-electronic-december-2026",
@@ -186,7 +186,7 @@
       "clean": 43,
       "own": 42,
       "calc": 42,
-      "pages": 59,
+      "pages": 60,
       "pageIds": [
         "blog/beidou-terminal-devices-china-2026-importer-tracking",
         "blog/brazil-beef-import-additional-55-percent-tariff-october-2026",
@@ -208,6 +208,7 @@
         "blog/china-input-cost-gap-supplier-price-negotiation-2027",
         "blog/china-malaysia-origin-data-electronic-december-2026",
         "blog/china-mengxiang-riserless-drilling-2004-meters-importer-cost",
+        "blog/china-october-2026-electricity-consumption-ev-charging-data-services",
         "blog/china-ppi-positive-factory-price-drift",
         "blog/china-producer-price-split-copper-ferrous-2026",
         "blog/china-water-law-revision-river-lake-management-2027",
@@ -335,8 +336,8 @@
       "persona": "importer",
       "status": "ok",
       "seedQuality": "unambiguous",
-      "clean": 12,
-      "own": 6,
+      "clean": 13,
+      "own": 7,
       "calc": 0,
       "pages": 3,
       "pageIds": [
@@ -347,7 +348,7 @@
       "verdict": "有需求·有页面",
       "why": "",
       "directionMix": {
-        "within-china": 11,
+        "within-china": 12,
         "out-of-china": 1
       }
     },
@@ -488,7 +489,7 @@
       "persona": "student",
       "status": "ok",
       "seedQuality": "unambiguous",
-      "clean": 28,
+      "clean": 27,
       "own": 17,
       "calc": 7,
       "pages": 0,
@@ -496,7 +497,7 @@
       "verdict": "有需求·无页面",
       "why": "",
       "directionMix": {
-        "within-china": 28
+        "within-china": 27
       }
     },
     {
@@ -504,7 +505,7 @@
       "persona": "bri",
       "status": "ok",
       "seedQuality": "unambiguous",
-      "clean": 22,
+      "clean": 21,
       "own": 12,
       "calc": 5,
       "pages": 1,
@@ -514,7 +515,7 @@
       "verdict": "有需求·有页面",
       "why": "",
       "directionMix": {
-        "within-china": 18,
+        "within-china": 17,
         "out-of-china": 2,
         "into-china": 2
       }
@@ -578,7 +579,7 @@
       "status": "ok",
       "seedQuality": "unambiguous",
       "clean": 13,
-      "own": 12,
+      "own": 13,
       "calc": 1,
       "pages": 0,
       "pageIds": [],
@@ -594,7 +595,7 @@
       "status": "ok",
       "seedQuality": "unambiguous",
       "clean": 16,
-      "own": 3,
+      "own": 2,
       "calc": 0,
       "pages": 0,
       "pageIds": [],
@@ -762,17 +763,6 @@
     },
     {
       "text": "china tourist visa requirements for nigerian citizens",
-      "moment": "arrive",
-      "persona": "bri",
-      "kind": "procedural",
-      "computable": false,
-      "seed": "china visa for nigerian citizens",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
-      "text": "china business visa requirements for nigerian citizens 2024",
       "moment": "arrive",
       "persona": "bri",
       "kind": "procedural",
@@ -1245,7 +1235,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "china work visa requirements for us citizens",
+      "text": "china work visa requirements for south african citizens",
       "moment": "arrive",
       "persona": "expat",
       "kind": "procedural",
@@ -1817,7 +1807,7 @@
       "chinaAnchored": false
     },
     {
-      "text": "canton fair visitor invitation",
+      "text": "canton fair visitors 2025",
       "moment": "arrive",
       "persona": "platform-seller",
       "kind": "informational",
@@ -1960,17 +1950,6 @@
       "chinaAnchored": true
     },
     {
-      "text": "student visa china apply",
-      "moment": "arrive",
-      "persona": "student",
-      "kind": "procedural",
-      "computable": false,
-      "seed": "student visa china requirements",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
       "text": "china student visa requirements for bangladeshi",
       "moment": "arrive",
       "persona": "student",
@@ -2048,6 +2027,17 @@
       "chinaAnchored": true
     },
     {
+      "text": "how much is student visa in china",
+      "moment": "arrive",
+      "persona": "student",
+      "kind": "transactional",
+      "computable": true,
+      "seed": "student visa china requirements",
+      "source": "google",
+      "direction": "within-china",
+      "chinaAnchored": true
+    },
+    {
       "text": "study in china visa",
       "moment": "arrive",
       "persona": "student",
@@ -2119,17 +2109,6 @@
       "persona": "student",
       "kind": "informational",
       "computable": false,
-      "seed": "study in china visa",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
-      "text": "how much is student visa in china",
-      "moment": "arrive",
-      "persona": "student",
-      "kind": "transactional",
-      "computable": true,
       "seed": "study in china visa",
       "source": "google",
       "direction": "within-china",
@@ -2411,18 +2390,18 @@
       "chinaAnchored": true
     },
     {
-      "text": "mini importation from china to nigeria cost",
+      "text": "things to import from china to nigeria",
       "moment": "buy",
       "persona": "bri",
-      "kind": "transactional",
-      "computable": true,
+      "kind": "informational",
+      "computable": false,
       "seed": "import from china to nigeria",
       "source": "google",
       "direction": "out-of-china",
       "chinaAnchored": true
     },
     {
-      "text": "things to import from china to nigeria",
+      "text": "importing used cars from china to nigeria",
       "moment": "buy",
       "persona": "bri",
       "kind": "informational",
@@ -3093,7 +3072,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "import cost from china to south africa",
+      "text": "import costs from china to south africa",
       "moment": "buy",
       "persona": "importer",
       "kind": "transactional",
@@ -3379,17 +3358,6 @@
       "chinaAnchored": true
     },
     {
-      "text": "how to sell products on amazon from china",
-      "moment": "buy",
-      "persona": "platform-seller",
-      "kind": "procedural",
-      "computable": false,
-      "seed": "sell on amazon from china",
-      "source": "google",
-      "direction": "out-of-china",
-      "chinaAnchored": true
-    },
-    {
       "text": "buy from china sell on amazon",
       "moment": "buy",
       "persona": "platform-seller",
@@ -3402,6 +3370,17 @@
     },
     {
       "text": "import from china and sell on amazon",
+      "moment": "buy",
+      "persona": "platform-seller",
+      "kind": "informational",
+      "computable": false,
+      "seed": "sell on amazon from china",
+      "source": "google",
+      "direction": "out-of-china",
+      "chinaAnchored": true
+    },
+    {
+      "text": "products from china to sell on amazon",
       "moment": "buy",
       "persona": "platform-seller",
       "kind": "informational",
@@ -3500,7 +3479,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "dropshipping from china to nigeria",
+      "text": "dropshipping from china reddit",
       "moment": "buy",
       "persona": "platform-seller",
       "kind": "informational",
@@ -3511,7 +3490,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "dropshipping from china reddit",
+      "text": "dropshipping from china to nigeria",
       "moment": "buy",
       "persona": "platform-seller",
       "kind": "informational",
@@ -3621,7 +3600,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "buy hp laptop in china",
+      "text": "buy asus laptop in china",
       "moment": "buy",
       "persona": "student",
       "kind": "informational",
@@ -3632,7 +3611,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "buy asus laptop in china",
+      "text": "buy hp laptop in china",
       "moment": "buy",
       "persona": "student",
       "kind": "informational",
@@ -4226,7 +4205,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "china tax refund airport",
+      "text": "tax refund china airport",
       "moment": "leave",
       "persona": "expat",
       "kind": "transactional",
@@ -4436,6 +4415,17 @@
     },
     {
       "text": "china export customs clearance",
+      "moment": "leave",
+      "persona": "importer",
+      "kind": "informational",
+      "computable": false,
+      "seed": "china customs clearance export",
+      "source": "google",
+      "direction": "within-china",
+      "chinaAnchored": true
+    },
+    {
+      "text": "china export customs clearance has started",
       "moment": "leave",
       "persona": "importer",
       "kind": "informational",
@@ -5491,18 +5481,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "student apartments china",
-      "moment": "live",
-      "persona": "student",
-      "kind": "informational",
-      "computable": false,
-      "seed": "student accommodation china",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
-      "text": "student dormitory china",
+      "text": "student accommodation in chinese",
       "moment": "live",
       "persona": "student",
       "kind": "informational",
@@ -5898,17 +5877,6 @@
       "chinaAnchored": true
     },
     {
-      "text": "china africa trade pact",
-      "moment": "policy",
-      "persona": "bri",
-      "kind": "informational",
-      "computable": false,
-      "seed": "africa china trade agreement",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
       "text": "south africa china trade deal",
       "moment": "policy",
       "persona": "bri",
@@ -6030,7 +5998,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "foreign exchange regulations china",
+      "text": "china foreign exchange regulations",
       "moment": "policy",
       "persona": "expat",
       "kind": "informational",
@@ -6195,7 +6163,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "china gold import export policy",
+      "text": "china's new import export policy",
       "moment": "policy",
       "persona": "importer",
       "kind": "informational",
@@ -6206,7 +6174,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "china's new import export policy",
+      "text": "china gold import export policy",
       "moment": "policy",
       "persona": "importer",
       "kind": "informational",
@@ -6360,17 +6328,6 @@
       "chinaAnchored": true
     },
     {
-      "text": "china customs limit",
-      "moment": "policy",
-      "persona": "importer",
-      "kind": "informational",
-      "computable": true,
-      "seed": "china customs rules",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
       "text": "china customs allowance",
       "moment": "policy",
       "persona": "importer",
@@ -6382,7 +6339,18 @@
       "chinaAnchored": true
     },
     {
-      "text": "china customs regulations export",
+      "text": "china customs limit",
+      "moment": "policy",
+      "persona": "importer",
+      "kind": "informational",
+      "computable": true,
+      "seed": "china customs rules",
+      "source": "google",
+      "direction": "within-china",
+      "chinaAnchored": true
+    },
+    {
+      "text": "china customs guidelines",
       "moment": "policy",
       "persona": "importer",
       "kind": "informational",
@@ -6393,7 +6361,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "china customs guidelines",
+      "text": "china customs regulations export",
       "moment": "policy",
       "persona": "importer",
       "kind": "informational",
@@ -6635,6 +6603,17 @@
       "chinaAnchored": true
     },
     {
+      "text": "china export license 2026",
+      "moment": "policy",
+      "persona": "platform-seller",
+      "kind": "informational",
+      "computable": false,
+      "seed": "china export license",
+      "source": "google",
+      "direction": "within-china",
+      "chinaAnchored": true
+    },
+    {
       "text": "china export license silver",
       "moment": "policy",
       "persona": "platform-seller",
@@ -6646,7 +6625,7 @@
       "chinaAnchored": true
     },
     {
-      "text": "china export license 2026",
+      "text": "china export license sample",
       "moment": "policy",
       "persona": "platform-seller",
       "kind": "informational",
@@ -6663,28 +6642,6 @@
       "kind": "informational",
       "computable": false,
       "seed": "china export license",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
-      "text": "china export licensing system",
-      "moment": "policy",
-      "persona": "platform-seller",
-      "kind": "informational",
-      "computable": false,
-      "seed": "china export license",
-      "source": "google",
-      "direction": "within-china",
-      "chinaAnchored": true
-    },
-    {
-      "text": "china student visa policy",
-      "moment": "policy",
-      "persona": "student",
-      "kind": "informational",
-      "computable": false,
-      "seed": "china student visa policy",
       "source": "google",
       "direction": "within-china",
       "chinaAnchored": true
@@ -6783,6 +6740,17 @@
       "persona": "student",
       "kind": "transactional",
       "computable": true,
+      "seed": "china student visa policy",
+      "source": "google",
+      "direction": "within-china",
+      "chinaAnchored": true
+    },
+    {
+      "text": "is ielts required for china student visa",
+      "moment": "policy",
+      "persona": "student",
+      "kind": "informational",
+      "computable": false,
       "seed": "china student visa policy",
       "source": "google",
       "direction": "within-china",

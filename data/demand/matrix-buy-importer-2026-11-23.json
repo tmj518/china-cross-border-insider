@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:22:47.483Z",
+  "at": "2026-11-23T23:27:55.238Z",
   "date": "2026-11-23",
   "persona": "importer",
   "moment": "buy",
@@ -178,7 +178,7 @@
       ]
     },
     {
-      "query": "import cost from china to south africa",
+      "query": "import costs from china to south africa",
       "engines": [
         "google"
       ],

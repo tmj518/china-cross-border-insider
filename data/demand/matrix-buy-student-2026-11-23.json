@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:24:39.689Z",
+  "at": "2026-11-23T23:29:46.003Z",
   "date": "2026-11-23",
   "persona": "student",
   "moment": "buy",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "query": "buy hp laptop in china",
+      "query": "buy asus laptop in china",
       "engines": [
         "google"
       ],
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "query": "buy asus laptop in china",
+      "query": "buy hp laptop in china",
       "engines": [
         "google"
       ],

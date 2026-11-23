@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:24:48.862Z",
+  "at": "2026-11-23T23:29:55.035Z",
   "date": "2026-11-23",
   "persona": "student",
   "moment": "arrive",
@@ -12,7 +12,7 @@
   "status": "ok",
   "okCalls": 4,
   "failCalls": 4,
-  "total": 25,
+  "total": 24,
   "rows": [
     {
       "query": "student visa china requirements",
@@ -31,15 +31,6 @@
       "seeds": [
         "student visa china requirements",
         "study in china visa"
-      ]
-    },
-    {
-      "query": "student visa china apply",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "student visa china requirements"
       ]
     },
     {
@@ -110,6 +101,16 @@
       ]
     },
     {
+      "query": "how much is student visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements",
+        "study in china visa"
+      ]
+    },
+    {
       "query": "study in china visa",
       "engines": [
         "google"
@@ -165,15 +166,6 @@
     },
     {
       "query": "study visa type in china",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "study in china visa"
-      ]
-    },
-    {
-      "query": "how much is student visa in china",
       "engines": [
         "google"
       ],

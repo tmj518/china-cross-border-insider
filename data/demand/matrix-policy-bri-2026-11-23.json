@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:24:30.540Z",
+  "at": "2026-11-23T23:29:36.764Z",
   "date": "2026-11-23",
   "persona": "bri",
   "moment": "policy",
@@ -12,7 +12,7 @@
   "status": "ok",
   "okCalls": 4,
   "failCalls": 4,
-  "total": 22,
+  "total": 21,
   "rows": [
     {
       "query": "china removes tariffs for african countries",
@@ -169,15 +169,6 @@
     },
     {
       "query": "africa china free trade agreement",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "africa china trade agreement"
-      ]
-    },
-    {
-      "query": "china africa trade pact",
       "engines": [
         "google"
       ],

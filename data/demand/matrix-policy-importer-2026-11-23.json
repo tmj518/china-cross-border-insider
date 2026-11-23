@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:23:33.262Z",
+  "at": "2026-11-23T23:28:40.370Z",
   "date": "2026-11-23",
   "persona": "importer",
   "moment": "policy",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "query": "china gold import export policy",
+      "query": "china's new import export policy",
       "engines": [
         "google"
       ],
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "query": "china's new import export policy",
+      "query": "china gold import export policy",
       "engines": [
         "google"
       ],
@@ -159,15 +159,6 @@
       ]
     },
     {
-      "query": "china customs limit",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "china customs rules"
-      ]
-    },
-    {
       "query": "china customs allowance",
       "engines": [
         "google"
@@ -177,7 +168,7 @@
       ]
     },
     {
-      "query": "china customs regulations export",
+      "query": "china customs limit",
       "engines": [
         "google"
       ],
@@ -187,6 +178,15 @@
     },
     {
       "query": "china customs guidelines",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs regulations export",
       "engines": [
         "google"
       ],

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:25:14.105Z",
+  "at": "2026-11-23T23:30:20.055Z",
   "date": "2026-11-23",
   "persona": "student",
   "moment": "policy",
@@ -13,15 +13,6 @@
   "failCalls": 3,
   "total": 16,
   "rows": [
-    {
-      "query": "china student visa policy",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "china student visa policy"
-      ]
-    },
     {
       "query": "china student visa requirements",
       "engines": [
@@ -96,6 +87,15 @@
     },
     {
       "query": "china student visa cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa policy"
+      ]
+    },
+    {
+      "query": "is ielts required for china student visa",
       "engines": [
         "google"
       ],

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T01:24:58.064Z",
+  "at": "2026-11-23T23:30:04.097Z",
   "date": "2026-11-23",
   "persona": "student",
   "moment": "live",
@@ -12,7 +12,7 @@
   "status": "ok",
   "okCalls": 4,
   "failCalls": 4,
-  "total": 28,
+  "total": 27,
   "rows": [
     {
       "query": "cost of living in china for students",
@@ -96,16 +96,7 @@
       ]
     },
     {
-      "query": "student apartments china",
-      "engines": [
-        "google"
-      ],
-      "seeds": [
-        "student accommodation china"
-      ]
-    },
-    {
-      "query": "student dormitory china",
+      "query": "student accommodation in chinese",
       "engines": [
         "google"
       ],
