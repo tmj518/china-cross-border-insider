@@ -173,3 +173,5 @@ For the paperwork and the cost in one place, see [APEC: Striving Together for Sh
 For the paperwork and the cost in one place, see [Building an Asia-Pacific community: China's journey of cooperation](/guide/building-an-asia-pacific-community-china-s-journey-of-cooperation/).
 
 For the paperwork and the cost in one place, see [China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi](/guide/china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera/).
+
+For the paperwork and the cost in one place, see [Xinhua Commentary: Shenzhen "peace summit" underscores shared responsibilities of major countries](/guide/xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil/).

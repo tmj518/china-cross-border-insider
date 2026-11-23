@@ -228,3 +228,5 @@ For the paperwork and the cost in one place, see [China-Africa health cooperatio
 For the paperwork and the cost in one place, see [Technology reshapes China's agricultural modernization](/guide/technology-reshapes-china-s-agricultural-modernization/).
 
 For the paperwork and the cost in one place, see [China-Africa health ties bolster local capabilities](/guide/china-africa-health-ties-bolster-local-capabilities/).
+
+For the paperwork and the cost in one place, see [Xinhua Commentary: Shenzhen "peace summit" underscores shared responsibilities of major countries](/guide/xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil/).

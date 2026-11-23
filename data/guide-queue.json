@@ -4561,11 +4561,11 @@
       "facts": [],
       "mustSay": [],
       "avoid": [],
-      "priorityScore": 0.42,
+      "priorityScore": 0.66,
       "priorityWhy": {
         "basis": "measured",
-        "base": 0.69,
-        "demandImpressions": 1,
+        "base": 1.1,
+        "demandImpressions": 2,
         "demandBreadth": 0,
         "demandQuery": "fisr",
         "intent": 0.6,
@@ -4743,7 +4743,7 @@
       "unit": "one application",
       "title": "Xinhua Commentary: Shenzhen \"peace summit\" underscores shared responsibilities of major countries",
       "query": "Xinhua Commentary: Shenzhen \"peace summit\" underscores shared responsibilities of major countries",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xinhua Commentary: Shenzhen \"peace summit\" underscores shared responsibilities of major countries\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4771,7 +4771,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-23"
     },
     {
       "slug": "xi-says-china-australia-should-be-mutually-trusted-partners",
@@ -4889,7 +4890,124 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China rolls out plan to improve eldercare, childcare services",
+      "query": "China rolls out plan to improve eldercare, childcare services",
+      "status": "queued",
+      "evidence": "demand matrix: \"China rolls out plan to improve eldercare, childcare services\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "rolls",
+        "plan",
+        "improve",
+        "eldercare,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections",
+      "query": "Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections",
+      "status": "queued",
+      "evidence": "demand matrix: \"Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Central",
+        "government",
+        "spokesperson",
+        "hails",
+        "Hong"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-mega-water-diversion-project-upgrades-its-smart-brain",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's mega water diversion project upgrades its \"smart brain\"",
+      "query": "China's mega water diversion project upgrades its \"smart brain\"",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's mega water diversion project upgrades its \"smart brain\"\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "mega",
+        "water",
+        "diversion",
+        "project"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-22T07:20:34.383Z"
+  "updatedAt": "2026-11-23T07:20:33.773Z"
 }

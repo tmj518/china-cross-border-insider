@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-23T01:21:29.589Z",
-  "runId": "45094026747",
-  "route": "fallback",
+  "at": "2026-11-23T07:20:52.216Z",
+  "runId": "45130327099",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "xi-says-china-singapore-should-strengthen-strategic-communication-enha",
-  "seconds": 22,
+  "article": "xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil",
+  "seconds": 18,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0003
+    "usd": 0.001
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding xi-says-china-singapore-should-strengthen-strategic-communication-enha",
+      "name": "grounding xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates xi-says-china-singapore-should-strengthen-strategic-communication-enha",
+      "name": "gates xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build xi-says-china-singapore-should-strengthen-strategic-communication-enha",
+      "name": "build xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "beidou-terminal-devices-china-2026-importer-tracking, brazil-beef-import-additional-55-percent-tariff-october-2026"
+      "detail": "china-apec-20-million-usd-practical-cooperation-fund, china-zero-tariff-20-african-countries-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/xi-says-china-singapore-should-strengthen-strategic-communication-enha/"
+      "detail": "/guide/xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil/"
     }
   ],
   "researchLog": [
