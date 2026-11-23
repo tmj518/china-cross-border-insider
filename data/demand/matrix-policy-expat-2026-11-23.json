@@ -1,0 +1,217 @@
+{
+  "at": "2026-11-23T01:26:04.559Z",
+  "date": "2026-11-23",
+  "persona": "expat",
+  "moment": "policy",
+  "seeds": [
+    "china visa policy change",
+    "china foreigner regulations",
+    "china residence permit rules",
+    "china work permit policy"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 22,
+  "rows": [
+    {
+      "query": "china visa policy change",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa policy change"
+      ]
+    },
+    {
+      "query": "china visa rule change",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa policy change"
+      ]
+    },
+    {
+      "query": "china visa requirements change",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa policy change"
+      ]
+    },
+    {
+      "query": "china new visa policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa policy change"
+      ]
+    },
+    {
+      "query": "can i transfer my chinese visa to a new passport",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa policy change"
+      ]
+    },
+    {
+      "query": "china visa rules",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china visa policy change"
+      ]
+    },
+    {
+      "query": "chinese regulations foreign tech deals",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china foreigner regulations"
+      ]
+    },
+    {
+      "query": "china foreign investment regulations",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china foreigner regulations"
+      ]
+    },
+    {
+      "query": "foreign exchange regulations china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china foreigner regulations"
+      ]
+    },
+    {
+      "query": "china laws for foreign business",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china foreigner regulations"
+      ]
+    },
+    {
+      "query": "china laws for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china foreigner regulations"
+      ]
+    },
+    {
+      "query": "china new rules for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china foreigner regulations"
+      ]
+    },
+    {
+      "query": "china residence permit rules",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "china residence permit requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "china residence permit photo requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "china permanent residence permit requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "chinese residence permit requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "what is a chinese residence permit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "china immigration rules",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china residence permit rules"
+      ]
+    },
+    {
+      "query": "china work permit requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit policy"
+      ]
+    },
+    {
+      "query": "china work permit requirements 2025",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit policy"
+      ]
+    },
+    {
+      "query": "china work permit visa requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china work permit policy"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

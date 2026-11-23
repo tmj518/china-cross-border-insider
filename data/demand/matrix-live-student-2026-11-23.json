@@ -1,0 +1,271 @@
+{
+  "at": "2026-11-23T01:24:58.064Z",
+  "date": "2026-11-23",
+  "persona": "student",
+  "moment": "live",
+  "seeds": [
+    "cost of living china student",
+    "student accommodation china",
+    "part time job china student",
+    "china student health insurance"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 28,
+  "rows": [
+    {
+      "query": "cost of living in china for students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china student"
+      ]
+    },
+    {
+      "query": "cost of living in china for international students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china student"
+      ]
+    },
+    {
+      "query": "cost of living in china for indian students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china student"
+      ]
+    },
+    {
+      "query": "is cost of living high in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china student"
+      ]
+    },
+    {
+      "query": "living cost in beijing for student",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china student"
+      ]
+    },
+    {
+      "query": "student accommodation china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "student accommodation chinatown",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "student accommodation chinatown liverpool",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "student housing china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "student apartments china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "student dormitory china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "international student accommodation in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student accommodation china"
+      ]
+    },
+    {
+      "query": "part time jobs in china for students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "part time job in china for international students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "part time job in china for international students salary",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "china student part time job salary",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "china student visa part time job",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "is part time job allowed in china for international students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "can student do part time job in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "does china allow part time job for international students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "can international students work part time in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "part time job china student"
+      ]
+    },
+    {
+      "query": "china student health insurance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    },
+    {
+      "query": "china international student medical insurance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    },
+    {
+      "query": "how much is health insurance in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    },
+    {
+      "query": "health insurance cost in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    },
+    {
+      "query": "how does health insurance work in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    },
+    {
+      "query": "is healthcare and education free in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    },
+    {
+      "query": "does china have health insurance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student health insurance"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

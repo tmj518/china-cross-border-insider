@@ -1,0 +1,136 @@
+{
+  "at": "2026-11-23T01:22:36.053Z",
+  "date": "2026-11-23",
+  "persona": "platform-seller",
+  "moment": "policy",
+  "seeds": [
+    "china export policy for sellers",
+    "china customs rules for ecommerce",
+    "china ecommerce regulation",
+    "china export license"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 13,
+  "rows": [
+    {
+      "query": "china e commerce regulations alibaba",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china ecommerce regulation"
+      ]
+    },
+    {
+      "query": "china e commerce regulation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china ecommerce regulation"
+      ]
+    },
+    {
+      "query": "china ecommerce law",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china ecommerce regulation"
+      ]
+    },
+    {
+      "query": "china export license",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license rare earth",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license steel",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license news",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license silver",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license 2026",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china trade license",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export licensing system",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

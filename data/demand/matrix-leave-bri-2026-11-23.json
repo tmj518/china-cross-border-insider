@@ -1,0 +1,136 @@
+{
+  "at": "2026-11-23T01:24:21.355Z",
+  "date": "2026-11-23",
+  "persona": "bri",
+  "moment": "leave",
+  "seeds": [
+    "send money from china to india",
+    "parcel from china to africa cost",
+    "customs clearance nigeria china",
+    "remit money from china to pakistan"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 13,
+  "rows": [
+    {
+      "query": "send money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to transfer money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to transfer money from china to india through bank",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to send money from china to india online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "can we send money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "best way to send money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "western union money transfer from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "cheapest way to send money to china from india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "transfer money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "how to send money from china to pakistan online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "best way to send money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "how to receive money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

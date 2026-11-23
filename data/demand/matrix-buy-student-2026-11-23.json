@@ -1,0 +1,244 @@
+{
+  "at": "2026-11-23T01:24:39.689Z",
+  "date": "2026-11-23",
+  "persona": "student",
+  "moment": "buy",
+  "seeds": [
+    "buy laptop in china",
+    "buy phone in china student",
+    "cheapest place to buy electronics china",
+    "student discount china"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 25,
+  "rows": [
+    {
+      "query": "buy laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy laptop in china online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy laptop in china reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy gaming laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy huawei laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy lenovo laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy used laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy cheap laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy hp laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "buy asus laptop in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy laptop in china"
+      ]
+    },
+    {
+      "query": "cheapest place to buy electronics in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "best place to buy electronics china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest electronic market in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest country to buy electronics",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "cheapest place to buy electronics in the world",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cheapest place to buy electronics china"
+      ]
+    },
+    {
+      "query": "student discount china airlines",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china southern",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china eastern",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china southern airlines",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "student discount china apple",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "military discount china fleet",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "military discount china peak",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "cathay student discount china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    },
+    {
+      "query": "huawei student discount china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student discount china"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

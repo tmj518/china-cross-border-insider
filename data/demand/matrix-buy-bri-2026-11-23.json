@@ -1,0 +1,398 @@
+{
+  "at": "2026-11-23T01:23:44.670Z",
+  "date": "2026-11-23",
+  "persona": "bri",
+  "moment": "buy",
+  "seeds": [
+    "import from china to india duty",
+    "import from china to nigeria",
+    "china import duty pakistan",
+    "import from china to malaysia",
+    "import from china to bangladesh"
+  ],
+  "status": "ok",
+  "okCalls": 5,
+  "failCalls": 5,
+  "total": 42,
+  "rows": [
+    {
+      "query": "import from china to india custom duty",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "machinery import from china to india duty",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import from china to india import duty",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india on clothes",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india on electronics",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india hsn code",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india after gst",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india on toys",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import duty from china to india on furniture",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to india duty"
+      ]
+    },
+    {
+      "query": "import from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "import goods from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "import cars from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "mini importation from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "importation business from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "mini importation from china to nigeria pdf",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "mini importation from china to nigeria nairaland",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "importing clothes from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "mini importation from china to nigeria cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "things to import from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to nigeria"
+      ]
+    },
+    {
+      "query": "china to pakistan import duty",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty pakistan"
+      ]
+    },
+    {
+      "query": "china import duty rates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty pakistan"
+      ]
+    },
+    {
+      "query": "import from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import from china to malaysia tax",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import duty from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import goods from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import car from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import tax from china to malaysia calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import machinery from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "form e import from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "how to import dog from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "can i import car from china to.malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to malaysia"
+      ]
+    },
+    {
+      "query": "import from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import product from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import business from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import from china to bd",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import tax from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import cost from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import duty from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import car from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "import solar electricity from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    },
+    {
+      "query": "best website to import from china to bangladesh",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china to bangladesh"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

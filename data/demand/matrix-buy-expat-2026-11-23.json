@@ -1,0 +1,200 @@
+{
+  "at": "2026-11-23T01:25:23.265Z",
+  "date": "2026-11-23",
+  "persona": "expat",
+  "moment": "buy",
+  "seeds": [
+    "buy car in china foreigner",
+    "buy apartment in china foreigner",
+    "buy property in china",
+    "car insurance china foreigner"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 20,
+  "rows": [
+    {
+      "query": "foreigner buy car in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigner buy car in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "how to buy a car in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigners invest in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy car in china foreigner"
+      ]
+    },
+    {
+      "query": "buy house in china foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "buy property in china for foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner",
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "foreigner buy apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigner buy apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigners buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "are foreigners allowed to buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "can foreigner buy a house in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy apartment in china foreigner"
+      ]
+    },
+    {
+      "query": "buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buying property in china reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buy houses in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "buy a flat in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "purchasing property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "can buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "singaporean buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "americans buy property in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    },
+    {
+      "query": "property for sale in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "buy property in china"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

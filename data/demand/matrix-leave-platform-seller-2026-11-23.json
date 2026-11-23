@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-23T01:22:26.899Z",
+  "date": "2026-11-23",
+  "persona": "platform-seller",
+  "moment": "leave",
+  "seeds": [
+    "ship inventory out of china",
+    "return goods from china",
+    "china warehouse removal fee",
+    "amazon fba removal from china",
+    "amazon removal order china",
+    "china to us freight cost per kg",
+    "return inventory to china supplier",
+    "china exit shipping cost"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 8,
+  "total": 5,
+  "rows": [
+    {
+      "query": "return goods to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returning goods to china from uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "returning goods to china from australia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "how to return a package to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "return goods from china"
+      ]
+    },
+    {
+      "query": "china to us shipping cost per kg",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china to us freight cost per kg"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

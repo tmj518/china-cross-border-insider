@@ -1,0 +1,249 @@
+{
+  "at": "2026-11-23T01:24:48.862Z",
+  "date": "2026-11-23",
+  "persona": "student",
+  "moment": "arrive",
+  "seeds": [
+    "student visa china requirements",
+    "study in china visa",
+    "china student visa documents",
+    "china university application international"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 25,
+  "rows": [
+    {
+      "query": "student visa china requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements"
+      ]
+    },
+    {
+      "query": "study visa china requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements",
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "student visa china apply",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements"
+      ]
+    },
+    {
+      "query": "china student visa requirements for bangladeshi",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements",
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa requirements for pakistani",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements",
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa requirements for nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements",
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa photo requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements"
+      ]
+    },
+    {
+      "query": "china student visa financial requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements"
+      ]
+    },
+    {
+      "query": "is ielts required for china student visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements"
+      ]
+    },
+    {
+      "query": "how to get a student visa for china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "student visa china requirements",
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study in china visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study in china visa application",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study in china visa assistance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study in china visa download",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study chinese in china visa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study visa china cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "study visa type in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "how much is student visa in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "study in china visa"
+      ]
+    },
+    {
+      "query": "china student visa documents required",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa documents",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa application",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa application fee",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa application form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    },
+    {
+      "query": "china student visa checklist",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student visa documents"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

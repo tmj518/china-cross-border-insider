@@ -1,0 +1,326 @@
+{
+  "at": "2026-11-23T01:25:46.172Z",
+  "date": "2026-11-23",
+  "persona": "expat",
+  "moment": "live",
+  "seeds": [
+    "rent apartment china foreigner",
+    "cost of living in china foreigner",
+    "health insurance china foreigner",
+    "open bank account in china",
+    "china sim card foreigner"
+  ],
+  "status": "ok",
+  "okCalls": 5,
+  "failCalls": 5,
+  "total": 34,
+  "rows": [
+    {
+      "query": "rent apartment in china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "rent apartment in yiwu china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "rent apartment in zhuhai china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "can a foreigner buy an apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "how much does an apartment cost in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "how much is rent in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "how much is an apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "rent apartment china foreigner"
+      ]
+    },
+    {
+      "query": "health insurance in china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "health insurance in china for foreigners cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "health insurance in china for foreigners reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "medical insurance in china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "how much is health insurance in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "does china have health insurance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "does china have national health insurance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "health insurance china foreigner"
+      ]
+    },
+    {
+      "query": "open bank account in china foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open bank account in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open bank account in china as tourist",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "opening bank account in china as canadian resident",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open savings account in chinabank",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open an account in chinabank",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open an account in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "opening checking account in chinabank",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open bank account in china online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "open business bank account in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "open bank account in china"
+      ]
+    },
+    {
+      "query": "china sim card tourist",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china sim card for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china mobile sim card foreigner",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china sim card for tourist price",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china unicom sim card tourist",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china telecom sim card tourist",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china mobile sim card tourist",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china sim card for tourist shanghai",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china sim card for tourist prepaid",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    },
+    {
+      "query": "china sim card for tourist with vpn",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sim card foreigner"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

@@ -1,0 +1,307 @@
+{
+  "at": "2026-11-23T01:23:33.262Z",
+  "date": "2026-11-23",
+  "persona": "importer",
+  "moment": "policy",
+  "seeds": [
+    "china import export policy",
+    "china tariff changes",
+    "china customs rules",
+    "china export controls"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 32,
+  "rows": [
+    {
+      "query": "china import export policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import export policy"
+      ]
+    },
+    {
+      "query": "china gold import export policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import export policy"
+      ]
+    },
+    {
+      "query": "china's new import export policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import export policy"
+      ]
+    },
+    {
+      "query": "china export policy",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import export policy"
+      ]
+    },
+    {
+      "query": "china's biggest import partners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import export policy"
+      ]
+    },
+    {
+      "query": "china maximum export to which country",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import export policy"
+      ]
+    },
+    {
+      "query": "china tariff changes",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "china tariff changes 2025",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "china tariff changes timeline",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "us china tariff changes",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "china tariff rate changes",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "what is the new tariff on china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "china tariff schedule",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china tariff changes"
+      ]
+    },
+    {
+      "query": "china customs rules",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs regulations",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs law",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs limit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs regulations export",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs guidelines",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china customs regulations import",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china airport customs rules",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs rules"
+      ]
+    },
+    {
+      "query": "china export controls",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls critical minerals",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls rare earth",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls ai",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls drones",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls japan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls list",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls solar",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls on rare earth minerals",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    },
+    {
+      "query": "china export controls graphite",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export controls"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-27T08:31:49.352Z",
+  "at": "2026-11-23T01:26:04.635Z",
   "source": "suggest-2026-10-27.json",
   "stats": {
     "total": 379,
@@ -7,91 +7,10 @@
     "otherCountry": 20,
     "noIntent": 153,
     "noClass": 43,
-    "collision": 8,
-    "survived": 19
+    "collision": 19,
+    "survived": 8
   },
   "candidates": [
-    {
-      "query": "china driving license renewal",
-      "topic": "driving",
-      "breadth": 1,
-      "engines": [
-        "bing"
-      ],
-      "suggestedSlug": "china-driving-license-renewal",
-      "blockedBy": null
-    },
-    {
-      "query": "china foreigner income tax calculator",
-      "topic": "tax",
-      "breadth": 1,
-      "engines": [
-        "bing"
-      ],
-      "suggestedSlug": "china-foreigner-income-tax-calculator",
-      "blockedBy": null
-    },
-    {
-      "query": "china foreigner tax calculator",
-      "topic": "tax",
-      "breadth": 1,
-      "engines": [
-        "google"
-      ],
-      "suggestedSlug": "china-foreigner-tax-calculator",
-      "blockedBy": null
-    },
-    {
-      "query": "china import tax calculator",
-      "topic": "tax",
-      "breadth": 1,
-      "engines": [
-        "google",
-        "bing"
-      ],
-      "suggestedSlug": "china-import-tax-calculator",
-      "blockedBy": null
-    },
-    {
-      "query": "china income tax calculator for foreigners",
-      "topic": "tax",
-      "breadth": 1,
-      "engines": [
-        "bing"
-      ],
-      "suggestedSlug": "china-income-tax-calculator-for-foreigners",
-      "blockedBy": null
-    },
-    {
-      "query": "china residence permit application form",
-      "topic": "residence",
-      "breadth": 1,
-      "engines": [
-        "google"
-      ],
-      "suggestedSlug": "china-residence-permit-application-form",
-      "blockedBy": null
-    },
-    {
-      "query": "china tax calculator for foreigners",
-      "topic": "tax",
-      "breadth": 1,
-      "engines": [
-        "bing"
-      ],
-      "suggestedSlug": "china-tax-calculator-for-foreigners",
-      "blockedBy": null
-    },
-    {
-      "query": "china work permit points calculator",
-      "topic": "work-visa",
-      "breadth": 1,
-      "engines": [
-        "bing"
-      ],
-      "suggestedSlug": "china-work-permit-points-calculator",
-      "blockedBy": null
-    },
     {
       "query": "china work permit requirements",
       "topic": "work-visa",
@@ -136,16 +55,6 @@
       "blockedBy": null
     },
     {
-      "query": "china z visa medical requirements",
-      "topic": "work-visa",
-      "breadth": 1,
-      "engines": [
-        "google"
-      ],
-      "suggestedSlug": "china-z-visa-medical-requirements",
-      "blockedBy": null
-    },
-    {
       "query": "china z visa process",
       "topic": "work-visa",
       "breadth": 1,
@@ -163,27 +72,6 @@
         "bing"
       ],
       "suggestedSlug": "china-z-visa-process-in-consulate-in-mumbai",
-      "blockedBy": null
-    },
-    {
-      "query": "china z visa requirements",
-      "topic": "work-visa",
-      "breadth": 1,
-      "engines": [
-        "google",
-        "bing"
-      ],
-      "suggestedSlug": "china-z-visa-requirements",
-      "blockedBy": null
-    },
-    {
-      "query": "china z visa requirements 2026",
-      "topic": "work-visa",
-      "breadth": 1,
-      "engines": [
-        "google"
-      ],
-      "suggestedSlug": "china-z-visa-requirements-2026",
       "blockedBy": null
     },
     {

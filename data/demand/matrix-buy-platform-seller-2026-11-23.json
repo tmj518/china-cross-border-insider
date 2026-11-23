@@ -1,0 +1,155 @@
+{
+  "at": "2026-11-23T01:21:41.227Z",
+  "date": "2026-11-23",
+  "persona": "platform-seller",
+  "moment": "buy",
+  "seeds": [
+    "amazon fba china supplier",
+    "sell on amazon from china",
+    "import from china to sell online",
+    "china supplier for amazon fba",
+    "dropshipping from china"
+  ],
+  "status": "ok",
+  "okCalls": 5,
+  "failCalls": 5,
+  "total": 15,
+  "rows": [
+    {
+      "query": "selling on amazon from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "sell on amazon from china"
+      ]
+    },
+    {
+      "query": "how to sell products on amazon from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "sell on amazon from china"
+      ]
+    },
+    {
+      "query": "buy from china sell on amazon",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "sell on amazon from china"
+      ]
+    },
+    {
+      "query": "import from china and sell on amazon",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "sell on amazon from china"
+      ]
+    },
+    {
+      "query": "does amazon sell in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "sell on amazon from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to philippines",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to europe",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to nigeria",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china reddit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    },
+    {
+      "query": "dropshipping from china to south africa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "dropshipping from china"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

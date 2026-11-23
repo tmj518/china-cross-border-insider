@@ -1,0 +1,407 @@
+{
+  "at": "2026-11-23T01:22:47.483Z",
+  "date": "2026-11-23",
+  "persona": "importer",
+  "moment": "buy",
+  "seeds": [
+    "import duty from china",
+    "import from china cost",
+    "china import tax",
+    "landed cost from china",
+    "china import duty calculator"
+  ],
+  "status": "ok",
+  "okCalls": 5,
+  "failCalls": 5,
+  "total": 43,
+  "rows": [
+    {
+      "query": "import duty from china to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to ireland",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to india on electronics",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to india calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to australia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import duty from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import duty from china"
+      ]
+    },
+    {
+      "query": "import from china cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import from china to costa rica",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import car from china cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import from china fees",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import from china to india cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import from china to uk cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "importing from china to canada costs",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import cost from china to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import cost from china to south africa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "import cost from china to india per kg",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "import from china cost"
+      ]
+    },
+    {
+      "query": "china import tax",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax to us",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax in india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax rate",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax europe",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax from singapore",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax eu",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "china import tax australia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import tax"
+      ]
+    },
+    {
+      "query": "landing cost from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost from china"
+      ]
+    },
+    {
+      "query": "calculate landed cost from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost from china"
+      ]
+    },
+    {
+      "query": "landed cost china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "landed cost from china"
+      ]
+    },
+    {
+      "query": "china import duty calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china import duty calculator usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china import duty calculator india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china import duty calculator uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china import tariff calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china import fees calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china import duty rates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china to us import duty calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china to canada import duty calculator",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    },
+    {
+      "query": "china customs import duty rates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china import duty calculator"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

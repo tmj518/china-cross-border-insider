@@ -1,0 +1,164 @@
+{
+  "at": "2026-11-23T01:22:56.638Z",
+  "date": "2026-11-23",
+  "persona": "importer",
+  "moment": "arrive",
+  "seeds": [
+    "china sourcing trip",
+    "visit china factory",
+    "china trade fair",
+    "china supplier visit visa"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 16,
+  "rows": [
+    {
+      "query": "china sourcing trip",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sourcing trip"
+      ]
+    },
+    {
+      "query": "china tour cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china sourcing trip",
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "visit china factory",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "honda ceo visit china factory",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "visit byd factory china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "why china is the world's factory",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "visit china factory"
+      ]
+    },
+    {
+      "query": "china trade fair 2026",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2026 dates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2027",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair october 2026",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2026 schedule",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair 2027 dates",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair october",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair guangzhou",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    },
+    {
+      "query": "china trade fair south africa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china trade fair"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

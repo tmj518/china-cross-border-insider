@@ -1,0 +1,127 @@
+{
+  "at": "2026-11-23T01:23:24.111Z",
+  "date": "2026-11-23",
+  "persona": "importer",
+  "moment": "leave",
+  "seeds": [
+    "export from china procedure",
+    "shipping goods out of china",
+    "china export documentation",
+    "china customs clearance export"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 12,
+  "rows": [
+    {
+      "query": "china export documentation requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export documents",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export procedures and documentation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export list",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export requirements",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china export products list",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export documentation"
+      ]
+    },
+    {
+      "query": "china customs export declaration form pdf",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china customs export declaration",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china customs export declaration form",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china export customs clearance procedure",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china export customs clearance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    },
+    {
+      "query": "china import customs clearance process",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china customs clearance export"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

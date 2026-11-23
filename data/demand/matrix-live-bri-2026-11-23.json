@@ -1,0 +1,169 @@
+{
+  "at": "2026-11-23T01:24:12.142Z",
+  "date": "2026-11-23",
+  "persona": "bri",
+  "moment": "live",
+  "seeds": [
+    "cost of living china for indian student",
+    "china apartment rent for foreigner",
+    "living cost guangzhou foreigner",
+    "china rent deposit foreigner",
+    "cost of living china for indian",
+    "china pg rent foreigner",
+    "china daily expenses foreigner",
+    "china apartment deposit foreigner"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 8,
+  "total": 16,
+  "rows": [
+    {
+      "query": "cost of living in china for indian students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "living cost in china for international students",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "is china expensive for indian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student",
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "living cost in beijing for student",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian student"
+      ]
+    },
+    {
+      "query": "rent apartment in china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "rent apartment in yiwu china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "rent apartment in zhuhai china for foreigners",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "can a foreigner buy an apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "how much does an apartment cost in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "how much is rent in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "how much is an apartment in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china apartment rent for foreigner"
+      ]
+    },
+    {
+      "query": "cost of living in china for indian",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "cost of living china vs india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "cost of living in china in indian rupees",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "is cost of living high in china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    },
+    {
+      "query": "is china expensive than india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "cost of living china for indian"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

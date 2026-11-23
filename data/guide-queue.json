@@ -4703,7 +4703,7 @@
       "unit": "one application",
       "title": "Xi says China, Singapore should strengthen strategic communication, enhance coordination",
       "query": "Xi says China, Singapore should strengthen strategic communication, enhance coordination",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi says China, Singapore should strengthen strategic communication, enhance coordination\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4731,7 +4731,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-23"
     },
     {
       "slug": "xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil",

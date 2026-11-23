@@ -1,0 +1,199 @@
+{
+  "at": "2026-11-23T01:21:50.362Z",
+  "date": "2026-11-23",
+  "persona": "platform-seller",
+  "moment": "arrive",
+  "seeds": [
+    "visit china supplier factory",
+    "china business trip supplier",
+    "canton fair visit",
+    "china factory tour"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 20,
+  "rows": [
+    {
+      "query": "canton fair visitor registration",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor registration online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitors",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visit",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visit from india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitors number",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor badge",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor pass",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor count",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "canton fair visitor invitation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "canton fair visit"
+      ]
+    },
+    {
+      "query": "china factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory tours demand",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory tour guide",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china factory tourism",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china manufacturing tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "belleek china factory tour ireland",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china furniture factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china car factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "duchess china factory tour",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    },
+    {
+      "query": "china tech factory tours surge",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china factory tour"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

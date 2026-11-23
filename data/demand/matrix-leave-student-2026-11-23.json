@@ -1,0 +1,271 @@
+{
+  "at": "2026-11-23T01:25:07.217Z",
+  "date": "2026-11-23",
+  "persona": "student",
+  "moment": "leave",
+  "seeds": [
+    "ship belongings home from china",
+    "send luggage from china",
+    "china student baggage allowance",
+    "parcel to india from china"
+  ],
+  "status": "ok",
+  "okCalls": 4,
+  "failCalls": 4,
+  "total": 28,
+  "rows": [
+    {
+      "query": "send luggage from china to europe",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to uk",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to australia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to singapore",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "shipping luggage from china to usa",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to malaysia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to russia",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "send parcel from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send luggage from china"
+      ]
+    },
+    {
+      "query": "air china student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "china eastern student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "china airlines student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "china southern student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "china eastern student baggage allowance international",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "china southern airlines student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "china eastern airlines student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "do students get extra baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "which airlines offer student baggage allowance",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china student baggage allowance"
+      ]
+    },
+    {
+      "query": "parcel india to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "parcel forwarding from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "send parcel from india to china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "parcel charges from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "track parcel from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "small parcel from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "how to ship from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "how much does it cost to import from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    },
+    {
+      "query": "can i order from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "parcel to india from china"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}
