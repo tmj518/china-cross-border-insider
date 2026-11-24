@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-23T07:20:52.258Z",
+  "at": "2026-11-24T07:20:57.538Z",
   "streaks": {
     "fallback": {
       "verdict": "PUBLISHED",
       "count": 5,
-      "at": "2026-11-23T01:21:29.589Z"
+      "at": "2026-11-24T01:21:37.833Z"
     },
     "c": {
       "verdict": "PUBLISHED",
       "count": 4,
-      "at": "2026-11-23T07:20:52.216Z"
+      "at": "2026-11-24T07:20:57.496Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-22T23:21:16.185Z"
+      "at": "2026-11-23T23:21:22.337Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-23T07:20:52.216Z",
+    "at": "2026-11-24T07:20:57.496Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil"
+    "article": "china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci"
   },
   "metrics": {
     "files": 1,

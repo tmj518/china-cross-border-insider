@@ -186,3 +186,5 @@ China's new emergency procurement rules open the door for imported goods without
 For the paperwork and the cost in one place, see [Can a Foreigner Buy Property in China? Rules and Subsidies](/guide/foreigner-buy-property-china/).
 
 For the paperwork and the cost in one place, see [China's retail sales of goods, services up 2.5 pct in first 10 months](/guide/china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months/).
+
+For the paperwork and the cost in one place, see [China seeks public comment on draft regulation for supervision of social insurance funds](/guide/china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci/).

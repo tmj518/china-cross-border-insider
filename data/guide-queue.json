@@ -5008,7 +5008,86 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China seeks public comment on draft regulation for supervision of social insurance funds",
+      "query": "China seeks public comment on draft regulation for supervision of social insurance funds",
+      "status": "done",
+      "evidence": "demand matrix: \"China seeks public comment on draft regulation for supervision of social insurance funds\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "seeks",
+        "public",
+        "comment",
+        "draft"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 3,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 1,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      },
+      "doneAt": "2026-11-24"
+    },
+    {
+      "slug": "mainland-bank-to-expand-financing-support-for-taiwan-enterprises-on-ma",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Mainland bank to expand financing support for Taiwan enterprises on mainland",
+      "query": "Mainland bank to expand financing support for Taiwan enterprises on mainland",
+      "status": "queued",
+      "evidence": "demand matrix: \"Mainland bank to expand financing support for Taiwan enterprises on mainland\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Mainland",
+        "bank",
+        "expand",
+        "financing",
+        "support"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-23T07:20:33.773Z"
+  "updatedAt": "2026-11-24T07:20:37.779Z"
 }
