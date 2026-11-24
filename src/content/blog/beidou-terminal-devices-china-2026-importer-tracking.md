@@ -175,3 +175,5 @@ For the paperwork and the cost in one place, see [Production in full swing acros
 For the paperwork and the cost in one place, see [Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations](/guide/xi-prabowo-announce-launch-of-china-indonesia-comprehensive-economic-p/).
 
 For the paperwork and the cost in one place, see [Xi says China, Singapore should strengthen strategic communication, enhance coordination](/guide/xi-says-china-singapore-should-strengthen-strategic-communication-enha/).
+
+For the paperwork and the cost in one place, see [Xi says China, Australia should be mutually trusted partners](/guide/xi-says-china-australia-should-be-mutually-trusted-partners/).

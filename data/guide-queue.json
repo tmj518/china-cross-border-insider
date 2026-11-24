@@ -4783,7 +4783,7 @@
       "unit": "one application",
       "title": "Xi says China, Australia should be mutually trusted partners",
       "query": "Xi says China, Australia should be mutually trusted partners",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Xi says China, Australia should be mutually trusted partners\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4811,7 +4811,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-24"
     },
     {
       "slug": "looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
