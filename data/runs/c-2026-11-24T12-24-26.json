@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-21T01:21:29.117Z",
-  "runId": "44849602580",
+  "at": "2026-11-24T12:24:26.522Z",
+  "runId": "45392618760",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "apec-striving-together-for-shared-prosperity",
-  "seconds": 20,
+  "article": "looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004
+    "usd": 0.00040000000000000105
   },
   "providers": [
     "volces"
@@ -26,29 +26,29 @@
       "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding apec-striving-together-for-shared-prosperity",
+      "name": "grounding looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates apec-striving-together-for-shared-prosperity",
+      "name": "gates looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build apec-striving-together-for-shared-prosperity",
+      "name": "build looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-apec-20-million-usd-practical-cooperation-fund, shenzhen-apec-2026-trade-impacts-importer-cost-2026"
+      "detail": "china-asean-fta-3-0-december-2026-legal-rules-alignment, china-asean-fta-3-0-december-2026-rules-alignment"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/apec-striving-together-for-shared-prosperity/"
+      "detail": "/guide/looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi/"
     }
   ],
   "researchLog": [

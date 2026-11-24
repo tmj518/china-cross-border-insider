@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-24T07:20:57.496Z",
-  "runId": "45347190756",
-  "route": "c",
+  "at": "2026-11-24T12:24:26.522Z",
+  "runId": "45392618760",
+  "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci",
-  "seconds": 19,
+  "article": "looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
+  "seconds": 22,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0003
+    "usd": 0.00040000000000000105
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "9 candidate(s)"
+      "detail": "8 candidate(s)"
     },
     {
-      "name": "grounding china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci",
+      "name": "grounding looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci",
+      "name": "gates looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci",
+      "name": "build looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-emergency-procurement-rules-imported-goods-2026, beidou-terminal-devices-china-2026-importer-tracking"
+      "detail": "china-asean-fta-3-0-december-2026-legal-rules-alignment, china-asean-fta-3-0-december-2026-rules-alignment"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci/"
+      "detail": "/guide/looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi/"
     }
   ],
   "researchLog": [

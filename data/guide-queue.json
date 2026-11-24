@@ -4823,7 +4823,7 @@
       "unit": "one application",
       "title": "Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador",
       "query": "Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4851,7 +4851,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-24"
     },
     {
       "slug": "china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
