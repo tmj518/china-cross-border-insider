@@ -532,7 +532,7 @@ jobs:
         env:
           GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
           GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:landedmath.com' }}
-        run: node tools/gsc-index-status.mjs --limit=30
+        run: node tools/gsc-index-status.mjs --limit=30 --recent-days=7
 
       - name: Mine new topics (weekly)
         # The radar's own cron is disabled with the others - the Cloudflare Worker is the only clock - so the
