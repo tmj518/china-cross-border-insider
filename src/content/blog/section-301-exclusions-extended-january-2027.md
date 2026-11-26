@@ -125,6 +125,8 @@ The extension is 178 exclusions, two HTSUS headings, and a window that runs from
 
 **Where is the primary document?** The notice is filed at FR Doc. 2026-22925, published 10 November 2026, signed by the General Counsel of USTR.
 
+For the same question approached from another angle, see [us port fees chinese ships suspended january](/blog/us-port-fees-chinese-ships-suspended-january-2027/).
+
 ## Related reading
 
 The duty arithmetic behind a landed-cost quote is worked through in [EU CBAM cost per tonne for Chinese steel and aluminium](/blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026/), and the earlier exclusion deadline is covered in [Section 301 exclusions expire in November 2026](/blog/section-301-exclusions-expire-november-2026/). If your goods move by post rather than by entry, [the US low-value shipment entry rule](/blog/us-low-value-shipment-entry-rule-2026/) covers the parallel change.

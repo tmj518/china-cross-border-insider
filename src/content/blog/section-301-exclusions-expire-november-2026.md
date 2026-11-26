@@ -181,6 +181,8 @@ $15,000                  = $3.000 x 5,000
 
 Substitute your own FOB and packing quantity. A low unit price does not mean a low exposure — the wire example adds 25 percent of landed cost on that line.
 
+For the same question approached from another angle, see [section 301 exclusions extended january](/blog/section-301-exclusions-extended-january-2027/).
+
 ## The point
 
 The exclusions were never a permanent feature of these products. They were a temporary carve-out with a date attached, and the date is now close enough to plan against rather than argue about. Confirm which headings you actually clear under, price the snapback at your own volume, and treat a further extension as upside rather than a baseline.

@@ -519,6 +519,13 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/fallback-publish.mjs
 
+      - name: Give the new article inbound links from related pages
+        # Discovery is the binding constraint on a new domain: an article that nothing links to waits for the
+        # sitemap. This runs after the publish so the page exists, and only edits the body of older pages.
+        if: always()
+        continue-on-error: true
+        run: node tools/link-new-article.mjs --days=2 || echo "inbound linking skipped"
+
       - name: Tell IndexNow about the pages that changed today
         # IndexNow is the only real-time submission channel a static site has (Bing, Yandex). The tool existed and
         # was never called: nothing told any search engine that a page had appeared until it crawled the sitemap.
