@@ -229,6 +229,33 @@ if (process.env.CF_API_TOKEN && process.env.CF_ACCOUNT_ID) {
   record("warn", "deploy", "not verified - no CF token in this environment");
 }
 
+/* 5c ------------------------------------------------------------- indexing floor */
+/*
+ * THE OPERATOR SET A FLOOR: at least ten pages a week must reach Google's index.
+ *
+ * Publishing into an index nobody enters produces no impressions, and the site's own numbers proved it - 441 URLs,
+ * one impression in seven days. The sampler writes data/gsc/index-status-<date>.json; this reads the newest one
+ * and reports how many of the sampled pages Google holds.
+ */
+try {
+  const dir = join(ROOT, "data", "gsc");
+  const snaps = existsSync(dir) ? readdirSync(dir).filter((f) => /^index-status-\d{4}-\d\d-\d\d\.json$/.test(f)).sort() : [];
+  if (!snaps.length) record("warn", "indexing", "no index sample yet - the sampler runs with the daily pipeline");
+  else {
+    const j = JSON.parse(readFileSync(join(dir, snaps[snaps.length - 1]), "utf8"));
+    const rows = j.rows ?? [];
+    const hostOk = rows.every((r) => { try { return /^www\./.test(new URL(r.url).host); } catch { return false; } });
+    const indexed = rows.filter((r) => /indexed/i.test(String(r.state)) && !/not indexed/i.test(String(r.state))).length;
+    const sampled = rows.length;
+    if (!hostOk) record("warn", "indexing", "the newest sample inspected the bare domain, so its verdicts are not about the live site - the next run fixes it");
+    else if (sampled === 0) record("warn", "indexing", "the last sample is empty");
+    else if (indexed >= 10) record("ok", "indexing", indexed + " of " + sampled + " sampled pages are indexed");
+    else record(indexed === 0 ? "critical" : "warn", "indexing", indexed + " of " + sampled + " sampled pages indexed - the weekly floor is 10");
+  }
+} catch (e) {
+  record("warn", "indexing", "index sample unreadable: " + String(e.message).slice(0, 80));
+}
+
 /* 6 ----------------------------------------------------------- growth vs target */
 /*
  * THE GOAL IS 10,000 UV/DAY. This line says where the site actually is, because a number nobody prints is a
