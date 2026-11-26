@@ -21,7 +21,16 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const LIMIT = Number((args.find((a) => a.startsWith("--limit=")) ?? "--limit=30").split("=")[1]);
 const SITE = process.env.GSC_SITE_URL ?? "sc-domain:landedmath.com";
-const DOMAIN = SITE.replace(/^sc-domain:/, "");
+/*
+ * ASK ABOUT THE HOST THE SITE ACTUALLY SERVES.
+ *
+ * The property is sc-domain:landedmath.com, so the bare domain is not the canonical host: every page is served
+ * from www.landedmath.com and the sitemap lists the www form. Inspecting the bare-domain URL returned
+ * "URL is unknown to Google" for 29 of 30 pages and "alternate page with proper canonical tag" for the one that
+ * resolved - a measurement artefact, not a site problem. The host comes from SITE_HOST when set.
+ */
+const RAW_DOMAIN = SITE.replace(/^sc-domain:/, "");
+const DOMAIN = process.env.SITE_HOST ?? (/^www\./.test(RAW_DOMAIN) ? RAW_DOMAIN : "www." + RAW_DOMAIN);
 
 const b64url = (b) => Buffer.from(b).toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 
