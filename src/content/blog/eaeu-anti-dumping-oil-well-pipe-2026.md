@@ -227,3 +227,5 @@ For the paperwork and the cost in one place, see [Chinese residence permit](/gui
 For the paperwork and the cost in one place, see Chinese medical team conducts health outreach in Sierra Leone.
 
 For the paperwork and the cost in one place, see Chinese VP attends COP31 Antalya Leaders' Summit.
+
+For the paperwork and the cost in one place, see [Xi says joint space exploration by Chinese, Pakistani astronauts vivid embodiment of deep-rooted friendship](/guide/xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-/).

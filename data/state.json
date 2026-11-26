@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-26T02:05:48.726Z",
-  "lastVerdict": "PUBLISHED-DEGRADED",
+  "lastRun": "2026-11-26T23:21:08.302Z",
+  "lastVerdict": "REJECTED",
   "lastArticle": "beijing-irkutsk-train-fares-2026",
-  "runs": 64,
+  "runs": 65,
   "published": 50,
   "lastUsage": {
     "calls": 9,
-    "failed": 2,
-    "usd": 0.0192,
-    "promptTokens": 95006,
-    "completionTokens": 9222
+    "failed": 0,
+    "usd": 0.0238,
+    "promptTokens": 169474,
+    "completionTokens": 18579
   }
 }

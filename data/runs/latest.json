@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-26T02:05:48.726Z",
+  "at": "2026-11-26T23:21:08.302Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "63 previous run(s), last 2026-11-23T23:21:22.337Z (PUBLISHED-DEGRADED)"
+      "detail": "64 previous run(s), last 2026-11-26T02:05:48.726Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "1 of 15 net-new this week"
+      "detail": "6 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,12 +33,12 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed beijing-irkutsk-train-fares-2026, 6 verified figure(s)"
+      "detail": "proposed china-services-trade-plan-2026-2030-importer, 8 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "6 sourced figure(s)"
+      "detail": "8 sourced figure(s)"
     },
     {
       "name": "inbound precheck",
@@ -48,111 +48,151 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/beijing-irkutsk-train-fares-2026.md"
+      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer.md"
     },
     {
       "name": "reviewer",
-      "ok": true,
-      "detail": "APPROVED: L5 8 issue(s), 8 with a citation"
+      "ok": false,
+      "detail": "REJECTED: L1 2 gate failure(s): structural gates, internal links — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
     },
     {
-      "name": "reviewer",
+      "name": "inbound precheck",
       "ok": true,
-      "detail": "8 objection(s), advisory only - publishing"
+      "detail": "every internal link resolves"
     },
     {
-      "name": "publish",
+      "name": "writer (revision 1)",
       "ok": true,
-      "detail": "staged at src/content/blog/beijing-irkutsk-train-fares-2026.md"
+      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer.md"
     },
     {
-      "name": "registry",
-      "ok": true,
-      "detail": "rebuilt"
+      "name": "reviewer (revision 1)",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): internal links — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
     },
     {
-      "name": "inbound links",
+      "name": "inbound precheck",
       "ok": true,
-      "detail": "2 older article(s) now link here"
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 2)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer.md"
+    },
+    {
+      "name": "reviewer (revision 2)",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): internal links — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
     },
     {
       "name": "state written",
       "ok": true,
-      "detail": "verdict PUBLISHED-DEGRADED"
+      "detail": "verdict REJECTED"
     }
   ],
-  "verdict": "PUBLISHED-DEGRADED",
+  "verdict": "REJECTED",
   "reasons": [
-    "repaired 1 dangling link(s) in other articles before judging this draft",
-    "reviewer: 8 objection(s), advisory - published anyway"
+    "L1: 1 gate failure(s): internal links — dist rebuilt with the draft staged",
+    "L5: not run - an earlier layer failed",
+    "no attempt improved on the first (scores 200 -> 200 -> 200), so the objections are probably not mechanical"
   ],
-  "article": "beijing-irkutsk-train-fares-2026",
+  "article": null,
   "commit": null,
   "usage": {
     "calls": 9,
-    "failed": 2,
-    "usd": 0.0192,
-    "promptTokens": 95006,
-    "completionTokens": 9222
+    "failed": 0,
+    "usd": 0.0238,
+    "promptTokens": 169474,
+    "completionTokens": 18579
   },
   "route": "script",
   "categoryActivity": {
-    "logistics": 0,
+    "logistics": 2,
     "sourcing": 0,
-    "trade-policy": 0,
+    "trade-policy": 3,
     "supply-chain": 1,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    china-daily-china-article    56001B  article archived",
-    "  ok    moa-article                 48663B  article archived",
-    "  ok    moa-article                 51413B  article archived",
-    "  ok    moa-article                 53758B  article archived",
-    "  ok    mem-article                 31304B  article archived",
-    "  ok    mem-article                 30847B  article archived",
-    "  ok    mem-article                 29400B  article archived",
-    "  ok    forestry-article            46571B  article archived",
-    "  ok    forestry-article            42926B  article archived",
-    "  ok    forestry-article            34630B  article archived",
-    "  ok    spb-article                642683B  article archived",
-    "  ok    spb-article                419243B  article archived",
-    "  ok    spb-article                 29020B  article archived",
-    "  fresh     : 0 article(s) dated today, newest 2026-11-25",
-    "  articles : 24 followed from the listings",
-    "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 1177 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 4067 characters but no document structure, trying the next one",
-    "  stream      : SSE, 999 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3322 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1044 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3643 characters but no document structure, trying the next one",
-    "  spent   : ~0.0075  (ceiling 0.40)",
+    "  stream      : SSE, 1067 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3714 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1039 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3649 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1020 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3540 characters but no document structure, trying the next one",
+    "  spent   : ~0.0082  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
+    "  slug already published: beijing-irkutsk-train-fares-2026 - retrying with another subject",
     "  slug    : beijing-irkutsk-train-fares-2026",
     "  keyword : Beijing Irkutsk train fare 2026",
+    "  duplicate check: score 99 against beijing-irkutsk-train-fares-2026",
+    "      the slug beijing-irkutsk-train-fares-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 911 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3262 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1429 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 5405 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1554 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 5903 characters but no document structure, trying the next one",
+    "  spent   : ~0.0166  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-services-trade-plan-2026-2030-importer",
+    "  keyword : China services trade plan 2026 2030 importer",
     "  duplicate check: score 0",
-    "  slug    : beijing-irkutsk-train-fares-2026",
-    "  keyword : Beijing Irkutsk train fare 2026",
-    "  category: logistics",
-    "  figures : 6",
+    "  slug    : china-services-trade-plan-2026-2030-importer",
+    "  keyword : China services trade plan 2026 2030 importer",
+    "  category: trade-policy",
+    "  figures : 8",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0075",
+    "  spend this run: ~$0.0166",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "reviewAdvisory": [
-    "The supplied figure record for '16 cars' carries no excerpt, and the draft asserts a car-by-car breakdown (11 hard sleeper, 2 deluxe soft, 1 dining) that no supplied figure contains.",
-    "The 'Friday afternoon' arrival is not in any supplied figure record, so the draft attributes a schedule detail to the source that the evidence does not carry.",
-    "The body and subtitle state the train 'departs Wednesdays at 7:27 am' as settled fact, while the confidence section says the weekday is not stated - the two cannot both be true.",
-    "A single one-way fare is not a floor for the overland route; the claim treats an unstated comparison (airfare, visa, meals) as if the figures bounded it.",
-    "The draft itself says airfares and flight times are not stated, so asserting the rail option 'competes' is a comparison the figures do not support.",
-    "No supplied figure or document supports this statement about China-Russia freight rail; it is outside the evidence and outside the article's priced scope."
+  "attempts": [
+    {
+      "attempt": 1,
+      "score": 200,
+      "verdict": "REJECTED",
+      "issues": []
+    },
+    {
+      "attempt": 2,
+      "score": 200,
+      "verdict": "REJECTED",
+      "issues": []
+    },
+    {
+      "attempt": 3,
+      "score": 200,
+      "verdict": "REJECTED",
+      "issues": []
+    }
   ],
-  "seconds": 319
+  "qa": {
+    "verdict": "REJECTED",
+    "layers": {
+      "L1": {
+        "pass": false,
+        "detail": "1 gate failure(s): internal links — dist rebuilt with the draft staged"
+      },
+      "advisory": {
+        "pass": true,
+        "detail": "csp, structured data and the reviewer found nothing"
+      },
+      "L5": {
+        "pass": false,
+        "detail": "not run - an earlier layer failed"
+      }
+    }
+  },
+  "seconds": 222
 }

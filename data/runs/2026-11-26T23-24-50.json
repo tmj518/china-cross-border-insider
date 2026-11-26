@@ -1,0 +1,198 @@
+{
+  "at": "2026-11-26T23:21:08.302Z",
+  "providers": [
+    "volces",
+    "deepseek"
+  ],
+  "steps": [
+    {
+      "name": "providers",
+      "ok": true,
+      "detail": "volces, deepseek"
+    },
+    {
+      "name": "state",
+      "ok": true,
+      "detail": "64 previous run(s), last 2026-11-26T02:05:48.726Z (PUBLISHED-DEGRADED)"
+    },
+    {
+      "name": "weekly ceiling",
+      "ok": true,
+      "detail": "6 of 15 net-new this week"
+    },
+    {
+      "name": "sections covered this week",
+      "ok": true,
+      "detail": "every section has a net-new article this week (5 sections)"
+    },
+    {
+      "name": "directive",
+      "ok": true,
+      "detail": "none at /data/directive.json"
+    },
+    {
+      "name": "research",
+      "ok": true,
+      "detail": "proposed china-services-trade-plan-2026-2030-importer, 8 verified figure(s)"
+    },
+    {
+      "name": "directive figures",
+      "ok": true,
+      "detail": "8 sourced figure(s)"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer.md"
+    },
+    {
+      "name": "reviewer",
+      "ok": false,
+      "detail": "REJECTED: L1 2 gate failure(s): structural gates, internal links — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 1)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer.md"
+    },
+    {
+      "name": "reviewer (revision 1)",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): internal links — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "inbound precheck",
+      "ok": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "writer (revision 2)",
+      "ok": true,
+      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer.md"
+    },
+    {
+      "name": "reviewer (revision 2)",
+      "ok": false,
+      "detail": "REJECTED: L1 1 gate failure(s): internal links — dist rebuilt with the draft staged; L5 not run - an earlier layer failed"
+    },
+    {
+      "name": "state written",
+      "ok": true,
+      "detail": "verdict REJECTED"
+    }
+  ],
+  "verdict": "REJECTED",
+  "reasons": [
+    "L1: 1 gate failure(s): internal links — dist rebuilt with the draft staged",
+    "L5: not run - an earlier layer failed",
+    "no attempt improved on the first (scores 200 -> 200 -> 200), so the objections are probably not mechanical"
+  ],
+  "article": null,
+  "commit": null,
+  "usage": {
+    "calls": 9,
+    "failed": 0,
+    "usd": 0.0238,
+    "promptTokens": 169474,
+    "completionTokens": 18579
+  },
+  "route": "script",
+  "categoryActivity": {
+    "logistics": 2,
+    "sourcing": 0,
+    "trade-policy": 3,
+    "supply-chain": 1,
+    "platforms": 0
+  },
+  "uncoveredSections": [],
+  "researchLog": [
+    "  proposing a subject from 8 archived document(s)...",
+    "  stream      : SSE, 1067 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3714 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1039 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3649 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1020 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3540 characters but no document structure, trying the next one",
+    "  spent   : ~0.0082  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug already published: beijing-irkutsk-train-fares-2026 - retrying with another subject",
+    "  slug    : beijing-irkutsk-train-fares-2026",
+    "  keyword : Beijing Irkutsk train fare 2026",
+    "  duplicate check: score 99 against beijing-irkutsk-train-fares-2026",
+    "      the slug beijing-irkutsk-train-fares-2026 is already in src/content/blog",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 911 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3262 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1429 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 5405 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1554 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 5903 characters but no document structure, trying the next one",
+    "  spent   : ~0.0166  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-services-trade-plan-2026-2030-importer",
+    "  keyword : China services trade plan 2026 2030 importer",
+    "  duplicate check: score 0",
+    "  slug    : china-services-trade-plan-2026-2030-importer",
+    "  keyword : China services trade plan 2026 2030 importer",
+    "  category: trade-policy",
+    "  figures : 8",
+    "  evidence check:",
+    "    external figures : 0",
+    "    verified         : 0",
+    "    failed           : 0",
+    "  wrote /data/directive.json",
+    "  spend this run: ~$0.0166",
+    "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "score": 200,
+      "verdict": "REJECTED",
+      "issues": []
+    },
+    {
+      "attempt": 2,
+      "score": 200,
+      "verdict": "REJECTED",
+      "issues": []
+    },
+    {
+      "attempt": 3,
+      "score": 200,
+      "verdict": "REJECTED",
+      "issues": []
+    }
+  ],
+  "qa": {
+    "verdict": "REJECTED",
+    "layers": {
+      "L1": {
+        "pass": false,
+        "detail": "1 gate failure(s): internal links — dist rebuilt with the draft staged"
+      },
+      "advisory": {
+        "pass": true,
+        "detail": "csp, structured data and the reviewer found nothing"
+      },
+      "L5": {
+        "pass": false,
+        "detail": "not run - an earlier layer failed"
+      }
+    }
+  },
+  "seconds": 222
+}

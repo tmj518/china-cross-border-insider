@@ -185,3 +185,5 @@ No cost figures were supplied in the source document, so no per-unit cost calcul
 China's domestically developed riserless drilling system has passed a functional milestone at 2,004.8 meters, surpassing the previous international record of 1,419 meters. For importers of deep-sea minerals, natural gas hydrates, and offshore oil, this is a directional signal: China's deep-sea drilling capability is expanding, and the cost consequences will follow when commercial deployment is announced. The technology is confirmed; the cost arithmetic is not yet priced. Watch for deployment announcements, and factor the competitive shift into your supply assumptions.
 
 Related reading: [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/) and [china 2026 export duty wrought metals](/blog/china-2026-export-duty-wrought-metals/).
+
+For the paperwork and the cost in one place, see [Xi says joint space exploration by Chinese, Pakistani astronauts vivid embodiment of deep-rooted friendship](/guide/xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-/).
