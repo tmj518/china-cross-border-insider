@@ -115,6 +115,15 @@ const GATES = [
     fast: true,
   },
   {
+    /* Whether Google can consider a page at all: canonical on the www host, no noindex, listed in the sitemap. */
+    id: "check-indexable",
+    tier: "hard",
+    label: "indexability",
+    args: ["tools/check-indexable.mjs", "--limit=40"],
+    inputs: ["dist"],
+    fast: true,
+  },
+  {
     /* The operator asked for a named safety gate: REAL / RELEVANT / RIGHTS. Soft, because it reports on the
        whole library and 85 older guides predate the market rule. */
     id: "check-3r",
