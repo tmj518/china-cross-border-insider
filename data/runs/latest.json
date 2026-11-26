@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-23T23:21:22.337Z",
+  "at": "2026-11-26T02:05:48.726Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "62 previous run(s), last 2026-11-22T23:21:16.185Z (PUBLISHED-DEGRADED)"
+      "detail": "63 previous run(s), last 2026-11-23T23:21:22.337Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "0 of 15 net-new this week"
+      "detail": "1 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -33,12 +33,12 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-october-2026-electricity-consumption-ev-charging-data-services, 7 verified figure(s)"
+      "detail": "proposed beijing-irkutsk-train-fares-2026, 6 verified figure(s)"
     },
     {
       "name": "directive figures",
       "ok": true,
-      "detail": "7 sourced figure(s)"
+      "detail": "6 sourced figure(s)"
     },
     {
       "name": "inbound precheck",
@@ -48,22 +48,22 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-october-2026-electricity-consumption-ev-charging-data-services.md"
+      "detail": "draft at /data/drafts/beijing-irkutsk-train-fares-2026.md"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "APPROVED: L5 12 issue(s), 12 with a citation"
+      "detail": "APPROVED: L5 8 issue(s), 8 with a citation"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "12 objection(s), advisory only - publishing"
+      "detail": "8 objection(s), advisory only - publishing"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/china-october-2026-electricity-consumption-ev-charging-data-services.md"
+      "detail": "staged at src/content/blog/beijing-irkutsk-train-fares-2026.md"
     },
     {
       "name": "registry",
@@ -83,75 +83,76 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 12 objection(s), advisory - published anyway"
+    "repaired 1 dangling link(s) in other articles before judging this draft",
+    "reviewer: 8 objection(s), advisory - published anyway"
   ],
-  "article": "china-october-2026-electricity-consumption-ev-charging-data-services",
+  "article": "beijing-irkutsk-train-fares-2026",
   "commit": null,
   "usage": {
     "calls": 9,
     "failed": 2,
-    "usd": 0.0222,
-    "promptTokens": 101220,
-    "completionTokens": 10987
+    "usd": 0.0192,
+    "promptTokens": 95006,
+    "completionTokens": 9222
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 0,
     "sourcing": 0,
     "trade-policy": 0,
-    "supply-chain": 0,
+    "supply-chain": 1,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  ok    china-daily-article         55319B  article archived",
-    "  ok    mof-article                 22362B  article archived",
-    "  ok    mof-article                 22886B  article archived",
-    "  ok    mof-article                 22220B  article archived",
-    "  ok    stats-en-article            64152B  article archived",
-    "  ok    stats-en-article             5722B  article archived",
-    "  ok    stats-en-article            38395B  article archived",
+    "  ok    china-daily-china-article    56001B  article archived",
     "  ok    moa-article                 48663B  article archived",
     "  ok    moa-article                 51413B  article archived",
-    "  ok    moa-article                 52336B  article archived",
+    "  ok    moa-article                 53758B  article archived",
     "  ok    mem-article                 31304B  article archived",
     "  ok    mem-article                 30847B  article archived",
     "  ok    mem-article                 29400B  article archived",
-    "  fresh     : 1 article(s) dated today, newest 2026-11-24",
+    "  ok    forestry-article            46571B  article archived",
+    "  ok    forestry-article            42926B  article archived",
+    "  ok    forestry-article            34630B  article archived",
+    "  ok    spb-article                642683B  article archived",
+    "  ok    spb-article                419243B  article archived",
+    "  ok    spb-article                 29020B  article archived",
+    "  fresh     : 0 article(s) dated today, newest 2026-11-25",
     "  articles : 24 followed from the listings",
     "  ledger: 36 published subject(s) to avoid repeating",
     "  proposing a subject from 8 archived document(s)...",
-    "  stream      : SSE, 909 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3330 characters but no document structure, trying the next one",
-    "  stream      : SSE, 890 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3158 characters but no document structure, trying the next one",
-    "  stream      : SSE, 996 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3517 characters but no document structure, trying the next one",
-    "  spent   : ~0.0081  (ceiling 0.40)",
+    "  stream      : SSE, 1177 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 4067 characters but no document structure, trying the next one",
+    "  stream      : SSE, 999 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3322 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1044 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 3643 characters but no document structure, trying the next one",
+    "  spent   : ~0.0075  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : china-october-2026-electricity-consumption-ev-charging-data-services",
-    "  keyword : China EV charging electricity consumption October 2026 importer",
+    "  slug    : beijing-irkutsk-train-fares-2026",
+    "  keyword : Beijing Irkutsk train fare 2026",
     "  duplicate check: score 0",
-    "  slug    : china-october-2026-electricity-consumption-ev-charging-data-services",
-    "  keyword : China EV charging electricity consumption October 2026 importer",
-    "  category: supply-chain",
-    "  figures : 7",
+    "  slug    : beijing-irkutsk-train-fares-2026",
+    "  keyword : Beijing Irkutsk train fare 2026",
+    "  category: logistics",
+    "  figures : 6",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0081",
+    "  spend this run: ~$0.0075",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
   "reviewAdvisory": [
-    "The figures give only consumption values and growth rates; they do not state what drives data-center electricity growth, so the draft attributes a cause the evidence does not contain.",
-    "The figures contain no wear, replacement or expansion data, so this chain of consequences is invented rather than derived from the supplied numbers.",
-    "Nothing in the figures states that operators are ordering, that foreign suppliers have a window, or that domestic manufacturers will absorb demand; this is speculation presented as a sourcing conclusion.",
-    "The draft elsewhere admits the figures state no lead times, yet here asserts a competition for factory capacity that no supplied figure supports.",
-    "The figures contain no forecast or timing signal, so the two-to-three-quarter window is invented and the article's central sourcing advice rests on it.",
-    "The draft compares a single-month growth rate with a ten-month cumulative growth rate as if they were the same measure, which is a cross-level comparison the figures do not support."
+    "The supplied figure record for '16 cars' carries no excerpt, and the draft asserts a car-by-car breakdown (11 hard sleeper, 2 deluxe soft, 1 dining) that no supplied figure contains.",
+    "The 'Friday afternoon' arrival is not in any supplied figure record, so the draft attributes a schedule detail to the source that the evidence does not carry.",
+    "The body and subtitle state the train 'departs Wednesdays at 7:27 am' as settled fact, while the confidence section says the weekday is not stated - the two cannot both be true.",
+    "A single one-way fare is not a floor for the overland route; the claim treats an unstated comparison (airfare, visa, meals) as if the figures bounded it.",
+    "The draft itself says airfares and flight times are not stated, so asserting the rail option 'competes' is a comparison the figures do not support.",
+    "No supplied figure or document supports this statement about China-Russia freight rail; it is outside the evidence and outside the article's priced scope."
   ],
-  "seconds": 316
+  "seconds": 319
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24",
+  "generated": "2026-11-26",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -1338,6 +1338,73 @@
       ],
       "articleSlugs": [
         "china-producer-price-split-copper-ferrous-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "china-daily-article-on-beijing-irkutsk-train-service",
+      "source": "China Daily article on Beijing-Irkutsk train service",
+      "figures": [
+        {
+          "articleSlug": "beijing-irkutsk-train-fares-2026",
+          "articleNum": 119,
+          "value": "2,411 yuan",
+          "unit": "one-way hard sleeper fare",
+          "period": "as of launch, weekly service",
+          "source": "China Daily article on Beijing-Irkutsk train service",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "beijing-irkutsk-train-fares-2026",
+          "articleNum": 119,
+          "value": "3,763 yuan",
+          "unit": "one-way deluxe soft sleeper fare",
+          "period": "as of launch, weekly service",
+          "source": "China Daily article on Beijing-Irkutsk train service",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "beijing-irkutsk-train-fares-2026",
+          "articleNum": 119,
+          "value": "2,666-kilometer",
+          "unit": "journey distance",
+          "period": "per trip",
+          "source": "China Daily article on Beijing-Irkutsk train service",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "beijing-irkutsk-train-fares-2026",
+          "articleNum": 119,
+          "value": "55 hours",
+          "unit": "journey duration",
+          "period": "per trip",
+          "source": "China Daily article on Beijing-Irkutsk train service",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "beijing-irkutsk-train-fares-2026",
+          "articleNum": 119,
+          "value": "16 cars",
+          "unit": "train composition",
+          "period": "as of launch",
+          "source": "China Daily article on Beijing-Irkutsk train service",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "beijing-irkutsk-train-fares-2026",
+          "articleNum": 119,
+          "value": "7:27 am",
+          "unit": "departure time from Beijing",
+          "period": "weekly, Wednesdays",
+          "source": "China Daily article on Beijing-Irkutsk train service",
+          "retrieved": "2026-11-26"
+        }
+      ],
+      "articleNums": [
+        119
+      ],
+      "articleSlugs": [
+        "beijing-irkutsk-train-fares-2026"
       ],
       "modelOutput": false
     },

@@ -92,6 +92,8 @@ The table above uses the diesel cut of 625 yuan per tonne and a consumption rate
 
 > Also read: [China's Beidou network now runs 42 million industrial](/blog/beidou-terminal-devices-china-2026-importer-tracking/)
 
+> Also read: [Beijing-Irkutsk train relaunch: hard sleeper 2,411 yuan](/blog/beijing-irkutsk-train-fares-2026/)
+
 ## For you
 
 - **Importers arranging their own inland transport:** recalculate per-shipment fuel budgets using the 625 yuan per tonne diesel cut, and ask carriers for revised quotes that reflect the lower fuel cost.

@@ -92,4 +92,4 @@ The fee for the visa itself is set by the mission that receives the application,
 
 ## Related reading
 
-This procedure sits alongside the site's work on Chinese import controls, which follows the same discipline of reading the primary document rather than a summary of it: [China dual-use export control suspension extension](/blog/china-dual-use-export-control-suspension-extension-us-nov-2026/).
+This procedure sits alongside the site's work on Chinese import controls, which follows the same discipline of reading the primary document rather than a summary of it: China dual-use export control suspension extension.

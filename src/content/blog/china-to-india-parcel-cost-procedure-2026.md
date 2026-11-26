@@ -105,6 +105,8 @@ Read the table from the top. Each row's failure mode is the next row's missing i
 
 > Also read: [China's Beidou network now runs 42 million industrial](/blog/beidou-terminal-devices-china-2026-importer-tracking/)
 
+> Also read: [Beijing-Irkutsk train relaunch: hard sleeper 2,411 yuan](/blog/beijing-irkutsk-train-fares-2026/)
+
 ## For you
 
 - **Shippers who have a freight quote and nothing else:** ask the forwarder which declaration route the parcel will travel under, and get it in writing before the parcel is collected. The route is the decision that cannot be revisited.
