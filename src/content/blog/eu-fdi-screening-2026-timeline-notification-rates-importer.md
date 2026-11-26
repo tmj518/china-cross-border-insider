@@ -162,8 +162,8 @@ Importers planning FDI into the EU do not need to guess at processing speeds or 
 
 For the paperwork and the cost in one place, see [China work permit processing time](/guide/work-permit-processing-time/).
 
-For the paperwork and the cost in one place, see Eu fdi screening.
+For the paperwork and the cost in one place, see [Eu fdi screening](/guide/eu-fdi-screening/).
 
-For the paperwork and the cost in one place, see "investment screening".
+For the paperwork and the cost in one place, see ["investment screening"](/guide/investment-screening/).
 
-For the paperwork and the cost in one place, see Fdi screening.
+For the paperwork and the cost in one place, see [Fdi screening](/guide/fdi-screening/).

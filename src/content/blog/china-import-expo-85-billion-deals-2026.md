@@ -172,14 +172,14 @@ No distribution of deals across exhibitors is published.
 
 The ninth CIIE closed with a record $85.45 billion in intended deals, up 2.3 percent from the previous edition, with 4,142 overseas exhibitors and 480-plus product debuts. The figure is the strongest available signal that Chinese buyers remain active and willing to commit to foreign goods. It is not a contract, and the conversion rate is unknown, but the direction is clear: the world's largest import market is still buying. For an importer, the question is not whether the demand exists, but whether your product is in the room when the deals are signed.
 
-For the paperwork and the cost in one place, see Special Report: The 9th China International Import Expo.
+For the paperwork and the cost in one place, see [Special Report: The 9th China International Import Expo](/guide/special-report-the-9th-china-international-import-expo/).
 
-For the paperwork and the cost in one place, see Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness.
+For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness](/guide/xinhua-special-ciie-2026-vibrancy-sharing-openness/).
 
 For the paperwork and the cost in one place, see China's foreign trade growth picks up pace on stellar imports, booming AI demand.
 
-For the paperwork and the cost in one place, see China's import expo tells a larger story of openness, shared opportunities.
+For the paperwork and the cost in one place, see [China's import expo tells a larger story of openness, shared opportunities](/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/).
 
-For the paperwork and the cost in one place, see China willing to further boost political mutual trust with Thailand, says Chinese premier.
+For the paperwork and the cost in one place, see [China willing to further boost political mutual trust with Thailand, says Chinese premier](/guide/china-willing-to-further-boost-political-mutual-trust-with-thailand-sa/).
 
-For the paperwork and the cost in one place, see China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world.
+For the paperwork and the cost in one place, see [China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world](/guide/china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp/).

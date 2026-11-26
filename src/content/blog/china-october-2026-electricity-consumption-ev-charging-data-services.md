@@ -164,4 +164,4 @@ China's charging network consumed 18.6 billion kilowatt-hours in October, up 59.
 
 Related reading: [beidou terminal devices china 2026 importer tracking](/blog/beidou-terminal-devices-china-2026-importer-tracking/) and [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/).
 
-For the paperwork and the cost in one place, see China rolls out plan to improve eldercare, childcare services.
+For the paperwork and the cost in one place, see [China rolls out plan to improve eldercare, childcare services](/guide/china-rolls-out-plan-to-improve-eldercare-childcare-services/).

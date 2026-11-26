@@ -186,4 +186,4 @@ D = in-depth-assessment duration, not supplied
 
 The 2028 EU FDI regime is a timing risk to plan around: use 15 days for the observed ordinary closure pattern, use the 12% in-depth share to trigger a separate contingency, and do not treat either figure as a duty rate, fee or guaranteed deadline.
 
-For the paperwork and the cost in one place, see "investment screening".
+For the paperwork and the cost in one place, see ["investment screening"](/guide/investment-screening/).

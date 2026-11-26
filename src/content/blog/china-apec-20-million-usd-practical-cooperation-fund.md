@@ -166,12 +166,12 @@ China's USD 20 million pledge to APEC practical cooperation is a directional sig
 
 Related reading: [beidou terminal devices china 2026 importer tracking](/blog/beidou-terminal-devices-china-2026-importer-tracking/), [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/), and [china fuel price cut november 12 2026 per tonne](/blog/china-fuel-price-cut-november-12-2026-per-tonne/).
 
-For the paperwork and the cost in one place, see China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world.
+For the paperwork and the cost in one place, see [China's APEC journey witnesses quarter-century pursuit of shared prosperity with wider world](/guide/china-s-apec-journey-witnesses-quarter-century-pursuit-of-shared-prosp/).
 
-For the paperwork and the cost in one place, see APEC: Striving Together for Shared Prosperity.
+For the paperwork and the cost in one place, see [APEC: Striving Together for Shared Prosperity](/guide/apec-striving-together-for-shared-prosperity/).
 
-For the paperwork and the cost in one place, see Building an Asia-Pacific community: China's journey of cooperation.
+For the paperwork and the cost in one place, see [Building an Asia-Pacific community: China's journey of cooperation](/guide/building-an-asia-pacific-community-china-s-journey-of-cooperation/).
 
-For the paperwork and the cost in one place, see China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi.
+For the paperwork and the cost in one place, see [China is advocate, promoter, forerunner in Asia-Pacific economic cooperation: Xi](/guide/china-is-advocate-promoter-forerunner-in-asia-pacific-economic-coopera/).
 
-For the paperwork and the cost in one place, see Xinhua Commentary: Shenzhen "peace summit" underscores shared responsibilities of major countries.
+For the paperwork and the cost in one place, see [Xinhua Commentary: Shenzhen "peace summit" underscores shared responsibilities of major countries](/guide/xinhua-commentary-shenzhen-peace-summit-underscores-shared-responsibil/).

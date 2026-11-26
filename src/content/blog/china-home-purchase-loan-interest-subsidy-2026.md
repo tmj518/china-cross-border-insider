@@ -204,6 +204,6 @@ For the paperwork and the cost in one place, see [China home return permit appli
 
 For the paperwork and the cost in one place, see [China home return permit application hong kong](/guide/home-return-permit-application-hong-kong/).
 
-For the paperwork and the cost in one place, see Can a Foreigner Buy Property in China? Rules and Subsidies.
+For the paperwork and the cost in one place, see [Can a Foreigner Buy Property in China? Rules and Subsidies](/guide/foreigner-buy-property-china/).
 
-For the paperwork and the cost in one place, see What Does APEC Mean to You and Me?.
+For the paperwork and the cost in one place, see [What Does APEC Mean to You and Me?](/guide/what-does-apec-mean-to-you-and-me/).

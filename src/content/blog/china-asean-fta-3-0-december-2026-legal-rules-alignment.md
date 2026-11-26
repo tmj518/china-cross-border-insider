@@ -168,6 +168,6 @@ Therefore:
 
 The China-ASEAN FTA 3.0 Upgrade Protocol applies from 1 December 2026, and the Chongqing forum pledged that the legal rules and standards around it will align across the region. The report gives a date and a direction, and it gives the size of the trade the protocol governs at $744.41 billion for January through July 2026. It gives no rate. An importer's job before the date is documentary: complete origin evidence, contract terms that name the governing law and forum, and a clear map of which shipments sit inside the rule change. Price the duty when the protocol's text is published, not before.
 
-For the paperwork and the cost in one place, see Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador.
+For the paperwork and the cost in one place, see [Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador](/guide/looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi/).
 
-For the paperwork and the cost in one place, see Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections.
+For the paperwork and the cost in one place, see [Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections](/guide/central-government-spokesperson-hails-hong-kong-s-2026-election-commit/).

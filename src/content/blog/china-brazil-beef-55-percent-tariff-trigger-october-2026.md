@@ -178,34 +178,34 @@ For the paperwork and the cost in one place, see [China permanent residence perm
 
 For the paperwork and the cost in one place, see [China residence permit number](/guide/residence-permit-number/).
 
-For the paperwork and the cost in one place, see Economic Watch: Beyond market size, European firms tap China's growth, innovation potential.
+For the paperwork and the cost in one place, see [Economic Watch: Beyond market size, European firms tap China's growth, innovation potential](/guide/economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in/).
 
-For the paperwork and the cost in one place, see China's CPI up 0.7 pct in October.
+For the paperwork and the cost in one place, see [China's CPI up 0.7 pct in October](/guide/china-s-cpi-up-0-7-pct-in-october/).
 
-For the paperwork and the cost in one place, see China extends suspension of 24 pct additional tariff on U.S. goods for two months.
+For the paperwork and the cost in one place, see [China extends suspension of 24 pct additional tariff on U.S. goods for two months](/guide/china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-/).
 
 For the paperwork and the cost in one place, see [Temporary residence permit china](/guide/temporary-residence-permit/).
 
-For the paperwork and the cost in one place, see "council regulation (eu) 2026/382".
+For the paperwork and the cost in one place, see ["council regulation (eu) 2026/382"](/guide/council-regulation-eu-2026-382/).
 
-For the paperwork and the cost in one place, see Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver.
+For the paperwork and the cost in one place, see [Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver](/guide/second-china-canada-strategic-economic-and-financial-dialogue-conclude/).
 
-For the paperwork and the cost in one place, see China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition.
+For the paperwork and the cost in one place, see [China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition](/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/).
 
-For the paperwork and the cost in one place, see China's health story holds lessons for all, Lancet says.
+For the paperwork and the cost in one place, see [China's health story holds lessons for all, Lancet says](/guide/china-s-health-story-holds-lessons-for-all-lancet-says/).
 
-For the paperwork and the cost in one place, see China permanent resident.
+For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).
 
-For the paperwork and the cost in one place, see China wraps up offshore trust tax transition, declared tax tops 160 bln yuan.
+For the paperwork and the cost in one place, see [China wraps up offshore trust tax transition, declared tax tops 160 bln yuan](/guide/china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln/).
 
-For the paperwork and the cost in one place, see China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief.
+For the paperwork and the cost in one place, see [China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief](/guide/china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie/).
 
-For the paperwork and the cost in one place, see High-frequency data show improving trend in Chinese economy in October.
+For the paperwork and the cost in one place, see [High-frequency data show improving trend in Chinese economy in October](/guide/high-frequency-data-show-improving-trend-in-chinese-economy-in-october/).
 
 For the paperwork and the cost in one place, see [China steps up coverage of innovative drugs under medical insurance](/guide/china-steps-up-coverage-of-innovative-drugs-under-medical-insurance/).
 
-For the paperwork and the cost in one place, see APEC host China's evolving role in regional economic cooperation.
+For the paperwork and the cost in one place, see [APEC host China's evolving role in regional economic cooperation](/guide/apec-host-china-s-evolving-role-in-regional-economic-cooperation/).
 
-For the paperwork and the cost in one place, see Chinese premier urges China, ASEAN to stand united, overcome distractions.
+For the paperwork and the cost in one place, see [Chinese premier urges China, ASEAN to stand united, overcome distractions](/guide/chinese-premier-urges-china-asean-to-stand-united-overcome-distraction/).
 
-For the paperwork and the cost in one place, see How do employers find health cover for staff based in china?.
+For the paperwork and the cost in one place, see [How do employers find health cover for staff based in china?](/guide/how-do-employers-find-health-cover-for-staff-based-in-china/).
