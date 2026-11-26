@@ -276,6 +276,20 @@ jobs:
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: pnpm exec astro build
 
+      - name: Use the curated directive if one exists for today
+        # The operator asked for the articles to be good enough that Google indexes them. The research step picks a
+        # subject from a ledger; this lets a subject chosen from a primary document win, when one is committed at
+        # data/directives/<date>.json. Absent the file, nothing changes.
+        if: always()
+        run: |
+          TODAY=$(date -u +%F)
+          if [ -f "data/directives/$TODAY.json" ]; then
+            cp "data/directives/$TODAY.json" data/directive.json
+            echo "curated directive in force: data/directives/$TODAY.json"
+          else
+            echo "no curated directive for $TODAY; the research proposal stands"
+          fi
+
       - name: Refresh the subject ledger
         # Derived from the corpus, and the duplicate check depends on it being current. Cheap, and it
         # runs before the orchestrator so a subject published yesterday cannot be proposed again today.

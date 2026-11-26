@@ -1,0 +1,31 @@
+{
+  "title": "A final review result is not a new rate: reading the HFC blends determination",
+  "keyword": "hydrofluorocarbon blends antidumping final results 2026 cash deposit",
+  "slug": "hfc-blends-antidumping-final-results-2026-cash-deposit",
+  "figures": [
+    {
+      "value": "12",
+      "unit": "months, period of review",
+      "period": "1 August 2024 to 31 July 2025",
+      "source": "91 FR 75827",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "value": "2",
+      "unit": "pages of Federal Register text",
+      "period": "this notice",
+      "source": "91 FR 75827-75828",
+      "retrieved": "2026-11-26"
+    },
+    {
+      "value": "570",
+      "unit": "case series prefix (A-570)",
+      "period": "China-wide AD case numbering",
+      "source": "91 FR 75827 docket A-570-028",
+      "retrieved": "2026-11-26"
+    }
+  ],
+  "explainer": false,
+  "preparedBy": "project-executor",
+  "preparedAt": "2026-11-26T04:35:01.756Z"
+}
