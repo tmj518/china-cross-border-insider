@@ -109,6 +109,27 @@ function check(file) {
 
   const fmLine = (key) => new RegExp(`^${key}:\\s*(.+)$`, "m").exec(fm)?.[1]?.trim();
 
+  /*
+   * GUIDE DEPTH - a procedural page that answers in 300 words is a stub, and Google treats 441 stubs as one
+   * low-quality site rather than 441 pages. Measured 2026-11-26: 126 guides, 84 under 400 words, average 393;
+   * the blog archive averages 2,124. The floor applies to pages published from 2026-12-01, so the existing
+   * library is not turned red by a decision about new writing.
+   *
+   * The sections listed are things a reader needs (who qualifies, the steps, the cost, the documents, the
+   * timeline, why applications fail), not word filler.
+   */
+  const GUIDE_FROM = "2026-12-01";
+  const GUIDE_MIN_WORDS = 900;
+  if (/[\\/]guide[\\/]/.test(file) && (fmLine("publishDate") ?? "").replace(/"/g, "") >= GUIDE_FROM) {
+    const gw = proseWords(body);
+    const NEED = ["What this", "Who", "Step", "Cost", "Document", "How long", "Why"];
+    const missing = NEED.filter((x) => !new RegExp("^##\\s*" + x, "m").test(body));
+    if (gw >= GUIDE_MIN_WORDS) add("pass", "guide depth", gw + " prose words");
+    else add("block", "guide depth", gw + " prose words, floor is " + GUIDE_MIN_WORDS);
+    if (missing.length === 0) add("pass", "guide sections", "every required section present");
+    else add("block", "guide sections", "missing: " + missing.join(", "));
+  }
+
   // ---- encoding integrity -------------------------------------------
   // This rule exists because the damage already happened once. A PowerShell
   // `Get-Content -Raw` / `Set-Content` round trip rewrote an article through
