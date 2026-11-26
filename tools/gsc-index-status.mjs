@@ -26,10 +26,17 @@ const DOMAIN = SITE.replace(/^sc-domain:/, "");
 const b64url = (b) => Buffer.from(b).toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 
 function token() {
-  const raw = process.env.GSC_CREDENTIALS_BASE64 ?? "";
+  /*
+   * The secret holds the key document two different ways depending on how it was pasted: raw JSON, or that
+   * JSON base64-encoded. The GSC tools accept both; this one only accepted base64 and therefore reported
+   * "no credentials" in a run whose log shows the variable set.
+   */
+  const raw = (process.env.GSC_CREDENTIALS_BASE64 ?? process.env.GSC_CREDENTIALS ?? "").trim();
   if (!raw) return null;
   let creds;
-  try { creds = JSON.parse(Buffer.from(raw, "base64").toString("utf8")); } catch { return null; }
+  try {
+    creds = raw.startsWith("{") ? JSON.parse(raw) : JSON.parse(Buffer.from(raw, "base64").toString("utf8"));
+  } catch { return null; }
   if (!creds.client_email || !creds.private_key) return null;
   const now = Math.floor(Date.now() / 1000);
   const header = b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
