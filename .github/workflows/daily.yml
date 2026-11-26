@@ -519,6 +519,15 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/fallback-publish.mjs
 
+      - name: Check how much of the site Google has indexed
+        # "收录情况" answered by machine: a sample of the newest pages through the URL Inspection API, written to
+        # data/gsc/index-status-<date>.json so the number is visible in the repository, not only in a dashboard.
+        continue-on-error: true
+        env:
+          GSC_CREDENTIALS_BASE64: ${{ secrets.GSC_CREDENTIALS_BASE64 }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:landedmath.com' }}
+        run: node tools/gsc-index-status.mjs --limit=30
+
       - name: Mine new topics (weekly)
         # The radar's own cron is disabled with the others - the Cloudflare Worker is the only clock - so the
         # weekly mining rides on the Monday 09:20 backup slot instead of a fifth schedule. Without it the queue
