@@ -174,78 +174,78 @@ For the paperwork and the cost in one place, see [240-Hour Visa-Free Transit in 
 
 For the paperwork and the cost in one place, see [Work permit visa in china](/guide/work-permit-visa/).
 
-For the paperwork and the cost in one place, see [Getting Your China Entry and Exit Record](/guide/entry-exit-record/).
+For the paperwork and the cost in one place, see Getting Your China Entry and Exit Record.
 
 For the paperwork and the cost in one place, see [China permanent residence permit](/guide/permanent-residence-permit/).
 
 For the paperwork and the cost in one place, see [China residence permit number](/guide/residence-permit-number/).
 
-For the paperwork and the cost in one place, see [APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market](/guide/apec-year-momentum-fuels-robust-ciie-presence-as-asia-pacific-economie/).
+For the paperwork and the cost in one place, see APEC-year momentum fuels robust CIIE presence as Asia-Pacific economies tap China's open market.
 
-For the paperwork and the cost in one place, see [Economic Watch: Beyond market size, European firms tap China's growth, innovation potential](/guide/economic-watch-beyond-market-size-european-firms-tap-china-s-growth-in/).
+For the paperwork and the cost in one place, see Economic Watch: Beyond market size, European firms tap China's growth, innovation potential.
 
-For the paperwork and the cost in one place, see [China's CPI up 0.7 pct in October](/guide/china-s-cpi-up-0-7-pct-in-october/).
+For the paperwork and the cost in one place, see China's CPI up 0.7 pct in October.
 
-For the paperwork and the cost in one place, see [China extends suspension of 24 pct additional tariff on U.S. goods for two months](/guide/china-extends-suspension-of-24-pct-additional-tariff-on-u-s-goods-for-/).
+For the paperwork and the cost in one place, see China extends suspension of 24 pct additional tariff on U.S. goods for two months.
 
 For the paperwork and the cost in one place, see [Temporary residence permit china](/guide/temporary-residence-permit/).
 
-For the paperwork and the cost in one place, see ["council regulation (eu) 2026/382"](/guide/council-regulation-eu-2026-382/).
+For the paperwork and the cost in one place, see "council regulation (eu) 2026/382".
 
-For the paperwork and the cost in one place, see [Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver](/guide/second-china-canada-strategic-economic-and-financial-dialogue-conclude/).
+For the paperwork and the cost in one place, see Second China-Canada Strategic Economic and Financial Dialogue concludes in Vancouver.
 
-For the paperwork and the cost in one place, see [The world comes to China, opportunities flow both ways](/guide/the-world-comes-to-china-opportunities-flow-both-ways/).
+For the paperwork and the cost in one place, see The world comes to China, opportunities flow both ways.
 
-For the paperwork and the cost in one place, see [China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition](/guide/china-s-polar-icebreaker-xuelong-crosses-equator-on-43rd-antarctic-exp/).
+For the paperwork and the cost in one place, see China's polar icebreaker Xuelong crosses equator on 43rd Antarctic expedition.
 
-For the paperwork and the cost in one place, see [China-Africa health cooperation can help more children survive, thrive: UNICEF](/guide/china-africa-health-cooperation-can-help-more-children-survive-thrive-/).
+For the paperwork and the cost in one place, see China-Africa health cooperation can help more children survive, thrive: UNICEF.
 
-For the paperwork and the cost in one place, see [China sweeps gymnastics team golds, adds 3 athletics medals at YOG](/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/).
+For the paperwork and the cost in one place, see China sweeps gymnastics team golds, adds 3 athletics medals at YOG.
 
-For the paperwork and the cost in one place, see [China hands over remains of U.S. airmen found along WWII Hump Route](/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/).
+For the paperwork and the cost in one place, see China hands over remains of U.S. airmen found along WWII Hump Route.
 
-For the paperwork and the cost in one place, see [Special Report: The 9th China International Import Expo](/guide/special-report-the-9th-china-international-import-expo/).
+For the paperwork and the cost in one place, see Special Report: The 9th China International Import Expo.
 
-For the paperwork and the cost in one place, see [Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness](/guide/xinhua-special-ciie-2026-vibrancy-sharing-openness/).
+For the paperwork and the cost in one place, see Xinhua Special | CIIE 2026: Vibrancy, Sharing, Openness.
 
-For the paperwork and the cost in one place, see [China's health story holds lessons for all, Lancet says](/guide/china-s-health-story-holds-lessons-for-all-lancet-says/).
+For the paperwork and the cost in one place, see China's health story holds lessons for all, Lancet says.
 
-For the paperwork and the cost in one place, see [China's import expo tells a larger story of openness, shared opportunities](/guide/china-s-import-expo-tells-a-larger-story-of-openness-shared-opportunit/).
+For the paperwork and the cost in one place, see China's import expo tells a larger story of openness, shared opportunities.
 
-For the paperwork and the cost in one place, see [Former deserted Chinese mining sites star again via "lights, camera, action"](/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/).
+For the paperwork and the cost in one place, see Former deserted Chinese mining sites star again via "lights, camera, action".
 
-For the paperwork and the cost in one place, see [China permanent resident](/guide/china-permanent-resident/).
+For the paperwork and the cost in one place, see China permanent resident.
 
-For the paperwork and the cost in one place, see [China wraps up offshore trust tax transition, declared tax tops 160 bln yuan](/guide/china-wraps-up-offshore-trust-tax-transition-declared-tax-tops-160-bln/).
+For the paperwork and the cost in one place, see China wraps up offshore trust tax transition, declared tax tops 160 bln yuan.
 
-For the paperwork and the cost in one place, see [China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief](/guide/china-s-3rd-apec-hosting-comes-amid-push-for-opening-up-s-next-frontie/).
+For the paperwork and the cost in one place, see China's 3rd APEC hosting comes amid push for opening-up's next frontier, says APEC secretariat chief.
 
-For the paperwork and the cost in one place, see [High-frequency data show improving trend in Chinese economy in October](/guide/high-frequency-data-show-improving-trend-in-chinese-economy-in-october/).
+For the paperwork and the cost in one place, see High-frequency data show improving trend in Chinese economy in October.
 
 For the paperwork and the cost in one place, see [China steps up coverage of innovative drugs under medical insurance](/guide/china-steps-up-coverage-of-innovative-drugs-under-medical-insurance/).
 
-For the paperwork and the cost in one place, see [Technology reshapes China's agricultural modernization](/guide/technology-reshapes-china-s-agricultural-modernization/).
+For the paperwork and the cost in one place, see Technology reshapes China's agricultural modernization.
 
-For the paperwork and the cost in one place, see [COP31 participants say China injects impetus into global green development](/guide/cop31-participants-say-china-injects-impetus-into-global-green-develop/).
+For the paperwork and the cost in one place, see COP31 participants say China injects impetus into global green development.
 
-For the paperwork and the cost in one place, see [China willing to further boost political mutual trust with Thailand, says Chinese premier](/guide/china-willing-to-further-boost-political-mutual-trust-with-thailand-sa/).
+For the paperwork and the cost in one place, see China willing to further boost political mutual trust with Thailand, says Chinese premier.
 
-For the paperwork and the cost in one place, see [APEC host China's evolving role in regional economic cooperation](/guide/apec-host-china-s-evolving-role-in-regional-economic-cooperation/).
+For the paperwork and the cost in one place, see APEC host China's evolving role in regional economic cooperation.
 
-For the paperwork and the cost in one place, see [Chinese premier urges China, ASEAN to stand united, overcome distractions](/guide/chinese-premier-urges-china-asean-to-stand-united-overcome-distraction/).
+For the paperwork and the cost in one place, see Chinese premier urges China, ASEAN to stand united, overcome distractions.
 
-For the paperwork and the cost in one place, see [How do employers find health cover for staff based in china?](/guide/how-do-employers-find-health-cover-for-staff-based-in-china/).
+For the paperwork and the cost in one place, see How do employers find health cover for staff based in china?.
 
-For the paperwork and the cost in one place, see [Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development](/guide/xi-says-china-vietnam-top-level-exchanges-inject-positive-energy-into-/).
+For the paperwork and the cost in one place, see Xi says China-Vietnam top-level exchanges inject positive energy into regional peace, development.
 
-For the paperwork and the cost in one place, see [Xi says to boost China-Papua New Guinea ties to new heights](/guide/xi-says-to-boost-china-papua-new-guinea-ties-to-new-heights/).
+For the paperwork and the cost in one place, see Xi says to boost China-Papua New Guinea ties to new heights.
 
-For the paperwork and the cost in one place, see [Xi says improvement, development of China-Canada relations right choice](/guide/xi-says-improvement-development-of-china-canada-relations-right-choice/).
+For the paperwork and the cost in one place, see Xi says improvement, development of China-Canada relations right choice.
 
-For the paperwork and the cost in one place, see [Production in full swing across China](/guide/production-in-full-swing-across-china/).
+For the paperwork and the cost in one place, see Production in full swing across China.
 
-For the paperwork and the cost in one place, see [Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations](/guide/xi-prabowo-announce-launch-of-china-indonesia-comprehensive-economic-p/).
+For the paperwork and the cost in one place, see Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations.
 
-For the paperwork and the cost in one place, see [Xi says China, Singapore should strengthen strategic communication, enhance coordination](/guide/xi-says-china-singapore-should-strengthen-strategic-communication-enha/).
+For the paperwork and the cost in one place, see Xi says China, Singapore should strengthen strategic communication, enhance coordination.
 
-For the paperwork and the cost in one place, see [Xi says China, Australia should be mutually trusted partners](/guide/xi-says-china-australia-should-be-mutually-trusted-partners/).
+For the paperwork and the cost in one place, see Xi says China, Australia should be mutually trusted partners.

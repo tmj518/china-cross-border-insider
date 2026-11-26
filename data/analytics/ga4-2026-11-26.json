@@ -3,16 +3,16 @@
   "account": "",
   "days": 28,
   "totals": {
-    "activeUsers": 183,
-    "newUsers": 179,
-    "screenPageViews": 222,
-    "sessions": 201,
-    "eventCount": 695
+    "activeUsers": 184,
+    "newUsers": 180,
+    "screenPageViews": 223,
+    "sessions": 203,
+    "eventCount": 701
   },
   "channels": [
     {
       "channel": "Direct",
-      "sessions": 166
+      "sessions": 168
     },
     {
       "channel": "Organic Search",
@@ -27,5 +27,5 @@
       "sessions": 1
     }
   ],
-  "at": "2026-11-26T02:52:05.939Z"
+  "at": "2026-11-26T12:21:24.341Z"
 }

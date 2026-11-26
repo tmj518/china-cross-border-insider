@@ -164,8 +164,8 @@ For the paperwork and the cost in one place, see [How to transfer money from chi
 
 For the paperwork and the cost in one place, see [China work permit process](/guide/work-permit-process/).
 
-For the paperwork and the cost in one place, see [China sweeps gymnastics team golds, adds 3 athletics medals at YOG](/guide/china-sweeps-gymnastics-team-golds-adds-3-athletics-medals-at-yog/).
+For the paperwork and the cost in one place, see China sweeps gymnastics team golds, adds 3 athletics medals at YOG.
 
-For the paperwork and the cost in one place, see [From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific](/guide/from-beijing-to-shenzhen-china-s-push-for-a-more-connected-dynamic-asi/).
+For the paperwork and the cost in one place, see From Beijing to Shenzhen: China's push for a more connected, dynamic Asia-Pacific.
 
-For the paperwork and the cost in one place, see [China steps up efforts to recycle waste from new energy industries](/guide/china-steps-up-efforts-to-recycle-waste-from-new-energy-industries/).
+For the paperwork and the cost in one place, see China steps up efforts to recycle waste from new energy industries.

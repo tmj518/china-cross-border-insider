@@ -3431,6 +3431,86 @@
       "modelOutput": false
     },
     {
+      "id": "91-fr-75824",
+      "source": "91 FR 75824",
+      "figures": [
+        {
+          "articleSlug": "steel-circumvention-vietnam-caught-indonesia-not-2026",
+          "articleNum": 503,
+          "value": "25",
+          "unit": "March 2026, initiation date of the CORE Indonesia inquiry",
+          "period": "corrosion-resistant steel",
+          "source": "91 FR 75824",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "steel-circumvention-vietnam-caught-indonesia-not-2026",
+          "articleNum": 503,
+          "value": "60",
+          "unit": "days, first extension of the CORE preliminary deadline",
+          "period": "granted 28 July 2026",
+          "source": "91 FR 75824",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "steel-circumvention-vietnam-caught-indonesia-not-2026",
+          "articleNum": 503,
+          "value": "5",
+          "unit": "years, period of inquiry for the CORE determination",
+          "period": "1 January 2021 to 31 December 2025",
+          "source": "91 FR 75824",
+          "retrieved": "2026-11-26"
+        }
+      ],
+      "articleNums": [
+        503
+      ],
+      "articleSlugs": [
+        "steel-circumvention-vietnam-caught-indonesia-not-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "91-fr-75828",
+      "source": "91 FR 75828",
+      "figures": [
+        {
+          "articleSlug": "steel-circumvention-vietnam-caught-indonesia-not-2026",
+          "articleNum": 503,
+          "value": "19",
+          "unit": "March 2026, the initiation date from which deposits apply",
+          "period": "steel wheels, Vietnam route",
+          "source": "91 FR 75828",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "steel-circumvention-vietnam-caught-indonesia-not-2026",
+          "articleNum": 503,
+          "value": "83",
+          "unit": "days, first extension of the wheels preliminary deadline",
+          "period": "granted 14 August 2026",
+          "source": "91 FR 75828",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "steel-circumvention-vietnam-caught-indonesia-not-2026",
+          "articleNum": 503,
+          "value": "60",
+          "unit": "days, window for the ITC to give written advice",
+          "period": "from Commerce's notification under section 781(e)",
+          "source": "91 FR 75828",
+          "retrieved": "2026-11-26"
+        }
+      ],
+      "articleNums": [
+        503
+      ],
+      "articleSlugs": [
+        "steel-circumvention-vietnam-caught-indonesia-not-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "cbp-interim-final-rule-91-fr-37801",
       "source": "CBP interim final rule, 91 FR 37801",
       "figures": [
@@ -4148,6 +4228,46 @@
       ],
       "articleSlugs": [
         "china-export-rebate-vs-export-duty-2026"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ustr-notice-fr-doc-2026-22925",
+      "source": "USTR notice, FR Doc. 2026-22925",
+      "figures": [
+        {
+          "articleSlug": "section-301-exclusions-extended-january-2027",
+          "articleNum": 501,
+          "value": "178",
+          "unit": "product exclusions",
+          "period": "extended through 9 January 2027",
+          "source": "USTR notice, FR Doc. 2026-22925",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "section-301-exclusions-extended-january-2027",
+          "articleNum": 501,
+          "value": "4",
+          "unit": "Section 301 tranches",
+          "period": "2018-2019, still in force",
+          "source": "USTR notice, FR Doc. 2026-22925",
+          "retrieved": "2026-11-26"
+        },
+        {
+          "articleSlug": "section-301-exclusions-extended-january-2027",
+          "articleNum": 501,
+          "value": "10",
+          "unit": "digits of HTSUS classification",
+          "period": "scope of each exclusion",
+          "source": "USTR notice, FR Doc. 2026-22925",
+          "retrieved": "2026-11-26"
+        }
+      ],
+      "articleNums": [
+        501
+      ],
+      "articleSlugs": [
+        "section-301-exclusions-extended-january-2027"
       ],
       "modelOutput": false
     },

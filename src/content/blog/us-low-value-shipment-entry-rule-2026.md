@@ -217,4 +217,4 @@ This rule makes one thing cheaper and several things harder, and the cheaper par
 
 The comment window closes on 7 December 2026. After that the shape is CBP's to decide: a pre-arrival deadline, a bond on every informal entry, two new data fields for mail, and a broker requirement for anyone filing on someone else's behalf. Those are all costs with no published price, which is the argument worth making in writing while the record is open.
 
-For the paperwork and the cost in one place, see [Getting Your China Entry and Exit Record](/guide/entry-exit-record/).
+For the paperwork and the cost in one place, see Getting Your China Entry and Exit Record.

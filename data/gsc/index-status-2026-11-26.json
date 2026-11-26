@@ -1,189 +1,76 @@
 {
-  "at": "2026-11-26T02:55:35.725Z",
+  "at": "2026-11-26T12:24:29.926Z",
   "site": "sc-domain:landedmath.com",
-  "sampled": 30,
+  "recentDays": 7,
+  "sampled": 11,
   "counts": {
-    "URL is unknown to Google": 29,
-    "Alternate page with proper canonical tag": 1
+    "URL is unknown to Google": 5,
+    "Discovered - currently not indexed": 6
   },
   "rows": [
     {
-      "url": "https://landedmath.com/blog/beijing-irkutsk-train-fares-2026/",
+      "url": "https://www.landedmath.com/blog/beijing-irkutsk-train-fares-2026/",
       "state": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/china-october-2026-electricity-consumption-ev-charging-data-services/",
+      "url": "https://www.landedmath.com/blog/section-301-exclusions-extended-january-2027/",
       "state": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/china-asean-fta-3-0-december-2026-legal-rules-alignment/",
+      "url": "https://www.landedmath.com/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/",
       "state": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer/",
+      "url": "https://www.landedmath.com/blog/tris-antidumping-scope-third-country-reprocessing-2026/",
       "state": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/china-asean-fta-3-0-december-2026-rules-alignment/",
+      "url": "https://www.landedmath.com/blog/us-port-fees-chinese-ships-suspended-january-2027/",
       "state": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/china-asean-fta-3-0-upgrade-protocol-december-2026/",
-      "state": "URL is unknown to Google",
+      "url": "https://www.landedmath.com/blog/china-october-2026-electricity-consumption-ev-charging-data-services/",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/china-apec-20-million-usd-practical-cooperation-fund/",
-      "state": "URL is unknown to Google",
+      "url": "https://www.landedmath.com/blog/china-asean-fta-3-0-december-2026-legal-rules-alignment/",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/beidou-terminal-devices-china-2026-importer-tracking/",
-      "state": "URL is unknown to Google",
+      "url": "https://www.landedmath.com/blog/shenzhen-robot-exports-apec-7-5x-growth-first-3q-2026-importer/",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/china-mengxiang-riserless-drilling-2004-meters-importer-cost/",
-      "state": "URL is unknown to Google",
+      "url": "https://www.landedmath.com/blog/china-asean-fta-3-0-december-2026-rules-alignment/",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/macao-2027-policy-address-tourism-incentives-hengqin/",
-      "state": "URL is unknown to Google",
+      "url": "https://www.landedmath.com/blog/china-asean-fta-3-0-upgrade-protocol-december-2026/",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
     {
-      "url": "https://landedmath.com/blog/shenzhen-apec-2026-trade-impacts-importer-cost-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-fuel-price-cut-november-12-2026-diesel-petrol-per-tonne/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/xi-s-article-on-jointly-building-asia-pacific-community-with-explainer-2026-11/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-fuel-price-cut-november-12-2026-diesel-per-tonne/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-fuel-price-cut-november-12-2026-per-tonne/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-human-genetic-resources-export-approval-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-canada-tariff-remission-canola-steel-extension-2028/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-foreign-trade-first-ten-months-2026-import-growth/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-import-expo-85-billion-deals-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-water-law-revision-river-lake-management-2027/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-brazil-beef-55-percent-tariff-trigger-october-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/eu-pet-spunbond-definitive-anti-dumping-duties-2026/",
-      "state": "Alternate page with proper canonical tag",
-      "verdict": "NEUTRAL",
-      "lastCrawl": "2026-11-06T09:59:39Z"
-    },
-    {
-      "url": "https://landedmath.com/blog/thailand-ev-excise-tax-35-percent-2027/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/india-trailer-axle-anti-dumping-sunset-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-brazil-beef-safeguard-55-percent-trigger-october-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-emergency-procurement-rules-imported-goods-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/eu-goes-provisional-safeguard-tariff-rate-quotas-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/eu-provisional-safeguard-grain-oriented-electrical-steel-2026/",
-      "state": "URL is unknown to Google",
-      "verdict": "NEUTRAL",
-      "lastCrawl": ""
-    },
-    {
-      "url": "https://landedmath.com/blog/china-brazil-beef-safeguard-55-percent-trigger-2026/",
-      "state": "URL is unknown to Google",
+      "url": "https://www.landedmath.com/blog/china-apec-20-million-usd-practical-cooperation-fund/",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     }

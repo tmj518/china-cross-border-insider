@@ -170,18 +170,18 @@ Beidou is no longer a niche option for tracking Chinese freight. With nearly 42 
 
 Related reading: [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/) and [china 2026 export duty wrought metals](/blog/china-2026-export-duty-wrought-metals/).
 
-For the paperwork and the cost in one place, see [Production in full swing across China](/guide/production-in-full-swing-across-china/).
+For the paperwork and the cost in one place, see Production in full swing across China.
 
-For the paperwork and the cost in one place, see [Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations](/guide/xi-prabowo-announce-launch-of-china-indonesia-comprehensive-economic-p/).
+For the paperwork and the cost in one place, see Xi, Prabowo announce launch of China-Indonesia comprehensive economic partnership negotiations.
 
-For the paperwork and the cost in one place, see [Xi says China, Singapore should strengthen strategic communication, enhance coordination](/guide/xi-says-china-singapore-should-strengthen-strategic-communication-enha/).
+For the paperwork and the cost in one place, see Xi says China, Singapore should strengthen strategic communication, enhance coordination.
 
-For the paperwork and the cost in one place, see [Xi says China, Australia should be mutually trusted partners](/guide/xi-says-china-australia-should-be-mutually-trusted-partners/).
+For the paperwork and the cost in one place, see Xi says China, Australia should be mutually trusted partners.
 
-For the paperwork and the cost in one place, see [China seeks public comment on draft regulation for supervision of social insurance funds](/guide/china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci/).
+For the paperwork and the cost in one place, see China seeks public comment on draft regulation for supervision of social insurance funds.
 
-For the paperwork and the cost in one place, see [China urges U.S. to revoke proposed telecom restrictions: commerce ministry](/guide/china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis/).
+For the paperwork and the cost in one place, see China urges U.S. to revoke proposed telecom restrictions: commerce ministry.
 
-For the paperwork and the cost in one place, see [China rolls out plan to improve eldercare, childcare services](/guide/china-rolls-out-plan-to-improve-eldercare-childcare-services/).
+For the paperwork and the cost in one place, see China rolls out plan to improve eldercare, childcare services.
 
 For the paperwork and the cost in one place, see [China's mega water diversion project upgrades its "smart brain"](/guide/china-s-mega-water-diversion-project-upgrades-its-smart-brain/).

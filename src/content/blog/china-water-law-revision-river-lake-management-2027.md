@@ -145,6 +145,6 @@ The cost impact is project-level and depends on site-specific factors.
 
 China's revised Water Law, effective 22 March 2027, adds a new chapter on river and lake management that prohibits illegal occupation, unauthorized construction, and new forestland or farmland within management areas, and requires local governments to plan restoration of occupied land. For importers, the risk is not in the tariff schedule but in the legal status of logistics and infrastructure assets near waterways. Audit your sites, verify your permits, and plan for the possibility of a restoration order.
 
-For the paperwork and the cost in one place, see [China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific](/guide/china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific/).
+For the paperwork and the cost in one place, see China's APEC moment: Xi's vision for an open, inclusive Asia-Pacific.
 
 For the paperwork and the cost in one place, see [China's mega water diversion project upgrades its "smart brain"](/guide/china-s-mega-water-diversion-project-upgrades-its-smart-brain/).

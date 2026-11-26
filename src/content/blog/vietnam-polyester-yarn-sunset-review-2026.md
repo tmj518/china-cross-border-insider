@@ -312,6 +312,8 @@ India at 54.90% on the same 15,000 dollars = 8,235 dollars
 Replace the CIF value with your own invoice value and the rate with the row your exporter occupies.
 The percentages are from the published annex; the dollars follow from your own paperwork.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## The point
 
 A continued duty is usually reported as a rate, and the rate here is the least interesting part: it is

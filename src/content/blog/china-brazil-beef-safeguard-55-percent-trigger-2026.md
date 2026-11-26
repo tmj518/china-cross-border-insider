@@ -185,6 +185,6 @@ Origin-switch budget:
 
 The number that matters is not 55% on its own. It is 55% of the declared value of every Brazilian beef consignment declared from 00:00 on 1 October 2026, stacked on the MFN rate, with the start date fixed by a quota that filled on 29 September and a rule that counts to the third day. An importer who reprices against that figure before the next booking keeps the decision in their own hands. An importer who waits finds the decision already made at the border.
 
-For the paperwork and the cost in one place, see [China's second homegrown large cruise ship starts first trial voyage](/guide/china-s-second-homegrown-large-cruise-ship-starts-first-trial-voyage/).
+For the paperwork and the cost in one place, see China's second homegrown large cruise ship starts first trial voyage.
 
-For the paperwork and the cost in one place, see [Former deserted Chinese mining sites star again via "lights, camera, action"](/guide/former-deserted-chinese-mining-sites-star-again-via-lights-camera-acti/).
+For the paperwork and the cost in one place, see Former deserted Chinese mining sites star again via "lights, camera, action".

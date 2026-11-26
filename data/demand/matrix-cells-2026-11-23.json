@@ -34,7 +34,11 @@
       "directionMix": {
         "within-china": 37,
         "into-china": 1
-      }
+      },
+      "produced": "published",
+      "producedAt": "2026-11-26",
+      "slug": "china-business-visa-fee-procedure",
+      "publishedOn": "2026-11-26"
     },
     {
       "moment": "arrive",

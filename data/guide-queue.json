@@ -5063,7 +5063,7 @@
       "unit": "one application",
       "title": "Mainland bank to expand financing support for Taiwan enterprises on mainland",
       "query": "Mainland bank to expand financing support for Taiwan enterprises on mainland",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"Mainland bank to expand financing support for Taiwan enterprises on mainland\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -5091,7 +5091,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-26"
     },
     {
       "slug": "xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-",

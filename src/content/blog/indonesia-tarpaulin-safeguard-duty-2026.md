@@ -206,6 +206,8 @@ stage three 5,000 x 4.8 kg x $0.6408 = $15,379
 
 Substitute the weight per container from your own packing list, and use the exchange rate on the day your entry is filed rather than the rate used here. The invoice price of the goods does not enter the calculation at all, because the duty is specific.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## The point
 
 This is a duty where the amount is published clearly and the unit is what gets copied wrong, and the difference between the two versions is a factor of a thousand. That is a specific risk of publishing in English about measures that originate in another language: the number travels and the unit does not.
