@@ -43,6 +43,21 @@ export const SITE_RULES = [
  * What the reviewer is explicitly told to look for. It lives here so the writer reads the same list: a
  * writer who cannot see the reviewer's checklist is being graded on a rubric nobody showed them.
  */
+/*
+ * THE GUIDE STANDARD.
+ *
+ * Guides were averaging 393 words across 126 pages while the blog averaged 2,124. A procedural page that answers
+ * in 300 words is a stub, and a site full of stubs reads as thin to a search engine no matter how many articles
+ * the blog carries. From 2026-12-01 a guide must be deep enough to actually answer, and the sections are the
+ * ones a reader needs rather than filler.
+ */
+export const GUIDE_STANDARD = [
+  "A guide is 900-2,000 prose words. Below 900 it is a stub; above 2,000 it is padding.",
+  "It carries these sections: What this is / Who qualifies / Step by step / What it costs / Documents you need / How long it takes / Why applications fail / FAQ / Sources.",
+  "It states at least three sourced figures, or a cost table with at least three rows, because the reason a reader opens a guide is a number or a sequence, not a description.",
+  "It links to at least two other pages on this site, and those pages exist.",
+];
+
 export const REVIEW_CHECKS = [
   "Numbers without their five-part records, or a number-free draft that does not declare itself an explainer.",
   "Arithmetic on a baseline the figures do not contain (an assumed current rate, an assumed market price).",
