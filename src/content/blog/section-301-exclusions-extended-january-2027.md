@@ -82,7 +82,7 @@ Three things follow, and only the first is obvious.
 
 **Second, the entry date decides, not the order date.** The annex is explicit: the extension applies to goods entered for consumption, or withdrawn from warehouse, inside a window that opens at 12:01 a.m. ET on 10 November 2026 and closes at 11:59 p.m. ET on 9 January 2027. An order placed in December that clears customs in February falls outside it.
 
-**Third, the tariff exposure is unchanged for everything not on the list.** This notice is silent about the four tranches of additional duties imposed between 2018 and 2019 (83 FR 28719, 83 FR 40823, 83 FR 47974 as modified, and 84 FR 43304 as modified). Those remain in force. The extension does not narrow them; it only keeps a defined set of products outside them for two more months.
+**Third, the tariff exposure is unchanged for everything not on the list.** This notice is silent about the four tranches of additional duties imposed between 2018 and 2019 (83 FR 28719, 83 FR 40823, 83 FR 47974 as modified, and 84 FR 43304 as modified). Those remain in force. The extension does not narrow them; it only keeps a defined set of products outside them for two more months. The same arithmetic decides what a shipment lands at, which is why the method in [the landed-cost note on EU CBAM steel](/blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026/) applies here unchanged.
 
 ## How confident
 
@@ -98,7 +98,7 @@ Three things follow, and only the first is obvious.
 
 **If you are a platform seller.** Your freight forwarder chooses the entry date, and you carry the duty cost. Ask for the entry summary date, not the ship date, on any shipment that will land in December or January.
 
-**If you are a freight forwarder or broker.** This is the one place where your calendar is the product. A shipment that clears at 00:30 ET on 10 January 2027 is outside the window by thirty minutes.
+**If you are a freight forwarder or broker.** This is the one place where your calendar is the product. A shipment that clears at 00:30 ET on 10 January 2027 is outside the window by thirty minutes. The parallel deadline for postal traffic is set out in [the low-value shipment entry rule](/blog/us-low-value-shipment-entry-rule-2026/), and the earlier version of this exclusion deadline is in [the November 2026 expiry note](/blog/section-301-exclusions-expire-november-2026/).
 
 ## The data point
 
