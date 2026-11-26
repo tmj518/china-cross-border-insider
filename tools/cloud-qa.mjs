@@ -30,7 +30,7 @@
  * its blind spots; if only one key is present the run proceeds and says the review was not
  * independent, because a silent downgrade is worse than a reported one.
  */
-import { SITE_RULES, CHARTER, REVIEW_CHECKS, INFORMATION_GAIN_VALUES, CATEGORY_VALUES } from "./site-rules.mjs";
+import { SITE_RULES, CHARTER, REVIEW_CHECKS, INFORMATION_GAIN_VALUES, CATEGORY_VALUES, GUIDE_STANDARD } from "./site-rules.mjs";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -63,7 +63,8 @@ function siteRules() {
   return (
     "THE CHARTER THIS SITE IS WRITTEN TO:\n" + CHARTER.map((c) => "  - " + c).join("\n") +
     "\n\nTHE RULES:\n" + SITE_RULES.map((r, i) => `  SITE RULE ${i + 1}: ${r}`).join("\n") +
-    "\n\nTHE PATTERNS THIS PUBLICATION HAS PUBLISHED BY MISTAKE:\n" + REVIEW_CHECKS.map((c) => "  - " + c).join("\n")
+    "\n\nTHE PATTERNS THIS PUBLICATION HAS PUBLISHED BY MISTAKE:\n" + REVIEW_CHECKS.map((c) => "  - " + c).join("\n") +
+    "\n\nA GUIDE MUST MEET THIS:\n" + GUIDE_STANDARD.map((c) => "  - " + c).join("\n")
   );
 }
 
