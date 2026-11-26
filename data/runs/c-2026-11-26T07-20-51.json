@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-26T07:20:51.761Z",
+  "runId": "45774539605",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-s-mega-water-diversion-project-upgrades-its-smart-brain",
+  "seconds": 21,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0004
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-s-mega-water-diversion-project-upgrades-its-smart-brain",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-s-mega-water-diversion-project-upgrades-its-smart-brain",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-s-mega-water-diversion-project-upgrades-its-smart-brain",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-water-law-revision-river-lake-management-2027, beidou-terminal-devices-china-2026-importer-tracking"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-s-mega-water-diversion-project-upgrades-its-smart-brain/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

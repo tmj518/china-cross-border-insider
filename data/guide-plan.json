@@ -1,47 +1,8 @@
 {
-  "at": "2026-11-24T07:20:38.387Z",
+  "at": "2026-11-26T07:20:31.197Z",
   "days": 90,
   "gsc": true,
   "plan": [
-    {
-      "slug": "china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China seeks public comment on draft regulation for supervision of social insurance funds",
-      "query": "China seeks public comment on draft regulation for supervision of social insurance funds",
-      "status": "queued",
-      "evidence": "demand matrix: \"China seeks public comment on draft regulation for supervision of social insurance funds\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "seeks",
-        "public",
-        "comment",
-        "draft"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 3,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 1,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
     {
       "slug": "fire-at-apartment-building-in-north-china-s-shanxi-leaves-14-dead",
       "topic": "residence",
@@ -64,162 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "looking-forward-to-a-new-chapter-in-china-asean-comprehensive-strategi",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador",
-      "query": "Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador",
-      "status": "queued",
-      "evidence": "demand matrix: \"Looking forward to a new chapter in China-ASEAN comprehensive strategic partnership, says Chinese ambassador\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Looking",
-        "forward",
-        "chapter",
-        "China-ASEAN",
-        "comprehensive"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China urges U.S. to revoke proposed telecom restrictions: commerce ministry",
-      "query": "China urges U.S. to revoke proposed telecom restrictions: commerce ministry",
-      "status": "queued",
-      "evidence": "demand matrix: \"China urges U.S. to revoke proposed telecom restrictions: commerce ministry\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "urges",
-        "U.S.",
-        "revoke",
-        "proposed"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-rolls-out-plan-to-improve-eldercare-childcare-services",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China rolls out plan to improve eldercare, childcare services",
-      "query": "China rolls out plan to improve eldercare, childcare services",
-      "status": "queued",
-      "evidence": "demand matrix: \"China rolls out plan to improve eldercare, childcare services\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "rolls",
-        "plan",
-        "improve",
-        "eldercare,"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections",
-      "query": "Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections",
-      "status": "queued",
-      "evidence": "demand matrix: \"Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "Central",
-        "government",
-        "spokesperson",
-        "hails",
-        "Hong"
       ],
       "facts": [],
       "mustSay": [],
@@ -298,6 +103,201 @@
         "expand",
         "financing",
         "support"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Xi says joint space exploration by Chinese, Pakistani astronauts vivid embodiment of deep-rooted friendship",
+      "query": "Xi says joint space exploration by Chinese, Pakistani astronauts vivid embodiment of deep-rooted friendship",
+      "status": "queued",
+      "evidence": "demand matrix: \"Xi says joint space exploration by Chinese, Pakistani astronauts vivid embodiment of deep-rooted friendship\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "says",
+        "joint",
+        "space",
+        "exploration",
+        "Chinese,"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-unveils-roadmap-for-next-generation-communication-networks",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China unveils roadmap for next-generation communication networks",
+      "query": "China unveils roadmap for next-generation communication networks",
+      "status": "queued",
+      "evidence": "demand matrix: \"China unveils roadmap for next-generation communication networks\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "unveils",
+        "roadmap",
+        "next-generation",
+        "communication"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China urges Japan to accelerate destruction of abandoned chemical weapons",
+      "query": "China urges Japan to accelerate destruction of abandoned chemical weapons",
+      "status": "queued",
+      "evidence": "demand matrix: \"China urges Japan to accelerate destruction of abandoned chemical weapons\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "urges",
+        "Japan",
+        "accelerate",
+        "destruction"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China launches Shenzhou-24 spaceship, opening Tiangong space station to first foreign astronaut",
+      "query": "China launches Shenzhou-24 spaceship, opening Tiangong space station to first foreign astronaut",
+      "status": "queued",
+      "evidence": "demand matrix: \"China launches Shenzhou-24 spaceship, opening Tiangong space station to first foreign astronaut\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China",
+        "launches",
+        "Shenzhou-24",
+        "spaceship,",
+        "opening"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "china-s-nanjing-port-sees-surge-in-vehicle-exports",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's Nanjing Port sees surge in vehicle exports",
+      "query": "China's Nanjing Port sees surge in vehicle exports",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's Nanjing Port sees surge in vehicle exports\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "Nanjing",
+        "Port",
+        "sees",
+        "surge"
       ],
       "facts": [],
       "mustSay": [],

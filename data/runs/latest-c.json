@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-26T02:52:25.516Z",
-  "runId": "45745195080",
-  "route": "fallback",
+  "at": "2026-11-26T07:20:51.761Z",
+  "runId": "45774539605",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
-  "seconds": 19,
+  "article": "china-s-mega-water-diversion-project-upgrades-its-smart-brain",
+  "seconds": 21,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0013
+    "usd": 0.0004
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "5 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "name": "grounding china-s-mega-water-diversion-project-upgrades-its-smart-brain",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "name": "gates china-s-mega-water-diversion-project-upgrades-its-smart-brain",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "name": "build china-s-mega-water-diversion-project-upgrades-its-smart-brain",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-asean-fta-3-0-december-2026-legal-rules-alignment, china-emergency-procurement-rules-imported-goods-october-2026"
+      "detail": "china-water-law-revision-river-lake-management-2027, beidou-terminal-devices-china-2026-importer-tracking"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/central-government-spokesperson-hails-hong-kong-s-2026-election-commit/"
+      "detail": "/guide/china-s-mega-water-diversion-project-upgrades-its-smart-brain/"
     }
   ],
   "researchLog": [
