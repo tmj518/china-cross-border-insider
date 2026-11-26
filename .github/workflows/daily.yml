@@ -519,6 +519,12 @@ jobs:
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: node tools/fallback-publish.mjs
 
+      - name: Tell IndexNow about the pages that changed today
+        # IndexNow is the only real-time submission channel a static site has (Bing, Yandex). The tool existed and
+        # was never called: nothing told any search engine that a page had appeared until it crawled the sitemap.
+        continue-on-error: true
+        run: node tools/submit-urls.mjs --changed || echo "IndexNow submission failed; the sitemap still carries the page"
+
       - name: Check how much of the site Google has indexed
         # "收录情况" answered by machine: a sample of the newest pages through the URL Inspection API, written to
         # data/gsc/index-status-<date>.json so the number is visible in the repository, not only in a dashboard.
