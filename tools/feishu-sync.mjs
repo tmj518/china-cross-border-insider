@@ -366,10 +366,11 @@ const auth = { Authorization: `Bearer ${tok.tenant_access_token}`, "Content-Type
 const existing = await j(`${BASE}/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records?page_size=500`, { headers: auth });
 if (existing.code !== 0) { console.log("read failed:", existing.msg); process.exit(1); }
 const byNumber = new Map();
+const existingByNumber = new Map();
 for (const rec of existing.data?.items ?? []) {
   const num = rec.fields?.["文章编号"];
   const key = Array.isArray(num) ? num.map((x) => x.text ?? x).join("") : String(num ?? "");
-  if (key) byNumber.set(key, rec.record_id);
+  if (key) { byNumber.set(key, rec.record_id); existingByNumber.set(key, rec.fields ?? {}); }
 }
 console.log(`\n  existing rows in Feishu: ${byNumber.size}`);
 
@@ -384,10 +385,33 @@ if (RESET && byNumber.size) {
   byNumber.clear();
 }
 
-let created = 0, updated = 0, failed = 0;
+/*
+ * ONLY WRITE WHAT CHANGED.
+ *
+ * Until 2026-11-26 this loop PUT every row on every run: 200+ records, one HTTP call each, twelve minutes of
+ * wall clock per slot. The rows were not duplicated - the upsert keyed on 文章编号 - but "update 183" every
+ * morning meant the ledger step, not the writing, was the slowest part of the pipeline. The existing record
+ * is compared field by field and skipped when nothing moved.
+ */
+const plain = (v) => {
+  if (v === null || v === undefined) return "";
+  if (Array.isArray(v)) return v.map((x) => (typeof x === "object" ? x.text ?? x.name ?? JSON.stringify(x) : String(x))).join("");
+  if (typeof v === "object") return v.text ?? v.name ?? JSON.stringify(v);
+  return String(v);
+};
+const sameFields = (a, b) => {
+  for (const k of Object.keys(a)) {
+    if (plain(a[k]) !== plain(b[k])) return false;
+  }
+  return true;
+};
+
+let created = 0, updated = 0, skipped = 0, failed = 0;
 for (const r of rows) {
   const id = byNumber.get(r["文章编号"]);
   if (id) {
+    const current = existingByNumber.get(r["文章编号"]) ?? {};
+    if (sameFields(r, current)) { skipped++; continue; }
     const res = await j(`${BASE}/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records/${id}`, {
       method: "PUT", headers: auth, body: JSON.stringify({ fields: r }),
     });
@@ -400,6 +424,6 @@ for (const r of rows) {
   }
 }
 
-console.log(`\n  created ${created}, updated ${updated}, failed ${failed}`);
+console.log(`\n  created ${created}, updated ${updated}, unchanged ${skipped}, failed ${failed}`);
 console.log(`  table: https://my.feishu.cn/wiki/XzN1wYLs7iyPvck2wrCca02KnWd?table=${TABLE_ID}`);
 process.exit(failed ? 1 : 0);
