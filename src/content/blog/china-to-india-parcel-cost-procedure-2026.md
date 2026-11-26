@@ -139,4 +139,4 @@ For the paperwork and the cost in one place, see [How to transfer money from chi
 
 For the paperwork and the cost in one place, see [Alipay and WeChat Pay for Foreigners: What Actually Works](/guide/alipay-wechat-pay-foreigner-china/).
 
-For the paperwork and the cost in one place, see [What Does APEC Mean to You and Me?](/guide/what-does-apec-mean-to-you-and-me/).
+For the paperwork and the cost in one place, see What Does APEC Mean to You and Me?.

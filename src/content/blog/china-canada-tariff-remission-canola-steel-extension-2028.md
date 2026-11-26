@@ -161,4 +161,4 @@ The calculation is a horizon, not a rate. The reported statement gives one date 
 
 The extension is worth having because it moves a cliff, and a cliff is the one thing a landed-cost model cannot guess. It is not worth mistaking for a rate. Until a remission order names the duty, the goods and the exact end date, the importer's job is to model the duty from 2029 and treat the years to 2028 as the window the extension bought.
 
-For the paperwork and the cost in one place, see [Xi says improvement, development of China-Canada relations right choice](/guide/xi-says-improvement-development-of-china-canada-relations-right-choice/).
+For the paperwork and the cost in one place, see Xi says improvement, development of China-Canada relations right choice.

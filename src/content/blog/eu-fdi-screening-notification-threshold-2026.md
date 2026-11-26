@@ -175,4 +175,4 @@ Regime boundary:
 The 667 notifications and the 12% in-depth rate are the Commission's numbers; the cost of a stop is the buyer's to calculate. A Chinese-funded acquisition or greenfield investment in the EU carries a one-in-eight chance of a full review, and that chance is higher in manufacturing, where 53% of transactions sit. The FISR date of 17 January 2028 gives a buyer a second decision to make alongside the price: which regime the closing date lands in. Price the review into the timetable before you sign, not after the notification goes in.
 </div>
 
-For the paperwork and the cost in one place, see [Xinhua Commentary: For APEC, the answer lies in action](/guide/xinhua-commentary-for-apec-the-answer-lies-in-action/).
+For the paperwork and the cost in one place, see Xinhua Commentary: For APEC, the answer lies in action.

@@ -182,4 +182,4 @@ The customs release gives an importer three rates and one total, and nothing mor
 
 For the paperwork and the cost in one place, see China's foreign trade growth picks up pace on stellar imports, booming AI demand.
 
-For the paperwork and the cost in one place, see [China's retail sales of goods, services up 2.5 pct in first 10 months](/guide/china-s-retail-sales-of-goods-services-up-2-5-pct-in-first-10-months/).
+For the paperwork and the cost in one place, see China's retail sales of goods, services up 2.5 pct in first 10 months.
