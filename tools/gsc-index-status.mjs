@@ -20,6 +20,8 @@ import { createSign } from "node:crypto";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const LIMIT = Number((args.find((a) => a.startsWith("--limit=")) ?? "--limit=30").split("=")[1]);
+/* --recent-days=7 samples the pages published inside that window, which is how "indexed this week" is measured. */
+const RECENT_DAYS = Number((args.find((a) => a.startsWith("--recent-days=")) ?? "--recent-days=0").split("=")[1]);
 const SITE = process.env.GSC_SITE_URL ?? "sc-domain:landedmath.com";
 /*
  * ASK ABOUT THE HOST THE SITE ACTUALLY SERVES.
@@ -73,7 +75,12 @@ for (const dir of ["blog", "guide"]) {
   }
 }
 pages.sort((a, b) => String(b.date).localeCompare(String(a.date)));
-const sample = pages.slice(0, LIMIT);
+let sample = pages.slice(0, LIMIT);
+if (RECENT_DAYS > 0) {
+  const cutoff = new Date(Date.now() - RECENT_DAYS * 86400000).toISOString().slice(0, 10);
+  const recent = pages.filter((p) => p.date >= cutoff);
+  sample = recent.slice(0, LIMIT);
+}
 
 const assertion = token();
 if (!assertion) {
@@ -114,7 +121,7 @@ for (const p of sample) {
   }
 }
 
-const out = { at: new Date().toISOString(), site: SITE, sampled: sample.length, counts: Object.fromEntries(counts), rows };
+const out = { at: new Date().toISOString(), site: SITE, recentDays: RECENT_DAYS, sampled: sample.length, counts: Object.fromEntries(counts), rows };
 mkdirSync(join(ROOT, "data", "gsc"), { recursive: true });
 writeFileSync(join(ROOT, "data", "gsc", `index-status-${new Date().toISOString().slice(0, 10)}.json`), JSON.stringify(out, null, 2), "utf8");
 
