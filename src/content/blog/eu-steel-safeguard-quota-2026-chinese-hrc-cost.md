@@ -197,6 +197,8 @@ EUR 250/t                     = EUR 500 CIF x 0.50
 
 Substitute your own CIF value, and read the allocation for your category and origin from Annex I of Implementing Regulation (EU) 2026/1457 before assuming an in-quota price is available at all.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## The point
 
 The reform is usually reported as a rate: 25 percent became 50 percent, and duty-free volumes fell by nearly half. Both are true and neither is the operational fact. What decides whether a tonne pays 50 percent or nothing is whether the origin holds a named allocation in that category, and the answer differs by product for the same origin. China's four named allocations do not include hot-rolled coil, and the residual pool that substitutes for one is 5,564 tonnes a quarter for the whole world. An importer who has priced CBAM and not the quota has modelled the smaller of the two charges on the same tonne.

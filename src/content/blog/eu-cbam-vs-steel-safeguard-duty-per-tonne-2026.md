@@ -175,6 +175,8 @@ The carbon cost is fixed by a published formula, a yearly default value and a qu
 
 The mistake to avoid is treating the widely quoted per-tonne carbon figure as the headline cost of importing Chinese steel. On the codes where the safeguard duty applies and the quota is exhausted, it is not the headline. It is the second charge, and on the cheapest products it is the smaller of the two.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## FAQ
 
 ### Which charge is larger on Chinese steel entering the EU, CBAM or the safeguard duty?

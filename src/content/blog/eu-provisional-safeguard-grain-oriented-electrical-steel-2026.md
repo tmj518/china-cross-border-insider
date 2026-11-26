@@ -156,6 +156,8 @@ min_member_states = 15
 min_population_share = 0.65  # 65% of EU population
 ```
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## The point
 
 The EU's provisional safeguard on grain-oriented electrical steel from 18 September 2026 changes the cost base for every importer of GOES and downstream products. The investigation launched in March 2026 runs a standard maximum of 9 months, extendable to 11, and definitive measures require at least 15 EU Member States representing 65% of the EU population to vote in favour. Importers who confirm the exact product classification, calculate the additional duty on actual CIF values, and adjust sourcing and pricing now will avoid unexpected costs. Those who wait for the definitive measures will absorb the provisional costs without a plan.
