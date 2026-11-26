@@ -1348,7 +1348,12 @@ function runTool(name, input) {
        * in this file - it was applied on the check path, not on the publish path, so the gate judged the raw draft.
        * reviewBy is a date the pipeline can compute; refusing a page over it is refusing to do arithmetic.
        */
-      if (!procedureDraft) {
+      /*
+       * Applies to guides too: on 2026-11-19 the agent assembled a procedural draft, this guard skipped the fill
+       * because procedureDraft was true, and the publish gate refused the page for a missing reviewBy. A date
+       * the pipeline can compute is not a reason to reject anything.
+       */
+      {
         try {
           const filled = fillRequiredMeta(readFileSync(from, "utf8"));
           if (filled.src !== readFileSync(from, "utf8")) {
