@@ -179,3 +179,5 @@ For the paperwork and the cost in one place, see [Xi says China, Singapore shoul
 For the paperwork and the cost in one place, see [Xi says China, Australia should be mutually trusted partners](/guide/xi-says-china-australia-should-be-mutually-trusted-partners/).
 
 For the paperwork and the cost in one place, see [China seeks public comment on draft regulation for supervision of social insurance funds](/guide/china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci/).
+
+For the paperwork and the cost in one place, see [China urges U.S. to revoke proposed telecom restrictions: commerce ministry](/guide/china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis/).

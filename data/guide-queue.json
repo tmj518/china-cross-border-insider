@@ -4863,7 +4863,7 @@
       "unit": "one application",
       "title": "China urges U.S. to revoke proposed telecom restrictions: commerce ministry",
       "query": "China urges U.S. to revoke proposed telecom restrictions: commerce ministry",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China urges U.S. to revoke proposed telecom restrictions: commerce ministry\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4891,7 +4891,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-26"
     },
     {
       "slug": "china-rolls-out-plan-to-improve-eldercare-childcare-services",

@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-26T02:26:13.895Z",
+  "runId": "45742305132",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
+  "seconds": 23,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0014
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "7 candidate(s)"
+    },
+    {
+      "name": "grounding china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "beidou-terminal-devices-china-2026-importer-tracking, beijing-irkutsk-train-fares-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
