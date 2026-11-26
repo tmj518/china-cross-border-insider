@@ -35,6 +35,7 @@ const SITE = find("site", "https://www.landedmath.com");
 const STALE_HOURS = Number(find("stale", 26));
 const now = Date.now();
 
+let lastRunTs = 0;
 const checks = [];
 const record = (level, name, detail) => checks.push({ level, name, detail });
 
@@ -56,7 +57,20 @@ for (const dir of ["blog", "guide"]) {
 const today = new Date(now + 8 * 3600e3).toISOString().slice(0, 10);
 if (!latest) record("critical", "freshness", "no published article found at all");
 else {
-  const hours = (now - latest.ts) / 3600e3;
+  /* A run can publish an article dated yesterday (a late slot, a re-publish). The run journal knows when the
+   site actually gained a page; the article's own date does not. */
+let lastRunTs = 0;
+try {
+  for (const f of readdirSync(join(ROOT, "data", "runs"))) {
+    if (!f.endsWith(".json") || f.startsWith("latest")) continue;
+    const j = JSON.parse(readFileSync(join(ROOT, "data", "runs", f), "utf8"));
+    if (!/^PUBLISHED/.test(String(j.verdict ?? ""))) continue;
+    const t = Date.parse(j.at);
+    if (Number.isFinite(t) && t > lastRunTs) lastRunTs = t;
+  }
+} catch {}
+const freshest = Math.max(latest.ts, lastRunTs);
+const hours = (now - freshest) / 3600e3;
   const isToday = latest.date === today;
   if (isToday) record("ok", "freshness", `today has ${latest.date === today ? "an article" : ""}: ${latest.slug}`);
   else if (hours > STALE_HOURS) record("critical", "freshness", `nothing published for ${Math.round(hours)}h (last ${latest.date} ${latest.slug})`);
@@ -130,8 +144,17 @@ if (latest) {
       record("warn", "live", `still deploying after three tries: ${url}`);
     }
   }
-  if (code === "200") record("ok", "live", `200 ${url}`);
-  else record("critical", "live", `${code} ${url}`);
+  /*
+ * FRESH PUBLICATION IS NOT A 404 YOU CAN TRUST.
+ *
+ * 2026-11-19..11-24: every 07:20 run went red on "live 404" for the article it had just published - Pages was
+ * still building. The article was live minutes later and the 09:20 backup then saw it and stood down. Six red
+ * runs, zero broken pages. A 404 for a page published in the last 45 minutes is a warning.
+ */
+const ageMin = (now - Math.max(latest.ts, lastRunTs)) / 60000;
+if (code === "200") record("ok", "live", `200 ${url}`);
+else if (ageMin < 45) record("warn", "live", `${code} but published ${Math.round(ageMin)}m ago - deploy may still be running`);
+else record("critical", "live", `${code} ${url}`);
 }
 
 /* 5b ------------------------------------------------------ topic supply */
