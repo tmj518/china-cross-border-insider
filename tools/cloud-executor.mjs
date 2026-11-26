@@ -40,8 +40,9 @@ const siteRules = () =>
   "THE CHARTER THIS SITE IS WRITTEN TO:\n" + CHARTER.map((c) => "  - " + c).join("\n") +
   "\n\nTHE RULES A DRAFT MUST MEET:\n" + SITE_RULES.map((r, i) => `  SITE RULE ${i + 1}: ${r}`).join("\n") +
   "\n\nWHAT THE REVIEWER WILL CHECK, line by line - a draft that fails any of these comes back:\n" +
-  REVIEW_CHECKS.map((c) => "  - " + c).join("\n");
-import { SITE_RULES, CHARTER, REVIEW_CHECKS } from "./site-rules.mjs";
+  REVIEW_CHECKS.map((c) => "  - " + c).join("\n") +
+  "\n\nA GUIDE MUST MEET THIS:\n" + GUIDE_STANDARD.map((c) => "  - " + c).join("\n");
+import { SITE_RULES, CHARTER, REVIEW_CHECKS, GUIDE_STANDARD } from "./site-rules.mjs";
 /*
  * The frontmatter constraints live in one place so the prompt, this validator and the parity check all
  * read the same list. They were described in three places that could not check each other, and twice in
