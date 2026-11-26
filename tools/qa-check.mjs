@@ -110,24 +110,22 @@ function check(file) {
   const fmLine = (key) => new RegExp(`^${key}:\\s*(.+)$`, "m").exec(fm)?.[1]?.trim();
 
   /*
-   * GUIDE DEPTH - a procedural page that answers in 300 words is a stub, and Google treats 441 stubs as one
-   * low-quality site rather than 441 pages. Measured 2026-11-26: 126 guides, 84 under 400 words, average 393;
-   * the blog archive averages 2,124. The floor applies to pages published from 2026-12-01, so the existing
-   * library is not turned red by a decision about new writing.
+   * GUIDE LENGTH, AND NOTHING ELSE.
    *
-   * The sections listed are things a reader needs (who qualifies, the steps, the cost, the documents, the
-   * timeline, why applications fail), not word filler.
+   * The operator cut the rest of the guide standard on 2026-11-26: no required section list, no figure quota,
+   * no internal-link minimum, no search-evidence rule. What stays is the one thing he asked for - a guide is
+   * 900 to 2,000 prose words. Below that it is a stub; above it is padding. Both are refused.
+   *
+   * Applies to pages published from 2026-12-01 so the existing 126 guides are not turned red.
    */
   const GUIDE_FROM = "2026-12-01";
   const GUIDE_MIN_WORDS = 900;
+  const GUIDE_MAX_WORDS = 2000;
   if (/[\\/]guide[\\/]/.test(file) && (fmLine("publishDate") ?? "").replace(/"/g, "") >= GUIDE_FROM) {
     const gw = proseWords(body);
-    const NEED = ["What this", "Who", "Step", "Cost", "Document", "How long", "Why"];
-    const missing = NEED.filter((x) => !new RegExp("^##\\s*" + x, "m").test(body));
-    if (gw >= GUIDE_MIN_WORDS) add("pass", "guide depth", gw + " prose words");
-    else add("block", "guide depth", gw + " prose words, floor is " + GUIDE_MIN_WORDS);
-    if (missing.length === 0) add("pass", "guide sections", "every required section present");
-    else add("block", "guide sections", "missing: " + missing.join(", "));
+    if (gw >= GUIDE_MIN_WORDS && gw <= GUIDE_MAX_WORDS) add("pass", "guide length", gw + " prose words");
+    else if (gw < GUIDE_MIN_WORDS) add("block", "guide length", gw + " prose words, floor is " + GUIDE_MIN_WORDS);
+    else add("block", "guide length", gw + " prose words, ceiling is " + GUIDE_MAX_WORDS);
   }
 
   // ---- encoding integrity -------------------------------------------
