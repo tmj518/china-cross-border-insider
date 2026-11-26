@@ -192,3 +192,5 @@ For the paperwork and the cost in one place, see [Alipay and WeChat Pay for Fore
 For the paperwork and the cost in one place, see [The world comes to China, opportunities flow both ways](/guide/the-world-comes-to-china-opportunities-flow-both-ways/).
 
 For the paperwork and the cost in one place, see [China hands over remains of U.S. airmen found along WWII Hump Route](/guide/china-hands-over-remains-of-u-s-airmen-found-along-wwii-hump-route/).
+
+For the paperwork and the cost in one place, see [Central government spokesperson hails Hong Kong's 2026 Election Committee subsector elections](/guide/central-government-spokesperson-hails-hong-kong-s-2026-election-commit/).

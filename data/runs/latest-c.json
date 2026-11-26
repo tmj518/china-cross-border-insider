@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-26T02:38:36.579Z",
-  "runId": "45743369185",
+  "at": "2026-11-26T02:52:25.516Z",
+  "runId": "45745195080",
   "route": "fallback",
   "verdict": "PUBLISHED",
-  "article": "china-rolls-out-plan-to-improve-eldercare-childcare-services",
-  "seconds": 15,
+  "article": "central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+  "seconds": 19,
   "usage": {
     "calls": 2,
     "failed": 0,
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "6 candidate(s)"
+      "detail": "5 candidate(s)"
     },
     {
-      "name": "grounding china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "name": "grounding central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "name": "gates central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "name": "build central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-october-2026-electricity-consumption-ev-charging-data-services, beidou-terminal-devices-china-2026-importer-tracking"
+      "detail": "china-asean-fta-3-0-december-2026-legal-rules-alignment, china-emergency-procurement-rules-imported-goods-october-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-rolls-out-plan-to-improve-eldercare-childcare-services/"
+      "detail": "/guide/central-government-spokesperson-hails-hong-kong-s-2026-election-commit/"
     }
   ],
   "researchLog": [

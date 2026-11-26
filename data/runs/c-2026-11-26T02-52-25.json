@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-26T02:52:25.516Z",
+  "runId": "45745195080",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+  "seconds": 19,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0013
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "5 candidate(s)"
+    },
+    {
+      "name": "grounding central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-asean-fta-3-0-december-2026-legal-rules-alignment, china-emergency-procurement-rules-imported-goods-october-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/central-government-spokesperson-hails-hong-kong-s-2026-election-commit/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
