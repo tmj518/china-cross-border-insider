@@ -51,7 +51,9 @@ for (const dir of ["blog", "guide"]) {
     const m = /^publishDate:\s*"?(\d{4}-\d\d-\d\d)/m.exec(raw);
     if (!m) continue;
     const ts = Date.parse(m[1]);
-    if (!latest || ts > latest.ts) latest = { ts, slug: f.replace(/\.md$/, ""), dir, date: m[1] };
+    let mtime = 0;
+    try { mtime = statSync(join(abs, f)).mtimeMs; } catch {}
+    if (!latest || ts > latest.ts) latest = { ts, slug: f.replace(/\.md$/, ""), dir, date: m[1], mtime };
   }
 }
 const today = new Date(now + 8 * 3600e3).toISOString().slice(0, 10);
@@ -59,7 +61,7 @@ if (!latest) record("critical", "freshness", "no published article found at all"
 else {
   /* A run can publish an article dated yesterday (a late slot, a re-publish). The run journal knows when the
    site actually gained a page; the article's own date does not. */
-let lastRunTs = 0;
+lastRunTs = 0;
 try {
   for (const f of readdirSync(join(ROOT, "data", "runs"))) {
     if (!f.endsWith(".json") || f.startsWith("latest")) continue;
@@ -151,7 +153,15 @@ if (latest) {
  * still building. The article was live minutes later and the 09:20 backup then saw it and stood down. Six red
  * runs, zero broken pages. A 404 for a page published in the last 45 minutes is a warning.
  */
-const ageMin = (now - Math.max(latest.ts, lastRunTs)) / 60000;
+/* How long ago this run wrote its report - the honest clock for "did the deploy have time to finish". */
+let reportAgeMin = Infinity;
+try {
+  for (const f of ["data/tmp/orchestrator-report.json", "data/tmp/agent-report.json"]) {
+    const abs = join(ROOT, f);
+    if (existsSync(abs)) reportAgeMin = Math.min(reportAgeMin, (now - statSync(abs).mtimeMs) / 60000);
+  }
+} catch {}
+const ageMin = Math.min((now - Math.max(latest.ts, lastRunTs)) / 60000, reportAgeMin);
 if (code === "200") record("ok", "live", `200 ${url}`);
 else if (ageMin < 45) record("warn", "live", `${code} but published ${Math.round(ageMin)}m ago - deploy may still be running`);
 else record("critical", "live", `${code} ${url}`);
