@@ -181,3 +181,5 @@ For the paperwork and the cost in one place, see [Xi says China, Australia shoul
 For the paperwork and the cost in one place, see [China seeks public comment on draft regulation for supervision of social insurance funds](/guide/china-seeks-public-comment-on-draft-regulation-for-supervision-of-soci/).
 
 For the paperwork and the cost in one place, see [China urges U.S. to revoke proposed telecom restrictions: commerce ministry](/guide/china-urges-u-s-to-revoke-proposed-telecom-restrictions-commerce-minis/).
+
+For the paperwork and the cost in one place, see [China rolls out plan to improve eldercare, childcare services](/guide/china-rolls-out-plan-to-improve-eldercare-childcare-services/).

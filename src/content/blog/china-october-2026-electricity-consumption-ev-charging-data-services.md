@@ -163,3 +163,5 @@ number into another.
 China's charging network consumed 18.6 billion kilowatt-hours in October, up 59.4 percent, and its data centers consumed 9.9 billion, up 34.7 percent. For importers of the equipment behind those numbers, the direction is clear: demand is growing, and the time to secure supply is before the order books fill.
 
 Related reading: [beidou terminal devices china 2026 importer tracking](/blog/beidou-terminal-devices-china-2026-importer-tracking/) and [brazil beef import additional 55 percent tariff october 2026](/blog/brazil-beef-import-additional-55-percent-tariff-october-2026/).
+
+For the paperwork and the cost in one place, see [China rolls out plan to improve eldercare, childcare services](/guide/china-rolls-out-plan-to-improve-eldercare-childcare-services/).

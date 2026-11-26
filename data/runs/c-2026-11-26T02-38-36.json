@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-26T02:38:36.579Z",
+  "runId": "45743369185",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "china-rolls-out-plan-to-improve-eldercare-childcare-services",
+  "seconds": 15,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0013
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "6 candidate(s)"
+    },
+    {
+      "name": "grounding china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-rolls-out-plan-to-improve-eldercare-childcare-services",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-october-2026-electricity-consumption-ev-charging-data-services, beidou-terminal-devices-china-2026-importer-tracking"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-rolls-out-plan-to-improve-eldercare-childcare-services/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

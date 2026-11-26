@@ -4903,7 +4903,7 @@
       "unit": "one application",
       "title": "China rolls out plan to improve eldercare, childcare services",
       "query": "China rolls out plan to improve eldercare, childcare services",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China rolls out plan to improve eldercare, childcare services\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -4931,7 +4931,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-26"
     },
     {
       "slug": "central-government-spokesperson-hails-hong-kong-s-2026-election-commit",
