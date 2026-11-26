@@ -192,6 +192,8 @@ EUR/t             = chargeable x certificate price for that quarter 2.16995 x 75
 
 Substitute your own CN code, whose default value and benchmark both come from the Official Journal, and the certificate price for the quarter your goods were imported in.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## The point
 
 The number is not the story; its provenance is, and in this regime provenance carries a date. Two facts decide whether a per-tonne CBAM figure is worth anything: which annex it came from, and whether the factor behind it was read in the right direction. One of those annexes was replaced retroactively five months into the regime that depends on it, and the replacement filled a gap that had left Chinese aluminium without a published default value at all.

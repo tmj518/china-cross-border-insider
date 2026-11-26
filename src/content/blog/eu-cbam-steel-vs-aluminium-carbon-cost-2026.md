@@ -169,6 +169,8 @@ The EU charges both metals for carbon and charges steel alone for quota overhang
 
 The two figures most often quoted about this — the 50 per cent rate and the certificate price — are the two that decide the least. What decides a steel importer's cost is which of the 26 categories the goods sit in and whether the origin holds a named allocation there. What decides an aluminium importer's cost is the default emissions value attached to the CN code, which at the Q1 2026 price puts EUR 981.88 a tonne on unwrought aluminium regardless of what it is worth.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## FAQ
 
 ### Does CBAM apply to both steel and aluminium?

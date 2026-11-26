@@ -157,6 +157,8 @@ No. It is a target set by the Canadian government, reported without an end date.
 
 The calculation is a horizon, not a rate. The reported statement gives one date for the remission and one for preferential access, both 2028. The model therefore carries the remission through 2028 and carries the full duty from 2029, because the reported material says nothing about renewal. No duty rate is applied, because none is reported. The 14.3 percent and 20.1 percent growth rates are used only as benchmarks for an importer's own book, and the missing period is stated wherever they appear. The 500 million Canadian dollar beef figure is carried as a projection attributed to an Alberta agriculture official and is not used in any arithmetic.
 
+For the same question approached from another angle, see [steel circumvention vietnam caught indonesia not](/blog/steel-circumvention-vietnam-caught-indonesia-not-2026/).
+
 ## The point
 
 The extension is worth having because it moves a cliff, and a cliff is the one thing a landed-cost model cannot guess. It is not worth mistaking for a rate. Until a remission order names the duty, the goods and the exact end date, the importer's job is to model the duty from 2029 and treat the years to 2028 as the window the extension bought.
