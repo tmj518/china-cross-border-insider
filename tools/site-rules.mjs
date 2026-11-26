@@ -52,10 +52,7 @@ export const SITE_RULES = [
  * ones a reader needs rather than filler.
  */
 export const GUIDE_STANDARD = [
-  "A guide is 900-2,000 prose words. Below 900 it is a stub; above 2,000 it is padding.",
-  "It carries these sections: What this is / Who qualifies / Step by step / What it costs / Documents you need / How long it takes / Why applications fail / FAQ / Sources.",
-  "It states at least three sourced figures, or a cost table with at least three rows, because the reason a reader opens a guide is a number or a sequence, not a description.",
-  "It links to at least two other pages on this site, and those pages exist.",
+  "A guide is 900-2,000 prose words. Below 900 it is a stub; above 2,000 it is padding. Nothing else about its shape is mandated.",
 ];
 
 export const REVIEW_CHECKS = [
