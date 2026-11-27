@@ -35,6 +35,7 @@
  * 3. EVERY DIGIT IN THE PROSE TRACES TO THE FACT SHEET. Checked before a file is written.
  */
 import { topicGuard } from "./topic-guard.mjs";
+import { isNewsTopic } from "./site-rules.mjs";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, rmSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { spawnSync, execFileSync } from "node:child_process";
@@ -181,6 +182,17 @@ candidates = candidates.filter((t) => {
   {
     const g = topicGuard({ title: t.title, keyword: t.keyword, slug: t.slug });
     if (!g.ok) { console.log("  refused topic [" + g.rule + "]: " + t.slug + " - " + g.reason); return false; }
+  }
+  /*
+   * A WIRE STORY IS NOT A GUIDE.
+   *
+   * 2026-11-27: the C line published "xi-says-joint-space-exploration-...", a Xinhua headline. Nobody searches
+   * that phrase a month later, so the page cannot earn an impression no matter how well it is written. The
+   * detector lives in site-rules so the queue builders and this last gate agree on what a news item is.
+   */
+  if (isNewsTopic(t.slug, t.title, t.keyword)) {
+    console.log("  refused topic (news wire, not a procedure): " + t.slug);
+    return false;
   }
   return true;
 });
