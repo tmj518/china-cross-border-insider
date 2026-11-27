@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-17T13:06:18.534Z",
+  "runId": "44088893577",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
+  "seconds": 18,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0013999999999999985
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "4 candidate(s)"
+    },
+    {
+      "name": "grounding xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "shenzhen-apec-2026-trade-impacts-importer-cost-2026, shenzhen-longgang-ai-robot-6s-store-foreign-buyers-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/xinhua-commentary-apec-shenzhen-meeting-to-inject-fresh-momentum-into-/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

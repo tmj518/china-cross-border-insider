@@ -1,0 +1,597 @@
+{
+  "at": "2026-11-17T09:25:09.959Z",
+  "date": "2026-11-17",
+  "persona": "platform-seller",
+  "moment": "live",
+  "seeds": [
+    "amazon seller in china warehouse",
+    "fba storage fee china",
+    "sell on tmall foreign brand",
+    "china warehouse storage cost",
+    "china warehouse fees amazon",
+    "fba china storage cost",
+    "ship to amazon warehouse china",
+    "china 3pl cost"
+  ],
+  "status": "ok",
+  "okCalls": 16,
+  "failCalls": 0,
+  "total": 62,
+  "rows": [
+    {
+      "query": "amazon seller central china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse",
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "chinese seller on amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "amazon works in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse",
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "sell in china online with amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "buy from amazon warehouse",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse",
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "is there amazon in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "amazon warehouse in uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "amazon warehouse in the philippines",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "amazon ship to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse",
+        "china warehouse fees amazon",
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "amazon warehouses in the us",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "how to sell on amazon from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "does china have amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "amazon seller in china warehouse"
+      ]
+    },
+    {
+      "query": "fba storage fee calculator",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "amazon fba storage fee",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china"
+      ]
+    },
+    {
+      "query": "amazon fba storage near me cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "what is an fba fee",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china"
+      ]
+    },
+    {
+      "query": "amazon fba storage near me",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "fba per unit fulfillment fee",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china"
+      ]
+    },
+    {
+      "query": "how much does fba cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "amazon fba storage near me reviews",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "amazon fba shipping cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "how much is fba",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "fba inventory storage fee",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "fba long-term storage fee",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba storage fee china",
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "how to buy on tmall",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "sell on tmall foreign brand"
+      ]
+    },
+    {
+      "query": "sell in china online with tmall",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "sell on tmall foreign brand"
+      ]
+    },
+    {
+      "query": "http://www.tmall.com/brand",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "sell on tmall foreign brand"
+      ]
+    },
+    {
+      "query": "www.tmall.com english",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "sell on tmall foreign brand"
+      ]
+    },
+    {
+      "query": "cheap warehouse storage singapore",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "warehouse storage space singapore",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "business warehouse storage cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "average warehouse storage costs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "container store china storage",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "storage for fine china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "best storage for china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "warehouse storage in singapore",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "storage for china set",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "amazon warehouse storage cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost",
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "warehouse storage cost calculator",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "storage box for china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse storage cost"
+      ]
+    },
+    {
+      "query": "shipping fee from china to usa amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon",
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "how much amazon warehouse pay",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "number of amazon warehouses",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "amazon warehouse clearance for today",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "amazon warehouse pay rates",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "shipping and handling fees amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "amazon warehousing and distribution",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china warehouse fees amazon"
+      ]
+    },
+    {
+      "query": "amazon fba storage fees",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "amazon fba storage near me locations",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "fba international shipping charge",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "fba china storage cost"
+      ]
+    },
+    {
+      "query": "how to ship from china to amazon warehouse",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "does amazon ship from china",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "amazon shipping from china to us",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "drop shipping to amazon from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "shipped with china post amazon",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "how to ship products to amazon warehouse",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "does amazon deliver to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "amazon shipping warehouse near me",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "amazon ship to store",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "amazon shipping warehouse locations",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "delivery to amazon warehouse",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    },
+    {
+      "query": "where does amazon ship to",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "ship to amazon warehouse china"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

@@ -1,0 +1,560 @@
+{
+  "at": "2026-11-17T09:27:52.947Z",
+  "date": "2026-11-17",
+  "persona": "bri",
+  "moment": "leave",
+  "seeds": [
+    "send money from china to india",
+    "parcel from china to africa cost",
+    "customs clearance nigeria china",
+    "remit money from china to pakistan"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 60,
+  "rows": [
+    {
+      "query": "send money from china to india",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to transfer money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to transfer money from china to india through bank",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to send money from china to india online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "can we send money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "best way to send money from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "western union money transfer from china to india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "cheapest way to send money to china from india",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money to china from india online",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money to china from india with paypal",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money to china from india with skrill",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money to china from india with xoom",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money to china from india with remitly",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "send money to china from india with ria",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to send money to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "china money to indian money",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to send money to india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "how to send money internationally from india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "easy way to send money to india",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "send money from china to india"
+      ]
+    },
+    {
+      "query": "cost of parcel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "shipping cost from china to south africa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "cost to send a parcel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "price from south africa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "cost of sending a parcel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "small parcel to china cost",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "cost to post parcel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "cost of parcel to china from uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "shipping from china to south africa price",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "how much to send parcel to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "shipping from china to west africa",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "how much from south africa to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "parcel from china to africa cost"
+      ]
+    },
+    {
+      "query": "singapore customs clearance process",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "singapore customs clearance procedure",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "nigeria customs car clearing rates",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "foreign clearance guide nigeria",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "the nigeria customs service",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "nigeria customs service website",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "how to get customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "import and export customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "process of customs clearance",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "customs clearance is in progress",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "what is the customs clearance process",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "nigerian customs official website",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "customs clearance nigeria china"
+      ]
+    },
+    {
+      "query": "send money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "transfer money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "how to send money from china to pakistan online",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "best way to send money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "how to receive money from china to pakistan",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "china to pakistan currency",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "quick remit money to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "remit money transfer to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "fast remit money to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "remitly send money to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "how to remit funds to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "sending money to pakistan from uk",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "sending money to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "send money remittance to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "pak to china currency",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "send money to uk from pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    },
+    {
+      "query": "how to send money to pakistan",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "remit money from china to pakistan"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

@@ -1,0 +1,399 @@
+{
+  "at": "2026-11-17T09:25:43.654Z",
+  "date": "2026-11-17",
+  "persona": "platform-seller",
+  "moment": "policy",
+  "seeds": [
+    "china export policy for sellers",
+    "china customs rules for ecommerce",
+    "china ecommerce regulation",
+    "china export license"
+  ],
+  "status": "ok",
+  "okCalls": 8,
+  "failCalls": 0,
+  "total": 42,
+  "rows": [
+    {
+      "query": "export control law china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china export control list",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china import and export fair",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china new car export policy",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china announcement on restrictions of export",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "import export agreement china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china agents for import export",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china data export regulations",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china import and export",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "china electric tool set export regulations",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "export controls us to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "how to export to china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export policy for sellers"
+      ]
+    },
+    {
+      "query": "general administration of customs of china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "customs rules importing from china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "business customs in china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "customs code of china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "china customs prohibited items pdf",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "shopping china local customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "packages from china are subject to customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "promotional items in china regulations",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "promotional items in china customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "china import site customs",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "formal entry customs china",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "china customs contact email",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china customs rules for ecommerce"
+      ]
+    },
+    {
+      "query": "china e commerce regulations alibaba",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china ecommerce regulation"
+      ]
+    },
+    {
+      "query": "china e commerce regulation",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china ecommerce regulation"
+      ]
+    },
+    {
+      "query": "china ecommerce law",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china ecommerce regulation"
+      ]
+    },
+    {
+      "query": "china export license",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license requirements",
+      "engines": [
+        "google",
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license rare earth",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license steel",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license news",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license cost",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license silver",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license 2026",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china trade license",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export licensing system",
+      "engines": [
+        "google"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china export license rare earths",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china rare earth export license",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china steel export license",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china pulls export license",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    },
+    {
+      "query": "china us beef export licenses",
+      "engines": [
+        "bing"
+      ],
+      "seeds": [
+        "china export license"
+      ]
+    }
+  ],
+  "seedQuality": "unambiguous"
+}

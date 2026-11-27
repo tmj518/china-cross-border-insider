@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-17T12:53:32.338Z",
+  "runId": "44087019206",
+  "route": "fallback",
+  "verdict": "PUBLISHED",
+  "article": "china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
+  "seconds": 19,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0014000000000000054
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "5 candidate(s)"
+    },
+    {
+      "name": "grounding china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-p-nitrotoluene-eu-anti-dumping-investigation-2026, china-water-law-revision-river-lake-management-2027"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-s-apec-moment-xi-s-vision-for-an-open-inclusive-asia-pacific/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}
