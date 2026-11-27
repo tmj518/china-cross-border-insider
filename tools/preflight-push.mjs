@@ -122,6 +122,7 @@ const scopeProblems = nestedScopeScan().length;
 const FAST_GATES = [
   ["tools/qa-check.mjs", "--all"],
   ["tools/link-check.mjs"],
+  ["tools/check-frontmatter-yaml.mjs"],
   ["tools/check-3r.mjs", "--all"],
   ["tools/check-meta.mjs"],
   ["tools/check-csp.mjs"],
