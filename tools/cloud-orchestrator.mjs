@@ -127,11 +127,26 @@ function fixInternalLinks(article) {
   });
   const good = [...out.matchAll(LINK)].filter((m) => published.has(m[2] + "/" + m[3])).map((m) => m[2] + "/" + m[3]);
   let added = 0;
+  /*
+   * INSERT THE LINK SENTENCE INSIDE THE BODY, NOT AFTER IT.
+   *
+   * This used to append "Related reading: ..." at the very end of the draft. link-check deliberately excludes
+   * generated tail sections from the link count, so a draft repaired this way still measured zero body links and
+   * the L1 gate rejected it - three attempts in a row on 2026-11-27, 222 seconds and $0.0238 for a page that was
+   * otherwise ready.
+   *
+   * The sentence now goes before the last "## " heading, which is prose the reader passes on the way to the end.
+   */
   if (good.length < 2) {
     const pool = [...published].filter((x) => x.startsWith("blog/") && !good.includes(x)).slice(0, 2 - good.length);
     if (pool.length) {
-      const sentence = "\n\nRelated reading: " + pool.map((x) => `[${x.split("/")[1].replace(/-/g, " ")}](/${x}/)`).join(" and ") + ".\n";
-      out = out.trimEnd() + sentence;
+      const label = (x) => x.split("/")[1].replace(/-/g, " ");
+      const links = pool.map((x) => `[${label(x)}](/${x}/)`);
+      const sentence = links.length === 2
+        ? `The same question is worked through from another angle in ${links[0]} and ${links[1]}.`
+        : `The same question is worked through from another angle in ${links[0]}.`;
+      const at = out.lastIndexOf("\n## ");
+      out = at > 0 ? out.slice(0, at) + "\n\n" + sentence + "\n" + out.slice(at) : out.trimEnd() + "\n\n" + sentence + "\n";
       added = pool.length;
     }
   }
