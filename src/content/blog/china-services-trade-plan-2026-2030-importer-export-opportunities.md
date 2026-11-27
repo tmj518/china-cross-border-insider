@@ -1,6 +1,5 @@
 ---
 route: "script"
-route: "script"
 title: "China's 2026-2030 Services Trade Plan: What Importers Can"
 subtitle: "China's services trade plan for 2026-2030 targets growth in exports and imports. Services trade hit 5.77 trillion yuan in the first three quarters of 2026."
 description: "China's 2026-2030 services trade development plan signals new market access. Services trade reached 5.77 trillion yuan in the first three quarters of 2026, with exports up 14.8 percent."
