@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T01:21:10.455Z",
+  "at": "2026-11-27T23:21:11.787Z",
   "providers": [
     "volces",
     "deepseek"
@@ -13,12 +13,12 @@
     {
       "name": "state",
       "ok": true,
-      "detail": "65 previous run(s), last 2026-11-26T23:21:08.302Z (REJECTED)"
+      "detail": "66 previous run(s), last 2026-11-27T01:21:10.455Z (PUBLISHED-DEGRADED)"
     },
     {
       "name": "weekly ceiling",
       "ok": true,
-      "detail": "6 of 15 net-new this week"
+      "detail": "7 of 15 net-new this week"
     },
     {
       "name": "sections covered this week",
@@ -28,7 +28,7 @@
     {
       "name": "research",
       "ok": true,
-      "detail": "proposed china-services-trade-plan-2026-2030-importer-export-opportunities, 8 verified figure(s)"
+      "detail": "proposed china-lng-carrier-delivery-record-16-months-2026, 8 verified figure(s)"
     },
     {
       "name": "directive figures",
@@ -43,22 +43,22 @@
     {
       "name": "writer",
       "ok": true,
-      "detail": "draft at /data/drafts/china-services-trade-plan-2026-2030-importer-export-opportunities.md"
+      "detail": "draft at /data/drafts/china-lng-carrier-delivery-record-16-months-2026.md"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "APPROVED: L5 reviewer did not return JSON - the response ran to the 8192-token ceiling, so the object was cut off"
+      "detail": "APPROVED: L5 7 issue(s), 7 with a citation"
     },
     {
       "name": "reviewer",
       "ok": true,
-      "detail": "unavailable, recorded as a lesson, publishing anyway"
+      "detail": "7 objection(s), advisory only - publishing"
     },
     {
       "name": "publish",
       "ok": true,
-      "detail": "staged at src/content/blog/china-services-trade-plan-2026-2030-importer-export-opportunities.md"
+      "detail": "staged at src/content/blog/china-lng-carrier-delivery-record-16-months-2026.md"
     },
     {
       "name": "registry",
@@ -78,67 +78,75 @@
   ],
   "verdict": "PUBLISHED-DEGRADED",
   "reasons": [
-    "reviewer: 1 objection(s), advisory - published anyway"
+    "reviewer: 7 objection(s), advisory - published anyway"
   ],
-  "article": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+  "article": "china-lng-carrier-delivery-record-16-months-2026",
   "commit": null,
   "usage": {
-    "calls": 18,
+    "calls": 15,
     "failed": 2,
-    "usd": 0.0555,
-    "promptTokens": 289066,
-    "completionTokens": 30123
+    "usd": 0.0347,
+    "promptTokens": 216301,
+    "completionTokens": 16083
   },
   "route": "script",
   "categoryActivity": {
     "logistics": 2,
     "sourcing": 0,
-    "trade-policy": 3,
+    "trade-policy": 4,
     "supply-chain": 1,
     "platforms": 0
   },
   "uncoveredSections": [],
   "researchLog": [
-    "  proposing a subject from 8 archived document(s) (attempt 3 of 6)...",
-    "  stream      : SSE, 986 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 3740 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1001 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 3726 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1008 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 3735 characters but no document structure, trying the next one",
-    "  spent   : ~0.0232  (ceiling 0.40)",
-    "  model   : volces/ep-20251220173606-gzxdg",
-    "  feasible: true",
-    "  slug    : hainan-ftp-zero-tariff-share-74-percent-2026",
-    "  keyword : Hainan Free Trade Port zero tariff 74% tariff lines 2026",
-    "  duplicate check: score 9 against china-zero-tariff-20-african-countries-2026",
-    "      shared keyword stems: zero, lines",
-    "      shared institution(s): article",
     "  REJECTED as a duplicate - trying another subject rather than ending the day.",
-    "  proposing a subject from 8 archived document(s) (attempt 4 of 6)...",
-    "  stream      : SSE, 1426 content delta(s)",
-    "  endpoint    : ep-20251220173606-gzxdg replied with 5205 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1226 content delta(s)",
-    "  endpoint    : ep-20251220175517-rjpsc replied with 4372 characters but no document structure, trying the next one",
-    "  stream      : SSE, 1197 content delta(s)",
-    "  endpoint    : ep-20261019161601-9k6dn replied with 4220 characters but no document structure, trying the next one",
-    "  spent   : ~0.0313  (ceiling 0.40)",
+    "  proposing a subject from 8 archived document(s) (attempt 2 of 6)...",
+    "  stream      : SSE, 1031 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3829 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1154 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 4352 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1403 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 5302 characters but no document structure, trying the next one",
+    "  spent   : ~0.0149  (ceiling 0.40)",
     "  model   : volces/ep-20251220173606-gzxdg",
     "  feasible: true",
-    "  slug    : china-services-trade-plan-2026-2030-importer-export-opportunities",
-    "  keyword : China services trade plan 2026 2030 importer",
+    "  slug    : hainan-fta-zero-tariff-lines-74-percent-2026",
+    "  keyword : Hainan Free Trade Port zero tariff 74% 2026 importer",
+    "  duplicate check: score 8 against china-zero-tariff-20-african-countries-2026",
+    "      shared keyword stems: zero",
+    "  REJECTED as a duplicate - trying another subject rather than ending the day.",
+    "  proposing a subject from 8 archived document(s) (attempt 3 of 6)...",
+    "  stream      : SSE, 891 content delta(s)",
+    "  endpoint    : ep-20251220173606-gzxdg replied with 3193 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1164 content delta(s)",
+    "  endpoint    : ep-20251220175517-rjpsc replied with 3987 characters but no document structure, trying the next one",
+    "  stream      : SSE, 1153 content delta(s)",
+    "  endpoint    : ep-20261019161601-9k6dn replied with 4105 characters but no document structure, trying the next one",
+    "  spent   : ~0.0224  (ceiling 0.40)",
+    "  model   : volces/ep-20251220173606-gzxdg",
+    "  feasible: true",
+    "  slug    : china-lng-carrier-delivery-record-16-months-2026",
+    "  keyword : China LNG carrier delivery 2026 shipyard capacity",
     "  duplicate check: score 0",
-    "  slug    : china-services-trade-plan-2026-2030-importer-export-opportunities",
-    "  keyword : China services trade plan 2026 2030 importer",
-    "  category: trade-policy",
+    "  slug    : china-lng-carrier-delivery-record-16-months-2026",
+    "  keyword : China LNG carrier delivery 2026 shipyard capacity",
+    "  category: supply-chain",
     "  figures : 8",
     "  evidence check:",
     "    external figures : 0",
     "    verified         : 0",
     "    failed           : 0",
     "  wrote /data/directive.json",
-    "  spend this run: ~$0.0313",
+    "  spend this run: ~$0.0224",
     "  Next: node tools/cloud-orchestrator.mjs   (which will write, review and publish)"
   ],
-  "seconds": 435
+  "reviewAdvisory": [
+    "The 12-14 per year figure is derived by dividing 20 simultaneous berths by a 16-month build time, but the figures do not state that all berths are occupied, that build time is uniform across the order book, or that the 16-month record is the standard cycle — the draft itself later admits 16 months may be exceptional.",
+    "The supplied figures only support a record for Hudong-Zhonghua (12th delivery, 14 expected); the draft upgrades this to a record for Chinese shipbuilders as a class without any figure covering other yards.",
+    "The figures record 17 new orders but do not identify who placed them; the draft elsewhere admits the report does not state who placed the orders, so attributing them to charterers is invented.",
+    "The body performs arithmetic (20 berths ÷ 16 months = 12-14 vessels per year) and the 'How we calculated this' section denies any arithmetic was done, contradicting the body.",
+    "The 'mid-sized city for about a month' and the −162°C figure are not in the supplied figures and carry no five-part record, so they are unsourced numbers in the prose.",
+    "This is a general market assertion with no figure or document behind it; the draft's own figures contain no charter-rate or demand data, so the causal rule is unsupported."
+  ],
+  "seconds": 388
 }

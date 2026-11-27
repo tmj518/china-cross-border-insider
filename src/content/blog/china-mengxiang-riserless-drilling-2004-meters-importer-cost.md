@@ -128,6 +128,8 @@ The following table frames the directional cost implications across resource typ
 
 > Also read: [China's EV charging power use jumps 59.4% in October: what](/blog/china-october-2026-electricity-consumption-ev-charging-data-services/)
 
+> Also read: [China's LNG carrier delivery record: 16-month build time](/blog/china-lng-carrier-delivery-record-16-months-2026/)
+
 ## For you
 
 - **Importers of deep-sea minerals:** Track whether this system accelerates China's mineral assessment programs. The 2,004.8-meter depth capability expands the range of seabed deposits that can be drilled and cored, which is the first step toward any future mineral production. Revisit your supply assumptions for cobalt, nickel, and manganese if Chinese deep-sea assessment activity increases.

@@ -164,6 +164,8 @@ Worked cases, same gate count each:
 Cost statement: time and sequencing, not a published charge.
 ```
 
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
+
 ## The point
 
 The revision does not add a fee; it adds a gate. Every movement of Chinese human tissue, cells or DNA now runs through prior NHC approval and customs clearance, and the option of holding material inside China as a foreign entity is closed. For a foreign lab, CRO or biotech buyer, the delivery date now depends on an approval the buyer does not control, and the supplier test is whether the Chinese counterpart can show that approval before the material is packed. A supplier that cannot show it is offering a movement with no legal route out of the country.

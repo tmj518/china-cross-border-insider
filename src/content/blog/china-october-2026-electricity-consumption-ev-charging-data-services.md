@@ -115,6 +115,8 @@ The figures do not state a price for electricity, a cost per charger, or a lead 
 
 **What would change my mind.** A subsequent month showing charging electricity growth below 40 percent would suggest the October figure was a peak rather than a baseline. A statement from a major charging-network operator about order cancellations or capacity cuts would contradict the demand signal. A published lead-time or price figure from a supplier would convert this directional article into a priced one. Until one of those appears, the October figures stand as the most recent evidence of demand.
 
+> Also read: [China's LNG carrier delivery record: 16-month build time](/blog/china-lng-carrier-delivery-record-16-months-2026/)
+
 ## For you
 
 - **Importers of EV charging equipment:** treat the 59.4 percent October growth as a demand signal and place orders for the next two to three quarters now, before Chinese operators absorb factory capacity.
@@ -157,6 +159,8 @@ The article states these figures as reported and draws a
 directional conclusion about demand. No arithmetic converts one
 number into another.
 ```
+
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
 
 ## The point
 

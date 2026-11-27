@@ -877,6 +877,91 @@
       "modelOutput": false
     },
     {
+      "id": "china-daily-article-on-hudong-zhonghua-shipbuilding",
+      "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+      "figures": [
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "12",
+          "unit": "LNG carriers delivered in 2026",
+          "period": "year to date as of Nov 27, 2026",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "14",
+          "unit": "LNG carriers expected total deliveries by year-end 2026",
+          "period": "2026",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "16 months",
+          "unit": "time to complete and deliver a large LNG carrier",
+          "period": "current record",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "57",
+          "unit": "LNG carriers in order book",
+          "period": "as of Nov 27, 2026",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "174,000",
+          "unit": "cubic meters cargo capacity per vessel",
+          "period": "for the Petronas order",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "185 days",
+          "unit": "average early delivery per vessel",
+          "period": "for the four Petronas vessels",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "17",
+          "unit": "new LNG carrier orders secured in 2026",
+          "period": "2026",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-lng-carrier-delivery-record-16-months-2026",
+          "articleNum": 509,
+          "value": "20",
+          "unit": "LNG ships that can be built simultaneously",
+          "period": "current capability",
+          "source": "China Daily article on Hudong-Zhonghua Shipbuilding",
+          "retrieved": "2026-11-27"
+        }
+      ],
+      "articleNums": [
+        509
+      ],
+      "articleSlugs": [
+        "china-lng-carrier-delivery-record-16-months-2026"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ministry-of-natural-resources-via-china-daily",
       "source": "Ministry of Natural Resources via China Daily",
       "figures": [

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-27T01:21:10.455Z",
+  "lastRun": "2026-11-27T23:21:11.787Z",
   "lastVerdict": "PUBLISHED-DEGRADED",
-  "lastArticle": "china-services-trade-plan-2026-2030-importer-export-opportunities",
-  "runs": 66,
-  "published": 51,
+  "lastArticle": "china-lng-carrier-delivery-record-16-months-2026",
+  "runs": 67,
+  "published": 52,
   "lastUsage": {
-    "calls": 18,
+    "calls": 15,
     "failed": 2,
-    "usd": 0.0555,
-    "promptTokens": 289066,
-    "completionTokens": 30123
+    "usd": 0.0347,
+    "promptTokens": 216301,
+    "completionTokens": 16083
   }
 }

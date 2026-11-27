@@ -1,13 +1,19 @@
 {
-  "at": "2026-11-27T01:29:35.877Z",
+  "at": "2026-11-27T23:28:57.703Z",
   "site": "sc-domain:landedmath.com",
   "recentDays": 7,
-  "sampled": 11,
+  "sampled": 12,
   "counts": {
-    "URL is unknown to Google": 7,
+    "URL is unknown to Google": 8,
     "Discovered - currently not indexed": 4
   },
   "rows": [
+    {
+      "url": "https://www.landedmath.com/blog/china-lng-carrier-delivery-record-16-months-2026/",
+      "state": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "lastCrawl": ""
+    },
     {
       "url": "https://www.landedmath.com/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/",
       "state": "URL is unknown to Google",
@@ -46,7 +52,7 @@
     },
     {
       "url": "https://www.landedmath.com/blog/china-october-2026-electricity-consumption-ev-charging-data-services/",
-      "state": "URL is unknown to Google",
+      "state": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },
@@ -64,7 +70,7 @@
     },
     {
       "url": "https://www.landedmath.com/blog/china-asean-fta-3-0-december-2026-rules-alignment/",
-      "state": "Discovered - currently not indexed",
+      "state": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawl": ""
     },

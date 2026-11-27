@@ -181,6 +181,8 @@ $3.60 = 9 points x $40 FOB        $3,600 per 1,000 units
 
 Substitute your own unit FOB and your supplier's passthrough share. The $3.60 figure assumes the exporter recovers all nine points, which the negotiation decides rather than the announcement.
 
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
+
 ## The point
 
 This is a domestic Chinese tax decision whose cost lands on an importer's invoice, which is precisely why it escapes notice. The first three points went by quietly in April. The remaining six arrive on 1 January 2027, and unlike most price movements this one is published, dated, and known to both sides of the table. That makes the next few weeks the cheapest window you will get to fix the number, because a supplier pricing a committed order today is making a different decision from one pricing a spot enquiry in January.
