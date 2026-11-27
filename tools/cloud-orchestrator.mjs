@@ -1375,7 +1375,16 @@ if (wroteIt && qaCode === 0) {
      * directory is forbidden because blog contains script and agent articles alike. The script route
      * therefore stamps its own name into the frontmatter on the way in, before the file is read.
      */
-    const stagedSrc = readFileSync(draftPath, "utf8").replace(/^---\r?\n/, '---\nroute: "script"\n');
+    /*
+     * STAMP THE ROUTE ONLY IF THE WRITER DID NOT.
+     *
+     * The blanket prepend produced two "route:" keys when the draft already carried one, which is invalid YAML:
+     * Astro's build failed on 2026-11-27, Cloudflare Pages deployed the previous build, and the run reported
+     * PUBLISHED-DEGRADED for a page that returned 404. A duplicate key is now impossible from this path.
+     */
+    const draftRaw = readFileSync(draftPath, "utf8");
+    const frontmatter = draftRaw.slice(0, Math.max(draftRaw.indexOf("\n---", 3), 0));
+    const stagedSrc = /^route:/m.test(frontmatter) ? draftRaw : draftRaw.replace(/^---\r?\n/, '---\nroute: "script"\n');
     writeFileSync(draftPath, stagedSrc, "utf8");
     writeFileSync(target, readFileSync(draftPath, "utf8"), "utf8");
     published = true;
