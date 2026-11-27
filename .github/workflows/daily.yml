@@ -594,6 +594,13 @@ jobs:
           # same silence it exists to break. The card is sent by the script itself, before it exits.
           node tools/watchdog.mjs --fix
 
+      - name: Refuse to commit a frontmatter block that will not build
+        # The publish step stages the article AFTER the build step, and a bot push does not re-trigger CI, so invalid
+        # YAML reached Cloudflare on 2026-11-27 and the page answered 404 while the run reported PUBLISHED. Cheap to
+        # check here, and it fails the step before the commit rather than after the deploy.
+        if: always()
+        run: node tools/check-frontmatter-yaml.mjs --all
+
       - name: Commit and push anything that was approved
         # A published file belongs in the repository even when the pipeline verdict is red: on 2026-11-11
         # the agent wrote and staged an article, the pipeline step failed, this step was skipped, and the article
