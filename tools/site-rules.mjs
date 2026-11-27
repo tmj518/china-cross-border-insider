@@ -51,6 +51,18 @@ export const SITE_RULES = [
  * the blog carries. From 2026-12-01 a guide must be deep enough to actually answer, and the sections are the
  * ones a reader needs rather than filler.
  */
+/*
+ * IS THIS A NEWS ITEM RATHER THAN A GUIDE?
+ *
+ * On 2026-11-27 the C line published a Xinhua wire headline as a guide. A wire story describes an event that
+ * happened; a guide answers something a reader types into a search box months later. A queue full of wire copy
+ * produces pages nobody searches for, which is one reason 137 pages produced one impression in a week.
+ */
+export const NEWS_WIRE = /\b(xi|jinping|premier|foreign ministry|spokesperson|says|said|hails|hail|vivid|showcases|showcase|kicks off|opens|opening ceremony|held|attends|attended|marks|celebrates|amid|documentary|apec|summit|forum|expo|delegation|photo|video|special report|xinhua|willing to|holds lessons|injects impetus)\b/i;
+
+export function isNewsTopic(...fields) {
+  return NEWS_WIRE.test(fields.filter(Boolean).join(" "));
+}
 export const GUIDE_STANDARD = [
   "A guide is 900-2,000 prose words. Below 900 it is a stub; above 2,000 it is padding. Nothing else about its shape is mandated.",
 ];
