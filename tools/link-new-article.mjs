@@ -55,6 +55,8 @@ for (const target of fresh) {
     .map((p) => ({ p, shared: tokens(p).filter((w) => mine.has(w)) }))
     .filter((x) => x.shared.length >= 1)
     .filter((x) => !x.p.raw.includes(`/${target.dir}/${target.slug}`))
+    /* A reciprocal pair is a gate failure: link-check keeps one direction only. Skip a page the target already links back to. */
+    .filter((x) => !target.raw.includes(`/${x.p.dir}/${x.p.slug}`))
     .sort((a, b) => b.shared.length - a.shared.length)
     .slice(0, 3);
   for (const { p, shared } of scored) {
