@@ -130,8 +130,20 @@ function fixInternalLinks(article) {
   if (good.length < 2) {
     const pool = [...published].filter((x) => x.startsWith("blog/") && !good.includes(x)).slice(0, 2 - good.length);
     if (pool.length) {
-      const sentence = "\n\nRelated reading: " + pool.map((x) => `[${x.split("/")[1].replace(/-/g, " ")}](/${x}/)`).join(" and ") + ".\n";
-      out = out.trimEnd() + sentence;
+      /*
+       * INSERT INSIDE THE BODY, NOT AFTER IT.
+       *
+       * This used to append a "Related reading:" paragraph at the very end. link-check excludes generated tail
+       * sections from its count, so a repaired draft still measured zero body links and the L1 gate rejected three
+       * drafts in a row on 2026-11-27 - 222 seconds and $0.0238 for a page that was otherwise ready.
+       */
+      const label = (x) => x.split("/")[1].replace(/-/g, " ");
+      const links = pool.map((x) => `[${label(x)}](/${x}/)`);
+      const sentence = links.length === 2
+        ? `The same question is worked through from another angle in ${links[0]} and ${links[1]}.`
+        : `The same question is worked through from another angle in ${links[0]}.`;
+      const at = out.lastIndexOf("\n## ");
+      out = at > 0 ? out.slice(0, at) + "\n\n" + sentence + "\n" + out.slice(at) : out.trimEnd() + "\n\n" + sentence + "\n";
       added = pool.length;
     }
   }
