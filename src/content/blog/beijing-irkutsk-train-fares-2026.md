@@ -146,3 +146,5 @@ Deluxe soft sleeper cost per kilometer: 3,763 / 2,666 = 1.41 yuan/km
 The relaunched weekly Beijing-Irkutsk train gives a traveler a priced rail option between China and Russia: 2,411 yuan for a hard sleeper, 3,763 yuan for a deluxe soft sleeper, 55 hours on board. For an importer, the service moves people, not cargo, and the published fares are the only numbers needed to decide whether the overland route beats flying. The article does not state airfares, visa costs or freight capacity, so the decision rests on the rail figures alone.
 
 For the paperwork and the cost in one place, see China urges U.S. to revoke proposed telecom restrictions: commerce ministry.
+
+For the paperwork and the cost in one place, see [China unveils roadmap for next-generation communication networks](/guide/china-unveils-roadmap-for-next-generation-communication-networks/).

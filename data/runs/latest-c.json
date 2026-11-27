@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-26T23:25:07.836Z",
-  "runId": "45910374095",
-  "route": "fallback",
+  "at": "2026-11-27T07:20:45.839Z",
+  "runId": "45957737108",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-",
+  "article": "china-unveils-roadmap-for-next-generation-communication-networks",
   "seconds": 17,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0003999999999999976
+    "usd": 0.0012
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "7 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-",
+      "name": "grounding china-unveils-roadmap-for-next-generation-communication-networks",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-",
+      "name": "gates china-unveils-roadmap-for-next-generation-communication-networks",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-",
+      "name": "build china-unveils-roadmap-for-next-generation-communication-networks",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "china-mengxiang-riserless-drilling-2004-meters-importer-cost, eaeu-anti-dumping-oil-well-pipe-2026"
+      "detail": "beidou-terminal-devices-china-2026-importer-tracking, beijing-irkutsk-train-fares-2026"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/xi-says-joint-space-exploration-by-chinese-pakistani-astronauts-vivid-/"
+      "detail": "/guide/china-unveils-roadmap-for-next-generation-communication-networks/"
     }
   ],
   "researchLog": [

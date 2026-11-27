@@ -3749,7 +3749,7 @@
       "unit": "one application",
       "title": "China unveils roadmap for next-generation communication networks",
       "query": "China unveils roadmap for next-generation communication networks",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China unveils roadmap for next-generation communication networks\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3777,7 +3777,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-27"
     },
     {
       "slug": "china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
@@ -3895,7 +3896,124 @@
         "pageImpressions": 0,
         "pagePosition": null
       }
+    },
+    {
+      "slug": "china-s-high-standard-opening-up-creates-new-opportunities-for-global-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "China's high-standard opening up creates new opportunities for global cooperation",
+      "query": "China's high-standard opening up creates new opportunities for global cooperation",
+      "status": "queued",
+      "evidence": "demand matrix: \"China's high-standard opening up creates new opportunities for global cooperation\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "China's",
+        "high-standard",
+        "opening",
+        "creates",
+        "opportunities"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "new-growth-drivers-fuel-china-s-industrial-profit-gains",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "New growth drivers fuel China's industrial profit gains",
+      "query": "New growth drivers fuel China's industrial profit gains",
+      "status": "queued",
+      "evidence": "demand matrix: \"New growth drivers fuel China's industrial profit gains\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "growth",
+        "drivers",
+        "fuel",
+        "China's",
+        "industrial"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "high-speed-rails-in-china-s-yangtze-river-delta-top-8-500-km-as-three-",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "High-speed rails in China's Yangtze River Delta top 8,500 km as three new lines open",
+      "query": "High-speed rails in China's Yangtze River Delta top 8,500 km as three new lines open",
+      "status": "queued",
+      "evidence": "demand matrix: \"High-speed rails in China's Yangtze River Delta top 8,500 km as three new lines open\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "High-speed",
+        "rails",
+        "China's",
+        "Yangtze",
+        "River"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
     }
   ],
-  "updatedAt": "2026-11-27T01:04:51.789Z"
+  "updatedAt": "2026-11-27T07:20:27.672Z"
 }

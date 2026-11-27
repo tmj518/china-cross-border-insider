@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-27T07:20:45.839Z",
+  "runId": "45957737108",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-unveils-roadmap-for-next-generation-communication-networks",
+  "seconds": 17,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0012
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-unveils-roadmap-for-next-generation-communication-networks",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-unveils-roadmap-for-next-generation-communication-networks",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-unveils-roadmap-for-next-generation-communication-networks",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "beidou-terminal-devices-china-2026-importer-tracking, beijing-irkutsk-train-fares-2026"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-unveils-roadmap-for-next-generation-communication-networks/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

@@ -185,3 +185,5 @@ For the paperwork and the cost in one place, see China urges U.S. to revoke prop
 For the paperwork and the cost in one place, see China rolls out plan to improve eldercare, childcare services.
 
 For the paperwork and the cost in one place, see [China's mega water diversion project upgrades its "smart brain"](/guide/china-s-mega-water-diversion-project-upgrades-its-smart-brain/).
+
+For the paperwork and the cost in one place, see [China unveils roadmap for next-generation communication networks](/guide/china-unveils-roadmap-for-next-generation-communication-networks/).

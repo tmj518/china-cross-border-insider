@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-26T07:20:51.801Z",
+  "at": "2026-11-27T07:20:45.882Z",
   "streaks": {
-    "c": {
-      "verdict": "PUBLISHED",
-      "count": 4,
-      "at": "2026-11-26T07:20:51.761Z"
-    },
     "fallback": {
       "verdict": "PUBLISHED",
-      "count": 7,
-      "at": "2026-11-26T02:52:25.516Z"
+      "count": 6,
+      "at": "2026-11-26T23:25:07.836Z"
+    },
+    "c": {
+      "verdict": "PUBLISHED",
+      "count": 2,
+      "at": "2026-11-27T07:20:45.839Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-26T02:05:48.726Z"
+      "at": "2026-11-27T01:21:10.455Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-26T07:20:51.761Z",
+    "at": "2026-11-27T07:20:45.839Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-s-mega-water-diversion-project-upgrades-its-smart-brain"
+    "article": "china-unveils-roadmap-for-next-generation-communication-networks"
   },
   "metrics": {
     "files": 1,
@@ -42,8 +42,7 @@
     ]
   },
   "warnings": [
-    "c has ended PUBLISHED 4 runs in a row.",
-    "fallback has ended PUBLISHED 7 runs in a row.",
+    "fallback has ended PUBLISHED 6 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
