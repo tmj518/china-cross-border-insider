@@ -282,20 +282,12 @@ jobs:
         # data/directives/<date>.json. Absent the file, nothing changes.
         if: always()
         run: |
-          # The runner's UTC date is a day behind the Beijing slot: the 07:20 Beijing run happens at 23:20 UTC
-          # on the previous day, so keying only on "date -u" made a directive named for the Beijing date invisible
-          # (2026-11-27, seen in the 2026-11-26 UTC run). The newest file within 36 hours is the right one.
-          F=$(ls -1 data/directives/*.json 2>/dev/null | sort | tail -1 || true)
-          if [ -n "$F" ]; then
-            AGE=$(( ( $(date -u +%s) - $(date -u -r "$F" +%s) ) / 3600 ))
-            if [ "$AGE" -le 36 ]; then
-              cp "$F" data/directive.json
-              echo "curated directive in force: $F (age ${AGE}h)"
-            else
-              echo "curated directive $F is ${AGE}h old; the research proposal stands"
-            fi
+          TODAY=$(date -u +%F)
+          if [ -f "data/directives/$TODAY.json" ]; then
+            cp "data/directives/$TODAY.json" data/directive.json
+            echo "curated directive in force: data/directives/$TODAY.json"
           else
-            echo "no curated directive on disk; the research proposal stands"
+            echo "no curated directive for $TODAY; the research proposal stands"
           fi
 
       - name: Refresh the subject ledger

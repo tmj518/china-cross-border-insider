@@ -1,0 +1,171 @@
+# 三条标准：质检、创作、审核
+
+读代码得出，不是概括。改动其中任何一条都要同步改这份文档，否则它比没有更糟。
+
+生成于 2026-11-05。
+
+---
+
+## 一、质检标准（机械、可复现、不含模型判断）
+
+质检分两层：**19 条结构规则** + **9 道闸门**。前者看一篇文章，后者看整个站点。
+
+### 1.1 结构规则（tools/qa-check.mjs，19 条阻断级）
+
+| # | 规则 | 要求 |
+|---|---|---|
+| 1 | text encoding | UTF-8 合法，无替换字符（U+FFFD） |
+| 2 | figure five-part records | 每个数字要有 value / unit / period / source / retrieved 五段 |
+| 3 | information_gain declared | 必须声明，且是合法枚举 |
+| 4 | primary-source cited | 必须有原始来源 |
+| 5 | target_keyword declared | 必须声明目标关键词 |
+| 6 | reviewBy declared | 必须有复审日期 |
+| 7 | calculation shown to reader | 算式要写给读者看，不能只给结果 |
+| 8 | AI summary 40-100 words | 摘要 40–100 词 |
+| 9 | V6.2 sections | 十个规定小节的顺序与标题 |
+| 10 | How confident section present | 必须有置信度小节 |
+| 11 | How confident has all three parts | 该小节三段齐全 |
+| 12 | FAQ 3-5 questions, 80-150 word answers | 3–5 问，每答 80–150 词 |
+| 13 | comparison table present | 必须有对比表 |
+| 14 | definition block present | 必须有一行以 "> " 开头的定义块 |
+| 15 | audience segments >= 3 | 至少三类读者 |
+| 16 | no URLs in body | 正文不许出现裸 URL |
+| 17 | no hedging words | 禁用 may / could / might / possibly |
+| 18 | no AI cliches | 禁用 "in today's fast-paced world" 一类套话 |
+| 19 | sensitive-term screen | 政治、宗教、军事、声誉类词筛查 |
+
+**★ 规则分三档：pass / warn / block。只有 block 会拦发布。**
+
+### 1.2 九道闸门（tools/gate.mjs）
+
+| 闸门 | 跑什么 | 管什么 |
+|---|---|---|
+| structural gates | qa-check.mjs --all | 上面 19 条 |
+| reviewer agent | reviewer-check.mjs --all | 复审日期、来源新鲜度 |
+| internal links | link-check.mjs | 孤立页、坏链、互链对 |
+| structured data | check-structured-data.mjs | JSON-LD 字段完整性 |
+| text contrast | check-contrast.mjs | 正文与背景对比度 |
+| titles and descriptions | check-meta.mjs | 标题 ≤60 列、描述 ≤155 列、全站唯一 |
+| content security policy | check-csp.mjs | CSP 头与内联样式 |
+| information gain (network) | serp-check.mjs | 与已发布内容的信息差 |
+| mobile layout | check-mobile.mjs | 手机端不溢出 |
+
+**九道闸门全部是硬闸门，任何一条不过就不许发布。**
+`--tier=soft` 只跑其中 5 道，用于建议性检查。
+
+---
+
+## 二、创作标准（写手 AI 拿到什么、被禁止什么）
+
+写在 tools/cloud-executor.mjs 的提示词里，每一条对应一次真实事故。
+
+### 2.1 数字与来源
+
+- 只能使用交到它手上的数字，**一个都不许加**
+- 每个数字必须带五段：值、单位、期间、来源、抓取日期
+- 修订是最容易混进假数字的环节，所以修订时的禁令比初稿更严
+
+### 2.2 不许编
+
+- 不许编经历、引语、人物、数据面板；**第一人称全面禁止**
+- 不许写文件名、条款号、程序名，**除非那个字符串确实出现在材料里**
+  （"Article 29"、"filing-based regime" 就是被这条抓住的）
+- 不许给措施归因动机或历史（"broader push" 一类）
+- 不许把违规当手段：低报价值或重量、错归类、拆单避税是犯罪，不是省钱
+
+### 2.3 结构（对应质检 19 条）
+
+- 摘要 40–100 词
+- 定义块一行（以 "> " 开头）
+- 对比表一张，其中至少 3 行带金额
+- 内链 ≥3 条，指向已发布页面
+- 正文 1,200–1,800 词（带成本表）或 1,000–2,000 词（不带）
+- 禁用词表：may / could / might / possibly
+
+### 2.4 修订时
+
+- 逐条回应审稿意见，看不懂就删掉那句话，不要猜
+- 保留审稿人没提的部分
+- 返回完整文件，不返回片段
+
+---
+
+## 三、审核标准（审稿 AI 的职责与产出格式）
+
+写在 tools/cloud-qa.mjs 的 L5 层。
+
+### 3.1 它的位置
+
+- **看不到源文档**，只看到草稿和交办的数字
+- 所以它**不能判断某个数字真假**，只能判断草稿自身是否自洽
+- 它被要求对四类内容保持敌意：无支撑的断言、编造的经历、政治宗教军事声誉类评论、越界表述
+
+### 3.2 只准因为这五件事否决
+
+1. 内部自相矛盾
+2. 算式无法从给定数字推出
+3. 置信度小节不诚实（把不知道说成知道）
+4. 编造的经历
+5. 越过了风险线（把违规写成选项）
+
+### 3.3 每条意见必须五段（机器可读）
+
+| 字段 | 含义 |
+|---|---|
+| check | 哪一项检查失败 |
+| rule | 稳定的规则名，用于统计同一规则反复失败 |
+| snippet | **草稿里的原文**，≤200 字，必须能被搜到 |
+| why | 一句话说清哪里错 |
+| fix_type | rewrite / research / add_sentence / delete / new_decision |
+
+**fix_type 决定谁来修：**
+
+- rewrite → 写手改写
+- research → 需要一份没抓到的文档，**改写永远解决不了**，循环必须停
+- add_sentence → 补一句披露
+- delete → 删掉编造的内容
+- new_decision → 规则没覆盖的判断
+
+### 3.4 它的判决现在不拦发布
+
+2026-11-02 起：L5 的意见**记录、上报、喂进下一篇文章的提示词**，但不许拦发布。
+
+理由：它看不到源文档，十条有引用的意见全指向"需要补研究"，改写无法回应，A 线因此三天零产出。
+
+**代价必须写下来：** 判为 PUBLISHED-DEGRADED，意见进 data/lessons.jsonl。
+
+---
+
+## 四、回测循环（2026-11-05 建）
+
+```
+写手出稿
+  → 修内链（坏链删掉、不足补两条）
+  → 质检（19 条 + 9 闸门）
+      失败 → 记录到 data/qa-loop.jsonl（哪一关、什么原因、审稿人要求怎么改）
+           → 意见回给写手修订
+           → 再来一遍（最多 3 次）
+      通过 → 审稿人（意见只记录）
+           → 发布
+```
+
+### 日志：data/qa-loop.jsonl
+
+每次尝试一行，只追加不改写：
+
+```json
+{"at":"...","slug":"...","attempt":1,"pass":false,
+ "layers":{"L1":{"pass":false,"detail":"1 gate failure(s): internal links"}},
+ "reasons":["L1: internal links"],
+ "issues":[{"rule":"...","fixType":"rewrite","snippet":"...","why":"..."}]}
+```
+
+### 读它：node tools/qa-loop-report.mjs
+
+```
+node tools/qa-loop-report.mjs            最近 14 天，按文章分组：哪次失败、第几次过
+node tools/qa-loop-report.mjs --days=30
+node tools/qa-loop-report.mjs --rules    哪一关最费次数（用来决定先修什么）
+```
+
+**这就是"今天那篇为什么没过、改了什么才过"的答案所在。**
