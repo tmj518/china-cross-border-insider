@@ -98,7 +98,7 @@ Three things follow, and only the first is obvious.
 
 **If you are a platform seller.** Your freight forwarder chooses the entry date, and you carry the duty cost. Ask for the entry summary date, not the ship date, on any shipment that will land in December or January.
 
-**If you are a freight forwarder or broker.** This is the one place where your calendar is the product. A shipment that clears at 00:30 ET on 10 January 2027 is outside the window by thirty minutes. The parallel deadline for postal traffic is set out in [the low-value shipment entry rule](/blog/us-low-value-shipment-entry-rule-2026/), and the earlier version of this exclusion deadline is in [the November 2026 expiry note](/blog/section-301-exclusions-expire-november-2026/).
+**If you are a freight forwarder or broker.** This is the one place where your calendar is the product. A shipment that clears at 00:30 ET on 10 January 2027 is outside the window by thirty minutes. The parallel deadline for postal traffic is set out in [the low-value shipment entry rule](/blog/us-low-value-shipment-entry-rule-2026/).
 
 ## The data point
 
@@ -129,4 +129,4 @@ For the same question approached from another angle, see [us port fees chinese s
 
 ## Related reading
 
-The duty arithmetic behind a landed-cost quote is worked through in [EU CBAM cost per tonne for Chinese steel and aluminium](/blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026/), and the earlier exclusion deadline is covered in [Section 301 exclusions expire in November 2026](/blog/section-301-exclusions-expire-november-2026/). If your goods move by post rather than by entry, [the US low-value shipment entry rule](/blog/us-low-value-shipment-entry-rule-2026/) covers the parallel change.
+The duty arithmetic behind a landed-cost quote is worked through in [EU CBAM cost per tonne for Chinese steel and aluminium](/blog/eu-cbam-cost-per-tonne-chinese-steel-aluminium-2026/), and the earlier exclusion deadline was covered when it fell due. If your goods move by post rather than by entry, [the US low-value shipment entry rule](/blog/us-low-value-shipment-entry-rule-2026/) covers the parallel change.
