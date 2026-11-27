@@ -142,6 +142,18 @@ const GATES = [
     fast: true,
   },
   {
+    /*
+     * A duplicate frontmatter key is invalid YAML: the build fails, Pages keeps the previous deploy, and the page
+     * answers 404 while the run says PUBLISHED. 2026-11-27.
+     */
+    id: "check-frontmatter-yaml",
+    tier: "hard",
+    label: "frontmatter parses",
+    args: ["tools/check-frontmatter-yaml.mjs"],
+    inputs: ARTICLES,
+    fast: true,
+  },
+  {
     id: "link-check",
     tier: "hard",
     label: "internal links",
