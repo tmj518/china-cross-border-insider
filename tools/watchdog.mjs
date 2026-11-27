@@ -31,7 +31,8 @@ const FIX = process.argv.includes("--fix");
 const JSON_OUT = process.argv.includes("--json");
 const find = (n, fallback) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split("=")[1] ?? fallback;
 
-const SITE = find("site", "https://www.landedmath.com");
+/* WATCHDOG_SITE exists so the 404 branches can be proven by a test instead of by waiting for one. */
+const SITE = (process.env.WATCHDOG_SITE ?? find("site", "https://www.landedmath.com")).replace(/\/$/, "");
 const STALE_HOURS = Number(find("stale", 26));
 const now = Date.now();
 
@@ -162,7 +163,28 @@ try {
   }
 } catch {}
 const ageMin = Math.min((now - Math.max(latest.ts, lastRunTs)) / 60000, reportAgeMin);
+/*
+ * A 404 IS ONLY "STILL DEPLOYING" IF THE BUILD IS HEALTHY.
+ *
+ * 2026-11-27: the A line published an article whose frontmatter carried two "route:" keys. js-yaml rejected it,
+ * Astro's build failed, Cloudflare kept the previous deploy, and the page answered 404 while the run said
+ * PUBLISHED-DEGRADED. The 45-minute grace rule downgraded it to a warning, so the card said "deploy may still be
+ * running" and the real fault stayed hidden for twenty minutes.
+ *
+ * So the grace rule is now conditional: a 404 is a warning only when the library still parses. If the corpus does
+ * not build, the 404 is critical immediately, whatever its age.
+ */
+let buildBroken = null;
+try {
+  execFileSync(process.execPath, [join(ROOT, "tools", "check-frontmatter-yaml.mjs"), "--all"], { cwd: ROOT, encoding: "utf8", timeout: 60000, stdio: "pipe" });
+  buildBroken = null;
+} catch (e) {
+  const out = `${e.stdout ?? ""}${e.stderr ?? ""}`;
+  buildBroken = out.split("\n").filter((l) => /FAIL /.test(l)).slice(0, 2).join(" | ").slice(0, 180) || "frontmatter does not parse";
+}
+
 if (code === "200") record("ok", "live", `200 ${url}`);
+else if (buildBroken) record("critical", "live", `${code} ${url} - and the corpus does not build: ${buildBroken}`);
 else if (ageMin < 45) record("warn", "live", `${code} but published ${Math.round(ageMin)}m ago - deploy may still be running`);
 else record("critical", "live", `${code} ${url}`);
 }
