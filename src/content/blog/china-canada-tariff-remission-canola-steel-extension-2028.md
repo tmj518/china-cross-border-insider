@@ -117,6 +117,8 @@ The fourth use is the beef figure. The 500 million Canadian dollars projected fo
 
 > Also read: [China-ASEAN FTA 3.0 takes effect 1 December](/blog/china-asean-fta-3-0-december-2026-legal-rules-alignment/)
 
+> Also read: [China's 2026-2030 Services Trade Plan: What Importers Can](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/)
+
 ## For you
 
 - **Canadian importers of Chinese steel and aluminium:** rebuild the duty line in your landed-cost model to run the remission through 2028 and carry the full duty from 2029, so the cliff is visible in the model rather than discovered at renewal.

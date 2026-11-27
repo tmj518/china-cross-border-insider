@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-26T23:21:08.302Z",
-  "lastVerdict": "REJECTED",
-  "lastArticle": "beijing-irkutsk-train-fares-2026",
-  "runs": 65,
-  "published": 50,
+  "lastRun": "2026-11-27T01:21:10.455Z",
+  "lastVerdict": "PUBLISHED-DEGRADED",
+  "lastArticle": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+  "runs": 66,
+  "published": 51,
   "lastUsage": {
-    "calls": 9,
-    "failed": 0,
-    "usd": 0.0238,
-    "promptTokens": 169474,
-    "completionTokens": 18579
+    "calls": 18,
+    "failed": 2,
+    "usd": 0.0555,
+    "promptTokens": 289066,
+    "completionTokens": 30123
   }
 }

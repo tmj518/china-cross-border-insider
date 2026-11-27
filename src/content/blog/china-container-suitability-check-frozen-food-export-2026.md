@@ -216,6 +216,8 @@ as a share of the goods = 6,127.40 / 800,000     = 0.766 per cent
 
 Run the model with `node tools/suitability-clock.mjs`, or pin one case with `--value=`, `--days=`, `--rate=` and `--storage=`. Every currency figure here is in RMB, because the regulation states its penalties in RMB and a Chinese terminal quotes reefer storage in RMB, so no exchange rate is introduced. The goods value, funding rate, storage charge and days late are assumptions, not facts about your shipment.
 
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
+
 ## The point
 
 The rule is presented as a simplification and, on its own terms, it is one: an inspection step was replaced by a declaration. What it also did was attach an expiry date to a container and start that expiry before the goods are loaded. The fine is the visible number and the wrong one to plan around, because it is a cap that requires customs to find a breach. The number that recurs is the cost of a box that passed too early and waited, and it lands hardest on sellers who consolidate and who book ahead. The action it calls for is one question: what date did the container pass, and what date is the declaration filed.

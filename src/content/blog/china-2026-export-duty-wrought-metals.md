@@ -188,6 +188,8 @@ $8,000 = $80,000 copper order x 10% provisional rate
 
 Substitute your own declared value, and check which rate applies — the nominal 30 percent or the provisional 10 percent — since the annex publishes both and the lower one is conditional.
 
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
+
 ## The point
 
 A tariff schedule is a statement of what a country wants to export, and China's 2026 version says it plainly: raw metal carries 30 percent, scrap carries 15, and the finished form carries nothing. That is a sourcing map, not a revenue measure, and it is published row by row in an annex that the English coverage of this plan did not open. The practical consequence is that the shape of the metal you buy now has a price attached that is larger than most destination tariffs — $8,000 on a ten-tonne copper order, decided before a single rate is negotiated.

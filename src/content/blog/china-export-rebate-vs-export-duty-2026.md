@@ -156,6 +156,8 @@ China is withdrawing a refund from finished goods and imposing a charge on raw m
 
 For an importer the practical difference is which of the two reaches your line. Raw metal is taxed, wrought metal is not, and the rebate withdrawal lands on named finished goods. A buyer exposed to both in one supply chain is absorbing the same policy twice, from opposite ends, and the nominal rates in circulation will overstate one of them threefold.
 
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
+
 ## FAQ
 
 ### Is an export duty the same thing as removing an export tax rebate?

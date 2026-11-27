@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26",
+  "generated": "2026-11-27",
   "instruments": [
     {
       "id": "european-commission-directorate-general-for-trade-and-econom",
@@ -3033,6 +3033,55 @@
       "modelOutput": false
     },
     {
+      "id": "ministry-of-commerce-via-china-daily",
+      "source": "Ministry of Commerce via China Daily",
+      "figures": [
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "5.77 trillion yuan",
+          "unit": "total services trade in first three quarters of 2026",
+          "period": "January-September 2026",
+          "source": "Ministry of Commerce via China Daily",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "14.8 percent",
+          "unit": "year-on-year growth rate of services exports",
+          "period": "first three quarters of 2026",
+          "source": "Ministry of Commerce via China Daily",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "53.7 percent",
+          "unit": "share of knowledge-intensive services in total services exports",
+          "period": "first three quarters of 2026",
+          "source": "Ministry of Commerce via China Daily",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "86.56 billion yuan",
+          "unit": "offshore R&D services contract value",
+          "period": "first three quarters of 2026",
+          "source": "Ministry of Commerce via China Daily",
+          "retrieved": "2026-11-27"
+        }
+      ],
+      "articleNums": [
+        508
+      ],
+      "articleSlugs": [
+        "china-services-trade-plan-2026-2030-importer-export-opportunities"
+      ],
+      "modelOutput": false
+    },
+    {
       "id": "ministry-of-commerce-cited-by-china-daily",
       "source": "Ministry of Commerce, cited by China Daily",
       "figures": [
@@ -3827,6 +3876,46 @@
       ],
       "articleSlugs": [
         "china-rare-earth-export-controls-licence-regime"
+      ],
+      "modelOutput": false
+    },
+    {
+      "id": "ministry-of-commerce-via-xinhua",
+      "source": "Ministry of Commerce via Xinhua",
+      "figures": [
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "5,768.77 billion yuan",
+          "unit": "total services imports and exports in first three quarters of 2026",
+          "period": "January-September 2026",
+          "source": "Ministry of Commerce via Xinhua",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "8.5 percent",
+          "unit": "year-on-year growth rate of services trade",
+          "period": "first three quarters of 2026",
+          "source": "Ministry of Commerce via Xinhua",
+          "retrieved": "2026-11-27"
+        },
+        {
+          "articleSlug": "china-services-trade-plan-2026-2030-importer-export-opportunities",
+          "articleNum": 508,
+          "value": "1,225.97 billion yuan",
+          "unit": "services trade deficit",
+          "period": "first three quarters of 2026",
+          "source": "Ministry of Commerce via Xinhua",
+          "retrieved": "2026-11-27"
+        }
+      ],
+      "articleNums": [
+        508
+      ],
+      "articleSlugs": [
+        "china-services-trade-plan-2026-2030-importer-export-opportunities"
       ],
       "modelOutput": false
     },

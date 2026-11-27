@@ -133,6 +133,8 @@ Importers should therefore put the 15-day figure in the base closing timetable o
 
 > Also read: [China-ASEAN FTA 3.0 takes effect 1 December](/blog/china-asean-fta-3-0-december-2026-legal-rules-alignment/)
 
+> Also read: [China's 2026-2030 Services Trade Plan: What Importers Can](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/)
+
 ## For you
 
 - **Importers signing an EU acquisition before 17 January 2028:** place the 15-day fast-closure figure in the base timetable and add a separate completion condition for in-depth assessment.
