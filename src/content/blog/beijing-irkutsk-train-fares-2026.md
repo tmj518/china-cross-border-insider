@@ -148,3 +148,5 @@ The relaunched weekly Beijing-Irkutsk train gives a traveler a priced rail optio
 For the paperwork and the cost in one place, see China urges U.S. to revoke proposed telecom restrictions: commerce ministry.
 
 For the paperwork and the cost in one place, see [China unveils roadmap for next-generation communication networks](/guide/china-unveils-roadmap-for-next-generation-communication-networks/).
+
+For the paperwork and the cost in one place, see [China urges Japan to accelerate destruction of abandoned chemical weapons](/guide/china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap/).

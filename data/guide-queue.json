@@ -3789,7 +3789,7 @@
       "unit": "one application",
       "title": "China urges Japan to accelerate destruction of abandoned chemical weapons",
       "query": "China urges Japan to accelerate destruction of abandoned chemical weapons",
-      "status": "queued",
+      "status": "done",
       "evidence": "demand matrix: \"China urges Japan to accelerate destruction of abandoned chemical weapons\" (news)",
       "sources": [
         "https://www.nia.gov.cn/n741440/n741567/index.html",
@@ -3817,7 +3817,8 @@
         "gap": 1,
         "pageImpressions": 0,
         "pagePosition": null
-      }
+      },
+      "doneAt": "2026-11-28"
     },
     {
       "slug": "china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",

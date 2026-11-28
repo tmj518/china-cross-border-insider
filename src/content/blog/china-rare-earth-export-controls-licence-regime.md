@@ -179,6 +179,8 @@ $6,713.01    = $2,663.01 + 90 days x $45 port storage
 
 Substitute your own value, capital cost and storage rate. The larger number is not on the table: it is the downstream commitment the held shipment was feeding.
 
+For the same question approached from another angle, see [china services trade plan   importer export opportunities](/blog/china-services-trade-plan-2026-2030-importer-export-opportunities/).
+
 ## The point
 
 China has turned strategic materials into a licence-administered supply chain, and the administration is the point. It does not need a dramatic ban to change behaviour: a licence file, a traceability record and a cautious exporter do the work quietly, and they do it per shipment rather than per announcement. The November 2026 window is the next scheduled decision, and the correct preparation for it is not a legal watch — it is knowing, in writing, what your supplier needs from you before they will quote at all.

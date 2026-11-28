@@ -187,3 +187,5 @@ For the paperwork and the cost in one place, see China rolls out plan to improve
 For the paperwork and the cost in one place, see [China's mega water diversion project upgrades its "smart brain"](/guide/china-s-mega-water-diversion-project-upgrades-its-smart-brain/).
 
 For the paperwork and the cost in one place, see [China unveils roadmap for next-generation communication networks](/guide/china-unveils-roadmap-for-next-generation-communication-networks/).
+
+For the paperwork and the cost in one place, see [China urges Japan to accelerate destruction of abandoned chemical weapons](/guide/china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap/).

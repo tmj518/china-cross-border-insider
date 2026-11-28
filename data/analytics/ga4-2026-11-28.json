@@ -1,0 +1,27 @@
+{
+  "property": "properties/559378568",
+  "account": "",
+  "days": 28,
+  "totals": {
+    "activeUsers": 170,
+    "newUsers": 166,
+    "screenPageViews": 210,
+    "sessions": 190,
+    "eventCount": 655
+  },
+  "channels": [
+    {
+      "channel": "Direct",
+      "sessions": 156
+    },
+    {
+      "channel": "Organic Search",
+      "sessions": 31
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": 3
+    }
+  ],
+  "at": "2026-11-28T01:21:01.217Z"
+}
