@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-28T01:21:22.228Z",
-  "runId": "46092615409",
-  "route": "fallback",
+  "at": "2026-11-28T07:20:44.228Z",
+  "runId": "46120720932",
+  "route": "c",
   "verdict": "PUBLISHED",
-  "article": "china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
-  "seconds": 20,
+  "article": "china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
+  "seconds": 14,
   "usage": {
     "calls": 2,
     "failed": 0,
-    "usd": 0.0004
+    "usd": 0.0011
   },
   "providers": [
     "volces"
@@ -23,32 +23,32 @@
     {
       "name": "queue",
       "ok": true,
-      "detail": "8 candidate(s)"
+      "detail": "9 candidate(s)"
     },
     {
-      "name": "grounding china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
+      "name": "grounding china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
       "ok": true,
       "detail": "procedural, no figures"
     },
     {
-      "name": "gates china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
+      "name": "gates china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
       "ok": true,
       "detail": "structure ok, procedural (no figures)"
     },
     {
-      "name": "build china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
+      "name": "build china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
       "ok": true,
       "detail": "site builds with the guide in place"
     },
     {
       "name": "inbound links",
       "ok": true,
-      "detail": "beidou-terminal-devices-china-2026-importer-tracking, beijing-irkutsk-train-fares-2026"
+      "detail": "china-foreign-trade-first-ten-months-2026-import-growth, importing-from-china-documents-checklist"
     },
     {
       "name": "published",
       "ok": true,
-      "detail": "/guide/china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap/"
+      "detail": "/guide/china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to/"
     }
   ],
   "researchLog": [

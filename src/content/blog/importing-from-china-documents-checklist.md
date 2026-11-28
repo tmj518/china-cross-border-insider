@@ -228,3 +228,5 @@ Every document on this list existed before this year. What changed in 2026 is th
 So the document set is no longer administration. It is the cheapest part of the shipment and the only part where a few days of neglect converts directly into a payment. Build it before you book the space, and check the three dates rather than the list.
 
 For the paperwork and the cost in one place, see China's second homegrown large cruise ship starts first trial voyage.
+
+For the paperwork and the cost in one place, see [China launches Shenzhou-24 spaceship, opening Tiangong space station to first foreign astronaut](/guide/china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to/).

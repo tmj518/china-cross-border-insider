@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T07:20:28.293Z",
+  "at": "2026-11-28T07:20:30.096Z",
   "days": 90,
   "gsc": true,
   "plan": [
@@ -25,84 +25,6 @@
         "building",
         "North",
         "China's"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-unveils-roadmap-for-next-generation-communication-networks",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China unveils roadmap for next-generation communication networks",
-      "query": "China unveils roadmap for next-generation communication networks",
-      "status": "queued",
-      "evidence": "demand matrix: \"China unveils roadmap for next-generation communication networks\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "unveils",
-        "roadmap",
-        "next-generation",
-        "communication"
-      ],
-      "facts": [],
-      "mustSay": [],
-      "avoid": [],
-      "priorityScore": 1.8,
-      "priorityWhy": {
-        "basis": "prior",
-        "base": 3,
-        "demandImpressions": 0,
-        "demandBreadth": 0,
-        "demandQuery": "",
-        "intent": 0.6,
-        "gap": 1,
-        "pageImpressions": 0,
-        "pagePosition": null
-      }
-    },
-    {
-      "slug": "china-urges-japan-to-accelerate-destruction-of-abandoned-chemical-weap",
-      "topic": "residence",
-      "audience": [
-        "relocating"
-      ],
-      "unit": "one application",
-      "title": "China urges Japan to accelerate destruction of abandoned chemical weapons",
-      "query": "China urges Japan to accelerate destruction of abandoned chemical weapons",
-      "status": "queued",
-      "evidence": "demand matrix: \"China urges Japan to accelerate destruction of abandoned chemical weapons\" (news)",
-      "sources": [
-        "https://www.nia.gov.cn/n741440/n741567/index.html",
-        "https://english.www.gov.cn/",
-        "https://www.gov.cn/zhengce/zuixin/"
-      ],
-      "fetchKeywords": [
-        "China",
-        "urges",
-        "Japan",
-        "accelerate",
-        "destruction"
       ],
       "facts": [],
       "mustSay": [],
@@ -298,6 +220,84 @@
         "China's",
         "Yangtze",
         "River"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "tetra-pak-ordered-to-pay-record-damages-in-china-antitrust-case",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Tetra Pak ordered to pay record damages in China antitrust case",
+      "query": "Tetra Pak ordered to pay record damages in China antitrust case",
+      "status": "queued",
+      "evidence": "demand matrix: \"Tetra Pak ordered to pay record damages in China antitrust case\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Tetra",
+        "ordered",
+        "record",
+        "damages",
+        "China"
+      ],
+      "facts": [],
+      "mustSay": [],
+      "avoid": [],
+      "priorityScore": 1.8,
+      "priorityWhy": {
+        "basis": "prior",
+        "base": 3,
+        "demandImpressions": 0,
+        "demandBreadth": 0,
+        "demandQuery": "",
+        "intent": 0.6,
+        "gap": 1,
+        "pageImpressions": 0,
+        "pagePosition": null
+      }
+    },
+    {
+      "slug": "beyond-the-gibbons-china-s-tropical-rainforest-regains-its-rhythm",
+      "topic": "residence",
+      "audience": [
+        "relocating"
+      ],
+      "unit": "one application",
+      "title": "Beyond the gibbons, China's tropical rainforest regains its rhythm",
+      "query": "Beyond the gibbons, China's tropical rainforest regains its rhythm",
+      "status": "queued",
+      "evidence": "demand matrix: \"Beyond the gibbons, China's tropical rainforest regains its rhythm\" (news)",
+      "sources": [
+        "https://www.nia.gov.cn/n741440/n741567/index.html",
+        "https://english.www.gov.cn/",
+        "https://www.gov.cn/zhengce/zuixin/"
+      ],
+      "fetchKeywords": [
+        "Beyond",
+        "gibbons,",
+        "China's",
+        "tropical",
+        "rainforest"
       ],
       "facts": [],
       "mustSay": [],

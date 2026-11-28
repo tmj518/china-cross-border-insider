@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-28T07:20:44.228Z",
+  "runId": "46120720932",
+  "route": "c",
+  "verdict": "PUBLISHED",
+  "article": "china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
+  "seconds": 14,
+  "usage": {
+    "calls": 2,
+    "failed": 0,
+    "usd": 0.0011
+  },
+  "providers": [
+    "volces"
+  ],
+  "reasons": [],
+  "steps": [
+    {
+      "name": "credentials",
+      "ok": true,
+      "detail": "46 key chars, model ep-20251220173606-gzxdg"
+    },
+    {
+      "name": "queue",
+      "ok": true,
+      "detail": "9 candidate(s)"
+    },
+    {
+      "name": "grounding china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
+      "ok": true,
+      "detail": "procedural, no figures"
+    },
+    {
+      "name": "gates china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
+      "ok": true,
+      "detail": "structure ok, procedural (no figures)"
+    },
+    {
+      "name": "build china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to",
+      "ok": true,
+      "detail": "site builds with the guide in place"
+    },
+    {
+      "name": "inbound links",
+      "ok": true,
+      "detail": "china-foreign-trade-first-ten-months-2026-import-growth, importing-from-china-documents-checklist"
+    },
+    {
+      "name": "published",
+      "ok": true,
+      "detail": "/guide/china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to/"
+    }
+  ],
+  "researchLog": [
+    "model : volces/ep-20251220173606-gzxdg"
+  ]
+}

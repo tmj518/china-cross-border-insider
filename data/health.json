@@ -1,27 +1,27 @@
 {
-  "at": "2026-11-27T07:20:45.882Z",
+  "at": "2026-11-28T07:20:44.267Z",
   "streaks": {
     "fallback": {
       "verdict": "PUBLISHED",
       "count": 6,
-      "at": "2026-11-26T23:25:07.836Z"
+      "at": "2026-11-28T01:21:22.228Z"
     },
     "c": {
       "verdict": "PUBLISHED",
-      "count": 2,
-      "at": "2026-11-27T07:20:45.839Z"
+      "count": 3,
+      "at": "2026-11-28T07:20:44.228Z"
     },
     "script": {
       "verdict": "PUBLISHED-DEGRADED",
       "count": 1,
-      "at": "2026-11-27T01:21:10.455Z"
+      "at": "2026-11-27T23:21:11.787Z"
     }
   },
   "lastRun": {
-    "at": "2026-11-27T07:20:45.839Z",
+    "at": "2026-11-28T07:20:44.228Z",
     "route": "c",
     "verdict": "PUBLISHED",
-    "article": "china-unveils-roadmap-for-next-generation-communication-networks"
+    "article": "china-launches-shenzhou-24-spaceship-opening-tiangong-space-station-to"
   },
   "metrics": {
     "files": 1,
@@ -43,6 +43,7 @@
   },
   "warnings": [
     "fallback has ended PUBLISHED 6 runs in a row.",
+    "c has ended PUBLISHED 3 runs in a row.",
     "The last run had 212 failures no fallback recovered ({\"no provider key present\":205,\"HTTP 401\":6,\"network timeout\":1}). Recovered failures are a fact about the route; unrecovered ones are a fault in the run."
   ]
 }
